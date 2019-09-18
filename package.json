@@ -24,12 +24,6 @@
     "url": "https://github.com/astrosat/astrosat-ui/issues"
   },
   "homepage": "https://github.com/astrosat/astrosat-ui#readme",
-  "huskey": {
-    "hooks": {
-      "pre-commit": "yarn test",
-      "pre-push": "yarn test"
-    }
-  },
   "jest": {
     "testRegex": "src/.*\\.test\\.(js|jsx)$"
   },
@@ -60,6 +54,7 @@
     "@semantic-release/npm": "^5.1.15",
     "@semantic-release/release-notes-generator": "^7.3.0",
     "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-info": "^5.2.1",
     "@storybook/addon-knobs": "^5.2.1",
     "@storybook/addon-links": "^5.2.1",
     "@storybook/addons": "^5.2.1",
@@ -98,6 +93,7 @@
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-svg-loader": "^3.0.3"
   }
 }

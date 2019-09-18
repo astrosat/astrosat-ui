@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as CloseIcon } from './close.svg';
+import CloseIcon from './close.svg';
 import styles from './close-button.module.css';
 import PropTypes from 'prop-types';
 
