@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-
+import { withKnobs, select } from '@storybook/addon-knobs';
 import { Welcome } from '@storybook/react/demo';
 
 import Button from '../src/buttons/button.component';
@@ -16,6 +16,7 @@ storiesOf('Welcome', module).add('to Storybook', () => (
 ));
 
 storiesOf('Buttons', module)
+  .addDecorator(withKnobs)
   .add('with text', () => (
     <Button onClick={action('clicked')}>Text Button</Button>
   ))
