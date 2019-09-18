@@ -91,6 +91,7 @@
     "rollup-watch": "^4.3.1",
     "semantic-release": "^15.10.7",
     "st": "^1.2.2",
+    "svg-react-loader": "^0.4.6",
     "webpack": "^4.28.1"
   },
   "peerDependencies": {},
