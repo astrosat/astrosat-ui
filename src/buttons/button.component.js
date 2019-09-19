@@ -37,7 +37,7 @@ const Button = ({
     <a {...props}>{children}</a>
   ) : (
     <button {...props} disabled={disabled} aria-label={ariaLabel}>
-      {children} mark
+      {children}
     </button>
   );
 };
