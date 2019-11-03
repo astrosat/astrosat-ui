@@ -1,0 +1,18 @@
+.textfield {
+  border: none;
+  border-bottom: 1px solid #f6be00;
+  color: #333f48;
+}
+
+.icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+.valid {
+  fill: #6cc24a;
+}
+
+.invalid {
+  fill: #cf6679;
+}
