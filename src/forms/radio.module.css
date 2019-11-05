@@ -9,16 +9,21 @@
   opacity: 0;
 }
 
-.radio.active {
-  background-color: #7cd7ff;
+/* On mouse-over, add a grey background color */
+.radio:hover input ~ .checkmark {
+  background-color: #ccc;
 }
+
+/* .radio.active {
+  background-color: #7cd7ff;
+} */
 
 .radio .checkmark {
   position: relative;
   top: 0;
   left: 0;
-  height: 1rem;
   width: 1rem;
+  height: 1rem;
   background-color: #fff;
   border: 0.05rem solid #333f48;
   border-radius: 50%;
@@ -46,4 +51,13 @@
   height: 0.8rem;
   border-radius: 50%;
   background: #f6be00;
+}
+
+.radio.disabled {
+  opacity: 0.5;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }

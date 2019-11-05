@@ -8,13 +8,15 @@ const Button = ({
   disabled = false,
   active,
   padded = true,
-  type,
+  type = 'button',
+  shape,
   className,
-  ariaLabel
+  ariaLabel,
+  dataFor
 }) => {
   const props = {};
   const classes = [styles.button];
-  if (type) classes.push(styles[type]);
+  if (shape) classes.push(styles[shape]);
   if (className) classes.push(className);
   if (href) {
     props.href = href;
@@ -34,9 +36,18 @@ const Button = ({
 
   props.className = classes.join(' ');
   return href ? (
-    <a {...props}>{children}</a>
+    <a data-tip data-for={dataFor} {...props}>
+      {children}
+    </a>
   ) : (
-    <button {...props} disabled={disabled} aria-label={ariaLabel}>
+    <button
+      type={type}
+      {...props}
+      disabled={disabled}
+      aria-label={ariaLabel}
+      data-tip
+      data-for={dataFor}
+    >
       {children}
     </button>
   );

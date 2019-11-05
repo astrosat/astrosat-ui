@@ -96,10 +96,22 @@ storiesOf('Form Elements', module)
   ))
   .add('Checkboxes', () => (
     <div className={select('theme', themes, styles.dark)}>
-      <Checkbox onChange={action('Checkbox toggled')} />
-      <Checkbox checked={true} onChange={action('Checkbox toggled')} />
       <Checkbox
-        checked={true}
+        name="test"
+        value="option1"
+        label="Option One"
+        onChange={action('Checkbox toggled')}
+      />
+      <Checkbox
+        name="test"
+        value="option2"
+        label="Option Two"
+        onChange={action('Checkbox toggled')}
+      />
+      <Checkbox
+        name="test"
+        value="option3"
+        label="Option Three"
         disabled={true}
         onChange={action('Checkbox toggled')}
       />

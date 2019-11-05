@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+
+import { cleanup, render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import Button from './button.component';
@@ -68,10 +69,10 @@ describe('Button Component', () => {
     });
   });
 
-  describe('type', () => {
-    it('should add the round class for styling, when type attribute provided', () => {
+  describe('shape', () => {
+    it('should add the round class for styling, when shape attribute provided', () => {
       const { getByText } = render(
-        <Button active={true} type="round">
+        <Button active={true} shape="round">
           Some Text
         </Button>
       );
