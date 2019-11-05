@@ -1,4 +1,4 @@
-name: Node.js Package
+name: PUBLISH
 
 on:
   pull_request:
@@ -11,6 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -20,6 +21,9 @@ jobs:
           yarn install
           yarn test
           yarn build
+        env:
+          CI: true
+          GITHUB_REGISTRY_TOKEN: ${{secrets.GITHUB_REGISTRY_TOKEN}}
 
   # publish-npm:
   #   needs: build
@@ -47,4 +51,5 @@ jobs:
       - run: |
           yarn publish
         env:
+          CI: true
           GITHUB_REGISTRY_TOKEN: ${{secrets.GITHUB_REGISTRY_TOKEN}}
