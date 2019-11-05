@@ -19,7 +19,7 @@ jobs:
           yarn build
         env:
           CI: true
-          GITHUB_REGISTRY_TOKEN: ${{secrets.GITHUB_REGISTRY_TOKEN}}
+          GITHUB_REGISTRY_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   publish-github:
     needs: build
