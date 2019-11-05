@@ -1,6 +1,20 @@
-module.exports = {
+module.exports = ({ config }) => ({
+  ...config,
   module: {
+    ...config.module,
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [['react-app']]
+            }
+          }
+        ]
+      },
       {
         test: /\.css$/,
         use: [
@@ -10,6 +24,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              importLoaders: 1,
               modules: true
             }
           }
@@ -31,4 +46,4 @@ module.exports = {
       }
     ]
   }
-};
+});
