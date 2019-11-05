@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/astrosat/astrosat-u/compare/v1.0.2...v1.0.3) (2019-11-05)
+
+
+### Bug Fixes
+
+* **frontend:** Update button and form components ([a680470](https://github.com/astrosat/astrosat-u/commit/a680470))
+* **frontend:** Update rollup to manage svg files ([9822214](https://github.com/astrosat/astrosat-u/commit/9822214))
+
 ## [1.0.2](https://github.com/astrosat/astrosat-u/compare/v1.0.1...v1.0.2) (2019-11-05)
 
 
