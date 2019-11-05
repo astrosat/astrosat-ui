@@ -2,7 +2,7 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react')) :
   typeof define === 'function' && define.amd ? define(['exports', 'react'], factory) :
   (global = global || self, factory(global.astrosatui = {}, global.React));
-}(this, function (exports, React) { 'use strict';
+}(this, (function (exports, React) { 'use strict';
 
   React = React && React.hasOwnProperty('default') ? React['default'] : React;
 
@@ -37,62 +37,64 @@
   var styles = {"load-mask":"load-mask-module_load-mask__1mwHt","spinner3":"load-mask-module_spinner3__zAwsZ","spin":"load-mask-module_spin__3OYf2","spinner4":"load-mask-module_spinner4__1WmDq","spinner5":"load-mask-module_spinner5__1Dd5N"};
   styleInject(css);
 
-  const LoadMask = () => React.createElement("div", {
-    className: styles['load-mask']
-  }, React.createElement("svg", {
-    width: "100px",
-    height: "100px",
-    viewBox: "0 0 1000 1000"
-  }, React.createElement("circle", {
-    cx: "500",
-    cy: "570",
-    r: "80"
-  }), React.createElement("circle", {
-    cx: "500",
-    cy: "570",
-    r: "200",
-    strokeWidth: "10",
-    stroke: "black",
-    fill: "none"
-  }), React.createElement("circle", {
-    cx: "500",
-    cy: "666",
-    r: "300",
-    strokeWidth: "10",
-    stroke: "black",
-    fill: "none"
-  }), React.createElement("circle", {
-    cx: "500",
-    cy: "500",
-    r: "470",
-    strokeWidth: "10",
-    stroke: "black",
-    fill: "none"
-  }), React.createElement("g", {
-    className: styles.spinner3
-  }, React.createElement("circle", {
-    cx: "300",
-    cy: "570",
-    r: "30",
-    strokeWidth: "10",
-    stroke: "white"
-  })), React.createElement("g", {
-    className: styles.spinner4
-  }, React.createElement("circle", {
-    cx: "500",
-    cy: "366",
-    r: "30",
-    strokeWidth: "10",
-    stroke: "white"
-  })), React.createElement("g", {
-    className: styles.spinner5
-  }, React.createElement("circle", {
-    cx: "500",
-    cy: "30",
-    r: "30",
-    strokeWidth: "10",
-    stroke: "white"
-  }))));
+  var LoadMask = function LoadMask() {
+    return React.createElement("div", {
+      className: styles['load-mask']
+    }, React.createElement("svg", {
+      width: "100px",
+      height: "100px",
+      viewBox: "0 0 1000 1000"
+    }, React.createElement("circle", {
+      cx: "500",
+      cy: "570",
+      r: "80"
+    }), React.createElement("circle", {
+      cx: "500",
+      cy: "570",
+      r: "200",
+      strokeWidth: "10",
+      stroke: "black",
+      fill: "none"
+    }), React.createElement("circle", {
+      cx: "500",
+      cy: "666",
+      r: "300",
+      strokeWidth: "10",
+      stroke: "black",
+      fill: "none"
+    }), React.createElement("circle", {
+      cx: "500",
+      cy: "500",
+      r: "470",
+      strokeWidth: "10",
+      stroke: "black",
+      fill: "none"
+    }), React.createElement("g", {
+      className: styles.spinner3
+    }, React.createElement("circle", {
+      cx: "300",
+      cy: "570",
+      r: "30",
+      strokeWidth: "10",
+      stroke: "white"
+    })), React.createElement("g", {
+      className: styles.spinner4
+    }, React.createElement("circle", {
+      cx: "500",
+      cy: "366",
+      r: "30",
+      strokeWidth: "10",
+      stroke: "white"
+    })), React.createElement("g", {
+      className: styles.spinner5
+    }, React.createElement("circle", {
+      cx: "500",
+      cy: "30",
+      r: "30",
+      strokeWidth: "10",
+      stroke: "white"
+    }))));
+  };
 
   function _extends() {
     _extends = Object.assign || function (target) {
@@ -116,19 +118,20 @@
   var styles$1 = {"button":"button-module_button__1onJY","disabled":"button-module_disabled__3A8I_","active":"button-module_active__oiVBO","round":"button-module_round__1lWoh","no-padding":"button-module_no-padding__TCTS3"};
   styleInject(css$1);
 
-  const Button = ({
-    children,
-    onClick,
-    href,
-    disabled = false,
-    active,
-    padded = true,
-    type,
-    className,
-    ariaLabel
-  }) => {
-    const props = {};
-    const classes = [styles$1.button];
+  var Button = function Button(_ref) {
+    var children = _ref.children,
+        onClick = _ref.onClick,
+        href = _ref.href,
+        _ref$disabled = _ref.disabled,
+        disabled = _ref$disabled === void 0 ? false : _ref$disabled,
+        active = _ref.active,
+        _ref$padded = _ref.padded,
+        padded = _ref$padded === void 0 ? true : _ref$padded,
+        type = _ref.type,
+        className = _ref.className,
+        ariaLabel = _ref.ariaLabel;
+    var props = {};
+    var classes = [styles$1.button];
     if (type) classes.push(styles$1[type]);
     if (className) classes.push(className);
 
@@ -164,4 +167,4 @@
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
-}));
+})));

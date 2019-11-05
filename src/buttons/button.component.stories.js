@@ -6,6 +6,7 @@ import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Button from './button.component';
 import CloseButton from './close-button.component';
+import InfoButton from './info-button.component';
 
 import styles from '../index.module.css';
 

@@ -9,23 +9,25 @@ const Textfield = ({
   onChange,
   disabled = false,
   placeholder = '',
-  validate = false,
+  valid,
   classNames
 }) => {
-  const classes = [styles.textfield];
+  let classes = [styles.textfield];
   if (classNames) classes = [...classes, ...classNames];
 
   return (
-    <span>
+    <div>
       <input
         className={classes}
         disabled={disabled}
         onChange={onChange}
         placeholder={placeholder}
       />
-      {validate && <ValidIcon className={`${styles.icon} ${styles.valid}`} /> }
-      {/* {validate && !valid && <InvalidIcon className={`${styles.icon} ${styles.invalid}`} /> } */}
-    </span>
+      {valid && <ValidIcon className={`${styles.icon} ${styles.valid}`} />}
+      {valid !== undefined && !valid && (
+        <InvalidIcon className={`${styles.icon} ${styles.invalid}`} />
+      )}
+    </div>
   );
 };
 

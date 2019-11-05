@@ -12,7 +12,7 @@ const themes = { Dark: styles.dark, Light: styles.light };
 
 storiesOf('Load Mask', module)
   .addDecorator(withKnobs)
-  .add('with text', () => (
+  .add('Default', () => (
     <div className={select('theme', themes, styles.dark)}>
       <LoadMask />
     </div>
