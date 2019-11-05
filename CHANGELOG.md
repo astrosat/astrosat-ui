@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/astrosat/astrosat-u/compare/v1.0.0...v1.0.1) (2019-11-05)
+
+
+### Bug Fixes
+
+* **frontend:** Set when to publish package to registry ([d18a192](https://github.com/astrosat/astrosat-u/commit/d18a192))
+
 # 1.0.0 (2019-11-05)
 
 
