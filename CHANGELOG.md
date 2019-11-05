@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/astrosat/astrosat-u/compare/v1.0.1...v1.0.2) (2019-11-05)
+
+
+### Bug Fixes
+
+* **frontend:** Changed TOKEN used ([fa59a16](https://github.com/astrosat/astrosat-u/commit/fa59a16))
+* **frontend:** fix tokens ([4884ae6](https://github.com/astrosat/astrosat-u/commit/4884ae6))
+
 ## [1.0.1](https://github.com/astrosat/astrosat-u/compare/v1.0.0...v1.0.1) (2019-11-05)
 
 
