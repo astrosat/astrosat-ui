@@ -1,6 +1,6 @@
 {
   "name": "@astrosat/astrosat-ui",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "A module containing a number of common UI widgets.",
   "main": "dist/js/index.cjs.js",
   "module": "dist/js/index.esm.js",
