@@ -14,10 +14,8 @@ jobs:
           node-version: 10.x
       - name: yarn install, and test
         run: |
-          echo "REG TOKEN IS: ${GITHUB_REGISTRY_TOKEN}"
           yarn install
           yarn test
         env:
           CI: true
           GITHUB_REGISTRY_TOKEN: ${{secrets.GITHUB_REGISTRY_TOKEN}}
-
