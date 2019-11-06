@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import VisibleIcon from './visible.svg';
-import InvisibleIcon from './invisible.svg';
-
 import styles from './text-field.module.css';
 import passwordStyles from './password-field.module.css';
 
-const PasswordField = ({ onChange, placeholder = '', classNames }) => {
+const PasswordField = ({
+  name,
+  value,
+  onChange,
+  placeholder = '',
+  classNames,
+  required = false,
+  autoFocus = false
+}) => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
@@ -17,20 +22,20 @@ const PasswordField = ({ onChange, placeholder = '', classNames }) => {
   return (
     <div>
       <input
-        className={classes}
         type={isVisible ? 'text' : 'password'}
+        name={name}
+        value={value}
+        className={classes}
         onChange={onChange}
         placeholder={placeholder}
+        required={required}
+        autoFocus={autoFocus}
       />
       <button
         className={passwordStyles.passwordButton}
         onClick={toggleVisibility}
       >
-        {isVisible ? (
-          <InvisibleIcon className={passwordStyles.icon} />
-        ) : (
-          <VisibleIcon className={passwordStyles.icon} />
-        )}
+        {isVisible ? 'Show' : 'Hide'}
       </button>
     </div>
   );
