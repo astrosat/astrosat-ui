@@ -297,10 +297,6 @@ var Checkbox = function Checkbox(_ref) {
   }), label);
 };
 
-var VisibleIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 121.025 121.025\"><path d=\"M1.35 64.212c7.9 9.9 31.4 36.3 59.2 36.3 27.8 0 51.3-26.399 59.2-36.3 1.699-2.2 1.699-5.3 0-7.399-7.9-9.9-31.4-36.3-59.2-36.3-27.8-.1-51.3 26.3-59.2 36.2a5.882 5.882 0 000 7.499zm59.2-27.799c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24z\"/><circle r=\"12\" cy=\"60.413\" cx=\"60.55\"/></svg>";
-
-var InvisibleIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 121.025 121.025\"><path d=\"M1.35 64.212c7.9 9.9 31.4 36.3 59.2 36.3 27.8 0 51.3-26.399 59.2-36.3 1.699-2.2 1.699-5.3 0-7.399-7.9-9.9-31.4-36.3-59.2-36.3-27.8-.1-51.3 26.3-59.2 36.2a5.882 5.882 0 000 7.499zm59.2-27.799c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24z\"/><circle cx=\"60.55\" cy=\"60.413\" r=\"12\"/><path d=\"M101.104 23.216l-84.178 77.888\" fill=\"none\" stroke=\"#000\" stroke-width=\"3.269\"/></svg>";
-
 var css$5 = ".text-field-module_textfield__1qtEv {\n  border: none;\n  border-bottom: 1px solid #f6be00;\n  color: #333f48;\n}\n\n.text-field-module_icon__31twf {\n  height: 1rem;\n  width: 1rem;\n}\n\n.text-field-module_valid__tCVrN {\n  fill: #6cc24a;\n}\n\n.text-field-module_invalid__1iU4n {\n  fill: #cf6679;\n}\n";
 var styles$5 = {"textfield":"text-field-module_textfield__1qtEv","icon":"text-field-module_icon__31twf","valid":"text-field-module_valid__tCVrN","invalid":"text-field-module_invalid__1iU4n"};
 styleInject(css$5);
@@ -310,10 +306,16 @@ var passwordStyles = {"passwordButton":"password-field-module_passwordButton__3d
 styleInject(css$6);
 
 var PasswordField = function PasswordField(_ref) {
-  var onChange = _ref.onChange,
+  var name = _ref.name,
+      value = _ref.value,
+      onChange = _ref.onChange,
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === void 0 ? '' : _ref$placeholder,
-      classNames = _ref.classNames;
+      classNames = _ref.classNames,
+      _ref$required = _ref.required,
+      required = _ref$required === void 0 ? false : _ref$required,
+      _ref$autoFocus = _ref.autoFocus,
+      autoFocus = _ref$autoFocus === void 0 ? false : _ref$autoFocus;
 
   var _useState = useState(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -327,18 +329,18 @@ var PasswordField = function PasswordField(_ref) {
   var classes = [styles$5.textfield];
   if (classNames) classes = [].concat(_toConsumableArray(classes), _toConsumableArray(classNames));
   return React.createElement("div", null, React.createElement("input", {
-    className: classes,
     type: isVisible ? 'text' : 'password',
+    name: name,
+    value: value,
+    className: classes,
     onChange: onChange,
-    placeholder: placeholder
+    placeholder: placeholder,
+    required: required,
+    autoFocus: autoFocus
   }), React.createElement("button", {
     className: passwordStyles.passwordButton,
     onClick: toggleVisibility
-  }, isVisible ? React.createElement(InvisibleIcon, {
-    className: passwordStyles.icon
-  }) : React.createElement(VisibleIcon, {
-    className: passwordStyles.icon
-  })));
+  }, isVisible ? 'Show' : 'Hide'));
 };
 
 PasswordField.propTypes = {};
@@ -450,20 +452,31 @@ var ValidIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 25 25\"
 var InvalidIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 25 25\"><circle cx=\"12.5\" cy=\"12.5\" r=\"11.667\"/><path fill=\"#fff\" d=\"M7.149 8.791l9.207 9.208c.424.423 1.137.397 1.593-.058.455-.455.48-1.169.057-1.592L8.8 7.141c-.424-.423-1.137-.397-1.593.058-.455.455-.48 1.169-.057 1.592h-.001z\"/><path fill=\"#fff\" d=\"M8.28 17.999l9.207-9.208c.424-.423.398-1.137-.057-1.592-.456-.456-1.169-.481-1.593-.058L6.63 16.349c-.424.423-.398 1.137.058 1.592.455.455 1.168.481 1.592.058z\"/></svg>";
 
 var Textfield = function Textfield(_ref) {
-  var onChange = _ref.onChange,
+  var name = _ref.name,
+      value = _ref.value,
+      onChange = _ref.onChange,
       _ref$disabled = _ref.disabled,
       disabled = _ref$disabled === void 0 ? false : _ref$disabled,
       _ref$placeholder = _ref.placeholder,
       placeholder = _ref$placeholder === void 0 ? '' : _ref$placeholder,
       valid = _ref.valid,
-      classNames = _ref.classNames;
+      classNames = _ref.classNames,
+      _ref$required = _ref.required,
+      required = _ref$required === void 0 ? false : _ref$required,
+      _ref$autoFocus = _ref.autoFocus,
+      autoFocus = _ref$autoFocus === void 0 ? false : _ref$autoFocus;
   var classes = [styles$5.textfield];
   if (classNames) classes = [].concat(_toConsumableArray(classes), _toConsumableArray(classNames));
   return React.createElement("div", null, React.createElement("input", {
+    type: "text",
+    name: name,
+    value: value,
     className: classes,
     disabled: disabled,
     onChange: onChange,
-    placeholder: placeholder
+    placeholder: "".concat(placeholder, "WTF"),
+    required: required,
+    autoFocus: autoFocus
   }), valid && React.createElement(ValidIcon, {
     className: "".concat(styles$5.icon, " ").concat(styles$5.valid)
   }), valid !== undefined && !valid && React.createElement(InvalidIcon, {
