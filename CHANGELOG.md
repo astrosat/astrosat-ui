@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/astrosat/astrosat-ui/compare/v1.0.3...v1.1.0) (2019-11-07)
+
+
+### Features
+
+* **frontend:** Add attributes to textfield and password field ([468563d](https://github.com/astrosat/astrosat-ui/commit/468563dd62992515c3abc09d667d854f754bc3d5))
+* **frontend:** Build new distribution ([4b16dcd](https://github.com/astrosat/astrosat-ui/commit/4b16dcdb50966a5ff8a63384512d6c337d5bb70d))
+* **frontend:** Remove flow support ([9323420](https://github.com/astrosat/astrosat-ui/commit/93234208710a7b384240fb3f514ec6613b651912))
+
 ## [1.0.3](https://github.com/astrosat/astrosat-u/compare/v1.0.2...v1.0.3) (2019-11-05)
 
 
