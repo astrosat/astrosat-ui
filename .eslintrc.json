@@ -1,14 +1,9 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "plugin:flowtype/recommended",
-    "plugin:prettier/recommended",
-    "prettier/flowtype"
-  ],
-  "plugins": ["prettier", "flowtype", "flowtype-errors"],
+  "extends": ["plugin:prettier/recommended"],
+  "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
-    "flowtype-errors/show-errors": "error"
+    "prettier/prettier": "error"
   },
   "env": {
     "jest": true
