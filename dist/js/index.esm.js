@@ -474,7 +474,7 @@ var Textfield = function Textfield(_ref) {
     className: classes,
     disabled: disabled,
     onChange: onChange,
-    placeholder: "".concat(placeholder, "WTF"),
+    placeholder: placeholder,
     required: required,
     autoFocus: autoFocus
   }), valid && React.createElement(ValidIcon, {
