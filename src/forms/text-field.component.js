@@ -20,7 +20,7 @@ const Textfield = ({
   if (classNames) classes = [...classes, ...classNames];
 
   return (
-    <div>
+    <div className={styles.container}>
       <input
         type="text"
         name={name}

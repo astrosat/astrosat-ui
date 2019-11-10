@@ -73,3 +73,12 @@
 
   --search: url('/search-dark.svg');
 }
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.custom {
+  color: #fff !important;
+}

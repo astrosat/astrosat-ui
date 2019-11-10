@@ -172,8 +172,8 @@ function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance");
 }
 
-var css$1 = "button.button-module_button__1onJY {\n  border: none;\n  font-size: inherit;\n  font-family: inherit;\n  cursor: pointer;\n}\n\n.button-module_button__1onJY {\n  background: var(--button-background);\n  text-decoration: none;\n  color: var(--button-text);\n  border-radius: 2px;\n  padding: 0.125rem 1.1875rem;\n  font-weight: bold;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.button-module_button__1onJY:hover,\n.button-module_button__1onJY:focus {\n  background: var(--button-background-hover);\n  outline: none;\n}\n\n.button-module_disabled__3A8I_ {\n  background: var(--button-background-disabled);\n  opacity: 0.5;\n}\n\n.button-module_active__oiVBO,\n.button-module_button__1onJY:active {\n  background: var(--button-background-active);\n}\n\n.button-module_round__1lWoh {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0.5rem 0.5rem;\n  margin: unset;\n  border-radius: 50%;\n}\n\n.button-module_no-padding__TCTS3 {\n  padding: 0;\n}\n";
-var styles$1 = {"button":"button-module_button__1onJY","disabled":"button-module_disabled__3A8I_","active":"button-module_active__oiVBO","round":"button-module_round__1lWoh","no-padding":"button-module_no-padding__TCTS3"};
+var css$1 = "button.button-module_button__1onJY {\n  border: none;\n  font-size: inherit;\n  font-family: inherit;\n  cursor: pointer;\n}\n\n.button-module_button__1onJY {\n  background: var(--button-background);\n  text-decoration: none;\n  color: var(--button-text);\n  border-radius: 0.3rem;\n  padding: 1rem 2rem;\n  font-weight: bold;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.button-module_button__1onJY:hover,\n.button-module_button__1onJY:focus {\n  background: var(--button-background-hover);\n  outline: none;\n}\n\n.button-module_disabled__3A8I_ {\n  background: var(--button-background-disabled);\n  opacity: 0.5;\n}\n\n.button-module_active__oiVBO,\n.button-module_button__1onJY:active {\n  background: var(--button-background-active);\n}\n\n.button-module_round__1lWoh {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0.5rem 0.5rem;\n  margin: unset;\n  border-radius: 50%;\n}\n\n.button-module_primary__3zVw1 {\n  background-color: #f6bd15;\n  color: #333f48;\n}\n\n.button-module_primary__3zVw1:hover {\n  background-color: green;\n  color: #333f48;\n}\n\n.button-module_primary__3zVw1:active {\n  background-color: grey;\n  color: #333f48;\n}\n\n.button-module_secondary__2OQDx {\n  background-color: #333f48;\n  color: #fff;\n}\n\n.button-module_secondary__2OQDx:hover {\n  background-color: blue;\n  color: #333f48;\n}\n\n.button-module_secondary__2OQDx:active {\n  background-color: orange;\n  color: #333f48;\n}\n";
+var styles$1 = {"button":"button-module_button__1onJY","disabled":"button-module_disabled__3A8I_","active":"button-module_active__oiVBO","round":"button-module_round__1lWoh","primary":"button-module_primary__3zVw1","secondary":"button-module_secondary__2OQDx"};
 styleInject(css$1);
 
 var Button = function Button(_ref) {
@@ -188,13 +188,21 @@ var Button = function Button(_ref) {
       _ref$type = _ref.type,
       type = _ref$type === void 0 ? 'button' : _ref$type,
       shape = _ref.shape,
-      className = _ref.className,
+      theme = _ref.theme,
+      classNames = _ref.classNames,
       ariaLabel = _ref.ariaLabel,
       dataFor = _ref.dataFor;
   var props = {};
   var classes = [styles$1.button];
   if (shape) classes.push(styles$1[shape]);
-  if (className) classes.push(className);
+
+  if (theme) {
+    classes = [].concat(_toConsumableArray(classes), [styles$1[theme]]);
+  }
+
+  if (classNames) {
+    classes = [].concat(_toConsumableArray(classes), _toConsumableArray(classNames));
+  }
 
   if (href) {
     props.href = href;
@@ -297,11 +305,11 @@ var Checkbox = function Checkbox(_ref) {
   }), label);
 };
 
-var css$5 = ".text-field-module_textfield__1qtEv {\n  border: none;\n  border-bottom: 1px solid #f6be00;\n  color: #333f48;\n}\n\n.text-field-module_icon__31twf {\n  height: 1rem;\n  width: 1rem;\n}\n\n.text-field-module_valid__tCVrN {\n  fill: #6cc24a;\n}\n\n.text-field-module_invalid__1iU4n {\n  fill: #cf6679;\n}\n";
-var styles$5 = {"textfield":"text-field-module_textfield__1qtEv","icon":"text-field-module_icon__31twf","valid":"text-field-module_valid__tCVrN","invalid":"text-field-module_invalid__1iU4n"};
+var css$5 = ".text-field-module_container__1nASA {\n  width: 100%;\n  display: flex;\n}\n\n.text-field-module_textfield__1qtEv {\n  border: none;\n  border-bottom: 1px solid #f6be00;\n  color: #333f48;\n  width: inherit;\n}\n\n.text-field-module_icon__31twf {\n  height: 1rem;\n  width: 1rem;\n}\n\n.text-field-module_valid__tCVrN {\n  fill: #6cc24a;\n}\n\n.text-field-module_invalid__1iU4n {\n  fill: #cf6679;\n}\n";
+var styles$5 = {"container":"text-field-module_container__1nASA","textfield":"text-field-module_textfield__1qtEv","icon":"text-field-module_icon__31twf","valid":"text-field-module_valid__tCVrN","invalid":"text-field-module_invalid__1iU4n"};
 styleInject(css$5);
 
-var css$6 = "/* .passwordField {\n  display: flex;\n  border: 1px solid #000;\n}\n\n.passwordInput {\n  flex: 1;\n  border: unset;\n  height: 1.5rem;\n} */\n\n.password-field-module_passwordButton__3dv28 {\n  /* background-color: transparent; */\n  border: 0;\n  background: none;\n  box-shadow: none;\n  border-radius: 0px;\n}\n\n.password-field-module_icon__1jVgM {\n  height: 1rem;\n  width: 1rem;\n}\n";
+var css$6 = "/* .passwordField {\n  display: flex;\n  border: 1px solid #000;\n}\n\n.passwordInput {\n  flex: 1;\n  border: unset;\n  height: 1.5rem;\n} */\n\n.password-field-module_passwordButton__3dv28 {\n  /* background-color: transparent; */\n  border: 0;\n  background: none;\n  box-shadow: none;\n  border-radius: 0px;\n  border-bottom: 1px solid #f6be00;\n}\n\n.password-field-module_icon__1jVgM {\n  height: 1rem;\n  width: 1rem;\n}\n";
 var passwordStyles = {"passwordButton":"password-field-module_passwordButton__3dv28","icon":"password-field-module_icon__1jVgM"};
 styleInject(css$6);
 
@@ -328,7 +336,9 @@ var PasswordField = function PasswordField(_ref) {
 
   var classes = [styles$5.textfield];
   if (classNames) classes = [].concat(_toConsumableArray(classes), _toConsumableArray(classNames));
-  return React.createElement("div", null, React.createElement("input", {
+  return React.createElement("div", {
+    className: styles$5.container
+  }, React.createElement("input", {
     type: isVisible ? 'text' : 'password',
     name: name,
     value: value,
@@ -340,7 +350,7 @@ var PasswordField = function PasswordField(_ref) {
   }), React.createElement("button", {
     className: passwordStyles.passwordButton,
     onClick: toggleVisibility
-  }, isVisible ? 'Show' : 'Hide'));
+  }, isVisible ? 'Hide' : 'Show'));
 };
 
 PasswordField.propTypes = {};
@@ -467,7 +477,9 @@ var Textfield = function Textfield(_ref) {
       autoFocus = _ref$autoFocus === void 0 ? false : _ref$autoFocus;
   var classes = [styles$5.textfield];
   if (classNames) classes = [].concat(_toConsumableArray(classes), _toConsumableArray(classNames));
-  return React.createElement("div", null, React.createElement("input", {
+  return React.createElement("div", {
+    className: styles$5.container
+  }, React.createElement("input", {
     type: "text",
     name: name,
     value: value,

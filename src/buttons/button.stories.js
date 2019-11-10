@@ -15,8 +15,20 @@ const themes = { Dark: styles.dark, Light: styles.light };
 storiesOf('Buttons', module)
   .addDecorator(withKnobs)
   .add('with text', () => (
-    <div className={select('theme', themes, styles.dark)}>
-      <Button onClick={action('clicked')}>Text Button</Button>
+    <div className={`${select('theme', themes, styles.dark)} ${styles.row}`}>
+      <Button onClick={action('clicked')}>Default</Button>
+      <Button onClick={action('clicked')} disabled={true}>
+        Disabled
+      </Button>
+      <Button theme="primary" onClick={action('clicked')}>
+        Primary
+      </Button>
+      <Button theme="secondary" onClick={action('clicked')}>
+        Secondary
+      </Button>
+      <Button classNames={[styles.custom]} onClick={action('clicked')}>
+        Custom
+      </Button>
     </div>
   ))
   .add('with emoji', () => (

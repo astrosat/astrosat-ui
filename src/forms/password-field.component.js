@@ -20,7 +20,7 @@ const PasswordField = ({
   if (classNames) classes = [...classes, ...classNames];
 
   return (
-    <div>
+    <div className={styles.container}>
       <input
         type={isVisible ? 'text' : 'password'}
         name={name}
@@ -35,7 +35,7 @@ const PasswordField = ({
         className={passwordStyles.passwordButton}
         onClick={toggleVisibility}
       >
-        {isVisible ? 'Show' : 'Hide'}
+        {isVisible ? 'Hide' : 'Show'}
       </button>
     </div>
   );

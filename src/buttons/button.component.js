@@ -10,14 +10,20 @@ const Button = ({
   padded = true,
   type = 'button',
   shape,
-  className,
+  theme,
+  classNames,
   ariaLabel,
   dataFor
 }) => {
   const props = {};
-  const classes = [styles.button];
+  let classes = [styles.button];
   if (shape) classes.push(styles[shape]);
-  if (className) classes.push(className);
+  if (theme) {
+    classes = [...classes, styles[theme]];
+  }
+  if (classNames) {
+    classes = [...classes, ...classNames];
+  }
   if (href) {
     props.href = href;
   }
