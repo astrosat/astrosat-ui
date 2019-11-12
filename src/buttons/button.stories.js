@@ -15,20 +15,46 @@ const themes = { Dark: styles.dark, Light: styles.light };
 storiesOf('Buttons', module)
   .addDecorator(withKnobs)
   .add('with text', () => (
-    <div className={`${select('theme', themes, styles.dark)} ${styles.row}`}>
-      <Button onClick={action('clicked')}>Default</Button>
-      <Button onClick={action('clicked')} disabled={true}>
-        Disabled
-      </Button>
-      <Button theme="primary" onClick={action('clicked')}>
-        Primary
-      </Button>
-      <Button theme="secondary" onClick={action('clicked')}>
-        Secondary
-      </Button>
-      <Button classNames={[styles.custom]} onClick={action('clicked')}>
-        Custom
-      </Button>
+    <div className={select('theme', themes, styles.dark)}>
+      <div className={styles.btnGroup}>
+        Primary:
+        <Button onClick={action('clicked')}>Default</Button>
+        <Button onClick={action('clicked')} disabled={true}>
+          Disabled
+        </Button>
+        <Button theme="primary" onClick={action('clicked')}>
+          Active
+        </Button>
+        <Button classNames={[styles.custom]} onClick={action('clicked')}>
+          Hover
+        </Button>
+      </div>
+      <div className={styles.btnGroup}>
+        Secondary:
+        <Button onClick={action('clicked')}>Default</Button>
+        <Button onClick={action('clicked')} disabled={true}>
+          Disabled
+        </Button>
+        <Button theme="primary" onClick={action('clicked')}>
+          Active
+        </Button>
+        <Button classNames={[styles.custom]} onClick={action('clicked')}>
+          Hover
+        </Button>
+      </div>
+      <div className={styles.btnGroup}>
+        Tertiary:
+        <Button onClick={action('clicked')}>Default</Button>
+        <Button onClick={action('clicked')} disabled={true}>
+          Disabled
+        </Button>
+        <Button theme="primary" onClick={action('clicked')}>
+          Active
+        </Button>
+        <Button classNames={[styles.custom]} onClick={action('clicked')}>
+          Hover
+        </Button>
+      </div>
     </div>
   ))
   .add('with emoji', () => (

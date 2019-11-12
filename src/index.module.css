@@ -74,11 +74,20 @@
   --search: url('/search-dark.svg');
 }
 
-.row {
+/* .row {
   display: flex;
   justify-content: space-evenly;
-}
+} */
 
 .custom {
   color: #fff !important;
+}
+
+.btnGroup {
+  display: flex;
+  padding: 1rem;
+}
+
+.btnGroup > * {
+  margin: 1rem;
 }
