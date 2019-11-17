@@ -1,3 +1,18 @@
+# [1.2.0](https://github.com/astrosat/astrosat-ui/compare/v1.1.0...v1.2.0) (2019-11-17)
+
+
+### Bug Fixes
+
+* **frontend:** Layout buttons correctly ([e75f48e](https://github.com/astrosat/astrosat-ui/commit/e75f48e5a86f54dede204f9471f007b284c6c6a1))
+* **frontend:** Make form elements more like design ([8d746f1](https://github.com/astrosat/astrosat-ui/commit/8d746f14411180dba777fe9e212b963952f4eb6e))
+
+
+### Features
+
+* **frontend:** Fix linking library to application ([55b9303](https://github.com/astrosat/astrosat-ui/commit/55b9303c06812a3cb0d23691fc9c472fc0b41d44))
+* **frontend:** Style as per design ([76ef253](https://github.com/astrosat/astrosat-ui/commit/76ef2532b7fcafeef5c6aab45fd674fe5c30daf6))
+* **frontend:** Style links ([d5e7abe](https://github.com/astrosat/astrosat-ui/commit/d5e7abecdaee91869e81a2eef6947e93a001f9cb))
+
 # [1.1.0](https://github.com/astrosat/astrosat-ui/compare/v1.0.3...v1.1.0) (2019-11-07)
 
 
