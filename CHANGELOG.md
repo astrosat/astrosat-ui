@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/astrosat/astrosat-ui/compare/v1.2.0...v1.2.1) (2019-11-17)
+
+
+### Bug Fixes
+
+* **frontend:** Build distribution ([3118d41](https://github.com/astrosat/astrosat-ui/commit/3118d4162b3284bf4a4227b3b1f51ec30a2dc7d9))
+
 # [1.2.0](https://github.com/astrosat/astrosat-ui/compare/v1.1.0...v1.2.0) (2019-11-17)
 
 
