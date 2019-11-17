@@ -82,3 +82,21 @@ button.button {
 .tertiary:active {
   background-color: var(--tertiary-button-background-active-color);
 }
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tertiary-button-background-color);
+  color: var(--tertiary-button-foreground-color);
+  /* text-decoration: underline; */
+  border-bottom: 2px solid var(--primary-button-background-color);
+}
+
+.link:hover {
+  background-color: var(--tertiary-button-background-hover-color);
+}
+
+.tertiary:active {
+  link-color: var(--tertiary-button-background-active-color);
+}

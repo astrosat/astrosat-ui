@@ -16,8 +16,10 @@ const Button = ({
   dataFor
 }) => {
   const props = {};
-  let classes = [styles.button];
+  let classes = href && theme === 'link' ? [styles.link] : [styles.button];
+
   if (shape) classes.push(styles[shape]);
+
   if (theme) {
     classes = [...classes, styles[theme]];
   }
