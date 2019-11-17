@@ -19,22 +19,31 @@ const Textfield = ({
   let classes = [styles.textfield];
   if (classNames) classes = [...classes, ...classNames];
 
+  if (valid !== undefined) {
+    if (valid) {
+      classes = [...classes, styles.valid];
+    } else {
+      classes = [...classes, styles.invalid];
+    }
+  }
+  console.log('CLASSES: ', classes);
+
   return (
     <div className={styles.container}>
       <input
         type="text"
         name={name}
         value={value}
-        className={classes}
+        className={classes.join(' ')}
         disabled={disabled}
         onChange={onChange}
         placeholder={placeholder}
         required={required}
         autoFocus={autoFocus}
       />
-      {valid && <ValidIcon className={`${styles.icon} ${styles.valid}`} />}
+      {valid && <ValidIcon className={`${styles.icon} ${styles.validIcon}`} />}
       {valid !== undefined && !valid && (
-        <InvalidIcon className={`${styles.icon} ${styles.invalid}`} />
+        <InvalidIcon className={`${styles.icon} ${styles.invalidIcon}`} />
       )}
     </div>
   );

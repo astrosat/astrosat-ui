@@ -17,42 +17,17 @@ storiesOf('Buttons', module)
   .add('with text', () => (
     <div className={select('theme', themes, styles.dark)}>
       <div className={styles.btnGroup}>
-        Primary:
-        <Button onClick={action('clicked')}>Default</Button>
-        <Button onClick={action('clicked')} disabled={true}>
-          Disabled
-        </Button>
         <Button theme="primary" onClick={action('clicked')}>
-          Active
+          Primary
         </Button>
-        <Button classNames={[styles.custom]} onClick={action('clicked')}>
-          Hover
+        <Button theme="secondary" onClick={action('clicked')}>
+          Secondary
         </Button>
-      </div>
-      <div className={styles.btnGroup}>
-        Secondary:
-        <Button onClick={action('clicked')}>Default</Button>
-        <Button onClick={action('clicked')} disabled={true}>
+        <Button theme="tertiary" onClick={action('clicked')}>
+          Tertiary
+        </Button>
+        <Button theme="disabled" onClick={action('clicked')} disabled={true}>
           Disabled
-        </Button>
-        <Button theme="primary" onClick={action('clicked')}>
-          Active
-        </Button>
-        <Button classNames={[styles.custom]} onClick={action('clicked')}>
-          Hover
-        </Button>
-      </div>
-      <div className={styles.btnGroup}>
-        Tertiary:
-        <Button onClick={action('clicked')}>Default</Button>
-        <Button onClick={action('clicked')} disabled={true}>
-          Disabled
-        </Button>
-        <Button theme="primary" onClick={action('clicked')}>
-          Active
-        </Button>
-        <Button classNames={[styles.custom]} onClick={action('clicked')}>
-          Hover
         </Button>
       </div>
     </div>

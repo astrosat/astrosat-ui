@@ -1,14 +1,14 @@
 button.button {
-  border: none;
   font-size: inherit;
   font-family: inherit;
   cursor: pointer;
 }
 
 .button {
-  background: var(--button-background);
+  border: none;
+  background: var(--primary-button-background-color);
   text-decoration: none;
-  color: var(--button-text);
+  color: var(--primary-button-foreground-color);
   border-radius: 0.3rem;
   padding: 1rem 2rem;
   font-weight: bold;
@@ -20,18 +20,18 @@ button.button {
 
 .button:hover,
 .button:focus {
-  background: var(--button-background-hover);
+  background: var(--primary-button-background-hover-color);
   outline: none;
 }
 
 .disabled {
-  background: var(--button-background-disabled);
-  opacity: 0.5;
+  background: var(--button-background-disabled-color);
+  color: var(--button-foreground-disabled-color);
 }
 
 .active,
 .button:active {
-  background: var(--button-background-active);
+  background: var(--primary-button-background-active-color);
 }
 
 .round {
@@ -44,31 +44,41 @@ button.button {
 }
 
 .primary {
-  background-color: #f6bd15;
-  color: #333f48;
+  background-color: var(--primary-button-background-color);
+  color: var(--primary-button-foreground-color);
 }
 
 .primary:hover {
-  background-color: green;
-  color: #333f48;
+  background-color: var(--primary-button-background-hover-color);
 }
 
 .primary:active {
-  background-color: grey;
-  color: #333f48;
+  background-color: var(--primary-button-background-active-color);
 }
 
 .secondary {
-  background-color: #333f48;
-  color: #fff;
+  background-color: var(--secondary-button-background-color);
+  color: var(--secondary-button-foreground-color);
 }
 
 .secondary:hover {
-  background-color: blue;
-  color: #333f48;
+  background-color: var(--secondary-button-background-hover-color);
 }
 
 .secondary:active {
-  background-color: orange;
-  color: #333f48;
+  background-color: var(--secondary-button-background-active-color);
+}
+
+.tertiary {
+  background-color: var(--tertiary-button-background-color);
+  color: var(--tertiary-button-foreground-color);
+  border: 1px solid var(--tertiary-border-color);
+}
+
+.tertiary:hover {
+  background-color: var(--tertiary-button-background-hover-color);
+}
+
+.tertiary:active {
+  background-color: var(--tertiary-button-background-active-color);
 }

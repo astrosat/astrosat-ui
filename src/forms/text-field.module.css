@@ -16,9 +16,17 @@
 }
 
 .valid {
-  fill: #6cc24a;
+  border-bottom: 1px solid #6cc24a;
 }
 
 .invalid {
+  border-bottom: 1px solid #cf6679;
+}
+
+.validIcon {
+  fill: #6cc24a;
+}
+
+.invalidIcon {
   fill: #cf6679;
 }
