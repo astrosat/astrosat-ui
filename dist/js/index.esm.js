@@ -172,8 +172,8 @@ function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance");
 }
 
-var css$1 = "button.button-module_button__1onJY {\n  border: none;\n  font-size: inherit;\n  font-family: inherit;\n  cursor: pointer;\n}\n\n.button-module_button__1onJY {\n  background: var(--button-background);\n  text-decoration: none;\n  color: var(--button-text);\n  border-radius: 0.3rem;\n  padding: 1rem 2rem;\n  font-weight: bold;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.button-module_button__1onJY:hover,\n.button-module_button__1onJY:focus {\n  background: var(--button-background-hover);\n  outline: none;\n}\n\n.button-module_disabled__3A8I_ {\n  background: var(--button-background-disabled);\n  opacity: 0.5;\n}\n\n.button-module_active__oiVBO,\n.button-module_button__1onJY:active {\n  background: var(--button-background-active);\n}\n\n.button-module_round__1lWoh {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0.5rem 0.5rem;\n  margin: unset;\n  border-radius: 50%;\n}\n\n.button-module_primary__3zVw1 {\n  background-color: #f6bd15;\n  color: #333f48;\n}\n\n.button-module_primary__3zVw1:hover {\n  background-color: green;\n  color: #333f48;\n}\n\n.button-module_primary__3zVw1:active {\n  background-color: grey;\n  color: #333f48;\n}\n\n.button-module_secondary__2OQDx {\n  background-color: #333f48;\n  color: #fff;\n}\n\n.button-module_secondary__2OQDx:hover {\n  background-color: blue;\n  color: #333f48;\n}\n\n.button-module_secondary__2OQDx:active {\n  background-color: orange;\n  color: #333f48;\n}\n";
-var styles$1 = {"button":"button-module_button__1onJY","disabled":"button-module_disabled__3A8I_","active":"button-module_active__oiVBO","round":"button-module_round__1lWoh","primary":"button-module_primary__3zVw1","secondary":"button-module_secondary__2OQDx"};
+var css$1 = "button.button-module_button__1onJY {\n  font-size: inherit;\n  font-family: inherit;\n  cursor: pointer;\n}\n\n.button-module_button__1onJY {\n  border: none;\n  background: var(--primary-button-background-color);\n  text-decoration: none;\n  color: var(--primary-button-foreground-color);\n  border-radius: 0.3rem;\n  padding: 1rem 2rem;\n  font-weight: bold;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.button-module_button__1onJY:hover,\n.button-module_button__1onJY:focus {\n  background: var(--primary-button-background-hover-color);\n  outline: none;\n}\n\n.button-module_disabled__3A8I_ {\n  background: var(--button-background-disabled-color);\n  color: var(--button-foreground-disabled-color);\n}\n\n.button-module_active__oiVBO,\n.button-module_button__1onJY:active {\n  background: var(--primary-button-background-active-color);\n}\n\n.button-module_round__1lWoh {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0.5rem 0.5rem;\n  margin: unset;\n  border-radius: 50%;\n}\n\n.button-module_primary__3zVw1 {\n  background-color: var(--primary-button-background-color);\n  color: var(--primary-button-foreground-color);\n}\n\n.button-module_primary__3zVw1:hover {\n  background-color: var(--primary-button-background-hover-color);\n}\n\n.button-module_primary__3zVw1:active {\n  background-color: var(--primary-button-background-active-color);\n}\n\n.button-module_secondary__2OQDx {\n  background-color: var(--secondary-button-background-color);\n  color: var(--secondary-button-foreground-color);\n}\n\n.button-module_secondary__2OQDx:hover {\n  background-color: var(--secondary-button-background-hover-color);\n}\n\n.button-module_secondary__2OQDx:active {\n  background-color: var(--secondary-button-background-active-color);\n}\n\n.button-module_tertiary__1wW3a {\n  background-color: var(--tertiary-button-background-color);\n  color: var(--tertiary-button-foreground-color);\n  border: 1px solid var(--tertiary-border-color);\n}\n\n.button-module_tertiary__1wW3a:hover {\n  background-color: var(--tertiary-button-background-hover-color);\n}\n\n.button-module_tertiary__1wW3a:active {\n  background-color: var(--tertiary-button-background-active-color);\n}\n\n.button-module_link__2RrBp {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--tertiary-button-background-color);\n  color: var(--tertiary-button-foreground-color);\n  /* text-decoration: underline; */\n  border-bottom: 2px solid var(--primary-button-background-color);\n}\n\n.button-module_link__2RrBp:hover {\n  background-color: var(--tertiary-button-background-hover-color);\n}\n\n.button-module_tertiary__1wW3a:active {\n  link-color: var(--tertiary-button-background-active-color);\n}\n";
+var styles$1 = {"button":"button-module_button__1onJY","disabled":"button-module_disabled__3A8I_","active":"button-module_active__oiVBO","round":"button-module_round__1lWoh","primary":"button-module_primary__3zVw1","secondary":"button-module_secondary__2OQDx","tertiary":"button-module_tertiary__1wW3a","link":"button-module_link__2RrBp"};
 styleInject(css$1);
 
 var Button = function Button(_ref) {
@@ -193,7 +193,7 @@ var Button = function Button(_ref) {
       ariaLabel = _ref.ariaLabel,
       dataFor = _ref.dataFor;
   var props = {};
-  var classes = [styles$1.button];
+  var classes = href && theme === 'link' ? [styles$1.link] : [styles$1.button];
   if (shape) classes.push(styles$1[shape]);
 
   if (theme) {
@@ -305,8 +305,8 @@ var Checkbox = function Checkbox(_ref) {
   }), label);
 };
 
-var css$5 = ".text-field-module_container__1nASA {\n  width: 100%;\n  display: flex;\n}\n\n.text-field-module_textfield__1qtEv {\n  border: none;\n  border-bottom: 1px solid #f6be00;\n  color: #333f48;\n  width: inherit;\n}\n\n.text-field-module_icon__31twf {\n  height: 1rem;\n  width: 1rem;\n}\n\n.text-field-module_valid__tCVrN {\n  fill: #6cc24a;\n}\n\n.text-field-module_invalid__1iU4n {\n  fill: #cf6679;\n}\n";
-var styles$5 = {"container":"text-field-module_container__1nASA","textfield":"text-field-module_textfield__1qtEv","icon":"text-field-module_icon__31twf","valid":"text-field-module_valid__tCVrN","invalid":"text-field-module_invalid__1iU4n"};
+var css$5 = ".text-field-module_container__1nASA {\n  width: 100%;\n  display: flex;\n}\n\n.text-field-module_textfield__1qtEv {\n  border: none;\n  border-bottom: 1px solid #f6be00;\n  color: #333f48;\n  width: inherit;\n}\n\n.text-field-module_icon__31twf {\n  height: 1rem;\n  width: 1rem;\n}\n\n.text-field-module_valid__tCVrN {\n  border-bottom: 1px solid #6cc24a;\n}\n\n.text-field-module_invalid__1iU4n {\n  border-bottom: 1px solid #cf6679;\n}\n\n.text-field-module_validIcon__2bnN4 {\n  fill: #6cc24a;\n}\n\n.text-field-module_invalidIcon__aCTDu {\n  fill: #cf6679;\n}\n";
+var styles$5 = {"container":"text-field-module_container__1nASA","textfield":"text-field-module_textfield__1qtEv","icon":"text-field-module_icon__31twf","valid":"text-field-module_valid__tCVrN","invalid":"text-field-module_invalid__1iU4n","validIcon":"text-field-module_validIcon__2bnN4","invalidIcon":"text-field-module_invalidIcon__aCTDu"};
 styleInject(css$5);
 
 var css$6 = "/* .passwordField {\n  display: flex;\n  border: 1px solid #000;\n}\n\n.passwordInput {\n  flex: 1;\n  border: unset;\n  height: 1.5rem;\n} */\n\n.password-field-module_passwordButton__3dv28 {\n  /* background-color: transparent; */\n  border: 0;\n  background: none;\n  box-shadow: none;\n  border-radius: 0px;\n  border-bottom: 1px solid #f6be00;\n}\n\n.password-field-module_icon__1jVgM {\n  height: 1rem;\n  width: 1rem;\n}\n";
@@ -477,22 +477,32 @@ var Textfield = function Textfield(_ref) {
       autoFocus = _ref$autoFocus === void 0 ? false : _ref$autoFocus;
   var classes = [styles$5.textfield];
   if (classNames) classes = [].concat(_toConsumableArray(classes), _toConsumableArray(classNames));
+
+  if (valid !== undefined) {
+    if (valid) {
+      classes = [].concat(_toConsumableArray(classes), [styles$5.valid]);
+    } else {
+      classes = [].concat(_toConsumableArray(classes), [styles$5.invalid]);
+    }
+  }
+
+  console.log('CLASSES: ', classes);
   return React.createElement("div", {
     className: styles$5.container
   }, React.createElement("input", {
     type: "text",
     name: name,
     value: value,
-    className: classes,
+    className: classes.join(' '),
     disabled: disabled,
     onChange: onChange,
     placeholder: placeholder,
     required: required,
     autoFocus: autoFocus
   }), valid && React.createElement(ValidIcon, {
-    className: "".concat(styles$5.icon, " ").concat(styles$5.valid)
+    className: "".concat(styles$5.icon, " ").concat(styles$5.validIcon)
   }), valid !== undefined && !valid && React.createElement(InvalidIcon, {
-    className: "".concat(styles$5.icon, " ").concat(styles$5.invalid)
+    className: "".concat(styles$5.icon, " ").concat(styles$5.invalidIcon)
   }));
 };
 
