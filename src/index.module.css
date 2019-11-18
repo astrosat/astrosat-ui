@@ -1,5 +1,7 @@
 :root {
-  --primary-background-color: #f6be00;
+  --primary-background-color: rgba(246, 190, 0, 0.8);
+  --primary-foreground-color: rgba(0, 0, 0, 0.8);
+
   --primary-foreground-color: #333f48;
 
   --button-background-disabled-color: #e4e4e4;
@@ -7,18 +9,24 @@
 
   --primary-button-background-color: var(--primary-background-color);
   --primary-button-foreground-color: var(--primary-foreground-color);
-  --primary-button-background-active-color: red;
+  --primary-button-background-active-color: rgba(246, 190, 0, 1);
+  --primary-button-foreground-active-color: rgba(0, 0, 0, 1);
   --primary-button-background-hover-color: rgba(246, 190, 0, 0.6);
+  --primary-button-foreground-hover-color: rgba(0, 0, 0, 0.6);
 
   --secondary-button-background-color: var(--primary-foreground-color);
-  --secondary-button-foreground-color: #fff;
-  --secondary-button-background-active-color: green;
-  --secondary-button-background-hover-color: var(--primary-background-color);
+  --secondary-button-foreground-color: rgba(255, 255, 255, 0.8);
+  --secondary-button-background-active-color: rgba(0, 0, 0, 1);
+  --secondary-button-foreground-active-color: rgba(255, 255, 255, 1);
+  --secondary-button-background-hover-color: rgba(0, 0, 0, 0.6);
+  --secondary-button-foreground-hover-color: rgba(255, 255, 255, 0.6);
 
-  --tertiary-button-background-color: #fff;
+  --tertiary-button-background-color: rgba(255, 255, 255, 0.8);
   --tertiary-button-foreground-color: var(--primary-foreground-color);
-  --tertiary-button-background-active-color: blue;
-  --tertiary-button-background-hover-color: var(--primary-foreground-color);
+  --tertiary-button-background-active-color: rgba(255, 255, 255, 1);
+  --tertiary-button-foreground-active-color: rgba(0, 0, 0, 1);
+  --tertiary-button-background-hover-color: rgba(255, 255, 255, 0.6);
+  --tertiary-button-foreground-hover-color: rgba(0, 0, 0, 0.6);
   --tertiary-border-color: var(--primary-background-color);
 }
 
