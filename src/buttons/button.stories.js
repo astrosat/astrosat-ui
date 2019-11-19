@@ -26,7 +26,7 @@ storiesOf('Buttons', module)
         <Button theme="tertiary" onClick={action('clicked')}>
           Tertiary
         </Button>
-        <Button theme="disabled" onClick={action('clicked')} disabled={true}>
+        <Button theme="primary" onClick={action('clicked')} disabled={true}>
           Disabled
         </Button>
         <Button href={action('clicked')}>Link</Button>

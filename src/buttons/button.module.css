@@ -2,6 +2,7 @@ button.button {
   font-size: inherit;
   font-family: inherit;
   cursor: pointer;
+  width: 100%;
 }
 
 .button {

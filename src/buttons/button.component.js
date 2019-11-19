@@ -12,17 +12,13 @@ const Button = ({
   shape,
   theme,
   classNames,
-  ariaLabel,
-  dataFor
+  ariaLabel
 }) => {
   const props = {};
   let classes = href && theme === 'link' ? [styles.link] : [styles.button];
 
   if (shape) classes.push(styles[shape]);
 
-  if (theme) {
-    classes = [...classes, styles[theme]];
-  }
   if (classNames) {
     classes = [...classes, ...classNames];
   }
@@ -34,7 +30,12 @@ const Button = ({
   }
   if (disabled) {
     classes.push(styles.disabled);
+  } else {
+    if (theme) {
+      classes = [...classes, styles[theme]];
+    }
   }
+
   if (active) {
     classes.push(styles.active);
   }
@@ -44,18 +45,9 @@ const Button = ({
 
   props.className = classes.join(' ');
   return href ? (
-    <a data-tip data-for={dataFor} {...props}>
-      {children}
-    </a>
+    <a {...props}>{children}</a>
   ) : (
-    <button
-      type={type}
-      {...props}
-      disabled={disabled}
-      aria-label={ariaLabel}
-      data-tip
-      data-for={dataFor}
-    >
+    <button type={type} {...props} disabled={disabled} aria-label={ariaLabel}>
       {children}
     </button>
   );
