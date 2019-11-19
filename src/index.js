@@ -11,6 +11,9 @@ import Radio from './forms/radio.component';
 import TextArea from './forms/text-area.component';
 import Textfield from './forms/text-field.component';
 
+import Detail from './containers/detail.component';
+import Well from './containers/well.component';
+
 export {
   LoadMask,
   Button,
@@ -21,5 +24,7 @@ export {
   PasswordStrengthMeter,
   Radio,
   TextArea,
-  Textfield
+  Textfield,
+  Detail,
+  Well
 };
