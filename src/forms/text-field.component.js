@@ -14,7 +14,8 @@ const Textfield = ({
   valid,
   classNames,
   required = false,
-  autoFocus = false
+  autoFocus = false,
+  readOnly = false
 }) => {
   let classes = [styles.textfield];
   if (classNames) classes = [...classes, ...classNames];
@@ -26,7 +27,6 @@ const Textfield = ({
       classes = [...classes, styles.invalid];
     }
   }
-  console.log('CLASSES: ', classes);
 
   return (
     <div className={styles.container}>
@@ -40,6 +40,7 @@ const Textfield = ({
         placeholder={placeholder}
         required={required}
         autoFocus={autoFocus}
+        readOnly={readOnly}
       />
       {valid && <ValidIcon className={`${styles.icon} ${styles.validIcon}`} />}
       {valid !== undefined && !valid && (
