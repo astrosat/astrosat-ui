@@ -178,7 +178,7 @@
     throw new TypeError("Invalid attempt to destructure non-iterable instance");
   }
 
-  var css$1 = "button.button-module_button__1onJY {\n  font-size: inherit;\n  font-family: inherit;\n  cursor: pointer;\n}\n\n.button-module_button__1onJY {\n  border: none;\n  background: var(--primary-button-background-color);\n  text-decoration: none;\n  color: var(--primary-button-foreground-color);\n  border-radius: 0.3rem;\n  padding: 1rem 2rem;\n  font-weight: bold;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.button-module_button__1onJY:hover,\n.button-module_button__1onJY:focus {\n  background: var(--primary-button-background-hover-color);\n  outline: none;\n}\n\n.button-module_disabled__3A8I_ {\n  background: var(--button-background-disabled-color);\n  color: var(--button-foreground-disabled-color);\n}\n\n.button-module_active__oiVBO,\n.button-module_button__1onJY:active {\n  background: var(--primary-button-background-active-color);\n}\n\n.button-module_round__1lWoh {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0.5rem 0.5rem;\n  margin: unset;\n  border-radius: 50%;\n}\n\n.button-module_primary__3zVw1 {\n  background-color: var(--primary-button-background-color);\n  color: var(--primary-button-foreground-color);\n}\n\n.button-module_primary__3zVw1:hover {\n  background-color: var(--primary-button-background-hover-color);\n}\n\n.button-module_primary__3zVw1:active {\n  background-color: var(--primary-button-background-active-color);\n}\n\n.button-module_secondary__2OQDx {\n  background-color: var(--secondary-button-background-color);\n  color: var(--secondary-button-foreground-color);\n}\n\n.button-module_secondary__2OQDx:hover {\n  background-color: var(--secondary-button-background-hover-color);\n}\n\n.button-module_secondary__2OQDx:active {\n  background-color: var(--secondary-button-background-active-color);\n}\n\n.button-module_tertiary__1wW3a {\n  background-color: var(--tertiary-button-background-color);\n  color: var(--tertiary-button-foreground-color);\n  border: 1px solid var(--tertiary-border-color);\n}\n\n.button-module_tertiary__1wW3a:hover {\n  background-color: var(--tertiary-button-background-hover-color);\n}\n\n.button-module_tertiary__1wW3a:active {\n  background-color: var(--tertiary-button-background-active-color);\n}\n\n.button-module_link__2RrBp {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--tertiary-button-background-color);\n  color: var(--tertiary-button-foreground-color);\n  /* text-decoration: underline; */\n  border-bottom: 2px solid var(--primary-button-background-color);\n}\n\n.button-module_link__2RrBp:hover {\n  background-color: var(--tertiary-button-background-hover-color);\n}\n\n.button-module_tertiary__1wW3a:active {\n  link-color: var(--tertiary-button-background-active-color);\n}\n";
+  var css$1 = "button.button-module_button__1onJY {\n  font-size: inherit;\n  font-family: inherit;\n  cursor: pointer;\n  width: 100%;\n}\n\n.button-module_button__1onJY {\n  border: none;\n  background: var(--primary-button-background-color);\n  text-decoration: none;\n  color: var(--primary-button-foreground-color);\n  border-radius: 0.3rem;\n  padding: 1rem 2rem;\n  font-weight: bold;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.button-module_button__1onJY:hover,\n.button-module_button__1onJY:focus {\n  background: var(--primary-button-background-hover-color);\n  outline: none;\n}\n\n.button-module_disabled__3A8I_,\n.button-module_disabled__3A8I_:hover {\n  background: var(--button-background-disabled-color);\n  color: var(--button-foreground-disabled-color);\n  cursor: not-allowed;\n}\n\n.button-module_active__oiVBO,\n.button-module_button__1onJY:active {\n  background: var(--primary-button-background-active-color);\n}\n\n.button-module_round__1lWoh {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0.5rem 0.5rem;\n  margin: unset;\n  border-radius: 50%;\n}\n\n.button-module_primary__3zVw1 {\n  background-color: var(--primary-button-background-color);\n  color: var(--primary-button-foreground-color);\n}\n\n.button-module_primary__3zVw1:hover {\n  background-color: var(--primary-button-background-hover-color);\n}\n\n.button-module_primary__3zVw1:active {\n  background-color: var(--primary-button-background-active-color);\n}\n\n.button-module_secondary__2OQDx {\n  background-color: var(--secondary-button-background-color);\n  color: var(--secondary-button-foreground-color);\n}\n\n.button-module_secondary__2OQDx:hover {\n  background-color: var(--secondary-button-background-hover-color);\n}\n\n.button-module_secondary__2OQDx:active {\n  background-color: var(--secondary-button-background-active-color);\n}\n\n.button-module_tertiary__1wW3a {\n  background-color: var(--tertiary-button-background-color);\n  color: var(--tertiary-button-foreground-color);\n  border: 1px solid var(--tertiary-border-color);\n}\n\n.button-module_tertiary__1wW3a:hover {\n  background-color: var(--tertiary-button-background-hover-color);\n}\n\n.button-module_tertiary__1wW3a:active {\n  background-color: var(--tertiary-button-background-active-color);\n}\n\n.button-module_link__2RrBp {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: var(--tertiary-button-background-color);\n  color: var(--tertiary-button-foreground-color);\n  /* text-decoration: underline; */\n  border-bottom: 2px solid var(--primary-button-background-color);\n}\n\n.button-module_link__2RrBp:hover {\n  background-color: var(--tertiary-button-background-hover-color);\n}\n\n.button-module_tertiary__1wW3a:active {\n  link-color: var(--tertiary-button-background-active-color);\n}\n";
   var styles$1 = {"button":"button-module_button__1onJY","disabled":"button-module_disabled__3A8I_","active":"button-module_active__oiVBO","round":"button-module_round__1lWoh","primary":"button-module_primary__3zVw1","secondary":"button-module_secondary__2OQDx","tertiary":"button-module_tertiary__1wW3a","link":"button-module_link__2RrBp"};
   styleInject(css$1);
 
@@ -196,15 +196,10 @@
         shape = _ref.shape,
         theme = _ref.theme,
         classNames = _ref.classNames,
-        ariaLabel = _ref.ariaLabel,
-        dataFor = _ref.dataFor;
+        ariaLabel = _ref.ariaLabel;
     var props = {};
     var classes = href && theme === 'link' ? [styles$1.link] : [styles$1.button];
     if (shape) classes.push(styles$1[shape]);
-
-    if (theme) {
-      classes = [].concat(_toConsumableArray(classes), [styles$1[theme]]);
-    }
 
     if (classNames) {
       classes = [].concat(_toConsumableArray(classes), _toConsumableArray(classNames));
@@ -220,6 +215,10 @@
 
     if (disabled) {
       classes.push(styles$1.disabled);
+    } else {
+      if (theme) {
+        classes = [].concat(_toConsumableArray(classes), [styles$1[theme]]);
+      }
     }
 
     if (active) {
@@ -231,16 +230,11 @@
     }
 
     props.className = classes.join(' ');
-    return href ? React__default.createElement("a", _extends({
-      "data-tip": true,
-      "data-for": dataFor
-    }, props), children) : React__default.createElement("button", _extends({
+    return href ? React__default.createElement("a", props, children) : React__default.createElement("button", _extends({
       type: type
     }, props, {
       disabled: disabled,
-      "aria-label": ariaLabel,
-      "data-tip": true,
-      "data-for": dataFor
+      "aria-label": ariaLabel
     }), children);
   };
 
@@ -480,7 +474,9 @@
         _ref$required = _ref.required,
         required = _ref$required === void 0 ? false : _ref$required,
         _ref$autoFocus = _ref.autoFocus,
-        autoFocus = _ref$autoFocus === void 0 ? false : _ref$autoFocus;
+        autoFocus = _ref$autoFocus === void 0 ? false : _ref$autoFocus,
+        _ref$readOnly = _ref.readOnly,
+        readOnly = _ref$readOnly === void 0 ? false : _ref$readOnly;
     var classes = [styles$5.textfield];
     if (classNames) classes = [].concat(_toConsumableArray(classes), _toConsumableArray(classNames));
 
@@ -492,7 +488,6 @@
       }
     }
 
-    console.log('CLASSES: ', classes);
     return React__default.createElement("div", {
       className: styles$5.container
     }, React__default.createElement("input", {
@@ -504,7 +499,8 @@
       onChange: onChange,
       placeholder: placeholder,
       required: required,
-      autoFocus: autoFocus
+      autoFocus: autoFocus,
+      readOnly: readOnly
     }), valid && React__default.createElement(ValidIcon, {
       className: "".concat(styles$5.icon, " ").concat(styles$5.validIcon)
     }), valid !== undefined && !valid && React__default.createElement(InvalidIcon, {
@@ -512,9 +508,78 @@
     }));
   };
 
+  var css$a = ".detail-module_details__qHZGM summary {\n  list-style: none;\n  color: var(--primary-button-background-color);\n  background: linear-gradient(rgba(51, 63, 72, 1), rgba(51, 63, 72, 0.5));\n  display: flex;\n  justify-content: space-between;\n}\n\n.detail-module_details__qHZGM summary::after {\n  border-style: solid;\n  border-width: 0.15em 0.15em 0 0;\n  content: '';\n  display: inline-block;\n  height: 0.45em;\n  left: 0.15em;\n  position: relative;\n  top: 0.15em;\n  transform: rotate(45deg);\n  vertical-align: top;\n  width: 0.45em;\n  color: var(--primary-button-background-color);\n}\n\n.detail-module_details__qHZGM[open] summary::after {\n  transform: rotate(135deg);\n}\n\n.detail-module_details__qHZGM summary::-webkit-details-marker {\n  display: none;\n}\n\n.detail-module_details__qHZGM .detail-module_header__3oBF6 {\n  display: flex;\n  justify-content: space-between;\n  padding: 0.3rem 2rem;\n  cursor: pointer;\n}\n";
+  var styles$9 = {"details":"detail-module_details__qHZGM","header":"detail-module_header__3oBF6"};
+  styleInject(css$a);
+
+  var Detail = function Detail(_ref) {
+    var title = _ref.title,
+        _ref$isOpen = _ref.isOpen,
+        isOpen = _ref$isOpen === void 0 ? false : _ref$isOpen,
+        children = _ref.children;
+    return React__default.createElement("details", {
+      className: styles$9.details,
+      open: isOpen
+    }, React__default.createElement("summary", {
+      className: styles$9.header
+    }, React__default.createElement("strong", null, title)), children);
+  };
+
+  Detail.propTypes = {
+    title: PropTypes.string.isRequired,
+    isOpen: PropTypes.bool,
+    children: PropTypes.object.isRequired
+  };
+
+  var ErrorIcon = function ErrorIcon(_ref) {
+    var classes = _ref.classes;
+    return React__default.createElement("svg", {
+      className: classes,
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 25 25"
+    }, React__default.createElement("g", null, React__default.createElement("circle", {
+      cx: "12.5",
+      cy: "12.5",
+      r: "11.667"
+    }), React__default.createElement("path", {
+      fill: "#fff",
+      d: "M7.149 8.791l9.207 9.208c.424.423 1.137.397 1.593-.058.455-.455.48-1.169.057-1.592L8.8 7.141c-.424-.423-1.137-.397-1.593.058-.455.455-.48 1.169-.057 1.592h-.001z"
+    }), React__default.createElement("path", {
+      fill: "#FFF",
+      d: "M8.28 17.999l9.207-9.208c.424-.423.398-1.137-.057-1.592-.456-.456-1.169-.481-1.593-.058L6.63 16.349c-.424.423-.398 1.137.058 1.592.455.455 1.168.481 1.592.058z"
+    })));
+  };
+
+  ErrorIcon.propTypes = {
+    classes: PropTypes.string.isRequired
+  };
+
+  var css$b = ".well-module_well__3OgmP {\n  display: flex;\n  align-items: center;\n  color: var(--primary-foreground-color);\n  padding: 2rem;\n  border-radius: 0.3rem;\n  width: 100%;\n}\n\n.well-module_well__3OgmP.well-module_default__1XEFM {\n  background-color: #fff;\n  border: 1px solid var(--primary-foreground-color);\n}\n\n.well-module_well__3OgmP.well-module_error__1mppw {\n  background-color: var(--error-background-color);\n  border: 1px solid var(--error-border-color);\n  fill: var(--error-border-color);\n}\n\n.well-module_well__3OgmP.well-module_success__226ta {\n  background-color: var(--success-background-color);\n  border: 1px solid var(--success-border-color);\n  fill: var(--success-border-color);\n}\n\n.well-module_well__3OgmP .well-module_icon__2okPa {\n  height: 2rem;\n  margin-right: 2rem;\n}\n";
+  var styles$a = {"well":"well-module_well__3OgmP","default":"well-module_default__1XEFM","error":"well-module_error__1mppw","success":"well-module_success__226ta","icon":"well-module_icon__2okPa"};
+  styleInject(css$b);
+
+  var Well = function Well(_ref) {
+    var _ref$type = _ref.type,
+        type = _ref$type === void 0 ? 'default' : _ref$type,
+        children = _ref.children;
+    return React__default.createElement("section", {
+      className: "".concat(styles$a.well, " ").concat(styles$a[type])
+    }, type === 'error' && React__default.createElement(ErrorIcon, {
+      classes: styles$a.icon
+    }), type === 'success' && React__default.createElement(ErrorIcon, {
+      classes: styles$a.icon
+    }), children);
+  };
+
+  Well.propTypes = {
+    type: PropTypes.string,
+    children: PropTypes.object.isRequired
+  };
+
   exports.Button = Button;
   exports.Checkbox = Checkbox;
   exports.CloseButton = CloseButton;
+  exports.Detail = Detail;
   exports.InfoButton = InfoButton;
   exports.LoadMask = LoadMask;
   exports.PasswordField = PasswordField;
@@ -522,6 +587,7 @@
   exports.Radio = Radio;
   exports.TextArea = TextArea;
   exports.Textfield = Textfield;
+  exports.Well = Well;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
