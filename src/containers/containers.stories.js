@@ -14,7 +14,19 @@ storiesOf('Containers', module)
   .addDecorator(withKnobs)
   .add('Detail', () => (
     <div className={select('theme', themes, styles.dark)}>
-      <Detail title="Section Title">
+      <Detail title="Section Title 1">
+        <div className={styles.detail}>
+          This is some content for the detail element:
+          <ul>
+            <li>lorem ipsum</li>
+            <li>lorem ipsum</li>
+            <li>lorem ipsum</li>
+          </ul>
+          <p>some footer content</p>
+        </div>
+      </Detail>
+
+      <Detail title="Section Title 1" isOpen={true}>
         <div className={styles.detail}>
           This is some content for the detail element:
           <ul>

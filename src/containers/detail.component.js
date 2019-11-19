@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import styles from './detail.module.css';
 
-const Detail = ({ title, children }) => (
-  <details className={styles.details}>
+const Detail = ({ title, isOpen = false, children }) => (
+  <details className={styles.details} open={isOpen}>
     <summary className={styles.header}>
       <strong>{title}</strong>
     </summary>
@@ -14,6 +14,7 @@ const Detail = ({ title, children }) => (
 
 Detail.propTypes = {
   title: PropTypes.string.isRequired,
+  isOpen: PropTypes.bool,
   children: PropTypes.object.isRequired
 };
 

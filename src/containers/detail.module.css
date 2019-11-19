@@ -1,11 +1,7 @@
 .details summary {
   list-style: none;
   color: var(--primary-button-background-color);
-  background: linear-gradient(
-    rgba(51, 63, 72, 0.2),
-    rgba(51, 63, 72, 1),
-    rgba(51, 63, 72, 0.2)
-  );
+  background: linear-gradient(rgba(51, 63, 72, 1), rgba(51, 63, 72, 0.5));
   display: flex;
   justify-content: space-between;
 }

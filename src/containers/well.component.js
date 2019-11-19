@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ErrorIcon from './error.svg';
-import SuccessIcon from './success.svg';
+import ErrorIcon from './error.component';
+import SuccessIcon from './error.component';
 
 import styles from './well.module.css';
 
 const Well = ({ type = 'default', children }) => (
   <section className={`${styles.well} ${styles[type]}`}>
-    {type === 'error' && <ErrorIcon className={styles.icon} />}
-    {type === 'success' && <SuccessIcon className={styles.icon} />}
+    {type === 'error' && <ErrorIcon classes={styles.icon} />}
+    {type === 'success' && <SuccessIcon classes={styles.icon} />}
     {children}
   </section>
 );
