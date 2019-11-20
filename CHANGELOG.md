@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/astrosat/astrosat-ui/compare/v1.4.1...v1.4.2) (2019-11-20)
+
+
+### Bug Fixes
+
+* **frontend:** Add additional props to TextArea ([86c813b](https://github.com/astrosat/astrosat-ui/commit/86c813bc5cf30460cd3e796d388e794df65759c4))
+
 ## [1.4.1](https://github.com/astrosat/astrosat-ui/compare/v1.4.0...v1.4.1) (2019-11-20)
 
 
