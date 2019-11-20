@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/astrosat/astrosat-ui/compare/v1.4.2...v1.4.3) (2019-11-20)
+
+
+### Bug Fixes
+
+* **frontend:** Move value to be a prop, not a child ([43d28eb](https://github.com/astrosat/astrosat-ui/commit/43d28ebf2395c4f74774e6ce544ded0e5a9e5d29))
+
 ## [1.4.2](https://github.com/astrosat/astrosat-ui/compare/v1.4.1...v1.4.2) (2019-11-20)
 
 
