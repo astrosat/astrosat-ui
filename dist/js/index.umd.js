@@ -454,22 +454,36 @@
   styleInject(css$9);
 
   var TextArea = function TextArea(_ref) {
-    var onChange = _ref.onChange,
+    var name = _ref.name,
+        value = _ref.value,
+        onChange = _ref.onChange,
         _ref$disabled = _ref.disabled,
         disabled = _ref$disabled === void 0 ? false : _ref$disabled,
-        rows = _ref.rows,
         _ref$placeholder = _ref.placeholder,
         placeholder = _ref$placeholder === void 0 ? '' : _ref$placeholder,
-        classNames = _ref.classNames;
+        classNames = _ref.classNames,
+        rows = _ref.rows,
+        cols = _ref.cols,
+        _ref$required = _ref.required,
+        required = _ref$required === void 0 ? false : _ref$required,
+        _ref$autoFocus = _ref.autoFocus,
+        autoFocus = _ref$autoFocus === void 0 ? false : _ref$autoFocus,
+        _ref$readOnly = _ref.readOnly,
+        readOnly = _ref$readOnly === void 0 ? false : _ref$readOnly;
     var classes = [styles$8.textarea];
     if (classNames) classes = [].concat(_toConsumableArray(classes), _toConsumableArray(classNames));
     return React__default.createElement("textarea", {
+      name: name,
       className: classes,
       disabled: disabled,
       onChange: onChange,
       rows: rows,
-      placeholder: placeholder
-    });
+      cols: cols,
+      placeholder: placeholder,
+      required: required,
+      autoFocus: autoFocus,
+      readOnly: readOnly
+    }, value);
   };
 
   var SuccessIcon = function SuccessIcon(_ref) {
