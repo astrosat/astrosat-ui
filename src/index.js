@@ -14,6 +14,15 @@ import Textfield from './forms/text-field.component';
 import Detail from './containers/detail.component';
 import Well from './containers/well.component';
 
+import CloseIcon from './icons/close-icon.component';
+import ContactIcon from './icons/contact-icon.component';
+import CorrectIcon from './icons/correct-icon.component';
+import ErrorIcon from './icons/error-icon.component';
+import FacebookIcon from './icons/facebook-icon.component';
+import LinkedInIcon from './icons/linked-in-icon.component';
+import MenuIcon from './icons/menu-icon.component';
+import TwitterIcon from './icons/twitter-icon.component';
+
 export {
   LoadMask,
   Button,
@@ -26,5 +35,13 @@ export {
   TextArea,
   Textfield,
   Detail,
-  Well
+  Well,
+  CloseIcon,
+  ContactIcon,
+  CorrectIcon,
+  ErrorIcon,
+  FacebookIcon,
+  LinkedInIcon,
+  MenuIcon,
+  TwitterIcon
 };
