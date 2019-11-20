@@ -607,17 +607,100 @@
     children: PropTypes.object.isRequired
   };
 
+  var ContactIcon = function ContactIcon(_ref) {
+    var classes = _ref.classes;
+    return React__default.createElement("svg", {
+      className: classes,
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 25 16"
+    }, React__default.createElement("path", {
+      d: "M22 0a3 3 0 013 3v10a3 3 0 01-3 3H3a3 3 0 01-3-3V3a3 3 0 013-3h19zM8.31 8.618l-4.878 5.378a.5.5 0 00.024.693.467.467 0 00.673-.024l4.878-5.381a.5.5 0 00-.043-.672.466.466 0 00-.654.006zm7.486-.025a.5.5 0 00-.023.693l4.876 5.379c.18.198.48.209.673.024a.5.5 0 00.024-.693l-4.877-5.378a.467.467 0 00-.673-.025zm5.21-7.022l-7.96 6.214a.628.628 0 01-.755 0L4.336 1.57a.467.467 0 00-.668.094.5.5 0 00.092.687l7.957 6.214c.566.43 1.338.43 1.904 0l7.96-6.214a.5.5 0 00.091-.687.467.467 0 00-.667-.094z"
+    }));
+  };
+
+  ContactIcon.propTypes = {
+    classes: PropTypes.string.isRequired
+  };
+
+  var FacebookIcon = function FacebookIcon(_ref) {
+    var classes = _ref.classes;
+    return React__default.createElement("svg", {
+      className: classes,
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 35 35"
+    }, React__default.createElement("path", {
+      d: "M30 0a5 5 0 015 5v24.107a5 5 0 01-5 5H5a5 5 0 01-5-5V5a5 5 0 015-5h25zm-7.583 6.622H19.61c-3.017 0-4.376 1.437-4.376 4.184v2.93h-2.109v3.72h2.109v10.928h4.053V17.41h2.829l.3-3.674h-3.13v-2.092c0-.867.162-1.21.937-1.21h2.194V6.623z"
+    }));
+  };
+
+  FacebookIcon.propTypes = {
+    classes: PropTypes.string.isRequired
+  };
+
+  var LinkedInIcon = function LinkedInIcon(_ref) {
+    var classes = _ref.classes;
+    return React__default.createElement("svg", {
+      className: classes,
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 35 35"
+    }, React__default.createElement("path", {
+      d: "M30 0a5 5 0 015 5v24.107a5 5 0 01-5 5H5a5 5 0 01-5-5V5a5 5 0 015-5h25zM12.547 13.989H9.101v12.036h3.446V13.989zm8.864-.367c-2.36 0-3.355 1.988-3.355 1.988v-1.62h-3.305v12.035h3.305v-6.318c0-1.692.72-2.7 2.1-2.7 1.267 0 1.876.967 1.876 2.7v6.318h3.43v-7.62c0-3.225-1.69-4.783-4.05-4.783zM10.808 7.97c-1.126 0-2.038.994-2.038 2.22 0 1.227.912 2.222 2.038 2.222s2.038-.995 2.038-2.222c0-1.226-.912-2.22-2.038-2.22z"
+    }));
+  };
+
+  LinkedInIcon.propTypes = {
+    classes: PropTypes.string.isRequired
+  };
+
+  var MenuIcon = function MenuIcon(_ref) {
+    var classes = _ref.classes;
+    return React__default.createElement("svg", {
+      className: classes,
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 35 35"
+    }, React__default.createElement("path", {
+      d: "M6.5 11.9h22c1.012 0 1.834-.836 1.834-1.866 0-1.03-.822-1.867-1.834-1.867h-22c-1.012 0-1.833.836-1.833 1.867 0 1.03.821 1.866 1.833 1.866zm22.437 3.734H12.175c-.771 0-1.397.836-1.397 1.866 0 1.03.626 1.867 1.397 1.867h16.762c.77 0 1.397-.836 1.397-1.867 0-1.03-.626-1.866-1.397-1.866zm.524 7.466H18.984c-.481 0-.873.837-.873 1.867s.392 1.867.873 1.867h10.477c.482 0 .873-.837.873-1.867s-.391-1.867-.873-1.867z"
+    }));
+  };
+
+  MenuIcon.propTypes = {
+    classes: PropTypes.string.isRequired
+  };
+
+  var TwitterIcon = function TwitterIcon(_ref) {
+    var classes = _ref.classes;
+    return React__default.createElement("svg", {
+      className: classes,
+      xmlns: "http://www.w3.org/2000/svg",
+      viewBox: "0 0 35 35"
+    }, React__default.createElement("path", {
+      d: "M30 0a5 5 0 015 5v24.107a5 5 0 01-5 5H5a5 5 0 01-5-5V5a5 5 0 015-5h25zm-8.965 9.46c-2.35 0-4.077 2.37-3.546 4.831-3.026-.163-5.708-1.73-7.504-4.112-.953 1.77-.494 4.084 1.128 5.255a3.417 3.417 0 01-1.65-.493c-.04 1.824 1.17 3.53 2.92 3.91a3.394 3.394 0 01-1.644.067c.463 1.564 1.808 2.7 3.401 2.733-1.53 1.297-3.458 1.876-5.39 1.63 1.61 1.116 3.524 1.768 5.58 1.768 6.76 0 10.578-6.172 10.348-11.707a7.743 7.743 0 001.816-2.038 6.84 6.84 0 01-2.09.62 3.902 3.902 0 001.6-2.178 6.98 6.98 0 01-2.312.956c-.664-.765-1.61-1.243-2.657-1.243z"
+    }));
+  };
+
+  TwitterIcon.propTypes = {
+    classes: PropTypes.string.isRequired
+  };
+
   exports.Button = Button;
   exports.Checkbox = Checkbox;
   exports.CloseButton = CloseButton;
+  exports.CloseIcon = CloseIcon;
+  exports.ContactIcon = ContactIcon;
+  exports.CorrectIcon = SuccessIcon;
   exports.Detail = Detail;
+  exports.ErrorIcon = ErrorIcon;
+  exports.FacebookIcon = FacebookIcon;
   exports.InfoButton = InfoButton;
+  exports.LinkedInIcon = LinkedInIcon;
   exports.LoadMask = LoadMask;
+  exports.MenuIcon = MenuIcon;
   exports.PasswordField = PasswordField;
   exports.PasswordStrengthMeter = PasswordStrengthMeter;
   exports.Radio = Radio;
   exports.TextArea = TextArea;
   exports.Textfield = Textfield;
+  exports.TwitterIcon = TwitterIcon;
   exports.Well = Well;
 
   Object.defineProperty(exports, '__esModule', { value: true });
