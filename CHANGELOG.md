@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/astrosat/astrosat-ui/compare/v1.3.0...v1.4.0) (2019-11-20)
+
+
+### Bug Fixes
+
+* **frontend:** Refactor Button stores to be easier ([867e2c5](https://github.com/astrosat/astrosat-ui/commit/867e2c56bc9cbf4f15ea460259e1c4339b6c685a))
+* **frontend:** Remove obsolete SVGs and update components using them ([343f896](https://github.com/astrosat/astrosat-ui/commit/343f8960991231312d4a1ef7bfd573d185c19ca2))
+
+
+### Features
+
+* **frontend:** Add icon components ([701f1a6](https://github.com/astrosat/astrosat-ui/commit/701f1a602fefa77a0044415e112e42ead538c6a6))
+
 # [1.3.0](https://github.com/astrosat/astrosat-ui/compare/v1.2.1...v1.3.0) (2019-11-20)
 
 
