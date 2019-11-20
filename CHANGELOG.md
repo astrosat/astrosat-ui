@@ -1,3 +1,11 @@
+## [1.4.1](https://github.com/astrosat/astrosat-ui/compare/v1.4.0...v1.4.1) (2019-11-20)
+
+
+### Bug Fixes
+
+* **frontend:** Export icons for use in other projects ([4f4da84](https://github.com/astrosat/astrosat-ui/commit/4f4da84cc6ccf128792bd8634c4aa080097f7e8f))
+* **frontend:** Fix linting problems ([65b87d7](https://github.com/astrosat/astrosat-ui/commit/65b87d782950df43605b1976c2f48241e6427065))
+
 # [1.4.0](https://github.com/astrosat/astrosat-ui/compare/v1.3.0...v1.4.0) (2019-11-20)
 
 
