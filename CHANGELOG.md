@@ -1,3 +1,19 @@
+# [1.3.0](https://github.com/astrosat/astrosat-ui/compare/v1.2.1...v1.3.0) (2019-11-20)
+
+
+### Bug Fixes
+
+* **frontend:** Add readOnly prop to textfield ([fb1070d](https://github.com/astrosat/astrosat-ui/commit/fb1070de61af4e00a5344d43c5149f5ab5450625))
+* **frontend:** Export new Detail and Well components ([98ee55e](https://github.com/astrosat/astrosat-ui/commit/98ee55e345efbd0e9449a9fdce3346754008f1e9))
+* **frontend:** Refactor Wells and Detail can be set to open ([9ac455c](https://github.com/astrosat/astrosat-ui/commit/9ac455c730118694cb9f72ccae6340ef7bab35a5))
+* **frontend:** Remove tooltip and style buttons properly ([cfa3c8e](https://github.com/astrosat/astrosat-ui/commit/cfa3c8e80c18842215e5e7d5e2bb98f08e33c686))
+* **frontend:** Style buttons as per latest design ([f6c156e](https://github.com/astrosat/astrosat-ui/commit/f6c156e39b6ad8560076f9f278e37df744467f68))
+
+
+### Features
+
+* **frontend:** Add container components ([3d903e9](https://github.com/astrosat/astrosat-ui/commit/3d903e9261ffb9847ffc4ceaba0cdf0abf7a9ba9))
+
 ## [1.2.1](https://github.com/astrosat/astrosat-ui/compare/v1.2.0...v1.2.1) (2019-11-17)
 
 
