@@ -1,7 +1,10 @@
 import React from 'react';
-import CloseIcon from './close.svg';
-import styles from './close-button.module.css';
 import PropTypes from 'prop-types';
+
+import CloseIcon from '../icons/close-icon.component';
+// import CloseIcon from './close.svg';
+
+import styles from './close-button.module.css';
 
 const CloseButton = ({ onClick, className }) => (
   <button
@@ -9,7 +12,7 @@ const CloseButton = ({ onClick, className }) => (
     className={`${styles.close} ${className}`}
     aria-label="close"
   >
-    <CloseIcon className={styles.icon} alt="Close" />
+    <CloseIcon classes={styles.icon} alt="Close" />
   </button>
 );
 

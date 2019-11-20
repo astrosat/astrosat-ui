@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ValidIcon from './valid.svg';
-import InvalidIcon from './invalid.svg';
+import CorrectIcon from '../icons/correct-icon.component';
+import ErrorIcon from '../icons/error-icon.component';
 
 import styles from './text-field.module.css';
 
@@ -42,9 +42,9 @@ const Textfield = ({
         autoFocus={autoFocus}
         readOnly={readOnly}
       />
-      {valid && <ValidIcon className={`${styles.icon} ${styles.validIcon}`} />}
+      {valid && <CorrectIcon classes={`${styles.icon} ${styles.validIcon}`} />}
       {valid !== undefined && !valid && (
-        <InvalidIcon className={`${styles.icon} ${styles.invalidIcon}`} />
+        <ErrorIcon classes={`${styles.icon} ${styles.invalidIcon}`} />
       )}
     </div>
   );
