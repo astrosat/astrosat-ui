@@ -475,6 +475,7 @@ var TextArea = function TextArea(_ref) {
   if (classNames) classes = [].concat(_toConsumableArray(classes), _toConsumableArray(classNames));
   return React__default.createElement("textarea", {
     name: name,
+    value: value,
     className: classes,
     disabled: disabled,
     onChange: onChange,
@@ -484,7 +485,7 @@ var TextArea = function TextArea(_ref) {
     required: required,
     autoFocus: autoFocus,
     readOnly: readOnly
-  }, value);
+  });
 };
 
 var SuccessIcon = function SuccessIcon(_ref) {
