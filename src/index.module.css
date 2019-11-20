@@ -134,3 +134,37 @@
   color: #fff;
   padding: 1rem;
 }
+
+.icon {
+  height: 2rem;
+  padding: 1rem;
+}
+
+.btnIcon {
+  height: 1rem;
+}
+
+.red {
+  fill: red;
+}
+.green {
+  fill: green;
+}
+.blue {
+  fill: blue;
+}
+.orange {
+  fill: orange;
+}
+.violet {
+  fill: violet;
+}
+.grey {
+  fill: grey;
+}
+.yellow {
+  fill: yellow;
+}
+.teal {
+  fill: teal;
+}

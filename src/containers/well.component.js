@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ErrorIcon from './error.component';
-import SuccessIcon from './error.component';
+import ErrorIcon from '../icons/error-icon.component';
+import SuccessIcon from '../icons/correct-icon.component';
 
 import styles from './well.module.css';
 
