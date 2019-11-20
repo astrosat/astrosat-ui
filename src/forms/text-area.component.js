@@ -21,6 +21,7 @@ const TextArea = ({
   return (
     <textarea
       name={name}
+      value={value}
       className={classes}
       disabled={disabled}
       onChange={onChange}
@@ -30,9 +31,7 @@ const TextArea = ({
       required={required}
       autoFocus={autoFocus}
       readOnly={readOnly}
-    >
-      {value}
-    </textarea>
+    ></textarea>
   );
 };
 
