@@ -239,7 +239,22 @@ var Button = function Button(_ref) {
   }), children);
 };
 
-var CloseIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\"><path fill-rule=\"evenodd\" d=\"M368.475 299.913L593.724 74.665c8.137-8.138 8.137-21.296 0-29.433L554.595 6.103c-8.137-8.137-21.295-8.137-29.433 0L299.913 231.352 74.665 6.103c-8.138-8.137-21.296-8.137-29.433 0L6.103 45.232c-8.137 8.137-8.137 21.295 0 29.433l225.249 225.248L6.103 525.163c-8.137 8.137-8.137 21.295 0 29.432l39.129 39.129c8.137 8.137 21.295 8.137 29.433 0l225.248-225.249 225.25 225.249c8.137 8.137 21.295 8.137 29.432 0l39.129-39.129c8.137-8.137 8.137-21.295 0-29.433L368.475 299.913z\"/></svg>";
+var CloseIcon = function CloseIcon(_ref) {
+  var classes = _ref.classes;
+  return React__default.createElement("svg", {
+    className: classes,
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 35 35"
+  }, React__default.createElement("path", {
+    d: "M8.732 11.253l15.713 15.714c.723.723 1.912.707 2.653-.034.742-.742.757-1.93.034-2.653L11.419 8.566c-.723-.722-1.912-.707-2.653.034-.742.742-.757 1.93-.034 2.653z"
+  }), React__default.createElement("path", {
+    d: "M10.554 26.967l15.714-15.713c.723-.723.707-1.912-.034-2.653-.742-.742-1.93-.757-2.653-.034L7.867 24.28c-.723.723-.707 1.912.034 2.653.742.742 1.93.757 2.653.034z"
+  }));
+};
+
+CloseIcon.propTypes = {
+  classes: PropTypes.string.isRequired
+};
 
 var css$2 = ".close-button-module_close__3G0u3 {\n  border: none;\n  border-radius: 50%;\n  cursor: pointer;\n  display: flex;\n  padding: 0.5rem;\n  background-color: transparent;\n}\n\n.close-button-module_close__3G0u3:hover {\n  background-color: var(--close-button-hover);\n}\n\n.close-button-module_close__3G0u3:active {\n  background-color: var(--close-button-active);\n}\n\n.close-button-module_icon__2-1cP {\n  height: 1rem;\n  fill: var(--close-button-text);\n}\n";
 var styles$2 = {"close":"close-button-module_close__3G0u3","icon":"close-button-module_icon__2-1cP"};
@@ -253,7 +268,7 @@ var CloseButton = function CloseButton(_ref) {
     className: "".concat(styles$2.close, " ").concat(className),
     "aria-label": "close"
   }, React__default.createElement(CloseIcon, {
-    className: styles$2.icon,
+    classes: styles$2.icon,
     alt: "Close"
   }));
 };
@@ -458,9 +473,48 @@ var TextArea = function TextArea(_ref) {
   });
 };
 
-var ValidIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 25 25\"><circle cx=\"12.5\" cy=\"12.5\" r=\"11.667\"/><path fill=\"#fff\" d=\"M20.445 6.9a.734.734 0 00-1.073 0l-9.085 9.516-3.492-3.658a.734.734 0 00-1.073 0 .821.821 0 000 1.123l4.029 4.22c.296.31.776.31 1.072 0l9.622-10.078a.821.821 0 000-1.124z\"/></svg>";
+var SuccessIcon = function SuccessIcon(_ref) {
+  var classes = _ref.classes;
+  return React__default.createElement("svg", {
+    className: classes,
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 25 25"
+  }, React__default.createElement("g", null, React__default.createElement("circle", {
+    cx: "12.5",
+    cy: "12.5",
+    r: "11.667"
+  }), React__default.createElement("path", {
+    fill: "#fff",
+    d: "M20.445 6.9a.734.734 0 00-1.073 0l-9.085 9.516-3.492-3.658a.734.734 0 00-1.073 0 .821.821 0 000 1.123l4.029 4.22c.296.31.776.31 1.072 0l9.622-10.078a.821.821 0 000-1.124z"
+  })));
+};
 
-var InvalidIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 25 25\"><circle cx=\"12.5\" cy=\"12.5\" r=\"11.667\"/><path fill=\"#fff\" d=\"M7.149 8.791l9.207 9.208c.424.423 1.137.397 1.593-.058.455-.455.48-1.169.057-1.592L8.8 7.141c-.424-.423-1.137-.397-1.593.058-.455.455-.48 1.169-.057 1.592h-.001z\"/><path fill=\"#fff\" d=\"M8.28 17.999l9.207-9.208c.424-.423.398-1.137-.057-1.592-.456-.456-1.169-.481-1.593-.058L6.63 16.349c-.424.423-.398 1.137.058 1.592.455.455 1.168.481 1.592.058z\"/></svg>";
+SuccessIcon.propTypes = {
+  classes: PropTypes.string.isRequired
+};
+
+var ErrorIcon = function ErrorIcon(_ref) {
+  var classes = _ref.classes;
+  return React__default.createElement("svg", {
+    className: classes,
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 25 25"
+  }, React__default.createElement("g", null, React__default.createElement("circle", {
+    cx: "12.5",
+    cy: "12.5",
+    r: "11.667"
+  }), React__default.createElement("path", {
+    fill: "#fff",
+    d: "M7.149 8.791l9.207 9.208c.424.423 1.137.397 1.593-.058.455-.455.48-1.169.057-1.592L8.8 7.141c-.424-.423-1.137-.397-1.593.058-.455.455-.48 1.169-.057 1.592h-.001z"
+  }), React__default.createElement("path", {
+    fill: "#FFF",
+    d: "M8.28 17.999l9.207-9.208c.424-.423.398-1.137-.057-1.592-.456-.456-1.169-.481-1.593-.058L6.63 16.349c-.424.423-.398 1.137.058 1.592.455.455 1.168.481 1.592.058z"
+  })));
+};
+
+ErrorIcon.propTypes = {
+  classes: PropTypes.string.isRequired
+};
 
 var Textfield = function Textfield(_ref) {
   var name = _ref.name,
@@ -502,10 +556,10 @@ var Textfield = function Textfield(_ref) {
     required: required,
     autoFocus: autoFocus,
     readOnly: readOnly
-  }), valid && React__default.createElement(ValidIcon, {
-    className: "".concat(styles$5.icon, " ").concat(styles$5.validIcon)
-  }), valid !== undefined && !valid && React__default.createElement(InvalidIcon, {
-    className: "".concat(styles$5.icon, " ").concat(styles$5.invalidIcon)
+  }), valid && React__default.createElement(SuccessIcon, {
+    classes: "".concat(styles$5.icon, " ").concat(styles$5.validIcon)
+  }), valid !== undefined && !valid && React__default.createElement(ErrorIcon, {
+    classes: "".concat(styles$5.icon, " ").concat(styles$5.invalidIcon)
   }));
 };
 
@@ -532,29 +586,6 @@ Detail.propTypes = {
   children: PropTypes.object.isRequired
 };
 
-var ErrorIcon = function ErrorIcon(_ref) {
-  var classes = _ref.classes;
-  return React__default.createElement("svg", {
-    className: classes,
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 25 25"
-  }, React__default.createElement("g", null, React__default.createElement("circle", {
-    cx: "12.5",
-    cy: "12.5",
-    r: "11.667"
-  }), React__default.createElement("path", {
-    fill: "#fff",
-    d: "M7.149 8.791l9.207 9.208c.424.423 1.137.397 1.593-.058.455-.455.48-1.169.057-1.592L8.8 7.141c-.424-.423-1.137-.397-1.593.058-.455.455-.48 1.169-.057 1.592h-.001z"
-  }), React__default.createElement("path", {
-    fill: "#FFF",
-    d: "M8.28 17.999l9.207-9.208c.424-.423.398-1.137-.057-1.592-.456-.456-1.169-.481-1.593-.058L6.63 16.349c-.424.423-.398 1.137.058 1.592.455.455 1.168.481 1.592.058z"
-  })));
-};
-
-ErrorIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
-
 var css$b = ".well-module_well__3OgmP {\n  display: flex;\n  align-items: center;\n  color: var(--primary-foreground-color);\n  padding: 2rem;\n  border-radius: 0.3rem;\n  width: 100%;\n}\n\n.well-module_well__3OgmP.well-module_default__1XEFM {\n  background-color: #fff;\n  border: 1px solid var(--primary-foreground-color);\n}\n\n.well-module_well__3OgmP.well-module_error__1mppw {\n  background-color: var(--error-background-color);\n  border: 1px solid var(--error-border-color);\n  fill: var(--error-border-color);\n}\n\n.well-module_well__3OgmP.well-module_success__226ta {\n  background-color: var(--success-background-color);\n  border: 1px solid var(--success-border-color);\n  fill: var(--success-border-color);\n}\n\n.well-module_well__3OgmP .well-module_icon__2okPa {\n  height: 2rem;\n  margin-right: 2rem;\n}\n";
 var styles$a = {"well":"well-module_well__3OgmP","default":"well-module_default__1XEFM","error":"well-module_error__1mppw","success":"well-module_success__226ta","icon":"well-module_icon__2okPa"};
 styleInject(css$b);
@@ -567,7 +598,7 @@ var Well = function Well(_ref) {
     className: "".concat(styles$a.well, " ").concat(styles$a[type])
   }, type === 'error' && React__default.createElement(ErrorIcon, {
     classes: styles$a.icon
-  }), type === 'success' && React__default.createElement(ErrorIcon, {
+  }), type === 'success' && React__default.createElement(SuccessIcon, {
     classes: styles$a.icon
   }), children);
 };
