@@ -1,37 +1,32 @@
-.details summary {
+.header {
+  position: relative;
+  padding: 0.3rem 2rem;
+  cursor: pointer;
+  font-weight: bold;
   list-style: none;
   color: var(--primary-button-background-color);
   background: linear-gradient(rgba(51, 63, 72, 1), rgba(51, 63, 72, 0.5));
-  display: flex;
-  justify-content: space-between;
 }
 
-.details summary::after {
+.header::after {
   border-style: solid;
   border-width: 0.15em 0.15em 0 0;
   content: '';
   display: inline-block;
   height: 0.45em;
-  left: 0.15em;
-  position: relative;
-  top: 0.15em;
+  right: 2em;
+  position: absolute;
+  top: 0.45em;
   transform: rotate(45deg);
   vertical-align: top;
   width: 0.45em;
   color: var(--primary-button-background-color);
 }
 
-.details[open] summary::after {
+.details[open] .header::after {
   transform: rotate(135deg);
 }
 
-.details summary::-webkit-details-marker {
+.header::-webkit-details-marker {
   display: none;
-}
-
-.details .header {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.3rem 2rem;
-  cursor: pointer;
 }

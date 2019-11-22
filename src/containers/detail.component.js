@@ -5,9 +5,7 @@ import styles from './detail.module.css';
 
 const Detail = ({ title, isOpen = false, children }) => (
   <details className={styles.details} open={isOpen}>
-    <summary className={styles.header}>
-      <strong>{title}</strong>
-    </summary>
+    <summary className={styles.header}>{title}</summary>
     {children}
   </details>
 );
