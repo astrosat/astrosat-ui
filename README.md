@@ -9,7 +9,7 @@ A module containing a number of useful mapbox-gl-js controls and mapbox-gl-draw 
   - [Build Distribution](#build-distribution)
   - [Examples](#examples)
   - [Development](#development)
-    - [Steps](#steps)
+    - [Link Library](#link-library)
   - [Release Strategy](#release-strategy)
 
 ## Build Distribution
@@ -35,7 +35,7 @@ There will come a time when you want to `link` your library to an application. N
 
 This solution cannot be done with `yarn` you must use `npm` as far as I can tell, this doesn't cause any problems in practice from what I've found. the solution is to make your library use your applications version of `react`, not its own. while having your app use your un-published library code as normal using `yarn link`.
 
-### Steps
+### Link Library
 
 1. In **library** and **application** remove the `yarn.lock` and `node_modules` directory. This will ensure your using the latest and greatest dependencies.
 1. In **library** and **application** run `yarn` to install necessary dependencies.

@@ -1,7 +1,6 @@
 button.button {
   font-size: inherit;
   font-family: inherit;
-  cursor: pointer;
   width: 100%;
 }
 
@@ -12,11 +11,13 @@ button.button {
   color: var(--primary-button-foreground-color);
   border-radius: 0.3rem;
   padding: 1rem 2rem;
+  font-family: var(--primary-font-family);
   font-weight: bold;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .button:hover,
@@ -90,14 +91,15 @@ button.button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--tertiary-button-background-color);
+  background-color: transparent;
   color: var(--tertiary-button-foreground-color);
   /* text-decoration: underline; */
   border-bottom: 2px solid var(--primary-button-background-color);
+  cursor: pointer;
 }
 
 .link:hover {
-  background-color: var(--tertiary-button-background-hover-color);
+  border-color: transparent;
 }
 
 .tertiary:active {

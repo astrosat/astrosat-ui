@@ -5,7 +5,7 @@
 
 .textfield {
   border: none;
-  border-bottom: 1px solid #f6be00;
+  border-bottom: 2px solid #f6be00;
   color: #333f48;
   width: inherit;
 }
@@ -16,11 +16,11 @@
 }
 
 .valid {
-  border-bottom: 1px solid #6cc24a;
+  border-color: #6cc24a;
 }
 
 .invalid {
-  border-bottom: 1px solid #cf6679;
+  border-bottom: #cf6679;
 }
 
 .validIcon {
