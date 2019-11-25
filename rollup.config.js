@@ -25,28 +25,16 @@ export default {
     },
     {
       file: pkg.main,
-      format: 'cjs',
-      globals: {
-        react: 'React',
-        'react-dom': 'ReactDOM',
-        'prop-types': 'PropTypes',
-        zxcvbn: 'zxcvbn'
-      }
+      format: 'cjs'
     },
     {
       file: pkg.module,
-      format: 'es',
-      globals: {
-        react: 'React',
-        'react-dom': 'ReactDOM',
-        'prop-types': 'PropTypes',
-        zxcvbn: 'zxcvbn'
-      }
+      format: 'es'
     }
   ],
   external: ['react', 'react-dom', 'prop-types', 'zxcvbn'],
   plugins: [
-    external(),
+    external({ includeDependencies: true }),
     svg(),
     eslint({
       exclude: ['src/**/*.css', 'src/**/*.svg']
