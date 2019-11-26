@@ -1,3 +1,18 @@
+# [1.5.0](https://github.com/astrosat/astrosat-ui/compare/v1.4.3...v1.5.0) (2019-11-26)
+
+
+### Bug Fixes
+
+* **frontend:** Fix border color of invalid textfield ([1b97e31](https://github.com/astrosat/astrosat-ui/commit/1b97e316865ac70d3ae86e05654ad217dbdec454))
+* **frontend:** Makes details render properly in Safari ([#4](https://github.com/astrosat/astrosat-ui/issues/4)) ([05b7cdd](https://github.com/astrosat/astrosat-ui/commit/05b7cddae4782dcec09ec2bf70104a8d59f5097e))
+* **frontend:** Prevent password being displayed ([c1b14d3](https://github.com/astrosat/astrosat-ui/commit/c1b14d35753415e2623858bc935b61119a95ebe7))
+* **frontend:** Remove duplicate dev dependency ([a1964d1](https://github.com/astrosat/astrosat-ui/commit/a1964d1ed13131443cfc99a249d15baa43d43c1a))
+
+
+### Features
+
+* **frontend:** Add further styling ([3a4ef1f](https://github.com/astrosat/astrosat-ui/commit/3a4ef1fdaf19ac1fc80f82152a439e0d8f54ec15))
+
 ## [1.4.3](https://github.com/astrosat/astrosat-ui/compare/v1.4.2...v1.4.3) (2019-11-20)
 
 
