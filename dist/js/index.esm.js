@@ -314,7 +314,7 @@ var Checkbox = function Checkbox(_ref) {
   }), label);
 };
 
-var css$5 = ".text-field-module_container__1nASA {\n  width: 100%;\n  display: flex;\n}\n\n.text-field-module_textfield__1qtEv {\n  border: none;\n  border-bottom: 2px solid #f6be00;\n  color: #333f48;\n  width: inherit;\n}\n\n.text-field-module_icon__31twf {\n  height: 1rem;\n  width: 1rem;\n}\n\n.text-field-module_valid__tCVrN {\n  border-color: #6cc24a;\n}\n\n.text-field-module_invalid__1iU4n {\n  border-bottom: #cf6679;\n}\n\n.text-field-module_validIcon__2bnN4 {\n  fill: #6cc24a;\n}\n\n.text-field-module_invalidIcon__aCTDu {\n  fill: #cf6679;\n}\n";
+var css$5 = ".text-field-module_container__1nASA {\n  width: 100%;\n  display: flex;\n}\n\n.text-field-module_textfield__1qtEv {\n  border: none;\n  border-bottom: 2px solid #f6be00;\n  color: #333f48;\n  width: inherit;\n}\n\n.text-field-module_icon__31twf {\n  height: 1rem;\n  width: 1rem;\n}\n\n.text-field-module_valid__tCVrN {\n  border-color: #6cc24a;\n}\n\n.text-field-module_invalid__1iU4n {\n  border-color: #cf6679;\n}\n\n.text-field-module_validIcon__2bnN4 {\n  fill: #6cc24a;\n}\n\n.text-field-module_invalidIcon__aCTDu {\n  fill: #cf6679;\n}\n";
 var styles$5 = {"container":"text-field-module_container__1nASA","textfield":"text-field-module_textfield__1qtEv","icon":"text-field-module_icon__31twf","valid":"text-field-module_valid__tCVrN","invalid":"text-field-module_invalid__1iU4n","validIcon":"text-field-module_validIcon__2bnN4","invalidIcon":"text-field-module_invalidIcon__aCTDu"};
 styleInject(css$5);
 
@@ -357,6 +357,7 @@ var PasswordField = function PasswordField(_ref) {
     required: required,
     autoFocus: autoFocus
   }), React.createElement("button", {
+    type: "button",
     className: passwordStyles.passwordButton,
     onClick: toggleVisibility
   }, isVisible ? 'Hide' : 'Show'));
@@ -571,8 +572,8 @@ var Textfield = function Textfield(_ref) {
   }));
 };
 
-var css$a = ".detail-module_details__qHZGM summary {\n  list-style: none;\n  color: var(--primary-button-background-color);\n  background: linear-gradient(rgba(51, 63, 72, 1), rgba(51, 63, 72, 0.5));\n  display: flex;\n  justify-content: space-between;\n}\n\n.detail-module_details__qHZGM summary::after {\n  border-style: solid;\n  border-width: 0.15em 0.15em 0 0;\n  content: '';\n  display: inline-block;\n  height: 0.45em;\n  left: 0.15em;\n  position: relative;\n  top: 0.15em;\n  transform: rotate(45deg);\n  vertical-align: top;\n  width: 0.45em;\n  color: var(--primary-button-background-color);\n}\n\n.detail-module_details__qHZGM[open] summary::after {\n  transform: rotate(135deg);\n}\n\n.detail-module_details__qHZGM summary::-webkit-details-marker {\n  display: none;\n}\n\n.detail-module_details__qHZGM .detail-module_header__3oBF6 {\n  display: flex;\n  justify-content: space-between;\n  padding: 0.3rem 2rem;\n  cursor: pointer;\n}\n";
-var styles$9 = {"details":"detail-module_details__qHZGM","header":"detail-module_header__3oBF6"};
+var css$a = ".detail-module_header__3oBF6 {\n  position: relative;\n  padding: 0.3rem 2rem;\n  cursor: pointer;\n  font-weight: bold;\n  list-style: none;\n  color: var(--primary-button-background-color);\n  background: linear-gradient(rgba(51, 63, 72, 1), rgba(51, 63, 72, 0.5));\n}\n\n.detail-module_header__3oBF6::after {\n  border-style: solid;\n  border-width: 0.15em 0.15em 0 0;\n  content: '';\n  display: inline-block;\n  height: 0.45em;\n  right: 2em;\n  position: absolute;\n  top: 0.45em;\n  transform: rotate(45deg);\n  vertical-align: top;\n  width: 0.45em;\n  color: var(--primary-button-background-color);\n}\n\n.detail-module_details__qHZGM[open] .detail-module_header__3oBF6::after {\n  transform: rotate(135deg);\n}\n\n.detail-module_header__3oBF6::-webkit-details-marker {\n  display: none;\n}\n";
+var styles$9 = {"header":"detail-module_header__3oBF6","details":"detail-module_details__qHZGM"};
 styleInject(css$a);
 
 var Detail = function Detail(_ref) {
@@ -585,7 +586,7 @@ var Detail = function Detail(_ref) {
     open: isOpen
   }, React.createElement("summary", {
     className: styles$9.header
-  }, React.createElement("strong", null, title)), children);
+  }, title), children);
 };
 
 Detail.propTypes = {
