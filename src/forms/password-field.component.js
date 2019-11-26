@@ -32,6 +32,7 @@ const PasswordField = ({
         autoFocus={autoFocus}
       />
       <button
+        type="button"
         className={passwordStyles.passwordButton}
         onClick={toggleVisibility}
       >
