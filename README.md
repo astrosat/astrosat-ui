@@ -46,10 +46,10 @@ as this will provide smaller bundles.
 
 ```jsx
 import React, { Suspense } from 'react';
-import LoadMask from '@astrosat/astrosat-ui/load-mask/load-mask';
+import LoadMask from '@astrosat/astrosat-ui/dist/load-mask/load-mask';
 
 const PasswordStrengthMeter = React.lazy(() =>
-  import('@astrosat/astrosat-ui/forms/password-strength-meter')
+  import('@astrosat/astrosat-ui/dist/forms/password-strength-meter')
 );
 
 const MyComponent = () => (
