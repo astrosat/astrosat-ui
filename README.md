@@ -37,7 +37,7 @@ import { Button } from '@astrosat/astrosat-ui';
 However, the recommended route is to import files individually:
 
 ```javascript
-import Button from '@astrosat/astrosat-ui/buttons/button';
+import Button from '@astrosat/astrosat-ui/dist/buttons/button';
 ```
 
 as this will provide smaller bundles.
