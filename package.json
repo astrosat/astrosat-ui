@@ -35,7 +35,7 @@
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "serve": "st -nc -i index.html",
-    "release": "semantic-release --no-ci",
+    "release": "yarn build && semantic-release --no-ci",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
