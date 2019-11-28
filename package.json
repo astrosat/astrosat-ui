@@ -2,9 +2,8 @@
   "name": "@astrosat/astrosat-ui",
   "version": "1.5.0",
   "description": "A module containing a number of common UI widgets.",
-  "main": "dist/js/index.cjs.js",
-  "module": "dist/js/index.esm.js",
-  "browser": "dist/js/index.umd.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "sideEffects": false,
   "repository": {
     "type": "git",
@@ -36,7 +35,7 @@
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "serve": "st -nc -i index.html",
-    "release": "semantic-release --no-ci",
+    "release": "yarn build && semantic-release --no-ci",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -67,6 +66,7 @@
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
+    "glob": "^7.1.6",
     "jest-cli": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
     "postcss-modules": "^1.4.1",

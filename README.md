@@ -26,11 +26,47 @@ A module containing a number of useful mapbox-gl-js controls and mapbox-gl-draw 
 
 Each example will open in their own tab.
 
+## Usage
+
+You can import individual components from the library's central export:
+
+```javascript
+import { Button } from '@astrosat/astrosat-ui';
+```
+
+However, the recommended route is to import files individually:
+
+```javascript
+import Button from '@astrosat/astrosat-ui/dist/buttons/button';
+```
+
+as this will provide smaller bundles.
+
+**Note:** The `PasswordStrengthMeter` component is only available through the second method. We recommend that you lazy load it, as it will take about 0.5MB:
+
+```jsx
+import React, { Suspense } from 'react';
+import LoadMask from '@astrosat/astrosat-ui/dist/load-mask/load-mask';
+
+const PasswordStrengthMeter = React.lazy(() =>
+  import('@astrosat/astrosat-ui/dist/forms/password-strength-meter')
+);
+
+const MyComponent = () => (
+  <Suspense fallback={<LoadMask />}>
+    <PasswordStrengthMeter password={'p@55w0rd'} />
+  </Suspense>
+);
+
+export default MyComponent;
+```
+
 ## Development
 
 To maintain or further develop this library we have included [Storybook](https://storybook.js.org/). This is a tool to let you view you components in isolation, while developing them. To start the **Storybook** development server, run `yarn storybook`.
 
 There will come a time when you want to `link` your library to an application. Normally you would use something like `yarn link` in the library and `yarn link "<library name>"` in your application. We have experienced problems doing this however, the error reported complains about using **hooks** but that is a misnomer, the real problem is there are multiple copies of react being used, see [react warning](https://reactjs.org/warnings/invalid-hook-call-warning.html#duplicate-react) for more details. The only solution comes from that page:
+
 > This problem can also come up when you use npm link or an equivalent. In that case, your bundler might “see” two Reacts — one in application folder and one in your library folder. Assuming myapp and mylib are sibling folders, one possible fix is to run npm link ../myapp/node_modules/react from mylib. This should make the library use the application’s React copy.
 
 This solution cannot be done with `yarn` you must use `npm` as far as I can tell, this doesn't cause any problems in practice from what I've found. the solution is to make your library use your applications version of `react`, not its own. while having your app use your un-published library code as normal using `yarn link`.
