@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
@@ -6,12 +6,16 @@ import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Textfield from './text-field.component';
 import PasswordField from './password-field.component';
-import PasswordStrengthMeter from './password-strength-meter.component';
 import TextArea from './text-area.component';
 import Checkbox from './checkbox.component';
 import Radio from './radio.component';
+import LoadMask from '../load-mask/load-mask.component';
 
 import styles from '../index.module.css';
+
+const PasswordStrengthMeter = React.lazy(() =>
+  import('./password-strength-meter.component')
+);
 
 const themes = { Dark: styles.dark, Light: styles.light };
 
@@ -58,31 +62,32 @@ storiesOf('Form', module)
       <div className={styles.btnGroup}>
         <PasswordField placeholder="Password" />
       </div>
+      <Suspense fallback={<LoadMask />}>
+        <div className={styles.btnGroup}>
+          <p>
+            <strong>Password:</strong> Cfwtca
+          </p>
+          <PasswordStrengthMeter
+            password="Cfwtca"
+            onChange={action('Text Entered')}
+          />
 
-      <div className={styles.btnGroup}>
-        <p>
-          <strong>Password:</strong> Cfwtca
-        </p>
-        <PasswordStrengthMeter
-          password="Cfwtca"
-          onChange={action('Text Entered')}
-        />
+          <p>
+            <strong>Password:</strong> In+ut0dR
+          </p>
+          <PasswordStrengthMeter password="In+ut0dR" />
 
-        <p>
-          <strong>Password:</strong> In+ut0dR
-        </p>
-        <PasswordStrengthMeter password="In+ut0dR" />
+          <p>
+            <strong>Password:</strong> wordsownt3
+          </p>
+          <PasswordStrengthMeter password="wordsownt3+B" />
 
-        <p>
-          <strong>Password:</strong> wordsownt3
-        </p>
-        <PasswordStrengthMeter password="wordsownt3+B" />
-
-        <p>
-          <strong>Password:</strong> wordsowncateract
-        </p>
-        <PasswordStrengthMeter password="wordsowncateract" />
-      </div>
+          <p>
+            <strong>Password:</strong> wordsowncateract
+          </p>
+          <PasswordStrengthMeter password="wordsowncateract" />
+        </div>
+      </Suspense>
 
       <div className={styles.btnGroup}>
         <Checkbox
