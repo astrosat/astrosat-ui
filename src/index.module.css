@@ -37,6 +37,10 @@
   --tertiary-button-foreground-hover-color: rgba(255, 255, 255, 0.6);
 }
 
+body {
+  background-color: lightgrey;
+}
+
 .light {
   --foreground-color-primary: #3a3b4d;
   --background-color-primary: #fff;

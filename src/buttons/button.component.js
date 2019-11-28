@@ -17,11 +17,12 @@ const Button = ({
   const props = {};
   let classes = href && theme === 'link' ? [styles.link] : [styles.button];
 
-  if (shape) classes.push(styles[shape]);
-
   if (classNames) {
     classes = [...classes, ...classNames];
   }
+
+  if (shape) classes.push(styles[shape]);
+
   if (href) {
     props.href = href;
   }
