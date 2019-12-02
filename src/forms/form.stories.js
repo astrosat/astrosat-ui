@@ -9,7 +9,10 @@ import PasswordField from './password-field.component';
 import TextArea from './text-area.component';
 import Checkbox from './checkbox.component';
 import Radio from './radio.component';
+import Slider from './slider.component';
 import LoadMask from '../load-mask/load-mask.component';
+
+import { scaleUtc, scalePow } from 'd3-scale';
 
 import styles from '../index.module.css';
 
@@ -132,5 +135,36 @@ storiesOf('Form', module)
           disabled={true}
         />
       </div>
+    </div>
+  ))
+  .add('Slider', () => (
+    <div className={select('theme', themes, styles.dark)}>
+      <h3>Simple range</h3>
+      <Slider
+        min={0}
+        max={10}
+        values={[1, 7]}
+        onChange={action('Slider changed')}
+      />
+      <h3>Date range</h3>
+      <Slider
+        scale={scaleUtc().domain([
+          new Date('2018-01-01'),
+          new Date('2019-01-01')
+        ])}
+        values={[
+          new Date('2018-03-01T00:00:00Z'),
+          new Date('2018-08-01T00:00:00Z')
+        ]}
+        onChange={action('Date Slider changed')}
+      />
+      <h3>Slider power</h3>
+      <Slider
+        scale={scalePow()
+          .exponent(0.5)
+          .domain([0, 10000])}
+        values={[500]}
+        onChange={action('Logarithmic Slider changed')}
+      />
     </div>
   ));

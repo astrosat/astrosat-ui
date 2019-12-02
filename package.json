@@ -92,8 +92,10 @@
     "react-dom": "^16.11.0"
   },
   "dependencies": {
+    "d3-scale": "^3.2.1",
+    "prop-types": "^15.7.2",
+    "react-range": "^1.4.3",
     "react-svg-loader": "^3.0.3",
-    "zxcvbn": "^4.4.2",
-    "prop-types": "^15.7.2"
+    "zxcvbn": "^4.4.2"
   }
 }
