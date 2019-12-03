@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/astrosat/astrosat-ui/compare/v1.6.1...v1.6.2) (2019-12-03)
+
+
+### Bug Fixes
+
+* **frontend:** Simplify GitHub action ([327d6ba](https://github.com/astrosat/astrosat-ui/commit/327d6baf70f0027f6f2b66e273468fc3805fcc2b))
+
 ## [1.6.1](https://github.com/astrosat/astrosat-ui/compare/v1.6.0...v1.6.1) (2019-12-03)
 
 
