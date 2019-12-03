@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/astrosat/astrosat-ui/compare/v1.5.0...v1.6.0) (2019-12-03)
+
+
+### Features
+
+* **frontend:** Adds a slider component ([#7](https://github.com/astrosat/astrosat-ui/issues/7)) ([cce4e3d](https://github.com/astrosat/astrosat-ui/commit/cce4e3d811a1209355d2de0cae474a8e3d241237))
+
 # [1.5.0](https://github.com/astrosat/astrosat-ui/compare/v1.4.3...v1.5.0) (2019-11-26)
 
 
