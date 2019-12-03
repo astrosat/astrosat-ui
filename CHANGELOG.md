@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/astrosat/astrosat-ui/compare/v1.6.0...v1.6.1) (2019-12-03)
+
+
+### Bug Fixes
+
+* **frontend:** Upgrade version of Node in actions ([68e3926](https://github.com/astrosat/astrosat-ui/commit/68e3926551a59a1b66ff8fc54c1ea00cfb6b132b))
+
 # [1.6.0](https://github.com/astrosat/astrosat-ui/compare/v1.5.0...v1.6.0) (2019-12-03)
 
 
