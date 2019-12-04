@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/astrosat/astrosat-ui/compare/v1.6.2...v1.6.3) (2019-12-04)
+
+
+### Bug Fixes
+
+* **frontend:** Add aria-label to all forms and buttons ([a8d3757](https://github.com/astrosat/astrosat-ui/commit/a8d37573a1f8e39023be8451a55f9ec562d81c37))
+
 ## [1.6.2](https://github.com/astrosat/astrosat-ui/compare/v1.6.1...v1.6.2) (2019-12-03)
 
 
