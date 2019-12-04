@@ -11,7 +11,8 @@ const PasswordField = ({
   placeholder = '',
   classNames,
   required = false,
-  autoFocus = false
+  autoFocus = false,
+  ariaLabel
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
@@ -28,6 +29,7 @@ const PasswordField = ({
         className={classes}
         onChange={onChange}
         placeholder={placeholder}
+        aria-label={ariaLabel}
         required={required}
         autoFocus={autoFocus}
       />

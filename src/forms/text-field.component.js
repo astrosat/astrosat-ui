@@ -15,7 +15,8 @@ const Textfield = ({
   classNames,
   required = false,
   autoFocus = false,
-  readOnly = false
+  readOnly = false,
+  ariaLabel
 }) => {
   let classes = [styles.textfield];
   if (classNames) classes = [...classes, ...classNames];
@@ -38,6 +39,7 @@ const Textfield = ({
         disabled={disabled}
         onChange={onChange}
         placeholder={placeholder}
+        aria-label={ariaLabel}
         required={required}
         autoFocus={autoFocus}
         readOnly={readOnly}

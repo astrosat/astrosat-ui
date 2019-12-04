@@ -4,7 +4,7 @@ import InfoIcon from './info.svg';
 import styles from './info-button.module.css';
 
 const InfoButton = props => (
-  <Button padded={false} {...props}>
+  <Button padded={false} {...props} ariaLabel="Info">
     <InfoIcon className={styles.info} alt="Info" />
   </Button>
 );

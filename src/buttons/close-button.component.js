@@ -10,7 +10,7 @@ const CloseButton = ({ onClick, className }) => (
   <button
     onClick={onClick}
     className={`${styles.close} ${className}`}
-    aria-label="close"
+    aria-label="Close"
   >
     <CloseIcon classes={styles.icon} alt="Close" />
   </button>

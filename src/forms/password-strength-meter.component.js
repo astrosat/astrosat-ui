@@ -22,7 +22,7 @@ const passwordStrength = score => {
   }
 };
 
-const PasswordStrengthMeter = ({ password }) => {
+const PasswordStrengthMeter = ({ password, ariaLabel }) => {
   const passwordResult = password
     ? zxcvbn(password)
     : { score: 0, feedback: { suggestions: [] } };
@@ -33,6 +33,7 @@ const PasswordStrengthMeter = ({ password }) => {
         className={`${styles.passwordMeter} ${styles[strength]}`}
         value={passwordResult.score}
         max="4"
+        aria-label={ariaLabel}
       />
       <div>
         <strong>Password Strength:</strong>&nbsp;{strength}

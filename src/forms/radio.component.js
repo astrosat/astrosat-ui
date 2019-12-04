@@ -2,7 +2,15 @@ import React from 'react';
 
 import styles from './radio.module.css';
 
-const Radio = ({ name, value, label, onChange, disabled = false, checked }) => (
+const Radio = ({
+  name,
+  value,
+  label,
+  onChange,
+  disabled = false,
+  checked,
+  ariaLabel
+}) => (
   <label
     className={`${styles.radio} ${checked ? styles.active : ''}  ${
       disabled ? styles.disabled : ''
@@ -16,6 +24,7 @@ const Radio = ({ name, value, label, onChange, disabled = false, checked }) => (
       disabled={disabled}
       onChange={() => onChange(value)}
       checked={checked}
+      aria-label={ariaLabel}
     />
     <span className={styles.checkmark} />
     {label}

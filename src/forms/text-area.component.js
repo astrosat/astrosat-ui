@@ -13,7 +13,8 @@ const TextArea = ({
   cols,
   required = false,
   autoFocus = false,
-  readOnly = false
+  readOnly = false,
+  ariaLabel
 }) => {
   let classes = [styles.textarea];
   if (classNames) classes = [...classes, ...classNames];
@@ -28,6 +29,7 @@ const TextArea = ({
       rows={rows}
       cols={cols}
       placeholder={placeholder}
+      aria-label={ariaLabel}
       required={required}
       autoFocus={autoFocus}
       readOnly={readOnly}
