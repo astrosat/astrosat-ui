@@ -1,6 +1,7 @@
 export { default as LoadMask } from './load-mask/load-mask.component';
 
 export { default as Button } from './buttons/button.component';
+export { default as ButtonToggle } from './buttons/button-toggle.component';
 export { default as CloseButton } from './buttons/close-button.component';
 export { default as InfoButton } from './buttons/info-button.component';
 

@@ -11,6 +11,7 @@ const Slider = ({
   onChange,
   format = scale.tickFormat(5),
   tickCount = 10,
+  majorTickEvery = 2,
   ...props
 }) => {
   min = scale.domain()[0];
@@ -66,9 +67,9 @@ const Slider = ({
                 className={styles.tick}
                 style={{ left: toPercent(val) + '%' }}
               >
-                <div className={styles.tickWrapper}>
+                <div className={`${styles.tickWrapper} ${idx % majorTickEvery === 0 && styles.major}`}>
                   <span className={styles.line}></span>
-                  {idx % 2 === 0 && (
+                  {idx % majorTickEvery === 0 && (
                     <span className={styles.text}>{format(val)}</span>
                   )}
                 </div>
