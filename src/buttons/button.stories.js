@@ -16,7 +16,7 @@ import CloseIcon from '../icons/close-icon.component';
 import Button from './button.component';
 import CloseButton from './close-button.component';
 import InfoButton from './info-button.component';
-import ButtonToggle from './button-toggle.component';
+import ButtonGroup from './button-group.component';
 
 import styles from '../index.module.css';
 
@@ -136,9 +136,9 @@ storiesOf('Buttons', module)
       </fieldset>
 
       <fieldset>
-        <legend>Button Toggle</legend>
+        <legend>Button Group</legend>
         <div className={styles.btnGroup}>
-          <ButtonToggle
+          <ButtonGroup
             onSelect={action('selected')}
             selected="happy"
             options={{

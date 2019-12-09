@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './button-toggle.module.css';
+import styles from './button-group.module.css';
 
-const ButtonToggle = ({ selected, onSelect, options }) => {
+const ButtonGroup = ({ selected, onSelect, options }) => {
   return (
     <div className={styles.group}>
       {Object.entries(options).map(([key, label]) => (
@@ -19,4 +19,4 @@ const ButtonToggle = ({ selected, onSelect, options }) => {
   );
 };
 
-export default ButtonToggle;
+export default ButtonGroup;
