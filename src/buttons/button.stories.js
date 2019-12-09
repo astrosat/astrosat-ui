@@ -16,6 +16,7 @@ import CloseIcon from '../icons/close-icon.component';
 import Button from './button.component';
 import CloseButton from './close-button.component';
 import InfoButton from './info-button.component';
+import ButtonGroup from './button-group.component';
 
 import styles from '../index.module.css';
 
@@ -131,6 +132,20 @@ storiesOf('Buttons', module)
           <Button onClick={action('clicked')}>
             <LinkedInIcon classes={`${styles.btnIcon} ${styles.violet}`} />
           </Button>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Button Group</legend>
+        <div className={styles.btnGroup}>
+          <ButtonGroup
+            onSelect={action('selected')}
+            selected="happy"
+            options={{
+              happy: 'Happy',
+              sad: 'VERY SAD'
+            }}
+          />
         </div>
       </fieldset>
 

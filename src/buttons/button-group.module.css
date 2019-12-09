@@ -1,0 +1,24 @@
+.group {
+  display: flex;
+  flex-grow: 1;
+}
+.button {
+  composes: button from './button.module.css';
+  border-radius: 0;
+}
+.button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+.button:not(:first-child) {
+  border-left: 1px solid var(--primary-button-foreground-color);
+}
+.button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+.selected {
+  composes: primary from './button.module.css';
+}
+
+.unselected {
+  composes: secondary from './button.module.css';
+}

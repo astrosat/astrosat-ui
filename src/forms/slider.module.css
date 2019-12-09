@@ -32,6 +32,7 @@
   background-color: var(--primary-background-color);
   padding: 0.2rem 0.5rem;
   text-align: center;
+  white-space: nowrap;
 }
 
 .axis {
@@ -48,17 +49,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  white-space: nowrap;
 }
 
 .tick .line {
   content: ' ';
   border-left: 1px solid #ccc;
-  height: 8px;
+  height: 4px;
+
   display: block;
 }
 
-.tick:nth-child(2n) .line {
-  height: 4px;
+.tick .major .line {
+  height: 8px;
 }
 .tick .text {
   position: relative;
