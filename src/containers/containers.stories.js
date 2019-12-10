@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Detail from './detail.component';
 import Well from './well.component';
+import Dialog from './dialog.component';
+import useModal from './use-modal.hook';
+import Button from '../buttons/button.component';
 
 import styles from '../index.module.css';
 
 const themes = { Dark: styles.dark, Light: styles.light };
+
+const TestModal = ({ children }) => {
+  return React.createElement(() => {
+    const { isVisible, toggle } = useModal(false);
+
+    return (
+      <div>
+        <p>This is some text</p>
+        <p>This is some text</p>
+        <Button theme="primary" onClick={toggle}>
+          Toggle Modal
+        </Button>
+        <Dialog isVisible={isVisible} close={toggle}>
+          {children}
+        </Dialog>
+        <p>This is some text</p>
+        <p>This is some text</p>
+      </div>
+    );
+  });
+};
 
 storiesOf('Containers', module)
   .addDecorator(withKnobs)
@@ -82,5 +106,20 @@ storiesOf('Containers', module)
           </div>
         </Well>
       </div>
+    </div>
+  ))
+  .add('Dialog', () => (
+    <div className={select('theme', themes, styles.dark)}>
+      <TestModal>
+        <div className={styles.detail}>
+          This is some content for the Dialog element:
+          <ul>
+            <li>lorem ipsum</li>
+            <li>lorem ipsum</li>
+            <li>lorem ipsum</li>
+          </ul>
+          <p>some footer content</p>
+        </div>
+      </TestModal>
     </div>
   ));

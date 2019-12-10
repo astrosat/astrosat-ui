@@ -10,8 +10,12 @@ export { default as PasswordField } from './forms/password-field.component';
 export { default as Radio } from './forms/radio.component';
 export { default as TextArea } from './forms/text-area.component';
 export { default as Textfield } from './forms/text-field.component';
+
 export { default as Detail } from './containers/detail.component';
+export { default as Dialog } from './containers/dialog.component';
+export { default as useModal } from './containers/use-modal.hook';
 export { default as Well } from './containers/well.component';
+
 export { default as CloseIcon } from './icons/close-icon.component';
 export { default as ContactIcon } from './icons/contact-icon.component';
 export { default as CorrectIcon } from './icons/correct-icon.component';
