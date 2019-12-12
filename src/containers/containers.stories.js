@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Detail from './detail.component';
 import Well from './well.component';
+import Dialog from './dialog.component';
+import useModal from './use-modal.hook';
+import Button from '../buttons/button.component';
 
 import styles from '../index.module.css';
 
@@ -83,4 +86,32 @@ storiesOf('Containers', module)
         </Well>
       </div>
     </div>
-  ));
+  ))
+  .add('Dialog', () => {
+    const { isVisible, toggle } = useModal(false);
+
+    return (
+      <div className={select('theme', themes, styles.dark)}>
+        <div>
+          <p>This is some text</p>
+          <p>This is some text</p>
+          <Button theme="primary" onClick={toggle}>
+            Toggle Modal
+          </Button>
+          <Dialog isVisible={isVisible} close={toggle}>
+            <div className={styles.detail}>
+              This is some content for the Dialog element:
+              <ul>
+                <li>lorem ipsum</li>
+                <li>lorem ipsum</li>
+                <li>lorem ipsum</li>
+              </ul>
+              <p>some footer content</p>
+            </div>
+          </Dialog>
+          <p>This is some text</p>
+          <p>This is some text</p>
+        </div>
+      </div>
+    );
+  });
