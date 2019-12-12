@@ -11,13 +11,7 @@ const Dialog = ({ isVisible, close, children }) =>
     ? ReactDOM.createPortal(
         <>
           <div className={styles.modal}>
-            <div
-              className={styles.dialog}
-              aria-modal
-              aria-hidden
-              tabIndex={-1}
-              role="dialog"
-            >
+            <div className={styles.dialog} tabIndex={-1} role="dialog">
               <div className={styles.header}>
                 <CloseButton onClick={close} ariaLabel="Close" />
               </div>
