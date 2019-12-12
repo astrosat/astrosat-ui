@@ -67,7 +67,10 @@ const Slider = ({
                 className={styles.tick}
                 style={{ left: toPercent(val) + '%' }}
               >
-                <div className={`${styles.tickWrapper} ${idx % majorTickEvery === 0 && styles.major}`}>
+                <div
+                  className={`${styles.tickWrapper} ${idx % majorTickEvery ===
+                    0 && styles.major}`}
+                >
                   <span className={styles.line}></span>
                   {idx % majorTickEvery === 0 && (
                     <span className={styles.text}>{format(val)}</span>
