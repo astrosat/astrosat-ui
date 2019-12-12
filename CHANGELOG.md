@@ -1,3 +1,21 @@
+# [1.7.0](https://github.com/astrosat/astrosat-ui/compare/v1.6.3...v1.7.0) (2019-12-12)
+
+
+### Bug Fixes
+
+* **frontend:** Add more attributes to Button component ([9ab4b22](https://github.com/astrosat/astrosat-ui/commit/9ab4b2296116837b90df015f9eafc40b765dfb01))
+* **frontend:** Export components forgotten about ([017e21e](https://github.com/astrosat/astrosat-ui/commit/017e21ee05a23f5da9b2f9f3ef90ebf277c4019d))
+* **frontend:** Re-format code ([6968016](https://github.com/astrosat/astrosat-ui/commit/696801666c572496bff41f78fa8c71d441994da3))
+* **frontend:** Remove unnecessary attributes ([b0cace5](https://github.com/astrosat/astrosat-ui/commit/b0cace52f3a19b1eed32e49110caf4bc81575099))
+* **frontend:** Simplify story for Dialog ([0abd309](https://github.com/astrosat/astrosat-ui/commit/0abd309198fe3abd1050ddbbf2b3442004ce98c6))
+
+
+### Features
+
+* **frontend:** Add Modal Dialog ([d02785c](https://github.com/astrosat/astrosat-ui/commit/d02785c252ed529380e41fcdbc10f7c8c63b1eeb))
+* **frontend:** Add re-usable form hook ([543f2ea](https://github.com/astrosat/astrosat-ui/commit/543f2eacd197bb14c43602ecaab2925a11a87a7a))
+* **frontend:** Adds a button group component ([#8](https://github.com/astrosat/astrosat-ui/issues/8)) ([b19e14e](https://github.com/astrosat/astrosat-ui/commit/b19e14e847ec2bed2bfeb66be67b68c7e36ef503))
+
 ## [1.6.3](https://github.com/astrosat/astrosat-ui/compare/v1.6.2...v1.6.3) (2019-12-04)
 
 
