@@ -12,6 +12,7 @@ export { default as Radio } from './forms/radio.component';
 export { default as Slider } from './forms/slider.component';
 export { default as TextArea } from './forms/text-area.component';
 export { default as Textfield } from './forms/text-field.component';
+export { default as useForm } from './form/use-form.hook';
 
 export { default as Detail } from './containers/detail.component';
 export { default as Dialog } from './containers/dialog.component';

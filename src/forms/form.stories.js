@@ -10,6 +10,7 @@ import TextArea from './text-area.component';
 import Checkbox from './checkbox.component';
 import Radio from './radio.component';
 import Slider from './slider.component';
+import Select from './select.component';
 import LoadMask from '../load-mask/load-mask.component';
 
 import { scaleUtc, scalePow } from 'd3-scale';
@@ -21,6 +22,18 @@ const PasswordStrengthMeter = React.lazy(() =>
 );
 
 const themes = { Dark: styles.dark, Light: styles.light };
+
+const options = [
+  { name: 'Option 1', value: { id: '1', title: 'Mr' } },
+  {
+    name: 'Option 2',
+    value: [
+      { id: '1', title: 'Mr' },
+      { id: '2', title: 'Mrs' }
+    ]
+  },
+  { name: 'Option 3', value: 'Mr' }
+];
 
 storiesOf('Form', module)
   .addDecorator(withKnobs)
@@ -60,6 +73,10 @@ storiesOf('Form', module)
           placeholder="Invalid"
           valid={false}
         />
+      </div>
+
+      <div className={styles.btnGroup}>
+        <Select onChange={action('Text Entered')} options={options} />
       </div>
 
       <div className={styles.btnGroup}>
