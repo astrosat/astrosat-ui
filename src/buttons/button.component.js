@@ -12,7 +12,9 @@ const Button = ({
   shape,
   theme,
   classNames,
-  ariaLabel
+  ariaLabel,
+  target,
+  rel
 }) => {
   const props = {};
   let classes = href && theme === 'link' ? [styles.link] : [styles.button];
@@ -25,6 +27,8 @@ const Button = ({
 
   if (href) {
     props.href = href;
+    if (target) props.target = target;
+    if (rel) props.rel = rel;
   }
   if (!disabled && onClick) {
     props.onClick = onClick;
