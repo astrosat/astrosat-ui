@@ -32,8 +32,8 @@ const Select = ({ options }) => {
                 name={option.name}
                 className={styles.option}
                 onClick={() => {
-                  console.log('Option Clicked: ', option.value);
                   setSelected(option);
+                  toggle();
                 }}
               >
                 {option.name}

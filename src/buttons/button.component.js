@@ -14,7 +14,8 @@ const Button = ({
   classNames,
   ariaLabel,
   target,
-  rel
+  rel,
+  tooltip
 }) => {
   const props = {};
   let classes = href && theme === 'link' ? [styles.link] : [styles.button];
@@ -46,6 +47,11 @@ const Button = ({
   }
   if (!padded) {
     classes.push(styles['no-padding']);
+  }
+
+  if (tooltip) {
+    props['data-tip'] = '';
+    props['data-for'] = tooltip;
   }
 
   props.className = classes.join(' ');

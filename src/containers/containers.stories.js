@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Detail from './detail.component';
@@ -8,10 +9,36 @@ import Well from './well.component';
 import Dialog from './dialog.component';
 import useModal from './use-modal.hook';
 import Button from '../buttons/button.component';
+import Textfield from '../forms/text-field.component';
+import Select from '../forms/select.component';
 
 import styles from '../index.module.css';
 
 const themes = { Dark: styles.dark, Light: styles.light };
+
+const domains = [
+  { name: 'Option 1', value: { id: '1', title: 'Mr' } },
+  {
+    name: 'Option 2',
+    value: [
+      { id: '1', title: 'Mr' },
+      { id: '2', title: 'Mrs' }
+    ]
+  },
+  { name: 'Option 3', value: 'Mr' }
+];
+
+const regions = [
+  { name: 'Option 1', value: { id: '1', title: 'Mr' } },
+  {
+    name: 'Option 2',
+    value: [
+      { id: '1', title: 'Mr' },
+      { id: '2', title: 'Mrs' }
+    ]
+  },
+  { name: 'Option 3', value: 'Mr' }
+];
 
 storiesOf('Containers', module)
   .addDecorator(withKnobs)
@@ -89,24 +116,44 @@ storiesOf('Containers', module)
   ))
   .add('Dialog', () => {
     const { isVisible, toggle } = useModal(false);
+    const ref = useRef(document.body);
 
     return (
-      <div className={select('theme', themes, styles.dark)}>
+      <div ref={ref} className={select('theme', themes, styles.dark)}>
         <div>
           <p>This is some text</p>
           <p>This is some text</p>
           <Button theme="primary" onClick={toggle}>
             Toggle Modal
           </Button>
-          <Dialog isVisible={isVisible} close={toggle}>
-            <div className={styles.detail}>
-              This is some content for the Dialog element:
-              <ul>
-                <li>lorem ipsum</li>
-                <li>lorem ipsum</li>
-                <li>lorem ipsum</li>
-              </ul>
-              <p>some footer content</p>
+          <Dialog
+            isVisible={isVisible}
+            close={toggle}
+            title="Dialog Title"
+            ref={ref}
+          >
+            <div className={styles.btnGroup}>
+              <Textfield
+                name="name"
+                placeholder="Name"
+                onChange={action('Name Entered')}
+                required
+                autoFocus
+              />
+            </div>
+
+            <div className={styles.btnGroup}>
+              <Textfield
+                name="description"
+                placeholder="Description"
+                onChange={action('Description Entered')}
+                required
+              />
+            </div>
+
+            <div className={styles.btnGroup}>
+              <Select onChange={action('Text Entered')} options={domains} />
+              <Select onChange={action('Text Entered')} options={regions} />
             </div>
           </Dialog>
           <p>This is some text</p>

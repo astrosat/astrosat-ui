@@ -11,12 +11,22 @@
 
 .modal .dialog {
   background: white;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
 }
 
 .dialog .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  background-color: var(--primary-background-color);
+  border-radius: 0.5rem 0.5rem 0 0;
+  border-bottom: 1px solid #000;
+}
+
+.dialog .header .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .dialog .content {

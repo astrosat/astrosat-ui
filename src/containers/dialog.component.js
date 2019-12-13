@@ -1,33 +1,41 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 
 import CloseButton from '../buttons/close-button.component';
 
 import styles from './dialog.module.css';
 
-const Dialog = ({ isVisible, close, children }) =>
-  isVisible
-    ? ReactDOM.createPortal(
-        <>
-          <div className={styles.modal} onClick={() => close()}>
-            <div className={styles.dialog} tabIndex={-1} role="dialog">
-              <div className={styles.header}>
-                <CloseButton onClick={close} ariaLabel="Close" />
-              </div>
+const Dialog = ({ isVisible, close, title, children }, ref) => {
+  const overlayRef = useRef(null);
 
-              <div className={styles.content}>{children}</div>
+  return isVisible && ref.current
+    ? ReactDOM.createPortal(
+        <div
+          className={styles.modal}
+          onClick={event => {
+            if (overlayRef.current === event.target) {
+              close();
+            }
+          }}
+          ref={overlayRef}
+        >
+          <div
+            className={styles.dialog}
+            tabIndex={-1}
+            role="dialog"
+            aria-label="dialog"
+          >
+            <div className={styles.header}>
+              <h3 className={styles.title}>{title}</h3>
+              <CloseButton onClick={close} ariaLabel="Close" />
             </div>
+
+            <div className={styles.content}>{children}</div>
           </div>
-        </>,
-        document.body
+        </div>,
+        ref.current
       )
     : null;
-
-Dialog.propTypes = {
-  isVisible: PropTypes.bool.isRequired,
-  close: PropTypes.func.isRequired,
-  children: PropTypes.object.isRequired
 };
 
-export default Dialog;
+export default React.memo(React.forwardRef(Dialog));
