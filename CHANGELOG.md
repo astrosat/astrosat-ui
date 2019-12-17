@@ -1,3 +1,18 @@
+# [1.8.0](https://github.com/astrosat/astrosat-ui/compare/v1.7.0...v1.8.0) (2019-12-17)
+
+
+### Bug Fixes
+
+* **frontend:** Fix bug with Button stories ([a469aa9](https://github.com/astrosat/astrosat-ui/commit/a469aa98e40a894411e6f9d54b4f38ac80d6d77b))
+* **frontend:** Make Dialog closable by clicking outside ([015f653](https://github.com/astrosat/astrosat-ui/commit/015f65315ff6759553480e0dae21728d085f384c))
+
+
+### Features
+
+* **frontend:** Add a Select/Dropdown ([2f467f0](https://github.com/astrosat/astrosat-ui/commit/2f467f00a13208506b608e1f575afbcacb5acac1))
+* **frontend:** Add more icons ([286ac78](https://github.com/astrosat/astrosat-ui/commit/286ac787b4d16c70a52c0d4765e47e887376d667))
+* **frontend:** Added tooltip to button ([da9f809](https://github.com/astrosat/astrosat-ui/commit/da9f8099fbdc18f6022744a97302036c372d4fcd))
+
 # [1.7.0](https://github.com/astrosat/astrosat-ui/compare/v1.6.3...v1.7.0) (2019-12-12)
 
 
