@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/astrosat/astrosat-ui/compare/v1.8.0...v1.8.1) (2019-12-17)
+
+
+### Bug Fixes
+
+* **frontend): Revert "Revert "fix(frontend:** Publish on push to fix problem with actions"" ([7bb4666](https://github.com/astrosat/astrosat-ui/commit/7bb4666f1ce902c8ee784a734169f1324239c1a2))
+
 # [1.8.0](https://github.com/astrosat/astrosat-ui/compare/v1.7.0...v1.8.0) (2019-12-17)
 
 
