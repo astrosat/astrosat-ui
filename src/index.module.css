@@ -150,27 +150,6 @@ body {
   height: 1rem;
 }
 
-.red {
-  fill: red;
-}
-.green {
-  fill: green;
-}
-.blue {
-  fill: blue;
-}
-.orange {
-  fill: orange;
-}
-.violet {
-  fill: violet;
-}
-.grey {
-  fill: grey;
-}
-.yellow {
-  fill: yellow;
-}
-.teal {
-  fill: teal;
+.color {
+  color: green;
 }
