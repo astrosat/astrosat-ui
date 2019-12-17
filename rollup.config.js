@@ -2,12 +2,10 @@
 import postcss from 'rollup-plugin-postcss';
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
 import { eslint } from 'rollup-plugin-eslint';
 import svg from 'rollup-plugin-svg';
 import glob from 'glob';
-import pkg from './package.json';
 
 const plugins = [
   external({ includeDependencies: true }),
@@ -22,8 +20,7 @@ const plugins = [
     presets: [['@babel/preset-env', { modules: false }], '@babel/preset-react'],
     exclude: 'node_modules/**'
   }),
-  resolve(),
-  commonjs()
+  resolve()
 ];
 
 export default [
@@ -36,20 +33,6 @@ export default [
     output: [
       {
         dir: 'dist',
-        format: 'es'
-      }
-    ],
-    plugins
-  },
-  {
-    input: 'src/index.js',
-    output: [
-      {
-        file: pkg.main,
-        format: 'cjs'
-      },
-      {
-        file: pkg.module,
         format: 'es'
       }
     ],
