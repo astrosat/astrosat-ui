@@ -1,8 +1,6 @@
 name: PUBLISH
 
-on:
-  release:
-    types: [created]
+on: [push]
 
 jobs:
   publish:
