@@ -18,10 +18,18 @@
   fill: var(--error-border-color);
 }
 
+.well.error svg {
+  color: var(--error-border-color);
+}
+
 .well.success {
   background-color: var(--success-background-color);
   border: 1px solid var(--success-border-color);
   fill: var(--success-border-color);
+}
+
+.well.success svg {
+  color: var(--success-border-color);
 }
 
 .well .icon {

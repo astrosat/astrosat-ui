@@ -109,28 +109,28 @@ storiesOf('Buttons', module)
         <legend>Styled Icon Buttons</legend>
         <div className={styles.btnGroup}>
           <Button onClick={action('clicked')}>
-            <ContactIcon classes={`${styles.btnIcon} ${styles.red}`} />
+            <ContactIcon classes={`${styles.btnIcon} ${styles.color}`} />
           </Button>
           <Button onClick={action('clicked')}>
-            <MenuIcon classes={`${styles.btnIcon} ${styles.grey}`} />
+            <MenuIcon classes={`${styles.btnIcon} ${styles.color}`} />
           </Button>
           <Button onClick={action('clicked')}>
-            <ErrorIcon classes={`${styles.btnIcon} ${styles.blue}`} />
+            <ErrorIcon classes={`${styles.btnIcon} ${styles.color}`} />
           </Button>
           <Button onClick={action('clicked')}>
-            <CorrectIcon classes={`${styles.btnIcon} ${styles.green}`} />
+            <CorrectIcon classes={`${styles.btnIcon} ${styles.color}`} />
           </Button>
           <Button onClick={action('clicked')}>
-            <CloseIcon classes={`${styles.btnIcon} ${styles.teal}`} />
+            <CloseIcon classes={`${styles.btnIcon} ${styles.color}`} />
           </Button>
           <Button onClick={action('clicked')}>
-            <TwitterIcon classes={`${styles.btnIcon} ${styles.yellow}`} />
+            <TwitterIcon classes={`${styles.btnIcon} ${styles.color}`} />
           </Button>
           <Button onClick={action('clicked')}>
-            <FacebookIcon classes={`${styles.btnIcon} ${styles.orange}`} />
+            <FacebookIcon classes={`${styles.btnIcon} ${styles.color}`} />
           </Button>
           <Button onClick={action('clicked')}>
-            <LinkedInIcon classes={`${styles.btnIcon} ${styles.violet}`} />
+            <LinkedInIcon classes={`${styles.btnIcon} ${styles.color}`} />
           </Button>
         </div>
       </fieldset>
