@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/astrosat/astrosat-ui/compare/v1.8.3...v1.8.4) (2019-12-18)
+
+
+### Bug Fixes
+
+* **frontend:** Re-add CommonJS support ([f928e94](https://github.com/astrosat/astrosat-ui/commit/f928e945aeb71078425352d818b3df3e24e383d5))
+
 ## [1.8.3](https://github.com/astrosat/astrosat-ui/compare/v1.8.2...v1.8.3) (2019-12-18)
 
 
