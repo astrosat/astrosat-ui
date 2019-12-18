@@ -1,7 +1,7 @@
 import React from 'react';
 import { Range, getTrackBackground } from 'react-range';
 import styles from './slider.module.css';
-import scaleIdentity from 'd3-scale/src/identity';
+import { scaleIdentity } from 'd3-scale';
 
 const Slider = ({
   min,
