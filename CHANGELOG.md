@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/astrosat/astrosat-ui/compare/v1.8.2...v1.8.3) (2019-12-18)
+
+
+### Bug Fixes
+
+* **frontend:** Update release to clean dist first ([5eba813](https://github.com/astrosat/astrosat-ui/commit/5eba813d34fbe4ed9730aa21320b6cc13f020019))
+
 ## [1.8.2](https://github.com/astrosat/astrosat-ui/compare/v1.8.1...v1.8.2) (2019-12-18)
 
 
