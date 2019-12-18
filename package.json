@@ -31,11 +31,11 @@
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "yarn test -- --coverage",
     "lint": "eslint src/*.js",
-    "clean": "rm -rf coverage dist",
+    "clean": "rm -rf coverage dist node_modules",
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "serve": "st -nc -i index.html",
-    "release": "yarn build && semantic-release --no-ci",
+    "release": "yarn clean && yarn && yarn build && semantic-release --no-ci",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

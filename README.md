@@ -8,6 +8,7 @@ A module containing a number of useful mapbox-gl-js controls and mapbox-gl-draw 
   - [Table of Contents](#table-of-contents)
   - [Build Distribution](#build-distribution)
   - [Examples](#examples)
+  - [Usage](#usage)
   - [Development](#development)
     - [Link Library](#link-library)
   - [Release Strategy](#release-strategy)
@@ -28,13 +29,7 @@ Each example will open in their own tab.
 
 ## Usage
 
-You can import individual components from the library's central export:
-
-```javascript
-import { Button } from '@astrosat/astrosat-ui';
-```
-
-However, the recommended route is to import files individually:
+The recommended route is to import files individually:
 
 ```javascript
 import Button from '@astrosat/astrosat-ui/dist/buttons/button';
