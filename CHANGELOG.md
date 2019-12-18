@@ -1,3 +1,12 @@
+## [1.8.2](https://github.com/astrosat/astrosat-ui/compare/v1.8.1...v1.8.2) (2019-12-18)
+
+
+### Bug Fixes
+
+* **frontend:** Publish new package on release published ([ed015dc](https://github.com/astrosat/astrosat-ui/commit/ed015dc2a43b2c48d51afb47b08b06b2714f5262))
+* **frontend): Revert "Revert "fix(frontend:** Publish on push to fix problem with actions""" ([202ca15](https://github.com/astrosat/astrosat-ui/commit/202ca1512b5d6c46a043304a0e54a3ccf244d8ce))
+* **project:** Reduce down to a single format (ES) ([7daf493](https://github.com/astrosat/astrosat-ui/commit/7daf493467c2e20f09b8fdface0e7d93938072ca))
+
 ## [1.8.1](https://github.com/astrosat/astrosat-ui/compare/v1.8.0...v1.8.1) (2019-12-17)
 
 
