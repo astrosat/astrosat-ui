@@ -15,10 +15,13 @@
 .button:last-child {
   border-radius: 0 4px 4px 0;
 }
-.selected {
-  composes: primary from './button.module.css';
+.active {
+  /* composes: primary from './button.module.css'; */
+  background-color: #000;
+  color: #fff;
 }
 
-.unselected {
-  composes: secondary from './button.module.css';
+.inactive {
+  composes: primary from './button.module.css';
+  /* composes: secondary from './button.module.css'; */
 }

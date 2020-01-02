@@ -39,6 +39,9 @@ storiesOf('Buttons', module)
           <Button theme="tertiary" onClick={action('clicked')}>
             Tertiary
           </Button>
+          <Button theme="primary" onClick={action('clicked')} active={true}>
+            Active
+          </Button>
           <Button theme="primary" onClick={action('clicked')} disabled={true}>
             Disabled
           </Button>
@@ -139,11 +142,12 @@ storiesOf('Buttons', module)
         <legend>Button Group</legend>
         <div className={styles.btnGroup}>
           <ButtonGroup
-            onSelect={action('selected')}
-            selected="happy"
+            onClick={action('selected')}
+            active="happy"
             options={{
               happy: 'Happy',
-              sad: 'VERY SAD'
+              sad: 'VERY SAD',
+              psycho: 'PSYCHO'
             }}
           />
         </div>
