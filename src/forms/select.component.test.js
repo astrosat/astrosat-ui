@@ -19,7 +19,10 @@ describe('Select Component', () => {
   afterEach(cleanup);
 
   it('should render a select button', () => {
-    const { container } = render(<Select options={options} />);
+    const onChange = jest.fn();
+    const { container } = render(
+      <Select name="test" options={options} onChange={onChange} />
+    );
 
     expect(container.querySelector('.select')).toBeInTheDocument();
     expect(container.querySelector('input')).toHaveAttribute('type', 'text');
@@ -28,7 +31,10 @@ describe('Select Component', () => {
   });
 
   it('should display options', () => {
-    const { container } = render(<Select options={options} />);
+    const onChange = jest.fn();
+    const { container } = render(
+      <Select name="test" options={options} onChange={onChange} />
+    );
 
     fireEvent.click(container.querySelector('.textfield'));
 
@@ -37,8 +43,11 @@ describe('Select Component', () => {
   });
 
   it('should select an option', () => {
+    const onChange = jest.fn();
     const option = 'Option 2';
-    const { container, getByText } = render(<Select options={options} />);
+    const { container, getByText } = render(
+      <Select name="test" options={options} onChange={onChange} />
+    );
 
     fireEvent.click(container.querySelector('.textfield'));
     fireEvent.click(getByText(option));

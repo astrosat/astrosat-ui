@@ -20,7 +20,7 @@ const Select = ({ name, value, options, onChange }) => {
         <Textfield
           classNames={[styles.text]}
           name={name}
-          value={selected.name || ''}
+          value={selected ? selected.name : ''}
           readOnly
         />
       </div>
@@ -36,7 +36,7 @@ const Select = ({ name, value, options, onChange }) => {
                 onClick={event => {
                   setSelected(option);
                   toggle();
-                  console.log('OPTION: ', event);
+                  // console.log('OPTION: ', event);
                   onChange({
                     target: { name: name, value: option.value }
                   });
