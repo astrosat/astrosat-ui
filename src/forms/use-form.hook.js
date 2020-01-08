@@ -13,6 +13,7 @@ const SET_IS_SUBMITTING = 'SET_IS_SUBMITTING';
 const reducer = (state, action) => {
   switch (action.type) {
     case SET_VALUES:
+      console.log('SELECT ACTION: ', action);
       return {
         ...state,
         values: action.values
@@ -52,11 +53,20 @@ const useForm = (callback, validate) => {
   };
 
   const handleChange = event => {
-    event.persist();
+    console.log(
+      'HANDLING CHANGE: ',
+      event.target.name,
+      ' = ',
+      event.target.value
+    );
+
+    if (event.persist) event.persist();
 
     const newValues = {
       ...state.values,
-      [event.target.name]: event.target.value.trim()
+      [event.target.name]: event.target.value.trim
+        ? event.target.value.trim()
+        : event.target.value
     };
 
     dispatch({ type: SET_ERRORS, errors: validate(newValues) });

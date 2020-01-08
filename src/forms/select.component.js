@@ -6,9 +6,10 @@ import Textfield from './text-field.component';
 
 import styles from './select.module.css';
 
-const Select = ({ options }) => {
+const Select = ({ name, value, options, onChange }) => {
   const { isVisible, toggle } = useModal(false);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(value);
+  // console.log('SELECTED: ', selected);
 
   return (
     <div className={styles.select}>
@@ -18,7 +19,8 @@ const Select = ({ options }) => {
       >
         <Textfield
           classNames={[styles.text]}
-          value={selected ? selected.name : ''}
+          name={name}
+          value={selected.name || ''}
           readOnly
         />
       </div>
@@ -31,9 +33,14 @@ const Select = ({ options }) => {
                 key={option.name}
                 name={option.name}
                 className={styles.option}
-                onClick={() => {
+                onClick={event => {
                   setSelected(option);
                   toggle();
+                  console.log('OPTION: ', event);
+                  onChange({
+                    target: { name: name, value: option.value }
+                  });
+                  // console.log('OPTION: ', option);
                 }}
               >
                 {option.name}
@@ -52,7 +59,8 @@ Select.propTypes = {
       name: PropTypes.string,
       value: PropTypes.any
     })
-  )
+  ),
+  onChange: PropTypes.func.isRequired
 };
 
 export default Select;

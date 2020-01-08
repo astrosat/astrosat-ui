@@ -76,7 +76,7 @@ storiesOf('Form', module)
       </div>
 
       <div className={styles.btnGroup}>
-        <Select onChange={action('Text Entered')} options={options} />
+        <Select onChange={action('Option Selected')} options={options} />
       </div>
 
       <div className={styles.btnGroup}>
