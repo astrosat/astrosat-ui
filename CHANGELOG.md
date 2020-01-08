@@ -1,3 +1,19 @@
+# [1.9.0](https://github.com/astrosat/astrosat-ui/compare/v1.8.4...v1.9.0) (2020-01-08)
+
+
+### Bug Fixes
+
+* **frontend:** Add setup for testing React Hooks ([276441c](https://github.com/astrosat/astrosat-ui/commit/276441c3095548687c667b9384fca0c5b42e947a))
+* **frontend:** Fix select tests ([1313f6c](https://github.com/astrosat/astrosat-ui/commit/1313f6ccc7c490de55d4b85db362ae7dd6680dcb))
+* **frontend:** Make buttons take the minimum size necessary ([7c1b000](https://github.com/astrosat/astrosat-ui/commit/7c1b000ef13307d3802dad27ec50c84b606c9f28))
+* **frontend:** Make the select work with forms hook ([fc943ff](https://github.com/astrosat/astrosat-ui/commit/fc943ff4f07f84066225d962d8bce909dd078415))
+* **frontend:** Update styling of icons ([4829790](https://github.com/astrosat/astrosat-ui/commit/4829790a6fb775d2a3337f2c9db0be283a89be0b))
+
+
+### Features
+
+* **frontend:** Add component tests ([f51d6bd](https://github.com/astrosat/astrosat-ui/commit/f51d6bd2f6771b3bae210e8eb9983b53e3e1824f))
+
 ## [1.8.4](https://github.com/astrosat/astrosat-ui/compare/v1.8.3...v1.8.4) (2019-12-18)
 
 
