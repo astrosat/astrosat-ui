@@ -17,10 +17,17 @@ import Button from './button.component';
 import CloseButton from './close-button.component';
 import InfoButton from './info-button.component';
 import ButtonGroup from './button-group.component';
+import Switch from './switch.component';
 
 import styles from '../index.module.css';
 
 const themes = { Dark: styles.dark, Light: styles.light };
+
+let isOn = false;
+const toggleFn = () => {
+  isOn = !isOn;
+  console.log('TOGGLED: ', isOn);
+};
 
 storiesOf('Buttons', module)
   .addDecorator(withKnobs)
@@ -160,6 +167,47 @@ storiesOf('Buttons', module)
         </div>
         <div className={styles.btnGroup}>
           <InfoButton onClick={action('clicked')} />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Toggle Buttons</legend>
+        <div className={styles.btnGroup}>
+          <Switch
+            name="test"
+            value="option"
+            label="Enabled Off"
+            onClick={toggleFn}
+            ariaLabel="Switch Button"
+          />
+
+          <Switch
+            name="test"
+            value="option"
+            label="Enabled On"
+            onClick={toggleFn}
+            checked={true}
+            ariaLabel="Switch Button"
+          />
+
+          <Switch
+            name="test"
+            value="option"
+            label="Disabled Off"
+            onClick={toggleFn}
+            disabled={true}
+            ariaLabel="Switch Button"
+          />
+
+          <Switch
+            name="test"
+            value="option"
+            label="Disabled On"
+            onClick={toggleFn}
+            checked={true}
+            disabled={true}
+            ariaLabel="Switch Button"
+          />
         </div>
       </fieldset>
     </div>
