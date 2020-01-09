@@ -6,22 +6,23 @@ import Textfield from './text-field.component';
 
 import styles from './select.module.css';
 
-const Select = ({ name, value, options, onChange }) => {
+const Select = ({ name, value, options, onChange, disabled }) => {
   const { isVisible, toggle } = useModal(false);
   const [selected, setSelected] = useState(value);
   // console.log('SELECTED: ', selected);
 
   return (
-    <div className={styles.select}>
+    <div className={`${styles.select} ${disabled ? styles.disabled : ''}`}>
       <div
         className={`${styles.header} ${isVisible ? styles.visible : ''}`}
-        onClick={toggle}
+        onClick={!disabled ? toggle : null}
       >
         <Textfield
           classNames={[styles.text]}
           name={name}
           value={selected ? selected.name : ''}
           readOnly
+          disabled={disabled}
         />
       </div>
 
@@ -34,13 +35,13 @@ const Select = ({ name, value, options, onChange }) => {
                 name={option.name}
                 className={styles.option}
                 onClick={event => {
-                  setSelected(option);
-                  toggle();
-                  // console.log('OPTION: ', event);
-                  onChange({
-                    target: { name: name, value: option.value }
-                  });
-                  // console.log('OPTION: ', option);
+                  if (!disabled) {
+                    setSelected(option);
+                    toggle();
+                    onChange({
+                      target: { name: name, value: option.value }
+                    });
+                  }
                 }}
               >
                 {option.name}

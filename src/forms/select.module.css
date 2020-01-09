@@ -1,4 +1,5 @@
 .select {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -28,15 +29,17 @@
 }
 
 .select .options {
-  position: relative;
+  position: absolute;
+  display: block;
   background-color: #fff;
   margin-block-start: 0;
   margin-block-end: 0;
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 0;
   box-shadow: 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.1);
   border: 8px solid var(--menu-border);
   border-radius: 0.3rem;
+  width: 100%;
 }
 
 .select .option {
@@ -77,4 +80,8 @@
 
 .select .option:active {
   background-color: green;
+}
+
+.disabled {
+  background-color: lightgray;
 }
