@@ -28,6 +28,7 @@ export { default as CorrectIcon } from './icons/correct-icon.component';
 export { default as ErrorIcon } from './icons/error-icon.component';
 export { default as FacebookIcon } from './icons/facebook-icon.component';
 export { default as FaqIcon } from './icons/faq-icon.component';
+export { default as InfoIcon } from './icons/info-icon.component';
 export { default as LinkedInIcon } from './icons/linked-in-icon.component';
 export { default as MenuIcon } from './icons/menu-icon.component';
 export { default as ProfileIcon } from './icons/profile-icon.component';

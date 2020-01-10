@@ -31,7 +31,7 @@ const Switch = ({
 
       <button
         className={`${styles['toggle-btn']}
-       ${isOn ? styles['toggle-btn-on'] : styles['toggle-btn-off']}`}
+       ${isOn ? styles['toggle-btn-on'] : ''}`}
         disabled={disabled}
         onClick={event => {
           onClick(event);

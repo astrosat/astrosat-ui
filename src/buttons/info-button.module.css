@@ -1,5 +1,21 @@
 .info {
-  height: 0.8rem;
-  fill: var(--button-text);
-  padding: 0.2rem 0 0.1rem 0.5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  padding: 0.5rem;
+  background-color: #a2aaad;
+}
+
+.info:hover {
+  background-color: red;
+}
+
+.info:active {
+  background-color: green;
+}
+
+.icon {
+  height: 1rem;
+  fill: var(--close-button-text);
 }

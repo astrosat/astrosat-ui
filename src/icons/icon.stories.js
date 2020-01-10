@@ -11,6 +11,7 @@ import CorrectIcon from './correct-icon.component';
 import ErrorIcon from './error-icon.component';
 import FacebookIcon from './facebook-icon.component';
 import FaqIcon from './faq-icon.component';
+import InfoIcon from './info-icon.component';
 import LinkedInIcon from './linked-in-icon.component';
 import MenuIcon from './menu-icon.component';
 import ProfileIcon from './profile-icon.component';
@@ -37,6 +38,7 @@ storiesOf('Icons', module)
           <ErrorIcon classes={styles.icon} />
           <FacebookIcon classes={styles.icon} />
           <FaqIcon classes={styles.icon} />
+          <InfoIcon classes={styles.icon} />
           <LinkedInIcon classes={styles.icon} />
           <MenuIcon classes={styles.icon} />
           <ProfileIcon classes={styles.icon} />
@@ -57,6 +59,7 @@ storiesOf('Icons', module)
           <ErrorIcon classes={`${styles.icon} ${styles.color}`} />
           <FacebookIcon classes={`${styles.icon} ${styles.color}`} />
           <FaqIcon classes={`${styles.icon} ${styles.color}`} />
+          <InfoIcon classes={`${styles.icon} ${styles.color}`} />
           <LinkedInIcon classes={`${styles.icon} ${styles.color}`} />
           <MenuIcon classes={`${styles.icon} ${styles.color}`} />
           <ProfileIcon classes={`${styles.icon} ${styles.color}`} />

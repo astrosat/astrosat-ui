@@ -14,7 +14,7 @@ describe('Switch Component', () => {
       <Switch on={false} onClick={onClick} />
     );
 
-    expect(container.querySelector('.toggle-btn-off')).toBeInTheDocument();
+    expect(container.querySelector('.toggle-btn-on')).not.toBeInTheDocument();
     fireEvent.click(container.querySelector('.toggle-btn'));
     expect(onClick).toHaveBeenCalled();
 

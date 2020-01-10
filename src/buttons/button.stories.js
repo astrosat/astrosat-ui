@@ -167,6 +167,7 @@ storiesOf('Buttons', module)
         </div>
         <div className={styles.btnGroup}>
           <InfoButton onClick={action('clicked')} />
+          <InfoButton onClick={action('clicked')} />
         </div>
       </fieldset>
 
