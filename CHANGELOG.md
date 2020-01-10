@@ -1,3 +1,17 @@
+# [1.10.0](https://github.com/astrosat/astrosat-ui/compare/v1.9.0...v1.10.0) (2020-01-10)
+
+
+### Bug Fixes
+
+* **frontend:** Fix broken tests ([f8152d4](https://github.com/astrosat/astrosat-ui/commit/f8152d49e90f6550c6f2cb2cc68dd7c030c5947b))
+* **frontend:** Make select dropdown expand beyond parent ([4a21bd3](https://github.com/astrosat/astrosat-ui/commit/4a21bd386730276ee01ac0a284d96f3149338166))
+* **frontend:** Refactor Info Button ([424275d](https://github.com/astrosat/astrosat-ui/commit/424275d87e43d9afb2a090ff3f80980ccf23e41c))
+
+
+### Features
+
+* **frontend:** Add switch component ([75d4709](https://github.com/astrosat/astrosat-ui/commit/75d470996ca0e2fc8e7ecc8eb54cd6e58ae24012))
+
 # [1.9.0](https://github.com/astrosat/astrosat-ui/compare/v1.8.4...v1.9.0) (2020-01-08)
 
 
