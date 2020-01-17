@@ -17,7 +17,8 @@
   height: 0.45em;
   transform: rotate(45deg);
   width: 0.45em;
-  color: var(--primary-button-background-color);
+  color: var(--primary-foreground-color);
+  align-self: center;
 }
 
 .select .visible.header::after {

@@ -11,7 +11,7 @@ button.button {
   border-radius: 0.3rem;
   padding: 1rem 2rem;
   font-family: var(--primary-font-family);
-  font-weight: bold;
+  font-weight: 550;
   text-align: center;
   display: flex;
   align-items: center;
