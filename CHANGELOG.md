@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/astrosat/astrosat-ui/compare/v1.10.0...v1.10.1) (2020-01-17)
+
+
+### Bug Fixes
+
+* **frontend:** Adjust styling to match designs. ([59d31c1](https://github.com/astrosat/astrosat-ui/commit/59d31c137f6e0112eb708fdbf3d337c50ea75c7e))
+
 # [1.10.0](https://github.com/astrosat/astrosat-ui/compare/v1.9.0...v1.10.0) (2020-01-10)
 
 
