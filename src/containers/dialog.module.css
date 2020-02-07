@@ -1,6 +1,7 @@
 .modal {
   position: fixed;
   top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,14 +13,23 @@
 .modal .dialog {
   background: white;
   border-radius: 0.5rem;
+  min-width: 50rem;
 }
 
 .dialog .header {
   display: flex;
   justify-content: center;
+  position: relative;
+  padding: 2rem;
   background-color: var(--primary-background-color);
   border-radius: 0.5rem 0.5rem 0 0;
   border-bottom: 1px solid #000;
+}
+
+.dialog .header .CloseButton {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .dialog .header .title {
