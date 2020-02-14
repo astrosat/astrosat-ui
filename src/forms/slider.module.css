@@ -1,10 +1,8 @@
 .track {
-  height: 66px;
+  height: 2rem;
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding: 30px;
-  padding-bottom: 0;
   box-sizing: border-box;
 }
 .trackBackground {
