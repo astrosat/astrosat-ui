@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import ShowIcon from './show-icon.svg';
-import HideIcon from './hide-icon.svg';
-
 import styles from './text-field.module.css';
 import passwordStyles from './password-field.module.css';
 
@@ -36,18 +33,13 @@ const PasswordField = ({
         required={required}
         autoFocus={autoFocus}
       />
-      <span className={passwordStyles.span}>
-        {isVisible ? <HideIcon className={passwordStyles.icon} onClick={toggleVisibility} /> 
-      : <ShowIcon className={passwordStyles.icon} onClick={toggleVisibility} />}
-      </span>
-
-      {/* <button
+      <button
         type="button"
         className={passwordStyles.passwordButton}
         onClick={toggleVisibility}
       >
         {isVisible ? 'Hide' : 'Show'}
-      </button> */}
+      </button>
     </div>
   );
 };
