@@ -1,0 +1,58 @@
+/* Outer container */
+.progress {
+  position: relative;
+  height: 20px;
+  width: 350px;
+  border-radius: 50px;
+  border: 1px solid #333;
+  overflow: hidden;
+  background: #e6e6e6;
+  margin: 5px;
+}
+
+/* Filler */
+.progress:after {
+  position: absolute;
+  height: 100%;
+  width: 120px;
+  content: ' ';
+  display: block;
+  animation: greenglow 2s linear infinite;
+  -webkit-animation: greenglow 2s linear infinite;
+  background: #1da598;
+  border-radius: 50px;
+}
+
+/* Animate Filler */
+@-webkit-keyframes greenglow {
+  from {
+    left: -120px;
+  }
+  to {
+    left: 100%;
+  }
+}
+@-moz-keyframes greenglow {
+  from {
+    left: -120px;
+  }
+  to {
+    left: 100%;
+  }
+}
+@-o-keyframes greenglow {
+  from {
+    left: -120px;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes greenglow {
+  from {
+    left: -120px;
+  }
+  to {
+    left: 100%;
+  }
+}
