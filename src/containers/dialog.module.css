@@ -11,25 +11,25 @@
 }
 
 .modal .dialog {
+  position: relative;
   background: white;
   border-radius: 0.5rem;
   min-width: 50rem;
 }
 
+.closeButton {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+}
+
 .dialog .header {
   display: flex;
   justify-content: center;
-  position: relative;
   padding: 1.5rem;
   background-color: var(--primary-background-color);
   border-radius: 0.5rem 0.5rem 0 0;
   border-bottom: 1px solid #000;
-}
-
-.dialog .header .CloseButton {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .dialog .header .title {

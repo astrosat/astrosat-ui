@@ -27,7 +27,11 @@ const Dialog = ({ isVisible, close, title, children }, ref) => {
           >
             <div className={styles.header}>
               <h3 className={styles.title}>{title}</h3>
-              <CloseButton onClick={close} ariaLabel="Close" />
+              <CloseButton
+                className={styles.closeButton}
+                onClick={close}
+                ariaLabel="Close"
+              />
             </div>
 
             <div className={styles.content}>{children}</div>
