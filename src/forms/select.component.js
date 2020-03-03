@@ -38,6 +38,7 @@ const Select = ({ name, value, options, onChange, disabled }) => {
                   if (!disabled) {
                     setSelected(option);
                     toggle();
+                    // onChange(event);
                     onChange({
                       target: { name: name, value: option.value }
                     });

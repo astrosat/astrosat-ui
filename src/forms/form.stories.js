@@ -11,6 +11,9 @@ import Checkbox from './checkbox.component';
 import Radio from './radio.component';
 import Slider from './slider.component';
 import Select from './select.component';
+import useForm from './use-form.hook';
+import Button from '../buttons/button.component';
+
 import LoadMask from '../load-mask/load-mask.component';
 
 import { scaleUtc, scalePow } from 'd3-scale';
@@ -34,6 +37,103 @@ const options = [
   },
   { name: 'Option 3', value: 'Mr' }
 ];
+
+const Form = () => {
+  const { handleChange, handleSubmit, values, errors } = useForm(
+    onSubmit,
+    validate
+  );
+  console.log('VALUES: ', values, ', ERRORS: ', errors);
+
+  function validate() {
+    return {};
+  }
+
+  function onSubmit() {
+    console.log('Submitting: ', values);
+  }
+
+  return (
+    <div className={`${styles.container} ${styles.accountsBackground}`}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.btnGroup}>
+          <Textfield
+            name="email"
+            value={values.email || ''}
+            placeholder="Email"
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className={styles.btnGroup}>
+          <Checkbox
+            name="resolutions"
+            value="free"
+            label="Free"
+            onChange={event => handleChange(event)}
+          />
+          <Checkbox
+            name="resolutions"
+            value="mid"
+            label="Mid"
+            onChange={event => handleChange(event)}
+          />
+          <Checkbox
+            name="resolutions"
+            value="high"
+            label="High"
+            disabled={true}
+            onChange={event => handleChange(event)}
+          />
+        </div>
+
+        <div className={styles.btnGroup}>
+          <Radio
+            id="option1"
+            name="option"
+            value="option1"
+            label="Radio One"
+            onChange={handleChange}
+          />
+          <Radio
+            id="option2"
+            name="option"
+            value="option2"
+            label="Radio Two"
+            onChange={handleChange}
+          />
+          <Radio
+            id="option3"
+            name="option"
+            value="option3"
+            label="Radio Three"
+            onChange={handleChange}
+            disabled={true}
+          />
+        </div>
+
+        <div className={styles.btnGroup}>
+          <Select name="title" onChange={handleChange} options={options} />
+        </div>
+
+        <div className={styles.btnGroup}>
+          <TextArea
+            name="description"
+            rows="10"
+            placeholder="Text area content..."
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className={styles.buttons}>
+          <Button type="submit" theme="primary" className={styles.button}>
+            Login
+          </Button>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 storiesOf('Form', module)
   .addDecorator(withKnobs)
@@ -189,4 +289,5 @@ storiesOf('Form', module)
         onChange={action('Logarithmic Slider changed')}
       />
     </div>
-  ));
+  ))
+  .add('Form', () => <Form />);
