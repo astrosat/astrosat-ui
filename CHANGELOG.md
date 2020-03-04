@@ -1,3 +1,11 @@
+## [1.11.2](https://github.com/astrosat/astrosat-ui/compare/v1.11.1...v1.11.2) (2020-03-04)
+
+
+### Bug Fixes
+
+* **frontend:** Remove dependencies provided by others ([b1176f9](https://github.com/astrosat/astrosat-ui/commit/b1176f9491fa0322e7a2a3c223b06192417691d0))
+* **frontend:** Remove unnecessary dependencies ([9fb70c8](https://github.com/astrosat/astrosat-ui/commit/9fb70c82c9b06e5ec5d036911b38c9750d85e6a6))
+
 ## [1.11.1](https://github.com/astrosat/astrosat-ui/compare/v1.11.0...v1.11.1) (2020-03-04)
 
 
