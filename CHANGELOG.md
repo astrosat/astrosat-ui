@@ -1,3 +1,11 @@
+## [1.11.3](https://github.com/astrosat/astrosat-ui/compare/v1.11.2...v1.11.3) (2020-03-04)
+
+
+### Bug Fixes
+
+* **frontend:** Allow setting checkboxes and radio buttons default ([beefd49](https://github.com/astrosat/astrosat-ui/commit/beefd492ade61e9743b7877e52f48f5db7ac4df2))
+* **frontend:** Update yarn lock file ([0af6943](https://github.com/astrosat/astrosat-ui/commit/0af694385b49a14133dc11792a28a4ce11b0541e))
+
 ## [1.11.2](https://github.com/astrosat/astrosat-ui/compare/v1.11.1...v1.11.2) (2020-03-04)
 
 
