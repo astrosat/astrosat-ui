@@ -9,12 +9,13 @@ const Radio = ({
   onChange,
   disabled = false,
   checked,
+  defaultChecked = false,
   ariaLabel
 }) => (
   <label
-    className={`${styles.radio} ${checked ? styles.active : ''}  ${
-      disabled ? styles.disabled : ''
-    }`}
+    className={`${styles.radio} ${defaultChecked ? styles.active : ''} ${
+      checked ? styles.active : ''
+    } ${disabled ? styles.disabled : ''}`}
   >
     <input
       type="radio"
@@ -23,6 +24,7 @@ const Radio = ({
       disabled={disabled}
       onChange={event => (!disabled ? onChange(event) : null)}
       checked={checked}
+      defaultChecked={defaultChecked}
       aria-label={ariaLabel}
     />
     <span className={styles.checkmark} />
