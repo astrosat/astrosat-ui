@@ -21,7 +21,7 @@ const Radio = ({
       name={name}
       value={value ? value : name}
       disabled={disabled}
-      onChange={onChange}
+      onChange={event => (!disabled ? onChange(event) : null)}
       checked={checked}
       aria-label={ariaLabel}
     />
