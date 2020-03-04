@@ -69,20 +69,20 @@ const Form = () => {
             name="resolutions"
             value="free"
             label="Free"
-            onChange={event => handleChange(event)}
+            onChange={handleChange}
           />
           <Checkbox
             name="resolutions"
             value="mid"
             label="Mid"
-            onChange={event => handleChange(event)}
+            onChange={handleChange}
           />
           <Checkbox
             name="resolutions"
             value="high"
             label="High"
             disabled={true}
-            onChange={event => handleChange(event)}
+            onChange={handleChange}
           />
         </div>
 
