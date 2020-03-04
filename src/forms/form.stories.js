@@ -70,7 +70,6 @@ const Form = () => {
             value="free"
             label="Free"
             onChange={handleChange}
-            defaultChecked={true}
           />
           <Checkbox
             name="resolutions"
@@ -94,7 +93,6 @@ const Form = () => {
             value="option1"
             label="Radio One"
             onChange={handleChange}
-            defaultChecked={true}
           />
           <Radio
             id="option2"
@@ -221,7 +219,6 @@ storiesOf('Form', module)
           value="option1"
           label="Checkbox One"
           onChange={action('Checkbox toggled')}
-          defaultChecked={true}
         />
         <Checkbox
           name="test"
@@ -244,7 +241,6 @@ storiesOf('Form', module)
           value="option1"
           label="Radio One"
           onChange={action('Radio selected')}
-          defaultChecked={true}
         />
         <Radio
           name="test"
