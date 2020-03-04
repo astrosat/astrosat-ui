@@ -15,12 +15,12 @@
   position: absolute;
   height: 100%;
   width: 120px;
+  border-radius: inherit;
   content: ' ';
   display: block;
   animation: greenglow 2s linear infinite;
   -webkit-animation: greenglow 2s linear infinite;
   background: #1da598;
-  border-radius: 50px;
 }
 
 /* Animate Filler */
