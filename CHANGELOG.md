@@ -1,3 +1,24 @@
+# [1.11.0](https://github.com/astrosat/astrosat-ui/compare/v1.10.1...v1.11.0) (2020-03-04)
+
+
+### Bug Fixes
+
+* **frontend:** Adjust styling, import SVGs ([18e424c](https://github.com/astrosat/astrosat-ui/commit/18e424ca1eb5db3f3d3827b900bc2214dbed1e23))
+* **frontend:** Change loadmask color/edit slider ([a812cd8](https://github.com/astrosat/astrosat-ui/commit/a812cd8ba90e1fc508e8a5b4354c584c18d9cf1f))
+* **frontend:** Fix  dialog box ([57b65d6](https://github.com/astrosat/astrosat-ui/commit/57b65d69f134583c36fd8d087b4b1fed338505e1))
+* **frontend:** Fix custom elements in forms ([dc4635e](https://github.com/astrosat/astrosat-ui/commit/dc4635ea881ac3ee95682245270126d2f63d95ea))
+* **frontend:** Fix tests for radio and checkboxes ([e4aa498](https://github.com/astrosat/astrosat-ui/commit/e4aa498d13c2011d2bca872f74847401c1ee5f44))
+* **frontend:** Make requested changes ([a1a8ef7](https://github.com/astrosat/astrosat-ui/commit/a1a8ef738261cf9e0d3d4b5d5522da1e8dcb28e8))
+* **frontend:** Remove unnecessary code ([1ec23cd](https://github.com/astrosat/astrosat-ui/commit/1ec23cd9ea42b290a8f3eb9bb07c7b14e729c7e6))
+* **frontend:** Return password to original state ([9c34fb7](https://github.com/astrosat/astrosat-ui/commit/9c34fb78ec95e1c4760cc13de0dbc1a44ec025a3))
+* **frontend:** Simplify code for onChange event ([1370876](https://github.com/astrosat/astrosat-ui/commit/137087698c790546da544418022066ede977f2e1))
+
+
+### Features
+
+* **frontend:** Add progress bars ([84c72ed](https://github.com/astrosat/astrosat-ui/commit/84c72edc40c8062de78e071a5da0c3193aa999fa))
+* **frontend:** Add progress bars ([27f2d95](https://github.com/astrosat/astrosat-ui/commit/27f2d956f257d26f675e4d09b8ea1f55d5b533c7))
+
 ## [1.10.1](https://github.com/astrosat/astrosat-ui/compare/v1.10.0...v1.10.1) (2020-01-17)
 
 
