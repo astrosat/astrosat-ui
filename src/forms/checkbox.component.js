@@ -21,7 +21,7 @@ const Checkbox = ({
       name={name}
       value={value ? value : name}
       disabled={disabled}
-      onChange={() => (!disabled ? onChange(value) : null)}
+      onChange={event => (!disabled ? onChange(event) : null)}
       checked={checked}
       aria-label={ariaLabel}
     />
