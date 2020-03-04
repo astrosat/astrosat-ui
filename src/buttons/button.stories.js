@@ -24,10 +24,7 @@ import styles from '../index.module.css';
 const themes = { Dark: styles.dark, Light: styles.light };
 
 let isOn = false;
-const toggleFn = () => {
-  isOn = !isOn;
-  console.log('TOGGLED: ', isOn);
-};
+const toggleFn = () => (isOn = !isOn);
 
 storiesOf('Buttons', module)
   .addDecorator(withKnobs)

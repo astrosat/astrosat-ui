@@ -9,7 +9,6 @@ const ButtonGroup = ({ active, onClick, options }) => {
   return (
     <div className={styles.group}>
       {Object.entries(options).map(([key, label], index) => {
-        // console.log('INDEX: ', index, options.length, options.length - 1);
         return (
           <Button
             key={key}
@@ -18,9 +17,6 @@ const ButtonGroup = ({ active, onClick, options }) => {
               styles.button,
               active === key ? styles.active : styles.inactive
             ]}
-            // classNames={`${styles.button} ${
-            //   selected === key ? styles.selected : styles.unselected
-            // }`}
             active={active === key ? true : false}
           >
             {label}

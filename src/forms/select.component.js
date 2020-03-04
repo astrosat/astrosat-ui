@@ -9,7 +9,6 @@ import styles from './select.module.css';
 const Select = ({ name, value, options, onChange, disabled }) => {
   const { isVisible, toggle } = useModal(false);
   const [selected, setSelected] = useState(value);
-  // console.log('SELECTED: ', selected);
 
   return (
     <div className={`${styles.select} ${disabled ? styles.disabled : ''}`}>
@@ -34,11 +33,10 @@ const Select = ({ name, value, options, onChange, disabled }) => {
                 key={option.name}
                 name={option.name}
                 className={styles.option}
-                onClick={event => {
+                onClick={() => {
                   if (!disabled) {
                     setSelected(option);
                     toggle();
-                    // onChange(event);
                     onChange({
                       target: { name: name, value: option.value }
                     });

@@ -43,7 +43,6 @@ const Form = () => {
     onSubmit,
     validate
   );
-  console.log('VALUES: ', values, ', ERRORS: ', errors);
 
   function validate() {
     return {};
