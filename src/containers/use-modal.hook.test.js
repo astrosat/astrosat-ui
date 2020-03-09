@@ -7,9 +7,9 @@ describe('Use Modal', () => {
 
   it('should toggle modal visibility', () => {
     const { result } = renderHook(() => useModal(true));
-    expect(result.current.isVisible).toBe(true);
+    expect(result.current[0]).toBe(true);
 
-    act(() => result.current.toggle());
-    expect(result.current.isVisible).toBe(false);
+    act(() => result.current[1]());
+    expect(result.current[0]).toBe(false);
   });
 });

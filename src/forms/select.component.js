@@ -7,7 +7,7 @@ import Textfield from './text-field.component';
 import styles from './select.module.css';
 
 const Select = ({ name, value, options, onChange, disabled }) => {
-  const { isVisible, toggle } = useModal(false);
+  const [isVisible, toggle] = useModal(false);
   const [selected, setSelected] = useState(value);
 
   return (
