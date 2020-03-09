@@ -39,9 +39,15 @@ const options = [
 ];
 
 const Form = () => {
+  const defaults = {
+    values: {
+      free: true
+    }
+  };
   const { handleChange, handleSubmit, values, errors } = useForm(
     onSubmit,
-    validate
+    validate,
+    defaults
   );
 
   function validate() {
@@ -66,20 +72,14 @@ const Form = () => {
 
         <div className={styles.btnGroup}>
           <Checkbox
-            name="resolutions"
-            value="free"
+            name="free"
             label="Free"
             onChange={handleChange}
+            checked={values.free}
           />
+          <Checkbox name="mid" label="Mid" onChange={handleChange} />
           <Checkbox
-            name="resolutions"
-            value="mid"
-            label="Mid"
-            onChange={handleChange}
-          />
-          <Checkbox
-            name="resolutions"
-            value="high"
+            name="high"
             label="High"
             disabled={true}
             onChange={handleChange}
@@ -215,20 +215,18 @@ storiesOf('Form', module)
 
       <div className={styles.btnGroup}>
         <Checkbox
-          name="test"
-          value="option1"
+          name="option1"
           label="Checkbox One"
           onChange={action('Checkbox toggled')}
+          checked={true}
         />
         <Checkbox
-          name="test"
-          value="option2"
+          name="option2"
           label="Checkbox Two"
           onChange={action('Checkbox toggled')}
         />
         <Checkbox
-          name="test"
-          value="option3"
+          name="option3"
           label="Checkbox Three"
           disabled={true}
           onChange={action('Checkbox toggled')}

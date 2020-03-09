@@ -35,8 +35,12 @@ const reducer = (state, action) => {
   }
 };
 
-const useForm = (callback, validate) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+const useForm = (callback, validate, defaults) => {
+  const combinedState = {
+    ...initialState,
+    ...defaults
+  };
+  const [state, dispatch] = useReducer(reducer, combinedState);
 
   useEffect(() => {
     if (Object.keys(state.errors).length === 0 && state.isSubmitting) {
@@ -56,23 +60,9 @@ const useForm = (callback, validate) => {
 
     let newValues = {};
     if (event.target.type === 'checkbox') {
-      // If the target is checked, then test if the name already
-      // exists in the state (not necessarily the same value), if so
-      // add the newly selected value to the array, if the name doesn't
-      // exist in the state, then add a new array. If the target is not
-      // checked, then filter the array in case it already exists and
-      // remove it.
       newValues = {
         ...state.values,
         [event.target.name]: event.target.checked
-          ? state.values[event.target.name]
-            ? [...state.values[event.target.name], event.target.value]
-            : [event.target.value]
-          : [
-              ...state.values[event.target.name].filter(
-                name => name !== event.target.value
-              )
-            ]
       };
     } else {
       newValues = {

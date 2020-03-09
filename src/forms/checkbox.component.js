@@ -19,7 +19,7 @@ const Checkbox = ({
     <input
       type="checkbox"
       name={name}
-      value={value ? value : name}
+      value={value}
       disabled={disabled}
       onChange={event => (!disabled ? onChange(event) : null)}
       checked={checked}
