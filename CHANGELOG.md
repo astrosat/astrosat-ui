@@ -1,3 +1,18 @@
+## [1.11.4](https://github.com/astrosat/astrosat-ui/compare/v1.11.3...v1.11.4) (2020-03-09)
+
+
+### Bug Fixes
+
+* **frontend:** Add ability to have default settings ([0378903](https://github.com/astrosat/astrosat-ui/commit/03789033300bb5e72bf9da774af445fb946f7951))
+* **frontend:** Fix failing tests ([7ef4b7a](https://github.com/astrosat/astrosat-ui/commit/7ef4b7abda31348ce3a560b6741f2aefbdf0b536))
+* **frontend:** Return array instead of object for useModal ([c8d7b19](https://github.com/astrosat/astrosat-ui/commit/c8d7b19c88812730916bedc3850f39e27eab8bdc))
+* **frontend:** Update yarn.log (again) ([4d5ab2d](https://github.com/astrosat/astrosat-ui/commit/4d5ab2da789a4415fd9db4075eca880f1b473df0))
+
+
+### Reverts
+
+* Revert "fix(frontend): Allow setting checkboxes and radio buttons default" ([b1a79b8](https://github.com/astrosat/astrosat-ui/commit/b1a79b83ade096c9c52662592d4dd312f65d4e76))
+
 ## [1.11.3](https://github.com/astrosat/astrosat-ui/compare/v1.11.2...v1.11.3) (2020-03-04)
 
 
