@@ -7,10 +7,7 @@ const useModal = visibility => {
     setIsVisible(!isVisible);
   }
 
-  return {
-    isVisible,
-    toggle
-  };
+  return [isVisible, toggle];
 };
 
 export default useModal;
