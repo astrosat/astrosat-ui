@@ -80,10 +80,15 @@ const useForm = (callback, validate, defaults) => {
     dispatch({ type: SET_VALUES, values: {} });
   };
 
+  const setValues = values => {
+    dispatch({ type: SET_VALUES, values });
+  };
+
   return {
     handleChange,
     handleSubmit,
     reset,
+    setValues,
     values: state.values,
     errors: state.errors
   };
