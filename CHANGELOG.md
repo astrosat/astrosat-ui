@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/astrosat/astrosat-ui/compare/v1.11.4...v1.12.0) (2020-03-13)
+
+
+### Features
+
+* **frontend:** Set values function ([044f299](https://github.com/astrosat/astrosat-ui/commit/044f2999f94d88e96ebfc8deaef260e300581965)), closes [astrosat/orbis#185](https://github.com/astrosat/orbis/issues/185)
+
 ## [1.11.4](https://github.com/astrosat/astrosat-ui/compare/v1.11.3...v1.11.4) (2020-03-09)
 
 
