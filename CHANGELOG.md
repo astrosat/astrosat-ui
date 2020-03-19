@@ -1,3 +1,11 @@
+## [1.12.1](https://github.com/astrosat/astrosat-ui/compare/v1.12.0...v1.12.1) (2020-03-19)
+
+
+### Bug Fixes
+
+* **frontend:** Add blank line ([ab2182c](https://github.com/astrosat/astrosat-ui/commit/ab2182c388db130238f4ae9ebff37218315b4266)), closes [astrosat/orbis#223](https://github.com/astrosat/orbis/issues/223)
+* **frontend:** Slider value hover ([7cbdb5f](https://github.com/astrosat/astrosat-ui/commit/7cbdb5f0adc66344abdf0dbc9bc2413c07c3a3f5)), closes [astrosat/orbis#223](https://github.com/astrosat/orbis/issues/223)
+
 # [1.12.0](https://github.com/astrosat/astrosat-ui/compare/v1.11.4...v1.12.0) (2020-03-13)
 
 
