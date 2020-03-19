@@ -11,6 +11,7 @@
   border-radius: 4px;
   align-self: center;
 }
+
 .thumb {
   height: 1em;
   width: 1em;
@@ -22,8 +23,13 @@
   box-shadow: 0px 2px 6px #aaa;
   position: relative;
 }
+.thumb:hover > .thumbValue,
+.dragged > .thumbValue {
+  display: block;
+}
 
 .thumbValue {
+  display: none;
   position: absolute;
   top: -2rem;
   border-radius: 2px;
