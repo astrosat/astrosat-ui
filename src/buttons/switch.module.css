@@ -44,6 +44,7 @@ by Mauricio Allende (https://mallendeo.com/)
   border-radius: var(--toggle-height);
   transition: var(--transition);
   border: none;
+  margin-right: 0.5rem;
 }
 
 .switch .toggle-btn::after {
