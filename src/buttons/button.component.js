@@ -1,64 +1,54 @@
 import React from 'react';
 import styles from './button.module.css';
+import clsx from 'clsx';
 
 const Button = ({
-  children,
-  onClick,
-  href,
-  disabled = false,
   active,
+  children,
+  className,
+  classNames,
+  disabled,
+  href,
   padded = true,
-  type = 'button',
   shape,
   theme,
-  classNames,
-  ariaLabel,
-  target,
-  rel,
-  tooltip
+  tooltip,
+  ...rest
 }) => {
-  const props = {};
-  let classes = href && theme === 'link' ? [styles.link] : [styles.button];
+  const _className = clsx(className, classNames, {
+    [styles.active]: !!active,
+    [styles.button]: !href && theme !== 'link',
+    [styles.disabled]: disabled,
+    [styles.link]: href || theme === 'link',
+    [styles['no-padding']]: !padded,
+    [styles[shape]]: !!shape,
+    [styles[theme]]: !!theme && !disabled
+  });
 
-  if (classNames) {
-    classes = [...classes, ...classNames];
-  }
-
-  if (shape) classes.push(styles[shape]);
-
-  if (href) {
-    props.href = href;
-    if (target) props.target = target;
-    if (rel) props.rel = rel;
-  }
-  if (!disabled && onClick) {
-    props.onClick = onClick;
-  }
-  if (disabled) {
-    classes.push(styles.disabled);
-  } else {
-    if (theme) {
-      classes = [...classes, styles[theme]];
-    }
-  }
-
-  if (active) {
-    classes.push(styles.active);
-  }
-  if (!padded) {
-    classes.push(styles['no-padding']);
-  }
-
+  let dataFor, dataTip;
   if (tooltip) {
-    props['data-tip'] = '';
-    props['data-for'] = tooltip;
+    dataFor = tooltip;
+    dataTip = '';
   }
 
-  props.className = classes.join(' ');
   return href ? (
-    <a {...props}>{children}</a>
+    <a
+      className={_className}
+      data-for={dataFor}
+      data-tip={dataTip}
+      href={href}
+      {...rest}
+    >
+      {children}
+    </a>
   ) : (
-    <button type={type} {...props} disabled={disabled} aria-label={ariaLabel}>
+    <button
+      className={_className}
+      data-for={dataFor}
+      data-tip={dataTip}
+      disabled={disabled}
+      {...rest}
+    >
       {children}
     </button>
   );

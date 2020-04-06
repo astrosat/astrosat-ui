@@ -43,16 +43,14 @@ storiesOf('Buttons', module)
           <Button theme="tertiary" onClick={action('clicked')}>
             Tertiary
           </Button>
-          <Button theme="primary" onClick={action('clicked')} active={true}>
+          <Button theme="primary" onClick={action('clicked')} active>
             Active
           </Button>
-          <Button theme="primary" onClick={action('clicked')} disabled={true}>
+          <Button theme="primary" onClick={action('clicked')} disabled>
             Disabled
           </Button>
-          <Button href="http://google.co.uk">Link</Button>
-          <Button theme="link" href="http://google.co.uk">
-            Link
-          </Button>
+          <Button href="http://google.co.uk">Actual Link</Button>
+          <Button theme="link">Appears as a Link</Button>
         </div>
       </fieldset>
 
