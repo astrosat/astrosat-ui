@@ -25,32 +25,37 @@ by Mauricio Allende (https://mallendeo.com/)
 }
 
 .switch .toggle-btn {
+  --toggle-height: 1rem;
+  --toggle-width: calc(var(--toggle-height) * 1.875);
+  --transition: all 0.4s ease;
+  --slider-size: calc(
+    var(--toggle-height) - calc(var(--toggle-height) * 0.125)
+  );
   box-sizing: initial;
   display: inline-block;
   outline: 0;
-  width: 2.4rem;
-  height: 1.2rem;
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  padding: 0;
   position: relative;
   cursor: pointer;
   user-select: none;
   background: var(--toggle-button-background);
-  border-radius: 4em;
-  transition: all 0.4s ease;
-  border: 1px solid var(--toggle-button-border);
+  border-radius: var(--toggle-height);
+  transition: var(--transition);
+  border: none;
 }
 
 .switch .toggle-btn::after {
-  left: -0.2rem;
+  left: calc(var(--toggle-height) * 0.0625);
   position: relative;
   display: block;
   content: '';
-  width: 1.1rem;
-  height: 1.1rem;
-  border-radius: 4em;
+  width: var(--slider-size);
+  height: var(--slider-size);
+  border-radius: 50%;
   background: var(--toggle-button-slider);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-    padding 0.3s ease, margin 0.3s ease;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
 }
 
 .switch .toggle-btn.toggle-btn-on {
@@ -58,16 +63,8 @@ by Mauricio Allende (https://mallendeo.com/)
 }
 
 .switch .toggle-btn.toggle-btn-on::after {
-  left: 1.47rem;
+  left: calc(var(--toggle-height) * 0.875);
   background: var(--toggle-button-slider-active);
-}
-
-.switch .toggle-btn.toggle-btn-on:active::after {
-  margin-left: -1.6em;
-}
-
-.switch .toggle-btn:active::after {
-  padding-right: 1.6em;
 }
 
 .switch .toggle-input {
