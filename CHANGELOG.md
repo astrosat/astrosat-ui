@@ -1,3 +1,12 @@
+## [1.12.2](https://github.com/astrosat/astrosat-ui/compare/v1.12.1...v1.12.2) (2020-04-08)
+
+
+### Bug Fixes
+
+* **frontend:** Add spacing ([f7824de](https://github.com/astrosat/astrosat-ui/commit/f7824dec5a5f971b9312f9d694a55319e1de0ca9)), closes [#20](https://github.com/astrosat/astrosat-ui/issues/20)
+* **frontend:** Clean up button ([251d8d6](https://github.com/astrosat/astrosat-ui/commit/251d8d613eed3cfbc3391d6dea6c351515459a20))
+* **frontend:** Sort switch styling ([40db017](https://github.com/astrosat/astrosat-ui/commit/40db0175aceb264df166bb40d64dcbce2401d86d)), closes [#19](https://github.com/astrosat/astrosat-ui/issues/19) [#21](https://github.com/astrosat/astrosat-ui/issues/21)
+
 ## [1.12.1](https://github.com/astrosat/astrosat-ui/compare/v1.12.0...v1.12.1) (2020-03-19)
 
 
