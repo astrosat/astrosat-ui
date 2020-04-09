@@ -1,3 +1,10 @@
+## [1.12.3](https://github.com/astrosat/astrosat-ui/compare/v1.12.2...v1.12.3) (2020-04-09)
+
+
+### Bug Fixes
+
+* **frontend:** Fix broken switch label ([58f345a](https://github.com/astrosat/astrosat-ui/commit/58f345a51550a5fc3318168df4abef4838a16528))
+
 ## [1.12.2](https://github.com/astrosat/astrosat-ui/compare/v1.12.1...v1.12.2) (2020-04-08)
 
 
