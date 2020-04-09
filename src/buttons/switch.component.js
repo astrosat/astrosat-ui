@@ -13,6 +13,11 @@ const Switch = ({
 }) => {
   const [isOn, setIsOn] = useState(checked);
 
+  const handleClick = data => {
+    onClick(data);
+    setIsOn(!isOn);
+  };
+
   return (
     <label
       className={`${styles.switch} ${checked ? styles.active : ''}  ${
@@ -24,7 +29,7 @@ const Switch = ({
         name={name}
         value={value ? value : name}
         disabled={disabled}
-        onChange={() => (!disabled ? onClick(value) : null)}
+        onChange={() => (!disabled ? handleClick(value) : null)}
         checked={isOn}
         aria-label={ariaLabel}
       />
@@ -33,10 +38,7 @@ const Switch = ({
         className={`${styles['toggle-btn']}
        ${isOn ? styles['toggle-btn-on'] : ''}`}
         disabled={disabled}
-        onClick={event => {
-          onClick(event);
-          setIsOn(!isOn);
-        }}
+        onClick={event => handleClick(event)}
         aria-label={ariaLabel}
       />
       {label}
