@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Detail from './detail.component';
 import Well from './well.component';
@@ -12,9 +11,7 @@ import Button from '../buttons/button.component';
 import Textfield from '../forms/text-field.component';
 import Select from '../forms/select.component';
 
-import styles from '../index.module.css';
-
-const themes = { Dark: styles.dark, Light: styles.light };
+import styles from '../story-styles.module.css';
 
 const domains = [
   { name: 'Option 1', value: { id: '1', title: 'Mr' } },
@@ -41,9 +38,8 @@ const regions = [
 ];
 
 storiesOf('Containers', module)
-  .addDecorator(withKnobs)
   .add('Detail', () => (
-    <div className={select('theme', themes, styles.dark)}>
+    <>
       <Detail title="Section Title 1">
         <div className={styles.detail}>
           This is some content for the detail element:
@@ -67,10 +63,10 @@ storiesOf('Containers', module)
           <p>some footer content</p>
         </div>
       </Detail>
-    </div>
+    </>
   ))
   .add('Well', () => (
-    <div className={select('theme', themes, styles.dark)}>
+    <>
       <div className={styles.btnGroup}>
         <Well>
           <div>
@@ -112,14 +108,14 @@ storiesOf('Containers', module)
           </div>
         </Well>
       </div>
-    </div>
+    </>
   ))
   .add('Dialog', () => {
     const { isVisible, toggle } = useModal(false);
     const ref = useRef(document.body);
 
     return (
-      <div ref={ref} className={select('theme', themes, styles.dark)}>
+      <div ref={ref}>
         <div>
           <p>This is some text</p>
           <p>This is some text</p>
