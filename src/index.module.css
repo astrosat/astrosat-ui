@@ -1,19 +1,38 @@
 :root {
-  --primary-background-color: rgba(246, 190, 0, 0.8);
-  /* --primary-foreground-color: rgba(0, 0, 0, 0.8); */
+  --color-red: #cf6679;
+  --color-yellow: #f6be00;
+  --color-yellow-light: #ffd547;
+  --color-green: #6cc24a;
+  --color-purple: #8031a7;
+  --color-blue: #48a9c5;
+  --color-blue-light: #7fc3d7;
+  --color-grey: #888b8d;
+  --color-lightgrey: #a2aaad;
+  --color-darkgrey: #333f48;
+  --color-darkgrey-light: #70797f;
 
+  --primary-background-color: rgba(246, 190, 0, 0.8);
   --primary-foreground-color: #333f48;
 
-  font-family: 'OpenSans';
-
-  --button-background-disabled-color: #e4e4e4;
-  --button-foreground-disabled-color: #9e9e9e;
+  --global--font-family: 'Open Sans';
 
   --error-background-color: rgba(207, 102, 121, 0.2);
-  --error-border-color: #cf6679;
+  --error-border-color: var(--color-red);
 
   --success-background-color: rgba(108, 194, 74, 0.2);
   --success-border-color: #6cc24a;
+}
+
+body {
+  background-color: lightgrey;
+  font-family: var(--global--font-family);
+}
+
+.light {
+  --foreground-color-primary: #3a3b4d;
+  --background-color-primary: #fff;
+  --foreground-color-secondary: #f2f2f2;
+  --background-color-secondary: #f2f2f2;
 
   --primary-button-background-color: var(--primary-background-color);
   --primary-button-foreground-color: var(--primary-foreground-color);
@@ -35,23 +54,6 @@
   --tertiary-button-foreground-active-color: rgba(255, 255, 255, 1);
   --tertiary-button-background-hover-color: rgba(72, 169, 197, 0.6);
   --tertiary-button-foreground-hover-color: rgba(255, 255, 255, 0.6);
-}
-
-body {
-  background-color: lightgrey;
-}
-
-.light {
-  --foreground-color-primary: #3a3b4d;
-  --background-color-primary: #fff;
-  --foreground-color-secondary: #f2f2f2;
-  --background-color-secondary: #f2f2f2;
-
-  --button-background: #5795f1;
-  --button-background-disabled: var(--button-background);
-  --button-background-hover: #6fa2ec;
-  --button-background-active: #4984dc;
-  --button-text: #fff;
 
   --close-button-text: #3a3b4d;
   --close-button-hover: #b7b7b7;
@@ -80,21 +82,58 @@ body {
 }
 
 .dark {
+  /* Globals */
   --foreground-color-primary: #fff;
   --background-color-primary: #3a3b4d;
   --foreground-color-secondary: #f2f2f2;
   --background-color-secondary: #424357;
+  --global--border-radius: 0.3rem;
 
-  --button-background: #e8c786;
-  --button-background-disabled: var(--button-background);
-  --button-background-hover: #dcb871;
-  --button-background-active: #e9b650;
-  --button-text: #3a3b4d;
+  /* Buttons */
+  --button--font-family: var(--global--font-family);
+  --button--border-radius: var(--global--border-radius);
+
+  --button--disabled--background-color: #e4e4e4;
+  --button--disabled--color: #9e9e9e;
+
+  --button--primary--background-color: var(--color-yellow);
+  --button--primary--color: var(--color-darkgrey);
+  --button--primary--background-color--active: var(--color-yellow);
+  --button--primary--color--active: var(--color-darkgrey);
+  --button--primary--background-color--hover: var(--color-yellow-light);
+  --button--primary--color--hover: var(--color-darkgrey-light);
+  --button--primary--background-color--focus: var(
+    --button--primary--background-color--hover
+  );
+  --button--primary--color--focus: var(--button--primary--color--hover);
+
+  --button--secondary--background-color: var(--color-darkgrey);
+  --button--secondary--color: #fff;
+  --button--secondary--background-color--active: var(--color-darkgrey);
+  --button--secondary--color--active: #fff;
+  --button--secondary--background-color--hover: var(--color-darkgrey-light);
+  --button--secondary--color--hover: #fff;
+  --button--secondary--background-color--focus: var(
+    --button--secondary--background-color--hover
+  );
+  --button--secondary--color--focus: var(--button--secondary--color--hover);
+
+  --button--tertiary--background-color: var(--color-blue);
+  --button--tertiary--color: var(--primary-foreground-color);
+  --button--tertiary--background-color--active: var(--color-blue);
+  --button--tertiary--color--active: #fff;
+  --button--tertiary--background-color--hover: var(--color-blue-light);
+  --button--tertiary--color--hover: #fff;
+  --button--tertiary--background-color--focus: var(
+    --button--tertiary--background-color--hover
+  );
+  --button--tertiary--color--focus: var(--button--tertiary--color--hover);
 
   --close-button-text: #f2f2f2;
   --close-button-hover: #b7b7b7;
   --close-button-active: #cfcfcf;
 
+  /* Switch */
   --toggle-button-background: #e3e3e3;
   --toggle-button-background-active: #6cc24a;
   --toggle-button-border: #3a3b4d;
