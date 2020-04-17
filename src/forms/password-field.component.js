@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import ShowHideIcon from '../icons/show-hide-icon';
 
 import styles from './text-field.module.css';
-import Button from '../buttons/button.component';
+import passwordStyles from './password-field.module.css';
 
 const PasswordField = ({
   name,
