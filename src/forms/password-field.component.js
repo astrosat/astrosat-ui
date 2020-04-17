@@ -35,7 +35,7 @@ const PasswordField = ({
         required={required}
         autoFocus={autoFocus}
       />
-      <span onClick={toggleVisibility}>
+      <span data-testid="icon-span" onClick={toggleVisibility}>
         <ShowHideIcon
           type={isVisible ? 'hide' : 'show'}
           classes={[passwordStyles.showHideIcon]}
