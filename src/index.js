@@ -37,3 +37,8 @@ export { default as ShareIcon } from './icons/share-icon.component';
 export { default as TwitterIcon } from './icons/twitter-icon.component';
 
 export { default as ProgressBar } from './progress/progress-bar.component';
+
+export {
+  ThemeProvider,
+  ThemeContext
+} from './containers/theme-provider.component';
