@@ -4,7 +4,7 @@
   cursor: pointer;
   font-weight: bold;
   list-style: none;
-  color: var(--primary-button-background-color);
+  color: #fff;
   background: linear-gradient(rgba(51, 63, 72, 1), rgba(51, 63, 72, 0.5));
 }
 
@@ -20,7 +20,7 @@
   transform: rotate(45deg);
   vertical-align: top;
   width: 0.45em;
-  color: var(--primary-button-background-color);
+  color: #fff;
 }
 
 .details[open] .header::after {
