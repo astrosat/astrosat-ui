@@ -1,3 +1,14 @@
+## [1.12.4](https://github.com/astrosat/astrosat-ui/compare/v1.12.3...v1.12.4) (2020-04-17)
+
+
+### Bug Fixes
+
+* **frontend:** Absolutely positioned icons inside their fields ([dee2f3e](https://github.com/astrosat/astrosat-ui/commit/dee2f3ef08d14f3963d2869008bd4e026dafe144))
+* **frontend:** Changed color of detail to match designs ([ca64ae7](https://github.com/astrosat/astrosat-ui/commit/ca64ae787960e499dbb7de0a76e7acdfd923ebe2))
+* **frontend:** Fix broken tests ([8ca767b](https://github.com/astrosat/astrosat-ui/commit/8ca767bb3b3f5d55070c323a67c6dd6758fe2f84))
+* **frontend:** Fix show/hide icons ([e23a674](https://github.com/astrosat/astrosat-ui/commit/e23a67475ca068455e83177a59f03ed82adf1173))
+* **frontend:** Remove unnecessary brackets ([6a3edfc](https://github.com/astrosat/astrosat-ui/commit/6a3edfcc9d641a7b28d14f283f9452528fd6ddb2))
+
 ## [1.12.3](https://github.com/astrosat/astrosat-ui/compare/v1.12.2...v1.12.3) (2020-04-09)
 
 
