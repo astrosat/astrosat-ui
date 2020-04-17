@@ -11,11 +11,13 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: var(--button--box-shadow);
 }
 
 .button:hover,
 .button:focus {
   outline: none;
+  opacity: var(--button--opacity--hover);
 }
 
 .disabled,
