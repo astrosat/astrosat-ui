@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
 import styles from './text-field.module.css';
-import passwordStyles from './password-field.module.css';
+import Button from '../buttons/button.component';
 
 const PasswordField = ({
   name,
@@ -17,8 +17,7 @@ const PasswordField = ({
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-  let classes = [styles.textfield];
-  if (classNames) classes = [...classes, ...classNames];
+  const className = clsx(styles.textfield, styles.passwordfield, classNames);
 
   return (
     <div className={styles.container}>
@@ -26,24 +25,18 @@ const PasswordField = ({
         type={isVisible ? 'text' : 'password'}
         name={name}
         value={value}
-        className={classes}
+        className={className}
         onChange={onChange}
         placeholder={placeholder}
         aria-label={ariaLabel}
         required={required}
         autoFocus={autoFocus}
       />
-      <button
-        type="button"
-        className={passwordStyles.passwordButton}
-        onClick={toggleVisibility}
-      >
+      <Button type="button" theme="link" onClick={toggleVisibility}>
         {isVisible ? 'Hide' : 'Show'}
-      </button>
+      </Button>
     </div>
   );
 };
-
-PasswordField.propTypes = {};
 
 export default PasswordField;
