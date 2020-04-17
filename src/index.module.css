@@ -1,4 +1,5 @@
 :root {
+  /* colors */
   --color-red: #cf6679;
   --color-yellow: #f6be00;
   --color-yellow-light: #ffd547;
@@ -89,6 +90,11 @@ body {
   --background-color-secondary: #424357;
   --global--border-radius: 0.3rem;
 
+  /* Colors */
+  --color-primary: var(--color-yellow);
+  --color-primary-light: var(--color-yellow-light);
+  --color-secondary: var(--color-darkgrey);
+
   /* Buttons */
   --button--font-family: var(--global--font-family);
   --button--border-radius: var(--global--border-radius);
@@ -96,11 +102,11 @@ body {
   --button--disabled--background-color: #e4e4e4;
   --button--disabled--color: #9e9e9e;
 
-  --button--primary--background-color: var(--color-yellow);
+  --button--primary--background-color: var(--color-primary);
   --button--primary--color: var(--color-darkgrey);
-  --button--primary--background-color--active: var(--color-yellow);
+  --button--primary--background-color--active: var(--color-primary);
   --button--primary--color--active: var(--color-darkgrey);
-  --button--primary--background-color--hover: var(--color-yellow-light);
+  --button--primary--background-color--hover: var(--color-primary-light);
   --button--primary--color--hover: var(--color-darkgrey-light);
   --button--primary--background-color--focus: var(
     --button--primary--background-color--hover
@@ -154,4 +160,42 @@ body {
   --menu-item-active: #e9b650;
 
   --search: url('/search-dark.svg');
+
+  /* Legacy */
+  --foreground-color: #333f48;
+  --background-color: var(--primary-foreground-color);
+  --background-color-alternate: #424357;
+  --background-active-color: #e8c786;
+  --header-background-color: #323346;
+  --background-color-with-opacity: rgba(58, 59, 77, 0.8);
+
+  --tabbed-panel-tab: #e8c786;
+  --tabbed-panel-tab-hover: #dcb871;
+  --tabbed-panel-tab-active: #e8c786;
+
+  --list-item-background: rgba(221, 185, 114, 0.7);
+  --list-item-background-hover: rgba(221, 185, 114, 0.25);
+
+  --menu-foreground: #000;
+  --menu-background: #e8c786;
+  --menu-border: #fff;
+  --menu-item-hover: #dcb871;
+  --menu-item-active: #e9b650;
+
+  --search: url('/search-dark.svg');
+
+  --primary-background-color: rgba(246, 190, 0, 0.8);
+  --primary-foreground-color: rgba(0, 0, 0, 0.8);
+
+  --primary-foreground-color: #333f48;
+  --primary-text-color: #a2aaad;
+
+  --button-background-disabled-color: #e4e4e4;
+  --button-foreground-disabled-color: #9e9e9e;
+
+  --error-background-color: rgba(207, 102, 121, 0.2);
+  --error-border-color: #cf6679;
+
+  --success-background-color: rgba(108, 194, 74, 0.2);
+  --success-border-color: #6cc24a;
 }
