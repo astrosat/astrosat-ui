@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 
+import ShowHideIcon from '../icons/show-hide-icon';
+
 import styles from './text-field.module.css';
 import Button from '../buttons/button.component';
 
@@ -32,9 +34,12 @@ const PasswordField = ({
         required={required}
         autoFocus={autoFocus}
       />
-      <Button type="button" theme="link" onClick={toggleVisibility}>
-        {isVisible ? 'Hide' : 'Show'}
-      </Button>
+      <span data-testid="icon-span" onClick={toggleVisibility}>
+        <ShowHideIcon
+          type={isVisible ? 'hide' : 'show'}
+          classes={[passwordStyles.showHideIcon]}
+        />
+      </span>
     </div>
   );
 };

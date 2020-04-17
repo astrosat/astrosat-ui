@@ -1,6 +1,7 @@
 .container {
   width: 100%;
   display: flex;
+  position: relative;
 }
 
 .textfield {
@@ -17,6 +18,8 @@
 }
 
 .icon {
+  position: absolute;
+  right: 1rem;
   height: 1rem;
   width: 1rem;
   align-self: center;

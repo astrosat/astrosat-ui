@@ -9,7 +9,7 @@ describe('Password Field Component', () => {
   it('should render a basic Password field', () => {
     const onChange = jest.fn();
     const value = 'Test Value';
-    const { container, getByText } = render(
+    const { container } = render(
       <PasswordField name="test" value={value} onChange={onChange} />
     );
 
@@ -19,7 +19,6 @@ describe('Password Field Component', () => {
       'password'
     );
     expect(container.querySelector('input')).toHaveValue(value);
-    expect(getByText('Show')).toBeInTheDocument();
   });
 
   it('should set the placeholder text', () => {
@@ -42,13 +41,19 @@ describe('Password Field Component', () => {
   it('should toggle button text to `Hide` when `Show` clicked', () => {
     const onChange = jest.fn();
     const value = 'Test Value';
-    const { container, getByText } = render(
+    const { container, getByTestId } = render(
       <PasswordField name="test" value={value} onChange={onChange} />
     );
 
-    fireEvent.click(getByText('Show'));
+    fireEvent.click(getByTestId('icon-span'));
 
     expect(container.querySelector('input')).toHaveAttribute('type', 'text');
-    expect(getByText('Hide')).toBeInTheDocument();
+
+    fireEvent.click(getByTestId('icon-span'));
+
+    expect(container.querySelector('input')).toHaveAttribute(
+      'type',
+      'password'
+    );
   });
 });
