@@ -1,3 +1,25 @@
+# [1.13.0](https://github.com/astrosat/astrosat-ui/compare/v1.12.4...v1.13.0) (2020-04-20)
+
+
+### Bug Fixes
+
+* **Button:** Update button styles ([fbf1170](https://github.com/astrosat/astrosat-ui/commit/fbf117005d6277c473cd41b9e8d4fda25774501b))
+* **Button:** Update padding ([7e14b16](https://github.com/astrosat/astrosat-ui/commit/7e14b16e46e8ebc0ccf34714631d65b16b3f9a81))
+* **frontend:** Add and clean legacy vars ([e1a33c4](https://github.com/astrosat/astrosat-ui/commit/e1a33c4dc73c0eb0da60a5ef2b3382540779f7fa))
+* **frontend:** Further index cleanup ([166d0dd](https://github.com/astrosat/astrosat-ui/commit/166d0ddde9be3b00623002c2622a0279f8be875b))
+* **PasswordField:** Fix merge ([914b85c](https://github.com/astrosat/astrosat-ui/commit/914b85c90384a58701caf51dcd77969600b32514))
+* **PasswordField:** Fix password field button ([1fa8f9f](https://github.com/astrosat/astrosat-ui/commit/1fa8f9fa4f85bfb6957f59a4711b990ae19fb6c0))
+* **Storybook:** Clean up storybook themes ([933018e](https://github.com/astrosat/astrosat-ui/commit/933018edae8a53ba9a0deaf0699087d43f24ad02))
+* **ThemeProvider:** Change theme displaying method ([0cac1e7](https://github.com/astrosat/astrosat-ui/commit/0cac1e76f7108ea2a0e2d40c158bd09652720355))
+* **ThemeProvider:** Create theme provider ([ce0e4b8](https://github.com/astrosat/astrosat-ui/commit/ce0e4b8f1d087e0168e7dcb1ef4e2d70a1fa768a))
+* **ThemeProvider:** Fix hook dependencies ([d755303](https://github.com/astrosat/astrosat-ui/commit/d755303aaaa3a00571e6d8ebdfc98c92842ed986)), closes [#27](https://github.com/astrosat/astrosat-ui/issues/27)
+* **ThemeProvider:** Simplify useThemeSwitcher ([66c8d8d](https://github.com/astrosat/astrosat-ui/commit/66c8d8da7401b96ee5e73bf0700ce5e9b28dfb12)), closes [#27](https://github.com/astrosat/astrosat-ui/issues/27)
+
+
+### Features
+
+* **Button:** Update to use css variables ([fa3abfb](https://github.com/astrosat/astrosat-ui/commit/fa3abfbda243b0f060a9fbdcf9bac60a8656bc8a))
+
 ## [1.12.4](https://github.com/astrosat/astrosat-ui/compare/v1.12.3...v1.12.4) (2020-04-17)
 
 
