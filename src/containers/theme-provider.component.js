@@ -36,9 +36,6 @@ const ThemeProvider = ({ children, defaultTheme = 'dark' }) => {
   );
 };
 
-const useThemeSwitcher = () => {
-  const value = useContext(ThemeContext);
-  return value;
-};
+const useThemeSwitcher = () => useContext(ThemeContext);
 
 export { ThemeContext, ThemeProvider, useThemeSwitcher };
