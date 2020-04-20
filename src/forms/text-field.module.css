@@ -13,6 +13,10 @@
   width: inherit;
 }
 
+.passwordfield {
+  border-radius: 0.3rem 0.3rem 0 0.3rem;
+}
+
 .icon {
   position: absolute;
   right: 1rem;

@@ -11,18 +11,18 @@ const Button = ({
   href,
   padded = true,
   shape,
-  theme,
+  theme = 'primary',
   tooltip,
   ...rest
 }) => {
   const _className = clsx(className, classNames, {
     [styles.active]: !!active,
-    [styles.button]: !href && theme !== 'link',
+    [styles.button]: !href,
     [styles.disabled]: disabled,
     [styles.link]: href || theme === 'link',
     [styles['no-padding']]: !padded,
     [styles[shape]]: !!shape,
-    [styles[theme]]: !!theme && !disabled
+    [styles[theme]]: !!theme && !disabled && !href
   });
 
   let dataFor, dataTip;

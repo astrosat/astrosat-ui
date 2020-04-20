@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
 import ShowHideIcon from '../icons/show-hide-icon';
 
@@ -19,8 +19,7 @@ const PasswordField = ({
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-  let classes = [styles.textfield];
-  if (classNames) classes = [...classes, ...classNames];
+  const className = clsx(styles.textfield, styles.passwordfield, classNames);
 
   return (
     <div className={styles.container}>
@@ -28,7 +27,7 @@ const PasswordField = ({
         type={isVisible ? 'text' : 'password'}
         name={name}
         value={value}
-        className={classes}
+        className={className}
         onChange={onChange}
         placeholder={placeholder}
         aria-label={ariaLabel}
@@ -44,7 +43,5 @@ const PasswordField = ({
     </div>
   );
 };
-
-PasswordField.propTypes = {};
 
 export default PasswordField;

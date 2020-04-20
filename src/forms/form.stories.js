@@ -18,13 +18,11 @@ import LoadMask from '../load-mask/load-mask.component';
 
 import { scaleUtc, scalePow } from 'd3-scale';
 
-import styles from '../index.module.css';
+import styles from '../story-styles.module.css';
 
 const PasswordStrengthMeter = React.lazy(() =>
   import('./password-strength-meter.component')
 );
-
-const themes = { Dark: styles.dark, Light: styles.light };
 
 const options = [
   { name: 'Option 1', value: { id: '1', title: 'Mr' } },
@@ -135,9 +133,8 @@ const Form = () => {
 };
 
 storiesOf('Form', module)
-  .addDecorator(withKnobs)
   .add('Elements', () => (
-    <div className={select('theme', themes, styles.dark)}>
+    <>
       <div className={styles.btnGroup}>
         <TextArea
           rows="10"
@@ -254,10 +251,10 @@ storiesOf('Form', module)
           disabled={true}
         />
       </div>
-    </div>
+    </>
   ))
   .add('Slider', () => (
-    <div className={select('theme', themes, styles.dark)}>
+    <>
       <h3>Simple range</h3>
       <Slider
         min={0}
@@ -285,6 +282,6 @@ storiesOf('Form', module)
         values={[500]}
         onChange={action('Logarithmic Slider changed')}
       />
-    </div>
+    </>
   ))
   .add('Form', () => <Form />);

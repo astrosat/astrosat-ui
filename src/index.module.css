@@ -1,19 +1,31 @@
 :root {
-  --primary-background-color: rgba(246, 190, 0, 0.8);
-  /* --primary-foreground-color: rgba(0, 0, 0, 0.8); */
+  /* colors */
+  --color-red: #cf6679;
+  --color-yellow: #f6be00;
+  --color-yellow-light: #ffd547;
+  --color-green: #6cc24a;
+  --color-purple: #8031a7;
+  --color-blue: #48a9c5;
+  --color-blue-light: #7fc3d7;
+  --color-grey: #888b8d;
+  --color-lightgrey: #a2aaad;
+  --color-darkgrey: #333f48;
+  --color-darkgrey-light: #70797f;
 
-  --primary-foreground-color: #333f48;
+  /* Globals */
+  --global--font-family: 'Open Sans';
+}
 
-  font-family: 'OpenSans';
+body {
+  background-color: lightgrey;
+  font-family: var(--global--font-family);
+}
 
-  --button-background-disabled-color: #e4e4e4;
-  --button-foreground-disabled-color: #9e9e9e;
-
-  --error-background-color: rgba(207, 102, 121, 0.2);
-  --error-border-color: #cf6679;
-
-  --success-background-color: rgba(108, 194, 74, 0.2);
-  --success-border-color: #6cc24a;
+.light {
+  --foreground-color-primary: #3a3b4d;
+  --background-color-primary: #fff;
+  --foreground-color-secondary: #f2f2f2;
+  --background-color-secondary: #f2f2f2;
 
   --primary-button-background-color: var(--primary-background-color);
   --primary-button-foreground-color: var(--primary-foreground-color);
@@ -35,23 +47,6 @@
   --tertiary-button-foreground-active-color: rgba(255, 255, 255, 1);
   --tertiary-button-background-hover-color: rgba(72, 169, 197, 0.6);
   --tertiary-button-foreground-hover-color: rgba(255, 255, 255, 0.6);
-}
-
-body {
-  background-color: lightgrey;
-}
-
-.light {
-  --foreground-color-primary: #3a3b4d;
-  --background-color-primary: #fff;
-  --foreground-color-secondary: #f2f2f2;
-  --background-color-secondary: #f2f2f2;
-
-  --button-background: #5795f1;
-  --button-background-disabled: var(--button-background);
-  --button-background-hover: #6fa2ec;
-  --button-background-active: #4984dc;
-  --button-text: #fff;
 
   --close-button-text: #3a3b4d;
   --close-button-hover: #b7b7b7;
@@ -80,26 +75,81 @@ body {
 }
 
 .dark {
-  --foreground-color-primary: #fff;
-  --background-color-primary: #3a3b4d;
-  --foreground-color-secondary: #f2f2f2;
-  --background-color-secondary: #424357;
+  /* Globals */
+  --global--border-radius: 0.3rem;
 
-  --button-background: #e8c786;
-  --button-background-disabled: var(--button-background);
-  --button-background-hover: #dcb871;
-  --button-background-active: #e9b650;
-  --button-text: #3a3b4d;
+  /* Colors */
+  --color-primary: var(--color-yellow);
+  --color-primary-light: var(--color-yellow-light);
+  --color-secondary: var(--color-darkgrey);
+
+  /* Buttons */
+  --button--font-family: var(--global--font-family);
+  --button--border-radius: var(--global--border-radius);
+  --button--opacity--hover: 0.7;
+  --button--box-shadow: 0 0.3125rem 0.9375rem 0 rgba(0, 0, 0, 0.1);
+
+  --button--disabled--background-color: #e4e4e4;
+  --button--disabled--color: #9e9e9e;
+
+  --button--primary--background-color: var(--color-primary);
+  --button--primary--color: var(--color-darkgrey);
+  --button--primary--background-color--active: var(--color-primary);
+  --button--primary--color--active: var(--color-darkgrey);
+  --button--primary--background-color--hover: var(--color-primary);
+  --button--primary--color--hover: var(--color-darkgrey);
+  --button--primary--background-color--focus: var(
+    --button--primary--background-color--hover
+  );
+  --button--primary--color--focus: var(--button--primary--color--hover);
+
+  --button--secondary--background-color: var(--color-darkgrey);
+  --button--secondary--color: #fff;
+  --button--secondary--background-color--active: var(--color-darkgrey);
+  --button--secondary--color--active: #fff;
+  --button--secondary--background-color--hover: var(--color-darkgrey);
+  --button--secondary--color--hover: #fff;
+  --button--secondary--background-color--focus: var(
+    --button--secondary--background-color--hover
+  );
+  --button--secondary--color--focus: var(--button--secondary--color--hover);
+
+  --button--tertiary--background-color: var(--color-blue);
+  --button--tertiary--color: var(--primary-foreground-color);
+  --button--tertiary--background-color--active: var(--color-blue);
+  --button--tertiary--color--active: #fff;
+  --button--tertiary--background-color--hover: var(--color-blue);
+  --button--tertiary--color--hover: #fff;
+  --button--tertiary--background-color--focus: var(
+    --button--tertiary--background-color--hover
+  );
+  --button--tertiary--color--focus: var(--button--tertiary--color--hover);
 
   --close-button-text: #f2f2f2;
   --close-button-hover: #b7b7b7;
   --close-button-active: #cfcfcf;
 
+  /* Switch */
   --toggle-button-background: #e3e3e3;
   --toggle-button-background-active: #6cc24a;
   --toggle-button-border: #3a3b4d;
   --toggle-button-slider: #ffffff;
   --toggle-button-slider-active: #ffffff;
+
+  /* Legacy */
+  --primary-background-color: rgba(246, 190, 0, 0.8);
+  --primary-foreground-color: #333f48;
+  --foreground-color: #333f48;
+  --background-color: var(--primary-foreground-color);
+  --background-color-alternate: #424357;
+  --background-active-color: #e8c786;
+  --header-background-color: #323346;
+  --background-color-with-opacity: rgba(58, 59, 77, 0.8);
+
+  --foreground-color-primary: #fff;
+  --background-color-primary: #3a3b4d;
+  --foreground-color-secondary: #f2f2f2;
+  --background-color-secondary: #424357;
 
   --tabbed-panel-tab: #e8c786;
   --tabbed-panel-tab-hover: #dcb871;
@@ -115,46 +165,11 @@ body {
   --menu-item-active: #e9b650;
 
   --search: url('/search-dark.svg');
-}
+  --primary-text-color: #a2aaad;
 
-/* .row {
-  display: flex;
-  justify-content: space-evenly;
-} */
+  --error-background-color: rgba(207, 102, 121, 0.2);
+  --error-border-color: #cf6679;
 
-.custom {
-  color: #fff !important;
-}
-
-.btnGroup {
-  display: flex;
-  padding: 1rem;
-}
-
-.btnGroup > * {
-  margin: 1rem;
-}
-
-.detail {
-  background-color: var(--primary-foreground-color);
-  color: #fff;
-  padding: 1rem;
-}
-
-.icon {
-  height: 2rem;
-  padding: 1rem;
-}
-
-.btnIcon {
-  height: 1rem;
-}
-
-.color {
-  color: green;
-}
-
-textarea:focus,
-input:focus {
-  outline: none;
+  --success-background-color: rgba(108, 194, 74, 0.2);
+  --success-border-color: #6cc24a;
 }

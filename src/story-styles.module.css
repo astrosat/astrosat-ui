@@ -1,0 +1,32 @@
+.btnGroup {
+  display: flex;
+  padding: 1rem;
+}
+
+.btnGroup > * {
+  margin: 1rem;
+}
+
+.detail {
+  background-color: var(--primary-foreground-color);
+  color: #fff;
+  padding: 1rem;
+}
+
+.icon {
+  height: 2rem;
+  padding: 1rem;
+}
+
+.btnIcon {
+  height: 1rem;
+}
+
+.color {
+  color: green;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
