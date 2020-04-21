@@ -108,6 +108,7 @@
   text-decoration: none;
   padding: 0.5rem 0;
   font-weight: 600;
+  box-shadow: none;
 }
 
 .link:hover {
