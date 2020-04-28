@@ -9,7 +9,8 @@ const Checkbox = ({
   onChange,
   disabled = false,
   checked,
-  ariaLabel
+  ariaLabel,
+  defaultChecked
 }) => (
   <label
     className={`${styles.checkbox} ${checked ? styles.active : ''}  ${
@@ -24,6 +25,7 @@ const Checkbox = ({
       onChange={event => (!disabled ? onChange(event) : null)}
       checked={checked}
       aria-label={ariaLabel}
+      defaultChecked={defaultChecked}
     />
     <span className={styles.checkmark} />
     {label}
