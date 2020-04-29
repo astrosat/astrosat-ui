@@ -1,3 +1,11 @@
+## [1.13.1](https://github.com/astrosat/astrosat-ui/compare/v1.13.0...v1.13.1) (2020-04-29)
+
+
+### Bug Fixes
+
+* **Button:** Remove box-shadow from links ([c6b3a39](https://github.com/astrosat/astrosat-ui/commit/c6b3a39a9544190142573f5a665e256b684624b7))
+* **Checkbox:** Allow defaultChecked ([371a588](https://github.com/astrosat/astrosat-ui/commit/371a5886dd976756d9cbb37d75bbb0f0669a1337))
+
 # [1.13.0](https://github.com/astrosat/astrosat-ui/compare/v1.12.4...v1.13.0) (2020-04-20)
 
 
