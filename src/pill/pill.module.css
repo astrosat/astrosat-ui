@@ -1,0 +1,25 @@
+.pill {
+  --padding-x: 16px;
+  --padding-y: 6px;
+  --font-size: 10px;
+  border-radius: 9px;
+  color: var(--pill--color);
+  background-color: var(--pill--background-color);
+  padding: var(--padding-y) var(--padding-x);
+  max-width: max-content;
+  min-height: calc(var(--font-size) + var(--padding-y));
+  font-size: var(--font-size);
+  display: flex;
+  align-items: center;
+}
+
+.action {
+  box-sizing: border-box;
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  padding: 0;
+  font-size: inherit;
+  min-height: 1rem;
+  min-width: 1rem;
+}
