@@ -1,0 +1,94 @@
+const fs = require('fs');
+const SVGO = require('svgo');
+const prettier = require('prettier');
+
+const ICON_FILE_PATH = 'src/icons';
+const INDEX_FILE = `${ICON_FILE_PATH}/index.js`;
+const ASSETS_FILE_PATH = `${ICON_FILE_PATH}/assets`;
+
+const ICON_COMPONENT_TEMPLATE = `import React from 'react';
+import PropTypes from 'prop-types';
+
+const {{ICON_COMPONENT_NAME}} = ({ classes }) => (
+  {{ICON}}
+);
+
+{{ICON_COMPONENT_NAME}}.propTypes = {
+  classes: PropTypes.string.isRequired
+};
+
+export default {{ICON_COMPONENT_NAME}};`;
+
+const svgo = new SVGO({
+  plugins: [
+    { removeViewBox: false },
+    { removeDimensions: true },
+    { convertColors: { currentColor: true } },
+    {
+      addAttributesToSVGElement: {
+        attributes: [{ className: '{classes}' }]
+      }
+    }
+  ]
+});
+
+const SVG_PROCESSES = [svg => svg.replace(/"{classes}"/, '{classes}')];
+
+const createSvg = async iconFile => {
+  const svg = fs.readFileSync(`${ASSETS_FILE_PATH}/${iconFile}`, 'utf8');
+  // optimise using svgo
+  let optimisedSvg = (await svgo.optimize(svg)).data;
+  // Create icon component
+  for (let svgProcess of SVG_PROCESSES) {
+    optimisedSvg = svgProcess(optimisedSvg);
+  }
+  return optimisedSvg;
+};
+
+const TEMPLATE_PROCESSES = [
+  (template, { componentName }) =>
+    template.replace(/{{ICON_COMPONENT_NAME}}/gm, componentName),
+  (template, { svg }) => template.replace(/{{ICON}}/, svg)
+];
+
+const createComponentFromTemplate = (componentName, svg) => {
+  let component = ICON_COMPONENT_TEMPLATE;
+  for (let templateProcess of TEMPLATE_PROCESSES) {
+    component = templateProcess(component, {
+      svg,
+      componentName
+    });
+  }
+  return component;
+};
+
+const createIconComponent = async (file, prettierConfig) => {
+  const iconName = file.split('.')[0];
+  const componentName = `${iconName[0].toUpperCase()}${iconName.substr(1)}Icon`;
+  const componentFile = `${iconName}-icon.component.js`;
+  const optimisedSvg = await createSvg(file);
+  const iconComponent = createComponentFromTemplate(
+    componentName,
+    optimisedSvg
+  );
+  fs.writeFileSync(
+    `${ICON_FILE_PATH}/${componentFile}`,
+    prettier.format(iconComponent, prettierConfig)
+  );
+  const exportLine = `export { default as ${componentName} } from './${componentFile}';\n`;
+  fs.appendFileSync(INDEX_FILE, exportLine, 'utf8');
+};
+
+const run = async () => {
+  if (fs.existsSync(INDEX_FILE)) {
+    fs.unlinkSync(INDEX_FILE);
+  }
+  fs.writeFileSync(INDEX_FILE, '', 'utf8');
+  const prettierConfig = await prettier.resolveConfig(process.cwd());
+  const svgFiles = fs
+    .readdirSync(ASSETS_FILE_PATH)
+    .filter(file => file.includes('.svg'));
+  svgFiles.forEach(file => createIconComponent(file, prettierConfig));
+};
+
+run();

@@ -12,6 +12,7 @@ A module containing a number of useful mapbox-gl-js controls and mapbox-gl-draw 
   - [Development](#development)
     - [Link Library](#link-library)
   - [Release Strategy](#release-strategy)
+  - [Icons](#icons)
 
 ## Build Distribution
 
@@ -87,3 +88,10 @@ Now you should be able to run **Storybook** in you library and the application (
 - Create tag of the form v1.1.1
 - Create GitHub release
 - **Do NOT** publish to npm registry
+
+## Icons
+The icon components in this library are built automatically from the svg including optimising the svg using SVGO.
+
+The icons are built when `yarn build` is run or you can run an icon build using `yarn build:icons`.
+
+To add a new icon, first please ensure the icon has a viewbox of 30px x 30px then drop the svg into `src/icons/assets` and run build.

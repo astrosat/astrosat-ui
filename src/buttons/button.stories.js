@@ -7,7 +7,7 @@ import ContactIcon from '../icons/contact-icon.component';
 import CorrectIcon from '../icons/correct-icon.component';
 import ErrorIcon from '../icons/error-icon.component';
 import FacebookIcon from '../icons/facebook-icon.component';
-import LinkedInIcon from '../icons/linked-in-icon.component';
+import LinkedInIcon from '../icons/linkedin-icon.component';
 import MenuIcon from '../icons/menu-icon.component';
 import TwitterIcon from '../icons/twitter-icon.component';
 import CloseIcon from '../icons/close-icon.component';
