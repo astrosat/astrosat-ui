@@ -6,8 +6,6 @@ import * as Icons from '.';
 
 import styles from '../story-styles.module.css';
 
-console.log();
-
 storiesOf('Icons', module).add('All', () => (
   <>
     <div className={styles.btnGroup}>
