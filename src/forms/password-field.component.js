@@ -37,7 +37,7 @@ const PasswordField = ({
       <span data-testid="icon-span" onClick={toggleVisibility}>
         <ShowHideIcon
           type={isVisible ? 'hide' : 'show'}
-          classes={[passwordStyles.showHideIcon]}
+          classes={passwordStyles.showHideIcon}
         />
       </span>
     </div>

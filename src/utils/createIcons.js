@@ -32,7 +32,15 @@ const svgo = new SVGO({
   ]
 });
 
-const SVG_PROCESSES = [svg => svg.replace(/"{classes}"/, '{classes}')];
+const SVG_PROCESSES = [
+  svg => svg.replace(/"{classes}"/, '{classes}'),
+  svg => svg.replace(/stroke-width/g, 'strokeWidth'),
+  svg => svg.replace(/stroke-linecap/g, 'strokeLinecap'),
+  svg => svg.replace(/stroke-linejoin/g, 'strokeLinejoin'),
+  svg => svg.replace(/clip-path/g, 'clipPath'),
+  svg => svg.replace(/clip-rule/g, 'clipRule'),
+  svg => svg.replace(/fill-rule/g, 'fillRule')
+];
 
 const createSvg = async iconFile => {
   const svg = fs.readFileSync(`${ASSETS_FILE_PATH}/${iconFile}`, 'utf8');
@@ -42,6 +50,7 @@ const createSvg = async iconFile => {
   for (let svgProcess of SVG_PROCESSES) {
     optimisedSvg = svgProcess(optimisedSvg);
   }
+  console.log(optimisedSvg);
   return optimisedSvg;
 };
 
