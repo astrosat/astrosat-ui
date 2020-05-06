@@ -32,7 +32,7 @@
     "test:coverage": "yarn test -- --coverage",
     "lint": "eslint src/*.js",
     "clean": "rm -rf coverage dist node_modules",
-    "build:icons": "node ./src/utils/createIcons.js",
+    "build:icons": "node ./scripts/createIcons.js",
     "build": "yarn build:icons && rollup -c",
     "watch": "rollup -c -w",
     "serve": "st -nc -i index.html",

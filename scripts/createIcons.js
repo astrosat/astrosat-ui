@@ -1,23 +1,11 @@
 const fs = require('fs');
 const SVGO = require('svgo');
 const prettier = require('prettier');
+const ICON_COMPONENT_TEMPLATE = require('./ICON_COMPONENT_TEMPLATE');
 
 const ICON_FILE_PATH = 'src/icons';
 const INDEX_FILE = `${ICON_FILE_PATH}/index.js`;
 const ASSETS_FILE_PATH = `${ICON_FILE_PATH}/assets`;
-
-const ICON_COMPONENT_TEMPLATE = `import React from 'react';
-import PropTypes from 'prop-types';
-
-const {{ICON_COMPONENT_NAME}} = ({ classes }) => (
-  {{ICON}}
-);
-
-{{ICON_COMPONENT_NAME}}.propTypes = {
-  classes: PropTypes.string.isRequired
-};
-
-export default {{ICON_COMPONENT_NAME}};`;
 
 const svgo = new SVGO({
   plugins: [
@@ -50,7 +38,6 @@ const createSvg = async iconFile => {
   for (let svgProcess of SVG_PROCESSES) {
     optimisedSvg = svgProcess(optimisedSvg);
   }
-  console.log(optimisedSvg);
   return optimisedSvg;
 };
 
