@@ -6,7 +6,7 @@ import styles from '../src/index.module.css';
 addDecorator(withKnobs);
 addDecorator(storyFn => (
   <div
-    class={select(
+    className={select(
       'theme',
       { Dark: styles.dark, Light: styles.light },
       styles.dark
