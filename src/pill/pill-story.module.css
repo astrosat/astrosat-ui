@@ -6,3 +6,11 @@
  --pill--action--background-color--hover: aqua;
  --pill--action--background-color--focus: maroon;
 }
+
+.pill{
+  margin-left: 2rem;
+}
+
+.pillAction {
+  margin-right: 1rem;
+}

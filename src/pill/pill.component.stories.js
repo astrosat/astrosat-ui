@@ -23,15 +23,27 @@ export const WithAction = () => (
 );
 
 export const Customised = () => (
-  <div className={styles.customPill}>
+  <>
     <Pill
+      className={styles.pill}
       action={
-        <PillAction onClick={action('onClick')}>
+        <PillAction className={styles.pillAction} onClick={action('onClick')}>
           <CogIcon />
         </PillAction>
       }
     >
-      {text('Text', 'All colors')}
+      classNames
     </Pill>
-  </div>
+    <div className={styles.customPill}>
+      <Pill
+        action={
+          <PillAction onClick={action('onClick')}>
+            <CogIcon />
+          </PillAction>
+        }
+      >
+        Themed
+      </Pill>
+    </div>
+  </>
 );
