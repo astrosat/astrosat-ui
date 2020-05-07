@@ -1,0 +1,8 @@
+.customPill {
+ --pill--background-color: hotpink;
+ --pill--border-radius: 0;
+ --pill--color: white;
+ --pill--action--background-color: lawngreen;
+ --pill--action--background-color--hover: aqua;
+ --pill--action--background-color--focus: maroon;
+}

@@ -1,16 +1,21 @@
 import React from 'react';
-
 import styles from './pill.module.css';
+import clsx from 'clsx';
 
-export const PillAction = ({ children, onClick }) => (
-  <button className={styles.action} onClick={onClick}>
-    {children}
+export const PillAction = ({ children, className, onClick }) => (
+  <button className={clsx(styles.action, className)} onClick={onClick}>
+    {React.Children.map(children, element =>
+      React.cloneElement(element, {
+        ...element.props,
+        classes: `${element.props.classes} ${styles.actionChild}`
+      })
+    )}
   </button>
 );
 
-export const Pill = ({ action, children }) => (
-  <div className={styles.pill}>
+export const Pill = ({ action, children, className }) => (
+  <div className={clsx(styles.pill, className)}>
     {action}
-    {children}
+    <div className={styles.content}>{children}</div>
   </div>
 );

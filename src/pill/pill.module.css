@@ -1,25 +1,48 @@
 .pill {
-  --padding-x: 16px;
-  --padding-y: 6px;
-  --font-size: 10px;
-  border-radius: 9px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --padding-x: 0.5rem;
+  --padding-y: 0.375rem;
+  --font-size: 0.625rem;
+  --border-radius: var(--pill--border-radius, 0.5rem);
+  border-radius: var(--border-radius);
   color: var(--pill--color);
   background-color: var(--pill--background-color);
-  padding: var(--padding-y) var(--padding-x);
   max-width: max-content;
-  min-height: calc(var(--font-size) + var(--padding-y));
   font-size: var(--font-size);
   display: flex;
   align-items: center;
 }
 
+.content {
+  padding: var(--padding-y) var(--padding-x);
+  height: 100%;
+}
+
 .action {
-  box-sizing: border-box;
   border: none;
   color: inherit;
-  background-color: transparent;
-  padding: 0;
+  background-color: var(--pill--action--background-color, transparent);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  padding: var(--padding-y) var(--padding-x);
   font-size: inherit;
-  min-height: 1rem;
-  min-width: 1rem;
+  width: fit-content;
+}
+
+.action:hover {
+  cursor: pointer;
+  background-color: var(--pill--action--background-color--hover);
+}
+
+.action:focus {
+  outline: none;
+  background-color: var(--pill--action--background-color--focus);
+}
+
+.actionChild {
+  max-height: 0.75rem;
+  max-width: 0.75rem;
+  height: inherit;
+  width: inherit; 
 }

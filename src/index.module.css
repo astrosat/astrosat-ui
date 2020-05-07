@@ -140,6 +140,8 @@ body {
   /* Pill */
   --pill--background-color: var(--color-lightgrey-light);
   --pill--color: var(--color-secondary);
+  --pill--action--background-color--hover: var(--color-lightgrey);
+  --pill--action--background-color--focus: var(--pill--action--background-color--hover);
 
   /* Legacy */
   --primary-background-color: rgba(246, 190, 0, 0.8);
