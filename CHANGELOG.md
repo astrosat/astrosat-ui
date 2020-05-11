@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/astrosat/astrosat-ui/compare/v1.14.1...v1.14.2) (2020-05-11)
+
+
+### Bug Fixes
+
+* **Pill:** Export correctly ([25825a0](https://github.com/astrosat/astrosat-ui/commit/25825a0ef55998775b5f1bb83c0a17782b5a0bae))
+
 ## [1.14.1](https://github.com/astrosat/astrosat-ui/compare/v1.14.0...v1.14.1) (2020-05-11)
 
 
