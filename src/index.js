@@ -20,7 +20,8 @@ export { default as Dialog } from './containers/dialog.component';
 export { default as useModal } from './containers/use-modal.hook';
 export { default as Well } from './containers/well.component';
 
-export { Pill, PillAction } from './pill/pill.component';
+export { default as Pill } from './pill/pill.component';
+export { default as PillAction } from './pill/pill-action.component';
 
 export * from './icons';
 

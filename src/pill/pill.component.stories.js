@@ -1,7 +1,8 @@
 import React from 'react';
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { Pill, PillAction } from './pill.component';
+import Pill from './pill.component';
+import PillAction from './pill-action.component';
 import { CloseIcon, CogIcon } from '../icons';
 
 import styles from './pill-story.module.css';
