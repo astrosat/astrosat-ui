@@ -1,3 +1,24 @@
+# [1.14.0](https://github.com/astrosat/astrosat-ui/compare/v1.13.1...v1.14.0) (2020-05-11)
+
+
+### Bug Fixes
+
+* **CloseButton:** Update icon size ([37fe824](https://github.com/astrosat/astrosat-ui/commit/37fe824e8ef38e957c51c8a97a53b4a956f352da))
+* **Icons:** Address PR comments ([cc386d1](https://github.com/astrosat/astrosat-ui/commit/cc386d1022c87562ba52e895893df00bb74c7077))
+* **Icons:** Further update faq icon ([16c9dcc](https://github.com/astrosat/astrosat-ui/commit/16c9dccfee1e13ce8f86b523f65fab355ea34514))
+* **Icons:** Remove log ([c9030e5](https://github.com/astrosat/astrosat-ui/commit/c9030e5230ff98f5777a7ae5cc8cdbabe1a9c7d7))
+* **Icons:** Sort errors ([8933eff](https://github.com/astrosat/astrosat-ui/commit/8933eff3ccf1917fd23f95e05e5bd6968fe3ff9d))
+* **Icons:** Update error and correct icons ([da28bf9](https://github.com/astrosat/astrosat-ui/commit/da28bf93e411989b6771406d12d362e8c537591c))
+* **Icons:** Update FAQ Icon ([2e516ac](https://github.com/astrosat/astrosat-ui/commit/2e516ac33dba8305a732a06378c983a88011dd86))
+* **Pill:** Extra customisation in the stories ([2068ed7](https://github.com/astrosat/astrosat-ui/commit/2068ed78d0c95833378ff230e208044c2671647f))
+* **Pill:** Finish off pill ([ca4b234](https://github.com/astrosat/astrosat-ui/commit/ca4b2346f1e48e7d7ebb53bc70ec5e2e4e24af83))
+* **Pill:** Start creating Pill component ([2b7fcb2](https://github.com/astrosat/astrosat-ui/commit/2b7fcb21e2a80583816d1a6d2b36770ed98f6c32))
+
+
+### Features
+
+* **Icons:** Create script to build icons ([165e3fd](https://github.com/astrosat/astrosat-ui/commit/165e3fd3d99de1b19c03f7a38da3c8fa19e78ab9))
+
 ## [1.13.1](https://github.com/astrosat/astrosat-ui/compare/v1.13.0...v1.13.1) (2020-04-29)
 
 
