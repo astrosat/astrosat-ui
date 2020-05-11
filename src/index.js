@@ -20,6 +20,8 @@ export { default as Dialog } from './containers/dialog.component';
 export { default as useModal } from './containers/use-modal.hook';
 export { default as Well } from './containers/well.component';
 
+export { Pill, PillAction } from './pill/pill.component';
+
 export * from './icons';
 
 export { default as ProgressBar } from './progress/progress-bar.component';
