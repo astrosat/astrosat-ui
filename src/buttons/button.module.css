@@ -14,14 +14,13 @@
   box-shadow: var(--button--box-shadow);
 }
 
-.button:hover,
+.button:hover:not(:disabled),
 .button:focus {
   outline: none;
   opacity: var(--button--opacity--hover);
 }
 
-.disabled,
-.disabled:hover {
+.disabled {
   background: var(--button--disabled--background-color);
   color: var(--button--disabled--color);
   cursor: not-allowed;
