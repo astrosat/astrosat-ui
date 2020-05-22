@@ -101,13 +101,6 @@
   --textfield--color: var(--color-secondary);
 
   /* Legacy */
-  --menu-foreground: #000;
-  --menu-background: #e8c786;
-  --menu-border: #fff;
-  --menu-item-hover: #dcb871;
-  --menu-item-active: #e9b650;
-
-  --search: url('/search-dark.svg');
   --primary-text-color: #a2aaad;
 
   --error-background-color: rgba(207, 102, 121, 0.2);
