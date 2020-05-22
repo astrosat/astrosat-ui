@@ -59,7 +59,7 @@
   --button--secondary--color--focus: var(--button--secondary--color--hover);
 
   --button--tertiary--background-color: var(--color-blue);
-  --button--tertiary--color: var(--primary-foreground-color);
+  --button--tertiary--color: var(--color--text--dark);
   --button--tertiary--background-color--active: var(--color-blue);
   --button--tertiary--color--active: #fff;
   --button--tertiary--background-color--hover: var(--color-blue);
@@ -101,8 +101,6 @@
   --textfield--color: var(--color-secondary);
 
   /* Legacy */
-  --background-color-with-opacity: rgba(58, 59, 77, 0.8);
-
   --foreground-color-primary: #fff;
   --background-color-primary: #3a3b4d;
   --foreground-color-secondary: #f2f2f2;
