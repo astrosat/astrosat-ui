@@ -101,9 +101,6 @@
   --textfield--color: var(--color-secondary);
 
   /* Legacy */
-  --background-color-alternate: #424357;
-  --background-active-color: #e8c786;
-  --header-background-color: #323346;
   --background-color-with-opacity: rgba(58, 59, 77, 0.8);
 
   --foreground-color-primary: #fff;
