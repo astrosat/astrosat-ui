@@ -101,18 +101,6 @@
   --textfield--color: var(--color-secondary);
 
   /* Legacy */
-  --foreground-color-primary: #fff;
-  --background-color-primary: #3a3b4d;
-  --foreground-color-secondary: #f2f2f2;
-  --background-color-secondary: #424357;
-
-  --tabbed-panel-tab: #e8c786;
-  --tabbed-panel-tab-hover: #dcb871;
-  --tabbed-panel-tab-active: #e8c786;
-
-  --list-item-background: rgba(221, 185, 114, 0.7);
-  --list-item-background-hover: rgba(221, 185, 114, 0.25);
-
   --menu-foreground: #000;
   --menu-background: #e8c786;
   --menu-border: #fff;
