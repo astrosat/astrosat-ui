@@ -92,8 +92,14 @@
   --slider--track--color--internal: var(--color-primary);
   --slider--value--background-color: var(--color-primary);
 
+  /* Well */
+  --well--color: var(--color-secondary);
+  --well--default--color: var(--well--color);
+
+  /* Textfield */
+  --textfield--color: var(--color-secondary);
+
   /* Legacy */
-  --primary-foreground-color: #333f48;
   --foreground-color: #333f48;
   --background-color-alternate: #424357;
   --background-active-color: #e8c786;

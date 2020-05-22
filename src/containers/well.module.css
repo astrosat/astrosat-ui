@@ -1,7 +1,7 @@
 .well {
   display: flex;
   align-items: center;
-  color: var(--primary-foreground-color);
+  color: var(--well--color);
   padding: 2rem;
   border-radius: 0.3rem;
   width: 100%;
@@ -9,7 +9,7 @@
 
 .well.default {
   background-color: #fff;
-  border: 1px solid var(--primary-foreground-color);
+  border: 1px solid var(--well--default--color);
 }
 
 .well.error {
