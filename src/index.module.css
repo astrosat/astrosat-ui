@@ -95,7 +95,6 @@
   /* Legacy */
   --primary-foreground-color: #333f48;
   --foreground-color: #333f48;
-  --background-color: var(--primary-foreground-color);
   --background-color-alternate: #424357;
   --background-active-color: #e8c786;
   --header-background-color: #323346;
