@@ -58,9 +58,17 @@ const createComponentFromTemplate = (componentName, svg) => {
   return component;
 };
 
+const makeComponentName = iconName =>
+  iconName
+    .split('-')
+    .map(
+      nameSegment => `${nameSegment[0].toUpperCase()}${nameSegment.substr(1)}`
+    )
+    .join('');
+
 const createIconComponent = async (file, prettierConfig) => {
-  const iconName = file.split('.')[0];
-  const componentName = `${iconName[0].toUpperCase()}${iconName.substr(1)}Icon`;
+  const [iconName] = file.split('.');
+  const componentName = `${makeComponentName(iconName)}Icon`;
   const componentFile = `${iconName}-icon.component.js`;
   const optimisedSvg = await createSvg(file);
   const iconComponent = createComponentFromTemplate(

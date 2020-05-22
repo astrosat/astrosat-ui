@@ -11,18 +11,31 @@ storiesOf('Icons', module).add('All', () => (
     <div className={styles.btnGroup}>
       <fieldset>
         <legend>Monochrome</legend>
-        {Object.values(Icons).map((Icon, i) => (
-          <Icon key={`icon-${i}`} classes={styles.icon} />
-        ))}
+        <div className={styles.iconSet}>
+          {Object.values(Icons).map((Icon, i) => (
+            <div className={styles.iconGroup}>
+              <Icon key={`icon-${i}`} classes={styles.icon} />
+              <p>{Icon.name}</p>
+            </div>
+          ))}
+        </div>
       </fieldset>
     </div>
 
     <div className={styles.btnGroup}>
       <fieldset>
         <legend>Styled by color</legend>
-        {Object.values(Icons).map((Icon, i) => (
-          <Icon key={`icon-${i}`} classes={`${styles.icon} ${styles.color}`} />
-        ))}
+        <div className={styles.iconSet}>
+          {Object.values(Icons).map((Icon, i) => (
+            <div className={styles.iconGroup}>
+              <Icon
+                key={`icon-${i}`}
+                classes={`${styles.icon} ${styles.color}`}
+              />
+              <p>{Icon.name}</p>
+            </div>
+          ))}
+        </div>
       </fieldset>
     </div>
   </>
