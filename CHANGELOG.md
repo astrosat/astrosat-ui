@@ -1,3 +1,12 @@
+## [1.14.4](https://github.com/astrosat/astrosat-ui/compare/v1.14.3...v1.14.4) (2020-05-22)
+
+
+### Bug Fixes
+
+* **createIcons:** Improve script ([bcc5321](https://github.com/astrosat/astrosat-ui/commit/bcc5321b86d6353c031e3da5b355f4d15ed34bc2))
+* **Icon Stories:** Add names ([da743f3](https://github.com/astrosat/astrosat-ui/commit/da743f39e201290a94c2145c157aa5a80a7cd32c))
+* **Icons:** Add orbis icons ([6c9ac08](https://github.com/astrosat/astrosat-ui/commit/6c9ac0836629ec6debf32b94a66f73f89d2dea1b))
+
 ## [1.14.3](https://github.com/astrosat/astrosat-ui/compare/v1.14.2...v1.14.3) (2020-05-15)
 
 
