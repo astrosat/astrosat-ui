@@ -96,16 +96,19 @@
   /* Well */
   --well--color: var(--color-secondary);
   --well--default--color: var(--well--color);
+  /* Well/Error */
+  --well--error--background-color: rgba(207, 102, 121, 0.2);
+  --well--error--border-color: var(--color-red);
+  --well--error--color: var(--well--color);
+  --well--error--icon--color: var(--well--error--border-color);
+  /* Well/Success */
+  --well--success--background-color: rgba(108,194,74, 0.2);
+  --well--success--border-color: var(--color-green);
+  --well--success--color: var(--well--color);
+  --well--success--icon--color: var(--well--success--border-color);
 
   /* Textfield */
   --textfield--color: var(--color-secondary);
-
-  /* Legacy */
-  --error-background-color: rgba(207, 102, 121, 0.2);
-  --error-border-color: #cf6679;
-
-  --success-background-color: rgba(108, 194, 74, 0.2);
-  --success-border-color: #6cc24a;
 }
 
 body {
