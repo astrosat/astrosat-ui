@@ -25,6 +25,7 @@
   --color-primary: var(--color-yellow);
   --color-primary-light: var(--color-yellow-light);
   --color-secondary: var(--color-darkgrey);
+  --color--text--dark: var(--color-secondary);
 
   /* Buttons */
   --button--font-family: var(--global--font-family);
@@ -100,7 +101,6 @@
   --textfield--color: var(--color-secondary);
 
   /* Legacy */
-  --foreground-color: #333f48;
   --background-color-alternate: #424357;
   --background-active-color: #e8c786;
   --header-background-color: #323346;
