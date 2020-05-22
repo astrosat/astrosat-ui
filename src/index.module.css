@@ -101,8 +101,6 @@
   --textfield--color: var(--color-secondary);
 
   /* Legacy */
-  --primary-text-color: #a2aaad;
-
   --error-background-color: rgba(207, 102, 121, 0.2);
   --error-border-color: #cf6679;
 
