@@ -27,7 +27,7 @@
   display: flex;
   justify-content: center;
   padding: 1.5rem;
-  background-color: var(--primary-background-color);
+  background-color: var(--dialog--header--background-color);
   border-radius: 0.5rem 0.5rem 0 0;
   border-bottom: 1px solid #000;
 }

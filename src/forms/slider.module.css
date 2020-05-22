@@ -35,7 +35,7 @@
   position: absolute;
   top: -2rem;
   border-radius: 2px;
-  background-color: var(--primary-background-color);
+  background-color: var(--slider--value--background-color);
   padding: 0.2rem 0.5rem;
   text-align: center;
   white-space: nowrap;

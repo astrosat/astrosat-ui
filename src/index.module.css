@@ -17,64 +17,6 @@
   --global--font-family: 'Open Sans';
 }
 
-body {
-  background-color: lightgrey;
-  font-family: var(--global--font-family);
-}
-
-.light {
-  --foreground-color-primary: #3a3b4d;
-  --background-color-primary: #fff;
-  --foreground-color-secondary: #f2f2f2;
-  --background-color-secondary: #f2f2f2;
-
-  --primary-button-background-color: var(--primary-background-color);
-  --primary-button-foreground-color: var(--primary-foreground-color);
-  --primary-button-background-active-color: rgba(246, 190, 0, 1);
-  --primary-button-foreground-active-color: rgba(0, 0, 0, 1);
-  --primary-button-background-hover-color: rgba(246, 190, 0, 0.6);
-  --primary-button-foreground-hover-color: rgba(0, 0, 0, 0.6);
-
-  --secondary-button-background-color: var(--primary-foreground-color);
-  --secondary-button-foreground-color: rgba(255, 255, 255, 0.8);
-  --secondary-button-background-active-color: rgba(0, 0, 0, 1);
-  --secondary-button-foreground-active-color: rgba(255, 255, 255, 1);
-  --secondary-button-background-hover-color: rgba(0, 0, 0, 0.6);
-  --secondary-button-foreground-hover-color: rgba(255, 255, 255, 0.6);
-
-  --tertiary-button-background-color: rgba(72, 169, 197, 0.8);
-  --tertiary-button-foreground-color: var(--primary-foreground-color);
-  --tertiary-button-background-active-color: rgba(72, 169, 197, 1);
-  --tertiary-button-foreground-active-color: rgba(255, 255, 255, 1);
-  --tertiary-button-background-hover-color: rgba(72, 169, 197, 0.6);
-  --tertiary-button-foreground-hover-color: rgba(255, 255, 255, 0.6);
-
-  --close-button-text: #3a3b4d;
-  --close-button-hover: #b7b7b7;
-  --close-button-active: #cfcfcf;
-
-  --toggle-button-background: #b7b7b7;
-  --toggle-button-background-active: #979797;
-  --toggle-button-border: #3a3b4d;
-  --toggle-button-slider: #f2f2f2;
-  --toggle-button-slider-active: #5795f1;
-
-  --tabbed-panel-tab: #5795f1;
-  --tabbed-panel-tab-hover: #6fa2ec;
-  --tabbed-panel-tab-active: #5795f1;
-
-  --list-item-background: rgba(87, 149, 241, 0.7);
-  --list-item-background-hover: rgba(87, 149, 241, 0.25);
-
-  --menu-foreground: #fff;
-  --menu-background: #5795f1;
-  --menu-border: #808080;
-  --menu-item-hover: #6fa2ec;
-  --menu-item-active: #4984dc;
-
-  --search: url('/search-light.svg');
-}
-
 .dark {
   /* Globals */
   --global--border-radius: 0.3rem;
@@ -143,8 +85,14 @@ body {
   --pill--action--background-color--hover: var(--color-lightgrey);
   --pill--action--background-color--focus: var(--pill--action--background-color--hover);
 
+  /* Dialog */
+  --dialog--header--background-color: var(--color-primary);
+
+  /* Slider */
+  --slider--track--color--internal: var(--color-primary);
+  --slider--value--background-color: var(--color-primary);
+
   /* Legacy */
-  --primary-background-color: rgba(246, 190, 0, 0.8);
   --primary-foreground-color: #333f48;
   --foreground-color: #333f48;
   --background-color: var(--primary-foreground-color);
@@ -179,4 +127,62 @@ body {
 
   --success-background-color: rgba(108, 194, 74, 0.2);
   --success-border-color: #6cc24a;
+}
+
+body {
+  background-color: lightgrey;
+  font-family: var(--global--font-family);
+}
+
+.light {
+  --foreground-color-primary: #3a3b4d;
+  --background-color-primary: #fff;
+  --foreground-color-secondary: #f2f2f2;
+  --background-color-secondary: #f2f2f2;
+
+  --primary-button-background-color: var(--primary-background-color);
+  --primary-button-foreground-color: var(--primary-foreground-color);
+  --primary-button-background-active-color: rgba(246, 190, 0, 1);
+  --primary-button-foreground-active-color: rgba(0, 0, 0, 1);
+  --primary-button-background-hover-color: rgba(246, 190, 0, 0.6);
+  --primary-button-foreground-hover-color: rgba(0, 0, 0, 0.6);
+
+  --secondary-button-background-color: var(--primary-foreground-color);
+  --secondary-button-foreground-color: rgba(255, 255, 255, 0.8);
+  --secondary-button-background-active-color: rgba(0, 0, 0, 1);
+  --secondary-button-foreground-active-color: rgba(255, 255, 255, 1);
+  --secondary-button-background-hover-color: rgba(0, 0, 0, 0.6);
+  --secondary-button-foreground-hover-color: rgba(255, 255, 255, 0.6);
+
+  --tertiary-button-background-color: rgba(72, 169, 197, 0.8);
+  --tertiary-button-foreground-color: var(--primary-foreground-color);
+  --tertiary-button-background-active-color: rgba(72, 169, 197, 1);
+  --tertiary-button-foreground-active-color: rgba(255, 255, 255, 1);
+  --tertiary-button-background-hover-color: rgba(72, 169, 197, 0.6);
+  --tertiary-button-foreground-hover-color: rgba(255, 255, 255, 0.6);
+
+  --close-button-text: #3a3b4d;
+  --close-button-hover: #b7b7b7;
+  --close-button-active: #cfcfcf;
+
+  --toggle-button-background: #b7b7b7;
+  --toggle-button-background-active: #979797;
+  --toggle-button-border: #3a3b4d;
+  --toggle-button-slider: #f2f2f2;
+  --toggle-button-slider-active: #5795f1;
+
+  --tabbed-panel-tab: #5795f1;
+  --tabbed-panel-tab-hover: #6fa2ec;
+  --tabbed-panel-tab-active: #5795f1;
+
+  --list-item-background: rgba(87, 149, 241, 0.7);
+  --list-item-background-hover: rgba(87, 149, 241, 0.25);
+
+  --menu-foreground: #fff;
+  --menu-background: #5795f1;
+  --menu-border: #808080;
+  --menu-item-hover: #6fa2ec;
+  --menu-item-active: #4984dc;
+
+  --search: url('/search-light.svg');
 }

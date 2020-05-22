@@ -111,7 +111,7 @@ storiesOf('Containers', module)
     </>
   ))
   .add('Dialog', () => {
-    const { isVisible, toggle } = useModal(false);
+    const [isVisible, toggle] = useModal(false);
     const ref = useRef(document.body);
 
     return (

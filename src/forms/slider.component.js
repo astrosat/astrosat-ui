@@ -49,7 +49,7 @@ const Slider = ({
                       values: scaledValues,
                       colors: [
                         '#eee',
-                        'var(--primary-background-color)',
+                        'var(--slider--track--color--internal)',
                         '#eee'
                       ],
                       min: scaledMin,
