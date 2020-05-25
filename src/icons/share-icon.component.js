@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ShareIcon = ({ classes }) => (
+const ShareIcon = ({ classes, ...rest }) => (
   <svg
     viewBox="0 0 30 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
+    {...rest}
   >
     <g clipPath="url(#clip0)" fill="currentColor">
       <path d="M8 17.906v-2.285l14 7.552L21.153 25 8 17.906zm0-3.528v-2.285L21.153 5 22 6.827 8 14.378z" />

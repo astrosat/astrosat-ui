@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LineWidth2pxIcon = ({ classes }) => (
+const LineWidth2pxIcon = ({ classes, ...rest }) => (
   <svg
     viewBox="0 0 30 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
+    {...rest}
   >
     <path d="M0 15h30H0z" fill="currentColor" />
     <path d="M0 15h30" stroke="currentColor" strokeWidth="2" />

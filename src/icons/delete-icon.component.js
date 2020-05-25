@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DeleteIcon = ({ classes }) => (
+const DeleteIcon = ({ classes, ...rest }) => (
   <svg
     viewBox="0 0 30 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
+    {...rest}
   >
     <g clipPath="url(#clip0)" fill="currentColor">
       <path d="M19.355 10.84a.69.69 0 00-.677.702v13.302c0 .39.303.704.677.704a.691.691 0 00.677-.704v-13.3a.691.691 0 00-.677-.705zm-8.322 0a.691.691 0 00-.678.702v13.302c0 .39.304.704.678.704a.69.69 0 00.676-.704v-13.3a.69.69 0 00-.676-.705z" />

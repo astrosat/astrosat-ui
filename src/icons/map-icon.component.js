@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MapIcon = ({ classes }) => (
+const MapIcon = ({ classes, ...rest }) => (
   <svg
     viewBox="0 0 30 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
+    {...rest}
   >
     <path
       d="M18.848 7.951v19.674M4.56 7.95l6.655 1.375 7.49-1.699 7.38 1.699v19.784l-7.505-1.484-7.365 1.639L4 27.624V7.95h.56v0zm6.59 1.696v19.15-19.15z"
