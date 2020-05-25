@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LayersIcon = ({ classes }) => (
+const LayersIcon = ({ classes, ...rest }) => (
   <svg
     viewBox="0 0 30 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
+    {...rest}
   >
     <path
       d="M2.749 8.653v.025l11.483 6.048.011-.004c.328.171.695.278 1.09.278.395 0 .762-.107 1.092-.278l.012.004L27.92 8.678v-.025a1.25 1.25 0 00.747-1.154c0-.523-.313-.969-.76-1.154L16.444.278h-.02A2.34 2.34 0 0015.333 0c-.393 0-.76.107-1.088.278h-.021L2.758 6.345A1.246 1.246 0 002 7.499c0 .52.308.966.749 1.154z"

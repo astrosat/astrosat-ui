@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const VisualisationIcon = ({ classes }) => (
+const VisualisationIcon = ({ classes, ...rest }) => (
   <svg
     viewBox="0 0 30 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
+    {...rest}
   >
     <path
       d="M25.415 28.349H4.928a.276.276 0 01-.276-.275V1.929c0-.153.124-.276.276-.276h15.166l.053.056v4.96c0 .627.508 1.136 1.135 1.136h4.408v20.269a.277.277 0 01-.275.275zm1.71-21.47L21.067.268A.826.826 0 0020.458 0H4.928A1.93 1.93 0 003 1.929v26.145A1.93 1.93 0 004.928 30h20.487a1.93 1.93 0 001.927-1.926V7.436a.825.825 0 00-.218-.558"

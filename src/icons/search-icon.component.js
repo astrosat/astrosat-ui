@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchIcon = ({ classes }) => (
+const SearchIcon = ({ classes, ...rest }) => (
   <svg
     viewBox="0 0 30 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
+    {...rest}
   >
     <path
       d="M29.512 27.155l-5.645-5.645a13.277 13.277 0 002.8-8.177C26.667 5.97 20.697 0 13.333 0 5.97 0 0 5.97 0 13.333s5.97 13.334 13.333 13.334c2.962.005 5.84-.981 8.177-2.8l5.645 5.645a1.666 1.666 0 102.357-2.357zm-16.179-3.822c-5.523 0-10-4.476-10-10 0-5.523 4.477-10 10-10 5.524 0 10 4.477 10 10 0 5.524-4.476 10-10 10z"

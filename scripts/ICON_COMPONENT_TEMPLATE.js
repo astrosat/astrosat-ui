@@ -1,7 +1,7 @@
 const ICON_COMPONENT_TEMPLATE = `import React from 'react';
 import PropTypes from 'prop-types';
 
-const {{ICON_COMPONENT_NAME}} = ({ classes }) => (
+const {{ICON_COMPONENT_NAME}} = ({ classes, ...rest }) => (
   {{ICON}}
 );
 

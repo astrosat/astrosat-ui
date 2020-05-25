@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const EyeIcon = ({ classes }) => (
+const EyeIcon = ({ classes, ...rest }) => (
   <svg
     viewBox="0 0 30 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
+    {...rest}
   >
     <path
       d="M15 19.032c2.26 0 4.09-1.795 4.09-4.01s-1.83-4.01-4.09-4.01-4.09 1.795-4.09 4.01 1.83 4.01 4.09 4.01z"
