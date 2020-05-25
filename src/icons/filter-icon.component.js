@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FilterIconIcon = ({ classes, ...rest }) => (
+const FilterIcon = ({ classes, ...rest }) => (
   <svg
     viewBox="0 0 30 30"
     fill="none"
@@ -27,4 +27,4 @@ FilterIconIcon.propTypes = {
   classes: PropTypes.string.isRequired
 };
 
-export default FilterIconIcon;
+export default FilterIcon;

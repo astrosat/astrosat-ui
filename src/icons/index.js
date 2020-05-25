@@ -14,7 +14,7 @@ export { default as EyeSlashIcon } from './eye-slash-icon.component.js';
 export { default as EyeIcon } from './eye-icon.component.js';
 export { default as FacebookIcon } from './facebook-icon.component.js';
 export { default as FaqIcon } from './faq-icon.component.js';
-export { default as FilterIconIcon } from './filter-icon-icon.component.js';
+export { default as FilterIcon } from './filter-icon.component.js';
 export { default as FreehandIcon } from './freehand-icon.component.js';
 export { default as HideIcon } from './hide-icon.component.js';
 export { default as ImageIcon } from './image-icon.component.js';
