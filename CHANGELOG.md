@@ -1,3 +1,23 @@
+# [1.15.0](https://github.com/astrosat/astrosat-ui/compare/v1.14.4...v1.15.0) (2020-05-25)
+
+
+### Bug Fixes
+
+* **themes:** Remove --primary-background-color ([8797684](https://github.com/astrosat/astrosat-ui/commit/879768453639d5df244a67e91c486ba4fa68e758)), closes [astrosat/orbis#459](https://github.com/astrosat/orbis/issues/459)
+* **Themes:** Remove --background-color ([3b875ff](https://github.com/astrosat/astrosat-ui/commit/3b875ffd791435fb0329e74368875f03fd76f45f)), closes [astrosat/orbis#459](https://github.com/astrosat/orbis/issues/459)
+* **Themes:** Remove --background-color-with-opacity ([4a4d3f8](https://github.com/astrosat/astrosat-ui/commit/4a4d3f89d497eb900d1879303e722665ec8e1934)), closes [astrosat/orbix#459](https://github.com/astrosat/orbix/issues/459)
+* **Themes:** Remove --primary-text-color ([4f14ee8](https://github.com/astrosat/astrosat-ui/commit/4f14ee8b3c4bdef5743422bdefdb212b2ca86891)), closes [astrosat/orbis#459](https://github.com/astrosat/orbis/issues/459)
+* **Themes:** Remove legacy css var ([d1c122c](https://github.com/astrosat/astrosat-ui/commit/d1c122c1daab19f5ab5c5323fdfb3f993957d019)), closes [astrosat/orbis#459](https://github.com/astrosat/orbis/issues/459)
+* **Themes:** Remove legacy variable ([43dbead](https://github.com/astrosat/astrosat-ui/commit/43dbead5ea4dd7ad3cfb594e1062358ab351e685)), closes [astrosat/orbis#459](https://github.com/astrosat/orbis/issues/459)
+* **Themes:** Remove more legacy vars ([51051cc](https://github.com/astrosat/astrosat-ui/commit/51051cc4322ea6231b52da210e7ba870f66c6d5f)), closes [astrosat/orbix#459](https://github.com/astrosat/orbix/issues/459)
+* **Themes:** Remove multiple legacy vars ([bcf9874](https://github.com/astrosat/astrosat-ui/commit/bcf98740654b858be6fc58317c64a549682b59ab)), closes [astrosat/orbis#459](https://github.com/astrosat/orbis/issues/459)
+* **Well:** Update well vars ([fd19679](https://github.com/astrosat/astrosat-ui/commit/fd196795e61f14d67c01f72e4cb781367a88e114)), closes [astrosat/orbis#459](https://github.com/astrosat/orbis/issues/459)
+
+
+### Features
+
+* **Themes:** Remove multiple legacy vars ([ad37ab2](https://github.com/astrosat/astrosat-ui/commit/ad37ab2c49f2ff141382ae90e35cf657d36b84e3)), closes [astrosat/orbis#459](https://github.com/astrosat/orbis/issues/459)
+
 ## [1.14.4](https://github.com/astrosat/astrosat-ui/compare/v1.14.3...v1.14.4) (2020-05-22)
 
 
