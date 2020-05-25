@@ -1,3 +1,12 @@
+## [1.15.1](https://github.com/astrosat/astrosat-ui/compare/v1.15.0...v1.15.1) (2020-05-25)
+
+
+### Bug Fixes
+
+* **frontend:** Add 'rest' property to createIcon script ([3657639](https://github.com/astrosat/astrosat-ui/commit/36576398d8e77535e0257c27fa05a1322ed934e5))
+* **frontend:** Built icons ([e5d075b](https://github.com/astrosat/astrosat-ui/commit/e5d075b86cc8f69fa01e16de8147aeb9451295e9))
+* **frontend:** Changed FilterIconIcon to FilterIcon ([0d00f20](https://github.com/astrosat/astrosat-ui/commit/0d00f20e5e41b8c5e018a9608b3250d301815435))
+
 # [1.15.0](https://github.com/astrosat/astrosat-ui/compare/v1.14.4...v1.15.0) (2020-05-25)
 
 
