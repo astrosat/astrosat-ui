@@ -1,7 +1,7 @@
 .well {
   display: flex;
   align-items: center;
-  color: var(--primary-foreground-color);
+  color: var(--well--color);
   padding: 2rem;
   border-radius: 0.3rem;
   width: 100%;
@@ -9,27 +9,27 @@
 
 .well.default {
   background-color: #fff;
-  border: 1px solid var(--primary-foreground-color);
+  border: 1px solid var(--well--default--color);
 }
 
 .well.error {
-  background-color: var(--error-background-color);
-  border: 1px solid var(--error-border-color);
-  fill: var(--error-border-color);
+  background-color: var(--well--error--background-color);
+  border: 1px solid var(--well--error--border-color);
+  color: var(--well--error--color);
 }
 
 .well.error svg {
-  color: var(--error-border-color);
+  color: var(--well--error--icon--color);
 }
 
 .well.success {
-  background-color: var(--success-background-color);
-  border: 1px solid var(--success-border-color);
-  fill: var(--success-border-color);
+  background-color: var(--well--success--background-color);
+  border: 1px solid var(--well--success--border-color);
+  color: var(--well--success--color);
 }
 
 .well.success svg {
-  color: var(--success-border-color);
+  color: var(--well--success--icon--color);
 }
 
 .well .icon {

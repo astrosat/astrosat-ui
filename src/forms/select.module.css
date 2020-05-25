@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  color: var(--primary-foreground-color);
+  color: var(--textfield--color);
 }
 
 .select .header {
@@ -20,7 +20,7 @@
   height: 0.45em;
   transform: rotate(45deg);
   width: 0.45em;
-  color: var(--primary-foreground-color);
+  color: var(--textfield--color);
 }
 
 .select .visible.header::after {
@@ -40,7 +40,7 @@
   margin-top: 2rem;
   padding: 0;
   box-shadow: 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.1);
-  border: 8px solid var(--menu-border);
+  border: 8px solid #fff;
   border-radius: 0.3rem;
   width: 100%;
 }
