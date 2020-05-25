@@ -14,7 +14,7 @@ const svgo = new SVGO({
     { convertColors: { currentColor: true } },
     {
       addAttributesToSVGElement: {
-        attributes: [{ className: '{classes}' }]
+        attributes: [{ className: '{classes}' }, { rest: 'rest' }]
       }
     }
   ]
@@ -27,7 +27,8 @@ const SVG_PROCESSES = [
   svg => svg.replace(/stroke-linejoin/g, 'strokeLinejoin'),
   svg => svg.replace(/clip-path/g, 'clipPath'),
   svg => svg.replace(/clip-rule/g, 'clipRule'),
-  svg => svg.replace(/fill-rule/g, 'fillRule')
+  svg => svg.replace(/fill-rule/g, 'fillRule'),
+  svg => svg.replace(/rest="rest"/g, '{...rest}')
 ];
 
 const createSvg = async iconFile => {
