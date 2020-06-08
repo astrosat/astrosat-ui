@@ -9,9 +9,9 @@ const Filler = ({ percentage }) => {
   );
 };
 
-const ProgressBar = ({ percentage, classes }) => {
+const ProgressBar = ({ percentage, className }) => {
   return (
-    <div className={`${styles.progressBar} ${classes}`}>
+    <div className={`${styles.progressBar} ${className}`}>
       <Filler percentage={percentage} />
     </div>
   );
