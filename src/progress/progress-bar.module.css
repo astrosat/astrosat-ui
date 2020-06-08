@@ -1,8 +1,7 @@
 .progressBar {
   position: relative;
-  height: 20px;
-  width: 350px;
-  border-radius: 50px;
+  height: 1.25rem;
+  border-radius: 3.125rem;
   border: 1px solid #333;
   background: #e6e6e6;
 }
