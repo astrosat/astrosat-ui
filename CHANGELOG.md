@@ -1,3 +1,12 @@
+## [1.15.2](https://github.com/astrosat/astrosat-ui/compare/v1.15.1...v1.15.2) (2020-06-08)
+
+
+### Bug Fixes
+
+* **frontend:** Change px to rem ([870b7b4](https://github.com/astrosat/astrosat-ui/commit/870b7b4ca7a33f62cbb1aacabff235451be9c5f7))
+* **frontend:** Make requested changes ([398cfaa](https://github.com/astrosat/astrosat-ui/commit/398cfaa27fd805b24d915297c217bf7814743af9))
+* **frontend:** Update progress bar, rebuild icons ([5208ce4](https://github.com/astrosat/astrosat-ui/commit/5208ce4a5bd3e0a6dfc586acf602d64d7de26117))
+
 ## [1.15.1](https://github.com/astrosat/astrosat-ui/compare/v1.15.0...v1.15.1) (2020-05-25)
 
 
