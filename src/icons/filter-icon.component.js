@@ -23,7 +23,7 @@ const FilterIcon = ({ classes, ...rest }) => (
   </svg>
 );
 
-FilterIconIcon.propTypes = {
+FilterIcon.propTypes = {
   classes: PropTypes.string.isRequired
 };
 
