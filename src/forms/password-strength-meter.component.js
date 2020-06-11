@@ -8,31 +8,31 @@ import styles from './password-strength-meter.module.css';
 const passwordStrength = score => {
   switch (score) {
     case 0:
-      return 'Weak';
+      return 'Empty';
     case 1:
-      return 'Weak';
+      return 'Empty';
     case 2:
-      return 'Fair';
+      return 'Weak';
     case 3:
-      return 'Good';
+      return 'Fair';
     case 4:
       return 'Strong';
     default:
-      return 'Weak';
+      return 'Empty';
   }
 };
 
 const PasswordStrengthMeter = ({ password, ariaLabel }) => {
   const passwordResult = password
     ? zxcvbn(password)
-    : { score: 0, feedback: { suggestions: [] } };
+    : { score: 0, feedback: { suggestion: [] } };
   const strength = passwordStrength(passwordResult.score);
   return (
     <div>
       <progress
         className={`${styles.passwordMeter} ${styles[strength]}`}
         value={passwordResult.score}
-        max="4"
+        // max="4"
         aria-label={ariaLabel}
       />
       <div>

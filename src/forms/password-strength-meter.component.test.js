@@ -19,7 +19,7 @@ describe('Password Strength Meter Component', () => {
     expect(container.querySelector('progress')).toHaveClass(
       'passwordMeter Weak'
     );
-    expect(container.querySelector('progress')).toHaveAttribute('value', '0');
+    expect(container.querySelector('progress')).toHaveAttribute('value', '1');
     expect(container.querySelector('progress')).toHaveAttribute('max', '4');
   });
 
