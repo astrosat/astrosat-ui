@@ -10,7 +10,7 @@ const passwordStrength = score => {
     case 0:
       return 'Empty';
     case 1:
-      return 'Empty';
+      return '';
     case 2:
       return 'Weak';
     case 3:
@@ -18,31 +18,19 @@ const passwordStrength = score => {
     case 4:
       return 'Strong';
     default:
-      return 'Empty';
+      return 'Weak';
   }
 };
 
 const PasswordStrengthMeter = ({ password, ariaLabel }) => {
-  const passwordResult = password
-    ? zxcvbn(password)
-    : { score: 0, feedback: { suggestion: [] } };
+  const passwordResult = zxcvbn(password);
   const strength = passwordStrength(passwordResult.score);
   return (
-    <div>
-      <progress
-        className={`${styles.passwordMeter} ${styles[strength]}`}
-        value={passwordResult.score}
-        // max="4"
-        aria-label={ariaLabel}
-      />
-      <div>
-        <strong>Password Strength:</strong>&nbsp;{strength}
-      </div>
-      <ul>
-        {passwordResult.feedback.suggestions.map(suggestion => (
-          <li key={suggestion}>{suggestion}</li>
-        ))}
-      </ul>
+    <div className={styles.passwordScoreWrapper}>
+      <meter max="4" value={passwordResult.score} className={styles.meter}>
+        {passwordStrength}
+      </meter>
+      <div className={styles.strength}> {strength} </div>
     </div>
   );
 };
