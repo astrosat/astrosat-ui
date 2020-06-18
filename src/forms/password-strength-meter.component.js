@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import zxcvbn from 'zxcvbn';
 
 import styles from './password-strength-meter.module.css';
-
 const passwordStrength = score => {
   switch (score) {
     case 0:
@@ -27,10 +26,15 @@ const PasswordStrengthMeter = ({ password, ariaLabel }) => {
   const strength = passwordStrength(passwordResult.score);
   return (
     <div className={styles.passwordScoreWrapper}>
-      <meter max="4" value={passwordResult.score} className={styles.meter}>
+      <meter
+        max="4"
+        value={passwordResult.score}
+        className={styles.meter}
+        aria-Label={ariaLabel}
+      >
         {passwordStrength}
       </meter>
-      <div className={styles.strength}> {strength} </div>
+      <div className={styles.strength}>{strength}</div>
     </div>
   );
 };
