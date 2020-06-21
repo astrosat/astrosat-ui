@@ -11,11 +11,11 @@ const passwordStrength = score => {
     case 1:
       return '';
     case 2:
-      return 'Weak';
+      return <div className={styles.wordWeak}>Weak</div>;
     case 3:
-      return 'Fair';
+      return <div className={styles.wordFair}>Fair</div>;
     case 4:
-      return 'Strong';
+      return <div className={styles.wordStrong}>Strong</div>;
     default:
       return 'Weak';
   }
