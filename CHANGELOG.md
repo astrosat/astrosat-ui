@@ -1,3 +1,10 @@
+## [1.15.3](https://github.com/astrosat/astrosat-ui/compare/v1.15.2...v1.15.3) (2020-06-24)
+
+
+### Bug Fixes
+
+* **Icons:** Update icon script to uniquify ids ([c9bdd89](https://github.com/astrosat/astrosat-ui/commit/c9bdd893aadc8fccc08c17afbe764674ae7cd462)), closes [astrosat/orbis#540](https://github.com/astrosat/orbis/issues/540)
+
 ## [1.15.2](https://github.com/astrosat/astrosat-ui/compare/v1.15.1...v1.15.2) (2020-06-08)
 
 
