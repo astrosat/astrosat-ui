@@ -1,3 +1,10 @@
+## [1.15.4](https://github.com/astrosat/astrosat-ui/compare/v1.15.3...v1.15.4) (2020-06-24)
+
+
+### Bug Fixes
+
+* **TextField:** Update to look like design ([c0345b5](https://github.com/astrosat/astrosat-ui/commit/c0345b56af313680d55cb62d26d5546ef191ba8a)), closes [#45](https://github.com/astrosat/astrosat-ui/issues/45)
+
 ## [1.15.3](https://github.com/astrosat/astrosat-ui/compare/v1.15.2...v1.15.3) (2020-06-24)
 
 
