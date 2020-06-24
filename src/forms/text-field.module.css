@@ -1,20 +1,36 @@
 .container {
+  --decorative-color: var(--text-field--color);
   width: 100%;
   display: flex;
   position: relative;
 }
 
-.textfield {
-  border: none;
-  border-bottom: 2px solid #f6be00;
-  border-radius: 0.3rem;
-  padding: 1rem;
-  color: #333f48;
-  width: inherit;
+.container.valid {
+  --decorative-color: var(--text-field--color--valid);
 }
 
-.passwordfield {
-  border-radius: 0.3rem 0.3rem 0 0.3rem;
+.container.invalid {
+  --decorative-color: var(--text-field--color--invalid);
+}
+
+.container::after {
+  display: block;
+  content: '';
+  position: absolute;
+  height: 0.125rem;
+  width: 100%;
+  bottom: 0;
+  background-color: var(--decorative-color);
+  border-radius: 5px;
+  transition: background-color 250ms ease;
+}
+
+.textfield {
+  border: none;
+  border-radius: 0.3rem 0.3rem 0.125rem 0.125rem;
+  padding: 1rem;
+  color: var(--color--text--dark);
+  width: inherit;
 }
 
 .icon {
@@ -23,22 +39,5 @@
   height: 1rem;
   width: 1rem;
   align-self: center;
-}
-
-.valid {
-  border-color: #6cc24a;
-}
-
-.invalid {
-  border-color: #cf6679;
-}
-
-.validIcon {
-  fill: #6cc24a;
-  color: #6cc24a;
-}
-
-.invalidIcon {
-  fill: #cf6679;
-  color: #cf6679;
+  color: var(--decorative-color);
 }

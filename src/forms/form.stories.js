@@ -146,12 +146,15 @@ storiesOf('Form', module)
       <div className={styles.btnGroup}>
         <Textfield onChange={action('Text Entered')} placeholder="Default" />
       </div>
+      <div className={styles.btnGroup} style={{ backgroundColor: '#ffffff' }}>
+        <Textfield placeholder="On White" />
+      </div>
 
       <div className={styles.btnGroup}>
         <Textfield
           onChange={action('Text Entered')}
           placeholder="Disabled"
-          disabled={true}
+          disabled
         />
       </div>
 
@@ -159,7 +162,7 @@ storiesOf('Form', module)
         <Textfield
           onChange={action('Text Entered')}
           placeholder="Valid"
-          valid={true}
+          valid
         />
       </div>
 

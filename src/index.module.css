@@ -26,6 +26,8 @@
   --color-primary-light: var(--color-yellow-light);
   --color-secondary: var(--color-darkgrey);
   --color--text--dark: var(--color-secondary);
+  --color-success: var(--color-green);
+  --color-error: var(--color-red);
 
   /* Buttons */
   --button--font-family: var(--global--font-family);
@@ -89,6 +91,11 @@
   /* Dialog */
   --dialog--header--background-color: var(--color-primary);
 
+  /* TextField */
+  --text-field--color: var(--color-primary);
+  --text-field--color--valid: var(--color-success);
+  --text-field--color--invalid: var(--color-error);
+
   /* Slider */
   --slider--track--color--internal: var(--color-primary);
   --slider--value--background-color: var(--color-primary);
@@ -98,12 +105,12 @@
   --well--default--color: var(--well--color);
   /* Well/Error */
   --well--error--background-color: rgba(207, 102, 121, 0.2);
-  --well--error--border-color: var(--color-red);
+  --well--error--border-color: var(--color-error);
   --well--error--color: var(--well--color);
   --well--error--icon--color: var(--well--error--border-color);
   /* Well/Success */
   --well--success--background-color: rgba(108,194,74, 0.2);
-  --well--success--border-color: var(--color-green);
+  --well--success--border-color: var(--color-success);
   --well--success--color: var(--well--color);
   --well--success--icon--color: var(--well--success--border-color);
 

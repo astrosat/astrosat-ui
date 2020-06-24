@@ -1,53 +1,52 @@
 import React from 'react';
 
+import clsx from 'clsx';
+
 import CorrectIcon from '../icons/correct-icon.component';
 import ErrorIcon from '../icons/error-icon.component';
 
 import styles from './text-field.module.css';
 
 const Textfield = ({
+  id,
   name,
   value,
-  onChange,
-  disabled = false,
   placeholder = '',
   valid,
-  classNames,
+  className,
+  disabled = false,
   required = false,
   autoFocus = false,
   readOnly = false,
-  ariaLabel
+  ariaLabel,
+  onChange,
+  onBlur
 }) => {
-  let classes = [styles.textfield];
-  if (classNames) classes = [...classes, ...classNames];
-
-  if (valid !== undefined) {
-    if (valid) {
-      classes = [...classes, styles.valid];
-    } else {
-      classes = [...classes, styles.invalid];
-    }
-  }
-
+  const invalid = valid !== undefined && valid !== null && !valid;
   return (
-    <div className={styles.container}>
+    <div
+      className={clsx(styles.container, {
+        [styles.valid]: valid,
+        [styles.invalid]: invalid
+      })}
+    >
       <input
         type="text"
+        id={id}
         name={name}
         value={value}
-        className={classes.join(' ')}
+        className={clsx(styles.textfield, className)}
         disabled={disabled}
-        onChange={onChange}
         placeholder={placeholder}
         aria-label={ariaLabel}
         required={required}
         autoFocus={autoFocus}
         readOnly={readOnly}
+        onBlur={onBlur}
+        onChange={onChange}
       />
-      {valid && <CorrectIcon classes={`${styles.icon} ${styles.validIcon}`} />}
-      {valid !== undefined && !valid && (
-        <ErrorIcon classes={`${styles.icon} ${styles.invalidIcon}`} />
-      )}
+      {valid && <CorrectIcon classes={styles.icon} />}
+      {invalid && <ErrorIcon classes={styles.icon} />}
     </div>
   );
 };

@@ -19,7 +19,7 @@ const PasswordField = ({
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-  const className = clsx(styles.textfield, styles.passwordfield, classNames);
+  const className = clsx(styles.textfield, classNames);
 
   return (
     <div className={styles.container}>
