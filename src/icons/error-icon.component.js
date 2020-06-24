@@ -9,7 +9,7 @@ const ErrorIcon = ({ classes, ...rest }) => (
     className={classes}
     {...rest}
   >
-    <g clipPath="url(#clip0)">
+    <g clipPath="url(#error-clip0)">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -18,7 +18,7 @@ const ErrorIcon = ({ classes, ...rest }) => (
       />
     </g>
     <defs>
-      <clipPath id="clip0">
+      <clipPath id="error-clip0">
         <path fill="currentColor" d="M0 0h30v30H0z" />
       </clipPath>
     </defs>

@@ -12,6 +12,7 @@ const svgo = new SVGO({
     { removeViewBox: false },
     { removeDimensions: true },
     { convertColors: { currentColor: true } },
+    { prefixIds: { delim: '-' } },
     {
       addAttributesToSVGElement: {
         attributes: [{ className: '{classes}' }, { rest: 'rest' }]
@@ -22,6 +23,7 @@ const svgo = new SVGO({
 
 const SVG_PROCESSES = [
   svg => svg.replace(/"{classes}"/, '{classes}'),
+  (svg, filename) => svg.replace(/prefix/g, filename),
   svg => svg.replace(/stroke-width/g, 'strokeWidth'),
   svg => svg.replace(/stroke-linecap/g, 'strokeLinecap'),
   svg => svg.replace(/stroke-linejoin/g, 'strokeLinejoin'),
@@ -37,7 +39,7 @@ const createSvg = async iconFile => {
   let optimisedSvg = (await svgo.optimize(svg)).data;
   // Create icon component
   for (let svgProcess of SVG_PROCESSES) {
-    optimisedSvg = svgProcess(optimisedSvg);
+    optimisedSvg = svgProcess(optimisedSvg, iconFile.split('.')[0]);
   }
   return optimisedSvg;
 };
