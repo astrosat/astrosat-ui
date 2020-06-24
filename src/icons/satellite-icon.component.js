@@ -9,7 +9,7 @@ const SatelliteIcon = ({ classes, ...rest }) => (
     className={classes}
     {...rest}
   >
-    <g clipPath="url(#clip0)" fill="currentColor">
+    <g clipPath="url(#satellite-clip0)" fill="currentColor">
       <path
         d="M11.395 7.994l1.544.856-.73 1.32-1.546-.857.732-1.32zm6.457 3.579l1.544.855-.731 1.321-1.543-.856.73-1.32zm-5.135 2.01l1.32.732-.873 1.578-1.32-.732.873-1.578z"
         stroke="currentColor"
@@ -22,7 +22,7 @@ const SatelliteIcon = ({ classes, ...rest }) => (
       <path d="M20.718 10.814l9.022 5a.503.503 0 01.197.684l-2.379 4.293a.504.504 0 01-.684.196l-9.022-5.001a.504.504 0 01-.196-.684l2.378-4.292a.505.505 0 01.684-.196zm-.244.44l-2.379 4.292 9.024 5 2.379-4.292-9.024-5zm-2.24-6.065a2.706 2.706 0 011.054 3.678l-3.375 6.089a.616.616 0 01-.838.24L11.42 13.17a.618.618 0 01-.24-.838l3.375-6.088a2.705 2.705 0 013.678-1.054v-.001zm-5.81 10.486c2.102 1.165 2.586 2.774 1.449 4.824L7.564 17c1.137-2.05 2.755-2.492 4.86-1.326z" />
     </g>
     <defs>
-      <clipPath id="clip0">
+      <clipPath id="satellite-clip0">
         <path fill="currentColor" d="M0 0h30v30H0z" />
       </clipPath>
     </defs>
