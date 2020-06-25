@@ -38,9 +38,6 @@ storiesOf('Buttons', module).add('Buttons', () => (
         <Button theme="tertiary" onClick={action('clicked')}>
           Tertiary
         </Button>
-        <Button theme="primary" onClick={action('clicked')} active>
-          Active
-        </Button>
         <Button theme="primary" onClick={action('clicked')} disabled>
           Disabled
         </Button>
@@ -50,33 +47,20 @@ storiesOf('Buttons', module).add('Buttons', () => (
     </fieldset>
 
     <fieldset>
-      <legend>Emoji Buttons</legend>
+      <legend>Small</legend>
       <div className={styles.btnGroup}>
-        <Button onClick={action('clicked')}>
-          <span role="img" aria-label="so cool">
-            😀
-          </span>
+        <Button size="small">Create User</Button>
+        <Button size="small" theme="secondary">
+          Secondary
         </Button>
-        <Button onClick={action('clicked')}>
-          <span role="img" aria-label="so cool">
-            😎
-          </span>
-        </Button>
-        <Button onClick={action('clicked')}>
-          <span role="img" aria-label="so cool">
-            👍
-          </span>
-        </Button>
-        <Button onClick={action('clicked')}>
-          <span role="img" aria-label="so cool">
-            💯
-          </span>
+        <Button size="small" theme="tertiary">
+          Tertiary
         </Button>
       </div>
     </fieldset>
 
     <fieldset>
-      <legend>Monochrome Icon Buttons</legend>
+      <legend>Icon Buttons</legend>
       <div className={styles.btnGroup}>
         <Button onClick={action('clicked')}>
           <ContactIcon classes={styles.btnIcon} />
@@ -101,36 +85,6 @@ storiesOf('Buttons', module).add('Buttons', () => (
         </Button>
         <Button onClick={action('clicked')}>
           <LinkedInIcon classes={styles.btnIcon} />
-        </Button>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Styled Icon Buttons</legend>
-      <div className={styles.btnGroup}>
-        <Button onClick={action('clicked')}>
-          <ContactIcon classes={`${styles.btnIcon} ${styles.color}`} />
-        </Button>
-        <Button onClick={action('clicked')}>
-          <MenuIcon classes={`${styles.btnIcon} ${styles.color}`} />
-        </Button>
-        <Button onClick={action('clicked')}>
-          <ErrorIcon classes={`${styles.btnIcon} ${styles.color}`} />
-        </Button>
-        <Button onClick={action('clicked')}>
-          <CorrectIcon classes={`${styles.btnIcon} ${styles.color}`} />
-        </Button>
-        <Button onClick={action('clicked')}>
-          <CloseIcon classes={`${styles.btnIcon} ${styles.color}`} />
-        </Button>
-        <Button onClick={action('clicked')}>
-          <TwitterIcon classes={`${styles.btnIcon} ${styles.color}`} />
-        </Button>
-        <Button onClick={action('clicked')}>
-          <FacebookIcon classes={`${styles.btnIcon} ${styles.color}`} />
-        </Button>
-        <Button onClick={action('clicked')}>
-          <LinkedInIcon classes={`${styles.btnIcon} ${styles.color}`} />
         </Button>
       </div>
     </fieldset>

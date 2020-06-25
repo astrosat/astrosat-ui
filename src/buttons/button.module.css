@@ -2,8 +2,8 @@
   border: none;
   text-decoration: none;
   border-radius: var(--button--border-radius);
-  padding: 1rem 4.625rem;
-  font-size: inherit;
+  padding: 0.75rem 4.625rem;
+  font-size: 1.125rem;
   font-family: var(--button--font-family);
   font-weight: 600;
   text-align: center;
@@ -12,6 +12,7 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: var(--button--box-shadow);
+  transition: opacity 250ms ease, color 250ms ease;
 }
 
 .button:hover:not(:disabled),
@@ -32,6 +33,11 @@
   align-items: center;
   margin: 0.5rem;
   border-radius: 50%;
+}
+
+.small {
+  padding: 0.5rem 3.5rem;
+  font-size: 0.875rem;
 }
 
 .primary {
@@ -99,6 +105,7 @@
   align-items: center;
   justify-content: center;
   color: var(--button--primary--color);
+  font-size: 0.875rem;
   background-color: transparent;
   border: none;
   border-radius: 0;

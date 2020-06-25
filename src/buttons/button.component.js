@@ -11,6 +11,7 @@ const Button = ({
   href,
   padded = true,
   shape,
+  size,
   theme = 'primary',
   tooltip,
   ...rest
@@ -22,6 +23,7 @@ const Button = ({
     [styles.link]: href || theme === 'link',
     [styles['no-padding']]: !padded,
     [styles[shape]]: !!shape,
+    [styles[size]]: !!size,
     [styles[theme]]: !!theme && !disabled && !href
   });
 
