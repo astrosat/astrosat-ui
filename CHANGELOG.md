@@ -1,3 +1,10 @@
+## [1.15.5](https://github.com/astrosat/astrosat-ui/compare/v1.15.4...v1.15.5) (2020-06-26)
+
+
+### Bug Fixes
+
+* **Button:** Add size prop ([282067d](https://github.com/astrosat/astrosat-ui/commit/282067dd6288317d2f90ff1b4b09decfb516265b))
+
 ## [1.15.4](https://github.com/astrosat/astrosat-ui/compare/v1.15.3...v1.15.4) (2020-06-24)
 
 
