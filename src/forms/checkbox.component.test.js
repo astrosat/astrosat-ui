@@ -1,5 +1,6 @@
 import React from 'react';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Checkbox from './checkbox.component';
 
@@ -26,11 +27,16 @@ describe('Checkbox Component', () => {
 
   it('should toggle from unchecked to checked when clicked', () => {
     const onChange = jest.fn();
-    const { container } = render(
-      <Checkbox name="test" value="Test Value" onChange={onChange} />
+    const { getByLabelText } = render(
+      <Checkbox
+        name="test"
+        label="test"
+        value="Test Value"
+        onChange={onChange}
+      />
     );
 
-    fireEvent.click(container.querySelector('input'));
+    userEvent.click(getByLabelText('test'));
     expect(onChange).toHaveBeenCalled();
   });
 
@@ -61,7 +67,7 @@ describe('Checkbox Component', () => {
         />
       );
 
-      fireEvent.click(container.querySelector('input'));
+      userEvent.click(container.querySelector('input'));
       expect(onChange).not.toHaveBeenCalled();
     });
   });
