@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import styles from './checkbox.module.css';
 
@@ -11,14 +12,20 @@ const Checkbox = (
     disabled = false,
     checked,
     ariaLabel,
-    defaultChecked
+    defaultChecked,
+    className
   },
   ref
 ) => (
   <label
-    className={`${styles.checkbox} ${checked ? styles.active : ''}  ${
-      disabled ? styles.disabled : ''
-    }`}
+    className={clsx(
+      styles.checkbox,
+      {
+        [styles.active]: checked,
+        [styles.disabled]: disabled
+      },
+      className
+    )}
   >
     <input
       ref={ref}
