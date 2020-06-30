@@ -1,3 +1,16 @@
+# [1.16.0](https://github.com/astrosat/astrosat-ui/compare/v1.15.5...v1.16.0) (2020-06-30)
+
+
+### Bug Fixes
+
+* **Checkbox:** Added classname ([13b1eed](https://github.com/astrosat/astrosat-ui/commit/13b1eedb889f35747b8b1baa855926e26d572b58))
+* **Checkbox:** Fixed up tests ([e1b01d4](https://github.com/astrosat/astrosat-ui/commit/e1b01d4dacb2ba09df359fe84d80bbf34eae764a))
+
+
+### Features
+
+* **Forms:** Add forward ref ([82df03a](https://github.com/astrosat/astrosat-ui/commit/82df03a3938b2c0705c1cf9838372bea7597d37e)), closes [astrosat/orbis#527](https://github.com/astrosat/orbis/issues/527)
+
 ## [1.15.5](https://github.com/astrosat/astrosat-ui/compare/v1.15.4...v1.15.5) (2020-06-26)
 
 
