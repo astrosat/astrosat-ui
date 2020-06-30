@@ -1,28 +1,39 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import styles from './checkbox.module.css';
 
-const Checkbox = ({
-  name,
-  value,
-  label,
-  onChange,
-  disabled = false,
-  checked,
-  ariaLabel,
-  defaultChecked
-}) => (
+const Checkbox = (
+  {
+    name,
+    value,
+    label,
+    onChange,
+    disabled = false,
+    checked,
+    ariaLabel,
+    defaultChecked,
+    className
+  },
+  ref
+) => (
   <label
-    className={`${styles.checkbox} ${checked ? styles.active : ''}  ${
-      disabled ? styles.disabled : ''
-    }`}
+    className={clsx(
+      styles.checkbox,
+      {
+        [styles.active]: checked,
+        [styles.disabled]: disabled
+      },
+      className
+    )}
   >
     <input
+      ref={ref}
       type="checkbox"
       name={name}
       value={value}
       disabled={disabled}
-      onChange={event => (!disabled ? onChange(event) : null)}
+      onChange={onChange}
       checked={checked}
       aria-label={ariaLabel}
       defaultChecked={defaultChecked}
@@ -32,4 +43,4 @@ const Checkbox = ({
   </label>
 );
 
-export default Checkbox;
+export default React.forwardRef(Checkbox);

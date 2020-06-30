@@ -7,21 +7,24 @@ import ErrorIcon from '../icons/error-icon.component';
 
 import styles from './text-field.module.css';
 
-const Textfield = ({
-  id,
-  name,
-  value,
-  placeholder = '',
-  valid,
-  className,
-  disabled = false,
-  required = false,
-  autoFocus = false,
-  readOnly = false,
-  ariaLabel,
-  onChange,
-  onBlur
-}) => {
+const Textfield = (
+  {
+    id,
+    name,
+    value,
+    placeholder = '',
+    valid,
+    className,
+    disabled = false,
+    required = false,
+    autoFocus = false,
+    readOnly = false,
+    ariaLabel,
+    onChange,
+    onBlur
+  },
+  ref
+) => {
   const invalid = valid !== undefined && valid !== null && !valid;
   return (
     <div
@@ -31,6 +34,7 @@ const Textfield = ({
       })}
     >
       <input
+        ref={ref}
         type="text"
         id={id}
         name={name}
@@ -51,4 +55,4 @@ const Textfield = ({
   );
 };
 
-export default Textfield;
+export default React.forwardRef(Textfield);
