@@ -1,3 +1,14 @@
+## [1.16.1](https://github.com/astrosat/astrosat-ui/compare/v1.16.0...v1.16.1) (2020-07-03)
+
+
+### Bug Fixes
+
+* **PasswordStrengthMeter:** Add isolated stories ([03f1de4](https://github.com/astrosat/astrosat-ui/commit/03f1de473fe50e85b0c65f52145c2a537e0cd2d5)), closes [#40](https://github.com/astrosat/astrosat-ui/issues/40)
+* **PasswordStrengthMeter:** Add transitions ([280cdf5](https://github.com/astrosat/astrosat-ui/commit/280cdf531343ff466c7ac276b0de93a4b2c75f90)), closes [#40](https://github.com/astrosat/astrosat-ui/issues/40)
+* **PasswordStrengthMeter:** Fix password logic ([852a653](https://github.com/astrosat/astrosat-ui/commit/852a6539f89c92a33cf5d2425b41973b3ad23d13)), closes [#40](https://github.com/astrosat/astrosat-ui/issues/40)
+* **PasswordStrengthMeter:** Fix styling ([19e48a4](https://github.com/astrosat/astrosat-ui/commit/19e48a47887682513451ba42385e933742df30c7)), closes [#40](https://github.com/astrosat/astrosat-ui/issues/40)
+* **PasswordStrengthMeter:** Fluid width, ptag ([947fc61](https://github.com/astrosat/astrosat-ui/commit/947fc615c8afaf9bf24f2f29798c6c93fd6597ac)), closes [#40](https://github.com/astrosat/astrosat-ui/issues/40)
+
 # [1.16.0](https://github.com/astrosat/astrosat-ui/compare/v1.15.5...v1.16.0) (2020-06-30)
 
 
