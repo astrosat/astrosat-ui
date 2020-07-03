@@ -1,35 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import zxcvbn from 'zxcvbn';
+import clsx from 'clsx';
 import styles from './password-strength-meter.module.css';
 
 const passwordStrength = score => {
   switch (score) {
     case 0:
     case 1:
-      return <div className={styles.wordWeak}>Weak</div>;
+      return 'Weak';
     case 2:
     case 3:
-      return <div className={styles.wordFair}>Fair</div>;
+      return 'Fair';
     case 4:
-      return <div className={styles.wordStrong}>Strong</div>;
+      return 'Strong';
     default:
       return null;
   }
 };
-const PasswordStrengthMeter = ({ password, ariaLabel }) => {
+const PasswordStrengthMeter = ({ password }) => {
   const passwordResult = zxcvbn(password ? password : '');
   const strength = passwordStrength(password && passwordResult.score);
 
   return (
-    <div className={styles.passwordScoreWrapper}>
-      <meter
-        className={styles.meter}
-        max="4"
-        value={passwordResult.score}
-        aria-label={ariaLabel}
-      />
-      <div className={styles.strength}>{strength}</div>
+    <div className={clsx(styles.passwordScoreWrapper, styles[strength])}>
+      <div className={styles.meter}>
+        <div className={styles.strengthBar} />
+      </div>
+      <div className={styles.strengthText}>{strength}</div>
     </div>
   );
 };

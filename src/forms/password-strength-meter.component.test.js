@@ -6,11 +6,6 @@ import PasswordStrengthMeter from './password-strength-meter.component';
 describe('Password Strength Meter Component', () => {
   afterEach(cleanup);
 
-  it('renders a bar by default', () => {
-    const { container } = render(<PasswordStrengthMeter />);
-    expect(container.querySelector('meter')).toBeInTheDocument();
-  });
-
   it('does not render text when password is empty', () => {
     const { queryByText } = render(<PasswordStrengthMeter />);
     expect(queryByText('Weak')).not.toBeInTheDocument();
@@ -23,7 +18,6 @@ describe('Password Strength Meter Component', () => {
       <PasswordStrengthMeter password="pa" />
     );
     expect(getByText('Weak')).toBeInTheDocument();
-    expect(container.querySelector('meter')).toHaveAttribute('value', '0');
   });
 
   it('shows the text "Weak" with a password score of 1', () => {
@@ -32,7 +26,6 @@ describe('Password Strength Meter Component', () => {
     );
 
     expect(getByText('Weak')).toBeInTheDocument();
-    expect(container.querySelector('meter')).toHaveAttribute('value', '1');
   });
 
   it('shows the text "Fair" with a password score of 2', () => {
@@ -41,7 +34,6 @@ describe('Password Strength Meter Component', () => {
     );
 
     expect(getByText('Fair')).toBeInTheDocument();
-    expect(container.querySelector('meter')).toHaveAttribute('value', '2');
   });
 
   it('shows the text "Fair" with a password score of 3', () => {
@@ -50,7 +42,6 @@ describe('Password Strength Meter Component', () => {
     );
 
     expect(getByText('Fair')).toBeInTheDocument();
-    expect(container.querySelector('meter')).toHaveAttribute('value', '3');
   });
 
   it('shows the text "Strong" with a password score of 4', () => {
@@ -59,6 +50,5 @@ describe('Password Strength Meter Component', () => {
     );
 
     expect(getByText('Strong')).toBeInTheDocument();
-    expect(container.querySelector('meter')).toHaveAttribute('value', '4');
   });
 });

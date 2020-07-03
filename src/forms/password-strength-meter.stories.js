@@ -7,9 +7,9 @@ export default { title: 'Password Strength Meter' };
 export const Strengths = () => (
   <>
     <PasswordStrengthMeter password="" />
-    <PasswordStrengthMeter password="In+ut0dR" />
-    <PasswordStrengthMeter password="wordsownt3+B" />
-    <PasswordStrengthMeter password="wordsowncateract" />
+    <PasswordStrengthMeter password="pa" />
+    <PasswordStrengthMeter password="pandaconcrete" />
+    <PasswordStrengthMeter password="pandaconcretespoon" />
   </>
 );
 
