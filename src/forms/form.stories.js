@@ -187,7 +187,7 @@ storiesOf('Form', module)
         <PasswordField placeholder="Password" />
       </div>
       <Suspense fallback={<LoadMask />}>
-        <div className={styles.btnGroup}>
+        <div className={styles.meterSGroup}>
           <p>
             <strong>Password:</strong> Cfwtca
           </p>

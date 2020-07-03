@@ -116,6 +116,13 @@
 
   /* Textfield */
   --textfield--color: var(--color-secondary);
+
+  /* Password-strength-meter */
+  --password-strength-meter--background-color: var(--color-lightgrey);
+  --password-strength-meter--weak--background-color: var(--color-red);
+  --password-strength-meter--fair--background-color: var(--color-yellow-light);
+  --password-strength-meter--strong--background-color: var(--color-green);
+
 }
 
 body {

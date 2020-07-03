@@ -1,64 +1,54 @@
 import React from 'react';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 
 import PasswordStrengthMeter from './password-strength-meter.component';
 
 describe('Password Strength Meter Component', () => {
   afterEach(cleanup);
 
-  it('should render a `Weak` Password Strength Meter with recommendations', () => {
-    const { container, getByText } = render(
-      <PasswordStrengthMeter password="test" />
-    );
-
-    expect(getByText('Password Strength:')).toBeInTheDocument();
-    expect(getByText('Weak')).toBeInTheDocument();
-    expect(
-      getByText('Add another word or two. Uncommon words are better.')
-    ).toBeInTheDocument();
-    expect(container.querySelector('progress')).toHaveClass(
-      'passwordMeter Weak'
-    );
-    expect(container.querySelector('progress')).toHaveAttribute('value', '0');
-    expect(container.querySelector('progress')).toHaveAttribute('max', '4');
+  it('does not render text when password is empty', () => {
+    const { queryByText } = render(<PasswordStrengthMeter />);
+    expect(queryByText('Weak')).not.toBeInTheDocument();
+    expect(queryByText('Fair')).not.toBeInTheDocument();
+    expect(queryByText('Strong')).not.toBeInTheDocument();
   });
 
-  it('should render a `Fair` Password Strength Meter with recommendations', () => {
+  it('shows the text "Weak" with a password score of 0', () => {
+    const { container, getByText } = render(
+      <PasswordStrengthMeter password="pa" />
+    );
+    expect(getByText('Weak')).toBeInTheDocument();
+  });
+
+  it('shows the text "Weak" with a password score of 1', () => {
+    const { container, getByText } = render(
+      <PasswordStrengthMeter password="pand" />
+    );
+
+    expect(getByText('Weak')).toBeInTheDocument();
+  });
+
+  it('shows the text "Fair" with a password score of 2', () => {
     const { container, getByText } = render(
       <PasswordStrengthMeter password="pandaconcrete" />
     );
 
     expect(getByText('Fair')).toBeInTheDocument();
-    expect(
-      getByText('Add another word or two. Uncommon words are better.')
-    ).toBeInTheDocument();
-    expect(container.querySelector('progress')).toHaveClass(
-      'passwordMeter Fair'
-    );
-    expect(container.querySelector('progress')).toHaveAttribute('value', '2');
   });
 
-  it('should render a `Good` Password Strength Meter', () => {
+  it('shows the text "Fair" with a password score of 3', () => {
     const { container, getByText } = render(
-      <PasswordStrengthMeter password="9anDAc0nt" />
+      <PasswordStrengthMeter password="pandaconcretesp" />
     );
 
-    expect(getByText('Good')).toBeInTheDocument();
-    expect(container.querySelector('progress')).toHaveClass(
-      'passwordMeter Good'
-    );
-    expect(container.querySelector('progress')).toHaveAttribute('value', '3');
+    expect(getByText('Fair')).toBeInTheDocument();
   });
 
-  it('should render a `Strong` Password Strength Meter with recommendations', () => {
+  it('shows the text "Strong" with a password score of 4', () => {
     const { container, getByText } = render(
       <PasswordStrengthMeter password="pandaconcretespoon" />
     );
 
     expect(getByText('Strong')).toBeInTheDocument();
-    expect(container.querySelector('progress')).toHaveClass(
-      'passwordMeter Strong'
-    );
-    expect(container.querySelector('progress')).toHaveAttribute('value', '4');
   });
 });

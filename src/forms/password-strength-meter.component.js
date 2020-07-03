@@ -1,48 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-
 import zxcvbn from 'zxcvbn';
-
+import clsx from 'clsx';
 import styles from './password-strength-meter.module.css';
 
 const passwordStrength = score => {
   switch (score) {
     case 0:
-      return 'Weak';
     case 1:
       return 'Weak';
     case 2:
-      return 'Fair';
     case 3:
-      return 'Good';
+      return 'Fair';
     case 4:
       return 'Strong';
     default:
-      return 'Weak';
+      return null;
   }
 };
+const PasswordStrengthMeter = ({ password }) => {
+  const passwordResult = zxcvbn(password ? password : '');
+  const strength = passwordStrength(password && passwordResult.score);
 
-const PasswordStrengthMeter = ({ password, ariaLabel }) => {
-  const passwordResult = password
-    ? zxcvbn(password)
-    : { score: 0, feedback: { suggestions: [] } };
-  const strength = passwordStrength(passwordResult.score);
   return (
-    <div>
-      <progress
-        className={`${styles.passwordMeter} ${styles[strength]}`}
-        value={passwordResult.score}
-        max="4"
-        aria-label={ariaLabel}
-      />
-      <div>
-        <strong>Password Strength:</strong>&nbsp;{strength}
+    <div className={clsx(styles.passwordScoreWrapper, styles[strength])}>
+      <div className={styles.meter}>
+        <div className={styles.strengthBar} />
       </div>
-      <ul>
-        {passwordResult.feedback.suggestions.map(suggestion => (
-          <li key={suggestion}>{suggestion}</li>
-        ))}
-      </ul>
+      <p className={styles.strengthText}>{strength}</p>
     </div>
   );
 };
