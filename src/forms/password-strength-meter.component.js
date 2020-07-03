@@ -27,7 +27,7 @@ const PasswordStrengthMeter = ({ password }) => {
       <div className={styles.meter}>
         <div className={styles.strengthBar} />
       </div>
-      <div className={styles.strengthText}>{strength}</div>
+      <p className={styles.strengthText}>{strength}</p>
     </div>
   );
 };
