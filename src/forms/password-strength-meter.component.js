@@ -6,24 +6,20 @@ import styles from './password-strength-meter.module.css';
 const passwordStrength = score => {
   switch (score) {
     case 0:
-      return <div className={styles.wordEmpty}>Empty</div>;
     case 1:
       return <div className={styles.wordWeak}>Weak</div>;
     case 2:
-      return <div className={styles.wordWeak}>Weak</div>;
     case 3:
       return <div className={styles.wordFair}>Fair</div>;
     case 4:
       return <div className={styles.wordStrong}>Strong</div>;
     default:
-      return <div className={styles.wordWeak}>Weak</div>;
+      return null;
   }
 };
 const PasswordStrengthMeter = ({ password, ariaLabel }) => {
-  const passwordResult = password ? zxcvbn(password) : { score: 0 };
-  console.log(passwordResult);
-
-  const strength = passwordStrength(passwordResult.score);
+  const passwordResult = zxcvbn(password ? password : '');
+  const strength = passwordStrength(password && passwordResult.score);
 
   return (
     <div className={styles.passwordScoreWrapper}>
@@ -33,7 +29,6 @@ const PasswordStrengthMeter = ({ password, ariaLabel }) => {
         value={passwordResult.score}
         aria-label={ariaLabel}
       />
-
       <div className={styles.strength}>{strength}</div>
     </div>
   );
