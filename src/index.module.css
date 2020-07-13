@@ -96,6 +96,11 @@
   --text-field--color--valid: var(--color-success);
   --text-field--color--invalid: var(--color-error);
 
+  /* Checkbox */
+  --checkbox--label--color: var(--color--text--dark);
+  --checkbox--border-color: var(--color-darkgrey);
+  --checkbox--check--color: var(--color-primary);
+
   /* Slider */
   --slider--track--color--internal: var(--color-primary);
   --slider--value--background-color: var(--color-primary);

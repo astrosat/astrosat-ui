@@ -2,12 +2,10 @@ import React, { Suspense } from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Textfield from './text-field.component';
 import PasswordField from './password-field.component';
 import TextArea from './text-area.component';
-import Checkbox from './checkbox.component';
 import Radio from './radio.component';
 import Slider from './slider.component';
 import Select from './select.component';
@@ -51,7 +49,7 @@ const Form = () => {
   function validate() {
     return {};
   }
-
+  module;
   function onSubmit() {
     console.log('Submitting: ', values);
   }
@@ -64,22 +62,6 @@ const Form = () => {
             name="email"
             value={values.email || ''}
             placeholder="Email"
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className={styles.btnGroup}>
-          <Checkbox
-            name="free"
-            label="Free"
-            onChange={handleChange}
-            checked={values.free}
-          />
-          <Checkbox name="mid" label="Mid" onChange={handleChange} />
-          <Checkbox
-            name="high"
-            label="High"
-            disabled={true}
             onChange={handleChange}
           />
         </div>
@@ -212,26 +194,6 @@ storiesOf('Form', module)
           <PasswordStrengthMeter password="wordsowncateract" />
         </div>
       </Suspense>
-
-      <div className={styles.btnGroup}>
-        <Checkbox
-          name="option1"
-          label="Checkbox One"
-          onChange={action('Checkbox toggled')}
-          checked={true}
-        />
-        <Checkbox
-          name="option2"
-          label="Checkbox Two"
-          onChange={action('Checkbox toggled')}
-        />
-        <Checkbox
-          name="option3"
-          label="Checkbox Three"
-          disabled={true}
-          onChange={action('Checkbox toggled')}
-        />
-      </div>
 
       <div className={styles.btnGroup}>
         <Radio
