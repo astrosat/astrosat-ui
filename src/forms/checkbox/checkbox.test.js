@@ -12,7 +12,6 @@ describe('Checkbox Component', () => {
 
     expect(container.querySelector('.checkbox')).toBeInTheDocument();
     expect(container.querySelector('input')).not.toHaveAttribute('checked', '');
-    expect(container.querySelector('.checkmark')).toBeInTheDocument();
   });
 
   it('should render a checked checkbox', () => {
@@ -22,7 +21,6 @@ describe('Checkbox Component', () => {
 
     expect(container.querySelector('.checkbox')).toBeInTheDocument();
     expect(container.querySelector('input')).toHaveAttribute('checked', '');
-    expect(container.querySelector('.checkmark')).toBeInTheDocument();
   });
 
   it('should toggle from unchecked to checked when clicked', () => {

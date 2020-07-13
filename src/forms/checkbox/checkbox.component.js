@@ -5,6 +5,7 @@ import styles from './checkbox.module.css';
 
 const Checkbox = (
   {
+    id,
     name,
     value,
     label,
@@ -13,21 +14,24 @@ const Checkbox = (
     checked,
     ariaLabel,
     defaultChecked,
-    className
+    className,
+    style
   },
   ref
 ) => (
-  <label
+  <div
     className={clsx(
       styles.checkbox,
       {
-        [styles.active]: checked,
         [styles.disabled]: disabled
       },
       className
     )}
+    style={style}
   >
     <input
+      id={`${id}-checkbox`}
+      className={styles.input}
       ref={ref}
       type="checkbox"
       name={name}
@@ -38,9 +42,10 @@ const Checkbox = (
       aria-label={ariaLabel}
       defaultChecked={defaultChecked}
     />
-    <span className={styles.checkmark} />
-    {label}
-  </label>
+    <label className={styles.label} htmlFor={`${id}-checkbox`}>
+      {label}
+    </label>
+  </div>
 );
 
 export default React.forwardRef(Checkbox);
