@@ -2,7 +2,7 @@ import React from 'react';
 import { text } from '@storybook/addon-knobs';
 import PasswordStrengthMeter from './password-strength-meter.component';
 
-export default { title: 'Password Strength Meter' };
+export default { title: 'Forms/Password Strength Meter' };
 
 export const Strengths = () => (
   <>
