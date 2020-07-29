@@ -43,6 +43,7 @@
   border: 8px solid #fff;
   border-radius: 0.3rem;
   width: 100%;
+  z-index: 1;
 }
 
 .select .option {
@@ -87,4 +88,5 @@
 
 .disabled {
   background-color: lightgray;
+  cursor: not-allowed;
 }

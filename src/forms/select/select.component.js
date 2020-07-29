@@ -5,19 +5,33 @@ import useModal from '../../containers/use-modal.hook';
 import Textfield from '../text-field.component';
 
 import styles from './select.module.css';
+import { useClickaway } from '../../useClickaway';
 
+/**
+ * @param {{
+ *   name?: string
+ *   value?: any
+ *   options: {name: string, value: any}[]
+ *   onChange: () => void
+ *   disabled?: boolean
+ * }} props
+ */
 const Select = ({ name, value, options, onChange, disabled }) => {
   const [isVisible, toggle] = useModal(false);
   const [selected, setSelected] = useState(value);
+  const { ref } = useClickaway(() => toggle());
 
   return (
-    <div className={`${styles.select} ${disabled ? styles.disabled : ''}`}>
+    <div
+      ref={ref}
+      className={`${styles.select} ${disabled && styles.disabled}`}
+    >
       <div
         className={`${styles.header} ${isVisible ? styles.visible : ''}`}
         onClick={!disabled ? toggle : null}
       >
         <Textfield
-          classNames={[styles.text]}
+          className={styles.text}
           name={name}
           value={selected ? selected.name : ''}
           readOnly
@@ -27,8 +41,8 @@ const Select = ({ name, value, options, onChange, disabled }) => {
 
       {isVisible && (
         <ul className={styles.options}>
-          {options.map(option => {
-            return (
+          {options ? (
+            options.map(option => (
               <li
                 key={option.name}
                 name={option.name}
@@ -45,8 +59,10 @@ const Select = ({ name, value, options, onChange, disabled }) => {
               >
                 {option.name}
               </li>
-            );
-          })}
+            ))
+          ) : (
+            <li>No Options</li>
+          )}
         </ul>
       )}
     </div>
