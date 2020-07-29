@@ -32,7 +32,7 @@ export default [
   {
     input: Object.fromEntries(
       glob
-        .sync('src/*/*.{component,hook}.js')
+        .sync('src/**/*.{component,hook}.js')
         .map(p => [p.match(/\/(.+?)\.(component|hook)\.js$/)[1], p])
     ),
     output: [
