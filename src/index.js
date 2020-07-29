@@ -6,12 +6,13 @@ export { default as CloseButton } from './buttons/close-button.component';
 export { default as InfoButton } from './buttons/info-button.component';
 export { default as Switch } from './buttons/switch.component';
 
-export { default as Checkbox } from './forms/checkbox.component';
+export { default as Checkbox } from './forms/checkbox/checkbox.component';
 export { default as PasswordField } from './forms/password-field.component';
 export { default as PasswordStrengthMeter } from './forms/password-strength-meter.component';
 export { default as Radio } from './forms/radio.component';
 export { default as Slider } from './forms/slider.component';
 export { default as TextArea } from './forms/text-area.component';
+export { default as Select } from './forms/select/select.component';
 export { default as Textfield } from './forms/text-field.component';
 export { default as useForm } from './forms/use-form.hook';
 
