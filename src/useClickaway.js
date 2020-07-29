@@ -1,14 +1,13 @@
 import { useRef, useEffect } from 'react';
 
 /**
- * @param {() => void} onClickaway
+ * @param {() => void} onClickaway A function to fire when the element is clicked away from
  */
 export const useClickaway = onClickaway => {
   const ref = useRef();
 
   useEffect(() => {
     const handleClickOutside = event => {
-      console.log(event);
       if (ref.current && onClickaway && !event?.path?.includes(ref.current)) {
         onClickaway();
       }

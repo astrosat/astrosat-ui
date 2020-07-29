@@ -21,7 +21,8 @@ const Textfield = (
     readOnly = false,
     ariaLabel,
     onChange,
-    onBlur
+    onBlur,
+    tabIndex
   },
   ref
 ) => {
@@ -48,6 +49,7 @@ const Textfield = (
         readOnly={readOnly}
         onBlur={onBlur}
         onChange={onChange}
+        tabIndex={tabIndex}
       />
       {valid && <CorrectIcon classes={styles.icon} />}
       {invalid && <ErrorIcon classes={styles.icon} />}

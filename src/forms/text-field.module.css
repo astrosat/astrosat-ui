@@ -33,6 +33,10 @@
   width: inherit;
 }
 
+.textfield:disabled:hover {
+  cursor: not-allowed;
+}
+
 .icon {
   position: absolute;
   right: 1rem;
