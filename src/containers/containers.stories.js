@@ -9,7 +9,7 @@ import Dialog from './dialog.component';
 import useModal from './use-modal.hook';
 import Button from '../buttons/button.component';
 import Textfield from '../forms/text-field.component';
-import Select from '../forms/select.component';
+import Select from '../forms/select/select.component';
 
 import styles from '../story-styles.module.css';
 
