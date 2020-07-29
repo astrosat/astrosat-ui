@@ -1,3 +1,21 @@
+# [1.17.0](https://github.com/astrosat/astrosat-ui/compare/v1.16.1...v1.17.0) (2020-07-29)
+
+
+### Bug Fixes
+
+* **Checkbox:** Move to own dir ([3241f53](https://github.com/astrosat/astrosat-ui/commit/3241f53c6d7b30517ef39bf0cd8b20add9b4689a)), closes [#43](https://github.com/astrosat/astrosat-ui/issues/43)
+* **Checkbox:** Remove suffix from filename ([9fe8489](https://github.com/astrosat/astrosat-ui/commit/9fe848969afe80a4b4e295695b5080b6503241be)), closes [#43](https://github.com/astrosat/astrosat-ui/issues/43)
+* **Select:** add id ([cd66357](https://github.com/astrosat/astrosat-ui/commit/cd6635759564c3875a0eb4e3878ad10d7bd04ee3))
+* **Select:** Add placeholder prop ([9665e85](https://github.com/astrosat/astrosat-ui/commit/9665e8589b0bad2d3636f5991f85aaf90b1e7ed3))
+* **Select:** Move select to own dir ([eed8d8a](https://github.com/astrosat/astrosat-ui/commit/eed8d8ace9a1a0872c903d0513c2ef3bfff23689))
+
+
+### Features
+
+* **Checkbox:** Style checkbox ([5a88bc7](https://github.com/astrosat/astrosat-ui/commit/5a88bc7d0632571886b62bd45a750baef77cefee)), closes [#43](https://github.com/astrosat/astrosat-ui/issues/43)
+* **Select:** Add clickaway ([1278fad](https://github.com/astrosat/astrosat-ui/commit/1278fadb953ac1af0ee2af6706a72560d093c7a0))
+* **Select:** lots of improvements ([23772e4](https://github.com/astrosat/astrosat-ui/commit/23772e4f66a1ede053749f8f93f4667d3944051f))
+
 ## [1.16.1](https://github.com/astrosat/astrosat-ui/compare/v1.16.0...v1.16.1) (2020-07-03)
 
 
