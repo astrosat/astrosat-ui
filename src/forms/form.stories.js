@@ -8,7 +8,7 @@ import PasswordField from './password-field.component';
 import TextArea from './text-area.component';
 import Radio from './radio.component';
 import Slider from './slider.component';
-import Select from './select.component';
+import Select from './select/select.component';
 import useForm from './use-form.hook';
 import Button from '../buttons/button.component';
 
