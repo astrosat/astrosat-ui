@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import useModal from '../../containers/use-modal.hook';
-import Textfield from '../text-field.component';
+import useModal from '../containers/use-modal.hook';
+import Textfield from './text-field.component';
 
 import styles from './select.module.css';
-import { useClickaway } from '../../useClickaway';
+import { useClickaway } from '../useClickaway';
 
 /**
  * @typedef Option
