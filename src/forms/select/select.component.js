@@ -22,7 +22,7 @@ import { useClickaway } from '../../useClickaway';
  *   disabled?: boolean
  * }} props
  */
-const Select = ({ name, value, options, onChange, disabled }) => {
+const Select = ({ id, name, value, options, onChange, disabled }) => {
   const [isVisible, toggle] = useModal(false);
   const [selected, setSelected] = useState(value);
   const { ref } = useClickaway(() => isVisible && toggle());
@@ -51,6 +51,7 @@ const Select = ({ name, value, options, onChange, disabled }) => {
         onKeyPress={!disabled ? toggle : null}
       >
         <Textfield
+          id={id}
           className={styles.textField}
           name={name}
           value={selected ? selected.name : ''}
