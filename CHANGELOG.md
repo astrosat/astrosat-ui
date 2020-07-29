@@ -1,3 +1,10 @@
+## [1.17.2](https://github.com/astrosat/astrosat-ui/compare/v1.17.1...v1.17.2) (2020-07-29)
+
+
+### Bug Fixes
+
+* **frontend:** Remove nested directories, for now ([b85e59d](https://github.com/astrosat/astrosat-ui/commit/b85e59d1f637a980315bee953a83b0e17832966d))
+
 ## [1.17.1](https://github.com/astrosat/astrosat-ui/compare/v1.17.0...v1.17.1) (2020-07-29)
 
 
