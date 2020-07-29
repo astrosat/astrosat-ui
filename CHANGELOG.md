@@ -1,3 +1,10 @@
+## [1.17.1](https://github.com/astrosat/astrosat-ui/compare/v1.17.0...v1.17.1) (2020-07-29)
+
+
+### Bug Fixes
+
+* **frontend:** Correct glob to allow sub dirs ([58457d8](https://github.com/astrosat/astrosat-ui/commit/58457d84c15c924cc0767c9c6fdaaf0f57418d9e))
+
 # [1.17.0](https://github.com/astrosat/astrosat-ui/compare/v1.16.1...v1.17.0) (2020-07-29)
 
 
