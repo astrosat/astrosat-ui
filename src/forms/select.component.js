@@ -24,18 +24,13 @@ import { useClickaway } from '../useClickaway';
  *   disabled?: boolean
  * }} props
  */
-const Select = ({
-  id,
-  placeholder,
-  name,
-  value,
-  options,
-  onChange,
-  disabled
-}) => {
+const Select = (
+  { id, placeholder, name, value, options, onChange, disabled },
+  ref
+) => {
   const [isVisible, toggle] = useModal(false);
   const [selected, setSelected] = useState(value);
-  const { ref } = useClickaway(() => isVisible && toggle());
+  const [clickawayRef] = useClickaway(() => isVisible && toggle());
 
   /** @param {Option} option */
   const handleOptionClick = option => () => {
@@ -51,7 +46,7 @@ const Select = ({
 
   return (
     <div
-      ref={ref}
+      ref={clickawayRef}
       className={`${styles.select} ${disabled && styles.disabled}`}
     >
       <div
@@ -61,6 +56,7 @@ const Select = ({
         onKeyPress={!disabled ? toggle : null}
       >
         <Textfield
+          ref={ref}
           id={id}
           placeholder={placeholder}
           className={styles.textField}
@@ -107,4 +103,4 @@ Select.propTypes = {
   onChange: PropTypes.func.isRequired
 };
 
-export default Select;
+export default React.forwardRef(Select);

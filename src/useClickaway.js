@@ -19,5 +19,5 @@ export const useClickaway = onClickaway => {
     };
   });
 
-  return { ref };
+  return [ref];
 };
