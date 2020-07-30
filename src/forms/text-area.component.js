@@ -2,25 +2,29 @@ import React from 'react';
 
 import styles from './text-area.module.css';
 
-const TextArea = ({
-  name,
-  value,
-  onChange,
-  disabled = false,
-  placeholder = '',
-  classNames,
-  rows,
-  cols,
-  required = false,
-  autoFocus = false,
-  readOnly = false,
-  ariaLabel
-}) => {
+const TextArea = (
+  {
+    name,
+    value,
+    onChange,
+    disabled = false,
+    placeholder = '',
+    classNames,
+    rows,
+    cols,
+    required = false,
+    autoFocus = false,
+    readOnly = false,
+    ariaLabel
+  },
+  ref
+) => {
   let classes = [styles.textarea];
   if (classNames) classes = [...classes, ...classNames];
 
   return (
     <textarea
+      ref={ref}
       name={name}
       value={value}
       className={classes}
@@ -37,4 +41,4 @@ const TextArea = ({
   );
 };
 
-export default TextArea;
+export default React.forwardRef(TextArea);
