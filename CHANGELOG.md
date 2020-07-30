@@ -1,3 +1,10 @@
+## [1.17.3](https://github.com/astrosat/astrosat-ui/compare/v1.17.2...v1.17.3) (2020-07-30)
+
+
+### Bug Fixes
+
+* **frontend:** Add refs to Select and Textarea components ([5316c04](https://github.com/astrosat/astrosat-ui/commit/5316c049dc150b982f37198c2405b1f48e700b25)), closes [#53](https://github.com/astrosat/astrosat-ui/issues/53)
+
 ## [1.17.2](https://github.com/astrosat/astrosat-ui/compare/v1.17.1...v1.17.2) (2020-07-29)
 
 
