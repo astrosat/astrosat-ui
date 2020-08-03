@@ -46,7 +46,7 @@ describe('Select Component', () => {
     const option = 'Option 2';
     const onChange = jest.fn();
     const { container, getByText } = render(
-      <Select options={options} onChange={onChange} />
+      <Select options={options} onChange={onChange} value={options[1].value} />
     );
 
     fireEvent.click(container.querySelector('.textfield'));
