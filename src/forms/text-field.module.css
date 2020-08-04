@@ -30,7 +30,8 @@
   border-radius: 0.3rem 0.3rem 0.125rem 0.125rem;
   padding: 1rem;
   color: var(--color--text--dark);
-  width: inherit;
+  width: 100%;
+  line-height: normal;
 }
 
 .textfield:disabled:hover {
