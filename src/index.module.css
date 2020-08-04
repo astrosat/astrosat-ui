@@ -1,3 +1,6 @@
+@import './reset.css';
+@import './normalize.css';
+
 :root {
   /* colors */
   --color-red: #cf6679;
