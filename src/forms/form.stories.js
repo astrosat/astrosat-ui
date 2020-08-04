@@ -126,37 +126,6 @@ storiesOf('Form', module)
       </div>
 
       <div className={styles.btnGroup}>
-        <Textfield onChange={action('Text Entered')} placeholder="Default" />
-      </div>
-      <div className={styles.btnGroup} style={{ backgroundColor: '#ffffff' }}>
-        <Textfield placeholder="On White" />
-      </div>
-
-      <div className={styles.btnGroup}>
-        <Textfield
-          onChange={action('Text Entered')}
-          placeholder="Disabled"
-          disabled
-        />
-      </div>
-
-      <div className={styles.btnGroup}>
-        <Textfield
-          onChange={action('Text Entered')}
-          placeholder="Valid"
-          valid
-        />
-      </div>
-
-      <div className={styles.btnGroup}>
-        <Textfield
-          onChange={action('Text Entered')}
-          placeholder="Invalid"
-          valid={false}
-        />
-      </div>
-
-      <div className={styles.btnGroup}>
         <Select onChange={action('Option Selected')} options={options} />
         <Select
           onChange={action('Option Selected')}
