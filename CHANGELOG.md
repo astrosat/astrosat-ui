@@ -1,3 +1,18 @@
+# [1.18.0](https://github.com/astrosat/astrosat-ui/compare/v1.17.3...v1.18.0) (2020-08-04)
+
+
+### Bug Fixes
+
+* **TextField:** Fix line height stopping clipping ([69eedfa](https://github.com/astrosat/astrosat-ui/commit/69eedfa2efff9f81646146482df753b2bfbe7490))
+* **TextField:** Move stories to own file ([bac0eb1](https://github.com/astrosat/astrosat-ui/commit/bac0eb15b30783528d8e8759bc77d39e87ce287e))
+* **TextField:** Rename test file ([7e84900](https://github.com/astrosat/astrosat-ui/commit/7e849007e4d4f78adf0d2d09ef5923109903fd5e))
+
+
+### Features
+
+* **index:** Add reset and normalize css files ([a249c7e](https://github.com/astrosat/astrosat-ui/commit/a249c7ea245bac095ff6b33ed978fa0184736c4a))
+* **Select:** Turn select into an uncontrolled component ([00e9ea1](https://github.com/astrosat/astrosat-ui/commit/00e9ea1ae5b09f3fbad7690c06bef4d0b77c50b1))
+
 ## [1.17.3](https://github.com/astrosat/astrosat-ui/compare/v1.17.2...v1.17.3) (2020-07-30)
 
 
