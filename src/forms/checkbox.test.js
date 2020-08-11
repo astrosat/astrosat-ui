@@ -10,7 +10,10 @@ describe('Checkbox Component', () => {
   it('should render an unchecked checkbox', () => {
     const { container } = render(<Checkbox name="test" value="Test Value" />);
 
-    expect(container.querySelector('.checkbox')).toBeInTheDocument();
+    expect(container.querySelector('input')).toHaveAttribute(
+      'type',
+      'checkbox'
+    );
     expect(container.querySelector('input')).not.toHaveAttribute('checked', '');
   });
 
@@ -19,7 +22,10 @@ describe('Checkbox Component', () => {
       <Checkbox name="test" value="Test Value" checked={true} />
     );
 
-    expect(container.querySelector('.checkbox')).toBeInTheDocument();
+    expect(container.querySelector('input')).toHaveAttribute(
+      'type',
+      'checkbox'
+    );
     expect(container.querySelector('input')).toHaveAttribute('checked', '');
   });
 
@@ -27,6 +33,7 @@ describe('Checkbox Component', () => {
     const onChange = jest.fn();
     const { getByLabelText } = render(
       <Checkbox
+        id="test"
         name="test"
         label="test"
         value="Test Value"

@@ -10,7 +10,7 @@ describe('Radio Component', () => {
   it('should render an unchecked radio button', () => {
     const { container } = render(<Radio name="test" value="Test Value" />);
 
-    expect(container.querySelector('.radio')).toBeInTheDocument();
+    expect(container.querySelector('input')).toHaveAttribute('type', 'radio');
     expect(container.querySelector('input')).not.toHaveAttribute('checked', '');
   });
 
@@ -19,7 +19,7 @@ describe('Radio Component', () => {
       <Radio name="test" value="Test Value" checked={true} />
     );
 
-    expect(container.querySelector('.radio')).toBeInTheDocument();
+    expect(container.querySelector('input')).toHaveAttribute('type', 'radio');
     expect(container.querySelector('input')).toHaveAttribute('checked', '');
   });
 

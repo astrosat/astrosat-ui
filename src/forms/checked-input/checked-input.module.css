@@ -1,11 +1,11 @@
-.checkbox,
-.checkbox *,
-.checkbox *:before,
-.checkbox *:after {
+.wrapper,
+.wrapper *,
+.wrapper *:before,
+.wrapper *:after {
   box-sizing: border-box;
 }
 
-.checkbox {
+.wrapper {
   position: relative;
   color: var(--checkbox--label--color, inherit);
   width: max-content;
@@ -39,6 +39,16 @@
   min-height: 1.4375rem;
 }
 
+.input[type="checkbox"] ~ .label::before,
+.input[type="checkbox"] ~ .label::after {
+  border-radius: 0.1875rem;
+}
+
+.input[type="radio"] ~ .label::before,
+.input[type="radio"] ~ .label::after {
+  border-radius: 50%;
+}
+
 .label::before {
   display: block;
   content: '';
@@ -47,7 +57,6 @@
   width: 1rem;
   height: 1rem;
   border: 1px solid var(--checkbox--border-color);
-  border-radius: 0.1875rem;
   transition: border-color 250ms ease;
 }
 
