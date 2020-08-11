@@ -1,35 +1,9 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-import styles from './radio.module.css';
+import CheckedInput from './checked-input/checked-input.component';
 
-const Radio = ({
-  name,
-  value,
-  label,
-  onChange,
-  disabled = false,
-  checked,
-  ariaLabel,
-  ...rest
-}) => (
-  <label
-    className={`${styles.radio} ${checked ? styles.active : ''}  ${
-      disabled ? styles.disabled : ''
-    }`}
-  >
-    <input
-      type="radio"
-      name={name}
-      value={value ? value : name}
-      disabled={disabled}
-      onChange={event => (!disabled ? onChange(event) : null)}
-      checked={checked}
-      aria-label={ariaLabel}
-      {...rest}
-    />
-    <span className={styles.checkmark} />
-    {label}
-  </label>
+const Radio = (props, ref) => (
+  <CheckedInput type="radio" ref={ref} {...props} />
 );
 
-export default Radio;
+export default forwardRef(Radio);
