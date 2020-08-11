@@ -4,19 +4,7 @@ import clsx from 'clsx';
 import styles from './checkbox.module.css';
 
 const Checkbox = (
-  {
-    id,
-    name,
-    value,
-    label,
-    onChange,
-    disabled = false,
-    checked,
-    ariaLabel,
-    defaultChecked,
-    className,
-    style
-  },
+  { id, label, disabled = false, ariaLabel, className, style, ...rest },
   ref
 ) => (
   <div
@@ -34,13 +22,9 @@ const Checkbox = (
       className={styles.input}
       ref={ref}
       type="checkbox"
-      name={name}
-      value={value}
       disabled={disabled}
-      onChange={onChange}
-      checked={checked}
       aria-label={ariaLabel}
-      defaultChecked={defaultChecked}
+      {...rest}
     />
     <label className={styles.label} htmlFor={`${id}-checkbox`}>
       {label}
