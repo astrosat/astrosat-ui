@@ -9,7 +9,8 @@ const Radio = ({
   onChange,
   disabled = false,
   checked,
-  ariaLabel
+  ariaLabel,
+  ...rest
 }) => (
   <label
     className={`${styles.radio} ${checked ? styles.active : ''}  ${
@@ -24,6 +25,7 @@ const Radio = ({
       onChange={event => (!disabled ? onChange(event) : null)}
       checked={checked}
       aria-label={ariaLabel}
+      {...rest}
     />
     <span className={styles.checkmark} />
     {label}

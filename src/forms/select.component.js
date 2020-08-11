@@ -14,8 +14,6 @@ import { useClickaway } from '../useClickaway';
 
 /**
  * @param {{
- *   id?: string
- *   placeholder?: string
  *   name?: string
  *   value?: any
  *   options: Option[]
@@ -23,10 +21,7 @@ import { useClickaway } from '../useClickaway';
  *   disabled?: boolean
  * }} props
  */
-const Select = (
-  { id, placeholder, name, value, options, onChange, disabled },
-  ref
-) => {
+const Select = ({ name, value, options, onChange, disabled, ...rest }, ref) => {
   const [isVisible, toggle] = useModal(false);
   const [clickawayRef] = useClickaway(() => isVisible && toggle());
 
@@ -54,14 +49,13 @@ const Select = (
       >
         <Textfield
           ref={ref}
-          id={id}
-          placeholder={placeholder}
           className={styles.textField}
           name={name}
           value={options?.find(option => option.value === value)?.name || ''}
           readOnly
           disabled={disabled}
           tabIndex={-1}
+          {...rest}
         />
       </div>
 
