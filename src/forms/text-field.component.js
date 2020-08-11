@@ -7,25 +7,7 @@ import ErrorIcon from '../icons/error-icon.component';
 
 import styles from './text-field.module.css';
 
-const Textfield = (
-  {
-    id,
-    name,
-    value,
-    placeholder = '',
-    valid,
-    className,
-    disabled = false,
-    required = false,
-    autoFocus = false,
-    readOnly = false,
-    ariaLabel,
-    onChange,
-    onBlur,
-    tabIndex
-  },
-  ref
-) => {
+const Textfield = ({ valid, className, ariaLabel, ...rest }, ref) => {
   const invalid = valid !== undefined && valid !== null && !valid;
   return (
     <div
@@ -37,19 +19,9 @@ const Textfield = (
       <input
         ref={ref}
         type="text"
-        id={id}
-        name={name}
-        value={value}
         className={clsx(styles.textfield, className)}
-        disabled={disabled}
-        placeholder={placeholder}
         aria-label={ariaLabel}
-        required={required}
-        autoFocus={autoFocus}
-        readOnly={readOnly}
-        onBlur={onBlur}
-        onChange={onChange}
-        tabIndex={tabIndex}
+        {...rest}
       />
       {valid && <CorrectIcon classes={styles.icon} />}
       {invalid && <ErrorIcon classes={styles.icon} />}
