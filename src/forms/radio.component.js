@@ -1,35 +1,37 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
+
+import clsx from 'clsx';
 
 import styles from './radio.module.css';
 
-const Radio = ({
-  name,
-  value,
-  label,
-  onChange,
-  disabled = false,
-  checked,
-  ariaLabel,
-  ...rest
-}) => (
-  <label
-    className={`${styles.radio} ${checked ? styles.active : ''}  ${
-      disabled ? styles.disabled : ''
-    }`}
+const Radio = (
+  { id, value, label, disabled = false, ariaLabel, className, style, ...rest },
+  ref
+) => (
+  <div
+    className={clsx(
+      styles.radio,
+      {
+        [styles.disabled]: disabled
+      },
+      className
+    )}
+    style={style}
   >
     <input
+      id={`${id}-${value}-radio`}
+      className={styles.input}
+      ref={ref}
       type="radio"
-      name={name}
-      value={value ? value : name}
       disabled={disabled}
-      onChange={event => (!disabled ? onChange(event) : null)}
-      checked={checked}
       aria-label={ariaLabel}
+      value={value}
       {...rest}
     />
-    <span className={styles.checkmark} />
-    {label}
-  </label>
+    <label className={styles.label} htmlFor={`${id}-${value}-radio`}>
+      {label}
+    </label>
+  </div>
 );
 
-export default Radio;
+export default forwardRef(Radio);

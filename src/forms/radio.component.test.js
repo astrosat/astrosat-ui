@@ -1,5 +1,6 @@
 import React from 'react';
-import { cleanup, render, fireEvent } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Radio from './radio.component';
 
@@ -11,7 +12,6 @@ describe('Radio Component', () => {
 
     expect(container.querySelector('.radio')).toBeInTheDocument();
     expect(container.querySelector('input')).not.toHaveAttribute('checked', '');
-    expect(container.querySelector('.checkmark')).toBeInTheDocument();
   });
 
   it('should render a checked radio button', () => {
@@ -21,7 +21,6 @@ describe('Radio Component', () => {
 
     expect(container.querySelector('.radio')).toBeInTheDocument();
     expect(container.querySelector('input')).toHaveAttribute('checked', '');
-    expect(container.querySelector('.checkmark')).toBeInTheDocument();
   });
 
   it('should toggle from unchecked to checked when clicked', () => {
@@ -30,7 +29,7 @@ describe('Radio Component', () => {
       <Radio name="test" value="Test Value" onChange={onChange} />
     );
 
-    fireEvent.click(container.querySelector('input'));
+    userEvent.click(container.querySelector('input'));
     expect(onChange).toHaveBeenCalled();
   });
 
@@ -56,7 +55,7 @@ describe('Radio Component', () => {
         />
       );
 
-      fireEvent.click(container.querySelector('input'));
+      userEvent.click(container.querySelector('input'));
       expect(onChange).not.toHaveBeenCalled();
     });
   });
