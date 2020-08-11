@@ -7,14 +7,10 @@ import styles from './text-field.module.css';
 import passwordStyles from './password-field.module.css';
 
 const PasswordField = ({
-  name,
-  value,
-  onChange,
   placeholder = '',
   classNames,
-  required = false,
-  autoFocus = false,
-  ariaLabel
+  ariaLabel,
+  ...rest
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
@@ -25,14 +21,10 @@ const PasswordField = ({
     <div className={styles.container}>
       <input
         type={isVisible ? 'text' : 'password'}
-        name={name}
-        value={value}
         className={className}
-        onChange={onChange}
         placeholder={placeholder}
         aria-label={ariaLabel}
-        required={required}
-        autoFocus={autoFocus}
+        {...rest}
       />
       <span data-testid="icon-span" onClick={toggleVisibility}>
         <ShowHideIcon
