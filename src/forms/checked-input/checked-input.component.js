@@ -17,7 +17,7 @@ const CheckedInput = (
   },
   ref
 ) => {
-  const inputId = `${id}${type === 'radio' && `-${value}`}-${type}`;
+  const inputId = `${id}${!!value ? `-${value}` : ''}-${type}`;
 
   return (
     <div
