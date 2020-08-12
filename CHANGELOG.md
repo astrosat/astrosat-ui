@@ -1,3 +1,21 @@
+# [1.19.0](https://github.com/astrosat/astrosat-ui/compare/v1.18.0...v1.19.0) (2020-08-12)
+
+
+### Bug Fixes
+
+* **Checkbox:** Add rest prop ([ec548f0](https://github.com/astrosat/astrosat-ui/commit/ec548f0e2daf5a8dfe8918b0b8ed8f0262dba101))
+* **PasswordField:** Add rest prop ([03fae65](https://github.com/astrosat/astrosat-ui/commit/03fae65a2e164ca213932564fb12ca749071d389))
+* **Radio:** Add rest prop ([5b0a323](https://github.com/astrosat/astrosat-ui/commit/5b0a323edea2561901d7f5d612971fcc35098102))
+* **Radio:** Update styles ([06937d8](https://github.com/astrosat/astrosat-ui/commit/06937d8793628f73e83a149ec674afb4126d981b)), closes [#57](https://github.com/astrosat/astrosat-ui/issues/57)
+* **Select:** Add rest prop ([b94fd4d](https://github.com/astrosat/astrosat-ui/commit/b94fd4dd920be7ac598610ce335510b6ce4cce62))
+* **TextArea:** Add rest prop ([18567d1](https://github.com/astrosat/astrosat-ui/commit/18567d10bc13665ae02738dd64d7faed4e1f5c4d))
+* **TextField:** Add rest ([afad71e](https://github.com/astrosat/astrosat-ui/commit/afad71e0e11dcc60359a447bf7317ad5b6141b40))
+
+
+### Features
+
+* **frontend:** Change checkbox and radio to master component ([bb995d1](https://github.com/astrosat/astrosat-ui/commit/bb995d1a389842988a2f4eec2cf3bfa1fae14bb8)), closes [#57](https://github.com/astrosat/astrosat-ui/issues/57)
+
 # [1.18.0](https://github.com/astrosat/astrosat-ui/compare/v1.17.3...v1.18.0) (2020-08-04)
 
 
