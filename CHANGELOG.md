@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/astrosat/astrosat-ui/compare/v1.19.0...v1.19.1) (2020-08-12)
+
+
+### Bug Fixes
+
+* **CheckedInput:** Fix id ([7f2ae8d](https://github.com/astrosat/astrosat-ui/commit/7f2ae8d92703af9cce449b4041d73e2f3f093a9b))
+
 # [1.19.0](https://github.com/astrosat/astrosat-ui/compare/v1.18.0...v1.19.0) (2020-08-12)
 
 
