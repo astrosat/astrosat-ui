@@ -1,3 +1,10 @@
+## [1.19.2](https://github.com/astrosat/astrosat-ui/compare/v1.19.1...v1.19.2) (2020-08-27)
+
+
+### Bug Fixes
+
+* **frontend:** Pass ref down to password field ([f1e672d](https://github.com/astrosat/astrosat-ui/commit/f1e672db36af9376eef35cf649245682e49b73f5))
+
 ## [1.19.1](https://github.com/astrosat/astrosat-ui/compare/v1.19.0...v1.19.1) (2020-08-12)
 
 
