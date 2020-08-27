@@ -6,12 +6,10 @@ import ShowHideIcon from '../icons/show-hide-icon';
 import styles from './text-field.module.css';
 import passwordStyles from './password-field.module.css';
 
-const PasswordField = ({
-  placeholder = '',
-  classNames,
-  ariaLabel,
-  ...rest
-}) => {
+const PasswordField = (
+  { placeholder = '', classNames, ariaLabel, ...rest },
+  ref
+) => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
 
@@ -20,6 +18,7 @@ const PasswordField = ({
   return (
     <div className={styles.container}>
       <input
+        ref={ref}
         type={isVisible ? 'text' : 'password'}
         className={className}
         placeholder={placeholder}
@@ -36,4 +35,4 @@ const PasswordField = ({
   );
 };
 
-export default PasswordField;
+export default React.forwardRef(PasswordField);
