@@ -3,7 +3,7 @@
   flex-grow: 1;
 }
 .button {
-  composes: button from './button.module.css';
+  composes: button from '../button/button.module.css';
   border-radius: 0;
 }
 .button:first-child {
@@ -22,6 +22,6 @@
 }
 
 .inactive {
-  composes: primary from './button.module.css';
+  composes: primary from '../button/button.module.css';
   /* composes: secondary from './button.module.css'; */
 }

@@ -12,7 +12,7 @@ import MenuIcon from '../icons/menu-icon.component';
 import TwitterIcon from '../icons/twitter-icon.component';
 import CloseIcon from '../icons/close-icon.component';
 
-import Button from './button.component';
+import Button from '../button/button.component';
 import CloseButton from './close-button.component';
 import InfoButton from './info-button.component';
 import ButtonGroup from './button-group.component';
