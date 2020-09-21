@@ -8,7 +8,8 @@ const palette = createPalette({
   success: { main: '#6cc24a' },
   error: { main: '#cf6679' },
   info: { main: '#48a9c5' },
-  text: { primary: '#333f48', secondary: '#f8f8f8' }
+  text: { primary: '#f8f8f8', secondary: '#f8f8f8' },
+  background: { default: '#333f48' }
 });
 
 export const dark = createMuiTheme({

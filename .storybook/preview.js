@@ -16,7 +16,7 @@ export const parameters = {
     values: [
       {
         name: 'dark',
-        value: dark.palette.secondary.main
+        value: dark.palette.background.default
       },
       {
         name: 'light',
