@@ -14,6 +14,7 @@ import {
   TextField,
   Typography
 } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 
 export default { title: 'Material-UI Test' };
 
@@ -62,6 +63,12 @@ export const LotsOfComponents = () => (
       <TextField id="standard-basic" label="Standard" />
       <TextField id="filled-basic" label="Filled" variant="filled" />
       <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      <TextField
+        id="outlined-basic"
+        label="Outlined"
+        variant="outlined"
+        error
+      />
     </form>
     <FormControl>
       <InputLabel id="demo-simple-select-label">Age</InputLabel>
@@ -171,5 +178,17 @@ export const LotsOfComponents = () => (
       </Typography>
     </div>
     <Link href="#">Link</Link>
+    <Alert variant="filled" severity="error">
+      This is an error message!
+    </Alert>
+    <Alert variant="filled" severity="warning">
+      This is a warning message!
+    </Alert>
+    <Alert variant="filled" severity="info">
+      This is an information message!
+    </Alert>
+    <Alert variant="filled" severity="success">
+      This is a success message!
+    </Alert>
   </>
 );
