@@ -13,6 +13,11 @@ const palette = createPalette({
 });
 
 export const dark = createMuiTheme({
+  props: {
+    MuiButton: {
+      disableRipple: true
+    }
+  },
   palette,
   shape: {
     borderRadius: 5
@@ -22,6 +27,7 @@ export const dark = createMuiTheme({
     button: {
       fontSize: '18px',
       fontWeight: 600,
+      lineHeight: 'normal',
       textTransform: 'none'
     }
   }

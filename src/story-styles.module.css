@@ -52,3 +52,7 @@ input:focus {
 .iconGroup p {
   margin-top: 0;
 }
+
+.buttonTest {
+  margin-left: 20rem;
+}
