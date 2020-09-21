@@ -6,6 +6,7 @@ import {
   FormControlLabel,
   FormLabel,
   InputLabel,
+  Link,
   MenuItem,
   Radio,
   RadioGroup,
@@ -169,5 +170,6 @@ export const LotsOfComponents = () => (
         overline text
       </Typography>
     </div>
+    <Link href="#">Link</Link>
   </>
 );
