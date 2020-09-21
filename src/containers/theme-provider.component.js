@@ -1,7 +1,17 @@
 import React, { useCallback, useContext, useState, useEffect } from 'react';
+import {
+  createMuiTheme,
+  ThemeProvider as MuiThemeProvider
+} from '@material-ui/core';
 import styles from '../index.module.css';
 
-const ThemeContext = React.createContext();
+const ThemeContext = React.createContext(undefined);
+
+const muiTheme = createMuiTheme({
+  palette: {
+    primary: { main: '#ff69b4' }
+  }
+});
 
 const ThemeProvider = ({ children, defaultTheme = 'dark' }) => {
   const [theme, setTheme] = useState(defaultTheme);
@@ -30,9 +40,11 @@ const ThemeProvider = ({ children, defaultTheme = 'dark' }) => {
   }, [theme, changeTheme]);
 
   return (
-    <ThemeContext.Provider value={[theme, changeTheme]}>
-      {children}
-    </ThemeContext.Provider>
+    <MuiThemeProvider theme={muiTheme}>
+      <ThemeContext.Provider value={[theme, changeTheme]}>
+        {children}
+      </ThemeContext.Provider>
+    </MuiThemeProvider>
   );
 };
 
