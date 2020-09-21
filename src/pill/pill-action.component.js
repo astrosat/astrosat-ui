@@ -1,4 +1,6 @@
 import React from 'react';
+import clsx from 'clsx';
+import styles from './pill.module.css';
 
 const PillAction = ({ children, className, onClick }) => (
   <button className={clsx(styles.action, className)} onClick={onClick}>

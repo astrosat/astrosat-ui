@@ -1,13 +1,28 @@
 {
-  "parser": "babel-eslint",
-  "extends": ["plugin:prettier/recommended"],
-  "plugins": ["prettier", "react-hooks"],
+  "extends": [
+    "react-app",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react-hooks",  "import", "prettier"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
   "rules": {
     "prettier/prettier": "error",
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": [
+      "warn",
+      {
+        "aspects": ["invalidHref"]
+      }
+    ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error"
-  },
-  "env": {
-    "jest": true
   }
 }
