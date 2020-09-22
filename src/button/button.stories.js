@@ -1,5 +1,5 @@
 import React from 'react';
-import { default as Button } from './mui-button.component';
+import { default as Button } from './button.component';
 import styles from '../story-styles.module.css';
 import { makeStyles } from '@material-ui/core';
 export default { title: 'Button' };

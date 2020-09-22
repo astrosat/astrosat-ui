@@ -29,20 +29,19 @@ storiesOf('Buttons', module).add('Buttons', () => (
       <legend>Text Buttons</legend>
 
       <div className={styles.btnGroup}>
-        <Button theme="primary" onClick={action('clicked')}>
+        <Button color="primary" onClick={action('clicked')}>
           Primary
         </Button>
-        <Button theme="secondary" onClick={action('clicked')}>
+        <Button color="secondary" onClick={action('clicked')}>
           Secondary
         </Button>
-        <Button theme="tertiary" onClick={action('clicked')}>
+        <Button color="tertiary" onClick={action('clicked')}>
           Tertiary
         </Button>
-        <Button theme="primary" onClick={action('clicked')} disabled>
+        <Button color="primary" onClick={action('clicked')} disabled>
           Disabled
         </Button>
         <Button href="http://google.co.uk">Actual Link</Button>
-        <Button theme="link">Appears as a Link</Button>
       </div>
     </fieldset>
 
@@ -50,10 +49,10 @@ storiesOf('Buttons', module).add('Buttons', () => (
       <legend>Small</legend>
       <div className={styles.btnGroup}>
         <Button size="small">Create User</Button>
-        <Button size="small" theme="secondary">
+        <Button size="small" color="secondary">
           Secondary
         </Button>
-        <Button size="small" theme="tertiary">
+        <Button size="small" color="tertiary">
           Tertiary
         </Button>
       </div>

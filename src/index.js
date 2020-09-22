@@ -1,6 +1,6 @@
 export { default as LoadMask } from './load-mask/load-mask.component';
 
-export { default as Button } from './buttons/button.component';
+export { default as Button } from './button/button.component';
 export { default as ButtonGroup } from './buttons/button-group.component';
 export { default as CloseButton } from './buttons/close-button.component';
 export { default as InfoButton } from './buttons/info-button.component';

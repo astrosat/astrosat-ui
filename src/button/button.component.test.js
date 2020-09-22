@@ -2,7 +2,7 @@ import React from 'react';
 
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
-import Button from './mui-button.component';
+import Button from './button.component';
 
 describe('Button Component', () => {
   afterEach(cleanup);

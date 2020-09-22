@@ -1,59 +1,124 @@
+import { Button as MuiButton } from '@material-ui/core';
+import { fade, makeStyles } from '@material-ui/core/styles';
 import React from 'react';
-import styles from './button.module.css';
-import clsx from 'clsx';
 
-const Button = ({
-  active,
-  children,
-  className,
-  classNames,
-  disabled,
-  href,
-  padded = true,
-  shape,
-  size,
-  theme = 'primary',
-  tooltip,
-  ...rest
-}) => {
-  const _className = clsx(className, classNames, {
-    [styles.active]: !!active,
-    [styles.button]: !href,
-    [styles.disabled]: disabled,
-    [styles.link]: href || theme === 'link',
-    [styles['no-padding']]: !padded,
-    [styles[shape]]: !!shape,
-    [styles[size]]: !!size,
-    [styles[theme]]: !!theme && !disabled && !href
-  });
-
-  let dataFor, dataTip;
-  if (tooltip) {
-    dataFor = tooltip;
-    dataTip = '';
+const styles = makeStyles(theme => ({
+  root: {
+    padding: '0.75rem 4.625rem',
+    transition: theme.transitions.create(
+      ['background-color', 'box-shadow', 'border', 'opacity'],
+      {
+        duration: theme.transitions.duration.short
+      }
+    )
+  },
+  disabled: {},
+  textSecondary: {
+    color: theme.palette.info.main,
+    '&:hover': {
+      backgroundColor: fade(
+        theme.palette.info.main,
+        theme.palette.action.hoverOpacity
+      ),
+      // Reset on touch devices, it doesn't add specificity
+      '@media (hover: none)': {
+        backgroundColor: 'transparent'
+      }
+    }
+  },
+  contained: {
+    color: theme.palette.secondary.main,
+    '&:hover': {
+      opacity: 0.5
+    },
+    '&$disabled': {
+      backgroundColor: theme.palette.grey['300'],
+      color: theme.palette.grey.A700
+    }
+  },
+  containedPrimary: {
+    '&:hover': {
+      backgroundColor: theme.palette.primary.main
+    }
+  },
+  containedSecondary: {
+    backgroundColor: theme.palette.info.main,
+    '&:hover': {
+      backgroundColor: theme.palette.info.main,
+      // Reset on touch devices, it doesn't add specificity
+      '@media (hover: none)': {
+        backgroundColor: theme.palette.info.main
+      }
+    }
+  },
+  outlinedSecondary: {
+    color: theme.palette.info.main,
+    borderColor: fade(theme.palette.info.main, 0.5),
+    '&:hover': {
+      borderColor: theme.palette.info.main,
+      backgroundColor: fade(
+        theme.palette.info.main,
+        theme.palette.action.hoverOpacity
+      ),
+      '@media (hover: none)': {
+        backgroundColor: 'transparent'
+      }
+    },
+    '&$disabled': {
+      borderColor: theme.palette.action.disabled
+    }
+  },
+  textSizeSmall: {
+    padding: '0.5rem 3.5rem',
+    fontSize: theme.typography.pxToRem(14)
+  },
+  /* Styles applied to the root element if `size="large"` and `variant="text"`. */
+  textSizeLarge: {
+    padding: '0.9375rem 5.8125rem',
+    fontSize: theme.typography.pxToRem(22)
+  },
+  /* Styles applied to the root element if `size="small"` and `variant="outlined"`. */
+  outlinedSizeSmall: {
+    padding: '0.5rem 3.5rem',
+    fontSize: theme.typography.pxToRem(14)
+  },
+  /* Styles applied to the root element if `size="large"` and `variant="outlined"`. */
+  outlinedSizeLarge: {
+    padding: '0.9375rem 5.8125rem',
+    fontSize: theme.typography.pxToRem(22)
+  },
+  /* Styles applied to the root element if `size="small"` and `variant="contained"`. */
+  containedSizeSmall: {
+    padding: '0.5rem 3.5rem',
+    fontSize: theme.typography.pxToRem(14)
+  },
+  /* Styles applied to the root element if `size="large"` and `variant="contained"`. */
+  containedSizeLarge: {
+    padding: '0.9375rem 5.8125rem',
+    fontSize: theme.typography.pxToRem(22)
   }
+}));
 
-  return href ? (
-    <a
-      className={_className}
-      data-for={dataFor}
-      data-tip={dataTip}
-      href={href}
+/**
+ * @param { import('@material-ui/core/Button/Button').ButtonProps} props
+ * @param { React.Ref<HTMLButtonElement> } ref
+ */
+const Button = ({ variant = 'contained', color = 'primary', ...rest }, ref) => {
+  const classes = styles({});
+  const component = (
+    <MuiButton
+      ref={ref}
+      classes={classes}
+      variant={variant}
+      color={color}
       {...rest}
-    >
-      {children}
-    </a>
+    />
+  );
+  return rest.disabled ? (
+    <span style={{ cursor: 'not-allowed' }}>{component}</span>
   ) : (
-    <button
-      className={_className}
-      data-for={dataFor}
-      data-tip={dataTip}
-      disabled={disabled}
-      {...rest}
-    >
-      {children}
-    </button>
+    component
   );
 };
 
-export default Button;
+export default React.forwardRef(Button);
