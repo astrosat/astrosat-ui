@@ -74,11 +74,18 @@ const styles = makeStyles(theme => ({
 
 /**
  * @param { import('@material-ui/core/Button/Button').ButtonProps} props
+ * @param { React.Ref<HTMLButtonElement> } ref
  */
-const Button = ({ variant = 'contained', color = 'primary', ...rest }) => {
-  const classes = styles();
+const Button = ({ variant = 'contained', color = 'primary', ...rest }, ref) => {
+  const classes = styles({});
   const component = (
-    <MuiButton classes={classes} variant={variant} color={color} {...rest} />
+    <MuiButton
+      ref={ref}
+      classes={classes}
+      variant={variant}
+      color={color}
+      {...rest}
+    />
   );
   return rest.disabled ? (
     <span style={{ cursor: 'not-allowed' }}>{component}</span>
@@ -87,4 +94,4 @@ const Button = ({ variant = 'contained', color = 'primary', ...rest }) => {
   );
 };
 
-export default Button;
+export default React.forwardRef(Button);
