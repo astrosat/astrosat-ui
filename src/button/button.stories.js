@@ -53,6 +53,38 @@ export const Outlined = () => (
   </>
 );
 
+export const Sizes = () => (
+  <>
+    <div>
+      <Button size="small">Small</Button>
+      <Button size="medium">Medium</Button>
+      <Button size="large">Large</Button>
+    </div>
+    <div>
+      <Button variant="text" size="small">
+        Small
+      </Button>
+      <Button variant="text" size="medium">
+        Medium
+      </Button>
+      <Button variant="text" size="large">
+        Large
+      </Button>
+    </div>
+    <div>
+      <Button variant="outlined" size="small">
+        Small
+      </Button>
+      <Button variant="outlined" size="medium">
+        Medium
+      </Button>
+      <Button variant="outlined" size="large">
+        Large
+      </Button>
+    </div>
+  </>
+);
+
 const customButtonStyles = makeStyles({ root: { marginLeft: '20rem' } });
 export const ClassNameTest = () => {
   const madeStyles = customButtonStyles();

@@ -4,7 +4,7 @@ import React from 'react';
 
 const styles = makeStyles(theme => ({
   root: {
-    padding: '0.75em 4.625em',
+    padding: '0.75rem 4.625rem',
     transition: theme.transitions.create(
       ['background-color', 'box-shadow', 'border', 'opacity'],
       {
@@ -42,7 +42,6 @@ const styles = makeStyles(theme => ({
     }
   },
   containedSecondary: {
-    // color: theme.palette.info.contrastText,
     backgroundColor: theme.palette.info.main,
     '&:hover': {
       backgroundColor: theme.palette.info.main,
@@ -61,7 +60,6 @@ const styles = makeStyles(theme => ({
         theme.palette.info.main,
         theme.palette.action.hoverOpacity
       ),
-      // Reset on touch devices, it doesn't add specificity
       '@media (hover: none)': {
         backgroundColor: 'transparent'
       }
@@ -69,6 +67,35 @@ const styles = makeStyles(theme => ({
     '&$disabled': {
       borderColor: theme.palette.action.disabled
     }
+  },
+  textSizeSmall: {
+    padding: '0.5rem 3.5rem',
+    fontSize: theme.typography.pxToRem(14)
+  },
+  /* Styles applied to the root element if `size="large"` and `variant="text"`. */
+  textSizeLarge: {
+    padding: '0.9375rem 5.8125rem',
+    fontSize: theme.typography.pxToRem(22)
+  },
+  /* Styles applied to the root element if `size="small"` and `variant="outlined"`. */
+  outlinedSizeSmall: {
+    padding: '0.5rem 3.5rem',
+    fontSize: theme.typography.pxToRem(14)
+  },
+  /* Styles applied to the root element if `size="large"` and `variant="outlined"`. */
+  outlinedSizeLarge: {
+    padding: '0.9375rem 5.8125rem',
+    fontSize: theme.typography.pxToRem(22)
+  },
+  /* Styles applied to the root element if `size="small"` and `variant="contained"`. */
+  containedSizeSmall: {
+    padding: '0.5rem 3.5rem',
+    fontSize: theme.typography.pxToRem(14)
+  },
+  /* Styles applied to the root element if `size="large"` and `variant="contained"`. */
+  containedSizeLarge: {
+    padding: '0.9375rem 5.8125rem',
+    fontSize: theme.typography.pxToRem(22)
   }
 }));
 
