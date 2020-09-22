@@ -25,38 +25,6 @@ const toggleFn = () => (isOn = !isOn);
 
 storiesOf('Buttons', module).add('Buttons', () => (
   <>
-    <fieldset>
-      <legend>Text Buttons</legend>
-
-      <div className={styles.btnGroup}>
-        <Button color="primary" onClick={action('clicked')}>
-          Primary
-        </Button>
-        <Button color="secondary" onClick={action('clicked')}>
-          Secondary
-        </Button>
-        <Button color="tertiary" onClick={action('clicked')}>
-          Tertiary
-        </Button>
-        <Button color="primary" onClick={action('clicked')} disabled>
-          Disabled
-        </Button>
-        <Button href="http://google.co.uk">Actual Link</Button>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Small</legend>
-      <div className={styles.btnGroup}>
-        <Button size="small">Create User</Button>
-        <Button size="small" color="secondary">
-          Secondary
-        </Button>
-        <Button size="small" color="tertiary">
-          Tertiary
-        </Button>
-      </div>
-    </fieldset>
 
     <fieldset>
       <legend>Icon Buttons</legend>
