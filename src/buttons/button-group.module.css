@@ -3,7 +3,20 @@
   flex-grow: 1;
 }
 .button {
-  composes: button from '../button/button.module.css';
+  border: none;
+  text-decoration: none;
+  border-radius: var(--button--border-radius);
+  padding: 0.75rem 4.625rem;
+  font-size: 1.125rem;
+  font-family: var(--button--font-family);
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--button--box-shadow);
+  transition: opacity 250ms ease, color 250ms ease;
   border-radius: 0;
 }
 .button:first-child {
@@ -22,6 +35,21 @@
 }
 
 .inactive {
-  composes: primary from '../button/button.module.css';
-  /* composes: secondary from './button.module.css'; */
+  background-color: var(--button--primary--background-color);
+  color: var(--button--primary--color);
+}
+
+.inactive:hover {
+  background-color: var(--button--primary--background-color--hover);
+  color: var(--button--primary--color--hover);
+}
+
+.inactive:focus {
+  background-color: var(--button--primary--background-color--focus);
+  color: var(--button--primary--color--focus);
+}
+
+.inactive:active {
+  background-color: var(--button--primary--background-color--active);
+  color: var(--button--primary--color--active);
 }
