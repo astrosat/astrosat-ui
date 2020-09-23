@@ -1,5 +1,5 @@
 import { Button as MuiButton } from '@material-ui/core';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 
 const styles = makeStyles(theme => ({
@@ -13,19 +13,6 @@ const styles = makeStyles(theme => ({
     )
   },
   disabled: {},
-  textSecondary: {
-    color: theme.palette.info.main,
-    '&:hover': {
-      backgroundColor: fade(
-        theme.palette.info.main,
-        theme.palette.action.hoverOpacity
-      ),
-      // Reset on touch devices, it doesn't add specificity
-      '@media (hover: none)': {
-        backgroundColor: 'transparent'
-      }
-    }
-  },
   contained: {
     color: theme.palette.secondary.main,
     '&:hover': {
@@ -39,33 +26,6 @@ const styles = makeStyles(theme => ({
   containedPrimary: {
     '&:hover': {
       backgroundColor: theme.palette.primary.main
-    }
-  },
-  containedSecondary: {
-    backgroundColor: theme.palette.info.main,
-    '&:hover': {
-      backgroundColor: theme.palette.info.main,
-      // Reset on touch devices, it doesn't add specificity
-      '@media (hover: none)': {
-        backgroundColor: theme.palette.info.main
-      }
-    }
-  },
-  outlinedSecondary: {
-    color: theme.palette.info.main,
-    borderColor: fade(theme.palette.info.main, 0.5),
-    '&:hover': {
-      borderColor: theme.palette.info.main,
-      backgroundColor: fade(
-        theme.palette.info.main,
-        theme.palette.action.hoverOpacity
-      ),
-      '@media (hover: none)': {
-        backgroundColor: 'transparent'
-      }
-    },
-    '&$disabled': {
-      borderColor: theme.palette.action.disabled
     }
   },
   textSizeSmall: {
