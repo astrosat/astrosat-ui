@@ -10,7 +10,7 @@ import Radio from './radio.component';
 import Slider from './slider.component';
 import Select from './select.component';
 import useForm from './use-form.hook';
-import Button from '../buttons/button.component';
+import Button from '../button/button.component';
 
 import LoadMask from '../load-mask/load-mask.component';
 

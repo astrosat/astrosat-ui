@@ -12,7 +12,7 @@ import MenuIcon from '../icons/menu-icon.component';
 import TwitterIcon from '../icons/twitter-icon.component';
 import CloseIcon from '../icons/close-icon.component';
 
-import Button from './button.component';
+import Button from '../button/button.component';
 import CloseButton from './close-button.component';
 import InfoButton from './info-button.component';
 import ButtonGroup from './button-group.component';
@@ -25,39 +25,6 @@ const toggleFn = () => (isOn = !isOn);
 
 storiesOf('Buttons', module).add('Buttons', () => (
   <>
-    <fieldset>
-      <legend>Text Buttons</legend>
-
-      <div className={styles.btnGroup}>
-        <Button theme="primary" onClick={action('clicked')}>
-          Primary
-        </Button>
-        <Button theme="secondary" onClick={action('clicked')}>
-          Secondary
-        </Button>
-        <Button theme="tertiary" onClick={action('clicked')}>
-          Tertiary
-        </Button>
-        <Button theme="primary" onClick={action('clicked')} disabled>
-          Disabled
-        </Button>
-        <Button href="http://google.co.uk">Actual Link</Button>
-        <Button theme="link">Appears as a Link</Button>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Small</legend>
-      <div className={styles.btnGroup}>
-        <Button size="small">Create User</Button>
-        <Button size="small" theme="secondary">
-          Secondary
-        </Button>
-        <Button size="small" theme="tertiary">
-          Tertiary
-        </Button>
-      </div>
-    </fieldset>
 
     <fieldset>
       <legend>Icon Buttons</legend>

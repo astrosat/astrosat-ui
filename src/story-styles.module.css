@@ -8,7 +8,7 @@
 }
 
 .btnGroup > * {
-  margin: 1rem;
+  margin: 1rem !important;
 }
 
 .detail {
@@ -51,4 +51,8 @@ input:focus {
 
 .iconGroup p {
   margin-top: 0;
+}
+
+.buttonTest {
+  margin-left: 20rem;
 }

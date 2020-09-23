@@ -12,7 +12,7 @@ export const decorators = [
 
 export const parameters = {
   backgrounds: {
-    default: 'light',
+    default: 'dark',
     values: [
       {
         name: 'dark',
