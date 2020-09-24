@@ -1,26 +1,22 @@
 import React from 'react';
-import Link from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
+
+import { Link as MuiLink } from '@material-ui/core';
+
 import { makeStyles } from '@material-ui/core/styles';
 
-const styles = makeStyles(theme => ({
-  root: {}
+const useStyles = makeStyles(theme => ({
+  root: {
+    marginLeft: theme.spacing(6),
+    color: theme.palette.primary.main,
+    fontSize: theme.typography.button.fontSize,
+    borderBottom: '2px solid #f6be00',
+    padding: '0.5rem 0',
+    textDecoration: 'none'
+  }
 }));
 
-export default function Links() {
-  const classes = styles();
-  const preventDefault = event => event.preventDefault();
-  return (
-    <Typography className={classes.root}>
-      <Link href="#" onClick={preventDefault}>
-        Link
-      </Link>
-      <Link href="#" onClick={preventDefault} color="inherit">
-        {'color="inherit"'}
-      </Link>
-      <Link href="#" onClick={preventDefault} variant="body2">
-        {'variant="body2"'}
-      </Link>
-    </Typography>
-  );
-}
+const Link = ({ ...rest }, ref) => {
+  const classes = useStyles({});
+  return <MuiLink ref={ref} classes={classes} {...rest} />;
+};
+export default React.forwardRef(Link);
