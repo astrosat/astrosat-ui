@@ -4,15 +4,16 @@ import { action } from '@storybook/addon-actions';
 
 import { FormGroup } from '@material-ui/core';
 
+import { default as FormLabel } from '../FormControlLabel/form-control-label.component';
+
 import { default as Checkbox } from './checkbox.component';
 
 export default { title: 'Checkbox' };
 
 export const Default = () => (
-  <Checkbox
-    name="Test Name"
+  <FormLabel
     label="Checkbox Label"
-    onChange={action('Checked')}
+    control={<Checkbox name="Test Name" onChange={action('Checked')} />}
   />
 );
 
@@ -21,41 +22,62 @@ export const NoLabel = () => (
 );
 
 export const Disabled = () => (
-  <Checkbox
-    name="Test Name"
+  <FormLabel
     label="Checkbox Label"
-    onChange={action('Checked')}
-    disabled
+    control={
+      <Checkbox name="Test Name" onChange={action('Checked')} disabled />
+    }
   />
 );
 
 export const CheckedAndDisabled = () => (
-  <Checkbox
-    name="Test Name"
+  <FormLabel
     label="Checkbox Label"
-    onChange={action('Checked')}
-    checked
-    disabled
+    control={
+      <Checkbox
+        name="Test Name"
+        onChange={action('Checked')}
+        checked
+        disabled
+      />
+    }
   />
 );
 
 export const CheckboxGroup = () => {
   return (
     <FormGroup>
-      <Checkbox
-        name="Test Name"
-        label="Checkbox 1"
-        onChange={action('Checked')}
+      <FormLabel
+        label="Checkbox Label"
+        control={
+          <Checkbox
+            name="Test Name"
+            label="Checkbox 1"
+            onChange={action('Checked')}
+          />
+        }
       />
-      <Checkbox
-        name="Test Name"
-        label="Checkbox 2"
-        onChange={action('Checked')}
+
+      <FormLabel
+        label="Checkbox Label"
+        control={
+          <Checkbox
+            name="Test Name"
+            label="Checkbox 2"
+            onChange={action('Checked')}
+          />
+        }
       />
-      <Checkbox
-        name="Test Name"
-        label="Checkbox 3"
-        onChange={action('Checked')}
+
+      <FormLabel
+        label="Checkbox Label"
+        control={
+          <Checkbox
+            name="Test Name"
+            label="Checkbox 3"
+            onChange={action('Checked')}
+          />
+        }
       />
     </FormGroup>
   );
