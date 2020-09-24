@@ -10,7 +10,9 @@ const labelStyles = makeStyles(theme => ({
     color: theme.palette.secondary.main,
     '& .Mui-disabled': {
       color: theme.palette.secondary.main,
-      opacity: 0.4,
+      opacity: 0.4
+    },
+    '&$disabled': {
       cursor: 'not-allowed'
     },
     margin: 0,
@@ -31,6 +33,9 @@ const checkboxStyles = makeStyles(theme => ({
     border: `1px solid ${theme.palette.secondary.main}`,
     'input:hover ~ &': {
       border: `1px solid ${theme.palette.primary.main}`
+    },
+    'input:disabled ~ &': {
+      border: `1px solid ${theme.palette.secondary.main}`
     }
   },
   checkedIcon: {
