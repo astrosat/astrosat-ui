@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { Checkbox as MuiCheckbox, CheckboxProps } from '@material-ui/core';
+import { Checkbox as MuiCheckbox } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -26,25 +26,27 @@ const checkboxStyles = makeStyles(theme => ({
     width: '1rem',
     height: '1rem',
     borderRadius: '3px',
-    border: `1px solid ${theme.palette.secondary.main}`
+    border: `1px solid ${theme.palette.secondary.main}`,
+    'input:hover ~ &': {
+      border: `1px solid ${theme.palette.primary.main}`
+    }
   },
   checkedIcon: {
     width: '1rem',
     height: '1rem',
     borderRadius: '3px',
     border: `1px solid ${theme.palette.primary.main}`,
-    '&::after': {
+    '&:after': {
       display: 'block',
       position: 'absolute',
-      left: '0.125rem',
-      bordeRadius: '0.1875rem',
+      top: '0.6875rem',
+      left: '0.6875rem',
+      backgroundColor: theme.palette.primary.main,
+      borderRadius: '0.1875rem',
       content: '""',
       width: '0.75rem',
       height: '0.75rem',
       transition: 'background-color 250ms ease, opacity 250ms ease'
-    },
-    '&$checked::after': {
-      backgroundColor: 'red'
     }
   },
   checked: {},
@@ -54,7 +56,6 @@ const checkboxStyles = makeStyles(theme => ({
 const Checkbox = ({ label = '', disabled = false, ...rest }, ref) => {
   const checkboxClasses = checkboxStyles({});
   const labelClasses = labelStyles({});
-  console.log('CheckboxClasses: ', checkboxClasses);
   return (
     <FormControlLabel
       classes={labelClasses}
