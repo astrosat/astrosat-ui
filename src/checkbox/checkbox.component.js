@@ -12,20 +12,22 @@ const labelStyles = makeStyles(theme => ({
       color: theme.palette.secondary.main,
       opacity: 0.4,
       cursor: 'not-allowed'
-    }
-  },
-  label: {
-    fontSize: '1rem'
+    },
+    margin: 0,
+    minHeight: '1.4375rem'
   },
   disabled: {}
 }));
 
 const checkboxStyles = makeStyles(theme => ({
-  root: {},
+  root: {
+    padding: 0,
+    marginRight: '0.25rem'
+  },
   icon: {
     width: '1rem',
     height: '1rem',
-    borderRadius: '3px',
+    borderRadius: '0.1875rem',
     border: `1px solid ${theme.palette.secondary.main}`,
     'input:hover ~ &': {
       border: `1px solid ${theme.palette.primary.main}`
@@ -39,14 +41,13 @@ const checkboxStyles = makeStyles(theme => ({
     '&:after': {
       display: 'block',
       position: 'absolute',
-      top: '0.6875rem',
-      left: '0.6875rem',
+      top: '0.15rem',
+      left: '0.15rem',
       backgroundColor: theme.palette.primary.main,
       borderRadius: '0.1875rem',
       content: '""',
       width: '0.75rem',
-      height: '0.75rem',
-      transition: 'background-color 250ms ease, opacity 250ms ease'
+      height: '0.75rem'
     }
   },
   checked: {},
@@ -67,6 +68,8 @@ const Checkbox = ({ label = '', disabled = false, ...rest }, ref) => {
           disabled={disabled}
           inputRef={ref}
           inputProps={{ 'aria-label': `${label} checkbox` }}
+          disableRipple={true}
+          style={{ backgroundColor: 'transparent' }}
           {...rest}
         />
       }
