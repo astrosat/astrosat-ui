@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core';
 
 export default { title: 'Link' };
 
-export const Text = () => {
+export const ActualLink = () => {
   const preventDefault = event => event.preventDefault();
   return (
     <>
@@ -35,7 +35,7 @@ export const ClassNameTest = () => {
   return (
     <>
       <Link className={madeStyles.root}>Test </Link>
-      <link className={styles.linkTest}>Test</link>
+      {/* <link className={styles.linkTest}>Test</link> */}
     </>
   );
 };
