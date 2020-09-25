@@ -2,7 +2,7 @@ import React from 'react';
 
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
-import { default as FormControlLabel } from '../FormControlLabel/form-control-label.component';
+import { default as FormControlLabel } from '../form-control-label/form-control-label.component';
 
 import Checkbox from './checkbox.component';
 

@@ -20,15 +20,9 @@ const labelStyles = makeStyles(theme => ({
   disabled: {}
 }));
 
-const FormControlLabel = ({ label = '', control = {} }) => {
+const FormControlLabel = props => {
   const labelClasses = labelStyles({});
-  return (
-    <MuiFormControlLabel
-      classes={labelClasses}
-      control={control}
-      label={label}
-    />
-  );
+  return <MuiFormControlLabel classes={labelClasses} {...props} />;
 };
 
 export default FormControlLabel;

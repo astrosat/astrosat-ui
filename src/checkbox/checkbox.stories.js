@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 
 import { FormGroup } from '@material-ui/core';
 
-import { default as FormControlLabel } from '../FormControlLabel/form-control-label.component';
+import { default as FormControlLabel } from '../form-control-label/form-control-label.component';
 
 import { default as Checkbox } from './checkbox.component';
 

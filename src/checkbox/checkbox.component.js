@@ -8,16 +8,25 @@ const checkboxStyles = makeStyles(theme => ({
   root: {
     padding: 0,
     marginRight: '0.25rem',
-    minHeight: '1.4375rem'
+    minHeight: '1.4375rem',
+    '&:hover': {
+      backgroundColor: 'transparent'
+    },
+    '&$checked:hover': {
+      backgroundColor: 'transparent'
+    }
   },
   icon: {
     width: '1rem',
     height: '1rem',
     borderRadius: '0.1875rem',
     border: `1px solid ${theme.palette.secondary.main}`,
+    transition: theme.transitions.create(['border'], {
+      easing: theme.transitions.easing.easeInOut,
+      duration: theme.transitions.duration.short
+    }),
     'input:hover ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`,
-      transition: 'border-color 250ms ease'
+      border: `1px solid ${theme.palette.primary.main}`
     },
     'input:disabled ~ &': {
       border: `1px solid ${theme.palette.secondary.main}`
@@ -31,6 +40,10 @@ const checkboxStyles = makeStyles(theme => ({
     height: '1rem',
     borderRadius: '3px',
     border: `1px solid ${theme.palette.secondary.main}`,
+    transition: theme.transitions.create(['border'], {
+      easing: theme.transitions.easing.easeInOut,
+      duration: theme.transitions.duration.short
+    }),
     '&::after': {
       display: 'block',
       position: 'absolute',
@@ -43,8 +56,10 @@ const checkboxStyles = makeStyles(theme => ({
       height: '0.75rem'
     },
     'input:hover ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`,
-      transition: 'border-color 250ms ease'
+      border: `1px solid ${theme.palette.primary.main}`
+    },
+    'input:disabled ~ &': {
+      border: `1px solid ${theme.palette.secondary.main}`
     },
     'input:focus ~ &': {
       border: `1px solid ${theme.palette.primary.main}`
@@ -64,7 +79,6 @@ const Checkbox = ({ disabled = false, ...rest }, ref) => {
       inputRef={ref}
       disableRipple={true}
       disabled={disabled}
-      style={{ backgroundColor: 'transparent' }}
       {...rest}
     />
   );
