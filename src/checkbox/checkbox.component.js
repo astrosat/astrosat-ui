@@ -69,7 +69,7 @@ const checkboxStyles = makeStyles(theme => ({
   disabled: {}
 }));
 
-const Checkbox = ({ disabled = false, ...rest }, ref) => {
+const Checkbox = ({ ...props }, ref) => {
   const checkboxClasses = checkboxStyles({});
   return (
     <MuiCheckbox
@@ -77,9 +77,7 @@ const Checkbox = ({ disabled = false, ...rest }, ref) => {
       checkedIcon={<span className={checkboxClasses.checkedIcon} />}
       icon={<span className={checkboxClasses.icon} />}
       inputRef={ref}
-      disableRipple={true}
-      disabled={disabled}
-      {...rest}
+      {...props}
     />
   );
 };

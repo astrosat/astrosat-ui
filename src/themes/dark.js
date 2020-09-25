@@ -17,6 +17,11 @@ export const dark = createMuiTheme({
   shape: {
     borderRadius: 5
   },
+  props: {
+    MuiCheckbox: {
+      disableRipple: true
+    }
+  },
   typography: {
     fontFamily: '"Open Sans", sans-serif',
     button: {
