@@ -20,7 +20,7 @@ const checkboxStyles = makeStyles(theme => ({
     width: '1rem',
     height: '1rem',
     borderRadius: '0.1875rem',
-    border: `1px solid ${theme.palette.secondary.main}`,
+    border: `1px solid ${theme.palette.text.primary}`,
     transition: theme.transitions.create(['border'], {
       easing: theme.transitions.easing.easeInOut,
       duration: theme.transitions.duration.short
@@ -29,7 +29,7 @@ const checkboxStyles = makeStyles(theme => ({
       border: `1px solid ${theme.palette.primary.main}`
     },
     'input:disabled ~ &': {
-      border: `1px solid ${theme.palette.secondary.main}`
+      border: `1px solid ${theme.palette.text.primary}`
     },
     'input:focus ~ &': {
       border: `1px solid ${theme.palette.primary.main}`
@@ -39,7 +39,7 @@ const checkboxStyles = makeStyles(theme => ({
     width: '1rem',
     height: '1rem',
     borderRadius: '3px',
-    border: `1px solid ${theme.palette.secondary.main}`,
+    border: `1px solid ${theme.palette.text.primary}`,
     transition: theme.transitions.create(['border'], {
       easing: theme.transitions.easing.easeInOut,
       duration: theme.transitions.duration.short
@@ -59,7 +59,7 @@ const checkboxStyles = makeStyles(theme => ({
       border: `1px solid ${theme.palette.primary.main}`
     },
     'input:disabled ~ &': {
-      border: `1px solid ${theme.palette.secondary.main}`
+      border: `1px solid ${theme.palette.text.primary}`
     },
     'input:focus ~ &': {
       border: `1px solid ${theme.palette.primary.main}`
