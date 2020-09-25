@@ -69,7 +69,7 @@ const checkboxStyles = makeStyles(theme => ({
   disabled: {}
 }));
 
-const Checkbox = ({ ...props }, ref) => {
+const Checkbox = (props, ref) => {
   const checkboxClasses = checkboxStyles({});
   return (
     <MuiCheckbox
