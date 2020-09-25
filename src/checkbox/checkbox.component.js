@@ -41,6 +41,9 @@ const checkboxStyles = makeStyles(theme => ({
       width: '0.75rem',
       height: '0.75rem'
     },
+    'input:hover ~ &': {
+      border: `1px solid ${theme.palette.primary.main}`
+    },
     'input:focus ~ &': {
       border: `1px solid ${theme.palette.primary.main}`
     }

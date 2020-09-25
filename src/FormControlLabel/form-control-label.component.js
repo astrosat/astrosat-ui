@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { FormControlLabel as MuiFormControlLabel } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -20,11 +20,15 @@ const labelStyles = makeStyles(theme => ({
   disabled: {}
 }));
 
-const FormLabel = ({ label, control }) => {
+const FormControlLabel = ({ label = '', control = {} }) => {
   const labelClasses = labelStyles({});
   return (
-    <FormControlLabel classes={labelClasses} control={control} label={label} />
+    <MuiFormControlLabel
+      classes={labelClasses}
+      control={control}
+      label={label}
+    />
   );
 };
 
-export default FormLabel;
+export default FormControlLabel;

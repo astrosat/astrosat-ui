@@ -4,15 +4,15 @@ import { action } from '@storybook/addon-actions';
 
 import { FormGroup } from '@material-ui/core';
 
-import { default as FormLabel } from '../FormControlLabel/form-control-label.component';
+import { default as FormControlLabel } from '../FormControlLabel/form-control-label.component';
 
 import { default as Checkbox } from './checkbox.component';
 
 export default { title: 'Checkbox' };
 
 export const Default = () => (
-  <FormLabel
-    label="Checkbox Label"
+  <FormControlLabel
+    label="Checkbox"
     control={<Checkbox name="Test Name" onChange={action('Checked')} />}
   />
 );
@@ -22,8 +22,8 @@ export const NoLabel = () => (
 );
 
 export const Disabled = () => (
-  <FormLabel
-    label="Checkbox Label"
+  <FormControlLabel
+    label="Checkbox"
     control={
       <Checkbox name="Test Name" onChange={action('Checked')} disabled />
     }
@@ -31,8 +31,8 @@ export const Disabled = () => (
 );
 
 export const CheckedAndDisabled = () => (
-  <FormLabel
-    label="Checkbox Label"
+  <FormControlLabel
+    label="Checkbox"
     control={
       <Checkbox
         name="Test Name"
@@ -47,7 +47,7 @@ export const CheckedAndDisabled = () => (
 export const CheckboxGroup = () => {
   return (
     <FormGroup>
-      <FormLabel
+      <FormControlLabel
         label="Checkbox Label"
         control={
           <Checkbox
@@ -58,7 +58,7 @@ export const CheckboxGroup = () => {
         }
       />
 
-      <FormLabel
+      <FormControlLabel
         label="Checkbox Label"
         control={
           <Checkbox
@@ -69,7 +69,7 @@ export const CheckboxGroup = () => {
         }
       />
 
-      <FormLabel
+      <FormControlLabel
         label="Checkbox Label"
         control={
           <Checkbox

@@ -2,6 +2,8 @@ import React from 'react';
 
 import { cleanup, render, fireEvent } from '@testing-library/react';
 
+import { default as FormControlLabel } from '../FormControlLabel/form-control-label.component';
+
 import Checkbox from './checkbox.component';
 
 describe('Checkbox Component', () => {
@@ -9,9 +11,20 @@ describe('Checkbox Component', () => {
 
   afterEach(cleanup);
 
-  it('should render a checkbox tag with label text', () => {
+  it('should render checkbox', () => {
+    const { container } = render(
+      <Checkbox name="Test Name" onChange={onChange} />
+    );
+
+    expect(container.querySelector('input')).toBeInTheDocument();
+  });
+
+  it('should render a checkbox with label text if passed to `FormControlLabel`', () => {
     const { container, getByText } = render(
-      <Checkbox name="Test Name" label="Test Label" onChange={onChange} />
+      <FormControlLabel
+        label="Test Label"
+        control={<Checkbox name="Test Name" onChange={onChange} />}
+      />
     );
 
     expect(container.querySelector('input')).toBeInTheDocument();
@@ -20,12 +33,7 @@ describe('Checkbox Component', () => {
 
   it('should render a checked checkbox if `checked` prop is present', () => {
     const { container } = render(
-      <Checkbox
-        name="Test Name"
-        label="Test Label"
-        onChange={onChange}
-        checked
-      />
+      <Checkbox name="Test Name" onChange={onChange} checked />
     );
 
     expect(container.querySelector('input')).toHaveAttribute('checked');
@@ -33,7 +41,7 @@ describe('Checkbox Component', () => {
 
   it('should call `onChange` function when checked/unchecked', () => {
     const { container } = render(
-      <Checkbox name="Test Name" label="Test Label" onChange={onChange} />
+      <Checkbox name="Test Name" onChange={onChange} />
     );
 
     fireEvent.click(container.querySelector('input'));
@@ -43,7 +51,10 @@ describe('Checkbox Component', () => {
 
   it('should also call `onChange` function when label is clicked', () => {
     const { getByText } = render(
-      <Checkbox name="Test Name" label="Test Label" onChange={onChange} />
+      <FormControlLabel
+        label="Test Label"
+        control={<Checkbox name="Test Name" onChange={onChange} />}
+      />
     );
 
     fireEvent.click(getByText('Test Label'));
@@ -53,12 +64,7 @@ describe('Checkbox Component', () => {
 
   it('should disable checkbox when `disabled` prop is present', () => {
     const { container } = render(
-      <Checkbox
-        name="Test Name"
-        label="Test Label"
-        onChange={onChange}
-        disabled
-      />
+      <Checkbox name="Test Name" onChange={onChange} disabled />
     );
 
     expect(container.querySelector('input')).toHaveAttribute('disabled');
