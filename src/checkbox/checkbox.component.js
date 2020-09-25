@@ -16,7 +16,8 @@ const checkboxStyles = makeStyles(theme => ({
     borderRadius: '0.1875rem',
     border: `1px solid ${theme.palette.secondary.main}`,
     'input:hover ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`
+      border: `1px solid ${theme.palette.primary.main}`,
+      transition: 'border-color 250ms ease'
     },
     'input:disabled ~ &': {
       border: `1px solid ${theme.palette.secondary.main}`
@@ -30,7 +31,7 @@ const checkboxStyles = makeStyles(theme => ({
     height: '1rem',
     borderRadius: '3px',
     border: `1px solid ${theme.palette.secondary.main}`,
-    '&:after': {
+    '&::after': {
       display: 'block',
       position: 'absolute',
       top: '0.35rem',
@@ -42,7 +43,8 @@ const checkboxStyles = makeStyles(theme => ({
       height: '0.75rem'
     },
     'input:hover ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`
+      border: `1px solid ${theme.palette.primary.main}`,
+      transition: 'border-color 250ms ease'
     },
     'input:focus ~ &': {
       border: `1px solid ${theme.palette.primary.main}`
@@ -59,10 +61,9 @@ const Checkbox = ({ disabled = false, ...rest }, ref) => {
       classes={checkboxClasses}
       checkedIcon={<span className={checkboxClasses.checkedIcon} />}
       icon={<span className={checkboxClasses.icon} />}
-      disabled={disabled}
       inputRef={ref}
-      inputProps={{ 'aria-label': `${rest.name} checkbox` }}
       disableRipple={true}
+      disabled={disabled}
       style={{ backgroundColor: 'transparent' }}
       {...rest}
     />
