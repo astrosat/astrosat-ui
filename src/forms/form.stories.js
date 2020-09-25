@@ -3,10 +3,12 @@ import React, { Suspense } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
+import RadioGroup from '../radio-group/radio-group.component';
+
 import Textfield from './text-field.component';
 import PasswordField from './password-field.component';
 import TextArea from './text-area.component';
-import Radio from './radio.component';
+import Radio from '../radio/radio.component';
 import Slider from './slider.component';
 import Select from './select.component';
 import useForm from './use-form.hook';
@@ -67,28 +69,29 @@ const Form = () => {
         </div>
 
         <div className={styles.btnGroup}>
-          <Radio
-            id="option1"
-            name="option"
-            value="option1"
-            label="Radio One"
-            onChange={handleChange}
-          />
-          <Radio
-            id="option2"
-            name="option"
-            value="option2"
-            label="Radio Two"
-            onChange={handleChange}
-          />
-          <Radio
-            id="option3"
-            name="option"
-            value="option3"
-            label="Radio Three"
-            onChange={handleChange}
-            disabled={true}
-          />
+          <RadioGroup>
+            <Radio
+              id="Radio 1"
+              name="Radio 1"
+              label="Radio 1"
+              value="Option 1"
+              onChange={handleChange}
+            />
+            <Radio
+              id="Radio 2"
+              name="Radio 2"
+              label="Radio 2"
+              value="Option 2"
+              onChange={handleChange}
+            />
+            <Radio
+              id="Radio 3"
+              name="Radio 3"
+              label="Radio 3"
+              value="Option 3"
+              onChange={handleChange}
+            />
+          </RadioGroup>
         </div>
 
         <div className={styles.btnGroup}>
@@ -165,25 +168,29 @@ storiesOf('Form', module)
       </Suspense>
 
       <div className={styles.btnGroup}>
-        <Radio
-          name="test"
-          value="option1"
-          label="Radio One"
-          onChange={action('Radio selected')}
-        />
-        <Radio
-          name="test"
-          value="option2"
-          label="Radio Two"
-          onChange={action('Radio selected')}
-        />
-        <Radio
-          name="test"
-          value="option3"
-          label="Radio Three"
-          onChange={action('Radio selected')}
-          disabled={true}
-        />
+        <RadioGroup>
+          <Radio
+            id="Radio 1"
+            name="Radio 1"
+            label="Radio 1"
+            value="Option 1"
+            onChange={handleChange}
+          />
+          <Radio
+            id="Radio 2"
+            name="Radio 2"
+            label="Radio 2"
+            value="Option 2"
+            onChange={handleChange}
+          />
+          <Radio
+            id="Radio 3"
+            name="Radio 3"
+            label="Radio 3"
+            value="Option 3"
+            onChange={handleChange}
+          />
+        </RadioGroup>
       </div>
     </>
   ))

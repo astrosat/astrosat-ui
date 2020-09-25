@@ -4,23 +4,32 @@ import { Radio as MuiRadio } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-const radioStyles = makeStyles(theme => ({
+const RadioStyles = makeStyles(theme => ({
   root: {
     padding: 0,
     marginRight: '0.25rem',
-    minHeight: '1.4375rem'
+    minHeight: '1.4375rem',
+    '&:hover': {
+      backgroundColor: 'transparent'
+    },
+    '&$checked:hover': {
+      backgroundColor: 'transparent'
+    }
   },
   icon: {
     width: '1rem',
     height: '1rem',
-    borderRadius: '0.1875rem',
-    border: `1px solid ${theme.palette.secondary.main}`,
+    borderRadius: '50%',
+    border: `1px solid ${theme.palette.text.primary}`,
+    transition: theme.transitions.create(['border'], {
+      easing: theme.transitions.easing.easeInOut,
+      duration: theme.transitions.duration.short
+    }),
     'input:hover ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`,
-      transition: 'border-color 250ms ease'
+      border: `1px solid ${theme.palette.primary.main}`
     },
     'input:disabled ~ &': {
-      border: `1px solid ${theme.palette.secondary.main}`
+      border: `1px solid ${theme.palette.text.primary}`
     },
     'input:focus ~ &': {
       border: `1px solid ${theme.palette.primary.main}`
@@ -29,22 +38,28 @@ const radioStyles = makeStyles(theme => ({
   checkedIcon: {
     width: '1rem',
     height: '1rem',
-    borderRadius: '3px',
-    border: `1px solid ${theme.palette.secondary.main}`,
+    borderRadius: '50%',
+    border: `1px solid ${theme.palette.text.primary}`,
+    transition: theme.transitions.create(['border'], {
+      easing: theme.transitions.easing.easeInOut,
+      duration: theme.transitions.duration.short
+    }),
     '&::after': {
       display: 'block',
       position: 'absolute',
       top: '0.35rem',
       left: '0.15rem',
       backgroundColor: theme.palette.primary.main,
-      borderRadius: '0.1875rem',
+      borderRadius: '50%',
       content: '""',
       width: '0.75rem',
       height: '0.75rem'
     },
     'input:hover ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`,
-      transition: 'border-color 250ms ease'
+      border: `1px solid ${theme.palette.primary.main}`
+    },
+    'input:disabled ~ &': {
+      border: `1px solid ${theme.palette.text.primary}`
     },
     'input:focus ~ &': {
       border: `1px solid ${theme.palette.primary.main}`
@@ -54,18 +69,15 @@ const radioStyles = makeStyles(theme => ({
   disabled: {}
 }));
 
-const Radio = ({ disabled = false, ...rest }, ref) => {
-  const radioClasses = radioStyles({});
+const Radio = (props, ref) => {
+  const RadioClasses = RadioStyles({});
   return (
     <MuiRadio
-      classes={radioClasses}
-      checkedIcon={<span className={radioClasses.checkedIcon} />}
-      icon={<span className={radioClasses.icon} />}
+      classes={RadioClasses}
+      checkedIcon={<span className={RadioClasses.checkedIcon} />}
+      icon={<span className={RadioClasses.icon} />}
       inputRef={ref}
-      disableRipple={true}
-      disabled={disabled}
-      style={{ backgroundColor: 'transparent' }}
-      {...rest}
+      {...props}
     />
   );
 };
