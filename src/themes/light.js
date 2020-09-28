@@ -4,12 +4,12 @@ import { core } from './core';
 import { palette } from './palette';
 
 /** @type {import('@material-ui/core').ThemeOptions} */
-const dark = {
+const light = {
   palette: {
-    type: 'dark',
-    text: { primary: palette.grey[100] },
-    background: { default: palette.secondary.main }
+    type: 'light',
+    text: { primary: palette.secondary.main },
+    background: { default: palette.grey[100] }
   }
 };
 
-export default createMuiTheme(merge(core, dark));
+export default createMuiTheme(merge(core, light));

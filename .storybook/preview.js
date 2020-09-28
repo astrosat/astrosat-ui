@@ -1,27 +1,33 @@
 import React from 'react';
-import { dark } from '../src/themes';
 import { ThemeProvider } from '../src/containers/theme-provider.component';
+import { CssBaseline } from '@material-ui/core';
 
 export const decorators = [
-  Story => (
-    <ThemeProvider>
-      <Story />
+  (Story, context) => (
+    <ThemeProvider defaultTheme={context.globals.theme}>
+      <CssBaseline />
+      <Story {...context} />
     </ThemeProvider>
   )
 ];
 
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Global theme for components',
+    defaultValue: 'dark',
+    toolbar: {
+      icon: 'paintbrush',
+      items: [
+        { value: 'light', title: 'Light', left: '☀️' },
+        { value: 'dark', title: 'Dark', left: '🌒' }
+      ]
+    }
+  }
+};
+
 export const parameters = {
   backgrounds: {
-    default: 'dark',
-    values: [
-      {
-        name: 'dark',
-        value: dark.palette.background.default
-      },
-      {
-        name: 'light',
-        value: dark.palette.grey[200]
-      }
-    ]
+    disable: true
   }
 };
