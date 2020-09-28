@@ -3,6 +3,7 @@ export { default as LoadMask } from './load-mask/load-mask.component';
 export { default as Button } from './button/button.component';
 export { default as Checkbox } from './checkbox/checkbox.component';
 export { default as Radio } from './radio/radio.component';
+export { RadioGroup } from '@material-ui/core';
 export { default as FormControlLabel } from './form-control-label/form-control-label.component';
 
 export { default as ButtonGroup } from './buttons/button-group.component';
