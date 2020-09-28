@@ -1,21 +1,14 @@
-import React, { useEffect } from 'react';
-import themes from '../src/themes';
+import React from 'react';
 import { ThemeProvider } from '../src/containers/theme-provider.component';
 import { CssBaseline } from '@material-ui/core';
 
 export const decorators = [
-  (Story, context) => {
-    useEffect(() => {
-      console.log(context.globals.theme);
-    }, [context.globals.theme]);
-
-    return (
-      <ThemeProvider defaultTheme={context.globals.theme}>
-        <CssBaseline />
-        <Story {...context} />
-      </ThemeProvider>
-    );
-  }
+  (Story, context) => (
+    <ThemeProvider defaultTheme={context.globals.theme}>
+      <CssBaseline />
+      <Story {...context} />
+    </ThemeProvider>
+  )
 ];
 
 export const globalTypes = {
