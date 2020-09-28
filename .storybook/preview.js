@@ -1,27 +1,37 @@
-import React from 'react';
-import { dark } from '../src/themes';
+import React, { useEffect } from 'react';
+import themes from '../src/themes';
 import { ThemeProvider } from '../src/containers/theme-provider.component';
+import { CssBaseline } from '@material-ui/core';
 
 export const decorators = [
-  Story => (
-    <ThemeProvider>
-      <Story />
-    </ThemeProvider>
-  )
+  (Story, context) => {
+    useEffect(() => {
+      console.log(context.globals.theme);
+    }, [context.globals.theme]);
+
+    return (
+      <ThemeProvider defaultTheme={context.globals.theme}>
+        <CssBaseline />
+        <Story {...context} />
+      </ThemeProvider>
+    );
+  }
 ];
+
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Global theme for components',
+    defaultValue: 'dark',
+    toolbar: {
+      icon: 'paintbrush',
+      items: ['light', 'dark']
+    }
+  }
+};
 
 export const parameters = {
   backgrounds: {
-    default: 'dark',
-    values: [
-      {
-        name: 'dark',
-        value: dark.palette.background.default
-      },
-      {
-        name: 'light',
-        value: dark.palette.grey[200]
-      }
-    ]
+    disable: true
   }
 };
