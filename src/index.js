@@ -1,12 +1,14 @@
 export { default as LoadMask } from './load-mask/load-mask.component';
 
 export { default as Button } from './button/button.component';
+export { default as Checkbox } from './checkbox/checkbox.component';
+export { default as FormControlLabel } from './form-control-label/form-control-label.component';
+
 export { default as ButtonGroup } from './buttons/button-group.component';
 export { default as CloseButton } from './buttons/close-button.component';
 export { default as InfoButton } from './buttons/info-button.component';
 export { default as Switch } from './buttons/switch.component';
 
-export { default as Checkbox } from './forms/checkbox.component';
 export { default as PasswordField } from './forms/password-field.component';
 export { default as PasswordStrengthMeter } from './forms/password-strength-meter.component';
 export { default as Radio } from './forms/radio.component';

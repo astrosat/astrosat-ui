@@ -6,9 +6,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const labelStyles = makeStyles(theme => ({
   root: {
-    color: theme.palette.secondary.main,
+    color: theme.palette.text.primary,
     '& .Mui-disabled': {
-      color: theme.palette.secondary.main,
+      color: theme.palette.text.primary,
       opacity: 0.4
     },
     '&$disabled': {
