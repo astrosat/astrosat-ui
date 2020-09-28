@@ -25,7 +25,10 @@ export const globalTypes = {
     defaultValue: 'dark',
     toolbar: {
       icon: 'paintbrush',
-      items: ['light', 'dark']
+      items: [
+        { value: 'light', title: 'Light', left: '☀️' },
+        { value: 'dark', title: 'Dark', left: '🌒' }
+      ]
     }
   }
 };
