@@ -1,77 +1,15 @@
-import { createMuiTheme, fade } from '@material-ui/core';
-import createPalette from '@material-ui/core/styles/createPalette';
+import { createMuiTheme } from '@material-ui/core';
+import { merge } from 'lodash';
+import { core } from './core';
+import { palette } from './palette';
 
-const palette = createPalette({
-  type: 'dark',
-  primary: { main: '#f6be00' },
-  secondary: { main: '#333f48' },
-  success: { main: '#6cc24a' },
-  error: { main: '#cf6679' },
-  info: { main: '#48a9c5' },
-  text: { primary: '#333f48', secondary: '#333f48' },
-  background: { default: '#f8f8f8' }
-});
-
-export const light = createMuiTheme({
-  overrides: {
-    MuiButton: {
-      textSecondary: {
-        color: palette.info.main,
-        '&:hover': {
-          backgroundColor: fade(palette.info.main, palette.action.hoverOpacity),
-          // Reset on touch devices, it doesn't add specificity
-          '@media (hover: none)': {
-            backgroundColor: 'transparent'
-          }
-        }
-      },
-      containedSecondary: {
-        backgroundColor: palette.info.main,
-        '&:hover': {
-          backgroundColor: palette.info.main,
-          // Reset on touch devices, it doesn't add specificity
-          '@media (hover: none)': {
-            backgroundColor: palette.info.main
-          }
-        }
-      },
-      outlinedSecondary: {
-        color: palette.info.main,
-        borderColor: fade(palette.info.main, 0.5),
-        '&:hover': {
-          borderColor: palette.info.main,
-          backgroundColor: fade(palette.info.main, palette.action.hoverOpacity),
-          '@media (hover: none)': {
-            backgroundColor: 'transparent'
-          }
-        },
-        '&$disabled': {
-          borderColor: palette.action.disabled
-        }
-      }
-    }
-  },
-  props: {
-    MuiButton: {
-      disableRipple: true
-    }
-  },
-  palette,
-  shape: {
-    borderRadius: 5
-  },
-  props: {
-    MuiCheckbox: {
-      disableRipple: true
-    }
-  },
-  typography: {
-    fontFamily: '"Open Sans", sans-serif',
-    button: {
-      fontSize: '18px',
-      fontWeight: 600,
-      lineHeight: 'normal',
-      textTransform: 'none'
-    }
+/** @type {import('@material-ui/core').ThemeOptions} */
+const light = {
+  palette: {
+    type: 'light',
+    text: { primary: palette.secondary.main },
+    background: { default: palette.grey[100] }
   }
-});
+};
+
+export default createMuiTheme(merge(core, light));
