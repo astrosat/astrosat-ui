@@ -3,11 +3,11 @@ import React, { Suspense } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import RadioGroup from '../radio-group/radio-group.component';
-
 import Textfield from './text-field.component';
 import PasswordField from './password-field.component';
 import TextArea from './text-area.component';
+import FormControlLabel from '../form-control-label/form-control-label.component';
+import RadioGroup from '../radio-group/radio-group.component';
 import Radio from '../radio/radio.component';
 import Slider from './slider.component';
 import Select from './select.component';
@@ -69,27 +69,18 @@ const Form = () => {
         </div>
 
         <div className={styles.btnGroup}>
-          <RadioGroup>
-            <Radio
-              id="Radio 1"
-              name="Radio 1"
+          <RadioGroup onChange={handleChange}>
+            <FormControlLabel
               label="Radio 1"
-              value="Option 1"
-              onChange={handleChange}
+              control={<Radio name="Radio 1" value="Radio 1" />}
             />
-            <Radio
-              id="Radio 2"
-              name="Radio 2"
+            <FormControlLabel
               label="Radio 2"
-              value="Option 2"
-              onChange={handleChange}
+              control={<Radio name="Radio 2" value="Radio 2" />}
             />
-            <Radio
-              id="Radio 3"
-              name="Radio 3"
+            <FormControlLabel
               label="Radio 3"
-              value="Option 3"
-              onChange={handleChange}
+              control={<Radio name="Radio 3" value="Radio 3" />}
             />
           </RadioGroup>
         </div>
@@ -168,27 +159,18 @@ storiesOf('Form', module)
       </Suspense>
 
       <div className={styles.btnGroup}>
-        <RadioGroup>
-          <Radio
-            id="Radio 1"
-            name="Radio 1"
+        <RadioGroup onChange={action('Radio Selected')}>
+          <FormControlLabel
             label="Radio 1"
-            value="Option 1"
-            onChange={handleChange}
+            control={<Radio name="Radio 1" value="Radio 1" />}
           />
-          <Radio
-            id="Radio 2"
-            name="Radio 2"
+          <FormControlLabel
             label="Radio 2"
-            value="Option 2"
-            onChange={handleChange}
+            control={<Radio name="Radio 2" value="Radio 2" />}
           />
-          <Radio
-            id="Radio 3"
-            name="Radio 3"
+          <FormControlLabel
             label="Radio 3"
-            value="Option 3"
-            onChange={handleChange}
+            control={<Radio name="Radio 3" value="Radio 3" />}
           />
         </RadioGroup>
       </div>

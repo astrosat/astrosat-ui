@@ -1,8 +1,6 @@
 import { fade } from '@material-ui/core';
 import { palette } from './palette';
 
-console.log(palette.grey);
-
 /** @type {import('@material-ui/core').ThemeOptions} */
 export const core = {
   overrides: {
@@ -49,6 +47,9 @@ export const core = {
       disableRipple: true
     },
     MuiCheckbox: {
+      disableRipple: true
+    },
+    MuiRadio: {
       disableRipple: true
     }
   },

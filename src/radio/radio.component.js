@@ -4,7 +4,7 @@ import { Radio as MuiRadio } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-const RadioStyles = makeStyles(theme => ({
+const radioStyles = makeStyles(theme => ({
   root: {
     padding: 0,
     marginRight: '0.25rem',
@@ -70,12 +70,12 @@ const RadioStyles = makeStyles(theme => ({
 }));
 
 const Radio = (props, ref) => {
-  const RadioClasses = RadioStyles({});
+  const radioClasses = radioStyles({});
   return (
     <MuiRadio
-      classes={RadioClasses}
-      checkedIcon={<span className={RadioClasses.checkedIcon} />}
-      icon={<span className={RadioClasses.icon} />}
+      classes={radioClasses}
+      checkedIcon={<span className={radioClasses.checkedIcon} />}
+      icon={<span className={radioClasses.icon} />}
       inputRef={ref}
       {...props}
     />
