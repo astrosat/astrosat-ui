@@ -63,5 +63,12 @@ export const core = {
       lineHeight: 'normal',
       textTransform: 'none'
     }
+  },
+  overrides: {
+    MuiLink: {
+      root: {
+        fontWeight: 600
+      }
+    }
   }
 };

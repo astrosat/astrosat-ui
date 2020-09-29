@@ -13,13 +13,12 @@ export const ActualLink = () => {
       <Link href="#" onClick={preventDefault} color="inherit">
         Actual Link
       </Link>
-      <Link href="#" onClick={preventDefault} color="inherit">
+      <Link href="#" onClick={preventDefault} color="error">
         {'color="inherit"'}
       </Link>
-      <Link href="#" onClick={preventDefault} variant="body2">
+      <Link href="#" onClick={preventDefault} variant="body1">
         {'variant="body2"'}
       </Link>
     </Typography>
   );
 };
-console.log(Typography);

@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    borderBottom: `1px solid ${theme.palette.primary.main}`,
+    borderBottom: `0.0625em solid ${theme.palette.primary.main}`,
     textDecoration: 'none',
     '&:hover': {
       textDecoration: 'none',
@@ -21,14 +21,6 @@ const useStyles = makeStyles(theme => ({
 const Link = (props, ref) => {
   const classes = useStyles({});
 
-  return (
-    <MuiLink
-      ref={ref}
-      classes={classes}
-      {...props}
-      target="_blank"
-      rel="noopener"
-    />
-  );
+  return <MuiLink ref={ref} classes={classes} {...props} />;
 };
 export default React.forwardRef(Link);
