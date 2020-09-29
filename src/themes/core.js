@@ -39,6 +39,11 @@ export const core = {
           borderColor: palette.action.disabled
         }
       }
+    },
+    MuiLink: {
+      root: {
+        fontWeight: 600
+      }
     }
   },
   palette,

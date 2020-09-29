@@ -5,6 +5,7 @@ export { default as Checkbox } from './checkbox/checkbox.component';
 export { default as Radio } from './radio/radio.component';
 export { RadioGroup } from '@material-ui/core';
 export { default as FormControlLabel } from './form-control-label/form-control-label.component';
+export { default as Link } from './link/link.component';
 
 export { default as ButtonGroup } from './buttons/button-group.component';
 export { default as CloseButton } from './buttons/close-button.component';
