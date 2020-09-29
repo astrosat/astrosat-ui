@@ -1,16 +1,13 @@
 import React from 'react';
 
-import { Link as MuiLink, Typography } from '@material-ui/core';
+import { Link as MuiLink } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    fontSize: '0.875rem',
     borderBottom: `1px solid ${theme.palette.primary.main}`,
     textDecoration: 'none',
-    // fontWeight: theme.typography.button.fontWeight,
-    // fontFamily: theme.typography.button.fontFamily,
     '&:hover': {
       textDecoration: 'none',
       borderBottom: 'none'
@@ -24,6 +21,14 @@ const useStyles = makeStyles(theme => ({
 const Link = (props, ref) => {
   const classes = useStyles({});
 
-  return <MuiLink ref={ref} classes={classes} {...props} />;
+  return (
+    <MuiLink
+      ref={ref}
+      classes={classes}
+      {...props}
+      target="_blank"
+      rel="noopener"
+    />
+  );
 };
 export default React.forwardRef(Link);

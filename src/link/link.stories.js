@@ -9,7 +9,7 @@ export default { title: 'Link' };
 export const ActualLink = () => {
   const preventDefault = event => event.preventDefault();
   return (
-    <Typography color="textPrimary">
+    <Typography color="textPrimary" variant="body2">
       <Link href="#" onClick={preventDefault} color="inherit">
         Actual Link
       </Link>
@@ -21,5 +21,5 @@ export const ActualLink = () => {
       </Link>
     </Typography>
   );
-  console.log(Typography);
 };
+console.log(Typography);

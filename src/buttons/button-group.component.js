@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from './button.component';
+import Button from '../button/button.component';
 
 import styles from './button-group.module.css';
 
