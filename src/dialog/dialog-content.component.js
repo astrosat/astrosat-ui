@@ -8,8 +8,8 @@ const contentStyles = makeStyles(theme => ({
   root: {
     width: '100%',
     height: '100%',
-    padding: theme.spacing(0, 2.5),
-    margin: theme.spacing(2.5, 0),
+    padding: theme.spacing(0, 4),
+    margin: theme.spacing(4, 0),
     '&:first-child': {
       paddingTop: '0'
     }
