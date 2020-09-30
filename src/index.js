@@ -6,11 +6,11 @@ export { default as Radio } from './radio/radio.component';
 export { RadioGroup } from '@material-ui/core';
 export { default as FormControlLabel } from './form-control-label/form-control-label.component';
 export { default as Link } from './link/link.component';
+export { default as Switch } from './switch/switch.component';
 
 export { default as ButtonGroup } from './buttons/button-group.component';
 export { default as CloseButton } from './buttons/close-button.component';
 export { default as InfoButton } from './buttons/info-button.component';
-export { default as Switch } from './buttons/switch.component';
 
 export { default as PasswordField } from './forms/password-field.component';
 export { default as PasswordStrengthMeter } from './forms/password-strength-meter.component';
