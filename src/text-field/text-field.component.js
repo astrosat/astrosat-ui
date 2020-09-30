@@ -1,8 +1,10 @@
 import React from 'react';
 
-import { Input } from '@material-ui/core';
+import { Input, InputAdornment, IconButton } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
+
+import { ErrorIcon } from '../icons';
 
 const TextFieldStyles = makeStyles(theme => ({
   root: {
@@ -50,9 +52,24 @@ const TextFieldStyles = makeStyles(theme => ({
   }
 }));
 
+const errorAdornment = (
+  <InputAdornment position="end">
+    <IconButton aria-label="Error" onClick={() => console.log('Icon clicked!')}>
+      <ErrorIcon />
+    </IconButton>
+  </InputAdornment>
+);
+
 const TextField = props => {
   const TextFieldClasses = TextFieldStyles({});
-  return <Input classes={TextFieldClasses} {...props} disableUnderline />;
+  return (
+    <Input
+      classes={TextFieldClasses}
+      disableUnderline
+      endAdornment={props.error && errorAdornment}
+      {...props}
+    />
+  );
 };
 
 export default TextField;
