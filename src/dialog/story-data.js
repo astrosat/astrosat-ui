@@ -3,8 +3,10 @@ import styles from './dialog.module.css';
 
 export const tallContent = (
   <div className={styles.container}>
-    {[...Array(20)].map(() => (
-      <h2 className={styles.text}>This is tall content</h2>
+    {[...Array(20)].map((_, i) => (
+      <h2 key={i} className={styles.text}>
+        This is tall content
+      </h2>
     ))}
   </div>
 );

@@ -6,15 +6,17 @@ import { DialogActions as MuiDialogActions } from '@material-ui/core';
 
 const actionsStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(0, 2.5, 2.5, 2.5)
+    padding: theme.spacing(0, 0, 2.5, 0)
   }
 }));
 
-const DialogActions = ({ children }) => {
+/**
+ * @param { import('@material-ui/core/DialogActions/DialogActions').DialogActionsProps} props
+ */
+
+const DialogActions = props => {
   const actionsClasses = actionsStyles({});
-  return (
-    <MuiDialogActions classes={actionsClasses}>{children}</MuiDialogActions>
-  );
+  return <MuiDialogActions classes={actionsClasses} {...props} />;
 };
 
 export default DialogActions;

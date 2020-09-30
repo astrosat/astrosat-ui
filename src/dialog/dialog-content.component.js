@@ -4,23 +4,25 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { DialogContent as MuiDialogContent } from '@material-ui/core';
 
-const contentStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    height: '100%',
-    padding: theme.spacing(0, 4),
-    margin: theme.spacing(4, 0),
-    '&:first-child': {
-      paddingTop: '0'
+const contentStyles = makeStyles(theme => {
+  console.log('Theme: ', theme);
+  return {
+    root: {
+      padding: '0',
+      '&:first-child': {
+        paddingTop: '0'
+      }
     }
-  }
-}));
+  };
+});
 
-const DialogContent = ({ children }) => {
+/**
+ * @param { import('@material-ui/core/DialogContent/DialogContent').DialogContentProps} props
+ */
+
+const DialogContent = props => {
   const contentClasses = contentStyles({});
-  return (
-    <MuiDialogContent classes={contentClasses}>{children}</MuiDialogContent>
-  );
+  return <MuiDialogContent classes={contentClasses} {...props} />;
 };
 
 export default DialogContent;
