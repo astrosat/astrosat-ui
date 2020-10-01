@@ -2,7 +2,7 @@ import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { DialogTitle as MuiDialogTitle, Typography } from '@material-ui/core';
+import { DialogTitle as MuiDialogTitle } from '@material-ui/core';
 
 const titleStyles = makeStyles(theme => ({
   root: {
@@ -23,11 +23,7 @@ const titleStyles = makeStyles(theme => ({
 
 const DialogTitle = props => {
   const titleClasses = titleStyles({});
-  return (
-    <Typography color="textPrimary" variant="body2">
-      <MuiDialogTitle classes={titleClasses} {...props} />
-    </Typography>
-  );
+  return <MuiDialogTitle classes={titleClasses} disableTypography {...props} />;
 };
 
 export default DialogTitle;

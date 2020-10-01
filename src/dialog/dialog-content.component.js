@@ -4,17 +4,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { DialogContent as MuiDialogContent } from '@material-ui/core';
 
-const contentStyles = makeStyles(theme => {
-  console.log('Theme: ', theme);
-  return {
-    root: {
-      padding: '0',
-      '&:first-child': {
-        paddingTop: '0'
-      }
+const contentStyles = makeStyles(() => ({
+  root: {
+    padding: '0',
+    '&:first-child': {
+      paddingTop: '0'
     }
-  };
-});
+  }
+}));
 
 /**
  * @param { import('@material-ui/core/DialogContent/DialogContent').DialogContentProps} props
