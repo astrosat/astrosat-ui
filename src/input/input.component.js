@@ -1,12 +1,10 @@
 import React from 'react';
 
-import { Input, InputAdornment, IconButton } from '@material-ui/core';
+import { Input as MuiInput, FormLabel } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { ErrorIcon } from '../icons';
-
-const TextFieldStyles = makeStyles(theme => ({
+const InputStyles = makeStyles(theme => ({
   root: {
     width: '100%',
     fontSize: theme.typography.pxToRem(14),
@@ -52,24 +50,15 @@ const TextFieldStyles = makeStyles(theme => ({
   }
 }));
 
-const errorAdornment = (
-  <InputAdornment position="end">
-    <IconButton aria-label="Error" onClick={() => console.log('Icon clicked!')}>
-      <ErrorIcon />
-    </IconButton>
-  </InputAdornment>
-);
-
-const TextField = props => {
-  const TextFieldClasses = TextFieldStyles({});
+const Input = props => {
+  const InputClasses = InputStyles({});
   return (
-    <Input
-      classes={TextFieldClasses}
-      disableUnderline
-      endAdornment={props.error && errorAdornment}
-      {...props}
-    />
+    <div>
+      <FormLabel>
+        <MuiInput classes={InputClasses} disableUnderline {...props} />
+      </FormLabel>
+    </div>
   );
 };
 
-export default TextField;
+export default Input;
