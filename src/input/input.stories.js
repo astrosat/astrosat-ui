@@ -3,8 +3,9 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 import { default as Input } from './input.component';
-
 import { default as InputAdornment } from './input-adornment.component';
+import { default as InputLabel } from './input-label.component';
+import { default as FormControl } from '../form-control/form-control.component';
 
 import { ErrorIcon } from '../icons';
 
@@ -20,24 +21,30 @@ export const Placeholder = () => (
 );
 
 export const Value = () => (
-  <Input onChange={action('Input changed')} value="This is a value" />
+  <FormControl>
+    <Input onChange={action('Input changed')} value="This is a value" />
+  </FormControl>
 );
 
 export const Label = () => (
-  <Input
-    onChange={action('Input changed')}
-    placeholder="This one has a label"
-    label="This is a label"
-  />
+  <FormControl>
+    <InputLabel htmlFor="test-input">This is a label</InputLabel>
+    <Input
+      id="test-input"
+      onChange={action('Input changed')}
+      placeholder="This one has a label"
+    />
+  </FormControl>
 );
 
 export const Disabled = () => (
-  <Input onChange={action('Input changed')} disabled />
+  <FormControl disabled>
+    <Input onChange={action('Input changed')} />
+  </FormControl>
 );
 
 export const Invalid = () => {
-  const [entry, setEntry] = React.useState(0);
-  const isInvalid = entry.length > 3;
+  const isValid = false;
 
   const adornment = (
     <InputAdornment
@@ -48,10 +55,11 @@ export const Invalid = () => {
   );
 
   return (
-    <Input
-      onChange={e => setEntry(e.target.value)}
-      endAdornment={isInvalid && adornment}
-      error={isInvalid}
-    />
+    <FormControl error={!isValid}>
+      <Input
+        onChange={action('Input changed')}
+        endAdornment={!isValid && adornment}
+      />
+    </FormControl>
   );
 };
