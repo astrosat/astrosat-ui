@@ -23,6 +23,14 @@ export const Value = () => (
   <Input onChange={action('Input changed')} value="This is a value" />
 );
 
+export const Label = () => (
+  <Input
+    onChange={action('Input changed')}
+    placeholder="This one has a label"
+    label="This is a label"
+  />
+);
+
 export const Disabled = () => (
   <Input onChange={action('Input changed')} disabled />
 );
