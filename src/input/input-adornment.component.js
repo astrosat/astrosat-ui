@@ -10,8 +10,12 @@ import { makeStyles } from '@material-ui/core/styles';
 const InputAdornmentClasses = makeStyles(theme => ({
   error: {
     color: theme.palette.error.main,
-    height: '1rem',
-    width: '1rem'
+    height: '1.5rem',
+    width: '1.5rem'
+  },
+  password: {
+    height: '1.5rem',
+    width: '1.5rem'
   }
 }));
 
