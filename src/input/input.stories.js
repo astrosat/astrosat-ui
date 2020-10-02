@@ -14,10 +14,12 @@ export default { title: 'Input' };
 export const Default = () => <Input onChange={action('Input changed')} />;
 
 export const Placeholder = () => (
-  <Input
-    onChange={action('Input changed')}
-    placeholder="This is a placeholder"
-  />
+  <FormControl>
+    <Input
+      onChange={action('Input changed')}
+      placeholder="This is a placeholder"
+    />
+  </FormControl>
 );
 
 export const Value = () => (
