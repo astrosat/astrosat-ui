@@ -8,11 +8,10 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 
 const InputAdornmentClasses = makeStyles(theme => ({
-  root: {},
   error: {
+    color: theme.palette.error.main,
     height: '1rem',
-    width: '1rem',
-    color: theme.palette.error.main
+    width: '1rem'
   }
 }));
 
@@ -21,7 +20,7 @@ const InputAdornment = ({ Icon, ...props }) => {
 
   return (
     <MuiInputAdornment position="end">
-      <IconButton aria-label="Error" onClick={props.onClick}>
+      <IconButton aria-label={`${props.type} icon`} onClick={props.onClick}>
         {<Icon classes={classes[props.type]} />}
       </IconButton>
     </MuiInputAdornment>

@@ -1,16 +1,8 @@
 import React from 'react';
 
-import { Input as MuiInput, FormControl } from '@material-ui/core';
-
-import InputLabel from './input-label.component';
+import { Input as MuiInput } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
-
-const formControlStyles = makeStyles(() => ({
-  root: {
-    width: '100%'
-  }
-}));
 
 const inputStyles = makeStyles(theme => ({
   root: {
@@ -56,24 +48,30 @@ const inputStyles = makeStyles(theme => ({
       borderRadius: theme.spacing(0.6)
     }
   },
-  formControl: {
-    width: '100%'
+  success: {
+    '&::after': {
+      display: 'block',
+      content: '""',
+      position: 'absolute',
+      height: '0.125rem',
+      width: '100%',
+      bottom: '0',
+      left: '0',
+      backgroundColor: theme.palette.success.main,
+      borderRadius: theme.spacing(0.6)
+    }
   }
 }));
 
 const Input = props => {
   const inputClasses = inputStyles({});
-  const formControlClasses = formControlStyles({});
   return (
-    <FormControl classes={formControlClasses}>
-      {props.label && <InputLabel htmlFor={props.id}>{props.label}</InputLabel>}
-      <MuiInput
-        id={props.id}
-        classes={inputClasses}
-        disableUnderline
-        {...props}
-      />
-    </FormControl>
+    <MuiInput
+      id={props.id}
+      classes={inputClasses}
+      disableUnderline
+      {...props}
+    />
   );
 };
 
