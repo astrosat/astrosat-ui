@@ -28,12 +28,11 @@ const useStyle = makeStyles(theme => ({
       '& + $track': {
         backgroundColor: theme.palette.success.main,
         opacity: 1
+      },
+      '&$disabled + $track': {
+        backgroundColor: theme.palette.success.main,
+        opacity: 0.3
       }
-    }
-  },
-  disable: {
-    '&$$checked + $track': {
-      opacity: 0.1
     }
   },
   colorSecondary: {
@@ -44,10 +43,6 @@ const useStyle = makeStyles(theme => ({
   colorPrimary: {
     '&$checked + $track': {
       backgroundColor: theme.palette.primary.main
-    },
-    '&$disabled + $track': {
-      backgroundColor: theme.palette.success.main,
-      opacity: 0.5
     }
   },
   sizeSmall: {
@@ -71,9 +66,16 @@ const useStyle = makeStyles(theme => ({
 /**
  * @param {import('@material-ui/core').SwitchProps} props
  */
-const Switch = props => {
-  const classes = useStyle(props);
-  return <MuiSwitch classes={classes} {...props} />;
+const Switch = ({ color = 'default', ...rest }, ref) => {
+  const classes = useStyle({});
+  const component = (
+    <MuiSwitch classes={classes} color={color} ref={ref} {...rest} />
+  );
+  return rest.disabled ? (
+    <span style={{ cursor: 'not-allowed' }}>{component}</span>
+  ) : (
+    component
+  );
 };
 
-export default Switch;
+export default React.forwardRef(Switch);

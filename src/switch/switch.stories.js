@@ -12,7 +12,7 @@ export const Color = () => (
   <FormGroup>
     <FormControlLabel
       label="Default Color"
-      control={<Switch color="default" />}
+      control={<Switch />}
     ></FormControlLabel>
     <FormControlLabel
       label="Primary Color"
@@ -33,7 +33,7 @@ export const Disabled = () => (
     ></FormControlLabel>
     <FormControlLabel
       label="Disabled On"
-      control={<Switch disabled color="primary" defaultChecked />}
+      control={<Switch disabled defaultChecked />}
     ></FormControlLabel>
   </FormGroup>
 );
@@ -42,11 +42,11 @@ export const Size = () => (
   <FormGroup>
     <FormControlLabel
       label="Medium Size"
-      control={<Switch size="medium" color="default" />}
+      control={<Switch size="medium" />}
     ></FormControlLabel>
     <FormControlLabel
       label="Small Size"
-      control={<Switch size="small" color="default" />}
+      control={<Switch size="small" />}
     ></FormControlLabel>
   </FormGroup>
 );
