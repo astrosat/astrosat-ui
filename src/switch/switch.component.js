@@ -4,55 +4,65 @@ import { Switch as MuiSwitch, makeStyles } from '@material-ui/core';
 
 const useStyle = makeStyles(theme => ({
   checked: {},
+  disabled: {},
   track: {
     backgroundColor: theme.palette.grey[300],
     opacity: 1
   },
   thumb: {
     backgroundColor: theme.palette.common.white,
-    height: 14,
-    width: 14,
+    height: '0.6em',
+    width: '0.6em',
     boxShadow: 'none'
   },
   root: {
-    height: 16,
-    width: 30,
+    height: '1.143em',
+    width: '1.875rem',
     padding: 0,
-    display: 'flex',
-    '&$smallSize': {
-      backgroundColor: 'yellow'
-    }
+    display: 'flex'
   },
   switchBase: {
-    padding: 1,
+    padding: '0.042857em',
     '&$checked': {
-      transform: 'translateX(14px)',
-      '& + $track': { backgroundColor: theme.palette.success.main, opacity: 1 }
+      transform: 'translateX(0.6em)',
+      '& + $track': {
+        backgroundColor: theme.palette.success.main,
+        opacity: 1
+      }
+    }
+  },
+  disable: {
+    '&$$checked + $track': {
+      opacity: 0.1
     }
   },
   colorSecondary: {
     '&$checked + $track': {
-      backgroundColor: theme.palette.error.main
+      backgroundColor: theme.palette.secondary.main
     }
   },
   colorPrimary: {
     '&$checked + $track': {
       backgroundColor: theme.palette.primary.main
+    },
+    '&$disabled + $track': {
+      backgroundColor: theme.palette.success.main,
+      opacity: 0.5
     }
   },
   sizeSmall: {
-    width: 26,
-    height: 11,
+    width: '1.857em',
+    height: '0.79em',
     padding: 0,
     '& $thumb': {
-      width: 10,
-      height: 10,
+      width: '0.425em',
+      height: '0.425em',
       boxShadow: 'none'
     },
     '& $switchBase': {
-      padding: 1.5,
+      padding: '0.03em',
       '&$checked': {
-        transform: 'translateX(11px)'
+        transform: 'translateX(0.6em)'
       }
     }
   }

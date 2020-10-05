@@ -28,8 +28,12 @@ export const Color = () => (
 export const Disabled = () => (
   <FormGroup>
     <FormControlLabel
-      label="Disabled"
+      label="Disabled Off"
       control={<Switch disabled />}
+    ></FormControlLabel>
+    <FormControlLabel
+      label="Disabled On"
+      control={<Switch disabled color="primary" defaultChecked />}
     ></FormControlLabel>
   </FormGroup>
 );
