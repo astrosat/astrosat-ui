@@ -7,25 +7,37 @@ import {
 
 import { makeStyles } from '@material-ui/core/styles';
 
-const InputAdornmentClasses = makeStyles(theme => ({
+const inputAdornmentClasses = makeStyles(theme => ({
   error: {
     color: theme.palette.error.main,
-    height: '1.5rem',
-    width: '1.5rem'
+    height: theme.spacing(2),
+    width: theme.spacing(2)
   },
   password: {
-    height: '1.5rem',
-    width: '1.5rem'
+    height: theme.spacing(2),
+    width: theme.spacing(2)
   }
 }));
 
-const InputAdornment = ({ Icon, ...props }) => {
-  const classes = InputAdornmentClasses({});
+const iconButtonClasses = makeStyles(() => ({
+  root: {
+    '&:hover': {
+      backgroundColor: 'transparent'
+    }
+  }
+}));
 
+const InputAdornment = ({ Icon, position = 'end', ...props }) => {
+  const adornmentClasses = inputAdornmentClasses({});
+  const iconClasses = iconButtonClasses({});
   return (
-    <MuiInputAdornment position="end">
-      <IconButton aria-label={`${props.type} icon`} onClick={props.onClick}>
-        {<Icon classes={classes[props.type]} />}
+    <MuiInputAdornment position={position}>
+      <IconButton
+        classes={iconClasses}
+        aria-label={`${props.type} icon`}
+        onClick={props.onClick}
+      >
+        {<Icon classes={adornmentClasses[props.type]} />}
       </IconButton>
     </MuiInputAdornment>
   );
