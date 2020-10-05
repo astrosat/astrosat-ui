@@ -9,7 +9,7 @@ export { RadioGroup } from '@material-ui/core';
 
 export { default as Link } from './link/link.component';
 
-export { Dialog, DialogTitle, DialogContent, DialogActions } from './dialog';
+export * from './dialog';
 
 export { default as ButtonGroup } from './buttons/button-group.component';
 export { default as CloseButton } from './buttons/close-button.component';

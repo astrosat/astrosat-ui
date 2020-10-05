@@ -15,14 +15,22 @@ const titleStyles = makeStyles(theme => ({
 }));
 
 /**
- * @param { import('@material-ui/core/DialogTitle/DialogTitle').DialogTitleProps} props
+ * @param { Omit<import('@material-ui/core/DialogTitle/DialogTitle').DialogTitleProps, 'disableTypography'> } props
  */
 
-const DialogTitle = props => {
+const DialogTitle = ({ disableTypography = true, ...props }) => {
   const titleClasses = titleStyles({});
   return (
-    <MuiDialogTitle classes={titleClasses} disableTypography {...props}>
-      <Typography variant="h4">{props.children}</Typography>
+    <MuiDialogTitle
+      classes={titleClasses}
+      disableTypography={disableTypography}
+      {...props}
+    >
+      {disableTypography ? (
+        <Typography variant="h4">{props.children}</Typography>
+      ) : (
+        props.children
+      )}
     </MuiDialogTitle>
   );
 };
