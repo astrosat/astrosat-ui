@@ -15,16 +15,13 @@ export const Default = () => <Input onChange={action('Input changed')} />;
 
 export const Placeholder = () => (
   <FormControl>
-    <Input
-      onChange={action('Input changed')}
-      placeholder="This is a placeholder"
-    />
+    <Input onChange={action('Input changed')} placeholder="Test placeholder" />
   </FormControl>
 );
 
 export const Value = () => (
   <FormControl>
-    <Input onChange={action('Input changed')} value="This is a value" />
+    <Input onChange={action('Input changed')} value="Test value" />
   </FormControl>
 );
 
@@ -34,7 +31,7 @@ export const Label = () => (
     <Input
       id="test-input"
       onChange={action('Input changed')}
-      placeholder="This one has a label"
+      placeholder="Test label"
     />
   </FormControl>
 );

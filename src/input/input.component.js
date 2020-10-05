@@ -16,7 +16,7 @@ const inputStyles = makeStyles(theme => ({
       display: 'block',
       content: '""',
       position: 'absolute',
-      height: '0.125rem',
+      height: theme.spacing(0.25),
       width: '100%',
       bottom: '0',
       left: '0',
@@ -28,36 +28,23 @@ const inputStyles = makeStyles(theme => ({
       cursor: 'not-allowed'
     }
   },
+  disabled: {},
   input: {
     padding: '0',
     '&$disabled': {
       cursor: 'not-allowed'
     }
   },
-  disabled: {},
   error: {
     '&::after': {
       display: 'block',
       content: '""',
       position: 'absolute',
-      height: '0.125rem',
+      height: theme.spacing(0.25),
       width: '100%',
       bottom: '0',
       left: '0',
       backgroundColor: theme.palette.error.main,
-      borderRadius: theme.spacing(0.6)
-    }
-  },
-  success: {
-    '&::after': {
-      display: 'block',
-      content: '""',
-      position: 'absolute',
-      height: '0.125rem',
-      width: '100%',
-      bottom: '0',
-      left: '0',
-      backgroundColor: theme.palette.success.main,
       borderRadius: theme.spacing(0.6)
     }
   }
@@ -65,14 +52,7 @@ const inputStyles = makeStyles(theme => ({
 
 const Input = props => {
   const inputClasses = inputStyles({});
-  return (
-    <MuiInput
-      id={props.id}
-      classes={inputClasses}
-      disableUnderline
-      {...props}
-    />
-  );
+  return <MuiInput classes={inputClasses} disableUnderline {...props} />;
 };
 
 export default Input;
