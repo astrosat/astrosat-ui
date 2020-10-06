@@ -1,14 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const DeleteIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const DeleteIcon = props => (
+  <SvgIcon {...props}>
     <path
       d="M15.484 8.671c-.3 0-.542.252-.542.563v10.641c0 .312.243.564.542.564.299 0 .542-.252.542-.564V9.235a.553.553 0 00-.542-.564zm-6.658 0c-.299 0-.542.252-.542.563v10.641c0 .312.243.564.542.564.3 0 .542-.252.542-.564V9.235a.552.552 0 00-.542-.564z"
       fill="currentColor"
@@ -21,11 +18,7 @@ const DeleteIcon = ({ classes, ...rest }) => (
       d="M12.078 8.671c-.3 0-.542.252-.542.563v10.641c0 .312.243.564.542.564.299 0 .541-.252.541-.564V9.235a.552.552 0 00-.541-.564z"
       fill="currentColor"
     />
-  </svg>
+  </SvgIcon>
 );
-
-DeleteIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default DeleteIcon;

@@ -1,14 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const ResultsIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const ResultsIcon = props => (
+  <SvgIcon {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -26,11 +23,7 @@ const ResultsIcon = ({ classes, ...rest }) => (
       stroke="currentColor"
       strokeLinecap="square"
     />
-  </svg>
+  </SvgIcon>
 );
-
-ResultsIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default ResultsIcon;

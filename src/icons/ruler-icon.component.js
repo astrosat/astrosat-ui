@@ -1,18 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const RulerIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const RulerIcon = props => (
+  <SvgIcon {...props}>
     <path
+      fillRule="evenodd"
       clipRule="evenodd"
-      d="M13.796.8H9.56c-.387 0-.761.314-.761.7v21c0 .386.374.7.76.7h4.236c.386 0 .604-.314.604-.7v-21c0-.386-.217-.7-.604-.7z"
-      stroke="currentColor"
+      d="M8.3 1.5C8.3.786 8.953.3 9.56.3h4.236c.343 0 .637.145.836.39.19.234.268.528.268.81v21c0 .282-.08.576-.269.81-.198.245-.493.39-.835.39H9.56c-.608 0-1.261-.486-1.261-1.2v-21zm1.069-.122c-.056.05-.069.096-.069.122v21c0 .026.013.072.069.122a.302.302 0 00.192.078h4.235c.028 0 .04-.005.043-.007a.045.045 0 00.015-.013c.016-.02.046-.076.046-.18v-21c0-.105-.03-.16-.045-.18a.042.042 0 00-.016-.013.102.102 0 00-.043-.007H9.56a.302.302 0 00-.192.078z"
+      fill="currentColor"
     />
     <path
       fillRule="evenodd"
@@ -20,11 +18,7 @@ const RulerIcon = ({ classes, ...rest }) => (
       d="M8.8 2.2h2.1v.7H8.8v-.7zm0 4.2h2.1v.7H8.8v-.7zm0-2.1h2.1V5H8.8v-.7zm0 4.2h2.1v.7H8.8v-.7zm0 2.1h2.1v.7H8.8v-.7zm0 2.1h2.1v.7H8.8v-.7zm0 2.1h2.1v.7H8.8v-.7zm0 2.1h2.1v.7H8.8v-.7zm0 2.1h2.1v.7H8.8V19zm0 2.1h2.1v.7H8.8v-.7z"
       fill="currentColor"
     />
-  </svg>
+  </SvgIcon>
 );
-
-RulerIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default RulerIcon;

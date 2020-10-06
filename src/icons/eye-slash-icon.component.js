@@ -1,14 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const EyeSlashIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const EyeSlashIcon = props => (
+  <SvgIcon {...props}>
     <path
       d="M19.81 4.188A.654.654 0 0019.348 4a.664.664 0 00-.462.188l-2.222 2.178A14.61 14.61 0 0012 5.604c-7.455 0-12 5.556-12 6.417 0 .584 2.097 3.322 5.768 5.027l-1.938 1.9a.641.641 0 00-.205.458.63.63 0 00.192.462.656.656 0 00.472.188.665.665 0 00.466-.201L19.81 5.095a.64.64 0 00.192-.454.63.63 0 00-.192-.453zM7.637 12.02a4.24 4.24 0 011.279-3.024A4.412 4.412 0 0112 7.743a4.327 4.327 0 012.469.775l-.791.776A3.244 3.244 0 0012 8.812a3.31 3.31 0 00-2.313.942 3.18 3.18 0 00-.96 2.268c.004.582.175 1.152.49 1.644l-.79.776a4.13 4.13 0 01-.79-2.421zm11.561-4.54l-3.12 3.059c.185.473.282.975.285 1.482a4.24 4.24 0 01-1.279 3.023A4.413 4.413 0 0112 16.3a4.395 4.395 0 01-1.511-.28L8.469 18c1.154.29 2.34.437 3.531.44 7.456 0 12-5.557 12-6.418 0-.53-1.731-2.842-4.802-4.54z"
       fill="currentColor"
@@ -17,11 +14,7 @@ const EyeSlashIcon = ({ classes, ...rest }) => (
       d="M12 15.23c.484 0 .963-.104 1.401-.306a3.258 3.258 0 001.132-.866c.307-.367.527-.797.644-1.258a3.14 3.14 0 00.031-1.407l-3.85 3.773c.212.042.427.063.642.064z"
       fill="currentColor"
     />
-  </svg>
+  </SvgIcon>
 );
-
-EyeSlashIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default EyeSlashIcon;

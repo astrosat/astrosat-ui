@@ -14,7 +14,7 @@ storiesOf('Icons', module).add('All', () => (
         <div className={styles.iconSet}>
           {Object.values(Icons).map((Icon, i) => (
             <div className={styles.iconGroup}>
-              <Icon key={`icon-${i}`} classes={styles.icon} />
+              <Icon key={`icon-${i}`} />
               <p>{Icon.name}</p>
             </div>
           ))}

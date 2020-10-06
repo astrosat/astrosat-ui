@@ -1,14 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const SatelliteIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const SatelliteIcon = props => (
+  <SvgIcon {...props}>
     <path
       d="M9.116 6.395l1.235.685-.584 1.056L8.53 7.45l.585-1.055zm5.166 2.863l1.235.684L14.932 11l-1.235-.685.585-1.056zm-4.108 1.608l1.055.586-.698 1.262-1.056-.585.699-1.263z"
       fill="currentColor"
@@ -35,11 +32,7 @@ const SatelliteIcon = ({ classes, ...rest }) => (
       d="M16.574 8.651l7.218 4a.4.4 0 01.158.547l-1.904 3.435a.404.404 0 01-.547.156l-7.218-4a.405.405 0 01-.205-.398.403.403 0 01.049-.15l1.902-3.433a.404.404 0 01.547-.157zm-.195.352l-1.903 3.433 7.219 4.001 1.903-3.434-7.219-4zM14.587 4.15a2.165 2.165 0 01.844 2.943l-2.7 4.87a.493.493 0 01-.671.192l-2.923-1.62a.495.495 0 01-.193-.67l2.7-4.871a2.164 2.164 0 012.943-.843zM9.938 12.54c1.683.932 2.07 2.219 1.16 3.859l-5.046-2.798c.909-1.64 2.204-1.994 3.886-1.061z"
       fill="currentColor"
     />
-  </svg>
+  </SvgIcon>
 );
-
-SatelliteIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default SatelliteIcon;

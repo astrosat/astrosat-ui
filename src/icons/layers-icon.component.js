@@ -1,14 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const LayersIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const LayersIcon = props => (
+  <SvgIcon {...props}>
     <path
       d="M2.199 6.923v.02l9.186 4.838.01-.003c.262.137.556.222.872.222.316 0 .61-.085.873-.222l.01.003 9.186-4.839v-.02A1 1 0 0022.933 6a.996.996 0 00-.607-.924L13.155.222h-.017A1.872 1.872 0 0012.267 0c-.315 0-.608.085-.87.222h-.018L2.206 5.076A.997.997 0 001.6 6c0 .416.246.772.599.923z"
       fill="currentColor"
@@ -21,11 +18,7 @@ const LayersIcon = ({ classes, ...rest }) => (
       d="M22.326 17.076l-1.794-.95c-2.233 1.18-4.468 2.357-6.706 3.528a3.688 3.688 0 01-3.123-.002c-.043-.016-3.885-2.039-6.701-3.527l-1.796.95A.995.995 0 001.6 18c0 .416.246.772.599.923v.02l9.186 4.838.01-.003c.262.137.556.222.872.222.316 0 .61-.085.873-.222l.01.003 9.186-4.839v-.02a1 1 0 00.597-.922.996.996 0 00-.607-.924z"
       fill="currentColor"
     />
-  </svg>
+  </SvgIcon>
 );
-
-LayersIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default LayersIcon;

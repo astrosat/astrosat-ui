@@ -1,14 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const FreehandIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const FreehandIcon = props => (
+  <SvgIcon {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -45,11 +42,7 @@ const FreehandIcon = ({ classes, ...rest }) => (
       d="M3.2 22.905c.647-.661.657-1.247 1.02-.941.296.253.577.526.842.814.242.254.625.484.855.407a.964.964 0 00.536-.28c.111-.136.232-.263.361-.38a.555.555 0 01.461-.178c.153.024.118-.179.22 0"
       stroke="currentColor"
     />
-  </svg>
+  </SvgIcon>
 );
-
-FreehandIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default FreehandIcon;

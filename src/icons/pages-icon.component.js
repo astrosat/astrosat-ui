@@ -1,14 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const PagesIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const PagesIcon = props => (
+  <SvgIcon {...props}>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -51,11 +48,7 @@ const PagesIcon = ({ classes, ...rest }) => (
       d="M14.466 11.36l3.668 1.931a.19.19 0 01.104.19.19.19 0 01-.024.074l-.968 1.658a.21.21 0 01-.277.075L13.3 13.357a.19.19 0 01-.079-.265l.967-1.658a.21.21 0 01.277-.075zm-.098.17l-.968 1.657 3.668 1.931.968-1.657-3.668-1.932zm-.911-2.343c.53.28.723.915.428 1.42l-1.371 2.352a.257.257 0 01-.341.093l-1.486-.782a.232.232 0 01-.097-.325l1.372-2.35c.294-.506.964-.688 1.495-.408zm-2.363 4.05c.856.45 1.052 1.071.59 1.863L9.12 13.75c.462-.793 1.12-.964 1.974-.514z"
       fill="currentColor"
     />
-  </svg>
+  </SvgIcon>
 );
-
-PagesIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default PagesIcon;

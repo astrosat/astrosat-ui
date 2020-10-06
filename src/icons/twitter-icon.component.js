@@ -1,23 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const TwitterIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const TwitterIcon = props => (
+  <SvgIcon {...props}>
     <path
       d="M20.571 0c.91 0 1.782.37 2.425 1.03A3.566 3.566 0 0124 3.518v16.964c0 .933-.361 1.828-1.004 2.488A3.385 3.385 0 0120.57 24H3.43c-.91 0-1.782-.37-2.425-1.03A3.566 3.566 0 010 20.482V3.518c0-.933.361-1.828 1.004-2.487A3.385 3.385 0 013.43 0H20.57zm-6.147 6.657c-1.611 0-2.796 1.667-2.431 3.4-2.075-.116-3.915-1.218-5.146-2.894-.654 1.245-.339 2.873.773 3.697a2.3 2.3 0 01-1.131-.346c-.028 1.283.802 2.483 2.002 2.75a2.27 2.27 0 01-1.127.048c.317 1.1 1.24 1.9 2.332 1.923-1.05.913-2.371 1.32-3.696 1.147 1.104.785 2.416 1.244 3.826 1.244 4.636 0 7.254-4.343 7.096-8.238a5.407 5.407 0 001.245-1.434c-.452.223-.936.37-1.433.437.532-.36.921-.904 1.097-1.533a4.72 4.72 0 01-1.585.673c-.455-.539-1.104-.875-1.822-.875z"
       fill="currentColor"
     />
-  </svg>
+  </SvgIcon>
 );
-
-TwitterIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default TwitterIcon;

@@ -1,14 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const SearchIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const SearchIcon = props => (
+  <SvgIcon {...props}>
     <path
       d="M23.61 21.724l-4.517-4.516a10.621 10.621 0 002.24-6.542C21.334 4.776 16.558 0 10.667 0 4.776 0 0 4.776 0 10.666c0 5.89 4.776 10.668 10.666 10.668 2.37.003 4.673-.785 6.542-2.24l4.516 4.515a1.333 1.333 0 101.885-1.885zm-12.944-3.057a8 8 0 01-8-8 8 8 0 018-8 8 8 0 110 16z"
       fill="currentColor"
@@ -49,11 +46,7 @@ const SearchIcon = ({ classes, ...rest }) => (
       d="M13.691 9l3.212 1.785a.18.18 0 01.07.244l-.847 1.531a.18.18 0 01-.243.07l-3.212-1.784a.18.18 0 01-.07-.244l.847-1.531A.178.178 0 0113.69 9zm-.086.159l-.847 1.53 3.212 1.784.847-1.53-3.212-1.785zm-.798-2.165a.967.967 0 01.375 1.312l-1.201 2.173a.221.221 0 01-.217.111.22.22 0 01-.081-.026l-1.301-.722a.22.22 0 01-.086-.3l1.202-2.171a.961.961 0 011.31-.377h-.001zm-2.069 3.741c.75.416.921.99.517 1.721l-2.246-1.248c.405-.73.98-.89 1.73-.473z"
       fill="currentColor"
     />
-  </svg>
+  </SvgIcon>
 );
-
-SearchIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default SearchIcon;
