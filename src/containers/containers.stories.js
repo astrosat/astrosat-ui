@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions';
 
 import Detail from './detail.component';
 import Well from './well.component';
-import Dialog from './dialog.component';
 import useModal from './use-modal.hook';
 import Button from '../button/button.component';
 import Textfield from '../forms/text-field.component';
@@ -109,52 +108,4 @@ storiesOf('Containers', module)
         </Well>
       </div>
     </>
-  ))
-  .add('Dialog', () => {
-    const [isVisible, toggle] = useModal(false);
-    const ref = useRef(document.body);
-
-    return (
-      <div ref={ref}>
-        <div>
-          <p>This is some text</p>
-          <p>This is some text</p>
-          <Button theme="primary" onClick={toggle}>
-            Toggle Modal
-          </Button>
-          <Dialog
-            isVisible={isVisible}
-            close={toggle}
-            title="Dialog Title"
-            ref={ref}
-          >
-            <div className={styles.btnGroup}>
-              <Textfield
-                name="name"
-                placeholder="Name"
-                onChange={action('Name Entered')}
-                required
-                autoFocus
-              />
-            </div>
-
-            <div className={styles.btnGroup}>
-              <Textfield
-                name="description"
-                placeholder="Description"
-                onChange={action('Description Entered')}
-                required
-              />
-            </div>
-
-            <div className={styles.btnGroup}>
-              <Select onChange={action('Text Entered')} options={domains} />
-              <Select onChange={action('Text Entered')} options={regions} />
-            </div>
-          </Dialog>
-          <p>This is some text</p>
-          <p>This is some text</p>
-        </div>
-      </div>
-    );
-  });
+  ));
