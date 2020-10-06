@@ -11,20 +11,20 @@ const useStyle = makeStyles(theme => ({
   },
   thumb: {
     backgroundColor: theme.palette.common.white,
-    height: '0.575em',
-    width: '0.575em',
+    height: '0.875rem',
+    width: '0.875rem',
     boxShadow: 'none'
   },
   root: {
-    height: '1em',
-    width: '1.875em',
+    height: '1rem',
+    width: '1.875rem',
     padding: 0,
     display: 'flex'
   },
   switchBase: {
-    padding: '0.0675em',
+    padding: '0.0675rem',
     '&$checked': {
-      transform: 'translateX(0.575em)',
+      transform: 'translateX(0.875rem)',
       '& + $track': {
         backgroundColor: theme.palette.success.main,
         opacity: 1
@@ -46,18 +46,18 @@ const useStyle = makeStyles(theme => ({
     }
   },
   sizeSmall: {
-    width: '1.625em',
-    height: '0.6875em',
+    width: '1.625rem',
+    height: '0.75rem',
     padding: 0,
     '& $thumb': {
-      width: '0.425em',
-      height: '0.425em',
+      width: '0.625rem',
+      height: '0.625rem',
       boxShadow: 'none'
     },
     '& $switchBase': {
-      padding: '0.0625em',
+      padding: '0.0675rem',
       '&$checked': {
-        transform: 'translateX(0.5625em)'
+        transform: 'translateX(0.875rem)'
       }
     }
   }
