@@ -11,8 +11,8 @@ const useStyle = makeStyles(theme => ({
   },
   thumb: {
     backgroundColor: theme.palette.common.white,
-    height: '0.6em',
-    width: '0.6em',
+    height: '0.575em',
+    width: '0.575em',
     boxShadow: 'none'
   },
   root: {
@@ -22,9 +22,9 @@ const useStyle = makeStyles(theme => ({
     display: 'flex'
   },
   switchBase: {
-    padding: '0.0425em',
+    padding: '0.0675em',
     '&$checked': {
-      transform: 'translateX(0.6em)',
+      transform: 'translateX(0.575em)',
       '& + $track': {
         backgroundColor: theme.palette.success.main,
         opacity: 1
@@ -55,9 +55,9 @@ const useStyle = makeStyles(theme => ({
       boxShadow: 'none'
     },
     '& $switchBase': {
-      padding: '0.0425em',
+      padding: '0.0625em',
       '&$checked': {
-        transform: 'translateX(0.6em)'
+        transform: 'translateX(0.5625em)'
       }
     }
   }
