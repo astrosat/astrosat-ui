@@ -16,13 +16,13 @@ const useStyle = makeStyles(theme => ({
     boxShadow: 'none'
   },
   root: {
-    height: '1.143em',
-    width: '1.875rem',
+    height: '1em',
+    width: '1.875em',
     padding: 0,
     display: 'flex'
   },
   switchBase: {
-    padding: '0.042857em',
+    padding: '0.0425em',
     '&$checked': {
       transform: 'translateX(0.6em)',
       '& + $track': {
@@ -46,8 +46,8 @@ const useStyle = makeStyles(theme => ({
     }
   },
   sizeSmall: {
-    width: '1.857em',
-    height: '0.79em',
+    width: '1.625em',
+    height: '0.6875em',
     padding: 0,
     '& $thumb': {
       width: '0.425em',
@@ -55,7 +55,7 @@ const useStyle = makeStyles(theme => ({
       boxShadow: 'none'
     },
     '& $switchBase': {
-      padding: '0.03em',
+      padding: '0.0425em',
       '&$checked': {
         transform: 'translateX(0.6em)'
       }
