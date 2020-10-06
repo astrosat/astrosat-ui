@@ -46,7 +46,7 @@ const useStyle = makeStyles(theme => ({
     }
   },
   sizeSmall: {
-    width: '1.625rem',
+    width: '1.4375rem',
     height: '0.75rem',
     padding: 0,
     '& $thumb': {
@@ -57,7 +57,7 @@ const useStyle = makeStyles(theme => ({
     '& $switchBase': {
       padding: '0.0675rem',
       '&$checked': {
-        transform: 'translateX(0.875rem)'
+        transform: 'translateX(0.6875rem)'
       }
     }
   }
