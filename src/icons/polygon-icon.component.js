@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 const PolygonIcon = ({ classes, ...rest }) => (
   <svg
-    viewBox="0 0 30 30"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
     {...rest}
   >
     <path
-      d="M1 16.2l9.206 10.22h9.922L29 13.338 18.453 3 1 16.2z"
+      d="M.8 12.96l7.365 8.177h7.937L23.2 10.67 14.762 2.4.8 12.96z"
       stroke="currentColor"
     />
   </svg>

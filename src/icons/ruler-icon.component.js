@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const RulerIcon = ({ classes, ...rest }) => (
   <svg
-    viewBox="0 0 30 30"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
@@ -11,13 +11,13 @@ const RulerIcon = ({ classes, ...rest }) => (
   >
     <path
       clipRule="evenodd"
-      d="M17.245 1H11.95c-.483 0-.951.392-.951.875v26.25c0 .483.468.875.951.875h5.294c.483 0 .755-.392.755-.875V1.875c0-.483-.271-.875-.755-.875z"
+      d="M13.796.8H9.56c-.387 0-.761.314-.761.7v21c0 .386.374.7.76.7h4.236c.386 0 .604-.314.604-.7v-21c0-.386-.217-.7-.604-.7z"
       stroke="currentColor"
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
-      d="M11 2.75h2.625v.875H11V2.75zM11 8h2.625v.875H11V8zm0-2.625h2.625v.875H11v-.875zm0 5.25h2.625v.875H11v-.875zm0 2.625h2.625v.875H11v-.875zm0 2.625h2.625v.875H11v-.875zm0 2.625h2.625v.875H11V18.5zm0 2.625h2.625V22H11v-.875zm0 2.625h2.625v.875H11v-.875zm0 2.625h2.625v.875H11v-.875z"
+      d="M8.8 2.2h2.1v.7H8.8v-.7zm0 4.2h2.1v.7H8.8v-.7zm0-2.1h2.1V5H8.8v-.7zm0 4.2h2.1v.7H8.8v-.7zm0 2.1h2.1v.7H8.8v-.7zm0 2.1h2.1v.7H8.8v-.7zm0 2.1h2.1v.7H8.8v-.7zm0 2.1h2.1v.7H8.8v-.7zm0 2.1h2.1v.7H8.8V19zm0 2.1h2.1v.7H8.8v-.7z"
       fill="currentColor"
     />
   </svg>

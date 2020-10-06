@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 const PlusIcon = ({ classes, ...rest }) => (
   <svg
-    viewBox="0 0 30 30"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
     {...rest}
   >
     <path
-      d="M15 0a3.742 3.742 0 00-3.75 3.75v7.5h-7.5A3.742 3.742 0 000 15a3.742 3.742 0 003.75 3.75h7.5v7.5A3.742 3.742 0 0015 30a3.742 3.742 0 003.75-3.75v-7.5h7.5A3.742 3.742 0 0030 15a3.742 3.742 0 00-3.75-3.75h-7.5v-7.5A3.742 3.742 0 0015 0z"
+      d="M12 0c-1.662 0-3 1.338-3 3v6H3c-1.662 0-3 1.338-3 3s1.338 3 3 3h6v6c0 1.662 1.338 3 3 3s3-1.338 3-3v-6h6c1.662 0 3-1.338 3-3s-1.338-3-3-3h-6V3c0-1.662-1.338-3-3-3z"
       fill="currentColor"
     />
   </svg>

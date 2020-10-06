@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 const LineTypeDashedIcon = ({ classes, ...rest }) => (
   <svg
-    viewBox="0 0 30 30"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={classes}
     {...rest}
   >
     <path
-      d="M.3 14.616h2.934v.765H.3v-.765zm4.371 0h2.934v.765H4.671v-.765zm4.371 0h2.934v.765H9.042v-.765zm4.371 0h2.934v.765h-2.934v-.765zm4.371 0h2.934v.765h-2.934v-.765zm4.371 0h2.934v.765h-2.934v-.765zm4.719 0H29.7v.765h-2.826v-.765z"
+      d="M.24 11.693h2.347v.612H.24v-.612zm3.497 0h2.347v.612H3.737v-.612zm3.497 0H9.58v.612H7.234v-.612zm3.496 0h2.348v.612H10.73v-.612zm3.497 0h2.347v.612h-2.347v-.612zm3.497 0h2.347v.612h-2.347v-.612zm3.775 0h2.261v.612H21.5v-.612z"
       fill="currentColor"
     />
   </svg>
