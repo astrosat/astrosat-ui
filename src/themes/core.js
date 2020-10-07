@@ -76,6 +76,11 @@ export const core = {
       fontWeight: 600,
       lineHeight: 'normal',
       textTransform: 'none'
+    },
+    h4: {
+      color: palette.secondary.main,
+      fontSize: '1.5rem',
+      fontWeight: 'bold'
     }
   }
 };
