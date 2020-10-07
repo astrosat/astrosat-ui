@@ -13,7 +13,8 @@ const inputAdornmentClasses = makeStyles(theme => ({
     height: theme.spacing(2),
     width: theme.spacing(2)
   },
-  password: {
+  success: {
+    color: theme.palette.success.main,
     height: theme.spacing(2),
     width: theme.spacing(2)
   }
@@ -21,6 +22,7 @@ const inputAdornmentClasses = makeStyles(theme => ({
 
 const iconButtonClasses = makeStyles(() => ({
   root: {
+    padding: '0',
     '&:hover': {
       backgroundColor: 'transparent'
     }
@@ -30,15 +32,20 @@ const iconButtonClasses = makeStyles(() => ({
 const InputAdornment = ({ Icon, position = 'end', ...props }) => {
   const adornmentClasses = inputAdornmentClasses({});
   const iconClasses = iconButtonClasses({});
+  const icon = <Icon classes={adornmentClasses[props.type]} />;
   return (
     <MuiInputAdornment position={position}>
-      <IconButton
-        classes={iconClasses}
-        aria-label={`${props.type} icon`}
-        onClick={props.onClick}
-      >
-        {<Icon classes={adornmentClasses[props.type]} />}
-      </IconButton>
+      {props.onClick ? (
+        <IconButton
+          classes={iconClasses}
+          aria-label={`${props.type} icon`}
+          onClick={props.onClick}
+        >
+          {icon}
+        </IconButton>
+      ) : (
+        icon
+      )}
     </MuiInputAdornment>
   );
 };

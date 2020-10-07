@@ -7,22 +7,18 @@ import { default as InputAdornment } from './input-adornment.component';
 import { default as InputLabel } from './input-label.component';
 import { default as FormControl } from '../form-control/form-control.component';
 
-import { ErrorIcon } from '../icons';
+import { ErrorIcon, CorrectIcon } from '../icons';
 
 export default { title: 'Input' };
 
 export const Default = () => <Input onChange={action('Input changed')} />;
 
 export const Placeholder = () => (
-  <FormControl>
-    <Input onChange={action('Input changed')} placeholder="Test placeholder" />
-  </FormControl>
+  <Input onChange={action('Input changed')} placeholder="Test placeholder" />
 );
 
 export const Value = () => (
-  <FormControl>
-    <Input onChange={action('Input changed')} value="Test value" />
-  </FormControl>
+  <Input onChange={action('Input changed')} value="Test value" />
 );
 
 export const Label = () => (
@@ -42,13 +38,13 @@ export const Disabled = () => (
   </FormControl>
 );
 
-export const Invalid = () => {
-  const isValid = false;
+export const Valid = () => {
+  let isValid = true;
 
   const adornment = (
     <InputAdornment
-      Icon={ErrorIcon}
-      type="error"
+      Icon={isValid ? CorrectIcon : ErrorIcon}
+      type={isValid ? 'success' : 'error'}
       onClick={action('Icon clicked')}
     />
   );
@@ -57,7 +53,28 @@ export const Invalid = () => {
     <FormControl error={!isValid}>
       <Input
         onChange={action('Input changed')}
-        endAdornment={!isValid && adornment}
+        endAdornment={adornment}
+        valid={isValid}
+      />
+    </FormControl>
+  );
+};
+
+export const Invalid = () => {
+  let isValid = false;
+  const adornment = (
+    <InputAdornment
+      Icon={isValid ? CorrectIcon : ErrorIcon}
+      type={isValid ? 'success' : 'error'}
+    />
+  );
+
+  return (
+    <FormControl error={!isValid}>
+      <Input
+        onChange={action('Input changed')}
+        endAdornment={adornment}
+        valid={isValid}
       />
     </FormControl>
   );
