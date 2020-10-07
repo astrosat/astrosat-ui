@@ -1,8 +1,10 @@
 import React from 'react';
 import { default as Button } from './button.component';
-import styles from '../story-styles.module.css';
-import { makeStyles } from '@material-ui/core';
-export default { title: 'Button' };
+
+export default {
+  title: 'Button',
+  component: Button
+};
 
 export const Text = () => (
   <>
@@ -85,13 +87,28 @@ export const Sizes = () => (
   </>
 );
 
-const customButtonStyles = makeStyles({ root: { marginLeft: '20rem' } });
-export const ClassNameTest = () => {
-  const madeStyles = customButtonStyles();
-  return (
-    <>
-      <Button className={madeStyles.root}>Test</Button>
-      <button className={styles.buttonTest}>test</button>
-    </>
-  );
+export const Playground = args => <Button {...args} />;
+Playground.args = {
+  children: 'Create your own',
+  disabled: false,
+  variant: 'contained',
+  color: 'primary',
+  size: 'medium'
+};
+Playground.argTypes = {
+  variant: {
+    control: {
+      type: 'inline-radio',
+      options: ['contained', 'text', 'outlined']
+    }
+  },
+  color: {
+    control: {
+      type: 'inline-radio',
+      options: ['primary', 'secondary', 'default', 'inherit']
+    }
+  },
+  size: {
+    control: { type: 'inline-radio', options: ['small', 'medium', 'large'] }
+  }
 };
