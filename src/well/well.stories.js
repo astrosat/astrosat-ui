@@ -1,50 +1,41 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
-import { makeStyles } from '@material-ui/core/styles';
+
+import { Snackbar } from '@material-ui/core';
+
+import Alert from './well.component';
+
 export default { title: 'Snackbar' };
 
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    '& > * + *': {
-      marginTop: theme.spacing(2)
-    }
-  }
-}));
-
-export const CustomizedSnackbars = () => {
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-
-    setOpen(false);
-  };
-
+export const Info = () => {
   return (
-    <div className={classes.root}>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success">
-          This is a success message!
-        </Alert>
+    <div>
+      <Snackbar autoHideDuration={6000}>
+        <Alert severity="info" />
       </Snackbar>
-      <Alert severity="error">This is an error message!</Alert>
-      <Alert severity="warning">This is a warning message!</Alert>
-      <Alert severity="info">This is an information message!</Alert>
-      <Alert severity="success">This is a success message!</Alert>
+      <Alert severity="info" variant="filled" />
+      <Alert severity="info" variant="outlined" />
+    </div>
+  );
+};
+export const Error = () => {
+  return (
+    <div>
+      <Snackbar autoHideDuration={6000}>
+        <Alert severity="error" />
+      </Snackbar>
+      <Alert severity="error" variant="filled" />
+      <Alert severity="error" variant="outlined" />
+    </div>
+  );
+};
+export const Success = () => {
+  return (
+    <div>
+      <Snackbar autoHideDuration={6000}>
+        <Alert severity="success" />
+      </Snackbar>
+      <Alert severity="success" variant="filled" />
+      <Alert severity="success" variant="outlined" />
     </div>
   );
 };
