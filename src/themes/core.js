@@ -44,6 +44,14 @@ export const core = {
       root: {
         fontWeight: 600
       }
+    },
+    MuiCssBaseline: {
+      '@global': {
+        html: { fontSize: '1rem' },
+        body: {
+          fontSize: '1rem'
+        }
+      }
     }
   },
   palette,
