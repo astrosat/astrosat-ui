@@ -32,6 +32,7 @@
     "test": "react-scripts test --env=jsdom",
     "test:coverage": "yarn test -- --coverage",
     "lint": "eslint src/*.js",
+    "tsc": "tsc",
     "clean": "rm -rf coverage dist node_modules",
     "build:icons": "node ./scripts/createIcons.js",
     "build": "yarn build:icons && rollup -c",

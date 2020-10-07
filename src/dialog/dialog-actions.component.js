@@ -12,11 +12,11 @@ const actionsStyles = makeStyles(theme => ({
 
 /**
  * @param { import('@material-ui/core/DialogActions/DialogActions').DialogActionsProps} props
+ * @param {React.Ref<any>} ref
  */
-
-const DialogActions = props => {
+const DialogActions = (props, ref) => {
   const actionsClasses = actionsStyles({});
   return <MuiDialogActions classes={actionsClasses} {...props} />;
 };
 
-export default DialogActions;
+export default React.forwardRef(DialogActions);

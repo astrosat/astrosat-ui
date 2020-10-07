@@ -69,6 +69,10 @@ const radioStyles = makeStyles(theme => ({
   disabled: {}
 }));
 
+/**
+ * @param {import('@material-ui/core').RadioProps} props
+ * @param {React.Ref<any>} ref
+ */
 const Radio = (props, ref) => {
   const radioClasses = radioStyles({});
   return (

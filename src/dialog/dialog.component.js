@@ -18,10 +18,10 @@ const dialogStyles = makeStyles(theme => ({
 
 /**
  * @param { import('@material-ui/core/Dialog/Dialog').DialogProps} props
+ * @param {React.Ref<any>} ref
  */
-
 const Dialog = (props, ref) => {
-  const dialogClasses = dialogStyles({});
+  const dialogClasses = dialogStyles(props);
   return <MuiDialog classes={dialogClasses} ref={ref} {...props} />;
 };
 
