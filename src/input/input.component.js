@@ -1,12 +1,18 @@
 import React from 'react';
 
-import { Input as MuiInput } from '@material-ui/core';
+import { Input as MuiInput, InputAdornment } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
-import { default as InputAdornment } from './input-adornment.component';
 
 import { ErrorIcon, CorrectIcon } from '../icons';
 
+/**
+ * @typedef {import('@material-ui/core/Input/Input').InputProps & {valid?: boolean}} InputProps
+ */
+
+/**
+ * @param {import('@material-ui/core').Theme} theme
+ * @param {InputProps} props
+ */
 const getColors = (theme, props) => {
   if (props.valid) {
     return theme.palette.success.main;
@@ -48,30 +54,37 @@ const inputAdornmentClasses = makeStyles(theme => ({
 }));
 
 /**
- * @param { import('@material-ui/core/Input/Input').InputProps & {valid?: boolean}} props
+ * @param { InputProps } props
  */
-
 const getAdornment = props => {
   const adornmentClasses = inputAdornmentClasses(props);
 
   if (props.endAdornment) return props.endAdornment;
-  if (props.error) return <ErrorIcon classes={adornmentClasses} />;
-  if (props.valid) return <CorrectIcon classes={adornmentClasses} />;
+  if (props.error)
+    return (
+      <InputAdornment position="end">
+        <ErrorIcon classes={adornmentClasses} />
+      </InputAdornment>
+    );
+  if (props.valid)
+    return (
+      <InputAdornment position="end">
+        <CorrectIcon classes={adornmentClasses} />
+      </InputAdornment>
+    );
   return null;
 };
 
-const Input = props => {
-  const inputClasses = inputStyles(props);
+/**
+ * @param { InputProps } props
+ */
+const Input = ({ fullWidth = true, ...props }) => {
+  const inputClasses = inputStyles({ fullWidth, ...props });
   return (
     <MuiInput
       classes={inputClasses}
-      endAdornment={
-        <InputAdornment onClick={props.onIconClick}>
-          {getAdornment(props)}
-        </InputAdornment>
-      }
-      disableUnderline
-      fullWidth
+      endAdornment={getAdornment(props)}
+      fullWidth={fullWidth}
       {...props}
     />
   );
