@@ -9,20 +9,12 @@ const ASSETS_FILE_PATH = `${ICON_FILE_PATH}/assets`;
 
 const svgo = new SVGO({
   plugins: [
-    { removeViewBox: false },
-    { removeDimensions: true },
     { convertColors: { currentColor: true } },
-    { prefixIds: { delim: '-' } },
-    {
-      addAttributesToSVGElement: {
-        attributes: [{ className: '{classes}' }, { rest: 'rest' }]
-      }
-    }
+    { prefixIds: { delim: '-' } }
   ]
 });
 
 const SVG_PROCESSES = [
-  svg => svg.replace(/"{classes}"/, '{classes}'),
   (svg, filename) => svg.replace(/prefix/g, filename),
   svg => svg.replace(/stroke-width/g, 'strokeWidth'),
   svg => svg.replace(/stroke-linecap/g, 'strokeLinecap'),
@@ -30,7 +22,8 @@ const SVG_PROCESSES = [
   svg => svg.replace(/clip-path/g, 'clipPath'),
   svg => svg.replace(/clip-rule/g, 'clipRule'),
   svg => svg.replace(/fill-rule/g, 'fillRule'),
-  svg => svg.replace(/rest="rest"/g, '{...rest}')
+  svg => svg.replace(/<svg[^>]*>/g, ''),
+  svg => svg.replace(/<\/svg>/g, '')
 ];
 
 const createSvg = async iconFile => {

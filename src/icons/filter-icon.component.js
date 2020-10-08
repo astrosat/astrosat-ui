@@ -1,30 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const FilterIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 30 30"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
-    <g clipPath="url(#filter-clip0)">
-      <path
-        d="M28.709 0H1.293C.81 0 .366.263.144.682c-.225.425-.184.938.102 1.327L10.29 15.81l.01.015c.365.48.563 1.062.563 1.66v11.253c-.001.335.132.654.374.892.24.235.568.369.909.369.174 0 .345-.035.505-.1l5.645-2.1c.505-.15.84-.614.84-1.175v-9.139c.001-.598.2-1.18.564-1.662l.01-.013L29.754 2.007c.287-.39.326-.9.102-1.326A1.296 1.296 0 0028.71 0z"
-        fill="currentColor"
-      />
-    </g>
-    <defs>
-      <clipPath id="filter-clip0">
-        <path fill="currentColor" d="M0 0h30v30H0z" />
-      </clipPath>
-    </defs>
-  </svg>
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const FilterIcon = props => (
+  <SvgIcon {...props}>
+    <path
+      d="M22.967 0H1.034C.647 0 .293.21.115.546c-.18.34-.147.75.082 1.06l8.035 11.042.008.012c.292.384.45.85.45 1.328v9.003a.99.99 0 00.3.713c.191.188.454.295.726.295.14 0 .276-.028.405-.08l4.515-1.68c.405-.12.673-.491.673-.94v-7.31c0-.48.16-.945.45-1.33l.01-.011 8.034-11.042a1 1 0 00.082-1.061A1.037 1.037 0 0022.967 0z"
+      fill="currentColor"
+    />
+  </SvgIcon>
 );
-
-FilterIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default FilterIcon;

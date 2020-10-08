@@ -1,32 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const ErrorIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 30 30"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
-    <g clipPath="url(#error-clip0)">
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M30 15c0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15C0 6.716 6.716 0 15 0c8.284 0 15 6.716 15 15zm-17.304 0L7.42 9.725c-.59-.59-.555-1.588.08-2.223.637-.635 1.633-.671 2.225-.08L15 12.695l5.275-5.275c.592-.59 1.587-.556 2.224.08.635.636.672 1.633.08 2.223L17.304 15l5.275 5.276c.59.59.556 1.587-.08 2.223-.636.635-1.632.671-2.224.08L15 17.305 9.725 22.58c-.592.59-1.588.554-2.223-.081-.636-.635-.673-1.632-.08-2.223l5.274-5.275z"
-        fill="currentColor"
-      />
-    </g>
-    <defs>
-      <clipPath id="error-clip0">
-        <path fill="currentColor" d="M0 0h30v30H0z" />
-      </clipPath>
-    </defs>
-  </svg>
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const ErrorIcon = props => (
+  <SvgIcon {...props}>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12zm-13.843 0L5.936 7.78C5.465 7.306 5.493 6.51 6 6c.51-.508 1.306-.537 1.78-.065L12 10.157l4.22-4.22c.474-.473 1.27-.445 1.78.064.507.509.536 1.306.063 1.778L13.843 12l4.22 4.22c.473.473.445 1.27-.063 1.779-.51.508-1.306.537-1.78.065L12 13.844l-4.22 4.22c-.474.472-1.27.443-1.778-.065-.51-.508-.539-1.306-.065-1.778l4.22-4.22z"
+      fill="currentColor"
+    />
+  </SvgIcon>
 );
-
-ErrorIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default ErrorIcon;

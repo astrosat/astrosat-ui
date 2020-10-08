@@ -1,26 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const MapPinIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 30 30"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const MapPinIcon = props => (
+  <SvgIcon {...props}>
     <path
       clipRule="evenodd"
-      d="M14.006 28.743a.872.872 0 001.238 0c.367-.367 9.006-9.11 9.006-18.118C24.25 5.318 19.932 1 14.625 1S5 5.318 5 10.625c0 9.009 8.639 17.751 9.006 18.118z"
+      d="M11.205 22.995a.698.698 0 00.99 0C12.489 22.7 19.4 15.707 19.4 8.5c0-4.246-3.455-7.7-7.7-7.7C7.454.8 4 4.254 4 8.5c0 7.207 6.911 14.2 7.205 14.495z"
       stroke="currentColor"
       strokeWidth="2"
     />
-    <path d="M14.625 15a3.5 3.5 0 100-7 3.5 3.5 0 000 7z" fill="currentColor" />
-  </svg>
+    <path
+      d="M11.7 12a2.8 2.8 0 100-5.6 2.8 2.8 0 000 5.6z"
+      fill="currentColor"
+    />
+  </SvgIcon>
 );
-
-MapPinIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default MapPinIcon;

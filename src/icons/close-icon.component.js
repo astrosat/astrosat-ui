@@ -1,28 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const CloseIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 30 30"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
-    <g clipPath="url(#close-clip0)" fill="currentColor">
-      <path d="M.82 4.96l24.218 24.22c1.114 1.114 2.947 1.09 4.089-.053 1.143-1.143 1.167-2.974.052-4.088L4.962.819C3.848-.292 2.015-.27.873.873-.27 2.016-.294 3.847.821 4.961z" />
-      <path d="M4.961 29.18L29.18 4.961c1.114-1.114 1.09-2.947-.053-4.089C27.984-.27 26.153-.294 25.04.821L.82 25.038c-1.114 1.114-1.09 2.947.053 4.089 1.143 1.143 2.974 1.167 4.088.052z" />
-    </g>
-    <defs>
-      <clipPath id="close-clip0">
-        <path fill="currentColor" d="M0 0h30v30H0z" />
-      </clipPath>
-    </defs>
-  </svg>
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const CloseIcon = props => (
+  <SvgIcon {...props}>
+    <path
+      d="M.657 3.969L20.03 23.344c.892.891 2.358.872 3.271-.042.915-.915.934-2.38.042-3.271L3.97.656C3.078-.234 1.612-.216.699.698c-.915.914-.934 2.38-.042 3.27z"
+      fill="currentColor"
+    />
+    <path
+      d="M3.97 23.343L23.343 3.97c.891-.892.872-2.358-.042-3.271-.915-.915-2.38-.934-3.271-.042L.656 20.03c-.891.892-.872 2.358.042 3.271.915.915 2.38.934 3.271.042z"
+      fill="currentColor"
+    />
+  </SvgIcon>
 );
-
-CloseIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default CloseIcon;

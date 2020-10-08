@@ -1,13 +1,14 @@
 const ICON_COMPONENT_TEMPLATE = `import React from 'react';
-import PropTypes from 'prop-types';
+import {SvgIcon} from '@material-ui/core';
 
-const {{ICON_COMPONENT_NAME}} = ({ classes, ...rest }) => (
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const {{ICON_COMPONENT_NAME}} = props => (
+  <SvgIcon {...props}>
   {{ICON}}
+  </SvgIcon>
 );
-
-{{ICON_COMPONENT_NAME}}.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default {{ICON_COMPONENT_NAME}};`;
 
