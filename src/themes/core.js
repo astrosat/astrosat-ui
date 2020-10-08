@@ -64,6 +64,9 @@ export const core = {
     },
     MuiRadio: {
       disableRipple: true
+    },
+    MuiInput: {
+      disableUnderline: true
     }
   },
   shape: {
