@@ -1,41 +1,35 @@
 import React from 'react';
 
-import { Snackbar } from '@material-ui/core';
+import Well from './well.component';
 
-import Alert from './well.component';
+import ErrorIcon from '../icons/error-icon.component';
 
-export default { title: 'Snackbar' };
+export default { title: 'Well' };
 
-export const Info = () => {
+export const Outlined = () => {
   return (
-    <div>
-      <Snackbar autoHideDuration={6000}>
-        <Alert severity="info" />
-      </Snackbar>
-      <Alert severity="info" variant="filled" />
-      <Alert severity="info" variant="outlined" />
-    </div>
+    <>
+      <Well severity="info" variant="outlined" icon={false} />
+      <Well severity="error" variant="outlined" />
+      <Well severity="success" variant="outlined" />
+    </>
   );
 };
-export const Error = () => {
+export const Standard = () => {
   return (
-    <div>
-      <Snackbar autoHideDuration={6000}>
-        <Alert severity="error" />
-      </Snackbar>
-      <Alert severity="error" variant="filled" />
-      <Alert severity="error" variant="outlined" />
-    </div>
+    <>
+      <Well severity="info" variant="standard" icon={false} />
+      <Well severity="error" variant="standard" />
+      <Well severity="success" variant="standard" />
+    </>
   );
 };
-export const Success = () => {
+export const Filled = () => {
   return (
-    <div>
-      <Snackbar autoHideDuration={6000}>
-        <Alert severity="success" />
-      </Snackbar>
-      <Alert severity="success" variant="filled" />
-      <Alert severity="success" variant="outlined" />
-    </div>
+    <>
+      <Well severity="info" variant="filled" icon={false} />
+      <Well severity="error" variant="filled" />
+      <Well severity="success" variant="filled" />
+    </>
   );
 };
