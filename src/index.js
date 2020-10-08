@@ -9,6 +9,7 @@ export { RadioGroup } from '@material-ui/core';
 
 export { default as Link } from './link/link.component';
 export { default as Switch } from './switch/switch.component';
+export { default as Well } from './well/well.component';
 
 export * from './dialog';
 
