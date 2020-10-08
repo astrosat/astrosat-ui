@@ -15,11 +15,11 @@ const contentStyles = makeStyles(() => ({
 
 /**
  * @param { import('@material-ui/core/DialogContent/DialogContent').DialogContentProps} props
+ * @param {React.Ref<any>} ref
  */
-
-const DialogContent = props => {
-  const contentClasses = contentStyles({});
-  return <MuiDialogContent classes={contentClasses} {...props} />;
+const DialogContent = (props, ref) => {
+  const contentClasses = contentStyles(props);
+  return <MuiDialogContent ref={ref} classes={contentClasses} {...props} />;
 };
 
-export default DialogContent;
+export default React.forwardRef(DialogContent);

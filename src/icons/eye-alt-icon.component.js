@@ -1,28 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const EyeAltIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 30 30"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
-    <g clipPath="url(#eye-alt-clip0)" fill="currentColor">
-      <path d="M.335 15.917c1.958 2.454 7.783 8.998 14.674 8.998 6.891 0 12.717-6.544 14.675-8.998.421-.545.421-1.314 0-1.834-1.958-2.454-7.784-8.998-14.675-8.998C8.12 5.06 2.293 11.605.335 14.058a1.458 1.458 0 000 1.859zm14.674-6.89a5.935 5.935 0 015.95 5.948 5.935 5.935 0 01-5.95 5.95 5.935 5.935 0 01-5.949-5.95 5.935 5.935 0 015.95-5.949z" />
-      <path d="M15.01 17.95a2.975 2.975 0 100-5.95 2.975 2.975 0 000 5.95z" />
-    </g>
-    <defs>
-      <clipPath id="eye-alt-clip0">
-        <path fill="currentColor" d="M0 0h30v30H0z" />
-      </clipPath>
-    </defs>
-  </svg>
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const EyeAltIcon = props => (
+  <SvgIcon {...props}>
+    <path
+      d="M.268 12.734c1.566 1.963 6.227 7.198 11.74 7.198 5.512 0 10.173-5.235 11.74-7.198a1.19 1.19 0 000-1.468c-1.567-1.963-6.228-7.198-11.74-7.198-5.513-.02-10.174 5.215-11.74 7.179a1.166 1.166 0 000 1.487zm11.74-5.513a4.748 4.748 0 014.759 4.76 4.748 4.748 0 01-4.76 4.759 4.748 4.748 0 01-4.759-4.76 4.748 4.748 0 014.76-4.76z"
+      fill="currentColor"
+    />
+    <path
+      d="M12.007 14.36a2.38 2.38 0 100-4.76 2.38 2.38 0 000 4.76z"
+      fill="currentColor"
+    />
+  </SvgIcon>
 );
-
-EyeAltIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default EyeAltIcon;

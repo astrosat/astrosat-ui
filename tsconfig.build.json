@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "types": [
+      "node",
+      "react"
+    ],
+    "outDir": "dist",
+    "allowJs": true,
+    "jsx": "preserve",
+    "checkJs": true,
+    "noEmit": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "strict": false,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "removeComments": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "src/setupTests.js",
+    "**/*.stories.js",
+    "**/*.test.js"
+  ]
+}

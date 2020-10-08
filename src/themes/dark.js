@@ -1,14 +1,36 @@
 import { createMuiTheme } from '@material-ui/core';
+import createPalette from '@material-ui/core/styles/createPalette';
 import { merge } from 'lodash';
 import { core } from './core';
-import { palette } from './palette';
+import { palette as corePalette } from './palette';
+
+/** @type {import('@material-ui/core/styles/createPalette').PaletteOptions} */
+const darkPalette = {
+  type: 'dark',
+  text: { primary: corePalette.grey[100] },
+  background: { default: corePalette.secondary.main }
+};
+
+const palette = createPalette(merge(corePalette, darkPalette));
 
 /** @type {import('@material-ui/core').ThemeOptions} */
 const dark = {
-  palette: {
-    type: 'dark',
-    text: { primary: palette.grey[100] },
-    background: { default: palette.secondary.main }
+  palette,
+  overrides: {
+    MuiButton: {
+      text: {
+        '&$disabled': {
+          color: palette.grey[500]
+        }
+      },
+      outlined: {
+        '&$disabled': {
+          color: palette.grey[500],
+          borderColor: palette.grey[500]
+        }
+      },
+      disabled: {}
+    }
   }
 };
 

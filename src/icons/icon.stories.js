@@ -1,42 +1,40 @@
 import React from 'react';
-
-import { storiesOf } from '@storybook/react';
+import { Box } from '@material-ui/core';
 
 import * as Icons from '.';
 
-import styles from '../story-styles.module.css';
+export default { title: 'Icons' };
 
-storiesOf('Icons', module).add('All', () => (
-  <>
-    <div className={styles.btnGroup}>
-      <fieldset>
-        <legend>Monochrome</legend>
-        <div className={styles.iconSet}>
-          {Object.values(Icons).map((Icon, i) => (
-            <div className={styles.iconGroup}>
-              <Icon key={`icon-${i}`} classes={styles.icon} />
-              <p>{Icon.name}</p>
-            </div>
-          ))}
-        </div>
-      </fieldset>
-    </div>
+export const All = () => (
+  <Box display="flex" width="100%" flexWrap="wrap">
+    {Object.values(Icons).map((Icon, i) => (
+      <Box m={2} display="flex" flexDirection="column" alignItems="center">
+        <Icon key={`icon-${i}`} style={{ marginBottom: '0.5rem' }} />
+        <p>{Icon.name}</p>
+      </Box>
+    ))}
+  </Box>
+);
 
-    <div className={styles.btnGroup}>
-      <fieldset>
-        <legend>Styled by color</legend>
-        <div className={styles.iconSet}>
-          {Object.values(Icons).map((Icon, i) => (
-            <div className={styles.iconGroup}>
-              <Icon
-                key={`icon-${i}`}
-                classes={`${styles.icon} ${styles.color}`}
-              />
-              <p>{Icon.name}</p>
-            </div>
-          ))}
-        </div>
-      </fieldset>
-    </div>
-  </>
-));
+export const Color = () => (
+  <Box display="flex">
+    <Icons.CorrectIcon color="action" />
+    <Icons.ErrorIcon color="error" />
+    <Icons.CogIcon color="primary" />
+    <Icons.CogIcon color="secondary" />
+    <Icons.CogIcon color="disabled" />
+    <Box style={{ color: 'hotpink' }}>
+      <Icons.CogIcon color="inherit" />
+    </Box>
+    <Icons.CogIcon htmlColor="coral" />
+  </Box>
+);
+
+export const Size = () => (
+  <Box display="flex">
+    <Icons.CogIcon fontSize="small" />
+    <Icons.CogIcon />
+    <Icons.CogIcon fontSize="large" />
+    <Icons.CogIcon style={{ fontSize: 40 }} />
+  </Box>
+);

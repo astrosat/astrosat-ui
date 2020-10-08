@@ -1,30 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SvgIcon } from '@material-ui/core';
 
-const InfoIcon = ({ classes, ...rest }) => (
-  <svg
-    viewBox="0 0 30 30"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={classes}
-    {...rest}
-  >
-    <g clipPath="url(#info-clip0)">
-      <path
-        d="M11.324 26.471h1.322V13.235h-1.322A1.324 1.324 0 0110 11.912v-.882a1.324 1.324 0 011.324-1.324h5.293a1.323 1.323 0 011.323 1.324v15.441h1.324a1.323 1.323 0 011.324 1.323v.883A1.324 1.324 0 0119.264 30h-7.94A1.324 1.324 0 0110 28.677v-.883a1.323 1.323 0 011.324-1.323zm3.97-26.47a3.53 3.53 0 10-.114 7.058A3.53 3.53 0 0015.294 0z"
-        fill="currentColor"
-      />
-    </g>
-    <defs>
-      <clipPath id="info-clip0">
-        <path fill="currentColor" d="M0 0h30v30H0z" />
-      </clipPath>
-    </defs>
-  </svg>
+/**
+ * @param {import('@material-ui/core').SvgIconProps} props
+ */
+const InfoIcon = props => (
+  <SvgIcon {...props}>
+    <path
+      d="M9.059 21.177h1.058V10.588H9.06A1.06 1.06 0 018 9.53v-.706a1.059 1.059 0 011.059-1.059h4.234a1.059 1.059 0 011.06 1.059v12.353h1.058a1.058 1.058 0 011.06 1.058v.707A1.059 1.059 0 0115.41 24H9.06A1.059 1.059 0 018 22.942v-.707a1.059 1.059 0 011.059-1.058zM12.235 0a2.824 2.824 0 10-.09 5.648A2.824 2.824 0 0012.234 0z"
+      fill="currentColor"
+    />
+  </SvgIcon>
 );
-
-InfoIcon.propTypes = {
-  classes: PropTypes.string.isRequired
-};
 
 export default InfoIcon;

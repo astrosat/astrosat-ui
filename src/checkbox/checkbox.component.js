@@ -69,6 +69,10 @@ const checkboxStyles = makeStyles(theme => ({
   disabled: {}
 }));
 
+/**
+ * @param {import('@material-ui/core').CheckboxProps} props
+ * @param {React.Ref<any>} ref
+ */
 const Checkbox = (props, ref) => {
   const checkboxClasses = checkboxStyles({});
   return (
