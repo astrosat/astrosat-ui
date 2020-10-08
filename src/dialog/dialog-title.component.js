@@ -16,12 +16,17 @@ const titleStyles = makeStyles(theme => ({
 
 /**
  * @param { import('@material-ui/core/DialogTitle/DialogTitle').DialogTitleProps } props
+ * @param {React.Ref<any>} ref
  */
-
-const DialogTitle = ({ disableTypography, children, ...props }) => {
+const DialogTitle = ({ disableTypography, children, ...props }, ref) => {
   const titleClasses = titleStyles({});
   return (
-    <MuiDialogTitle classes={titleClasses} disableTypography {...props}>
+    <MuiDialogTitle
+      ref={ref}
+      classes={titleClasses}
+      disableTypography
+      {...props}
+    >
       {disableTypography ? (
         children
       ) : (
@@ -31,4 +36,4 @@ const DialogTitle = ({ disableTypography, children, ...props }) => {
   );
 };
 
-export default DialogTitle;
+export default React.forwardRef(DialogTitle);

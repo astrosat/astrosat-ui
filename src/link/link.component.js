@@ -18,8 +18,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+/**
+ * @param {import('@material-ui/core').LinkProps} props
+ * @param {React.Ref<any>} ref
+ */
 const Link = (props, ref) => {
-  const classes = useStyles({});
+  const classes = useStyles(props);
 
   return <MuiLink ref={ref} classes={classes} {...props} />;
 };

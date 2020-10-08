@@ -65,6 +65,7 @@ const useStyle = makeStyles(theme => ({
 
 /**
  * @param {import('@material-ui/core').SwitchProps} props
+ * @param {React.Ref<any>} ref
  */
 const Switch = ({ color = 'default', ...rest }, ref) => {
   const classes = useStyle({});
