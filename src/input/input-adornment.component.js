@@ -1,31 +1,40 @@
 import React from 'react';
 
-import { InputAdornment as MuiInputAdornment } from '@material-ui/core';
+import {
+  InputAdornment as MuiInputAdornment,
+  IconButton
+} from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { ErrorIcon, CorrectIcon } from '../icons';
-
-const inputAdornmentClasses = makeStyles(theme => ({
-  root: props => ({
-    color: props.valid ? theme.palette.success.main : theme.palette.error.main,
-    height: theme.typography.pxToRem(16),
-    width: theme.typography.pxToRem(16)
-  })
+const iconButtonStyles = makeStyles(() => ({
+  root: {
+    padding: '0',
+    cursor: 'pointer',
+    '&:hover': {
+      backgroundColor: 'transparent'
+    }
+  }
 }));
 
 /**
  * @param { import('@material-ui/core/InputAdornment/InputAdornment').InputAdornmentProps} props
  */
 
-const InputAdornment = ({ position = 'end', ...props }) => {
-  const adornmentClasses = inputAdornmentClasses(props);
+const InputAdornment = ({ position = 'end', children, ...props }) => {
+  const iconButtonClasses = iconButtonStyles(props);
   return (
     <MuiInputAdornment position={position}>
-      {props.valid ? (
-        <CorrectIcon classes={adornmentClasses.root} />
+      {props.onClick ? (
+        <IconButton
+          onClick={props.onClick}
+          aria-label="Icon Button"
+          classes={iconButtonClasses}
+        >
+          {children}
+        </IconButton>
       ) : (
-        <ErrorIcon classes={adornmentClasses.root} />
+        children
       )}
     </MuiInputAdornment>
   );
