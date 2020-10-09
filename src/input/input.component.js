@@ -47,9 +47,7 @@ const inputStyles = makeStyles(theme => ({
 
 const inputAdornmentClasses = makeStyles(theme => ({
   root: {
-    color: props => getColors(theme, props),
-    height: theme.typography.pxToRem(16),
-    width: theme.typography.pxToRem(16)
+    color: props => getColors(theme, props)
   }
 }));
 

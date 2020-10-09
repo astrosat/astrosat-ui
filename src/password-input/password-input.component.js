@@ -1,24 +1,25 @@
 import React from 'react';
 
-import { InputAdornment, makeStyles } from '@material-ui/core';
+import { IconButton, InputAdornment, makeStyles } from '@material-ui/core';
 
 import { default as Input } from '../input/input.component';
 
 import { EyeIcon, EyeSlashIcon } from '../icons';
 
-/**
- * @typedef {import('@material-ui/core/Input/Input').InputProps & {valid?: boolean}} InputProps
- */
+const INPUT = {
+  text: 'text',
+  password: 'password'
+};
 
 /**
  * @param {import('@material-ui/core').Theme} theme
- * @param {InputProps} props
+ * @typedef {import('../input/input.component.js').InputProps} InputProps
  */
 const iconStyles = makeStyles(theme => ({
   root: {
-    height: theme.typography.pxToRem(24),
-    width: theme.typography.pxToRem(24),
-    cursor: 'pointer',
+    /**
+     * @param {InputProps} props
+     */
     color: props => {
       if (props.error) return theme.palette.error.main;
       if (props.valid) return theme.palette.success.main;
@@ -27,34 +28,38 @@ const iconStyles = makeStyles(theme => ({
   }
 }));
 
+const iconButtonStyles = makeStyles(() => ({
+  root: {
+    padding: '0'
+  }
+}));
+
 /**
- * @param { InputProps } props
+ * @param {InputProps} props
  */
 const PasswordInput = props => {
   const [isVisible, setIsVisible] = React.useState(false);
   const onClick = () => setIsVisible(!isVisible);
 
-  const INPUT = {
-    text: 'text',
-    password: 'password'
-  };
-
   const iconClasses = iconStyles(props);
+  const iconButtonClasses = iconButtonStyles(props);
 
   const adornment = (
     <InputAdornment onClick={onClick} position="end">
-      {isVisible ? (
-        <EyeIcon classes={iconClasses} />
-      ) : (
-        <EyeSlashIcon classes={iconClasses} />
-      )}
+      <IconButton classes={iconButtonClasses}>
+        {isVisible ? (
+          <EyeIcon classes={iconClasses} />
+        ) : (
+          <EyeSlashIcon classes={iconClasses} />
+        )}
+      </IconButton>
     </InputAdornment>
   );
 
   return (
     <Input
       type={isVisible ? INPUT.text : INPUT.password}
-      endAdornment={!props.disabled && adornment}
+      endAdornment={adornment}
       {...props}
     />
   );
