@@ -12,6 +12,8 @@ export { default as Switch } from './switch/switch.component';
 export { default as FormControl } from './form-control/form-control.component';
 export { default as FormControlLabel } from './form-control-label/form-control-label.component';
 
+export { default as PasswordInput } from './password-input/password-input.component';
+
 export * from './input';
 export * from './dialog';
 
