@@ -6,16 +6,23 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { fade } from '@material-ui/core';
 
+import ErrorIcon from '../icons/correct-icon.component';
+
+import SuccessIcon from '../icons/error-icon.component';
+
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor:
+      theme.palette.type === 'dark'
+        ? theme.palette.background.paper && theme.palette.text.secondary
+        : theme.palette.background.paper,
     display: 'flex',
-    margin: '2rem',
+    margin: theme.spacing(2),
     padding: '2rem',
     borderRadius: '0.3rem'
   },
   message: {
-    color: theme.palette.secondary.main
+    color: theme.palette.text.primary
   },
   filledError: {
     backgroundColor: fade(theme.palette.error.main, 0.3)
@@ -39,7 +46,6 @@ const useStyles = makeStyles(theme => ({
     border: `0.0625rem solid ${theme.palette.secondary.main}`
   },
   icon: {
-    color: theme.palette.secondary.main,
     marginRight: '2rem',
     display: 'flex',
     justifyContent: 'center',
@@ -47,16 +53,21 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Well = (props, ref) => {
+const Well = (
+  { errorIcon = <ErrorIcon />, successIcon = <SuccessIcon />, ...rest },
+  ref
+) => {
   const classes = useStyles({});
+  const component = (
+    <Alert
+      classes={classes}
+      icon={[errorIcon, successIcon]}
+      {...rest}
+      ref={ref}
+    />
+  );
   return (
-    <Alert classes={classes} {...props} fer={ref}>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <span>This is some content for the detail element: </span>
-        <span>lorem ipsum</span>lorem ipsum <span>lorem ipsum</span>
-        <span>some footer content</span>
-      </div>
-    </Alert>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>{component}</div>
   );
 };
 export default React.forwardRef(Well);
