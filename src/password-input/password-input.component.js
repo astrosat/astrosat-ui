@@ -41,8 +41,8 @@ const PasswordInput = props => {
   const iconButtonClasses = iconButtonStyles(props);
 
   const adornment = (
-    <InputAdornment onClick={onClick} position="end">
-      <IconButton classes={iconButtonClasses}>
+    <InputAdornment position="end">
+      <IconButton onClick={onClick} classes={iconButtonClasses}>
         {isVisible ? (
           <EyeIcon classes={iconClasses} />
         ) : (
