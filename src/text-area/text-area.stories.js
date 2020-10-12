@@ -23,10 +23,10 @@ export const Disabled = () => (
   <TextArea onChange={action('TextArea changed')} disabled />
 );
 
-export const TenRows = () => {
+export const TenRowDefaultHeight = () => {
   return <TextArea onChange={action('TextArea changed')} rows={10} />;
 };
 
-export const NotFullWidth = () => {
+export const NoDefaultFullWidth = () => {
   return <TextArea onChange={action('TextArea changed')} fullWidth={false} />;
 };

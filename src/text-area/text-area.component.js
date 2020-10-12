@@ -10,13 +10,13 @@ const textAreaStyles = makeStyles(theme => ({
     borderRadius: theme.typography.pxToRem(16),
     boxShadow: '0 5px 15px 0 rgba(0, 0, 0, 0.1)',
     '&$disabled': {
-      backgroundColor: 'rgba(239, 239, 239, 0.3)',
+      backgroundColor: theme.palette.common.white,
+      opacity: '0.3',
       cursor: 'not-allowed'
     }
   },
   inputMultiline: {
     '&$disabled': {
-      backgroundColor: 'rgba(239, 239, 239, 0.3)',
       cursor: 'not-allowed'
     }
   },
