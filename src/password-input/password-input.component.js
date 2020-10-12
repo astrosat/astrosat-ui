@@ -11,14 +11,10 @@ const INPUT = {
   password: 'password'
 };
 
-/**
- * @param {import('@material-ui/core').Theme} theme
- * @typedef {import('../input/input.component.js').InputProps} InputProps
- */
 const iconStyles = makeStyles(theme => ({
   root: {
     /**
-     * @param {InputProps} props
+     * @param {import('../input/input.component.js').InputProps} props
      */
     color: props => {
       if (props.error) return theme.palette.error.main;
@@ -35,7 +31,7 @@ const iconButtonStyles = makeStyles(() => ({
 }));
 
 /**
- * @param {InputProps} props
+ * @param {import('../input/input.component.js').InputProps} props
  */
 const PasswordInput = props => {
   const [isVisible, setIsVisible] = React.useState(false);
