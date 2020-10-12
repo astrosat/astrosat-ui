@@ -6,9 +6,9 @@ const textAreaStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.common.white,
     color: theme.palette.secondary.main,
-    padding: theme.typography.pxToRem(16),
-    borderRadius: theme.typography.pxToRem(16),
-    boxShadow: '0 5px 15px 0 rgba(0, 0, 0, 0.1)',
+    padding: theme.spacing(2),
+    borderRadius: theme.shape.borderRadius,
+    boxShadow: theme.shadows[5],
     '&$disabled': {
       backgroundColor: theme.palette.common.white,
       opacity: '0.3',
@@ -24,7 +24,7 @@ const textAreaStyles = makeStyles(theme => ({
 }));
 
 /**
- * @param {import('../input/input.component.js').InputProps} props
+ * @param {Omit<import('../input/input.component.js').InputProps, 'multiline', 'aria-multiline'> } props
  */
 const TextArea = ({ fullWidth = true, rows = 7, ...props }) => {
   const textAreaClasses = textAreaStyles(props);
@@ -34,6 +34,7 @@ const TextArea = ({ fullWidth = true, rows = 7, ...props }) => {
       fullWidth={fullWidth}
       rows={rows}
       multiline
+      aria-multiline
       {...props}
     />
   );
