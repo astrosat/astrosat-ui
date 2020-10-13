@@ -7,7 +7,7 @@ export default { title: 'Well' };
 export const Standard = () => {
   return (
     <>
-      <Well severity="info" variant="outlined" icon={false}>
+      <Well severity="info">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>
@@ -16,7 +16,7 @@ export const Standard = () => {
           <span>some footer content</span>
         </div>
       </Well>
-      <Well severity="error" variant="outlined" errorIcon>
+      <Well severity="error">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>
@@ -25,7 +25,7 @@ export const Standard = () => {
           <span>some footer content</span>
         </div>
       </Well>
-      <Well severity="success" variant="outlined" successIcon>
+      <Well severity="success">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>
@@ -41,7 +41,7 @@ export const Standard = () => {
 export const Outlined = () => {
   return (
     <>
-      <Well severity="info" variant="standard" icon={false}>
+      <Well severity="info">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>
@@ -51,7 +51,7 @@ export const Outlined = () => {
         </div>
       </Well>
 
-      <Well severity="error" variant="standard" errorIcon>
+      <Well severity="error" variant="outlined">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>
@@ -60,7 +60,7 @@ export const Outlined = () => {
           <span>some footer content</span>
         </div>
       </Well>
-      <Well severity="success" variant="standard" successIcon>
+      <Well severity="success" variant="outlined">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>
@@ -76,7 +76,7 @@ export const Outlined = () => {
 export const Filled = () => {
   return (
     <>
-      <Well severity="info" icon={false}>
+      <Well severity="info" variant="filled">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>
@@ -85,7 +85,7 @@ export const Filled = () => {
           <span>some footer content</span>
         </div>
       </Well>
-      <Well severity="error" errorIcon>
+      <Well severity="error" variant="filled">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>
@@ -94,7 +94,7 @@ export const Filled = () => {
           <span>some footer content</span>
         </div>
       </Well>
-      <Well severity="success" successIcon>
+      <Well severity="success" variant="filled">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>

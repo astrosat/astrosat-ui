@@ -6,44 +6,52 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { fade } from '@material-ui/core';
 
-import ErrorIcon from '../icons/correct-icon.component';
+import ErrorIcon from '../icons/error-icon.component';
 
-import SuccessIcon from '../icons/error-icon.component';
+import SuccessIcon from '../icons/correct-icon.component';
 
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor:
       theme.palette.type === 'dark'
-        ? theme.palette.background.paper && theme.palette.text.secondary
+        ? theme.palette.grey[800]
         : theme.palette.background.paper,
     display: 'flex',
     margin: theme.spacing(2),
-    padding: '2rem',
-    borderRadius: '0.3rem'
+    padding: '2rem'
   },
   message: {
     color: theme.palette.text.primary
   },
   filledError: {
-    backgroundColor: fade(theme.palette.error.main, 0.3)
-  },
-  outlinedError: {
-    backgroundColor: fade(theme.palette.error.main, 0.3)
-  },
-  standardError: {
-    backgroundColor: fade(theme.palette.error.main, 0.3)
+    backgroundColor: fade(theme.palette.error.main, 0.3),
+    color: theme.palette.error.main
   },
   filledSuccess: {
-    backgroundColor: fade(theme.palette.success.main, 0.3)
+    backgroundColor: fade(theme.palette.success.main, 0.3),
+    color: theme.palette.success.main
   },
-  outlinedSuccess: {
-    backgroundColor: fade(theme.palette.success.main, 0.3)
+  filledInfo: {
+    '& $icon': {
+      display: 'none'
+    }
+  },
+  standardError: {
+    backgroundColor: fade(theme.palette.error.main, 0.3),
+    border: `0.0625rem solid ${theme.palette.error.main}`
   },
   standardSuccess: {
-    backgroundColor: fade(theme.palette.success.main, 0.3)
+    backgroundColor: fade(theme.palette.success.main, 0.3),
+    border: `0.0625rem solid ${theme.palette.success.main}`
   },
-  outlinedInfo: {
-    border: `0.0625rem solid ${theme.palette.secondary.main}`
+  standardInfo: {
+    border:
+      theme.palette.type === 'light'
+        ? `0.0625rem solid ${theme.palette.secondary.main}`
+        : `0.0625rem solid ${theme.palette.grey[500]}`,
+    '& $icon': {
+      display: 'none'
+    }
   },
   icon: {
     marginRight: '2rem',
@@ -53,21 +61,15 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Well = (
-  { errorIcon = <ErrorIcon />, successIcon = <SuccessIcon />, ...rest },
-  ref
-) => {
+const Well = (props, ref) => {
   const classes = useStyles({});
-  const component = (
+  return (
     <Alert
       classes={classes}
-      icon={[errorIcon, successIcon]}
-      {...rest}
+      iconMapping={{ error: <ErrorIcon />, success: <SuccessIcon /> }}
+      {...props}
       ref={ref}
     />
-  );
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>{component}</div>
   );
 };
 export default React.forwardRef(Well);
