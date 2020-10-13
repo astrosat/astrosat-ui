@@ -1,4 +1,5 @@
 import { fade } from '@material-ui/core';
+
 import { palette } from './palette';
 
 /** @type {import('@material-ui/core').ThemeOptions} */
