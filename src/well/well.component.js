@@ -14,11 +14,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor:
       theme.palette.type === 'dark'
-        ? theme.palette.grey[800]
+        ? 'transparent'
         : theme.palette.background.paper,
-    display: 'flex',
-    margin: theme.spacing(2),
-    padding: '2rem'
+    margin: theme.spacing(2)
   },
   message: {
     color: theme.palette.text.primary
@@ -46,9 +44,9 @@ const useStyles = makeStyles(theme => ({
   },
   standardInfo: {
     border:
-      theme.palette.type === 'light'
-        ? `0.0625rem solid ${theme.palette.secondary.main}`
-        : `0.0625rem solid ${theme.palette.grey[500]}`,
+      theme.palette.type === 'dark'
+        ? `0.0625rem solid ${theme.palette.text.primary}`
+        : `0.0625rem solid ${theme.palette.text.primary}`,
     '& $icon': {
       display: 'none'
     }
@@ -66,6 +64,7 @@ const Well = (props, ref) => {
   return (
     <Alert
       classes={classes}
+      severity="info"
       iconMapping={{ error: <ErrorIcon />, success: <SuccessIcon /> }}
       {...props}
       ref={ref}

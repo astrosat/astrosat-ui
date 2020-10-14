@@ -7,7 +7,7 @@ export default { title: 'Well' };
 export const Standard = () => {
   return (
     <>
-      <Well severity="info">
+      <Well>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>
@@ -41,7 +41,7 @@ export const Standard = () => {
 export const Outlined = () => {
   return (
     <>
-      <Well severity="info">
+      <Well>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>
@@ -76,7 +76,7 @@ export const Outlined = () => {
 export const Filled = () => {
   return (
     <>
-      <Well severity="info" variant="filled">
+      <Well variant="filled">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>
