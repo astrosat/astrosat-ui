@@ -41,7 +41,7 @@ export const Standard = () => {
 export const Outlined = () => {
   return (
     <>
-      <Well>
+      <Well variant="outlined">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <span>This is some content for the detail element:</span>
           <span>lorem ipsum</span>

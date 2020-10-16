@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
       theme.palette.type === 'dark'
         ? 'transparent'
         : theme.palette.background.paper,
-    margin: theme.spacing(2)
+    padding: theme.spacing(2)
   },
   message: {
     color: theme.palette.text.primary
@@ -30,9 +30,14 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.success.main
   },
   filledInfo: {
-    '& $icon': {
-      display: 'none'
-    }
+    backgroundColor:
+      theme.palette.type === 'dark'
+        ? theme.palette.text.secondary
+        : theme.palette.background.paper,
+    color: theme.palette.info.main
+  },
+  outlinedInfo: {
+    border: `0.0625rem solid ${theme.palette.text.primary}`
   },
   standardError: {
     backgroundColor: fade(theme.palette.error.main, 0.3),
@@ -43,30 +48,38 @@ const useStyles = makeStyles(theme => ({
     border: `0.0625rem solid ${theme.palette.success.main}`
   },
   standardInfo: {
-    border:
+    border: `0.0625rem solid ${theme.palette.text.primary}`,
+    backgroundColor:
       theme.palette.type === 'dark'
-        ? `0.0625rem solid ${theme.palette.text.primary}`
-        : `0.0625rem solid ${theme.palette.text.primary}`,
-    '& $icon': {
-      display: 'none'
-    }
+        ? theme.palette.text.secondary
+        : theme.palette.background.paper,
+    paddingLeft: '2.5rem'
   },
   icon: {
-    marginRight: '2rem',
+    marginRight: theme.spacing(4),
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
   }
 }));
 
-const Well = (props, ref) => {
+/**
+ * @param {import('@material-ui/core').AlertProps} props
+ * @param {React.Ref<HTMLDivElement>} ref
+ */
+
+const Well = ({ severity = 'info', ...rest }, ref) => {
   const classes = useStyles({});
   return (
     <Alert
       classes={classes}
-      severity="info"
-      iconMapping={{ error: <ErrorIcon />, success: <SuccessIcon /> }}
-      {...props}
+      severity={severity}
+      iconMapping={{
+        error: <ErrorIcon />,
+        success: <SuccessIcon />,
+        info: <></>
+      }}
+      {...rest}
       ref={ref}
     />
   );
