@@ -4,11 +4,13 @@ import { Alert } from '@material-ui/lab';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { fade } from '@material-ui/core';
+import { Box, fade } from '@material-ui/core';
 
 import ErrorIcon from '../icons/error-icon.component';
 
 import SuccessIcon from '../icons/correct-icon.component';
+
+import WarningIcon from '../icons/warning-icon.component';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -63,7 +65,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 /**
- * @param {import('@material-ui/core').AlertProps} props
+ * @param {import('@material-ui/lab').AlertProps} props
  * @param {React.Ref<HTMLDivElement>} ref
  */
 
@@ -76,7 +78,8 @@ const Well = ({ severity = 'info', ...rest }, ref) => {
       iconMapping={{
         error: <ErrorIcon />,
         success: <SuccessIcon />,
-        info: <></>
+        info: <Box mr={3} />,
+        warning: <WarningIcon />
       }}
       {...rest}
       ref={ref}
