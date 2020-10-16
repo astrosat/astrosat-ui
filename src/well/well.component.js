@@ -52,8 +52,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor:
       theme.palette.type === 'dark'
         ? theme.palette.text.secondary
-        : theme.palette.background.paper,
-    paddingLeft: '2.5rem'
+        : theme.palette.background.paper
   },
   icon: {
     marginRight: theme.spacing(4),
@@ -84,4 +83,5 @@ const Well = ({ severity = 'info', ...rest }, ref) => {
     />
   );
 };
+
 export default React.forwardRef(Well);
