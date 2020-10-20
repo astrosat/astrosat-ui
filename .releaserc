@@ -20,5 +20,6 @@
   ],
   "preset": "angular",
   "dryRun": false,
-  "ci": false
+  "ci": false,
+  "branches": ["master", "v1.19.2-hotfix"]
 }
