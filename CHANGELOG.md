@@ -1,3 +1,15 @@
+# [1.20.0](https://github.com/astrosat/astrosat-ui/compare/v1.19.2...v1.20.0) (2020-10-20)
+
+
+### Bug Fixes
+
+* **frontend:** Remove clickaway from select ([118b896](https://github.com/astrosat/astrosat-ui/commit/118b8964c66df3bfcf06c74e7bb64ec803a339b7)), closes [#100](https://github.com/astrosat/astrosat-ui/issues/100)
+
+
+### Features
+
+* **frontend:** Add ability to build release on non-master branch ([f1c9bbf](https://github.com/astrosat/astrosat-ui/commit/f1c9bbfc5e535e26d1d98f28bc2095c9b13153f5)), closes [#100](https://github.com/astrosat/astrosat-ui/issues/100)
+
 ## [1.19.2](https://github.com/astrosat/astrosat-ui/compare/v1.19.1...v1.19.2) (2020-08-27)
 
 
