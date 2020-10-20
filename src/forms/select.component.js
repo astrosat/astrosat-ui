@@ -4,7 +4,6 @@ import useModal from '../containers/use-modal.hook';
 import Textfield from './text-field.component';
 
 import styles from './select.module.css';
-import { useClickaway } from '../useClickaway';
 
 /**
  * @typedef Option
@@ -23,7 +22,6 @@ import { useClickaway } from '../useClickaway';
  */
 const Select = ({ name, value, options, onChange, disabled, ...rest }, ref) => {
   const [isVisible, toggle] = useModal(false);
-  const [clickawayRef] = useClickaway(() => isVisible && toggle());
 
   /** @param {Option} option */
   const handleOptionClick = option => () => {
@@ -37,10 +35,7 @@ const Select = ({ name, value, options, onChange, disabled, ...rest }, ref) => {
   };
 
   return (
-    <div
-      ref={clickawayRef}
-      className={`${styles.select} ${disabled && styles.disabled}`}
-    >
+    <div className={`${styles.select} ${disabled && styles.disabled}`}>
       <div
         tabIndex={0}
         className={`${styles.header} ${isVisible ? styles.visible : ''}`}
