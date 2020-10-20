@@ -1,16 +1,17 @@
 import React from 'react';
 
-import SimpleMenu from './menu.component';
-import Button from '@material-ui/core/Button';
-import { MenuItem } from '@material-ui/core';
+import { default as Menu } from './menu.component';
+
+// import { MenuItem } from '@material-ui/core';
 
 export default { title: 'Menu' };
 
-export const MenuI = () => {
-  return (
-    <div>
-      <SimpleMenu />
-      <MenuItem>Profile</MenuItem>
-    </div>
-  );
+export const Options = () => {
+  return <Menu open={true}></Menu>;
+};
+export const NoOption = () => {
+  return <Menu open={true}></Menu>;
+};
+export const Disabled = () => {
+  return <Menu open={true}></Menu>;
 };
