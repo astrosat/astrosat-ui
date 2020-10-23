@@ -28,7 +28,9 @@ const inputStyles = makeStyles(theme => ({
     fontSize: theme.typography.pxToRem(14),
     color: theme.palette.secondary.main,
     backgroundColor: theme.palette.common.white,
+    /** @param {InputProps} props */
     paddingLeft: props => (props.startAdornment ? theme.spacing(2) : 0),
+    /** @param {InputProps} props */
     paddingRight: props =>
       props.endAdornment || props.error || props.valid ? theme.spacing(2) : 0,
     borderRadius: `0.3rem 0.3rem 0.125rem 0.125rem`,
@@ -54,7 +56,9 @@ const inputStyles = makeStyles(theme => ({
   },
   input: {
     padding: theme.spacing(2, 0),
+    /** @param {InputProps} props */
     paddingLeft: props => (props.startAdornment ? theme.spacing(2) : 0),
+    /** @param {InputProps} props */
     paddingRight: props =>
       props.endAdornment || props.error || props.valid ? theme.spacing(2) : 0,
     '&$disabled': {

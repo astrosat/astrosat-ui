@@ -34,8 +34,16 @@ const dark = {
         }
       },
       disabled: {}
+    },
+    MuiInputLabel: {
+      root: {
+        color: palette.secondary.main
+      },
+      shrink: {
+        color: palette.text.secondary
+      }
     }
   }
 };
 
-export default createMuiTheme(merge(core, dark));
+export default createMuiTheme(merge(dark, core));

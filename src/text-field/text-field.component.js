@@ -1,7 +1,5 @@
-import InputLabel from 'input-label/input-label.component';
 import React from 'react';
-import FormControl from 'form-control/form-control.component';
-import { Input } from 'input';
+import { FormControl, Input, InputLabel } from '..';
 import clsx from 'clsx';
 import { FormHelperText, withStyles } from '@material-ui/core';
 
@@ -12,7 +10,9 @@ export const styles = {
 
 const TextField = React.forwardRef(
   /**
-   * @param {import('@material-ui/core').TextFieldProps} props
+   * @param {import('@material-ui/core').TextFieldProps &
+   *   {valid: import('../input/input.component').InputProps['valid']}
+   * } props
    * @param {*} ref
    */
   function TextField(props, ref) {
@@ -48,6 +48,7 @@ const TextField = React.forwardRef(
       select = false,
       SelectProps,
       type,
+      valid,
       value,
       variant = 'standard',
       ...other
@@ -109,6 +110,7 @@ const TextField = React.forwardRef(
         onFocus={onFocus}
         placeholder={placeholder}
         inputProps={inputProps}
+        valid={valid}
         {...InputMore}
         {...InputProps}
       />

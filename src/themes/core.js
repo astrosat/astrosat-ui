@@ -46,6 +46,22 @@ export const core = {
         fontWeight: 600
       }
     },
+    MuiFormHelperText: {
+      root: {
+        fontStyle: 'italic'
+      }
+    },
+    MuiInputLabel: {
+      root: {
+        zIndex: 1
+      },
+      formControl: {
+        transform: 'translate(0, 32px) scale(1)'
+      },
+      shrink: {
+        transform: 'translate(0, 1.5px) scale(0.75)'
+      }
+    },
     MuiFormLabel: {
       root: {
         fontSize: '14px'
@@ -70,6 +86,9 @@ export const core = {
     },
     MuiRadio: {
       disableRipple: true
+    },
+    MuiFormControl: {
+      fullWidth: true
     }
   },
   shape: {

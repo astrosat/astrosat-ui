@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from './text-field.component';
 
-export default { title: 'TextField' };
+export default { title: 'TextField', args: { value: '' } };
 
 const Template = args => <TextField {...args} />;
 
@@ -25,7 +25,13 @@ HelperText.args = {
 export const Error = Template.bind({});
 Error.args = {
   label: 'Error',
-  value: 'This has an error',
   error: true,
   helperText: "Something's wrong"
+};
+
+export const Valid = Template.bind({});
+Valid.args = {
+  label: 'Valid',
+  valid: true,
+  helperText: 'nothing is wrong'
 };

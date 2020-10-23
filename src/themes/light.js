@@ -13,6 +13,16 @@ const light = {
       disabled: fade(palette.secondary.main, 0.5)
     },
     background: { default: palette.grey[100] }
+  },
+  overrides: {
+    MuiInputLabel: {
+      root: {
+        color: palette.secondary.main
+      },
+      shrink: {
+        color: palette.secondary.main
+      }
+    }
   }
 };
 

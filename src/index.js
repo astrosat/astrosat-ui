@@ -1,21 +1,25 @@
+export {
+  FormControl,
+  InputLabel,
+  InputAdornment,
+  RadioGroup
+} from '@material-ui/core';
 export { default as LoadMask } from './load-mask/load-mask.component';
 
 export { default as Button } from './button/button.component';
 export { default as Checkbox } from './checkbox/checkbox.component';
 
 export { default as Radio } from './radio/radio.component';
-export { RadioGroup } from '@material-ui/core';
 
 export { default as Link } from './link/link.component';
 export { default as Switch } from './switch/switch.component';
 export { default as Well } from './well/well.component';
 
-export { default as FormControl } from './form-control/form-control.component';
 export { default as FormControlLabel } from './form-control-label/form-control-label.component';
 
 export { default as PasswordInput } from './password-input/password-input.component';
 
-export * from './input';
+export { default as Input } from './input/input.component';
 export * from './dialog';
 
 export { default as ButtonGroup } from './buttons/button-group.component';
@@ -31,7 +35,6 @@ export { default as useForm } from './forms/use-form.hook';
 
 export { default as Detail } from './containers/detail.component';
 export { default as useModal } from './containers/use-modal.hook';
-// export { default as Well } from './containers/well.component';
 
 export { default as Pill } from './pill/pill.component';
 export { default as PillAction } from './pill/pill-action.component';
