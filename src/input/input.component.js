@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Fade, Input as MuiInput, InputAdornment } from '@material-ui/core';
+import { Input as MuiInput, InputAdornment } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { ErrorIcon, CorrectIcon } from '../icons';
@@ -28,25 +28,35 @@ const inputStyles = makeStyles(theme => ({
     fontSize: theme.typography.pxToRem(14),
     color: theme.palette.secondary.main,
     backgroundColor: theme.palette.common.white,
+    paddingLeft: props => (props.startAdornment ? theme.spacing(2) : 0),
+    paddingRight: props =>
+      props.endAdornment || props.error || props.valid ? theme.spacing(2) : 0,
     borderRadius: `0.3rem 0.3rem 0.125rem 0.125rem`,
-    '&:after': {
-      borderRadius: '100vh',
-      position: 'absolute',
-      content: '""',
-      display: 'block',
-      height: theme.typography.pxToRem(2),
-      width: '100%',
-      transform: 'translateY(1.75em)',
-      background: props => getColors(theme, props)
-    },
     '&$disabled': {
       backgroundColor: 'rgba(239, 239, 239, 0.3)',
       cursor: 'not-allowed'
     }
   },
   disabled: {},
+  underline: {
+    '&:after': {
+      borderBottom: props => `2px solid ${getColors(theme, props)}`,
+      borderRadius: '100vh',
+      left: 0,
+      bottom: 0,
+      content: '""',
+      position: 'absolute',
+      right: 0,
+      transform: 'scaleX(1)',
+      pointerEvents: 'none'
+    },
+    '&:before': { display: 'none' }
+  },
   input: {
     padding: theme.spacing(2, 0),
+    paddingLeft: props => (props.startAdornment ? theme.spacing(2) : 0),
+    paddingRight: props =>
+      props.endAdornment || props.error || props.valid ? theme.spacing(2) : 0,
     '&$disabled': {
       cursor: 'not-allowed'
     }

@@ -128,12 +128,7 @@ const TextField = React.forwardRef(
         {...other}
       >
         {label && (
-          <InputLabel
-            htmlFor={id}
-            id={inputLabelId}
-            variant="filled"
-            {...InputLabelProps}
-          >
+          <InputLabel htmlFor={id} id={inputLabelId} {...InputLabelProps}>
             {label}
           </InputLabel>
         )}
