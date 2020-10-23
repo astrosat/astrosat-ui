@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Input as MuiInput, InputAdornment } from '@material-ui/core';
+import { Fade, Input as MuiInput, InputAdornment } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { ErrorIcon, CorrectIcon } from '../icons';
@@ -27,10 +27,18 @@ const inputStyles = makeStyles(theme => ({
   root: {
     fontSize: theme.typography.pxToRem(14),
     color: theme.palette.secondary.main,
-    padding: theme.spacing(2),
     backgroundColor: theme.palette.common.white,
-    borderBottom: props => `2px solid ${getColors(theme, props)}`,
-    borderRadius: '4.8px 4.8px 2px 2px',
+    borderRadius: `0.3rem 0.3rem 0.125rem 0.125rem`,
+    '&:after': {
+      borderRadius: '100vh',
+      position: 'absolute',
+      content: '""',
+      display: 'block',
+      height: theme.typography.pxToRem(2),
+      width: '100%',
+      transform: 'translateY(1.75em)',
+      background: props => getColors(theme, props)
+    },
     '&$disabled': {
       backgroundColor: 'rgba(239, 239, 239, 0.3)',
       cursor: 'not-allowed'
@@ -38,7 +46,7 @@ const inputStyles = makeStyles(theme => ({
   },
   disabled: {},
   input: {
-    padding: '0',
+    padding: theme.spacing(2, 0),
     '&$disabled': {
       cursor: 'not-allowed'
     }

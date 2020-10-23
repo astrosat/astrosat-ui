@@ -46,6 +46,11 @@ export const core = {
         fontWeight: 600
       }
     },
+    MuiFormLabel: {
+      root: {
+        fontSize: '14px'
+      }
+    },
     MuiCssBaseline: {
       '@global': {
         html: { fontSize: '1rem' },

@@ -10,9 +10,12 @@ const formControlStyles = makeStyles(() => ({
   }
 }));
 
-const FormControl = props => {
-  const formControlClasses = formControlStyles({});
-  return <MuiFormControl classes={formControlClasses} {...props} />;
+/**
+ * @param {import('@material-ui/core').FormControlProps} props
+ */
+const FormControl = ({ fullWidth = true, ...rest }) => {
+  // const formControlClasses = formControlStyles(props);
+  return <MuiFormControl fullWidth={fullWidth} {...rest} />;
 };
 
 export default FormControl;
