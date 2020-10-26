@@ -10,6 +10,7 @@ export { default as Link } from './link/link.component';
 export { default as Switch } from './switch/switch.component';
 export { default as Menu } from './menu/menu.component';
 export { default as MenuItem } from './menu/menuItem.component';
+export { default as Well } from './well/well.component';
 
 export { default as FormControl } from './form-control/form-control.component';
 export { default as FormControlLabel } from './form-control-label/form-control-label.component';
@@ -32,7 +33,7 @@ export { default as useForm } from './forms/use-form.hook';
 
 export { default as Detail } from './containers/detail.component';
 export { default as useModal } from './containers/use-modal.hook';
-export { default as Well } from './containers/well.component';
+// export { default as Well } from './containers/well.component';
 
 export { default as Pill } from './pill/pill.component';
 export { default as PillAction } from './pill/pill-action.component';
