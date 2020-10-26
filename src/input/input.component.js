@@ -37,6 +37,9 @@ const inputStyles = makeStyles(theme => ({
     '&$disabled': {
       backgroundColor: 'rgba(239, 239, 239, 0.3)',
       cursor: 'not-allowed'
+    },
+    '&$multiline': {
+      padding: theme.spacing(2)
     }
   },
   disabled: {},
@@ -52,16 +55,29 @@ const inputStyles = makeStyles(theme => ({
       transform: 'scaleX(1)',
       pointerEvents: 'none'
     },
-    '&:before': { display: 'none' }
+    '&:before': { display: 'none' },
+    '&$multiline': { '&:after': { display: 'none' } }
   },
   input: {
-    padding: theme.spacing(2, 0),
+    /** @param {InputProps} props */
+    padding: props => (props.multiline ? 0 : theme.spacing(2, 0)),
     /** @param {InputProps} props */
     paddingLeft: props => (props.startAdornment ? theme.spacing(2) : 0),
     /** @param {InputProps} props */
     paddingRight: props =>
       props.endAdornment || props.error || props.valid ? theme.spacing(2) : 0,
     '&$disabled': {
+      cursor: 'not-allowed'
+    }
+  },
+  multiline: {
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.secondary.main,
+    borderRadius: theme.shape.borderRadius,
+    boxShadow: theme.shadows[5],
+    '&$disabled': {
+      backgroundColor: theme.palette.common.white,
+      opacity: '0.3',
       cursor: 'not-allowed'
     }
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from './text-field.component';
 
-export default { title: 'TextField', args: { value: '' } };
+export default { title: 'TextField' };
 
 const Template = args => <TextField {...args} />;
 
@@ -34,4 +34,11 @@ Valid.args = {
   label: 'Valid',
   valid: true,
   helperText: 'nothing is wrong'
+};
+
+export const Multiline = Template.bind({});
+Multiline.args = {
+  multiline: true,
+  label: 'Multiline',
+  helperText: 'This is a textarea'
 };

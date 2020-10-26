@@ -31,7 +31,7 @@ const TextField = React.forwardRef(
       helperText,
       hiddenLabel,
       id,
-      InputLabelProps,
+      InputLabelProps = {},
       inputProps,
       InputProps,
       inputRef,
@@ -78,6 +78,11 @@ const TextField = React.forwardRef(
         );
       }
     }
+
+    if (multiline) {
+      InputLabelProps.shrink = true;
+    }
+
     if (select) {
       // unset defaults from textbox inputs
       if (!SelectProps || !SelectProps.native) {

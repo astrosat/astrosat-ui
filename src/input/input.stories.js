@@ -36,3 +36,6 @@ export const Adornments = () => (
     <Input startAdornment={<SearchIcon />} />
   </>
 );
+
+export const Multiline = args => <Input {...args} />;
+Multiline.args = { multiline: true, disabled: false };
