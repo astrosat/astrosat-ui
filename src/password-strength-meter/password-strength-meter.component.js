@@ -1,5 +1,5 @@
 import React from 'react';
-import zxcvbn from 'zxcvbn';
+
 import {
   Fade,
   Grid,
@@ -8,6 +8,7 @@ import {
   Typography
 } from '@material-ui/core';
 import clsx from 'clsx';
+import zxcvbn from 'zxcvbn';
 
 /**
  * @param {number} score
