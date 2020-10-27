@@ -57,7 +57,12 @@ const meterStyles = makeStyles(theme => ({
     })
   },
   grid: {
-    minHeight: '1.375rem'
+    minHeight: '1.375rem',
+    alignItems: 'center',
+    [theme.breakpoints.only('xs')]: {
+      minHeight: '1.6875rem',
+      alignItems: 'flex-start'
+    }
   },
   text: {
     color: getColor(theme)
@@ -81,11 +86,7 @@ const PasswordStrengthMeter = ({ password = '', className }) => {
   );
 
   return (
-    <Grid
-      className={clsx(gridClasses, className)}
-      container
-      alignItems="center"
-    >
+    <Grid className={clsx(gridClasses, className)} container>
       <Grid item xs={12} sm={10}>
         <LinearProgress
           classes={meterClasses}
