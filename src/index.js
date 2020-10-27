@@ -19,7 +19,7 @@ export { default as PasswordInput } from './password-input/password-input.compon
 export * from './input';
 export * from './dialog';
 
-export { default as PasswordStrengthMeter } from './forms/password-strength-meter.component';
+export { default as PasswordStrengthMeter } from './password-strength-meter/password-strength-meter.component';
 export { default as Slider } from './forms/slider.component';
 export { default as TextArea } from './forms/text-area.component';
 export { default as Select } from './forms/select.component';
