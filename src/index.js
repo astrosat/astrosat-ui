@@ -4,7 +4,7 @@ export { default as Button } from './button/button.component';
 export { default as Checkbox } from './checkbox/checkbox.component';
 
 export { default as Radio } from './radio/radio.component';
-export { RadioGroup } from '@material-ui/core';
+export { RadioGroup, Typography } from '@material-ui/core';
 
 export { default as Link } from './link/link.component';
 export { default as Switch } from './switch/switch.component';
