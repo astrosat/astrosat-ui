@@ -1,5 +1,5 @@
-import React from 'react';
-import { text } from '@storybook/addon-knobs';
+import { Input } from 'input';
+import React, { useState } from 'react';
 import PasswordStrengthMeter from './password-strength-meter.component';
 
 export default { title: 'Password Strength Meter' };
@@ -7,12 +7,18 @@ export default { title: 'Password Strength Meter' };
 export const Strengths = () => (
   <>
     <PasswordStrengthMeter password="" />
-    <PasswordStrengthMeter password="pa" />
+    <PasswordStrengthMeter password="panda" />
     <PasswordStrengthMeter password="pandaconcrete" />
     <PasswordStrengthMeter password="pandaconcretespoon" />
   </>
 );
 
-export const Playground = () => (
-  <PasswordStrengthMeter password={text('Password', '')} />
-);
+export const Transitions = () => {
+  const [value, setValue] = useState('');
+  return (
+    <>
+      <Input onChange={e => setValue(e.target.value)} />
+      <PasswordStrengthMeter password={value} />
+    </>
+  );
+};

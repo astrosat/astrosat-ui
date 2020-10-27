@@ -14,22 +14,18 @@ describe('Password Strength Meter Component', () => {
   });
 
   it('shows the text "Weak" with a password score of 0', () => {
-    const { container, getByText } = render(
-      <PasswordStrengthMeter password="pa" />
-    );
+    const { getByText } = render(<PasswordStrengthMeter password="pa" />);
     expect(getByText('Weak')).toBeInTheDocument();
   });
 
   it('shows the text "Weak" with a password score of 1', () => {
-    const { container, getByText } = render(
-      <PasswordStrengthMeter password="pand" />
-    );
+    const { getByText } = render(<PasswordStrengthMeter password="pand" />);
 
     expect(getByText('Weak')).toBeInTheDocument();
   });
 
   it('shows the text "Fair" with a password score of 2', () => {
-    const { container, getByText } = render(
+    const { getByText } = render(
       <PasswordStrengthMeter password="pandaconcrete" />
     );
 
@@ -37,7 +33,7 @@ describe('Password Strength Meter Component', () => {
   });
 
   it('shows the text "Fair" with a password score of 3', () => {
-    const { container, getByText } = render(
+    const { getByText } = render(
       <PasswordStrengthMeter password="pandaconcretesp" />
     );
 
@@ -45,7 +41,7 @@ describe('Password Strength Meter Component', () => {
   });
 
   it('shows the text "Strong" with a password score of 4', () => {
-    const { container, getByText } = render(
+    const { getByText } = render(
       <PasswordStrengthMeter password="pandaconcretespoon" />
     );
 
