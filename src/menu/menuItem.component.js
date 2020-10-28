@@ -6,25 +6,27 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const menuItemStyles = makeStyles(theme => ({
   root: {
-    padding: '0.3em',
-    backgroundColor: 'none',
-    '&:nth-child(2)': {
-      borderBottom: `0.0625em solid ${theme.palette.text.secondary}`,
+    padding: theme.spacing(0.5),
+    '& + &': {
       borderTop: `0.0625em solid ${theme.palette.text.secondary}`
     },
     '&:hover': {
-      backgroundColor: theme.palette.grey[300]
+      backgroundColor: theme.palette.grey[300],
+      '&:last-child': {
+        borderRadius: '0 0 0.3em 0.3em'
+      }
     }
   }
 }));
 
 /**
+ * @param {Omit <import('@material-ui/core').MenuItemProps, "button">} props
  * @param {React.Ref<any>} ref
  */
 
 const MenuItem = (props, ref) => {
-  const menuItemClasses = menuItemStyles({});
-  return <MuiMenuItem classes={menuItemClasses} ref={ref} {...props} />;
+  const menuItemClasses = menuItemStyles(props);
+  return <MuiMenuItem classes={menuItemClasses} {...props} ref={ref} />;
 };
 
 export default React.forwardRef(MenuItem);

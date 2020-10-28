@@ -57,13 +57,7 @@ export const core = {
   },
   palette,
   props: {
-    MuiButton: {
-      disableRipple: true
-    },
-    MuiCheckbox: {
-      disableRipple: true
-    },
-    MuiRadio: {
+    MuiButtonBase: {
       disableRipple: true
     },
     MuiInput: {
