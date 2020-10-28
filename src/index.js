@@ -9,6 +9,8 @@ export { RadioGroup } from '@material-ui/core';
 
 export { default as Link } from './link/link.component';
 export { default as Switch } from './switch/switch.component';
+export { default as Menu } from './menu/menu.component';
+export { default as MenuItem } from './menu/menu-item.component';
 export { default as Well } from './well/well.component';
 
 export { default as FormControl } from './form-control/form-control.component';
