@@ -81,14 +81,22 @@ export const core = createMuiTheme({
     },
     MuiInputLabel: {
       root: {
-        zIndex: 1
+        zIndex: 1,
+        '&$error': {
+          color: palette.text.secondary,
+          '&$focused': {
+            color: palette.primary.main
+          }
+        }
       },
       formControl: {
         transform: 'translate(16px, 32px) scale(1)'
       },
       shrink: {
         transform: 'translate(0, 1.5px) scale(0.75)'
-      }
+      },
+      error: {},
+      focused: {}
     },
     MuiFormLabel: {
       root: {
