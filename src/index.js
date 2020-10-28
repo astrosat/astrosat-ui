@@ -1,6 +1,7 @@
 export { default as LoadMask } from './load-mask/load-mask.component';
 
 export { default as Button } from './button/button.component';
+export { default as IconButton } from './icon-button/icon-button.component';
 export { default as Checkbox } from './checkbox/checkbox.component';
 
 export { default as Radio } from './radio/radio.component';
@@ -20,11 +21,7 @@ export { default as PasswordInput } from './password-input/password-input.compon
 export * from './input';
 export * from './dialog';
 
-export { default as ButtonGroup } from './buttons/button-group.component';
-export { default as CloseButton } from './buttons/close-button.component';
-export { default as InfoButton } from './buttons/info-button.component';
-
-export { default as PasswordStrengthMeter } from './forms/password-strength-meter.component';
+export { default as PasswordStrengthMeter } from './password-strength-meter/password-strength-meter.component';
 export { default as Slider } from './forms/slider.component';
 export { default as TextArea } from './forms/text-area.component';
 export { default as Select } from './forms/select.component';
