@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MenuItem as MuiMenuItem, fade } from '@material-ui/core';
+import { MenuItem as MuiMenuItem } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -19,10 +19,7 @@ const menuItemStyles = makeStyles(theme => ({
       borderBottomRightRadius: theme.shape.borderRadius
     },
     '&:hover': {
-      backgroundColor:
-        theme.palette.type === 'dark'
-          ? fade(theme.palette.action.hover, 1)
-          : fade(theme.palette.action.hover, 0.2)
+      backgroundColor: theme.palette.grey[300]
     }
   }
 }));
