@@ -114,16 +114,7 @@ export const core = createMuiTheme({
   },
   palette,
   props: {
-    MuiButton: {
-      disableRipple: true
-    },
-    MuiIconButton: {
-      disableRipple: true
-    },
-    MuiCheckbox: {
-      disableRipple: true
-    },
-    MuiRadio: {
+    MuiButtonBase: {
       disableRipple: true
     },
     MuiFormControl: {
