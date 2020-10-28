@@ -84,7 +84,7 @@ export const core = createMuiTheme({
         zIndex: 1
       },
       formControl: {
-        transform: 'translate(0, 32px) scale(1)'
+        transform: 'translate(16px, 32px) scale(1)'
       },
       shrink: {
         transform: 'translate(0, 1.5px) scale(0.75)'

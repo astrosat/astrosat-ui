@@ -60,12 +60,7 @@ const inputStyles = makeStyles(theme => ({
   },
   input: {
     /** @param {InputProps} props */
-    padding: props => (props.multiline ? 0 : theme.spacing(2, 0)),
-    /** @param {InputProps} props */
-    paddingLeft: props => (props.startAdornment ? theme.spacing(2) : 0),
-    /** @param {InputProps} props */
-    paddingRight: props =>
-      props.endAdornment || props.error || props.valid ? theme.spacing(2) : 0,
+    padding: props => (props.multiline ? 0 : theme.spacing(2)),
     '&$disabled': {
       cursor: 'not-allowed'
     }
