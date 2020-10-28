@@ -1,4 +1,4 @@
-import { Input } from 'input';
+import { Input } from '..';
 import React, { useState } from 'react';
 import PasswordStrengthMeter from './password-strength-meter.component';
 
