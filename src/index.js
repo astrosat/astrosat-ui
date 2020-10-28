@@ -12,6 +12,8 @@ export * from './icons';
 export * from './input';
 export { default as Link } from './link/link.component';
 export { default as LoadMask } from './load-mask/load-mask.component';
+export { default as Menu } from './menu/menu-item.component';
+export { default as MenuItem } from './menu/menu-item.component';
 export { default as PasswordInput } from './password-input/password-input.component';
 export { default as PasswordStrengthMeter } from './password-strength-meter/password-strength-meter.component';
 export { default as ProgressBar } from './progress/progress-bar.component';
