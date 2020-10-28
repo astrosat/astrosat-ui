@@ -88,9 +88,6 @@ export const core = createMuiTheme({
     MuiButtonBase: {
       disableRipple: true
     },
-    MuiRadio: {
-      disableRipple: true
-    },
     MuiInput: {
       disableUnderline: true
     }

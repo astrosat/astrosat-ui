@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { default as MenuItem } from '../menu/menuItem.component';
+import { default as MenuItem } from './menu-item.component';
 
 import { default as Menu } from './menu.component';
 

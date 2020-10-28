@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MenuItem as MuiMenuItem } from '@material-ui/core';
+import { MenuItem as MuiMenuItem, fade } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -10,11 +10,19 @@ const menuItemStyles = makeStyles(theme => ({
     '& + &': {
       borderTop: `0.0625em solid ${theme.palette.text.secondary}`
     },
+    '&:first-of-type': {
+      borderBottomLeftRadius: theme.shape.borderRadius,
+      borderBottomRightRadius: theme.shape.borderRadius
+    },
+    '&:last-of-type': {
+      borderBottomLeftRadius: theme.shape.borderRadius,
+      borderBottomRightRadius: theme.shape.borderRadius
+    },
     '&:hover': {
-      backgroundColor: theme.palette.grey[300],
-      '&:last-child': {
-        borderRadius: '0 0 0.3em 0.3em'
-      }
+      backgroundColor:
+        theme.palette.type === 'dark'
+          ? fade(theme.palette.action.hover, 1)
+          : fade(theme.palette.action.hover, 0.2)
     }
   }
 }));
