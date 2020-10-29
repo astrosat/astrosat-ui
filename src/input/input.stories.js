@@ -3,6 +3,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 import { default as Input } from './input.component';
+import { SearchIcon } from 'icons';
 
 export default { title: 'Input' };
 
@@ -28,3 +29,13 @@ export const Invalid = () => {
   const valid = false;
   return <Input onChange={action('Input changed')} error={!valid} />;
 };
+
+export const Adornments = () => (
+  <>
+    <Input endAdornment={<SearchIcon />} />
+    <Input startAdornment={<SearchIcon />} />
+  </>
+);
+
+export const Multiline = args => <Input {...args} />;
+Multiline.args = { multiline: true, disabled: false };

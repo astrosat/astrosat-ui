@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Alert } from '@material-ui/lab';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { darken, makeStyles } from '@material-ui/core/styles';
 
 import { Box, fade } from '@material-ui/core';
 
@@ -14,10 +14,6 @@ import WarningIcon from '../icons/warning-icon.component';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor:
-      theme.palette.type === 'dark'
-        ? 'transparent'
-        : theme.palette.background.paper,
     padding: theme.spacing(2)
   },
   message: {
@@ -34,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   filledInfo: {
     backgroundColor:
       theme.palette.type === 'dark'
-        ? theme.palette.text.secondary
+        ? darken(theme.palette.background.default, 0.3)
         : theme.palette.background.paper,
     color: theme.palette.info.main
   },
@@ -53,7 +49,7 @@ const useStyles = makeStyles(theme => ({
     border: `0.0625rem solid ${theme.palette.text.primary}`,
     backgroundColor:
       theme.palette.type === 'dark'
-        ? theme.palette.text.secondary
+        ? darken(theme.palette.background.default, 0.3)
         : theme.palette.background.paper
   },
   icon: {

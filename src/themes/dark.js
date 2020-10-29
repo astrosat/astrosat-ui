@@ -1,37 +1,68 @@
-import { createMuiTheme } from '@material-ui/core';
+import { createMuiTheme, fade } from '@material-ui/core';
 import createPalette from '@material-ui/core/styles/createPalette';
-import { merge } from 'lodash';
+import deepmerge from 'deepmerge';
+
 import { core } from './core';
 import { palette as corePalette } from './palette';
 
 /** @type {import('@material-ui/core/styles/createPalette').PaletteOptions} */
 const darkPalette = {
   type: 'dark',
-  text: { primary: corePalette.grey[100] },
-  background: { default: corePalette.secondary.main }
+  text: {
+    primary: corePalette.grey[100],
+    secondary: corePalette.grey[100],
+    disabled: fade(corePalette.grey[100], 0.5)
+  },
+  background: { default: corePalette.secondary.main },
+  action: {
+    active: corePalette.grey[300],
+    hover: fade(corePalette.grey[300], corePalette.action.hoverOpacity),
+    disabled: corePalette.grey[500]
+  }
 };
 
-const palette = createPalette(merge(corePalette, darkPalette));
+const palette = createPalette(deepmerge(corePalette, darkPalette));
 
 /** @type {import('@material-ui/core').ThemeOptions} */
 const dark = {
   palette,
   overrides: {
     MuiButton: {
-      text: {
-        '&$disabled': {
-          color: palette.grey[500]
-        }
-      },
       outlined: {
         '&$disabled': {
-          color: palette.grey[500],
-          borderColor: palette.grey[500]
+          borderColor: palette.action.disabled
         }
       },
       disabled: {}
+    },
+    MuiIconButton: {
+      root: {
+        '&:focus': {
+          backgroundColor: palette.action.hover
+        },
+        '&$disabled': {
+          color: palette.action.disabled
+        }
+      },
+      disabled: {}
+    },
+    MuiInputLabel: {
+      root: {
+        color: palette.secondary.main,
+        '&$error': {
+          color: palette.secondary.main,
+          '&$shrink:not($focused)': {
+            color: palette.text.secondary
+          }
+        }
+      },
+      shrink: {
+        color: palette.text.secondary
+      },
+      error: {},
+      focused: {}
     }
   }
 };
 
-export default createMuiTheme(merge(core, dark));
+export default createMuiTheme(deepmerge(core, dark));

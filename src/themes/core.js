@@ -1,16 +1,15 @@
-import { fade } from '@material-ui/core';
+import { createMuiTheme, fade } from '@material-ui/core';
 
 import { palette } from './palette';
 
 /** @type {import('@material-ui/core').ThemeOptions} */
-export const core = {
+export const core = createMuiTheme({
   overrides: {
     MuiButton: {
       textSecondary: {
         color: palette.info.main,
         '&:hover': {
           backgroundColor: fade(palette.info.main, palette.action.hoverOpacity),
-          // Reset on touch devices, it doesn't add specificity
           '@media (hover: none)': {
             backgroundColor: 'transparent'
           }
@@ -20,7 +19,6 @@ export const core = {
         backgroundColor: palette.info.main,
         '&:hover': {
           backgroundColor: palette.info.main,
-          // Reset on touch devices, it doesn't add specificity
           '@media (hover: none)': {
             backgroundColor: palette.info.main
           }
@@ -41,9 +39,68 @@ export const core = {
         }
       }
     },
+    MuiIconButton: {
+      root: {
+        '&:focus': {
+          backgroundColor: fade(
+            palette.action.active,
+            palette.action.hoverOpacity
+          )
+        }
+      },
+      colorPrimary: {
+        '&:focus': {
+          backgroundColor: fade(
+            palette.primary.main,
+            palette.action.hoverOpacity
+          )
+        }
+      },
+      colorSecondary: {
+        color: palette.info.main,
+        '&:hover': {
+          backgroundColor: fade(palette.info.main, palette.action.hoverOpacity),
+          '@media (hover: none)': {
+            backgroundColor: 'transparent'
+          }
+        },
+        '&:focus': {
+          backgroundColor: fade(palette.info.main, palette.action.hoverOpacity)
+        }
+      }
+    },
     MuiLink: {
       root: {
         fontWeight: 600
+      }
+    },
+    MuiFormHelperText: {
+      root: {
+        fontStyle: 'italic'
+      }
+    },
+    MuiInputLabel: {
+      root: {
+        zIndex: 1,
+        '&$error': {
+          color: palette.text.secondary,
+          '&$focused': {
+            color: palette.primary.main
+          }
+        }
+      },
+      formControl: {
+        transform: 'translate(16px, 32px) scale(1)'
+      },
+      shrink: {
+        transform: 'translate(0, 1.5px) scale(0.75)'
+      },
+      error: {},
+      focused: {}
+    },
+    MuiFormLabel: {
+      root: {
+        fontSize: '14px'
       }
     },
     MuiCssBaseline: {
@@ -57,13 +114,7 @@ export const core = {
   },
   palette,
   props: {
-    MuiButton: {
-      disableRipple: true
-    },
-    MuiCheckbox: {
-      disableRipple: true
-    },
-    MuiRadio: {
+    MuiButtonBase: {
       disableRipple: true
     },
     MuiInput: {
@@ -71,6 +122,9 @@ export const core = {
     },
     MuiLink: {
       variant: 'body1'
+    },
+    MuiFormControl: {
+      fullWidth: true
     }
   },
   shape: {
@@ -111,4 +165,4 @@ export const core = {
       textTransform: 'none'
     }
   }
-};
+});
