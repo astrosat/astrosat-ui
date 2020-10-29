@@ -1,9 +1,5 @@
 export { default as Button } from './button/button.component';
 export { default as Checkbox } from './checkbox/checkbox.component';
-export {
-  ThemeContext,
-  ThemeProvider
-} from './containers/theme-provider.component';
 export * from './dialog';
 export { default as FormControlLabel } from './form-control-label/form-control-label.component';
 export { default as Select } from './forms/select.component';
@@ -22,4 +18,5 @@ export * from './proxies';
 export { default as Radio } from './radio/radio.component';
 export { default as Switch } from './switch/switch.component';
 export { default as TextField } from './text-field/text-field.component';
+export { default as ThemeProvider } from './theme-provider/theme-provider.component';
 export { default as Well } from './well/well.component';
