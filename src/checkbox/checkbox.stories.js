@@ -2,9 +2,7 @@ import React from 'react';
 
 import { action } from '@storybook/addon-actions';
 
-import { FormGroup } from '@material-ui/core';
-
-import { default as FormControlLabel } from '../form-control-label/form-control-label.component';
+import { FormGroup, FormControlLabel } from '@material-ui/core';
 
 import { default as Checkbox } from './checkbox.component';
 
@@ -49,35 +47,17 @@ export const CheckboxGroup = () => {
     <FormGroup>
       <FormControlLabel
         label="Checkbox Label"
-        control={
-          <Checkbox
-            name="Test Name"
-            label="Checkbox 1"
-            onChange={action('Checked')}
-          />
-        }
+        control={<Checkbox name="Test Name" onChange={action('Checked')} />}
       />
 
       <FormControlLabel
         label="Checkbox Label"
-        control={
-          <Checkbox
-            name="Test Name"
-            label="Checkbox 2"
-            onChange={action('Checked')}
-          />
-        }
+        control={<Checkbox name="Test Name" onChange={action('Checked')} />}
       />
 
       <FormControlLabel
         label="Checkbox Label"
-        control={
-          <Checkbox
-            name="Test Name"
-            label="Checkbox 3"
-            onChange={action('Checked')}
-          />
-        }
+        control={<Checkbox name="Test Name" onChange={action('Checked')} />}
       />
     </FormGroup>
   );

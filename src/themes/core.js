@@ -74,6 +74,19 @@ export const core = createMuiTheme({
         fontWeight: 600
       }
     },
+    MuiFormControlLabel: {
+      root: {
+        '& .Mui-disabled': {
+          opacity: palette.action.disabledOpacity
+        },
+        '&$disabled': {
+          cursor: 'not-allowed'
+        },
+        margin: 0,
+        minHeight: '1.4375rem'
+      },
+      disabled: {}
+    },
     MuiFormHelperText: {
       root: {
         fontStyle: 'italic'
