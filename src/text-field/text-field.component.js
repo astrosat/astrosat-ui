@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 import Input from '../input/input.component';
 import clsx from 'clsx';
+import PasswordInput from 'password-input/password-input.component';
 
 export const styles = {
   /* Styles applied to the root element. */
@@ -98,7 +99,7 @@ const TextField = React.forwardRef(
 
     const helperTextId = helperText && id ? `${id}-helper-text` : undefined;
     const inputLabelId = label && id ? `${id}-label` : undefined;
-    const InputComponent = Input;
+    const InputComponent = type === 'password' ? PasswordInput : Input;
     const InputElement = (
       <InputComponent
         aria-describedby={helperTextId}
