@@ -7,10 +7,22 @@ import { palette } from './palette';
 const light = {
   palette: {
     type: 'light',
-    text: { primary: palette.secondary.main },
+    text: {
+      primary: palette.secondary.main,
+      secondary: palette.secondary.main,
+      disabled: fade(palette.secondary.main, 0.5)
+    },
     background: { default: palette.grey[100] }
   },
   overrides: {
+    MuiInputLabel: {
+      root: {
+        color: palette.secondary.main
+      },
+      shrink: {
+        color: palette.secondary.main
+      }
+    },
     MuiIconButton: {
       root: {
         color: palette.secondary.main,

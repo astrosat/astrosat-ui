@@ -74,6 +74,35 @@ export const core = createMuiTheme({
         fontWeight: 600
       }
     },
+    MuiFormHelperText: {
+      root: {
+        fontStyle: 'italic'
+      }
+    },
+    MuiInputLabel: {
+      root: {
+        zIndex: 1,
+        '&$error': {
+          color: palette.text.secondary,
+          '&$focused': {
+            color: palette.primary.main
+          }
+        }
+      },
+      formControl: {
+        transform: 'translate(16px, 32px) scale(1)'
+      },
+      shrink: {
+        transform: 'translate(0, 1.5px) scale(0.75)'
+      },
+      error: {},
+      focused: {}
+    },
+    MuiFormLabel: {
+      root: {
+        fontSize: '14px'
+      }
+    },
     MuiCssBaseline: {
       '@global': {
         html: { fontSize: '1rem' },
@@ -88,8 +117,8 @@ export const core = createMuiTheme({
     MuiButtonBase: {
       disableRipple: true
     },
-    MuiInput: {
-      disableUnderline: true
+    MuiFormControl: {
+      fullWidth: true
     }
   },
   shape: {
