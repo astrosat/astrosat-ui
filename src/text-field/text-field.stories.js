@@ -42,3 +42,7 @@ Multiline.args = {
   label: 'Multiline',
   helperText: 'This is a textarea'
 };
+
+export const PasswordField = () => (
+  <TextField label="Password" type="password" />
+);
