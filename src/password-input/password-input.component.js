@@ -19,7 +19,7 @@ const iconStyles = makeStyles(theme => ({
     color: props => {
       if (props.error) return theme.palette.error.main;
       if (props.valid) return theme.palette.success.main;
-      return;
+      return 'inherit';
     }
   }
 }));
