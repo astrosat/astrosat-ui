@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import { IconButton, InputAdornment, makeStyles } from '@material-ui/core';
+import { InputAdornment, makeStyles } from '@material-ui/core';
 
+import { default as IconButton } from '../icon-button/icon-button.component';
 import { default as Input } from '../input/input.component';
 
 import { EyeIcon, EyeSlashIcon } from '../icons';
@@ -39,7 +40,7 @@ const PasswordInput = ({ type = INPUT_TYPE.password, ...rest }) => {
 
   const adornment = (
     <InputAdornment position="end">
-      <IconButton onClick={handleClick}>
+      <IconButton onClick={handleClick} size="small">
         {_type === INPUT_TYPE.text ? (
           <EyeIcon classes={iconClasses} />
         ) : (
