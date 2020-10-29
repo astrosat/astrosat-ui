@@ -117,6 +117,12 @@ export const core = createMuiTheme({
     MuiButtonBase: {
       disableRipple: true
     },
+    MuiInput: {
+      disableUnderline: true
+    },
+    MuiLink: {
+      variant: 'body1'
+    },
     MuiFormControl: {
       fullWidth: true
     }
@@ -126,16 +132,37 @@ export const core = createMuiTheme({
   },
   typography: {
     fontFamily: '"Open Sans", sans-serif',
+    h1: {
+      fontSize: '26px',
+      fontWeight: 700
+    },
+    h2: {
+      fontSize: '18px',
+      fontWeight: 600
+    },
+    h3: {
+      fontSize: '16px',
+      fontWeight: 600
+    },
+    h4: {
+      fontSize: '14px',
+      fontWeight: 600
+    },
+    h5: {
+      fontSize: '12px',
+      fontWeight: 600
+    },
+    body1: {
+      fontSize: '14px'
+    },
+    body2: {
+      fontSize: '12px'
+    },
     button: {
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 'normal',
       textTransform: 'none'
-    },
-    h4: {
-      color: palette.secondary.main,
-      fontSize: '1.5rem',
-      fontWeight: 'bold'
     }
   }
 });

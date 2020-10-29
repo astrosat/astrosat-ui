@@ -14,9 +14,9 @@ export const ActualLink = () => {
         Actual Link
       </Link>
       <Link href="#" onClick={preventDefault} color="error">
-        {'color="inherit"'}
+        {'color="error"'}
       </Link>
-      <Link href="#" onClick={preventDefault} variant="body1">
+      <Link href="#" onClick={preventDefault} variant="body2">
         {'variant="body2"'}
       </Link>
     </Typography>
