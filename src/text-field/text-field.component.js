@@ -1,7 +1,12 @@
 import React from 'react';
-import { FormControl, Input, InputLabel } from '..';
+import {
+  FormHelperText,
+  FormControl,
+  InputLabel,
+  withStyles
+} from '@material-ui/core';
+import Input from '../input/input.component';
 import clsx from 'clsx';
-import { FormHelperText, withStyles } from '@material-ui/core';
 
 export const styles = {
   /* Styles applied to the root element. */
