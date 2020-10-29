@@ -1,10 +1,10 @@
 import React from 'react';
-import { ThemeProvider } from '../src/containers/theme-provider.component';
+import ThemeProvider from '../src/theme-provider/theme-provider.component';
 import { CssBaseline } from '@material-ui/core';
 
 export const decorators = [
   (Story, context) => (
-    <ThemeProvider defaultTheme={context.globals.theme}>
+    <ThemeProvider theme={context.globals.theme}>
       <CssBaseline />
       <Story {...context} />
     </ThemeProvider>
