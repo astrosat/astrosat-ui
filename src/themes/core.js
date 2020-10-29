@@ -117,9 +117,6 @@ export const core = createMuiTheme({
     MuiButtonBase: {
       disableRipple: true
     },
-    MuiInput: {
-      disableUnderline: true
-    },
     MuiLink: {
       variant: 'body1'
     },
