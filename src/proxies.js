@@ -14,6 +14,7 @@ export {
   Drawer,
   Fade,
   FormControl,
+  FormControlLabel,
   Grid,
   GridList,
   Grow,

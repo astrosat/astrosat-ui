@@ -2,9 +2,7 @@ import React from 'react';
 
 import { action } from '@storybook/addon-actions';
 
-import { RadioGroup } from '@material-ui/core';
-
-import { default as FormControlLabel } from '../form-control-label/form-control-label.component';
+import { RadioGroup, FormControlLabel } from '@material-ui/core';
 
 import { default as Radio } from './radio.component';
 
