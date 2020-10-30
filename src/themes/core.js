@@ -76,14 +76,15 @@ export const core = createMuiTheme({
     },
     MuiFormControlLabel: {
       root: {
+        margin: 0,
+        marginLeft: 0,
+        minHeight: '1.4375rem',
         '& .Mui-disabled': {
           opacity: palette.action.disabledOpacity
         },
         '&$disabled': {
           cursor: 'not-allowed'
-        },
-        margin: 0,
-        minHeight: '1.4375rem'
+        }
       },
       disabled: {}
     },
