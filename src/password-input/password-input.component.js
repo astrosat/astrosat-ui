@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { IconButton, InputAdornment, makeStyles } from '@material-ui/core';
 
@@ -6,7 +6,7 @@ import { default as Input } from '../input/input.component';
 
 import { EyeIcon, EyeSlashIcon } from '../icons';
 
-const INPUT = {
+const INPUT_TYPE = {
   text: 'text',
   password: 'password'
 };
@@ -19,31 +19,28 @@ const iconStyles = makeStyles(theme => ({
     color: props => {
       if (props.error) return theme.palette.error.main;
       if (props.valid) return theme.palette.success.main;
-      return;
+      return 'inherit';
     }
-  }
-}));
-
-const iconButtonStyles = makeStyles(() => ({
-  root: {
-    padding: '0'
   }
 }));
 
 /**
  * @param {import('../input/input.component.js').InputProps} props
  */
-const PasswordInput = props => {
-  const [isVisible, setIsVisible] = React.useState(false);
-  const onClick = () => setIsVisible(!isVisible);
+const PasswordInput = ({ type = INPUT_TYPE.password, ...rest }) => {
+  const [_type, setType] = useState(type);
 
-  const iconClasses = iconStyles(props);
-  const iconButtonClasses = iconButtonStyles(props);
+  const iconClasses = iconStyles({ type: _type, ...rest });
+
+  const handleClick = () =>
+    _type === INPUT_TYPE.password
+      ? setType(INPUT_TYPE.text)
+      : setType(INPUT_TYPE.password);
 
   const adornment = (
     <InputAdornment position="end">
-      <IconButton onClick={onClick} classes={iconButtonClasses}>
-        {isVisible ? (
+      <IconButton onClick={handleClick}>
+        {_type === INPUT_TYPE.text ? (
           <EyeIcon classes={iconClasses} />
         ) : (
           <EyeSlashIcon classes={iconClasses} />
@@ -52,13 +49,7 @@ const PasswordInput = props => {
     </InputAdornment>
   );
 
-  return (
-    <Input
-      type={isVisible ? INPUT.text : INPUT.password}
-      endAdornment={adornment}
-      {...props}
-    />
-  );
+  return <Input type={_type} endAdornment={adornment} {...rest} />;
 };
 
 export default PasswordInput;

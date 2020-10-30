@@ -27,19 +27,52 @@ const inputStyles = makeStyles(theme => ({
   root: {
     fontSize: theme.typography.pxToRem(14),
     color: theme.palette.secondary.main,
-    padding: theme.spacing(2),
     backgroundColor: theme.palette.common.white,
-    borderBottom: props => `2px solid ${getColors(theme, props)}`,
-    borderRadius: '4.8px 4.8px 2px 2px',
+    /** @param {InputProps} props */
+    paddingLeft: props => (props.startAdornment ? theme.spacing(2) : 0),
+    /** @param {InputProps} props */
+    paddingRight: props =>
+      props.endAdornment || props.error || props.valid ? theme.spacing(2) : 0,
+    borderRadius: `0.3rem 0.3rem 0.125rem 0.125rem`,
     '&$disabled': {
       backgroundColor: 'rgba(239, 239, 239, 0.3)',
       cursor: 'not-allowed'
+    },
+    '&$multiline': {
+      padding: theme.spacing(2)
     }
   },
   disabled: {},
+  underline: {
+    '&:after': {
+      borderBottom: props => `2px solid ${getColors(theme, props)}`,
+      borderRadius: '100vh',
+      left: 0,
+      bottom: 0,
+      content: '""',
+      position: 'absolute',
+      right: 0,
+      transform: 'scaleX(1)',
+      pointerEvents: 'none'
+    },
+    '&:before': { display: 'none' },
+    '&$multiline': { '&:after': { display: 'none' } }
+  },
   input: {
-    padding: '0',
+    /** @param {InputProps} props */
+    padding: props => (props.multiline ? 0 : theme.spacing(2)),
     '&$disabled': {
+      cursor: 'not-allowed'
+    }
+  },
+  multiline: {
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.secondary.main,
+    borderRadius: theme.shape.borderRadius,
+    boxShadow: theme.shadows[5],
+    '&$disabled': {
+      backgroundColor: theme.palette.common.white,
+      opacity: '0.3',
       cursor: 'not-allowed'
     }
   }

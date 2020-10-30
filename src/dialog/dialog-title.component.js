@@ -30,7 +30,9 @@ const DialogTitle = ({ disableTypography, children, ...props }, ref) => {
       {disableTypography ? (
         children
       ) : (
-        <Typography variant="h4">{children}</Typography>
+        <Typography color="secondary" variant="h1">
+          {children}
+        </Typography>
       )}
     </MuiDialogTitle>
   );

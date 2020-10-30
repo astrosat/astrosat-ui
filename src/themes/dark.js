@@ -1,13 +1,18 @@
 import { createMuiTheme, fade } from '@material-ui/core';
-import { core } from './core';
-import deepmerge from 'deepmerge';
-import { palette as corePalette } from './palette';
 import createPalette from '@material-ui/core/styles/createPalette';
+import deepmerge from 'deepmerge';
+
+import { core } from './core';
+import { palette as corePalette } from './palette';
 
 /** @type {import('@material-ui/core/styles/createPalette').PaletteOptions} */
 const darkPalette = {
   type: 'dark',
-  text: { primary: corePalette.grey[100] },
+  text: {
+    primary: corePalette.grey[100],
+    secondary: corePalette.grey[100],
+    disabled: fade(corePalette.grey[100], 0.5)
+  },
   background: { default: corePalette.secondary.main },
   action: {
     active: corePalette.grey[300],
@@ -40,6 +45,22 @@ const dark = {
         }
       },
       disabled: {}
+    },
+    MuiInputLabel: {
+      root: {
+        color: palette.secondary.main,
+        '&$error': {
+          color: palette.secondary.main,
+          '&$shrink:not($focused)': {
+            color: palette.text.secondary
+          }
+        }
+      },
+      shrink: {
+        color: palette.text.secondary
+      },
+      error: {},
+      focused: {}
     }
   }
 };

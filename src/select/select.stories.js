@@ -11,9 +11,9 @@ export default { title: 'Select1' };
 export const Options = () => (
   <Select value="">
     <Menu style={{ marginTop: '3.3em' }} open anchorEl={document.body}>
-      <MenuItem>Option1</MenuItem>
-      <MenuItem>Option2</MenuItem>
-      <MenuItem>Option3</MenuItem>
+      <MenuItem value={'Option1'}>Option1</MenuItem>
+      <MenuItem value={'Option2'}>Option2</MenuItem>
+      <MenuItem value={'Option2'}>Option3</MenuItem>
     </Menu>
   </Select>
 );

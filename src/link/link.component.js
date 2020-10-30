@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     textDecoration: 'none',
     '&:hover': {
       textDecoration: 'none',
-      borderBottom: 'none'
+      borderBottomColor: 'transparent'
     },
     '&:visited': {
       color: theme.palette.primary.main

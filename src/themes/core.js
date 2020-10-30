@@ -74,6 +74,48 @@ export const core = createMuiTheme({
         fontWeight: 600
       }
     },
+    MuiFormControlLabel: {
+      root: {
+        '& .Mui-disabled': {
+          opacity: palette.action.disabledOpacity
+        },
+        '&$disabled': {
+          cursor: 'not-allowed'
+        },
+        margin: 0,
+        minHeight: '1.4375rem'
+      },
+      disabled: {}
+    },
+    MuiFormHelperText: {
+      root: {
+        fontStyle: 'italic'
+      }
+    },
+    MuiInputLabel: {
+      root: {
+        zIndex: 1,
+        '&$error': {
+          color: palette.text.secondary,
+          '&$focused': {
+            color: palette.primary.main
+          }
+        }
+      },
+      formControl: {
+        transform: 'translate(16px, 32px) scale(1)'
+      },
+      shrink: {
+        transform: 'translate(0, 1.5px) scale(0.75)'
+      },
+      error: {},
+      focused: {}
+    },
+    MuiFormLabel: {
+      root: {
+        fontSize: '14px'
+      }
+    },
     MuiCssBaseline: {
       '@global': {
         html: { fontSize: '1rem' },
@@ -88,8 +130,11 @@ export const core = createMuiTheme({
     MuiButtonBase: {
       disableRipple: true
     },
-    MuiInput: {
-      disableUnderline: true
+    MuiLink: {
+      variant: 'body1'
+    },
+    MuiFormControl: {
+      fullWidth: true
     }
   },
   shape: {
@@ -97,16 +142,37 @@ export const core = createMuiTheme({
   },
   typography: {
     fontFamily: '"Open Sans", sans-serif',
+    h1: {
+      fontSize: '26px',
+      fontWeight: 700
+    },
+    h2: {
+      fontSize: '18px',
+      fontWeight: 600
+    },
+    h3: {
+      fontSize: '16px',
+      fontWeight: 600
+    },
+    h4: {
+      fontSize: '14px',
+      fontWeight: 600
+    },
+    h5: {
+      fontSize: '12px',
+      fontWeight: 600
+    },
+    body1: {
+      fontSize: '14px'
+    },
+    body2: {
+      fontSize: '12px'
+    },
     button: {
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 'normal',
       textTransform: 'none'
-    },
-    h4: {
-      color: palette.secondary.main,
-      fontSize: '1.5rem',
-      fontWeight: 'bold'
     }
   }
 });

@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 
-import { Select as MuiSelect } from '@material-ui/core';
+import { FormControl, Select as MuiSelect } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
-
-import FormControl from '../form-control/form-control.component';
 
 const useStyles = makeStyles(theme => ({
   root: {
