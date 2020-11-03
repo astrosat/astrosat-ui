@@ -4,7 +4,7 @@ import { FormControl, Select as MuiSelect } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
+const useStyle = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.background.paper
   },
@@ -16,6 +16,7 @@ const useStyles = makeStyles(theme => ({
     transform: 'rotate(0deg)'
   },
   disabled: {
+    backgroundColor: theme.palette.grey[300],
     '&:hover': {
       cursor: 'not-allowed'
     }
@@ -28,25 +29,23 @@ const useStyles = makeStyles(theme => ({
  */
 
 const Select = ({ variant = 'filled', ...rest }, ref) => {
-  const classes = useStyles({ variant, ...rest });
+  const classes = useStyle({ variant, ...rest });
 
-  const [value, setOptions] = useState('');
+  const [options, setOptions] = useState('');
 
   const handleChange = event => {
     setOptions(event.target.value);
   };
 
   return (
-    <FormControl>
-      <MuiSelect
-        variant={variant}
-        value={value}
-        onChange={handleChange}
-        classes={classes}
-        {...rest}
-        ref={ref}
-      />
-    </FormControl>
+    <MuiSelect
+      variant={variant}
+      value={options}
+      onChange={handleChange}
+      classes={classes}
+      {...rest}
+      ref={ref}
+    />
   );
 };
 

@@ -10,18 +10,16 @@ export default { title: 'Select1' };
 
 export const Options = () => (
   <Select value="">
-    <Menu style={{ marginTop: '3.3em' }} open anchorEl={document.body}>
+    <Menu open anchorEl={document.body}>
       <MenuItem value={'Option1'}>Option1</MenuItem>
       <MenuItem value={'Option2'}>Option2</MenuItem>
-      <MenuItem value={'Option2'}>Option3</MenuItem>
+      <MenuItem value={'Option3'}>Option3</MenuItem>
     </Menu>
   </Select>
 );
 export const NoOptions = () => (
   <Select value="">
-    <Menu style={{ marginTop: '3.3em' }} open anchorEl={document.body}>
-      <MenuItem> No Option</MenuItem>
-    </Menu>
+    <MenuItem> No Option</MenuItem>
   </Select>
 );
 export const Disabled = () => (
