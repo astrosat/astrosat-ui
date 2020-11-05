@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { FormControl, Select as MuiSelect } from '@material-ui/core';
+import { Select as MuiSelect } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyle = makeStyles(theme => ({
   root: {
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(2.2),
+    borderBottom: `2px solid ${theme.palette.primary.main}`
   },
   icon: {
     color: theme.palette.secondary.main,
-    transform: 'rotate(-90deg)'
+    transform: 'rotate(-90deg)',
+    marginRight: theme.spacing(1)
   },
   iconOpen: {
     transform: 'rotate(0deg)'
@@ -22,27 +25,43 @@ const useStyle = makeStyles(theme => ({
     }
   }
 }));
-
+const menuStyles = makeStyles({
+  paper: {
+    marginTop: '2.9em'
+  },
+  list: {
+    marginLeft: '0.5em',
+    marginRight: '0.5em'
+  }
+});
 /**
  * @param {import('@material-ui/core').SelectProps} props
  * @param {React.Ref<any>} ref
  */
 
-const Select = ({ variant = 'filled', ...rest }, ref) => {
-  const classes = useStyle({ variant, ...rest });
-
-  const [options, setOptions] = useState('');
-
-  const handleChange = event => {
-    setOptions(event.target.value);
-  };
+const Select = (
+  { MenuProps, fullWidth = true, disableUnderline = true, ...rest },
+  ref
+) => {
+  const classes = useStyle({
+    fullWidth,
+    disableUnderline,
+    MenuProps,
+    ...rest
+  });
+  const menuClasses = menuStyles({
+    fullWidth,
+    disableUnderline,
+    MenuProps,
+    ...rest
+  });
 
   return (
     <MuiSelect
-      variant={variant}
-      value={options}
-      onChange={handleChange}
       classes={classes}
+      fullWidth={fullWidth}
+      disableUnderline={disableUnderline}
+      MenuProps={{ classes: menuClasses, ...MenuProps }}
       {...rest}
       ref={ref}
     />
