@@ -8,7 +8,10 @@ const useStyle = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(2.2),
-    borderBottom: `2px solid ${theme.palette.primary.main}`
+    borderBottom: `2px solid ${theme.palette.primary.main}`,
+    '&:focus': {
+      backgroundColor: theme.palette.background.paper
+    }
   },
   icon: {
     color: theme.palette.secondary.main,
@@ -22,6 +25,9 @@ const useStyle = makeStyles(theme => ({
     backgroundColor: theme.palette.grey[300],
     '&:hover': {
       cursor: 'not-allowed'
+    },
+    '&:active': {
+      border: '2px solid black'
     }
   }
 }));
@@ -31,7 +37,10 @@ const menuStyles = makeStyles({
   },
   list: {
     marginLeft: '0.5em',
-    marginRight: '0.5em'
+    marginRight: '0.5em',
+    '& li:active': {
+      border: `2px solid black`
+    }
   }
 });
 /**
