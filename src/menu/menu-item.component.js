@@ -2,17 +2,24 @@ import React from 'react';
 
 import { MenuItem as MuiMenuItem } from '@material-ui/core';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { darken, makeStyles } from '@material-ui/core/styles';
 
 const menuItemStyles = makeStyles(theme => ({
   root: {
+    color:
+      theme.palette.type === 'light'
+        ? theme.palette.text.primary
+        : darken(theme.palette.text.primary, 0.8),
     padding: theme.spacing(0.5),
     '& + &': {
-      borderTop: `0.0625em solid ${theme.palette.text.secondary}`
+      borderTop:
+        theme.palette.type === 'light'
+          ? `0.0625em solid ${theme.palette.text.primary}`
+          : `0.0625em solid ${theme.palette.grey[800]}`
     },
     '&:first-of-type': {
-      borderBottomLeftRadius: theme.shape.borderRadius,
-      borderBottomRightRadius: theme.shape.borderRadius
+      borderTopLeftRadius: theme.shape.borderRadius,
+      borderTopRightRadius: theme.shape.borderRadius
     },
     '&:last-of-type': {
       borderBottomLeftRadius: theme.shape.borderRadius,
