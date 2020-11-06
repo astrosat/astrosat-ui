@@ -11,8 +11,8 @@ const menuItemStyles = makeStyles(theme => ({
       borderTop: `0.0625em solid ${theme.palette.text.secondary}`
     },
     '&:first-of-type': {
-      borderBottomLeftRadius: theme.shape.borderRadius,
-      borderBottomRightRadius: theme.shape.borderRadius
+      borderTopLeftRadius: theme.shape.borderRadius,
+      borderTopRightRadius: theme.shape.borderRadius
     },
     '&:last-of-type': {
       borderBottomLeftRadius: theme.shape.borderRadius,

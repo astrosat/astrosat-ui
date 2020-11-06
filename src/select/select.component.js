@@ -16,16 +16,18 @@ const menuStyles = makeStyles(theme => ({
  * @param {React.Ref<any>} ref
  */
 
-const Select = ({ MenuProps, fullWidth = true, ...rest }, ref) => {
+const Select = (
+  { MenuProps, input = <Input />, fullWidth = true, ...rest },
+  ref
+) => {
   const menuClasses = menuStyles({
     fullWidth,
     MenuProps,
     ...rest
   });
-
   return (
     <MuiSelect
-      input={rest.input || <Input />}
+      input={input}
       fullWidth={fullWidth}
       MenuProps={{ classes: menuClasses, ...MenuProps }}
       {...rest}
