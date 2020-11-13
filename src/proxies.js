@@ -32,6 +32,7 @@ export {
   formatMs,
   FormControl,
   FormControlLabel,
+  FormLabel,
   getContrastRatio,
   getLuminance,
   Grid,
