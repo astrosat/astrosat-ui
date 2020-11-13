@@ -10,7 +10,7 @@ const darkPalette = {
   type: 'dark',
   text: {
     primary: corePalette.grey[100],
-    secondary: corePalette.grey[100],
+    secondary: corePalette.secondary.main,
     disabled: fade(corePalette.grey[100], 0.5)
   },
   background: { default: corePalette.secondary.main },
@@ -52,15 +52,23 @@ const dark = {
         '&$error': {
           color: palette.secondary.main,
           '&$shrink:not($focused)': {
-            color: palette.text.secondary
+            color: palette.text.primary
           }
         }
       },
       shrink: {
-        color: palette.text.secondary
+        color: palette.text.primary
       },
       error: {},
       focused: {}
+    },
+    MuiFormHelperText: {
+      root: { color: palette.text.primary }
+    },
+    MuiSelect: {
+      icon: {
+        color: palette.text.secondary
+      }
     }
   }
 };

@@ -8,6 +8,7 @@ import {
 import Input from '../input/input.component';
 import clsx from 'clsx';
 import PasswordInput from 'password-input/password-input.component';
+import Select from '../select/select.component';
 
 export const styles = {
   /* Styles applied to the root element. */
@@ -146,7 +147,7 @@ const TextField = React.forwardRef(
           </InputLabel>
         )}
 
-        {/* {select ? (
+        {select ? (
           <Select
             aria-describedby={helperTextId}
             id={id}
@@ -159,8 +160,7 @@ const TextField = React.forwardRef(
           </Select>
         ) : (
           InputElement
-        )} */}
-        {InputElement}
+        )}
 
         {helperText && (
           <FormHelperText id={helperTextId} {...FormHelperTextProps}>

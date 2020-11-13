@@ -1,3 +1,4 @@
+import { MenuItem } from 'index';
 import React from 'react';
 import TextField from './text-field.component';
 
@@ -43,6 +44,20 @@ Multiline.args = {
   helperText: 'This is a textarea'
 };
 
-export const PasswordField = () => (
-  <TextField label="Password" type="password" />
-);
+export const PasswordField = Template.bind({});
+PasswordField.args = {
+  label: 'Password',
+  type: 'password'
+};
+
+export const Select = Template.bind({});
+Select.args = {
+  value: '',
+  select: true,
+  label: 'This is a select',
+  children: [
+    <MenuItem>Option 1</MenuItem>,
+    <MenuItem>Option 2</MenuItem>,
+    <MenuItem>Option 3</MenuItem>
+  ]
+};
