@@ -65,6 +65,16 @@ const dark = {
     MuiFormHelperText: {
       root: { color: palette.text.primary }
     },
+    MuiListItemText: {
+      secondary: {
+        color: palette.text.primary
+      }
+    },
+    MuiListSubheader: {
+      root: {
+        color: palette.text.primary
+      }
+    },
     MuiSelect: {
       icon: {
         color: palette.text.secondary
