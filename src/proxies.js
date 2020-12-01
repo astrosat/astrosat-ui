@@ -53,6 +53,7 @@ export {
   styled,
   StylesProvider,
   SvgIcon,
+  Tooltip,
   Typography,
   unstable_createMuiStrictModeTheme,
   useMediaQuery,
