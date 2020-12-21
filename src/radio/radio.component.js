@@ -74,12 +74,12 @@ const radioStyles = makeStyles(theme => ({
  * @param {React.Ref<any>} ref
  */
 const Radio = (props, ref) => {
-  const radioClasses = radioStyles({});
+  const { icon, checkedIcon, ...radioClasses } = radioStyles({});
   return (
     <MuiRadio
       classes={radioClasses}
-      checkedIcon={<span className={radioClasses.checkedIcon} />}
-      icon={<span className={radioClasses.icon} />}
+      checkedIcon={<span className={checkedIcon} />}
+      icon={<span className={icon} />}
       inputRef={ref}
       {...props}
     />
