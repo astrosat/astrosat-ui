@@ -74,12 +74,12 @@ const checkboxStyles = makeStyles(theme => ({
  * @param {React.Ref<any>} ref
  */
 const Checkbox = (props, ref) => {
-  const checkboxClasses = checkboxStyles({});
+  const { icon, checkedIcon, ...checkboxClasses } = checkboxStyles({});
   return (
     <MuiCheckbox
       classes={checkboxClasses}
-      checkedIcon={<span className={checkboxClasses.checkedIcon} />}
-      icon={<span className={checkboxClasses.icon} />}
+      checkedIcon={<span className={checkedIcon} />}
+      icon={<span className={icon} />}
       inputRef={ref}
       {...props}
     />
