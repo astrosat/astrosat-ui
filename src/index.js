@@ -1,6 +1,6 @@
 export { default as Button } from './button/button.component';
 export { default as Checkbox } from './checkbox/checkbox.component';
-export * from './dialog';
+export { default as DialogTitle } from './dialog/dialog-title.component';
 export { default as Select } from './select/select.component';
 export { default as useForm } from './forms/use-form.hook';
 export { default as IconButton } from './icon-button/icon-button.component';

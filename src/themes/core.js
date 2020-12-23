@@ -39,6 +39,13 @@ export const core = createMuiTheme({
         }
       }
     },
+    MuiDialogActions: {
+      root: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center'
+      }
+    },
     MuiIconButton: {
       root: {
         '&:focus': {

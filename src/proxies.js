@@ -1,4 +1,7 @@
 export {
+  Dialog,
+  DialogActions,
+  DialogContent,
   Accordion,
   AccordionActions,
   AccordionDetails,
