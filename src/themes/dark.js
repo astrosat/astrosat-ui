@@ -48,7 +48,7 @@ const dark = {
     },
     MuiInputLabel: {
       root: {
-        color: palette.secondary.main,
+        color: palette.text.secondary,
         '&$error': {
           color: palette.secondary.main,
           '&$shrink:not($focused)': {

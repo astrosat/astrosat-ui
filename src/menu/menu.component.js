@@ -9,9 +9,6 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary,
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1)
-  },
-  paper: {
-    width: '100%'
   }
 }));
 

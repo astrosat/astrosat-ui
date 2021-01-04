@@ -1,11 +1,8 @@
 import React from 'react';
 
 import { default as Button } from '../button/button.component';
-
-import { default as Dialog } from './dialog.component';
 import { default as DialogTitle } from './dialog-title.component';
-import { default as DialogContent } from './dialog-content.component';
-import { default as DialogActions } from './dialog-actions.component';
+import { Dialog, DialogContent, DialogActions } from '../index';
 
 import {
   tallContent,
