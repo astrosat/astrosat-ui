@@ -48,8 +48,8 @@ const radioStyles = makeStyles(theme => ({
     '&::after': {
       display: 'block',
       position: 'absolute',
-      top: '1px',
-      left: '1px',
+      top: theme.typography.pxToRem(1),
+      left: theme.typography.pxToRem(1),
       backgroundColor: theme.palette.primary.main,
       borderRadius: '50%',
       content: '""',
