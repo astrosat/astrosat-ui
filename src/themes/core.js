@@ -124,6 +124,15 @@ export const core = createMuiTheme({
         fontSize: '14px'
       }
     },
+    MuiTooltip: {
+      arrow: {
+        color: palette.primary.main
+      },
+      tooltip: {
+        color: palette.secondary.main,
+        backgroundColor: palette.primary.main
+      }
+    },
     MuiCssBaseline: {
       '@global': {
         html: { fontSize: '1rem' },

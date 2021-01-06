@@ -9,6 +9,7 @@ export {
   Avatar,
   Backdrop,
   Box,
+  ButtonBase,
   CircularProgress,
   ClickAwayListener,
   Collapse,

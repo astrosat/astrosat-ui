@@ -36,24 +36,25 @@ const checkboxStyles = makeStyles(theme => ({
     }
   },
   checkedIcon: {
+    position: 'relative',
     width: '1rem',
     height: '1rem',
-    borderRadius: '3px',
+    borderRadius: theme.typography.pxToRem(3),
     border: `1px solid ${theme.palette.text.primary}`,
     transition: theme.transitions.create(['border'], {
       easing: theme.transitions.easing.easeInOut,
       duration: theme.transitions.duration.short
     }),
     '&::after': {
+      content: '""',
       display: 'block',
       position: 'absolute',
-      top: '0.35rem',
-      left: '0.15rem',
-      backgroundColor: theme.palette.primary.main,
-      borderRadius: '0.1875rem',
-      content: '""',
       width: '0.75rem',
-      height: '0.75rem'
+      height: '0.75rem',
+      top: theme.typography.pxToRem(1),
+      left: theme.typography.pxToRem(1),
+      backgroundColor: theme.palette.primary.main,
+      borderRadius: theme.typography.pxToRem(1)
     },
     'input:hover ~ &': {
       border: `1px solid ${theme.palette.primary.main}`

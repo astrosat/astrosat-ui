@@ -36,6 +36,7 @@ const radioStyles = makeStyles(theme => ({
     }
   },
   checkedIcon: {
+    position: 'relative',
     width: '1rem',
     height: '1rem',
     borderRadius: '50%',
@@ -47,8 +48,8 @@ const radioStyles = makeStyles(theme => ({
     '&::after': {
       display: 'block',
       position: 'absolute',
-      top: '0.35rem',
-      left: '0.15rem',
+      top: '1px',
+      left: '1px',
       backgroundColor: theme.palette.primary.main,
       borderRadius: '50%',
       content: '""',
