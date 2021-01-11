@@ -29,6 +29,7 @@ export { default as LineWidth1pxIcon } from './line-width-1px-icon.component.js'
 export { default as LineWidth2pxIcon } from './line-width-2px-icon.component.js';
 export { default as LineWidth3pxIcon } from './line-width-3px-icon.component.js';
 export { default as LinkedinIcon } from './linkedin-icon.component.js';
+export { default as MagnifierIcon } from './magnifier-icon.component.js';
 export { default as MapPinIcon } from './map-pin-icon.component.js';
 export { default as MapIcon } from './map-icon.component.js';
 export { default as MenuIcon } from './menu-icon.component.js';

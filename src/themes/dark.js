@@ -18,7 +18,8 @@ const darkPalette = {
     active: corePalette.grey[300],
     hover: fade(corePalette.grey[300], corePalette.action.hoverOpacity),
     disabled: corePalette.grey[500]
-  }
+  },
+  divider: fade(corePalette.grey[100], 0.12)
 };
 
 const palette = createPalette(deepmerge(corePalette, darkPalette));
