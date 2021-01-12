@@ -148,6 +148,7 @@ export const core = createMuiTheme({
       disableRipple: true
     },
     MuiButtonGroup: {
+      disableRipple: true,
       variant: 'contained',
       color: 'primary'
     },

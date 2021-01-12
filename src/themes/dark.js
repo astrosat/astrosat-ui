@@ -63,6 +63,11 @@ const dark = {
       error: {},
       focused: {}
     },
+    MuiFormLabel: {
+      root: {
+        color: palette.text.primary
+      }
+    },
     MuiFormHelperText: {
       root: { color: palette.text.primary }
     },
