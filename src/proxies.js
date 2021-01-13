@@ -10,6 +10,7 @@ export {
   Backdrop,
   Box,
   ButtonBase,
+  ButtonGroup,
   CircularProgress,
   ClickAwayListener,
   Collapse,
