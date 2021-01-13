@@ -1,7 +1,4 @@
 export {
-  Dialog,
-  DialogActions,
-  DialogContent,
   Accordion,
   AccordionActions,
   AccordionDetails,
@@ -11,6 +8,12 @@ export {
   Box,
   ButtonBase,
   ButtonGroup,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
   CircularProgress,
   ClickAwayListener,
   Collapse,
@@ -21,6 +24,9 @@ export {
   CssBaseline,
   darken,
   decomposeColor,
+  Dialog,
+  DialogActions,
+  DialogContent,
   Divider,
   Drawer,
   duration,
@@ -37,6 +43,8 @@ export {
   getLuminance,
   Grid,
   GridList,
+  GridListTile,
+  GridListTileBar,
   Grow,
   hexToRgb,
   Hidden,
@@ -88,5 +96,4 @@ export {
   withWidth,
   Zoom
 } from '@material-ui/core';
-
 export { Skeleton } from '@material-ui/lab';
