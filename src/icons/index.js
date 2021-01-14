@@ -1,3 +1,4 @@
+export { default as AdminIcon } from './admin-icon.component.js';
 export { default as AnnotationsIcon } from './annotations-icon.component.js';
 export { default as AwardIcon } from './award-icon.component.js';
 export { default as CleaningIcon } from './cleaning-icon.component.js';
