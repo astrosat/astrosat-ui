@@ -1,7 +1,6 @@
 import React from 'react';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core';
 import themes from 'themes';
-import styles from '../index.module.css';
 
 /**
  * @param {{
@@ -10,9 +9,7 @@ import styles from '../index.module.css';
  * }} props
  */
 const ThemeProvider = ({ children, theme = 'dark' }) => (
-  <div className={styles.dark}>
-    <MuiThemeProvider theme={themes[theme]}>{children}</MuiThemeProvider>
-  </div>
+  <MuiThemeProvider theme={themes[theme]}>{children}</MuiThemeProvider>
 );
 
 export default ThemeProvider;

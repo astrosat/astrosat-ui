@@ -162,6 +162,7 @@ export const core = createMuiTheme({
   shape: {
     borderRadius: 5
   },
+  spacing: factor => `${0.5 * factor}rem`,
   typography: {
     fontFamily: '"Open Sans", sans-serif',
     h1: {
