@@ -14,6 +14,7 @@ export {
   CardContent,
   CardHeader,
   CardMedia,
+  Chip,
   CircularProgress,
   ClickAwayListener,
   Collapse,

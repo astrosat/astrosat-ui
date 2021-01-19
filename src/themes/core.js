@@ -1,6 +1,7 @@
 import { createMuiTheme, fade } from '@material-ui/core';
-
 import { palette } from './palette';
+
+const borderRadius = 5;
 
 /** @type {import('@material-ui/core').ThemeOptions} */
 export const core = createMuiTheme({
@@ -36,6 +37,34 @@ export const core = createMuiTheme({
         },
         '&$disabled': {
           borderColor: palette.action.disabled
+        }
+      }
+    },
+    MuiChip: {
+      root: {
+        borderRadius: 9
+      },
+      colorSecondary: {
+        backgroundColor: palette.info.main
+      },
+      clickableColorSecondary: {
+        '&:hover, &:focus': {
+          backgroundColor: palette.info.dark
+        }
+      },
+      outlinedSecondary: {
+        borderColor: palette.info.main,
+        color: palette.info.main
+      },
+      deleteIconColorSecondary: {
+        '&:hover': {
+          color: palette.info.dark
+        }
+      },
+      deleteIconOutlinedColorSecondary: {
+        color: palette.info.main,
+        '&:hover': {
+          color: palette.info.dark
         }
       }
     },
@@ -160,7 +189,7 @@ export const core = createMuiTheme({
     }
   },
   shape: {
-    borderRadius: 5
+    borderRadius
   },
   spacing: factor => `${0.5 * factor}rem`,
   typography: {
