@@ -36,6 +36,29 @@ const dark = {
       },
       disabled: {}
     },
+    MuiChip: {
+      root: {
+        backgroundColor: palette.action.active,
+        color: palette.secondary.main
+      },
+      clickable: {
+        '&:hover': {
+          backgroundColor: palette.grey[400]
+        }
+      },
+      avatar: {
+        backgroundColor: palette.secondary.main
+      },
+      icon: {
+        color: 'inherit'
+      },
+      deleteIcon: {
+        color: 'inherit',
+        '&:hover': {
+          color: palette.secondary.light
+        }
+      }
+    },
     MuiIconButton: {
       root: {
         '&:focus': {
