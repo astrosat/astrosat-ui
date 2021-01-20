@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/astrosat/astrosat-ui/compare/v2.0.0...v2.1.0) (2021-01-20)
+
+
+### Bug Fixes
+
+* **frontend:** Add Admin icon ([fb55977](https://github.com/astrosat/astrosat-ui/commit/fb55977a87dad22f9213cdad4e8ac5eb0b86173b))
+
+
+### Features
+
+* **Chip:** Export and style Chip component ([128f7f0](https://github.com/astrosat/astrosat-ui/commit/128f7f06bdc59451a1de1a21fef4e4dca66d6378))
+
 # [2.0.0](https://github.com/astrosat/astrosat-ui/compare/v1.19.2...v2.0.0) (2021-01-14)
 
 
