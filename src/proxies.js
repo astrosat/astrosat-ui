@@ -74,6 +74,7 @@ export {
   rgbToHex,
   ServerStyleSheets,
   Slide,
+  Slider,
   styled,
   StylesProvider,
   SvgIcon,
