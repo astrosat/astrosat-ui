@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/astrosat/astrosat-ui/compare/v2.1.1...v2.1.2) (2021-02-08)
+
+
+### Bug Fixes
+
+* **frontend:** Create iconMap for access to all icons ([efd0177](https://github.com/astrosat/astrosat-ui/commit/efd01771eef4c959b6d1c0608cd823c0430ed95a))
+
 ## [2.1.1](https://github.com/astrosat/astrosat-ui/compare/v2.1.0...v2.1.1) (2021-02-08)
 
 
