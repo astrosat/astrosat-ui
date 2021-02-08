@@ -5,6 +5,7 @@ export { default as Select } from './select/select.component';
 export { default as useForm } from './forms/use-form.hook';
 export { default as IconButton } from './icon-button/icon-button.component';
 export * from './icons';
+export { iconMap } from './icons/iconMap';
 export { default as Input } from './input/input.component';
 export { default as Link } from './link/link.component';
 export { default as LoadMask } from './load-mask/load-mask.component';
