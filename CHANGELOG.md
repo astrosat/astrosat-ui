@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/astrosat/astrosat-ui/compare/v2.1.0...v2.1.1) (2021-02-08)
+
+
+### Bug Fixes
+
+* **frontend:** Add more icons ([83b89a5](https://github.com/astrosat/astrosat-ui/commit/83b89a5ec329c8fc97a514c386302e31b321e80c))
+
 # [2.1.0](https://github.com/astrosat/astrosat-ui/compare/v2.0.0...v2.1.0) (2021-01-20)
 
 
