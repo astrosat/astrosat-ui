@@ -98,4 +98,4 @@ export {
   withWidth,
   Zoom
 } from '@material-ui/core';
-export { Skeleton } from '@material-ui/lab';
+export { Pagination, Skeleton } from '@material-ui/lab';
