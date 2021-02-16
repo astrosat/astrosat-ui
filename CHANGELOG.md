@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/astrosat/astrosat-ui/compare/v2.1.2...v2.2.0) (2021-02-16)
+
+
+### Features
+
+* **frontend:** Add pagination stories and export ([c3bc8f5](https://github.com/astrosat/astrosat-ui/commit/c3bc8f5f1f737d4e91f75d3a6620c24d23af5a83))
+
 ## [2.1.2](https://github.com/astrosat/astrosat-ui/compare/v2.1.1...v2.1.2) (2021-02-08)
 
 
