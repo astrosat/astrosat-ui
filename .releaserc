@@ -10,12 +10,12 @@
         "tarballDir": "dist"
       }
     ],
+    "@semantic-release/github",
     [
-      "@semantic-release/github",
-    ],
-    "@semantic-release/git"
+      "@semantic-release/git",
+      {
+        "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+    }]
   ],
-  "preset": "angular",
-  "dryRun": false,
-  "ci": false
+  "preset": "angular"
 }
