@@ -24,6 +24,23 @@ export const Disabled = () => (
   />
 );
 
+export const LabelPlacement = () => (
+  <>
+    <FormControlLabel label="end" labelPlacement="end" control={<Radio />} />
+    <FormControlLabel
+      label="bottom"
+      labelPlacement="bottom"
+      control={<Radio />}
+    />
+    <FormControlLabel
+      label="start"
+      labelPlacement="start"
+      control={<Radio />}
+    />
+    <FormControlLabel label="top" labelPlacement="top" control={<Radio />} />
+  </>
+);
+
 export const CheckedAndDisabled = () => (
   <FormControlLabel
     label="Radio"

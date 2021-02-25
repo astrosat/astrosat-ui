@@ -28,6 +28,23 @@ export const Disabled = () => (
   />
 );
 
+export const LabelPlacement = () => (
+  <>
+    <FormControlLabel label="end" labelPlacement="end" control={<Checkbox />} />
+    <FormControlLabel
+      label="bottom"
+      labelPlacement="bottom"
+      control={<Checkbox />}
+    />
+    <FormControlLabel
+      label="start"
+      labelPlacement="start"
+      control={<Checkbox />}
+    />
+    <FormControlLabel label="top" labelPlacement="top" control={<Checkbox />} />
+  </>
+);
+
 export const CheckedAndDisabled = () => (
   <FormControlLabel
     label="Checkbox"
