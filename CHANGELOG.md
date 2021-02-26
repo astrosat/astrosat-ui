@@ -1,3 +1,12 @@
+## [2.2.1](https://github.com/astrosat/astrosat-ui/compare/v2.2.0...v2.2.1) (2021-02-26)
+
+
+### Bug Fixes
+
+* **FormControlLabel:** Fix spacing between control and label ([2a69330](https://github.com/astrosat/astrosat-ui/commit/2a69330d71fa9b87837df9e1fd9ae3bbfa0bdacd))
+* **Icons:** Remove pointless clip-paths ([eb81f05](https://github.com/astrosat/astrosat-ui/commit/eb81f059b161d67e7b415c7b2c39a08ad6e3889e))
+* **infrastructure:** Allow triggering build workflows ([aa07451](https://github.com/astrosat/astrosat-ui/commit/aa0745168dc5d97048613fa9828239cfc6af2831))
+
 # [2.2.0](https://github.com/astrosat/astrosat-ui/compare/v2.1.2...v2.2.0) (2021-02-16)
 
 
