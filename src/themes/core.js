@@ -2,6 +2,7 @@ import { createMuiTheme, fade } from '@material-ui/core';
 import { palette } from './palette';
 
 const borderRadius = 5;
+const spacing = factor => `${0.5 * factor}rem`;
 
 /** @type {import('@material-ui/core').ThemeOptions} */
 export const core = createMuiTheme({
@@ -114,12 +115,32 @@ export const core = createMuiTheme({
       root: {
         margin: 0,
         marginLeft: 0,
-        minHeight: '1.4375rem',
         '& .Mui-disabled': {
           opacity: palette.action.disabledOpacity
         },
         '&$disabled': {
           cursor: 'not-allowed'
+        }
+      },
+      label: {
+        marginLeft: spacing(2)
+      },
+      labelPlacementBottom: {
+        '& $label': {
+          margin: 0,
+          marginTop: spacing(1)
+        }
+      },
+      labelPlacementStart: {
+        '& $label': {
+          margin: 0,
+          marginRight: spacing(2)
+        }
+      },
+      labelPlacementTop: {
+        '& $label': {
+          margin: 0,
+          marginBottom: spacing(1)
         }
       },
       disabled: {}
@@ -191,7 +212,7 @@ export const core = createMuiTheme({
   shape: {
     borderRadius
   },
-  spacing: factor => `${0.5 * factor}rem`,
+  spacing,
   typography: {
     fontFamily: '"Open Sans", sans-serif',
     h1: {

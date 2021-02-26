@@ -7,8 +7,6 @@ import { makeStyles } from '@material-ui/core/styles';
 const radioStyles = makeStyles(theme => ({
   root: {
     padding: 0,
-    marginRight: '0.25rem',
-    minHeight: '1.4375rem',
     '&:hover': {
       backgroundColor: 'transparent'
     },
