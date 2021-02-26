@@ -8,8 +8,14 @@ export default { title: 'Icons' };
 export const All = () => (
   <Box display="flex" width="100%" flexWrap="wrap">
     {Object.values(Icons).map((Icon, i) => (
-      <Box m={2} display="flex" flexDirection="column" alignItems="center">
-        <Icon key={`icon-${i}`} style={{ marginBottom: '0.5rem' }} />
+      <Box
+        key={`icon-${i}`}
+        m={2}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+      >
+        <Icon style={{ marginBottom: '0.5rem' }} />
         <p>{Icon.name}</p>
       </Box>
     ))}
