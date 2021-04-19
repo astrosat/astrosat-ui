@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/astrosat/astrosat-ui/compare/v2.2.2...v2.3.0) (2021-04-19)
+
+
+### Features
+
+* **Tabs:** Add tabs ([9364e18](https://github.com/astrosat/astrosat-ui/commit/9364e185ab9e8bc3c256b6c3091aec5694cb574c))
+
 ## [2.2.2](https://github.com/astrosat/astrosat-ui/compare/v2.2.1...v2.2.2) (2021-04-08)
 
 
