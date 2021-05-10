@@ -20,3 +20,10 @@ export const Elevation = () => (
     <Paper elevation={3} />
   </Container>
 );
+
+export const Variants = () => (
+  <Container>
+    <Paper variant="outlined" />
+    <Paper variant="outlined" square />
+  </Container>
+);
