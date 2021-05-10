@@ -1,3 +1,15 @@
+# [2.4.0](https://github.com/astrosat/astrosat-ui/compare/v2.3.0...v2.4.0) (2021-05-10)
+
+
+### Bug Fixes
+
+* **Menu:** Update colors for dark theme ([b71ca91](https://github.com/astrosat/astrosat-ui/commit/b71ca91fca86cc3bbf2638aa983573faf9d21a1d))
+
+
+### Features
+
+* **Theme:** Tune the dark theme so everything is dark ([9e7ed16](https://github.com/astrosat/astrosat-ui/commit/9e7ed169047b97ebb4842687e6848199bf09c240))
+
 # [2.3.0](https://github.com/astrosat/astrosat-ui/compare/v2.2.2...v2.3.0) (2021-04-19)
 
 
