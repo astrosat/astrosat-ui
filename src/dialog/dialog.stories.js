@@ -1,174 +1,126 @@
+import { CloseIcon, PlusIcon, ProfileIcon } from 'icons';
 import React from 'react';
-
-import { default as Button } from '../button/button.component';
-import { default as DialogTitle } from './dialog-title.component';
-import { Dialog, DialogContent, DialogActions } from '../index';
-
 import {
-  tallContent,
-  wideContent,
-  tallAndWideContent,
-  noActionContent,
-  noHeaderContent,
-  noActionsOrHeaderContent
-} from './story-data';
-
-import useStoryComponents from './useStoryComponents';
-
-import styles from './dialog.module.css';
+  AppBar,
+  Avatar,
+  Button,
+  Dialog,
+  Divider,
+  IconButton,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Slide,
+  Toolbar,
+  Typography,
+  makeStyles,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+  DialogTitle
+} from '../index';
 
 export default { title: 'Dialog' };
 
-export const TallContent = () => {
-  const { dialog, setDialog, closeButton, ref } = useStoryComponents();
-  return (
-    <>
-      <div className={styles.buttons}>
-        <Button
-          onClick={() =>
-            setDialog({
-              CONTENT: tallContent,
-              ACTIONS: closeButton,
-              TITLE: 'Tall Content'
-            })
-          }
-        >
-          Open Dialog
-        </Button>
-      </div>
+export const Simple = () => (
+  <Dialog open aria-labelledby="simple-dialog-title">
+    <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
+    <List>
+      {['test@test.com'].map(email => (
+        <ListItem button key={email}>
+          <ListItemAvatar>
+            <Avatar>
+              <ProfileIcon />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText primary={email} />
+        </ListItem>
+      ))}
 
-      <Dialog open={dialog} onBackdropClick={() => setDialog(null)} ref={ref}>
-        <DialogTitle>{dialog?.TITLE}</DialogTitle>
-        <DialogContent>{dialog?.CONTENT}</DialogContent>
-        <DialogActions>{dialog?.ACTIONS}</DialogActions>
-      </Dialog>
-    </>
+      <ListItem autoFocus button>
+        <ListItemAvatar>
+          <Avatar>
+            <PlusIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary="Add account" />
+      </ListItem>
+    </List>
+  </Dialog>
+);
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const useStyles = makeStyles(theme => ({
+  appBar: {
+    position: 'relative'
+  },
+  title: {
+    marginLeft: theme.spacing(2),
+    flex: 1
+  }
+}));
+
+export const FullScreen = () => {
+  const styles = useStyles();
+
+  return (
+    <Dialog fullScreen open TransitionComponent={Transition}>
+      <AppBar className={styles.appBar}>
+        <Toolbar>
+          <IconButton edge="start" color="inherit" aria-label="close">
+            <CloseIcon />
+          </IconButton>
+          <Typography variant="h6" className={styles.title}>
+            Sound
+          </Typography>
+          <Button autoFocus color="secondary">
+            save
+          </Button>
+        </Toolbar>
+      </AppBar>
+      <List>
+        <ListItem button>
+          <ListItemText primary="Phone ringtone" secondary="Titania" />
+        </ListItem>
+        <Divider />
+        <ListItem button>
+          <ListItemText
+            primary="Default notification ringtone"
+            secondary="Tethys"
+          />
+        </ListItem>
+      </List>
+    </Dialog>
   );
 };
 
-export const WideContent = () => {
-  const { dialog, setDialog, closeButton, ref } = useStoryComponents();
-  return (
-    <>
-      <div className={styles.buttons}>
-        <Button
-          onClick={() =>
-            setDialog({
-              CONTENT: wideContent,
-              ACTIONS: closeButton,
-              TITLE: 'Wide Content'
-            })
-          }
-        >
-          Open Dialog
-        </Button>
-      </div>
-
-      <Dialog open={dialog} onBackdropClick={() => setDialog(null)} ref={ref}>
-        <DialogTitle>{dialog?.TITLE}</DialogTitle>
-        <DialogContent>{dialog?.CONTENT}</DialogContent>
-        <DialogActions>{dialog?.ACTIONS}</DialogActions>
-      </Dialog>
-    </>
-  );
-};
-
-export const TallAndWideContent = () => {
-  const { dialog, setDialog, closeButton, ref } = useStoryComponents();
-  return (
-    <>
-      <div className={styles.buttons}>
-        <Button
-          onClick={() =>
-            setDialog({
-              CONTENT: tallAndWideContent,
-              ACTIONS: closeButton,
-              TITLE: 'Tall and Wide Content'
-            })
-          }
-        >
-          Open Dialog
-        </Button>
-      </div>
-
-      <Dialog open={dialog} onBackdropClick={() => setDialog(null)} ref={ref}>
-        <DialogTitle>{dialog?.TITLE}</DialogTitle>
-        <DialogContent>{dialog?.CONTENT}</DialogContent>
-        <DialogActions>{dialog?.ACTIONS}</DialogActions>
-      </Dialog>
-    </>
-  );
-};
-
-export const NoActions = () => {
-  const { dialog, setDialog, ref } = useStoryComponents();
-  return (
-    <>
-      <div className={styles.buttons}>
-        <Button
-          onClick={() =>
-            setDialog({
-              CONTENT: noActionContent,
-              ACTIONS: null,
-              TITLE: 'No Actions'
-            })
-          }
-        >
-          Open Dialog
-        </Button>
-      </div>
-
-      <Dialog open={dialog} onBackdropClick={() => setDialog(null)} ref={ref}>
-        <DialogTitle>{dialog?.TITLE}</DialogTitle>
-        <DialogContent>{dialog?.CONTENT}</DialogContent>
-      </Dialog>
-    </>
-  );
-};
-
-export const NoHeader = () => {
-  const { dialog, setDialog, closeButton, ref } = useStoryComponents();
-  return (
-    <>
-      <div className={styles.buttons}>
-        <Button
-          onClick={() =>
-            setDialog({
-              CONTENT: noHeaderContent,
-              ACTIONS: closeButton
-            })
-          }
-        >
-          Open Dialog
-        </Button>
-      </div>
-
-      <Dialog open={dialog} onBackdropClick={() => setDialog(null)} ref={ref}>
-        <DialogContent>{dialog?.CONTENT}</DialogContent>
-        <DialogActions>{dialog?.ACTIONS}</DialogActions>
-      </Dialog>
-    </>
-  );
-};
-export const NoActionsOrHeader = () => {
-  const { dialog, setDialog, ref } = useStoryComponents();
-  return (
-    <>
-      <div className={styles.buttons}>
-        <Button
-          onClick={() =>
-            setDialog({
-              CONTENT: noActionsOrHeaderContent
-            })
-          }
-        >
-          Open Dialog
-        </Button>
-      </div>
-
-      <Dialog open={dialog} onBackdropClick={() => setDialog(null)} ref={ref}>
-        <DialogContent>{dialog?.CONTENT}</DialogContent>
-      </Dialog>
-    </>
-  );
-};
+export const LongContent = () => (
+  <Dialog
+    open
+    scroll="paper"
+    aria-labelledby="scroll-dialog-title"
+    aria-describedby="scroll-dialog-description"
+  >
+    <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
+    <DialogContent dividers>
+      <DialogContentText id="scroll-dialog-description" tabIndex={-1}>
+        {[...new Array(50)]
+          .map(
+            () => `Cras mattis consectetur purus sit amet fermentum.
+Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
+          )
+          .join('\n')}
+      </DialogContentText>
+    </DialogContent>
+    <DialogActions>
+      <Button color="primary">Cancel</Button>
+      <Button color="secondary">Subscribe</Button>
+    </DialogActions>
+  </Dialog>
+);

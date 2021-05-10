@@ -13,7 +13,6 @@ export { default as MenuItem } from './menu/menu-item.component';
 export { default as Menu } from './menu/menu.component';
 export { default as PasswordInput } from './password-input/password-input.component';
 export { default as PasswordStrengthMeter } from './password-strength-meter/password-strength-meter.component';
-export { default as ProgressBar } from './progress/progress-bar.component';
 export * from './proxies';
 export { default as Radio } from './radio/radio.component';
 export { default as Switch } from './switch/switch.component';
