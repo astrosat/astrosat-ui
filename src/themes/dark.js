@@ -1,4 +1,4 @@
-import { createMuiTheme, fade } from '@material-ui/core';
+import { createMuiTheme, fade, lighten } from '@material-ui/core';
 import createPalette from '@material-ui/core/styles/createPalette';
 import deepmerge from 'deepmerge';
 
@@ -85,6 +85,13 @@ const dark = {
     },
     MuiDialogContentText: {
       root: { color: palette.text.primary }
+    },
+    MuiMenuItem: {
+      root: {
+        '&:hover': {
+          backgroundColor: lighten(palette.background.default, 0.1)
+        }
+      }
     }
   }
 };
