@@ -10,10 +10,10 @@ const darkPalette = {
   type: 'dark',
   text: {
     primary: corePalette.grey[100],
-    secondary: corePalette.secondary.main,
+    secondary: corePalette.grey.A100,
     disabled: fade(corePalette.grey[100], 0.5)
   },
-  background: { default: corePalette.secondary.main },
+  background: { default: corePalette.secondary.main, paper: '#5d666e' },
   action: {
     active: corePalette.grey[300],
     hover: fade(corePalette.grey[300], corePalette.action.hoverOpacity),
@@ -41,6 +41,7 @@ const dark = {
         backgroundColor: palette.action.active,
         color: palette.secondary.main
       },
+      outlined: { color: 'unset' },
       clickable: {
         '&:hover': {
           backgroundColor: palette.grey[400]
@@ -72,42 +73,18 @@ const dark = {
     },
     MuiInputLabel: {
       root: {
-        color: palette.text.secondary,
         '&$error': {
-          color: palette.secondary.main,
-          '&$shrink:not($focused)': {
-            color: palette.text.primary
-          }
+          color: palette.text.primary
         }
-      },
-      shrink: {
-        color: palette.text.primary
-      },
-      error: {},
-      focused: {}
+      }
     },
     MuiFormLabel: {
       root: {
         color: palette.text.primary
       }
     },
-    MuiFormHelperText: {
+    MuiDialogContentText: {
       root: { color: palette.text.primary }
-    },
-    MuiListItemText: {
-      secondary: {
-        color: palette.text.primary
-      }
-    },
-    MuiListSubheader: {
-      root: {
-        color: palette.text.primary
-      }
-    },
-    MuiSelect: {
-      icon: {
-        color: palette.text.secondary
-      }
     }
   }
 };

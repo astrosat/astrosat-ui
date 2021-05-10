@@ -26,8 +26,6 @@ const getColors = (theme, props) => {
 const inputStyles = makeStyles(theme => ({
   root: {
     fontSize: theme.typography.pxToRem(14),
-    color: theme.palette.secondary.main,
-    backgroundColor: theme.palette.common.white,
     /** @param {InputProps} props */
     paddingLeft: props => (props.startAdornment ? theme.spacing(2) : 0),
     /** @param {InputProps} props */
@@ -35,7 +33,7 @@ const inputStyles = makeStyles(theme => ({
       props.endAdornment || props.error || props.valid ? theme.spacing(2) : 0,
     borderRadius: `0.3rem 0.3rem 0.125rem 0.125rem`,
     '&$disabled': {
-      backgroundColor: 'rgba(239, 239, 239, 0.3)',
+      backgroundColor: theme.palette.action.disabledBackground,
       cursor: 'not-allowed'
     },
     '&$multiline': {
@@ -56,7 +54,8 @@ const inputStyles = makeStyles(theme => ({
       pointerEvents: 'none'
     },
     '&:before': { display: 'none' },
-    '&$multiline': { '&:after': { display: 'none' } }
+    '&$multiline': { '&:after': { display: 'none' } },
+    '&$disabled': { '&:after': { borderColor: theme.palette.action.disabled } }
   },
   input: {
     /** @param {InputProps} props */
@@ -66,13 +65,10 @@ const inputStyles = makeStyles(theme => ({
     }
   },
   multiline: {
-    backgroundColor: theme.palette.common.white,
-    color: theme.palette.secondary.main,
     borderRadius: theme.shape.borderRadius,
-    boxShadow: theme.shadows[5],
+    border: props => `2px solid ${getColors(theme, props)}`,
     '&$disabled': {
-      backgroundColor: theme.palette.common.white,
-      opacity: '0.3',
+      borderColor: theme.palette.action.disabled,
       cursor: 'not-allowed'
     }
   }
