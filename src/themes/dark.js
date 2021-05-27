@@ -92,6 +92,19 @@ const dark = {
           backgroundColor: lighten(palette.background.default, 0.1)
         }
       }
+    },
+    MuiTabs: {
+      flexContainer: {
+        borderBottomColor: palette.divider
+      }
+    },
+    MuiTab: {
+      root: {
+        '&$textColorPrimary': {
+          color: palette.text.primary
+        }
+      },
+      textColorPrimary: {}
     }
   }
 };
