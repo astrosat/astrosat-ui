@@ -174,6 +174,23 @@ export const core = createMuiTheme({
         fontSize: '14px'
       }
     },
+    MuiTabs: {
+      flexContainer: {
+        borderBottom: `1px solid ${palette.divider}`
+      }
+    },
+    MuiTab: {
+      root: {
+        [`&$textColorInherit, 
+          &$textColorPrimary, 
+          &$textColorSecondary`]: {
+          opacity: 1
+        }
+      },
+      textColorInherit: {},
+      textColorPrimary: {},
+      textColorSecondary: {}
+    },
     MuiTooltip: {
       arrow: {
         color: palette.primary.main
@@ -207,6 +224,10 @@ export const core = createMuiTheme({
     },
     MuiFormControl: {
       fullWidth: true
+    },
+    MuiTabs: {
+      indicatorColor: 'primary',
+      textColor: 'primary'
     }
   },
   shape: {
