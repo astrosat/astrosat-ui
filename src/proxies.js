@@ -104,4 +104,4 @@ export {
   withWidth,
   Zoom
 } from '@material-ui/core';
-export { Pagination, Skeleton } from '@material-ui/lab';
+export { Pagination, Skeleton, ToggleButtonGroup } from '@material-ui/lab';
