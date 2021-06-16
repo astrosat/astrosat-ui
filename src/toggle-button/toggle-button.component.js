@@ -4,16 +4,29 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: '0.65em 4em',
+    width: '100%',
+    padding: theme.spacing(1),
+    cursor: 'pointer',
     color: theme.palette.common.white,
     backgroundColor: '#171819',
+    transition: theme.transitions.create(
+      ['background-color', 'box-shadow', 'border', 'opacity'],
+      {
+        duration: theme.transitions.duration.short
+      }
+    ),
     '&:hover': {
-      backgroundColor: '#171819'
+      opacity: 0.5
     }
   },
   selected: {
-    color: `${theme.palette.common.black} !important`,
+    cursor: 'not-allowed',
+    color: `${theme.palette.secondary.main} !important`,
     backgroundColor: `${theme.palette.primary.main} !important`
+  },
+  disabled: {
+    backgroundColor: theme.palette.grey['300'],
+    color: `${theme.palette.grey.A700} !important`
   }
 }));
 
