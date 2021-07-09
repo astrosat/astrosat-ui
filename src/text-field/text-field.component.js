@@ -58,6 +58,7 @@ const TextField = React.forwardRef(
       valid,
       value,
       variant = 'standard',
+      visibilityToggleButtonLabel,
       ...other
     } = props;
 
@@ -123,6 +124,7 @@ const TextField = React.forwardRef(
         placeholder={placeholder}
         inputProps={inputProps}
         valid={valid}
+        visibilityToggleButtonLabel={visibilityToggleButtonLabel}
         {...InputMore}
         {...InputProps}
       />
