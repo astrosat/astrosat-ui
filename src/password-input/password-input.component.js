@@ -40,7 +40,11 @@ const PasswordInput = ({ type = INPUT_TYPE.password, ...rest }) => {
 
   const adornment = (
     <InputAdornment position="end">
-      <IconButton onClick={handleClick} size="small">
+      <IconButton
+        onClick={handleClick}
+        size="small"
+        aria-label={rest.name || ''}
+      >
         {_type === INPUT_TYPE.text ? (
           <EyeIcon classes={iconClasses} />
         ) : (
