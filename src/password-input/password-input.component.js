@@ -43,7 +43,9 @@ const PasswordInput = ({ type = INPUT_TYPE.password, ...rest }) => {
       <IconButton
         onClick={handleClick}
         size="small"
-        aria-label={rest.name || ''}
+        aria-label={
+          rest.visibilityToggleButtonLabel || 'Password Visibility Toggle'
+        }
       >
         {_type === INPUT_TYPE.text ? (
           <EyeIcon classes={iconClasses} />
