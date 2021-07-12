@@ -18,7 +18,10 @@ export const styles = {
 const TextField = React.forwardRef(
   /**
    * @param {import('@material-ui/core').TextFieldProps &
-   *   {valid?: import('../input/input.component').InputProps['valid']}
+   *   {
+   *    valid?: import('../input/input.component').InputProps['valid']
+   *    visibilityToggleButtonLabel?: string
+   *   }
    * } props
    * @param {*} ref
    */
