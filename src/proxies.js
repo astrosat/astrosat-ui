@@ -102,6 +102,9 @@ export {
   withStyles,
   withTheme,
   withWidth,
-  Zoom
+  Zoom,
+  ImageList,
+  ImageListItem,
+  ImageListItemBar
 } from '@material-ui/core';
 export { Pagination, Skeleton } from '@material-ui/lab';
