@@ -1,3 +1,15 @@
+# [2.5.0](https://github.com/astrosat/astrosat-ui/compare/v2.4.1...v2.5.0) (2021-07-28)
+
+
+### Bug Fixes
+
+* **frontend:** Stop custom prop ending up on standard elements ([6b0835b](https://github.com/astrosat/astrosat-ui/commit/6b0835b22cb57b79453fca77cf4b7b21c869b8a4))
+
+
+### Features
+
+* **ImageList:** Export components ([806078f](https://github.com/astrosat/astrosat-ui/commit/806078f9f15a0f7155bd0a71448534dced2ecaf6))
+
 ## [2.4.1](https://github.com/astrosat/astrosat-ui/compare/v2.4.0...v2.4.1) (2021-07-12)
 
 
