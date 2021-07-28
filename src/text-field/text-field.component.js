@@ -102,6 +102,10 @@ const TextField = React.forwardRef(
       InputMore['aria-describedby'] = undefined;
     }
 
+    if (type === 'password') {
+      InputMore.visibilityToggleButtonLabel = visibilityToggleButtonLabel;
+    }
+
     const helperTextId = helperText && id ? `${id}-helper-text` : undefined;
     const inputLabelId = label && id ? `${id}-label` : undefined;
     const InputComponent = type === 'password' ? PasswordInput : Input;
@@ -127,7 +131,6 @@ const TextField = React.forwardRef(
         placeholder={placeholder}
         inputProps={inputProps}
         valid={valid}
-        visibilityToggleButtonLabel={visibilityToggleButtonLabel}
         {...InputMore}
         {...InputProps}
       />
