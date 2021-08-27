@@ -4,9 +4,11 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
+    minWidth: theme.typography.pxToRem(136),
+    maxWidth: theme.typography.pxToRem(136),
     padding: theme.spacing(1),
     cursor: 'pointer',
+    wordBreak: 'break-all',
     color: theme.palette.common.white,
     backgroundColor: '#171819',
     transition: theme.transitions.create(

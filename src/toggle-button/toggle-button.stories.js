@@ -6,13 +6,15 @@ const twoButtons = ['Button 1', 'Button 2'];
 
 const renderButtons = ({ array, ...rest }) => {
   return (
-    <ToggleButtonGroup exclusive>
-      {array.map((text, i) => (
-        <ToggleButton key={text} value={text} selected={i === 0} {...rest}>
-          {text}
-        </ToggleButton>
-      ))}
-    </ToggleButtonGroup>
+    <div style={{ maxWidth: '19rem' }}>
+      <ToggleButtonGroup exclusive>
+        {array.map((text, i) => (
+          <ToggleButton key={text} value={text} selected={i === 0} {...rest}>
+            {text}
+          </ToggleButton>
+        ))}
+      </ToggleButtonGroup>
+    </div>
   );
 };
 
@@ -29,6 +31,15 @@ export const ThreeButtons = () =>
 export const SevenButtons = () =>
   renderButtons({
     array: new Array(7).fill(undefined).map((_, i) => `Button ${i + 1}`)
+  });
+
+export const UnevenButtons = () =>
+  renderButtons({
+    array: [
+      'I am short',
+      'I am very very very long',
+      'Iamverylongandunbrokentext'
+    ]
   });
 
 export const Disabled = () =>
