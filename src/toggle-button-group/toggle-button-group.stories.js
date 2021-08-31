@@ -2,22 +2,16 @@ import React from 'react';
 
 import ToggleButtonGroup from './toggle-button-group.component';
 
-const defaultButtons = [
-  {
-    textContent: 'Button 1',
+const generateButtons = n => {
+  const isSelected = Math.floor(Math.random() * n);
+  return new Array(n).fill().map((_, i) => ({
+    textContent: `Button ${i + 1}`,
     props: {
-      selected: true,
-      onClick: () => console.log('Clicked button 1')
+      selected: i === isSelected,
+      onClick: () => console.log(`Clicked Button ${i + 1}`)
     }
-  },
-  {
-    textContent: 'Button 2',
-    props: {
-      selected: false,
-      onClick: () => console.log('Clicked button 2')
-    }
-  }
-];
+  }));
+};
 
 const mixedButtons = [
   {
@@ -42,12 +36,8 @@ const mixedButtons = [
   }
 ];
 
-const renderButtons = ({ buttons }) => {
-  return (
-    <div style={{ maxWidth: '19rem' }}>
-      <ToggleButtonGroup buttons={buttons} />
-    </div>
-  );
+const renderButtons = buttons => {
+  return <ToggleButtonGroup buttons={buttons} />;
 };
 
 export default {
@@ -55,21 +45,8 @@ export default {
   component: ToggleButtonGroup
 };
 
-export const Default = () => renderButtons({ buttons: defaultButtons });
+export const Default = () => renderButtons(generateButtons(2));
 
-export const LotsOfButtons = () =>
-  renderButtons({
-    buttons: [
-      ...defaultButtons,
-      ...defaultButtons,
-      {
-        textContent: 'I am short',
-        props: {
-          selected: true,
-          onClick: () => console.log('Clicked short button')
-        }
-      }
-    ]
-  });
+export const LotsOfButtons = () => renderButtons(generateButtons(7));
 
-export const MixedButtons = () => renderButtons({ buttons: mixedButtons });
+export const MixedButtons = () => renderButtons(mixedButtons);
