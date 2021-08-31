@@ -1,12 +1,14 @@
 import React from 'react';
-import { ToggleButtonGroup } from '../proxies';
+import { ToggleButtonGroup } from './toggle-button-group.component';
 import ToggleButton from './toggle-button.component';
 
-const twoButtons = ['Button 1', 'Button 2'];
+const twoButtons = ['Percentage', 'Number'];
+
+const unevenButtons = ['I am short', 'Iamverylongandunbrokentext'];
 
 const renderButtons = ({ array, ...rest }) => {
   return (
-    <ToggleButtonGroup exclusive>
+    <ToggleButtonGroup>
       {array.map((text, i) => (
         <ToggleButton key={text} value={text} selected={i === 0} {...rest}>
           {text}
@@ -17,7 +19,7 @@ const renderButtons = ({ array, ...rest }) => {
 };
 
 export default {
-  title: 'ToggleButton',
+  title: 'ToggleButtons',
   component: ToggleButton
 };
 
@@ -30,6 +32,8 @@ export const SevenButtons = () =>
   renderButtons({
     array: new Array(7).fill(undefined).map((_, i) => `Button ${i + 1}`)
   });
+
+export const UnevenButtons = () => renderButtons({ array: unevenButtons });
 
 export const Disabled = () =>
   renderButtons({
