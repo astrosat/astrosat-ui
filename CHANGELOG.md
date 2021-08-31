@@ -1,3 +1,24 @@
+# [2.5.0](https://github.com/astrosat/astrosat-ui/compare/v2.4.1...v2.5.0) (2021-07-28)
+
+
+### Bug Fixes
+
+* **frontend:** Stop custom prop ending up on standard elements ([6b0835b](https://github.com/astrosat/astrosat-ui/commit/6b0835b22cb57b79453fca77cf4b7b21c869b8a4))
+
+
+### Features
+
+* **ImageList:** Export components ([806078f](https://github.com/astrosat/astrosat-ui/commit/806078f9f15a0f7155bd0a71448534dced2ecaf6))
+
+## [2.4.1](https://github.com/astrosat/astrosat-ui/compare/v2.4.0...v2.4.1) (2021-07-12)
+
+
+### Bug Fixes
+
+* **IconButton:** Add role identifier to IconButton ([3e16436](https://github.com/astrosat/astrosat-ui/commit/3e16436d0ef0c6472d13825f4d52b0fb4058d52d))
+* **Password field:** Add new prop to manage password visibility button label ([4ccc6a0](https://github.com/astrosat/astrosat-ui/commit/4ccc6a06d3e2ac3a8846968737a5f87a7b9baa06))
+* **Tabs:** Bring styling into line with latest designs ([2cdca9a](https://github.com/astrosat/astrosat-ui/commit/2cdca9a2610d5183ed4d6f6bab6a19c5903643bf))
+
 # [2.4.0](https://github.com/astrosat/astrosat-ui/compare/v2.3.0...v2.4.0) (2021-05-10)
 
 

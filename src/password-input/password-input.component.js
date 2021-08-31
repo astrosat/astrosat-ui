@@ -26,9 +26,13 @@ const iconStyles = makeStyles(theme => ({
 }));
 
 /**
- * @param {import('../input/input.component.js').InputProps} props
+ * @param {import('../input/input.component.js').InputProps & {visibilityToggleButtonLabel?: string}} props
  */
-const PasswordInput = ({ type = INPUT_TYPE.password, ...rest }) => {
+const PasswordInput = ({
+  type = INPUT_TYPE.password,
+  visibilityToggleButtonLabel = 'Password Visibility Toggle',
+  ...rest
+}) => {
   const [_type, setType] = useState(type);
 
   const iconClasses = iconStyles({ type: _type, ...rest });
@@ -40,7 +44,11 @@ const PasswordInput = ({ type = INPUT_TYPE.password, ...rest }) => {
 
   const adornment = (
     <InputAdornment position="end">
-      <IconButton onClick={handleClick} size="small">
+      <IconButton
+        onClick={handleClick}
+        size="small"
+        aria-label={visibilityToggleButtonLabel}
+      >
         {_type === INPUT_TYPE.text ? (
           <EyeIcon classes={iconClasses} />
         ) : (

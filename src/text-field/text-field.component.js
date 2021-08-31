@@ -18,7 +18,10 @@ export const styles = {
 const TextField = React.forwardRef(
   /**
    * @param {import('@material-ui/core').TextFieldProps &
-   *   {valid?: import('../input/input.component').InputProps['valid']}
+   *   {
+   *    valid?: import('../input/input.component').InputProps['valid']
+   *    visibilityToggleButtonLabel?: string
+   *   }
    * } props
    * @param {*} ref
    */
@@ -58,6 +61,7 @@ const TextField = React.forwardRef(
       valid,
       value,
       variant = 'standard',
+      visibilityToggleButtonLabel,
       ...other
     } = props;
 
@@ -96,6 +100,10 @@ const TextField = React.forwardRef(
         InputMore.id = undefined;
       }
       InputMore['aria-describedby'] = undefined;
+    }
+
+    if (type === 'password') {
+      InputMore.visibilityToggleButtonLabel = visibilityToggleButtonLabel;
     }
 
     const helperTextId = helperText && id ? `${id}-helper-text` : undefined;
