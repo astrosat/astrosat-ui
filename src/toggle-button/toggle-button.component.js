@@ -1,14 +1,13 @@
 import React from 'react';
+import clsx from 'clsx';
 import { ToggleButton as MuiToggleButton } from '@material-ui/lab';
-import { makeStyles } from '@material-ui/core';
+import { darken, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
-    padding: theme.spacing(1.25),
-    cursor: 'pointer',
+    padding: theme.spacing(1),
     color: theme.palette.common.white,
-    backgroundColor: '#171819',
+    backgroundColor: darken(theme.palette.secondary.main, 0.3),
     fontSize: theme.typography.pxToRem(14),
     fontWeight: 400,
     transition: theme.transitions.create(
@@ -19,26 +18,41 @@ const useStyles = makeStyles(theme => ({
     ),
     '&:hover': {
       opacity: 0.5
+    },
+    '&$disabled': {
+      cursor: 'not-allowed',
+      backgroundColor: theme.palette.grey['300'],
+      color: theme.palette.grey.A700
+    },
+    '&$selected': {
+      color: theme.palette.secondary.main,
+      backgroundColor: theme.palette.primary.main
     }
   },
-  selected: {
-    cursor: 'not-allowed',
-    color: `${theme.palette.secondary.main} !important`,
-    backgroundColor: `${theme.palette.primary.main} !important`
-  },
-  disabled: {
-    backgroundColor: theme.palette.grey['300'],
-    color: `${theme.palette.grey.A700} !important`
-  }
+  selected: {},
+  disabled: {}
 }));
 
-const ToggleButton = ({ children, ...props }) => {
+/**
+ * @param {import('@material-ui/lab').ToggleButtonProps} props
+ */
+const ToggleButton = ({ children, classes = {}, ...props }) => {
   const styles = useStyles({});
+  const { root, selected, disabled, ...rest } = classes;
+
+  const combinedStyles = {
+    root: clsx(styles.root, root),
+    selected: clsx(styles.selected, selected),
+    disabled: clsx(styles.disabled, disabled),
+    ...rest
+  };
+
+  console.log('combinedStyles: ', combinedStyles);
   return (
     <MuiToggleButton
       disableRipple
       disableFocusRipple
-      classes={styles}
+      classes={combinedStyles}
       {...props}
     >
       {children}

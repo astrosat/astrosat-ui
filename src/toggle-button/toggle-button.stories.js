@@ -6,9 +6,9 @@ const twoButtons = ['Percentage', 'Number'];
 
 const unevenButtons = ['I am short', 'Iamverylongandunbrokentext'];
 
-const renderButtons = ({ array, ...rest }) => {
+const renderButtons = ({ array, orientation, ...rest }) => {
   return (
-    <ToggleButtonGroup>
+    <ToggleButtonGroup orientation={orientation}>
       {array.map((text, i) => (
         <ToggleButton key={text} value={text} selected={i === 0} {...rest}>
           {text}
@@ -26,17 +26,24 @@ export default {
 export const Default = () => renderButtons({ array: twoButtons });
 
 export const ThreeButtons = () =>
-  renderButtons({ array: [...twoButtons, 'Button 3'] });
+  renderButtons({
+    array: [...twoButtons, 'Button 3'],
+    orientation: 'vertical'
+  });
 
 export const SevenButtons = () =>
   renderButtons({
-    array: new Array(7).fill(undefined).map((_, i) => `Button ${i + 1}`)
+    array: new Array(7).fill(undefined).map((_, i) => `Button ${i + 1}`),
+    orientation: 'vertical'
   });
 
 export const UnevenButtons = () => renderButtons({ array: unevenButtons });
 
 export const Disabled = () =>
+  renderButtons({ array: ['Button 1', 'Button 2'], disabled: true });
+
+export const WithClasses = () =>
   renderButtons({
     array: ['Button 1', 'Button 2'],
-    disabled: true
+    classes: { root: { color: 'green', border: '2px solid hotpink' } }
   });
