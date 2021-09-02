@@ -1,6 +1,11 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core';
 import { ToggleButtonGroup } from './toggle-button-group.component';
 import ToggleButton from './toggle-button.component';
+
+const useStyles = makeStyles({
+  root: { backgroundColor: 'hotpink' }
+});
 
 const twoButtons = ['Percentage', 'Number'];
 
@@ -45,5 +50,5 @@ export const Disabled = () =>
 export const WithClasses = () =>
   renderButtons({
     array: ['Button 1', 'Button 2'],
-    classes: { root: { color: 'green', border: '2px solid hotpink' } }
+    classes: useStyles({})
   });
