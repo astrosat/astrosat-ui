@@ -37,7 +37,7 @@
     "build:icons": "node ./scripts/createIcons.js",
     "build": "yarn build:icons && rollup -c",
     "watch": "rollup -c -w",
-    "release": "yarn clean && yarn && yarn build && semantic-release --no-ci",
+    "release": "yarn clean && yarn && yarn build && semantic-release",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
