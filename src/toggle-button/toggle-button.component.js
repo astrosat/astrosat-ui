@@ -47,7 +47,6 @@ const ToggleButton = ({ children, classes = {}, ...props }) => {
     ...rest
   };
 
-  console.log('combinedStyles: ', combinedStyles);
   return (
     <MuiToggleButton
       disableRipple
