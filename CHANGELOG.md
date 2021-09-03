@@ -1,3 +1,20 @@
+## [2.5.1](https://github.com/astrosat/astrosat-ui/compare/v2.5.0...v2.5.1) (2021-09-03)
+
+
+### Bug Fixes
+
+* **frontend:** Add more logic and styling ([2ec3c10](https://github.com/astrosat/astrosat-ui/commit/2ec3c10482b7907051d86a4e170b70e60fcac959))
+* **frontend:** Add vertical styles ([1078df2](https://github.com/astrosat/astrosat-ui/commit/1078df29af1c5703dbad723ba8f58baaff23ee74))
+* **frontend:** Create github release workflow ([5eec193](https://github.com/astrosat/astrosat-ui/commit/5eec19337e798ee21d3fd1dd1381e3ad0628f690))
+* **frontend:** Export components ([19031bb](https://github.com/astrosat/astrosat-ui/commit/19031bb4a69978f6eef18dbdde58540e27092db3))
+* **frontend:** Initial commit ([c0508c5](https://github.com/astrosat/astrosat-ui/commit/c0508c5187a72b85371063bb0fa18a1afc2245a0))
+* **frontend:** Make requested changes ([48bf486](https://github.com/astrosat/astrosat-ui/commit/48bf486b4582af407ab3e06d61d067331e93ab48))
+* **frontend:** Remove border from button root ([fb9430d](https://github.com/astrosat/astrosat-ui/commit/fb9430db3312f5d2e8be70241817ab71791f6684))
+* **frontend:** Remove console.log ([ba5a5f1](https://github.com/astrosat/astrosat-ui/commit/ba5a5f1a36666516188caee5928b934463a99efd))
+* **frontend:** Update stories ([a41dbb5](https://github.com/astrosat/astrosat-ui/commit/a41dbb54c26128a082abc77de747a8b1cdee5f5a))
+* **frontend:** Update styles, stories ([8b0b604](https://github.com/astrosat/astrosat-ui/commit/8b0b6040610d14bafa40c20541a7573f0fe95ce0))
+* **frontend:** Upgrade ButtonGroup ([7d11b63](https://github.com/astrosat/astrosat-ui/commit/7d11b637d8861360c0c4c768beab44d5977c1e61))
+
 # [2.5.0](https://github.com/astrosat/astrosat-ui/compare/v2.4.1...v2.5.0) (2021-07-28)
 
 
