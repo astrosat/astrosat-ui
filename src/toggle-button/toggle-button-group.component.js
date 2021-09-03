@@ -20,9 +20,11 @@ const useStyles = makeStyles(() => ({
 /**
  * @param {import('@material-ui/lab').ToggleButtonGroupProps} props
  */
-export const ToggleButtonGroup = ({ exclusive = true, ...rest }) => {
+const ToggleButtonGroup = ({ exclusive = true, ...rest }) => {
   const classes = useStyles({});
   return (
     <MuiToggleButtonGroup exclusive={exclusive} classes={classes} {...rest} />
   );
 };
+
+export default ToggleButtonGroup;
