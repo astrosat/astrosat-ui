@@ -5,6 +5,7 @@ import { darken, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
+    border: 'none',
     padding: '0.65em 4em',
     color: theme.palette.common.white,
     backgroundColor: darken(theme.palette.secondary.main, 0.3),
