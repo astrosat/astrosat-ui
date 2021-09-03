@@ -19,3 +19,5 @@ export { default as Switch } from './switch/switch.component';
 export { default as TextField } from './text-field/text-field.component';
 export { default as ThemeProvider } from './theme-provider/theme-provider.component';
 export { default as Well } from './well/well.component';
+export { default as ToggleButtonGroup } from './toggle-button/toggle-button-group.component';
+export { default as ToggleButton } from './toggle-button/toggle-button.component';
