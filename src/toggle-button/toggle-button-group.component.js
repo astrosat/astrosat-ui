@@ -8,16 +8,21 @@ const useStyles = makeStyles(() => ({
       border: 'none',
       margin: '0'
     }
+  },
+  groupedVertical: {
+    '&:not(:first-child)': {
+      border: 'none',
+      margin: '0'
+    }
   }
 }));
 
 /**
  * @param {import('@material-ui/lab').ToggleButtonGroupProps} props
  */
-export const ToggleButtonGroup = ({ exclusive = true, ...rest }) => (
-  <MuiToggleButtonGroup
-    exclusive={exclusive}
-    classes={useStyles({})}
-    {...rest}
-  />
-);
+export const ToggleButtonGroup = ({ exclusive = true, ...rest }) => {
+  const classes = useStyles({});
+  return (
+    <MuiToggleButtonGroup exclusive={exclusive} classes={classes} {...rest} />
+  );
+};
