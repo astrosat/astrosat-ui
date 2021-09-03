@@ -5,11 +5,10 @@ import { darken, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(1),
+    padding: '0.65em 4em',
     color: theme.palette.common.white,
     backgroundColor: darken(theme.palette.secondary.main, 0.3),
-    fontSize: theme.typography.pxToRem(14),
-    fontWeight: 400,
+    minWidth: '64px',
     transition: theme.transitions.create(
       ['background-color', 'box-shadow', 'border', 'opacity'],
       {
@@ -17,16 +16,20 @@ const useStyles = makeStyles(theme => ({
       }
     ),
     '&:hover': {
+      backgroundColor: darken(theme.palette.secondary.main, 0.3),
       opacity: 0.5
     },
     '&$disabled': {
-      cursor: 'not-allowed',
       backgroundColor: theme.palette.grey['300'],
       color: theme.palette.grey.A700
     },
     '&$selected': {
       color: theme.palette.secondary.main,
-      backgroundColor: theme.palette.primary.main
+      backgroundColor: theme.palette.primary.main,
+      '&:hover': {
+        backgroundColor: theme.palette.primary.main,
+        opacity: 0.5
+      }
     }
   },
   selected: {},
@@ -36,7 +39,7 @@ const useStyles = makeStyles(theme => ({
 /**
  * @param {import('@material-ui/lab').ToggleButtonProps} props
  */
-const ToggleButton = ({ children, classes = {}, ...props }) => {
+const ToggleButton = ({ classes = {}, ...props }) => {
   const styles = useStyles({});
   const { root, selected, disabled, ...rest } = classes;
 
@@ -53,9 +56,7 @@ const ToggleButton = ({ children, classes = {}, ...props }) => {
       disableFocusRipple
       classes={combinedStyles}
       {...props}
-    >
-      {children}
-    </MuiToggleButton>
+    />
   );
 };
 
