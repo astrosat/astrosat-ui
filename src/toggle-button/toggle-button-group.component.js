@@ -3,6 +3,9 @@ import { ToggleButtonGroup as MuiToggleButtonGroup } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
+  root: {
+    width: '100%'
+  },
   groupedHorizontal: {
     '&:not(:first-child)': {
       border: 'none',

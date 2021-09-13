@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import { ToggleButtonGroup } from './toggle-button-group.component';
+import ToggleButtonGroup from './toggle-button-group.component';
 import ToggleButton from './toggle-button.component';
 
 const useStyles = makeStyles({
@@ -11,9 +11,15 @@ const twoButtons = ['Percentage', 'Number'];
 
 const unevenButtons = ['I am short', 'Iamverylongandunbrokentext'];
 
-const renderButtons = ({ array, orientation, disabled, ...rest }) => {
+const renderButtons = ({
+  array,
+  orientation,
+  disabled,
+  size = 'medium',
+  ...rest
+}) => {
   return (
-    <ToggleButtonGroup orientation={orientation}>
+    <ToggleButtonGroup orientation={orientation} size={size}>
       {array.map((text, i) => (
         <ToggleButton
           key={text}
@@ -66,3 +72,7 @@ export const WithClasses = () =>
     array: ['Button 1', 'Button 2'],
     classes: useStyles({})
   });
+
+export const SizeSmall = () =>
+  // @ts-ignore
+  renderButtons({ array: ['Button 1', 'Button 2'], size: 'small' });
