@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import ToggleButtonGroup from './toggle-button-group.component';
 import ToggleButton from './toggle-button.component';
+import Button from '../button/button.component';
 
 const useStyles = makeStyles({
   root: { backgroundColor: 'hotpink' }
@@ -76,3 +77,7 @@ export const WithClasses = () =>
 export const SizeSmall = () =>
   // @ts-ignore
   renderButtons({ array: ['Button 1', 'Button 2'], size: 'small' });
+
+export const SizeLarge = () =>
+  // @ts-ignore
+  renderButtons({ array: ['Button 1', 'Button 2'], size: 'large' });

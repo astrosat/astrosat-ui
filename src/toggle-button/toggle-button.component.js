@@ -35,11 +35,15 @@ const useStyles = makeStyles(theme => ({
     },
     '&$sizeSmall': {
       fontSize: theme.typography.pxToRem(14)
+    },
+    '&$sizeLarge': {
+      fontSize: theme.typography.pxToRem(22)
     }
   },
   selected: {},
   disabled: {},
-  sizeSmall: {}
+  sizeSmall: {},
+  sizeLarge: {}
 }));
 
 /**
