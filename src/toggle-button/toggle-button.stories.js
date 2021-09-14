@@ -2,10 +2,14 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import ToggleButtonGroup from './toggle-button-group.component';
 import ToggleButton from './toggle-button.component';
-import Button from '../button/button.component';
 
 const useStyles = makeStyles({
-  root: { backgroundColor: 'hotpink' }
+  group: {
+    border: '2px solid hotpink'
+  },
+  button: {
+    backgroundColor: 'hotpink'
+  }
 });
 
 const twoButtons = ['Percentage', 'Number'];
@@ -17,17 +21,24 @@ const renderButtons = ({
   orientation,
   disabled,
   size = 'medium',
-  ...rest
+  fullWidth = true,
+  groupClasses,
+  buttonClasses
 }) => {
   return (
-    <ToggleButtonGroup orientation={orientation} size={size}>
+    <ToggleButtonGroup
+      orientation={orientation}
+      size={size}
+      fullWidth={fullWidth}
+      classes={groupClasses}
+    >
       {array.map((text, i) => (
         <ToggleButton
           key={text}
           value={text}
           selected={i === 0}
           disabled={disabled && i !== 0 ? true : false}
-          {...rest}
+          classes={buttonClasses}
         >
           {text}
         </ToggleButton>
@@ -65,19 +76,34 @@ export const UnevenButtons = () =>
 
 export const Disabled = () =>
   // @ts-ignore
-  renderButtons({ array: ['Button 1', 'Button 2'], disabled: true });
+  renderButtons({ array: twoButtons, disabled: true });
 
-export const WithClasses = () =>
+export const GroupWithClasses = () => {
+  const { group } = useStyles({});
   // @ts-ignore
-  renderButtons({
-    array: ['Button 1', 'Button 2'],
-    classes: useStyles({})
+  return renderButtons({
+    array: twoButtons,
+    groupClasses: { root: group }
   });
+};
+
+export const ButtonWithClasses = () => {
+  const { button } = useStyles({});
+  // @ts-ignore
+  return renderButtons({
+    array: twoButtons,
+    buttonClasses: { root: button }
+  });
+};
 
 export const SizeSmall = () =>
   // @ts-ignore
-  renderButtons({ array: ['Button 1', 'Button 2'], size: 'small' });
+  renderButtons({ array: twoButtons, size: 'small' });
 
 export const SizeLarge = () =>
   // @ts-ignore
-  renderButtons({ array: ['Button 1', 'Button 2'], size: 'large' });
+  renderButtons({ array: twoButtons, size: 'large' });
+
+export const NotFullWidth = () =>
+  // @ts-ignore
+  renderButtons({ array: twoButtons, fullWidth: false });

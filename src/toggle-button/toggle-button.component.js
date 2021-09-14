@@ -5,7 +5,7 @@ import { darken, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexBasis: '100%',
     border: 'none',
     padding: '0.65em 4em',
     color: theme.palette.common.white,
@@ -51,13 +51,14 @@ const useStyles = makeStyles(theme => ({
  */
 const ToggleButton = ({ classes = {}, ...props }) => {
   const styles = useStyles({});
-  const { root, selected, disabled, ...rest } = classes;
+  const { root, selected, disabled, sizeSmall, sizeLarge, ...rest } = classes;
 
   const combinedStyles = {
-    ...styles,
     root: clsx(styles.root, root),
     selected: clsx(styles.selected, selected),
     disabled: clsx(styles.disabled, disabled),
+    sizeSmall: clsx(styles.sizeSmall, sizeSmall),
+    sizeLarge: clsx(styles.sizeLarge, sizeLarge),
     ...rest
   };
 

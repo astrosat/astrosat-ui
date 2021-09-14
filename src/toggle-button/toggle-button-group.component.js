@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 /**
- * @param {import('@material-ui/lab').ToggleButtonGroupProps} props
+ * @param {import('@material-ui/lab').ToggleButtonGroupProps&{fullWidth?: boolean}} props
  */
 const ToggleButtonGroup = ({ exclusive = true, fullWidth = true, ...rest }) => {
   const classes = useStyles({ fullWidth });
