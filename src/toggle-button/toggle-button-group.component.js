@@ -3,6 +3,10 @@ import { ToggleButtonGroup as MuiToggleButtonGroup } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
+  root: {
+    /** @param {{ fullWidth: boolean }} props */
+    width: props => (props.fullWidth ? '100%' : 'auto')
+  },
   groupedHorizontal: {
     '&:not(:first-child)': {
       border: 'none',
@@ -18,10 +22,10 @@ const useStyles = makeStyles(() => ({
 }));
 
 /**
- * @param {import('@material-ui/lab').ToggleButtonGroupProps} props
+ * @param {import('@material-ui/lab').ToggleButtonGroupProps&{fullWidth?: boolean}} props
  */
-const ToggleButtonGroup = ({ exclusive = true, ...rest }) => {
-  const classes = useStyles({});
+const ToggleButtonGroup = ({ exclusive = true, fullWidth = true, ...rest }) => {
+  const classes = useStyles({ fullWidth });
   return (
     <MuiToggleButtonGroup exclusive={exclusive} classes={classes} {...rest} />
   );
