@@ -1,3 +1,13 @@
+## [2.5.2](https://github.com/astrosat/astrosat-ui/compare/v2.5.1...v2.5.2) (2021-09-15)
+
+
+### Bug Fixes
+
+* **frontend:** Add styles, fix stories ([103a486](https://github.com/astrosat/astrosat-ui/commit/103a48642ca46abd1ccc8c169e1cc27bffa1332e))
+* **frontend:** Added large size, fixed logic ([613bd41](https://github.com/astrosat/astrosat-ui/commit/613bd41c40f3d3c55242d3b04a1cc10145eb6dea))
+* **frontend:** Scale padding by font size factor ([2b178ed](https://github.com/astrosat/astrosat-ui/commit/2b178ed267a847e11b270681ee30a053376adec9))
+* **frontend:** Update styles and stories ([89f0bd0](https://github.com/astrosat/astrosat-ui/commit/89f0bd07c7873d4f0854b212841008c19cd16ff2))
+
 ## [2.5.1](https://github.com/astrosat/astrosat-ui/compare/v2.5.0...v2.5.1) (2021-09-03)
 
 
