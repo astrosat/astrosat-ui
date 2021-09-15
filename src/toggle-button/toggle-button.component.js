@@ -34,9 +34,11 @@ const useStyles = makeStyles(theme => ({
       }
     },
     '&$sizeSmall': {
+      padding: '0.57em 3.5em',
       fontSize: theme.typography.pxToRem(14)
     },
     '&$sizeLarge': {
+      padding: '0.73em 4.5em',
       fontSize: theme.typography.pxToRem(22)
     }
   },

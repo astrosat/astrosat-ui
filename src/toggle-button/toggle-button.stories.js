@@ -96,14 +96,23 @@ export const ButtonWithClasses = () => {
   });
 };
 
-export const SizeSmall = () =>
-  // @ts-ignore
-  renderButtons({ array: twoButtons, size: 'small' });
-
-export const SizeLarge = () =>
-  // @ts-ignore
-  renderButtons({ array: twoButtons, size: 'large' });
-
 export const NotFullWidth = () =>
   // @ts-ignore
   renderButtons({ array: twoButtons, fullWidth: false });
+
+export const Sizes = () => (
+  <>
+    <div style={{ marginBottom: '1rem' }}>
+      {/* @ts-ignore */}
+      {renderButtons({ array: ['Small', 'Small'], size: 'small' })}
+    </div>
+    <div style={{ marginBottom: '1rem' }}>
+      {/* @ts-ignore */}
+      {renderButtons({ array: ['Default', 'Default'] })}
+    </div>
+    <div style={{ marginBottom: '1rem' }}>
+      {/* @ts-ignore */}
+      {renderButtons({ array: ['Large', 'Large'], size: 'large' })}
+    </div>
+  </>
+);
