@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import { ToggleButtonGroup as MuiToggleButtonGroup } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core';
 
@@ -24,10 +25,28 @@ const useStyles = makeStyles(() => ({
 /**
  * @param {import('@material-ui/lab').ToggleButtonGroupProps&{fullWidth?: boolean}} props
  */
-const ToggleButtonGroup = ({ exclusive = true, fullWidth = true, ...rest }) => {
-  const classes = useStyles({ fullWidth });
+const ToggleButtonGroup = ({
+  classes = {},
+  exclusive = true,
+  fullWidth = true,
+  ...props
+}) => {
+  const styles = useStyles({ fullWidth });
+  const { root, groupedHorizontal, groupedVertical, ...rest } = styles;
+
+  const combinedStyles = {
+    root: clsx(styles.root, root),
+    groupedHorizontal: clsx(styles.groupedHorizontal, groupedHorizontal),
+    groupedVertical: clsx(styles.groupedVertical, groupedVertical),
+    ...rest
+  };
+
   return (
-    <MuiToggleButtonGroup exclusive={exclusive} classes={classes} {...rest} />
+    <MuiToggleButtonGroup
+      exclusive={exclusive}
+      classes={combinedStyles}
+      {...props}
+    />
   );
 };
 

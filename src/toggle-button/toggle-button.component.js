@@ -10,7 +10,6 @@ const useStyles = makeStyles(theme => ({
     padding: '0.65em 4em',
     color: theme.palette.common.white,
     backgroundColor: darken(theme.palette.secondary.main, 0.3),
-    minWidth: '64px',
     transition: theme.transitions.create(
       ['background-color', 'box-shadow', 'border', 'opacity'],
       {
