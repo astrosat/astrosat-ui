@@ -32,7 +32,7 @@ const ToggleButtonGroup = ({
   ...props
 }) => {
   const styles = useStyles({ fullWidth });
-  const { root, groupedHorizontal, groupedVertical, ...rest } = styles;
+  const { root, groupedHorizontal, groupedVertical, ...rest } = classes;
 
   const combinedStyles = {
     root: clsx(styles.root, root),
