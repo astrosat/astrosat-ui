@@ -1,3 +1,11 @@
+## [2.5.3](https://github.com/astrosat/astrosat-ui/compare/v2.5.2...v2.5.3) (2021-09-20)
+
+
+### Bug Fixes
+
+* **frontend:** Add combinedClasses, remove minWidth ([8fdfab7](https://github.com/astrosat/astrosat-ui/commit/8fdfab7456b3e115294dccfd80f6514b4ba819eb))
+* **frontend:** Remove side padding from toggle buttons, fix group classes ([2364b22](https://github.com/astrosat/astrosat-ui/commit/2364b2260d9b925548a0be4ddc2ec4a87923f2bc))
+
 ## [2.5.2](https://github.com/astrosat/astrosat-ui/compare/v2.5.1...v2.5.2) (2021-09-15)
 
 
