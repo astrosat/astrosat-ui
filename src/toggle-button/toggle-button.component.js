@@ -7,10 +7,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexBasis: '100%',
     border: 'none',
-    padding: '0.65em 4em',
+    padding: '0.65em',
     color: theme.palette.common.white,
     backgroundColor: darken(theme.palette.secondary.main, 0.3),
-    minWidth: '64px',
     transition: theme.transitions.create(
       ['background-color', 'box-shadow', 'border', 'opacity'],
       {
@@ -34,11 +33,11 @@ const useStyles = makeStyles(theme => ({
       }
     },
     '&$sizeSmall': {
-      padding: '0.57em 3.5em',
+      padding: '0.57em',
       fontSize: theme.typography.pxToRem(14)
     },
     '&$sizeLarge': {
-      padding: '0.73em 4.5em',
+      padding: '0.73em',
       fontSize: theme.typography.pxToRem(22)
     }
   },
