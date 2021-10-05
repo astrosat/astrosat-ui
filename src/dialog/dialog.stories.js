@@ -1,4 +1,5 @@
 import { CloseIcon, PlusIcon, ProfileIcon } from 'icons';
+import faker from 'faker';
 import React from 'react';
 import {
   AppBar,
@@ -21,14 +22,29 @@ import {
   DialogTitle
 } from '../index';
 
-export default { title: 'Dialog' };
+export default {
+  title: 'Dialog',
+  component: Dialog,
+  args: { open: true },
+  argTypes: {
+    onClose: { action: true },
+    scroll: {
+      options: ['paper', 'body'],
+      control: {
+        type: 'select'
+      }
+    }
+  }
+};
 
-export const Simple = () => (
-  <Dialog open aria-labelledby="simple-dialog-title">
+const emails = Array.from({ length: 2 }, () => faker.internet.email());
+
+export const Simple = args => (
+  <Dialog aria-labelledby="simple-dialog-title" {...args}>
     <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
     <List>
-      {['test@test.com'].map(email => (
-        <ListItem button key={email}>
+      {emails.map(email => (
+        <ListItem button>
           <ListItemAvatar>
             <Avatar>
               <ProfileIcon />
@@ -98,24 +114,17 @@ export const FullScreen = () => {
   );
 };
 
-export const LongContent = () => (
+export const LongContent = args => (
   <Dialog
     open
-    scroll="paper"
     aria-labelledby="scroll-dialog-title"
     aria-describedby="scroll-dialog-description"
+    {...args}
   >
     <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
     <DialogContent dividers>
       <DialogContentText id="scroll-dialog-description" tabIndex={-1}>
-        {[...new Array(50)]
-          .map(
-            () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-          )
-          .join('\n')}
+        {faker.lorem.paragraphs(30)}
       </DialogContentText>
     </DialogContent>
     <DialogActions>
@@ -124,3 +133,6 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
     </DialogActions>
   </Dialog>
 );
+LongContent.args = {
+  scroll: 'paper'
+};
