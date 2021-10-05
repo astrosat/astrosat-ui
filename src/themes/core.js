@@ -1,7 +1,7 @@
 import { createTheme, alpha } from '@material-ui/core';
 import { palette } from './palette';
 
-const borderRadius = 10;
+const borderRadius = 5;
 const spacing = factor => `${0.5 * factor}rem`;
 
 /** @type {import('@material-ui/core').ThemeOptions} */
@@ -77,7 +77,8 @@ export const core = createTheme({
     },
     MuiDialog: {
       paper: {
-        backgroundColor: palette.background.default
+        backgroundColor: palette.background.default,
+        borderRadius: 10
       }
     },
     MuiDialogActions: {
