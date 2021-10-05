@@ -5,7 +5,7 @@ import {
   Typography,
   withStyles
 } from '@material-ui/core';
-import { IconButton } from 'index';
+import IconButton from '../icon-button/icon-button.component';
 import { CloseIcon } from 'icons';
 
 const styles = (/** @type {import('@material-ui/core').Theme} */ theme) => ({
@@ -54,7 +54,7 @@ const DialogTitle = (
       )}
       {onClose ? (
         <IconButton
-          aria-label="close"
+          aria-label="Close Dialog"
           // @ts-ignore
           className={classes.closeButton}
           onClick={onClose}
