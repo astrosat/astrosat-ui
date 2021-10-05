@@ -1,36 +1,42 @@
 import React from 'react';
 
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  DialogTitle as MuiDialogTitle,
+  Typography,
+  withStyles
+} from '@material-ui/core';
 
-import { DialogTitle as MuiDialogTitle, Typography } from '@material-ui/core';
-
-const titleStyles = makeStyles(theme => ({
+const styles = (/** @type {import('@material-ui/core').Theme} */ theme) => ({
   root: {
     display: 'grid',
     placeItems: 'center',
-    height: theme.spacing(14),
-    width: '100%',
-    backgroundColor: theme.palette.primary.main
+    padding: theme.spacing(5, 3),
+    borderBottom: `2px solid ${theme.palette.primary.main}`,
+    '& .content': {
+      fontSize: theme.typography.pxToRem(24)
+    }
   }
-}));
+});
 
 /**
  * @param { import('@material-ui/core/DialogTitle/DialogTitle').DialogTitleProps } props
  * @param {React.Ref<any>} ref
  */
-const DialogTitle = ({ disableTypography, children, ...props }, ref) => {
-  const titleClasses = titleStyles({});
+const DialogTitle = (
+  { disableTypography, children, classes, ...rest },
+  ref
+) => {
   return (
     <MuiDialogTitle
+      className={classes.root}
       ref={ref}
-      classes={titleClasses}
       disableTypography
-      {...props}
+      {...rest}
     >
       {disableTypography ? (
         children
       ) : (
-        <Typography color="secondary" variant="h1">
+        <Typography className="content" variant="h1">
           {children}
         </Typography>
       )}
@@ -38,4 +44,4 @@ const DialogTitle = ({ disableTypography, children, ...props }, ref) => {
   );
 };
 
-export default React.forwardRef(DialogTitle);
+export default withStyles(styles)(React.forwardRef(DialogTitle));

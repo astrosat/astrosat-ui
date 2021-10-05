@@ -60,6 +60,11 @@ const dark = {
         }
       }
     },
+    MuiDialog: {
+      paper: {
+        backgroundColor: palette.background.default
+      }
+    },
     MuiIconButton: {
       root: {
         '&:focus': {
@@ -82,9 +87,6 @@ const dark = {
       root: {
         color: palette.text.primary
       }
-    },
-    MuiDialogContentText: {
-      root: { color: palette.text.primary }
     },
     MuiMenuItem: {
       root: {

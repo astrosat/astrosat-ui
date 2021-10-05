@@ -122,7 +122,7 @@ export const LongContent = args => (
     {...args}
   >
     <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
-    <DialogContent dividers>
+    <DialogContent>
       <DialogContentText id="scroll-dialog-description" tabIndex={-1}>
         {faker.lorem.paragraphs(30)}
       </DialogContentText>

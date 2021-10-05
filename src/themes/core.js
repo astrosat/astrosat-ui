@@ -69,10 +69,14 @@ export const core = createMuiTheme({
         }
       }
     },
+    MuiDialog: {
+      paper: {
+        backgroundColor: palette.background.default
+      }
+    },
     MuiDialogActions: {
       root: {
         display: 'flex',
-        flexDirection: 'row',
         justifyContent: 'center'
       }
     },
@@ -238,7 +242,7 @@ export const core = createMuiTheme({
     fontFamily: '"Open Sans", sans-serif',
     h1: {
       fontSize: '26px',
-      fontWeight: 700
+      fontWeight: 600
     },
     h2: {
       fontSize: '18px',
