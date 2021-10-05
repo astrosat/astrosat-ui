@@ -1,3 +1,5 @@
+export * from '@material-ui/core';
+export { Pagination, Skeleton } from '@material-ui/lab';
 export { default as Button } from './button/button.component';
 export { default as Checkbox } from './checkbox/checkbox.component';
 export { default as DialogTitle } from './dialog/dialog-title.component';
@@ -13,7 +15,6 @@ export { default as MenuItem } from './menu/menu-item.component';
 export { default as Menu } from './menu/menu.component';
 export { default as PasswordInput } from './password-input/password-input.component';
 export { default as PasswordStrengthMeter } from './password-strength-meter/password-strength-meter.component';
-export * from './proxies';
 export { default as Radio } from './radio/radio.component';
 export { default as Switch } from './switch/switch.component';
 export { default as TextField } from './text-field/text-field.component';
