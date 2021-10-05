@@ -81,10 +81,16 @@ export const core = createTheme({
         borderRadius: 10
       }
     },
+    MuiDialogContent: {
+      root: {
+        padding: `${spacing(5)} ${spacing(3)} ${spacing(2)}`
+      }
+    },
     MuiDialogActions: {
       root: {
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        padding: `${spacing(2)} ${spacing(3)} ${spacing(4)}`
       }
     },
     MuiIconButton: {
