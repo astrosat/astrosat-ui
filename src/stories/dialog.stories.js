@@ -121,7 +121,9 @@ export const LongContent = args => (
     aria-describedby="scroll-dialog-description"
     {...args}
   >
-    <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
+    <DialogTitle id="scroll-dialog-title" onClose={args.onClose}>
+      Subscribe
+    </DialogTitle>
     <DialogContent>
       <DialogContentText id="scroll-dialog-description" tabIndex={-1}>
         {faker.lorem.paragraphs(30)}
