@@ -44,7 +44,7 @@ export const Simple = args => (
     <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
     <List>
       {emails.map(email => (
-        <ListItem button>
+        <ListItem button key={email}>
           <ListItemAvatar>
             <Avatar>
               <ProfileIcon />
