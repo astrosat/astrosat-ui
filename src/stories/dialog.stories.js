@@ -25,13 +25,19 @@ import {
 export default {
   title: 'Dialog',
   component: Dialog,
-  args: { open: true },
+  args: { open: true, fullWidth: false },
   argTypes: {
     onClose: { action: true },
     scroll: {
       options: ['paper', 'body'],
       control: {
-        type: 'select'
+        type: 'radio'
+      }
+    },
+    maxWidth: {
+      options: ['xs', 'sm', 'md', 'lg', 'xl', false],
+      control: {
+        type: 'radio'
       }
     }
   }
@@ -42,27 +48,29 @@ const emails = Array.from({ length: 2 }, () => faker.internet.email());
 export const Simple = args => (
   <Dialog aria-labelledby="simple-dialog-title" {...args}>
     <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
-    <List>
-      {emails.map(email => (
-        <ListItem button key={email}>
+    <DialogContent>
+      <List>
+        {emails.map(email => (
+          <ListItem button key={email}>
+            <ListItemAvatar>
+              <Avatar>
+                <ProfileIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary={email} />
+          </ListItem>
+        ))}
+
+        <ListItem autoFocus button>
           <ListItemAvatar>
             <Avatar>
-              <ProfileIcon />
+              <PlusIcon />
             </Avatar>
           </ListItemAvatar>
-          <ListItemText primary={email} />
+          <ListItemText primary="Add account" />
         </ListItem>
-      ))}
-
-      <ListItem autoFocus button>
-        <ListItemAvatar>
-          <Avatar>
-            <PlusIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Add account" />
-      </ListItem>
-    </List>
+      </List>
+    </DialogContent>
   </Dialog>
 );
 
@@ -137,4 +145,22 @@ export const LongContent = args => (
 );
 LongContent.args = {
   scroll: 'paper'
+};
+
+export const Sizes = args => (
+  <Dialog {...args}>
+    <DialogTitle onClose={args.onClose}>Sizes</DialogTitle>
+    <DialogContent>
+      <DialogContentText>
+        <code>fullWidth</code> is {args.fullWidth.toString()}
+      </DialogContentText>
+      <DialogContentText>
+        <code>maxWidth</code> is {args.maxWidth.toString()}
+      </DialogContentText>
+    </DialogContent>
+  </Dialog>
+);
+Sizes.args = {
+  fullWidth: true,
+  maxWidth: 'md'
 };
