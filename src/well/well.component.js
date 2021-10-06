@@ -4,7 +4,7 @@ import { Alert } from '@material-ui/lab';
 
 import { darken, makeStyles } from '@material-ui/core/styles';
 
-import { Box, fade } from '@material-ui/core';
+import { Box, alpha } from '@material-ui/core';
 
 import ErrorIcon from '../icons/error-icon.component';
 
@@ -20,11 +20,11 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.primary
   },
   filledError: {
-    backgroundColor: fade(theme.palette.error.main, 0.3),
+    backgroundColor: alpha(theme.palette.error.main, 0.3),
     color: theme.palette.error.main
   },
   filledSuccess: {
-    backgroundColor: fade(theme.palette.success.main, 0.3),
+    backgroundColor: alpha(theme.palette.success.main, 0.3),
     color: theme.palette.success.main
   },
   filledInfo: {
@@ -38,11 +38,11 @@ const useStyles = makeStyles(theme => ({
     border: `0.0625rem solid ${theme.palette.text.primary}`
   },
   standardError: {
-    backgroundColor: fade(theme.palette.error.main, 0.3),
+    backgroundColor: alpha(theme.palette.error.main, 0.3),
     border: `0.0625rem solid ${theme.palette.error.main}`
   },
   standardSuccess: {
-    backgroundColor: fade(theme.palette.success.main, 0.3),
+    backgroundColor: alpha(theme.palette.success.main, 0.3),
     border: `0.0625rem solid ${theme.palette.success.main}`
   },
   standardInfo: {

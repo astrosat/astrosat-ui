@@ -1,4 +1,5 @@
 import { CloseIcon, PlusIcon, ProfileIcon } from 'icons';
+import faker from 'faker';
 import React from 'react';
 import {
   AppBar,
@@ -21,32 +22,55 @@ import {
   DialogTitle
 } from '../index';
 
-export default { title: 'Dialog' };
+export default {
+  title: 'Dialog',
+  component: Dialog,
+  args: { open: true, fullWidth: false },
+  argTypes: {
+    onClose: { action: true },
+    scroll: {
+      options: ['paper', 'body'],
+      control: {
+        type: 'radio'
+      }
+    },
+    maxWidth: {
+      options: ['xs', 'sm', 'md', 'lg', 'xl', false],
+      control: {
+        type: 'radio'
+      }
+    }
+  }
+};
 
-export const Simple = () => (
-  <Dialog open aria-labelledby="simple-dialog-title">
+const emails = Array.from({ length: 2 }, () => faker.internet.email());
+
+export const Simple = args => (
+  <Dialog aria-labelledby="simple-dialog-title" {...args}>
     <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
-    <List>
-      {['test@test.com'].map(email => (
-        <ListItem button key={email}>
+    <DialogContent>
+      <List>
+        {emails.map(email => (
+          <ListItem button key={email}>
+            <ListItemAvatar>
+              <Avatar>
+                <ProfileIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary={email} />
+          </ListItem>
+        ))}
+
+        <ListItem autoFocus button>
           <ListItemAvatar>
             <Avatar>
-              <ProfileIcon />
+              <PlusIcon />
             </Avatar>
           </ListItemAvatar>
-          <ListItemText primary={email} />
+          <ListItemText primary="Add account" />
         </ListItem>
-      ))}
-
-      <ListItem autoFocus button>
-        <ListItemAvatar>
-          <Avatar>
-            <PlusIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Add account" />
-      </ListItem>
-    </List>
+      </List>
+    </DialogContent>
   </Dialog>
 );
 
@@ -98,24 +122,19 @@ export const FullScreen = () => {
   );
 };
 
-export const LongContent = () => (
+export const LongContent = args => (
   <Dialog
     open
-    scroll="paper"
     aria-labelledby="scroll-dialog-title"
     aria-describedby="scroll-dialog-description"
+    {...args}
   >
-    <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
-    <DialogContent dividers>
+    <DialogTitle id="scroll-dialog-title" onClose={args.onClose}>
+      Subscribe
+    </DialogTitle>
+    <DialogContent>
       <DialogContentText id="scroll-dialog-description" tabIndex={-1}>
-        {[...new Array(50)]
-          .map(
-            () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-          )
-          .join('\n')}
+        {faker.lorem.paragraphs(30)}
       </DialogContentText>
     </DialogContent>
     <DialogActions>
@@ -124,3 +143,24 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
     </DialogActions>
   </Dialog>
 );
+LongContent.args = {
+  scroll: 'paper'
+};
+
+export const Sizes = args => (
+  <Dialog {...args}>
+    <DialogTitle onClose={args.onClose}>Sizes</DialogTitle>
+    <DialogContent>
+      <DialogContentText>
+        <code>fullWidth</code> is {args.fullWidth.toString()}
+      </DialogContentText>
+      <DialogContentText>
+        <code>maxWidth</code> is {args.maxWidth.toString()}
+      </DialogContentText>
+    </DialogContent>
+  </Dialog>
+);
+Sizes.args = {
+  fullWidth: true,
+  maxWidth: 'md'
+};

@@ -1,4 +1,4 @@
-import { createMuiTheme, fade } from '@material-ui/core';
+import { createTheme, alpha } from '@material-ui/core';
 import deepmerge from 'deepmerge';
 import { core } from './core';
 import { palette } from './palette';
@@ -10,7 +10,7 @@ const light = {
     text: {
       primary: palette.secondary.main,
       secondary: palette.secondary.main,
-      disabled: fade(palette.secondary.main, 0.5)
+      disabled: alpha(palette.secondary.main, 0.5)
     },
     background: { default: palette.grey[100] }
   },
@@ -27,7 +27,7 @@ const light = {
       root: {
         color: palette.secondary.main,
         '&:hover': {
-          backgroundColor: fade(
+          backgroundColor: alpha(
             palette.secondary.main,
             palette.action.hoverOpacity
           )
@@ -37,4 +37,4 @@ const light = {
   }
 };
 
-export default createMuiTheme(deepmerge(core, light));
+export default createTheme(deepmerge(core, light));

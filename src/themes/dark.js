@@ -1,4 +1,4 @@
-import { createMuiTheme, fade, lighten } from '@material-ui/core';
+import { createTheme, alpha, lighten } from '@material-ui/core';
 import createPalette from '@material-ui/core/styles/createPalette';
 import deepmerge from 'deepmerge';
 
@@ -11,15 +11,15 @@ const darkPalette = {
   text: {
     primary: corePalette.grey[100],
     secondary: corePalette.grey.A100,
-    disabled: fade(corePalette.grey[100], 0.5)
+    disabled: alpha(corePalette.grey[100], 0.5)
   },
   background: { default: corePalette.secondary.main, paper: '#5d666e' },
   action: {
     active: corePalette.grey[300],
-    hover: fade(corePalette.grey[300], corePalette.action.hoverOpacity),
+    hover: alpha(corePalette.grey[300], corePalette.action.hoverOpacity),
     disabled: corePalette.grey[500]
   },
-  divider: fade(corePalette.grey[100], 0.12)
+  divider: alpha(corePalette.grey[100], 0.12)
 };
 
 const palette = createPalette(deepmerge(corePalette, darkPalette));
@@ -60,6 +60,11 @@ const dark = {
         }
       }
     },
+    MuiDialog: {
+      paper: {
+        backgroundColor: palette.background.default
+      }
+    },
     MuiIconButton: {
       root: {
         '&:focus': {
@@ -82,9 +87,6 @@ const dark = {
       root: {
         color: palette.text.primary
       }
-    },
-    MuiDialogContentText: {
-      root: { color: palette.text.primary }
     },
     MuiMenuItem: {
       root: {
@@ -109,4 +111,4 @@ const dark = {
   }
 };
 
-export default createMuiTheme(deepmerge(core, dark));
+export default createTheme(deepmerge(core, dark));

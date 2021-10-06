@@ -1,17 +1,20 @@
-import { createMuiTheme, fade } from '@material-ui/core';
+import { createTheme, alpha } from '@material-ui/core';
 import { palette } from './palette';
 
 const borderRadius = 5;
 const spacing = factor => `${0.5 * factor}rem`;
 
 /** @type {import('@material-ui/core').ThemeOptions} */
-export const core = createMuiTheme({
+export const core = createTheme({
   overrides: {
     MuiButton: {
       textSecondary: {
         color: palette.info.main,
         '&:hover': {
-          backgroundColor: fade(palette.info.main, palette.action.hoverOpacity),
+          backgroundColor: alpha(
+            palette.info.main,
+            palette.action.hoverOpacity
+          ),
           '@media (hover: none)': {
             backgroundColor: 'transparent'
           }
@@ -28,10 +31,13 @@ export const core = createMuiTheme({
       },
       outlinedSecondary: {
         color: palette.info.main,
-        borderColor: fade(palette.info.main, 0.5),
+        borderColor: alpha(palette.info.main, 0.5),
         '&:hover': {
           borderColor: palette.info.main,
-          backgroundColor: fade(palette.info.main, palette.action.hoverOpacity),
+          backgroundColor: alpha(
+            palette.info.main,
+            palette.action.hoverOpacity
+          ),
           '@media (hover: none)': {
             backgroundColor: 'transparent'
           }
@@ -69,17 +75,28 @@ export const core = createMuiTheme({
         }
       }
     },
+    MuiDialog: {
+      paper: {
+        backgroundColor: palette.background.default,
+        borderRadius: 10
+      }
+    },
+    MuiDialogContent: {
+      root: {
+        padding: `${spacing(5)} ${spacing(3)} ${spacing(2)}`
+      }
+    },
     MuiDialogActions: {
       root: {
         display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        padding: `${spacing(2)} ${spacing(3)} ${spacing(4)}`
       }
     },
     MuiIconButton: {
       root: {
         '&:focus': {
-          backgroundColor: fade(
+          backgroundColor: alpha(
             palette.action.active,
             palette.action.hoverOpacity
           )
@@ -87,7 +104,7 @@ export const core = createMuiTheme({
       },
       colorPrimary: {
         '&:focus': {
-          backgroundColor: fade(
+          backgroundColor: alpha(
             palette.primary.main,
             palette.action.hoverOpacity
           )
@@ -96,13 +113,16 @@ export const core = createMuiTheme({
       colorSecondary: {
         color: palette.info.main,
         '&:hover': {
-          backgroundColor: fade(palette.info.main, palette.action.hoverOpacity),
+          backgroundColor: alpha(
+            palette.info.main,
+            palette.action.hoverOpacity
+          ),
           '@media (hover: none)': {
             backgroundColor: 'transparent'
           }
         },
         '&:focus': {
-          backgroundColor: fade(palette.info.main, palette.action.hoverOpacity)
+          backgroundColor: alpha(palette.info.main, palette.action.hoverOpacity)
         }
       }
     },
@@ -238,7 +258,7 @@ export const core = createMuiTheme({
     fontFamily: '"Open Sans", sans-serif',
     h1: {
       fontSize: '26px',
-      fontWeight: 700
+      fontWeight: 600
     },
     h2: {
       fontSize: '18px',
