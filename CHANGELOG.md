@@ -1,3 +1,18 @@
+# [2.6.0](https://github.com/astrosat/astrosat-ui/compare/v2.5.3...v2.6.0) (2021-10-06)
+
+
+### Bug Fixes
+
+* **Dialog:** Update border radius ([ef2b0b9](https://github.com/astrosat/astrosat-ui/commit/ef2b0b96392dcc29f27bf4cc99d297490b5937c1))
+* **DialogActions:** Update padding ([5ea2804](https://github.com/astrosat/astrosat-ui/commit/5ea28043d2db42dfdaef6b4d6caf2c1e13056578))
+* **DialogTitle:** Update styling ([b45548b](https://github.com/astrosat/astrosat-ui/commit/b45548bae1180cf04f97dbc2c9ea4f285ba0de6d))
+
+
+### Features
+
+* **DialogTitle:** Add close button to dialog title ([dc358d2](https://github.com/astrosat/astrosat-ui/commit/dc358d2a0abf698dd0598c3f12553ecf1fd8651f))
+* **frontend:** BREAKING remove useForm hook ([cb94bdb](https://github.com/astrosat/astrosat-ui/commit/cb94bdbc0aee8ba463a360fb171b5b7a3759bde4))
+
 ## [2.5.3](https://github.com/astrosat/astrosat-ui/compare/v2.5.2...v2.5.3) (2021-09-20)
 
 
