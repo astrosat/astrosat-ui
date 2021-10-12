@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/astrosat/astrosat-ui/compare/v2.6.0...v2.7.0) (2021-10-12)
+
+
+### Features
+
+* **Icons:** Add PLD specific icons ([915ecef](https://github.com/astrosat/astrosat-ui/commit/915ecef9498d8c621f22dda126a69d9ae02faf24))
+
 # [2.6.0](https://github.com/astrosat/astrosat-ui/compare/v2.5.3...v2.6.0) (2021-10-06)
 
 
