@@ -1,5 +1,6 @@
 export { default as AdminIcon } from './admin-icon.component.js';
 export { default as AnnotationsIcon } from './annotations-icon.component.js';
+export { default as AoiIcon } from './aoi-icon.component.js';
 export { default as AwardIcon } from './award-icon.component.js';
 export { default as CafeIcon } from './cafe-icon.component.js';
 export { default as ChangeOfUseIcon } from './change-of-use-icon.component.js';

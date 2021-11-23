@@ -22,6 +22,7 @@ const SVG_PROCESSES = [
   svg => svg.replace(/clip-path/g, 'clipPath'),
   svg => svg.replace(/clip-rule/g, 'clipRule'),
   svg => svg.replace(/fill-rule/g, 'fillRule'),
+  svg => svg.replace(/xlink:href/g, 'xlinkHref'),
   svg => svg.replace(/<svg[^>]*>/g, ''),
   svg => svg.replace(/<\/svg>/g, '')
 ];
