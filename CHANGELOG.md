@@ -1,3 +1,15 @@
+# [2.8.0](https://github.com/astrosat/astrosat-ui/compare/v2.7.0...v2.8.0) (2021-11-23)
+
+
+### Bug Fixes
+
+* **icons:** Extend to set xlink href correctly ([0a1b0b6](https://github.com/astrosat/astrosat-ui/commit/0a1b0b62d16abf8276dc06d765928fa26951de6e))
+
+
+### Features
+
+* **icons:** Generate AOI icon ([9be36e1](https://github.com/astrosat/astrosat-ui/commit/9be36e167d1438642ee9f73983573779fd0d75f7))
+
 # [2.7.0](https://github.com/astrosat/astrosat-ui/compare/v2.6.0...v2.7.0) (2021-10-12)
 
 
