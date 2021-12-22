@@ -13,32 +13,34 @@ const plugins = [
   includePaths({ paths: ['src'] }),
   external({ includeDependencies: true }),
   eslint({
-    exclude: ['src/**/*.css', 'src/**/*.svg']
+    exclude: ['src/**/*.css', 'src/**/*.svg'],
   }),
   postcss({
-    modules: true
+    modules: true,
   }),
   babel({
     babelHelpers: 'runtime', // NOTE: Maybe 'bundled' is the better option
     presets: [['@babel/preset-env', { modules: false }], '@babel/preset-react'],
-    exclude: 'node_modules/**'
+    exclude: 'node_modules/**',
   }),
   resolve(),
   commonjs(),
-  typescript({ tsconfig: './tsconfig.build.json' })
+  typescript({ tsconfig: './tsconfig.build.json' }),
 ];
 
-export default {
+const Index = {
   input: 'src/index.js',
   output: [
     {
       file: pkg.main,
-      format: 'cjs'
+      format: 'cjs',
     },
     {
       file: pkg.module,
-      format: 'es'
-    }
+      format: 'es',
+    },
   ],
-  plugins
+  plugins,
 };
+
+export default Index;

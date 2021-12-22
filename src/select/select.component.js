@@ -8,8 +8,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const menuStyles = makeStyles(theme => ({
   paper: {
-    marginTop: theme.spacing(5)
-  }
+    marginTop: theme.spacing(5),
+  },
 }));
 /**
  * @param {import('@material-ui/core').SelectProps} props
@@ -23,7 +23,7 @@ const Select = (
   const menuClasses = menuStyles({
     fullWidth,
     MenuProps,
-    ...rest
+    ...rest,
   });
   return (
     <MuiSelect
@@ -32,7 +32,7 @@ const Select = (
       MenuProps={{
         classes: menuClasses,
         MenuListProps: { ...MenuProps?.MenuListProps, disablePadding: true },
-        ...MenuProps
+        ...MenuProps,
       }}
       {...rest}
       ref={ref}

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Paper, styled } from '../index';
 
-export default { title: 'Paper' };
+const Index = { title: 'Paper' };
+
+export default Index;
 
 const Container = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -9,8 +11,8 @@ const Container = styled('div')(({ theme }) => ({
   '& > *': {
     margin: theme.spacing(1),
     width: theme.spacing(16),
-    height: theme.spacing(16)
-  }
+    height: theme.spacing(16),
+  },
 }));
 
 export const Elevation = () => (

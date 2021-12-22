@@ -10,12 +10,12 @@ const useStyles = makeStyles(theme => ({
     textDecoration: 'none',
     '&:hover': {
       textDecoration: 'none',
-      borderBottomColor: 'transparent'
+      borderBottomColor: 'transparent',
     },
     '&:visited': {
-      color: theme.palette.primary.main
-    }
-  }
+      color: theme.palette.primary.main,
+    },
+  },
 }));
 
 /**

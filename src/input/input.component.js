@@ -34,11 +34,11 @@ const inputStyles = makeStyles(theme => ({
     borderRadius: `0.3rem 0.3rem 0.125rem 0.125rem`,
     '&$disabled': {
       backgroundColor: theme.palette.action.disabledBackground,
-      cursor: 'not-allowed'
+      cursor: 'not-allowed',
     },
     '&$multiline': {
-      padding: theme.spacing(2)
-    }
+      padding: theme.spacing(2),
+    },
   },
   disabled: {},
   underline: {
@@ -51,33 +51,33 @@ const inputStyles = makeStyles(theme => ({
       position: 'absolute',
       right: 0,
       transform: 'scaleX(1)',
-      pointerEvents: 'none'
+      pointerEvents: 'none',
     },
     '&:before': { display: 'none' },
     '&$multiline': { '&:after': { display: 'none' } },
-    '&$disabled': { '&:after': { borderColor: theme.palette.action.disabled } }
+    '&$disabled': { '&:after': { borderColor: theme.palette.action.disabled } },
   },
   input: {
     /** @param {InputProps} props */
     padding: props => (props.multiline ? 0 : theme.spacing(2)),
     '&$disabled': {
-      cursor: 'not-allowed'
-    }
+      cursor: 'not-allowed',
+    },
   },
   multiline: {
     borderRadius: theme.shape.borderRadius,
     border: props => `2px solid ${getColors(theme, props)}`,
     '&$disabled': {
       borderColor: theme.palette.action.disabled,
-      cursor: 'not-allowed'
-    }
-  }
+      cursor: 'not-allowed',
+    },
+  },
 }));
 
 const inputAdornmentClasses = makeStyles(theme => ({
   root: {
-    color: props => getColors(theme, props)
-  }
+    color: props => getColors(theme, props),
+  },
 }));
 
 /**

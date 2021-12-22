@@ -106,6 +106,6 @@ export {
   Zoom,
   ImageList,
   ImageListItem,
-  ImageListItemBar
+  ImageListItemBar,
 } from '@material-ui/core';
 export { Pagination, Skeleton } from '@material-ui/lab';

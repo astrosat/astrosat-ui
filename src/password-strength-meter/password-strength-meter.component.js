@@ -5,7 +5,7 @@ import {
   Grid,
   LinearProgress,
   makeStyles,
-  Typography
+  Typography,
 } from '@material-ui/core';
 import clsx from 'clsx';
 import zxcvbn from 'zxcvbn';
@@ -48,26 +48,26 @@ const meterStyles = makeStyles(theme => ({
   root: {
     minHeight: '0.5rem',
     borderRadius: '100vh',
-    backgroundColor: theme.palette.grey[500]
+    backgroundColor: theme.palette.grey[500],
   },
   bar: {
     borderRadius: '100vh',
     backgroundColor: getColor(theme),
     transition: theme.transitions.create(['transform', 'background-color'], {
-      easing: 'linear'
-    })
+      easing: 'linear',
+    }),
   },
   grid: {
     minHeight: '1.375rem',
     alignItems: 'center',
     [theme.breakpoints.only('xs')]: {
       minHeight: '1.6875rem',
-      alignItems: 'flex-start'
-    }
+      alignItems: 'flex-start',
+    },
   },
   text: {
-    color: getColor(theme)
-  }
+    color: getColor(theme),
+  },
 }));
 
 /**
@@ -80,11 +80,13 @@ const PasswordStrengthMeter = ({ password = '', className }) => {
   const passwordResult = zxcvbn(password);
   const [text, value] = getPasswordStrength(password && passwordResult.score);
 
-  const { text: textClasses, grid: gridClasses, ...meterClasses } = meterStyles(
-    {
-      strengthValue: value
-    }
-  );
+  const {
+    text: textClasses,
+    grid: gridClasses,
+    ...meterClasses
+  } = meterStyles({
+    strengthValue: value,
+  });
 
   return (
     <Grid className={clsx(gridClasses, className)} container>
@@ -95,7 +97,7 @@ const PasswordStrengthMeter = ({ password = '', className }) => {
           value={value}
         />
       </Grid>
-      <Grid item xs={12} sm={2} container justify="flex-end">
+      <Grid item xs={12} sm={2} container justifyContent="flex-end">
         <Fade in={!!text}>
           <Typography className={textClasses} variant="caption">
             {text}

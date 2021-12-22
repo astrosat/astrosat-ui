@@ -7,17 +7,17 @@ const menuItemStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(0.5),
     '& + &': {
-      borderTop: `1px solid ${theme.palette.divider}`
+      borderTop: `1px solid ${theme.palette.divider}`,
     },
     '&:first-of-type': {
       borderTopLeftRadius: theme.shape.borderRadius,
-      borderTopRightRadius: theme.shape.borderRadius
+      borderTopRightRadius: theme.shape.borderRadius,
     },
     '&:last-of-type': {
       borderBottomLeftRadius: theme.shape.borderRadius,
-      borderBottomRightRadius: theme.shape.borderRadius
-    }
-  }
+      borderBottomRightRadius: theme.shape.borderRadius,
+    },
+  },
 }));
 
 /**

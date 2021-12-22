@@ -8,11 +8,11 @@ const checkboxStyles = makeStyles(theme => ({
   root: {
     padding: 0,
     '&:hover': {
-      backgroundColor: 'transparent'
+      backgroundColor: 'transparent',
     },
     '&$checked:hover': {
-      backgroundColor: 'transparent'
-    }
+      backgroundColor: 'transparent',
+    },
   },
   icon: {
     width: '1rem',
@@ -21,17 +21,17 @@ const checkboxStyles = makeStyles(theme => ({
     border: `1px solid ${theme.palette.text.primary}`,
     transition: theme.transitions.create(['border'], {
       easing: theme.transitions.easing.easeInOut,
-      duration: theme.transitions.duration.short
+      duration: theme.transitions.duration.short,
     }),
     'input:hover ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`
+      border: `1px solid ${theme.palette.primary.main}`,
     },
     'input:disabled ~ &': {
-      border: `1px solid ${theme.palette.text.primary}`
+      border: `1px solid ${theme.palette.text.primary}`,
     },
     'input:focus ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`
-    }
+      border: `1px solid ${theme.palette.primary.main}`,
+    },
   },
   checkedIcon: {
     position: 'relative',
@@ -41,7 +41,7 @@ const checkboxStyles = makeStyles(theme => ({
     border: `1px solid ${theme.palette.text.primary}`,
     transition: theme.transitions.create(['border'], {
       easing: theme.transitions.easing.easeInOut,
-      duration: theme.transitions.duration.short
+      duration: theme.transitions.duration.short,
     }),
     '&::after': {
       content: '""',
@@ -52,20 +52,20 @@ const checkboxStyles = makeStyles(theme => ({
       top: theme.typography.pxToRem(1),
       left: theme.typography.pxToRem(1),
       backgroundColor: theme.palette.primary.main,
-      borderRadius: theme.typography.pxToRem(1)
+      borderRadius: theme.typography.pxToRem(1),
     },
     'input:hover ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`
+      border: `1px solid ${theme.palette.primary.main}`,
     },
     'input:disabled ~ &': {
-      border: `1px solid ${theme.palette.text.primary}`
+      border: `1px solid ${theme.palette.text.primary}`,
     },
     'input:focus ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`
-    }
+      border: `1px solid ${theme.palette.primary.main}`,
+    },
   },
   checked: {},
-  disabled: {}
+  disabled: {},
 }));
 
 /**

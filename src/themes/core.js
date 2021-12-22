@@ -16,18 +16,18 @@ export const core = createTheme({
             palette.action.hoverOpacity
           ),
           '@media (hover: none)': {
-            backgroundColor: 'transparent'
-          }
-        }
+            backgroundColor: 'transparent',
+          },
+        },
       },
       containedSecondary: {
         backgroundColor: palette.info.main,
         '&:hover': {
           backgroundColor: palette.info.main,
           '@media (hover: none)': {
-            backgroundColor: palette.info.main
-          }
-        }
+            backgroundColor: palette.info.main,
+          },
+        },
       },
       outlinedSecondary: {
         color: palette.info.main,
@@ -39,59 +39,59 @@ export const core = createTheme({
             palette.action.hoverOpacity
           ),
           '@media (hover: none)': {
-            backgroundColor: 'transparent'
-          }
+            backgroundColor: 'transparent',
+          },
         },
         '&$disabled': {
-          borderColor: palette.action.disabled
-        }
-      }
+          borderColor: palette.action.disabled,
+        },
+      },
     },
     MuiChip: {
       root: {
-        borderRadius: 9
+        borderRadius: 9,
       },
       colorSecondary: {
-        backgroundColor: palette.info.main
+        backgroundColor: palette.info.main,
       },
       clickableColorSecondary: {
         '&:hover, &:focus': {
-          backgroundColor: palette.info.dark
-        }
+          backgroundColor: palette.info.dark,
+        },
       },
       outlinedSecondary: {
         borderColor: palette.info.main,
-        color: palette.info.main
+        color: palette.info.main,
       },
       deleteIconColorSecondary: {
         '&:hover': {
-          color: palette.info.dark
-        }
+          color: palette.info.dark,
+        },
       },
       deleteIconOutlinedColorSecondary: {
         color: palette.info.main,
         '&:hover': {
-          color: palette.info.dark
-        }
-      }
+          color: palette.info.dark,
+        },
+      },
     },
     MuiDialog: {
       paper: {
         backgroundColor: palette.background.default,
-        borderRadius: 10
-      }
+        borderRadius: 10,
+      },
     },
     MuiDialogContent: {
       root: {
-        padding: `${spacing(5)} ${spacing(3)} ${spacing(2)}`
-      }
+        padding: `${spacing(5)} ${spacing(3)} ${spacing(2)}`,
+      },
     },
     MuiDialogActions: {
       root: {
         display: 'flex',
         justifyContent: 'center',
-        padding: `${spacing(2)} ${spacing(3)} ${spacing(4)}`
-      }
+        padding: `${spacing(2)} ${spacing(3)} ${spacing(4)}`,
+      },
     },
     MuiIconButton: {
       root: {
@@ -99,16 +99,16 @@ export const core = createTheme({
           backgroundColor: alpha(
             palette.action.active,
             palette.action.hoverOpacity
-          )
-        }
+          ),
+        },
       },
       colorPrimary: {
         '&:focus': {
           backgroundColor: alpha(
             palette.primary.main,
             palette.action.hoverOpacity
-          )
-        }
+          ),
+        },
       },
       colorSecondary: {
         color: palette.info.main,
@@ -118,57 +118,60 @@ export const core = createTheme({
             palette.action.hoverOpacity
           ),
           '@media (hover: none)': {
-            backgroundColor: 'transparent'
-          }
+            backgroundColor: 'transparent',
+          },
         },
         '&:focus': {
-          backgroundColor: alpha(palette.info.main, palette.action.hoverOpacity)
-        }
-      }
+          backgroundColor: alpha(
+            palette.info.main,
+            palette.action.hoverOpacity
+          ),
+        },
+      },
     },
     MuiLink: {
       root: {
-        fontWeight: 600
-      }
+        fontWeight: 600,
+      },
     },
     MuiFormControlLabel: {
       root: {
         margin: 0,
         marginLeft: 0,
         '& .Mui-disabled': {
-          opacity: palette.action.disabledOpacity
+          opacity: palette.action.disabledOpacity,
         },
         '&$disabled': {
-          cursor: 'not-allowed'
-        }
+          cursor: 'not-allowed',
+        },
       },
       label: {
-        marginLeft: spacing(2)
+        marginLeft: spacing(2),
       },
       labelPlacementBottom: {
         '& $label': {
           margin: 0,
-          marginTop: spacing(1)
-        }
+          marginTop: spacing(1),
+        },
       },
       labelPlacementStart: {
         '& $label': {
           margin: 0,
-          marginRight: spacing(2)
-        }
+          marginRight: spacing(2),
+        },
       },
       labelPlacementTop: {
         '& $label': {
           margin: 0,
-          marginBottom: spacing(1)
-        }
+          marginBottom: spacing(1),
+        },
       },
-      disabled: {}
+      disabled: {},
     },
     MuiFormHelperText: {
       root: {
-        fontStyle: 'italic'
-      }
+        fontStyle: 'italic',
+      },
     },
     MuiInputLabel: {
       root: {
@@ -176,117 +179,117 @@ export const core = createTheme({
         '&$error': {
           color: palette.text.secondary,
           '&$focused': {
-            color: palette.primary.main
-          }
-        }
+            color: palette.primary.main,
+          },
+        },
       },
       formControl: {
-        transform: 'translate(16px, 32px) scale(1)'
+        transform: 'translate(16px, 32px) scale(1)',
       },
       shrink: {
-        transform: 'translate(0, 1.5px) scale(0.75)'
+        transform: 'translate(0, 1.5px) scale(0.75)',
       },
       error: {},
-      focused: {}
+      focused: {},
     },
     MuiFormLabel: {
       root: {
-        fontSize: '14px'
-      }
+        fontSize: '14px',
+      },
     },
     MuiTabs: {
       flexContainer: {
-        borderBottom: `1px solid ${palette.divider}`
-      }
+        borderBottom: `1px solid ${palette.divider}`,
+      },
     },
     MuiTab: {
       root: {
-        [`&$textColorInherit, 
-          &$textColorPrimary, 
+        [`&$textColorInherit,
+          &$textColorPrimary,
           &$textColorSecondary`]: {
-          opacity: 1
-        }
+          opacity: 1,
+        },
       },
       textColorInherit: {},
       textColorPrimary: {},
-      textColorSecondary: {}
+      textColorSecondary: {},
     },
     MuiTooltip: {
       arrow: {
-        color: palette.primary.main
+        color: palette.primary.main,
       },
       tooltip: {
         color: palette.secondary.main,
-        backgroundColor: palette.primary.main
-      }
+        backgroundColor: palette.primary.main,
+      },
     },
     MuiCssBaseline: {
       '@global': {
         html: { fontSize: '1rem' },
         body: {
-          fontSize: '1rem'
-        }
-      }
-    }
+          fontSize: '1rem',
+        },
+      },
+    },
   },
   palette,
   props: {
     MuiButtonBase: {
-      disableRipple: true
+      disableRipple: true,
     },
     MuiButtonGroup: {
       disableRipple: true,
       variant: 'contained',
-      color: 'primary'
+      color: 'primary',
     },
     MuiLink: {
-      variant: 'body1'
+      variant: 'body1',
     },
     MuiFormControl: {
-      fullWidth: true
+      fullWidth: true,
     },
     MuiTabs: {
       indicatorColor: 'primary',
-      textColor: 'primary'
-    }
+      textColor: 'primary',
+    },
   },
   shape: {
-    borderRadius
+    borderRadius,
   },
   spacing,
   typography: {
     fontFamily: '"Open Sans", sans-serif',
     h1: {
       fontSize: '26px',
-      fontWeight: 600
+      fontWeight: 600,
     },
     h2: {
       fontSize: '18px',
-      fontWeight: 600
+      fontWeight: 600,
     },
     h3: {
       fontSize: '16px',
-      fontWeight: 600
+      fontWeight: 600,
     },
     h4: {
       fontSize: '14px',
-      fontWeight: 600
+      fontWeight: 600,
     },
     h5: {
       fontSize: '12px',
-      fontWeight: 600
+      fontWeight: 600,
     },
     body1: {
-      fontSize: '14px'
+      fontSize: '14px',
     },
     body2: {
-      fontSize: '12px'
+      fontSize: '12px',
     },
     button: {
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 'normal',
-      textTransform: 'none'
-    }
-  }
+      textTransform: 'none',
+    },
+  },
 });

@@ -9,7 +9,7 @@ import { EyeIcon, EyeSlashIcon } from '../icons';
 
 const INPUT_TYPE = {
   text: 'text',
-  password: 'password'
+  password: 'password',
 };
 
 const iconStyles = makeStyles(theme => ({
@@ -21,8 +21,8 @@ const iconStyles = makeStyles(theme => ({
       if (props.error) return theme.palette.error.main;
       if (props.valid) return theme.palette.success.main;
       return 'inherit';
-    }
-  }
+    },
+  },
 }));
 
 /**

@@ -3,7 +3,7 @@ import React from 'react';
 import {
   DialogTitle as MuiDialogTitle,
   Typography,
-  withStyles
+  withStyles,
 } from '@material-ui/core';
 import IconButton from '../icon-button/icon-button.component';
 import { CloseIcon } from 'icons';
@@ -17,15 +17,15 @@ const styles = (/** @type {import('@material-ui/core').Theme} */ theme) => ({
     padding: theme.spacing(5, 3),
     borderBottom: `2px solid ${theme.palette.primary.main}`,
     '& .content': {
-      fontSize: theme.typography.pxToRem(24)
-    }
+      fontSize: theme.typography.pxToRem(24),
+    },
   },
   closeButton: {
     position: 'absolute',
     right: theme.spacing(3),
     top: '50%',
-    transform: 'translateY(-50%)'
-  }
+    transform: 'translateY(-50%)',
+  },
 });
 
 /**

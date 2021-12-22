@@ -3,7 +3,7 @@ import {
   FormHelperText,
   FormControl,
   InputLabel,
-  withStyles
+  withStyles,
 } from '@material-ui/core';
 import Input from '../input/input.component';
 import clsx from 'clsx';
@@ -12,7 +12,7 @@ import Select from '../select/select.component';
 
 export const styles = {
   /* Styles applied to the root element. */
-  root: {}
+  root: {},
 };
 
 const TextField = React.forwardRef(

@@ -6,20 +6,20 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles(() => ({
   root: {
     /** @param {{ fullWidth: boolean }} props */
-    width: props => (props.fullWidth ? '100%' : 'auto')
+    width: props => (props.fullWidth ? '100%' : 'auto'),
   },
   groupedHorizontal: {
     '&:not(:first-child)': {
       border: 'none',
-      margin: '0'
-    }
+      margin: '0',
+    },
   },
   groupedVertical: {
     '&:not(:first-child)': {
       border: 'none',
-      margin: '0'
-    }
-  }
+      margin: '0',
+    },
+  },
 }));
 
 /**
@@ -38,7 +38,7 @@ const ToggleButtonGroup = ({
     root: clsx(styles.root, root),
     groupedHorizontal: clsx(styles.groupedHorizontal, groupedHorizontal),
     groupedVertical: clsx(styles.groupedVertical, groupedVertical),
-    ...rest
+    ...rest,
   };
 
   return (

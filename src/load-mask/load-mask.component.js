@@ -5,35 +5,35 @@ import clsx from 'clsx';
 
 const useClasses = makeStyles(theme => ({
   sun: {
-    fill: theme.palette.getContrastText(theme.palette.background.default)
+    fill: theme.palette.getContrastText(theme.palette.background.default),
   },
   orbit: {
     fill: 'none',
     strokeWidth: '10',
-    stroke: theme.palette.getContrastText(theme.palette.background.default)
+    stroke: theme.palette.getContrastText(theme.palette.background.default),
   },
   spinner: {
     fill: theme.palette.getContrastText(theme.palette.background.default),
-    animation: '$spin 4s linear infinite'
+    animation: '$spin 4s linear infinite',
   },
   spinner1: {
-    transformOrigin: '50% 57%'
+    transformOrigin: '50% 57%',
   },
   spinner2: {
-    transformOrigin: '50% 66.6%'
+    transformOrigin: '50% 66.6%',
   },
   spinner3: {
     animationDuration: '5s',
-    transformOrigin: '50% 50%'
+    transformOrigin: '50% 50%',
   },
   '@keyframes spin': {
     '0%': {
-      transform: 'rotate(0deg)'
+      transform: 'rotate(0deg)',
     },
     '100%': {
-      transform: 'rotate(360deg)'
-    }
-  }
+      transform: 'rotate(360deg)',
+    },
+  },
 }));
 
 /**

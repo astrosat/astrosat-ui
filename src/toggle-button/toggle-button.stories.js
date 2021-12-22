@@ -5,11 +5,11 @@ import ToggleButton from './toggle-button.component';
 
 const useStyles = makeStyles({
   group: {
-    border: '2px solid hotpink'
+    border: '2px solid hotpink',
   },
   button: {
-    backgroundColor: 'hotpink'
-  }
+    backgroundColor: 'hotpink',
+  },
 });
 
 const twoButtons = ['Percentage', 'Number'];
@@ -23,7 +23,7 @@ const renderButtons = ({
   size = 'medium',
   fullWidth = true,
   groupClasses,
-  buttonClasses
+  buttonClasses,
 }) => {
   return (
     <ToggleButtonGroup
@@ -49,7 +49,7 @@ const renderButtons = ({
 
 export default {
   title: 'ToggleButtons',
-  component: ToggleButton
+  component: ToggleButton,
 };
 
 export const Default = () =>
@@ -60,14 +60,14 @@ export const ThreeButtons = () =>
   // @ts-ignore
   renderButtons({
     array: [...twoButtons, 'Button 3'],
-    orientation: 'vertical'
+    orientation: 'vertical',
   });
 
 export const SevenButtons = () =>
   // @ts-ignore
   renderButtons({
     array: new Array(7).fill(undefined).map((_, i) => `Button ${i + 1}`),
-    orientation: 'vertical'
+    orientation: 'vertical',
   });
 
 export const UnevenButtons = () =>
@@ -83,7 +83,7 @@ export const GroupWithClasses = () => {
   // @ts-ignore
   return renderButtons({
     array: twoButtons,
-    groupClasses: { root: group }
+    groupClasses: { root: group },
   });
 };
 
@@ -92,7 +92,7 @@ export const ButtonWithClasses = () => {
   // @ts-ignore
   return renderButtons({
     array: twoButtons,
-    buttonClasses: { root: button }
+    buttonClasses: { root: button },
   });
 };
 
