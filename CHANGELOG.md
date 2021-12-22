@@ -1,3 +1,23 @@
+## [2.8.1](https://github.com/astrosat/astrosat-ui/compare/v2.8.0...v2.8.1) (2021-12-22)
+
+
+### Bug Fixes
+
+* **frontend:** Fix package building issues ([0adf45b](https://github.com/astrosat/astrosat-ui/commit/0adf45b5db70e6999c253432b9ab01dd8e1b77f9))
+* **frontend:** Remove unused libs ([2b7380d](https://github.com/astrosat/astrosat-ui/commit/2b7380d88302ef3fb7177167aeef04299c5bd523))
+* **frontend:** Update code to fix prettier errors ([890b275](https://github.com/astrosat/astrosat-ui/commit/890b2751a7a150cd505d8be51e07e931792c4833))
+* **frontend:** Update icons ([da29f85](https://github.com/astrosat/astrosat-ui/commit/da29f85d3a018687ea5e5017cb37e6928ac1c92a))
+* **frontend:** Upgrade code checking tools ([03e2372](https://github.com/astrosat/astrosat-ui/commit/03e2372508a005fe4a0a0967d30aa397dfe6264c))
+* **frontend:** Upgrade icon generation script ([7b394c0](https://github.com/astrosat/astrosat-ui/commit/7b394c07f2b5539a9f1e1d9a762c8290bee2bbcb))
+* **frontend:** Upgrade library build tool ([9dfe8cc](https://github.com/astrosat/astrosat-ui/commit/9dfe8cccf1ca1d3e681cd825a33011fe24843a20))
+* **frontend:** Upgrade react-scripts ([fc4f753](https://github.com/astrosat/astrosat-ui/commit/fc4f7532230f5333830933aef69f9991138ce47f))
+* **frontend:** Upgrade release related libs ([0d6e137](https://github.com/astrosat/astrosat-ui/commit/0d6e1376e54e5e7c0fba826856683108cdbb64cd))
+* **frontend:** Upgrade Storybook ([e935690](https://github.com/astrosat/astrosat-ui/commit/e9356902b0318962a0e341ce8d884cbe4a1b7ba2))
+* **frontend:** Upgrade testing dependencies ([919e0b5](https://github.com/astrosat/astrosat-ui/commit/919e0b528990dd0507fe6ffe237a1922bd292600))
+* **frontend:** Upgrade version of NodeJS in Github actions ([1d82cfc](https://github.com/astrosat/astrosat-ui/commit/1d82cfce23abe8b082a8d0fa60a1c39994fe6d7f))
+* **frontend:** Upgrade version of NodeJS to use ([712a331](https://github.com/astrosat/astrosat-ui/commit/712a331f60e440dfc1775b12b27b0e633d212ed6))
+* **frontend:** Upgrade version of React used ([73bcb56](https://github.com/astrosat/astrosat-ui/commit/73bcb564dccefeb034d082c709631b5446403263))
+
 # [2.8.0](https://github.com/astrosat/astrosat-ui/compare/v2.7.0...v2.8.0) (2021-11-23)
 
 
