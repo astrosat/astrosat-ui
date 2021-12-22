@@ -1,9 +1,9 @@
 // Rollup plugins
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
+import { babel } from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
 import { eslint } from 'rollup-plugin-eslint';
 import includePaths from 'rollup-plugin-includepaths';
-import resolve from 'rollup-plugin-node-resolve';
+import resolve from '@rollup/plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2';
@@ -13,31 +13,34 @@ const plugins = [
   includePaths({ paths: ['src'] }),
   external({ includeDependencies: true }),
   eslint({
-    exclude: ['src/**/*.css', 'src/**/*.svg']
+    exclude: ['src/**/*.css', 'src/**/*.svg'],
   }),
   postcss({
-    modules: true
+    modules: true,
   }),
   babel({
+    babelHelpers: 'bundled',
     presets: [['@babel/preset-env', { modules: false }], '@babel/preset-react'],
-    exclude: 'node_modules/**'
+    exclude: 'node_modules/**',
   }),
   resolve(),
   commonjs(),
-  typescript({ tsconfig: './tsconfig.build.json' })
+  typescript({ tsconfig: './tsconfig.build.json' }),
 ];
 
-export default {
+const Index = {
   input: 'src/index.js',
   output: [
     {
       file: pkg.main,
-      format: 'cjs'
+      format: 'cjs',
     },
     {
       file: pkg.module,
-      format: 'es'
-    }
+      format: 'es',
+    },
   ],
-  plugins
+  plugins,
 };
+
+export default Index;

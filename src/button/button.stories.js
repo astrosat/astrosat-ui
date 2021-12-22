@@ -1,10 +1,12 @@
 import React from 'react';
 import { default as Button } from './button.component';
 
-export default {
+const Index = {
   title: 'Button',
-  component: Button
+  component: Button,
 };
+
+export default Index;
 
 export const Text = () => (
   <>
@@ -93,22 +95,22 @@ Playground.args = {
   disabled: false,
   variant: 'contained',
   color: 'primary',
-  size: 'medium'
+  size: 'medium',
 };
 Playground.argTypes = {
   variant: {
     control: {
       type: 'inline-radio',
-      options: ['contained', 'text', 'outlined']
-    }
+      options: ['contained', 'text', 'outlined'],
+    },
   },
   color: {
     control: {
       type: 'inline-radio',
-      options: ['primary', 'secondary', 'default', 'inherit']
-    }
+      options: ['primary', 'secondary', 'default', 'inherit'],
+    },
   },
   size: {
-    control: { type: 'inline-radio', options: ['small', 'medium', 'large'] }
-  }
+    control: { type: 'inline-radio', options: ['small', 'medium', 'large'] },
+  },
 };

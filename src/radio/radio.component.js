@@ -8,11 +8,11 @@ const radioStyles = makeStyles(theme => ({
   root: {
     padding: 0,
     '&:hover': {
-      backgroundColor: 'transparent'
+      backgroundColor: 'transparent',
     },
     '&$checked:hover': {
-      backgroundColor: 'transparent'
-    }
+      backgroundColor: 'transparent',
+    },
   },
   icon: {
     width: '1rem',
@@ -21,17 +21,17 @@ const radioStyles = makeStyles(theme => ({
     border: `1px solid ${theme.palette.text.primary}`,
     transition: theme.transitions.create(['border'], {
       easing: theme.transitions.easing.easeInOut,
-      duration: theme.transitions.duration.short
+      duration: theme.transitions.duration.short,
     }),
     'input:hover ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`
+      border: `1px solid ${theme.palette.primary.main}`,
     },
     'input:disabled ~ &': {
-      border: `1px solid ${theme.palette.text.primary}`
+      border: `1px solid ${theme.palette.text.primary}`,
     },
     'input:focus ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`
-    }
+      border: `1px solid ${theme.palette.primary.main}`,
+    },
   },
   checkedIcon: {
     position: 'relative',
@@ -41,7 +41,7 @@ const radioStyles = makeStyles(theme => ({
     border: `1px solid ${theme.palette.text.primary}`,
     transition: theme.transitions.create(['border'], {
       easing: theme.transitions.easing.easeInOut,
-      duration: theme.transitions.duration.short
+      duration: theme.transitions.duration.short,
     }),
     '&::after': {
       display: 'block',
@@ -52,20 +52,20 @@ const radioStyles = makeStyles(theme => ({
       borderRadius: '50%',
       content: '""',
       width: '0.75rem',
-      height: '0.75rem'
+      height: '0.75rem',
     },
     'input:hover ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`
+      border: `1px solid ${theme.palette.primary.main}`,
     },
     'input:disabled ~ &': {
-      border: `1px solid ${theme.palette.text.primary}`
+      border: `1px solid ${theme.palette.text.primary}`,
     },
     'input:focus ~ &': {
-      border: `1px solid ${theme.palette.primary.main}`
-    }
+      border: `1px solid ${theme.palette.primary.main}`,
+    },
   },
   checked: {},
-  disabled: {}
+  disabled: {},
 }));
 
 /**

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const SVGO = require('svgo');
+const { optimize } = require('svgo');
 const prettier = require('prettier');
 const ICON_COMPONENT_TEMPLATE = require('./ICON_COMPONENT_TEMPLATE');
 
@@ -7,12 +7,19 @@ const ICON_FILE_PATH = 'src/icons';
 const INDEX_FILE = `${ICON_FILE_PATH}/index.js`;
 const ASSETS_FILE_PATH = `${ICON_FILE_PATH}/assets`;
 
-const svgo = new SVGO({
+const options = {
   plugins: [
-    { convertColors: { currentColor: true } },
-    { prefixIds: { delim: '-' } }
-  ]
-});
+    {
+      name: 'preset-default',
+      params: {
+        overrides: {
+          convertColors: { currentColor: true },
+          prefixIds: { delim: '-' },
+        },
+      },
+    },
+  ],
+};
 
 const SVG_PROCESSES = [
   (svg, filename) => svg.replace(/prefix/g, filename),
@@ -24,13 +31,13 @@ const SVG_PROCESSES = [
   svg => svg.replace(/fill-rule/g, 'fillRule'),
   svg => svg.replace(/xlink:href/g, 'xlinkHref'),
   svg => svg.replace(/<svg[^>]*>/g, ''),
-  svg => svg.replace(/<\/svg>/g, '')
+  svg => svg.replace(/<\/svg>/g, ''),
 ];
 
 const createSvg = async iconFile => {
   const svg = fs.readFileSync(`${ASSETS_FILE_PATH}/${iconFile}`, 'utf8');
   // optimise using svgo
-  let optimisedSvg = (await svgo.optimize(svg)).data;
+  let optimisedSvg = (await optimize(svg, options)).data;
   // Create icon component
   for (let svgProcess of SVG_PROCESSES) {
     optimisedSvg = svgProcess(optimisedSvg, iconFile.split('.')[0]);
@@ -41,7 +48,7 @@ const createSvg = async iconFile => {
 const TEMPLATE_PROCESSES = [
   (template, { componentName }) =>
     template.replace(/{{ICON_COMPONENT_NAME}}/gm, componentName),
-  (template, { svg }) => template.replace(/{{ICON}}/, svg)
+  (template, { svg }) => template.replace(/{{ICON}}/, svg),
 ];
 
 const createComponentFromTemplate = (componentName, svg) => {
@@ -49,7 +56,7 @@ const createComponentFromTemplate = (componentName, svg) => {
   for (let templateProcess of TEMPLATE_PROCESSES) {
     component = templateProcess(component, {
       svg,
-      componentName
+      componentName,
     });
   }
   return component;

@@ -6,15 +6,18 @@ import {
   ListItemAvatar,
   ListItemIcon,
   ListItemText,
-  ListSubheader
+  ListSubheader,
 } from '@material-ui/core';
 import { CogIcon, ContactIcon, DeleteIcon, EyeIcon, InfoIcon } from 'icons';
 import * as React from 'react';
-export default { title: 'List' };
 
-function ListItemLink(props) {
+const Index = { title: 'List' };
+
+export default Index;
+
+const ListItemLink = props => {
   return <ListItem button component="a" {...props} />;
-}
+};
 
 export const SimpleList = () => (
   <>

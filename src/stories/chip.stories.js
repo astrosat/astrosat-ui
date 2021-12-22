@@ -2,7 +2,9 @@ import { CorrectIcon, ProfileIcon } from 'icons';
 import * as React from 'react';
 import { makeStyles, Chip, Avatar } from '../index';
 
-export default { title: 'Chip' };
+const Index = { title: 'Chip' };
+
+export default Index;
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -10,9 +12,9 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     flexWrap: 'wrap',
     '& > *': {
-      margin: theme.spacing(0.5)
-    }
-  }
+      margin: theme.spacing(0.5),
+    },
+  },
 }));
 
 const handleDelete = () => {
@@ -90,7 +92,7 @@ Chips.args = {
         color="secondary"
       />
     </>
-  )
+  ),
 };
 
 export const Outlined = Template.bind({});
@@ -173,7 +175,7 @@ Outlined.args = {
         variant="outlined"
       />
     </>
-  )
+  ),
 };
 
 export const Small = Template.bind({});
@@ -247,5 +249,5 @@ Small.args = {
         color="secondary"
       />
     </>
-  )
+  ),
 };

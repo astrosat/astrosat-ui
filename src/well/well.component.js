@@ -14,50 +14,50 @@ import WarningIcon from '../icons/warning-icon.component';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
   },
   message: {
-    color: theme.palette.text.primary
+    color: theme.palette.text.primary,
   },
   filledError: {
     backgroundColor: alpha(theme.palette.error.main, 0.3),
-    color: theme.palette.error.main
+    color: theme.palette.error.main,
   },
   filledSuccess: {
     backgroundColor: alpha(theme.palette.success.main, 0.3),
-    color: theme.palette.success.main
+    color: theme.palette.success.main,
   },
   filledInfo: {
     backgroundColor:
       theme.palette.type === 'dark'
         ? darken(theme.palette.background.default, 0.3)
         : theme.palette.background.paper,
-    color: theme.palette.info.main
+    color: theme.palette.info.main,
   },
   outlinedInfo: {
-    border: `0.0625rem solid ${theme.palette.text.primary}`
+    border: `0.0625rem solid ${theme.palette.text.primary}`,
   },
   standardError: {
     backgroundColor: alpha(theme.palette.error.main, 0.3),
-    border: `0.0625rem solid ${theme.palette.error.main}`
+    border: `0.0625rem solid ${theme.palette.error.main}`,
   },
   standardSuccess: {
     backgroundColor: alpha(theme.palette.success.main, 0.3),
-    border: `0.0625rem solid ${theme.palette.success.main}`
+    border: `0.0625rem solid ${theme.palette.success.main}`,
   },
   standardInfo: {
     border: `0.0625rem solid ${theme.palette.text.primary}`,
     backgroundColor:
       theme.palette.type === 'dark'
         ? darken(theme.palette.background.default, 0.3)
-        : theme.palette.background.paper
+        : theme.palette.background.paper,
   },
   icon: {
     marginRight: theme.spacing(4),
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 }));
 
 /**
@@ -75,7 +75,7 @@ const Well = ({ severity = 'info', ...rest }, ref) => {
         error: <ErrorIcon />,
         success: <SuccessIcon />,
         info: <Box mr={3} />,
-        warning: <WarningIcon />
+        warning: <WarningIcon />,
       }}
       {...rest}
       ref={ref}

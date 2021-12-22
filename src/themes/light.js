@@ -10,18 +10,18 @@ const light = {
     text: {
       primary: palette.secondary.main,
       secondary: palette.secondary.main,
-      disabled: alpha(palette.secondary.main, 0.5)
+      disabled: alpha(palette.secondary.main, 0.5),
     },
-    background: { default: palette.grey[100] }
+    background: { default: palette.grey[100] },
   },
   overrides: {
     MuiInputLabel: {
       root: {
-        color: palette.secondary.main
+        color: palette.secondary.main,
       },
       shrink: {
-        color: palette.secondary.main
-      }
+        color: palette.secondary.main,
+      },
     },
     MuiIconButton: {
       root: {
@@ -30,11 +30,11 @@ const light = {
           backgroundColor: alpha(
             palette.secondary.main,
             palette.action.hoverOpacity
-          )
-        }
-      }
-    }
-  }
+          ),
+        },
+      },
+    },
+  },
 };
 
 export default createTheme(deepmerge(core, light));

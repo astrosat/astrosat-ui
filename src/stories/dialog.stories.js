@@ -19,10 +19,10 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
-  DialogTitle
+  DialogTitle,
 } from '../index';
 
-export default {
+const Index = {
   title: 'Dialog',
   component: Dialog,
   args: { open: true, fullWidth: false },
@@ -31,17 +31,19 @@ export default {
     scroll: {
       options: ['paper', 'body'],
       control: {
-        type: 'radio'
-      }
+        type: 'radio',
+      },
     },
     maxWidth: {
       options: ['xs', 'sm', 'md', 'lg', 'xl', false],
       control: {
-        type: 'radio'
-      }
-    }
-  }
+        type: 'radio',
+      },
+    },
+  },
 };
+
+export default Index;
 
 const emails = Array.from({ length: 2 }, () => faker.internet.email());
 
@@ -80,12 +82,12 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const useStyles = makeStyles(theme => ({
   appBar: {
-    position: 'relative'
+    position: 'relative',
   },
   title: {
     marginLeft: theme.spacing(2),
-    flex: 1
-  }
+    flex: 1,
+  },
 }));
 
 export const FullScreen = () => {
@@ -144,7 +146,7 @@ export const LongContent = args => (
   </Dialog>
 );
 LongContent.args = {
-  scroll: 'paper'
+  scroll: 'paper',
 };
 
 export const Sizes = args => (
@@ -162,5 +164,5 @@ export const Sizes = args => (
 );
 Sizes.args = {
   fullWidth: true,
-  maxWidth: 'md'
+  maxWidth: 'md',
 };
