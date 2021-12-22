@@ -19,7 +19,7 @@ const plugins = [
     modules: true,
   }),
   babel({
-    babelHelpers: 'runtime', // NOTE: Maybe 'bundled' is the better option
+    babelHelpers: 'bundled',
     presets: [['@babel/preset-env', { modules: false }], '@babel/preset-react'],
     exclude: 'node_modules/**',
   }),
