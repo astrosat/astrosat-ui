@@ -1,5 +1,5 @@
 import { CloseIcon, PlusIcon, ProfileIcon } from 'icons';
-import faker from 'faker';
+import faker from '@faker-js/faker';
 import React from 'react';
 import {
   AppBar,
