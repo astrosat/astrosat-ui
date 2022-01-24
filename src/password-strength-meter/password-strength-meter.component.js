@@ -1,12 +1,7 @@
 import React from 'react';
 
-import {
-  Fade,
-  Grid,
-  LinearProgress,
-  makeStyles,
-  Typography,
-} from '@material-ui/core';
+import { Fade, Grid, LinearProgress, Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import clsx from 'clsx';
 import zxcvbn from 'zxcvbn';
 
@@ -30,7 +25,7 @@ const getPasswordStrength = score => {
 };
 
 /**
- * @param {import('@material-ui/core').Theme} theme
+ * @param {import('@mui/material').Theme} theme
  * @returns {(props: {strengthValue: number}) => string}
  */
 const getColor = theme => props => {

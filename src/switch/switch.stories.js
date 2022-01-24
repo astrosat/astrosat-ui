@@ -2,9 +2,9 @@ import React from 'react';
 
 import Switch from './switch.component';
 
-import { FormControlLabel } from '@material-ui/core';
+import { FormControlLabel } from '@mui/material';
 
-import FormGroup from '@material-ui/core/FormGroup';
+import FormGroup from '@mui/material/FormGroup';
 
 export default { title: 'Switch' };
 

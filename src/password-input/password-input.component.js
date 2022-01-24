@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-import { InputAdornment, makeStyles } from '@material-ui/core';
+import { InputAdornment } from '@mui/material';
+
+import makeStyles from '@mui/styles/makeStyles';
 
 import { default as IconButton } from '../icon-button/icon-button.component';
 import { default as Input } from '../input/input.component';

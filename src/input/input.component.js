@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { Input as MuiInput, InputAdornment } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Input as MuiInput, InputAdornment } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 
 import { ErrorIcon, CorrectIcon } from '../icons';
 
 /**
- * @typedef {import('@material-ui/core/Input/Input').InputProps & {valid?: boolean}} InputProps
+ * @typedef {import('@mui/material/Input/Input').InputProps & {valid?: boolean}} InputProps
  */
 
 /**
- * @param {import('@material-ui/core').Theme} theme
+ * @param {import('@mui/material').Theme} theme
  * @param {InputProps} props
  */
 const getColors = (theme, props) => {

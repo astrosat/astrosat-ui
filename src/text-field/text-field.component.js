@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-  FormHelperText,
-  FormControl,
-  InputLabel,
-  withStyles,
-} from '@material-ui/core';
+import { FormHelperText, FormControl, InputLabel } from '@mui/material';
+import withStyles from '@mui/styles/withStyles';
 import Input from '../input/input.component';
 import clsx from 'clsx';
 import PasswordInput from 'password-input/password-input.component';
@@ -17,7 +13,7 @@ export const styles = {
 
 const TextField = React.forwardRef(
   /**
-   * @param {import('@material-ui/core').TextFieldProps &
+   * @param {import('@mui/material').TextFieldProps &
    *   {
    *    valid?: import('../input/input.component').InputProps['valid']
    *    visibilityToggleButtonLabel?: string

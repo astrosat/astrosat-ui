@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Switch as MuiSwitch, makeStyles } from '@material-ui/core';
+import { Switch as MuiSwitch } from '@mui/material';
+
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyle = makeStyles(theme => ({
   checked: {},
@@ -64,7 +66,7 @@ const useStyle = makeStyles(theme => ({
 }));
 
 /**
- * @param {import('@material-ui/core').SwitchProps} props
+ * @param {import('@mui/material').SwitchProps} props
  * @param {React.Ref<any>} ref
  */
 const Switch = ({ color = 'default', ...rest }, ref) => {

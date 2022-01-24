@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Checkbox as MuiCheckbox } from '@material-ui/core';
+import { Checkbox as MuiCheckbox } from '@mui/material';
 
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const checkboxStyles = makeStyles(theme => ({
   root: {
@@ -69,7 +69,7 @@ const checkboxStyles = makeStyles(theme => ({
 }));
 
 /**
- * @param {import('@material-ui/core').CheckboxProps} props
+ * @param {import('@mui/material').CheckboxProps} props
  * @param {React.Ref<any>} ref
  */
 const Checkbox = (props, ref) => {

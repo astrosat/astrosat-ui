@@ -1,4 +1,4 @@
-import { Pagination } from '@material-ui/lab';
+import { Pagination } from '@mui/material';
 import * as React from 'react';
 
 export default { title: 'Pagination' };

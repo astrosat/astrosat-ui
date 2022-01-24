@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Radio as MuiRadio } from '@material-ui/core';
+import { Radio as MuiRadio } from '@mui/material';
 
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const radioStyles = makeStyles(theme => ({
   root: {
@@ -69,7 +69,7 @@ const radioStyles = makeStyles(theme => ({
 }));
 
 /**
- * @param {import('@material-ui/core').RadioProps} props
+ * @param {import('@mui/material').RadioProps} props
  * @param {React.Ref<any>} ref
  */
 const Radio = (props, ref) => {

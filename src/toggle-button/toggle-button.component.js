@@ -1,7 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
-import { ToggleButton as MuiToggleButton } from '@material-ui/lab';
-import { darken, makeStyles } from '@material-ui/core';
+import { ToggleButton as MuiToggleButton } from '@mui/material';
+import { darken } from '@mui/material';
+
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,7 +50,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 /**
- * @param {import('@material-ui/lab').ToggleButtonProps} props
+ * @param {import('@mui/lab').ToggleButtonProps} props
  */
 const ToggleButton = ({ classes = {}, ...props }) => {
   const styles = useStyles({});

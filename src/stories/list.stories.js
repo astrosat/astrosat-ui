@@ -7,7 +7,7 @@ import {
   ListItemIcon,
   ListItemText,
   ListSubheader,
-} from '@material-ui/core';
+} from '@mui/material';
 import { CogIcon, ContactIcon, DeleteIcon, EyeIcon, InfoIcon } from 'icons';
 import * as React from 'react';
 

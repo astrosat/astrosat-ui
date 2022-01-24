@@ -1,114 +1,139 @@
-import { createTheme, alpha, lighten } from '@material-ui/core';
-import createPalette from '@material-ui/core/styles/createPalette';
+import { createTheme, alpha, lighten } from '@mui/material/styles';
 import deepmerge from 'deepmerge';
 
 import { core } from './core';
 import { palette as corePalette } from './palette';
 
-/** @type {import('@material-ui/core/styles/createPalette').PaletteOptions} */
+// console.log('DARK CORE PALETTE: ', corePalette);
+/** @type {import('@mui/material/styles/createPalette').PaletteOptions} */
 const darkPalette = {
-  type: 'dark',
+  mode: 'dark',
   text: {
-    primary: corePalette.grey[100],
-    secondary: corePalette.grey.A100,
-    disabled: alpha(corePalette.grey[100], 0.5),
+    primary: corePalette.palette.grey[100],
+    secondary: corePalette.palette.grey.A100,
+    disabled: alpha(corePalette.palette.grey[100], 0.5),
   },
-  background: { default: corePalette.secondary.main, paper: '#5d666e' },
+  background: { default: corePalette.palette.secondary.main, paper: '#5d666e' },
   action: {
-    active: corePalette.grey[300],
-    hover: alpha(corePalette.grey[300], corePalette.action.hoverOpacity),
-    disabled: corePalette.grey[500],
+    active: corePalette.palette.grey[300],
+    hover: alpha(
+      corePalette.palette.grey[300],
+      corePalette.palette.action.hoverOpacity
+    ),
+    disabled: corePalette.palette.grey[500],
   },
-  divider: alpha(corePalette.grey[100], 0.12),
+  divider: alpha(corePalette.palette.grey[100], 0.12),
 };
 
-const palette = createPalette(deepmerge(corePalette, darkPalette));
+const palette = deepmerge(corePalette, darkPalette);
 
-/** @type {import('@material-ui/core').ThemeOptions} */
+/** @type {import('@mui/material').ThemeOptions} */
 const dark = {
-  palette,
-  overrides: {
+  ...palette,
+  components: {
     MuiButton: {
-      outlined: {
-        '&$disabled': {
-          borderColor: palette.action.disabled,
+      styleOverrides: {
+        outlined: {
+          '&$disabled': {
+            borderColor: corePalette.palette.action.disabled,
+          },
         },
+        disabled: {},
       },
-      disabled: {},
     },
     MuiChip: {
-      root: {
-        backgroundColor: palette.action.active,
-        color: palette.secondary.main,
-      },
-      outlined: { color: 'unset' },
-      clickable: {
-        '&:hover': {
-          backgroundColor: palette.grey[400],
+      styleOverrides: {
+        root: {
+          backgroundColor: corePalette.palette.action.active,
+          color: corePalette.palette.secondary.main,
         },
-      },
-      avatar: {
-        backgroundColor: palette.secondary.main,
-      },
-      icon: {
-        color: 'inherit',
-      },
-      deleteIcon: {
-        color: 'inherit',
-        '&:hover': {
-          color: palette.secondary.light,
+        outlined: { color: 'unset' },
+        clickable: {
+          '&:hover': {
+            backgroundColor: corePalette.palette.grey[400],
+          },
+        },
+        avatar: {
+          backgroundColor: corePalette.palette.secondary.main,
+        },
+        icon: {
+          color: 'inherit',
+        },
+        deleteIcon: {
+          color: 'inherit',
+          '&:hover': {
+            color: corePalette.palette.secondary.light,
+          },
         },
       },
     },
     MuiDialog: {
-      paper: {
-        backgroundColor: palette.background.default,
+      styleOverrides: {
+        paper: {
+          backgroundColor: corePalette.palette.background.default,
+        },
       },
     },
     MuiIconButton: {
-      root: {
-        '&:focus': {
-          backgroundColor: palette.action.hover,
+      styleOverrides: {
+        root: {
+          '&:focus': {
+            backgroundColor: corePalette.palette.action.hover,
+          },
+          '&$disabled': {
+            color: corePalette.palette.action.disabled,
+          },
         },
-        '&$disabled': {
-          color: palette.action.disabled,
-        },
+        disabled: {},
       },
-      disabled: {},
     },
     MuiInputLabel: {
-      root: {
-        '&$error': {
-          color: palette.text.primary,
+      styleOverrides: {
+        root: {
+          '&$error': {
+            color: corePalette.palette.text.primary,
+          },
         },
       },
     },
     MuiFormLabel: {
-      root: {
-        color: palette.text.primary,
+      styleOverrides: {
+        root: {
+          color: corePalette.palette.text.primary,
+        },
       },
     },
     MuiMenuItem: {
-      root: {
-        '&:hover': {
-          backgroundColor: lighten(palette.background.default, 0.1),
+      styleOverrides: {
+        root: {
+          '&:hover': {
+            backgroundColor: lighten(
+              corePalette.palette.background.default,
+              0.1
+            ),
+          },
         },
       },
     },
     MuiTabs: {
-      flexContainer: {
-        borderBottomColor: palette.divider,
+      styleOverrides: {
+        flexContainer: {
+          borderBottomColor: corePalette.palette.divider,
+        },
       },
     },
     MuiTab: {
-      root: {
-        '&$textColorPrimary': {
-          color: palette.text.primary,
+      styleOverrides: {
+        root: {
+          '&$textColorPrimary': {
+            color: corePalette.palette.text.primary,
+          },
         },
+        textColorPrimary: {},
       },
-      textColorPrimary: {},
     },
   },
 };
+console.log('DARK PALETTE: ', dark);
 
 export default createTheme(deepmerge(core, dark));

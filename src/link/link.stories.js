@@ -2,7 +2,7 @@ import React from 'react';
 
 import { default as Link } from './link.component';
 
-import Typography from '@material-ui/core/Typography';
+import Typography from '@mui/material/Typography';
 
 export default { title: 'Link' };
 

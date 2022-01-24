@@ -1,258 +1,294 @@
-import { createTheme, alpha } from '@material-ui/core';
+import { createTheme, alpha } from '@mui/material/styles';
 import { palette } from './palette';
 
 const borderRadius = 5;
 const spacing = factor => `${0.5 * factor}rem`;
 
-/** @type {import('@material-ui/core').ThemeOptions} */
+/** @type {import('@mui/material').ThemeOptions} */
 export const core = createTheme({
-  overrides: {
+  components: {
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+    MuiButtonGroup: {
+      defaultProps: {
+        disableRipple: true,
+        variant: 'contained',
+        color: 'primary',
+      },
+    },
     MuiButton: {
-      textSecondary: {
-        color: palette.info.main,
-        '&:hover': {
-          backgroundColor: alpha(
-            palette.info.main,
-            palette.action.hoverOpacity
-          ),
-          '@media (hover: none)': {
-            backgroundColor: 'transparent',
+      styleOverrides: {
+        textSecondary: {
+          color: palette.palette.info.main,
+          '&:hover': {
+            backgroundColor: alpha(
+              palette.palette.info.main,
+              palette.palette.action.hoverOpacity
+            ),
+            '@media (hover: none)': {
+              backgroundColor: 'transparent',
+            },
           },
         },
-      },
-      containedSecondary: {
-        backgroundColor: palette.info.main,
-        '&:hover': {
-          backgroundColor: palette.info.main,
-          '@media (hover: none)': {
-            backgroundColor: palette.info.main,
+        containedSecondary: {
+          backgroundColor: palette.palette.info.main,
+          '&:hover': {
+            backgroundColor: palette.palette.info.main,
+            '@media (hover: none)': {
+              backgroundColor: palette.palette.info.main,
+            },
           },
         },
-      },
-      outlinedSecondary: {
-        color: palette.info.main,
-        borderColor: alpha(palette.info.main, 0.5),
-        '&:hover': {
-          borderColor: palette.info.main,
-          backgroundColor: alpha(
-            palette.info.main,
-            palette.action.hoverOpacity
-          ),
-          '@media (hover: none)': {
-            backgroundColor: 'transparent',
+        outlinedSecondary: {
+          color: palette.palette.info.main,
+          borderColor: alpha(palette.palette.info.main, 0.5),
+          '&:hover': {
+            borderColor: palette.palette.info.main,
+            backgroundColor: alpha(
+              palette.palette.info.main,
+              palette.palette.action.hoverOpacity
+            ),
+            '@media (hover: none)': {
+              backgroundColor: 'transparent',
+            },
           },
-        },
-        '&$disabled': {
-          borderColor: palette.action.disabled,
+          '&$disabled': {
+            borderColor: palette.palette.action.disabled,
+          },
         },
       },
     },
     MuiChip: {
-      root: {
-        borderRadius: 9,
-      },
-      colorSecondary: {
-        backgroundColor: palette.info.main,
-      },
-      clickableColorSecondary: {
-        '&:hover, &:focus': {
-          backgroundColor: palette.info.dark,
+      styleOverrides: {
+        root: {
+          borderRadius: 9,
         },
-      },
-      outlinedSecondary: {
-        borderColor: palette.info.main,
-        color: palette.info.main,
-      },
-      deleteIconColorSecondary: {
-        '&:hover': {
-          color: palette.info.dark,
+        colorSecondary: {
+          backgroundColor: palette.palette.info.main,
         },
-      },
-      deleteIconOutlinedColorSecondary: {
-        color: palette.info.main,
-        '&:hover': {
-          color: palette.info.dark,
+        clickableColorSecondary: {
+          '&:hover, &:focus': {
+            backgroundColor: palette.palette.info.dark,
+          },
+        },
+        outlinedSecondary: {
+          borderColor: palette.palette.info.main,
+          color: palette.palette.info.main,
+        },
+        deleteIconColorSecondary: {
+          '&:hover': {
+            color: palette.palette.info.dark,
+          },
+        },
+        deleteIconOutlinedColorSecondary: {
+          color: palette.palette.info.main,
+          '&:hover': {
+            color: palette.palette.info.dark,
+          },
         },
       },
     },
     MuiDialog: {
-      paper: {
-        backgroundColor: palette.background.default,
-        borderRadius: 10,
+      styleOverrides: {
+        paper: {
+          backgroundColor: palette.palette.background.default,
+          borderRadius: 10,
+        },
       },
     },
     MuiDialogContent: {
-      root: {
-        padding: `${spacing(5)} ${spacing(3)} ${spacing(2)}`,
+      styleOverrides: {
+        root: {
+          padding: `${spacing(5)} ${spacing(3)} ${spacing(2)}`,
+        },
       },
     },
     MuiDialogActions: {
-      root: {
-        display: 'flex',
-        justifyContent: 'center',
-        padding: `${spacing(2)} ${spacing(3)} ${spacing(4)}`,
+      styleOverrides: {
+        root: {
+          display: 'flex',
+          justifyContent: 'center',
+          padding: `${spacing(2)} ${spacing(3)} ${spacing(4)}`,
+        },
       },
     },
     MuiIconButton: {
-      root: {
-        '&:focus': {
-          backgroundColor: alpha(
-            palette.action.active,
-            palette.action.hoverOpacity
-          ),
-        },
-      },
-      colorPrimary: {
-        '&:focus': {
-          backgroundColor: alpha(
-            palette.primary.main,
-            palette.action.hoverOpacity
-          ),
-        },
-      },
-      colorSecondary: {
-        color: palette.info.main,
-        '&:hover': {
-          backgroundColor: alpha(
-            palette.info.main,
-            palette.action.hoverOpacity
-          ),
-          '@media (hover: none)': {
-            backgroundColor: 'transparent',
+      styleOverrides: {
+        root: {
+          '&:focus': {
+            backgroundColor: alpha(
+              palette.palette.action.active,
+              palette.palette.action.hoverOpacity
+            ),
           },
         },
-        '&:focus': {
-          backgroundColor: alpha(
-            palette.info.main,
-            palette.action.hoverOpacity
-          ),
+        colorPrimary: {
+          '&:focus': {
+            backgroundColor: alpha(
+              palette.palette.primary.main,
+              palette.palette.action.hoverOpacity
+            ),
+          },
+        },
+        colorSecondary: {
+          color: palette.palette.info.main,
+          '&:hover': {
+            backgroundColor: alpha(
+              palette.palette.info.main,
+              palette.palette.action.hoverOpacity
+            ),
+            '@media (hover: none)': {
+              backgroundColor: 'transparent',
+            },
+          },
+          '&:focus': {
+            backgroundColor: alpha(
+              palette.palette.info.main,
+              palette.palette.action.hoverOpacity
+            ),
+          },
         },
       },
     },
     MuiLink: {
-      root: {
-        fontWeight: 600,
+      defaultProps: {
+        variant: 'body1',
+      },
+      styleOverrides: {
+        root: {
+          fontWeight: 600,
+        },
+      },
+    },
+    MuiFormControl: {
+      defaultProps: {
+        fullWidth: true,
       },
     },
     MuiFormControlLabel: {
-      root: {
-        margin: 0,
-        marginLeft: 0,
-        '& .Mui-disabled': {
-          opacity: palette.action.disabledOpacity,
-        },
-        '&$disabled': {
-          cursor: 'not-allowed',
-        },
-      },
-      label: {
-        marginLeft: spacing(2),
-      },
-      labelPlacementBottom: {
-        '& $label': {
+      styleOverrides: {
+        root: {
           margin: 0,
-          marginTop: spacing(1),
+          marginLeft: 0,
+          '& .Mui-disabled': {
+            opacity: palette.palette.action.disabledOpacity,
+          },
+          '&$disabled': {
+            cursor: 'not-allowed',
+          },
         },
-      },
-      labelPlacementStart: {
-        '& $label': {
-          margin: 0,
-          marginRight: spacing(2),
+        label: {
+          marginLeft: spacing(2),
         },
-      },
-      labelPlacementTop: {
-        '& $label': {
-          margin: 0,
-          marginBottom: spacing(1),
+        labelPlacementBottom: {
+          '& $label': {
+            margin: 0,
+            marginTop: spacing(1),
+          },
         },
+        labelPlacementStart: {
+          '& $label': {
+            margin: 0,
+            marginRight: spacing(2),
+          },
+        },
+        labelPlacementTop: {
+          '& $label': {
+            margin: 0,
+            marginBottom: spacing(1),
+          },
+        },
+        disabled: {},
       },
-      disabled: {},
     },
     MuiFormHelperText: {
-      root: {
-        fontStyle: 'italic',
+      styleOverrides: {
+        root: {
+          fontStyle: 'italic',
+        },
       },
     },
     MuiInputLabel: {
-      root: {
-        zIndex: 1,
-        '&$error': {
-          color: palette.text.secondary,
-          '&$focused': {
-            color: palette.primary.main,
+      styleOverrides: {
+        root: {
+          zIndex: 1,
+          '&.Mui-error': {
+            color: palette.palette.text.secondary,
+            '&.Mui-focused': {
+              color: palette.palette.primary.main,
+            },
           },
         },
+        formControl: {
+          transform: 'translate(16px, 32px) scale(1)',
+        },
+        shrink: {
+          transform: 'translate(0, 1.5px) scale(0.75)',
+        },
+        error: {},
+        focused: {},
       },
-      formControl: {
-        transform: 'translate(16px, 32px) scale(1)',
-      },
-      shrink: {
-        transform: 'translate(0, 1.5px) scale(0.75)',
-      },
-      error: {},
-      focused: {},
     },
     MuiFormLabel: {
-      root: {
-        fontSize: '14px',
+      styleOverrides: {
+        root: {
+          fontSize: '14px',
+        },
       },
     },
     MuiTabs: {
-      flexContainer: {
-        borderBottom: `1px solid ${palette.divider}`,
+      defaultProps: {
+        indicatorColor: 'primary',
+        textColor: 'primary',
+      },
+      styleOverrides: {
+        flexContainer: {
+          borderBottom: `1px solid ${palette.palette.divider}`,
+        },
       },
     },
     MuiTab: {
-      root: {
-        [`&$textColorInherit,
-          &$textColorPrimary,
-          &$textColorSecondary`]: {
-          opacity: 1,
+      styleOverrides: {
+        root: {
+          // FIXME: I've change the likes of &$selected to &.Mui-selected, but
+          // I don't know what to change these to.
+          [`&$textColorInherit,
+            &$textColorPrimary,
+            &$textColorSecondary`]: {
+            opacity: 1,
+          },
         },
+        textColorInherit: {},
+        textColorPrimary: {},
+        textColorSecondary: {},
       },
-      textColorInherit: {},
-      textColorPrimary: {},
-      textColorSecondary: {},
     },
     MuiTooltip: {
-      arrow: {
-        color: palette.primary.main,
-      },
-      tooltip: {
-        color: palette.secondary.main,
-        backgroundColor: palette.primary.main,
+      styleOverrides: {
+        arrow: {
+          color: palette.palette.primary.main,
+        },
+        tooltip: {
+          color: palette.palette.secondary.main,
+          backgroundColor: palette.palette.primary.main,
+        },
       },
     },
     MuiCssBaseline: {
-      '@global': {
-        html: { fontSize: '1rem' },
-        body: {
-          fontSize: '1rem',
+      styleOverrides: {
+        '@global': {
+          html: { fontSize: '1rem' },
+          body: {
+            fontSize: '1rem',
+          },
         },
       },
     },
   },
-  palette,
-  props: {
-    MuiButtonBase: {
-      disableRipple: true,
-    },
-    MuiButtonGroup: {
-      disableRipple: true,
-      variant: 'contained',
-      color: 'primary',
-    },
-    MuiLink: {
-      variant: 'body1',
-    },
-    MuiFormControl: {
-      fullWidth: true,
-    },
-    MuiTabs: {
-      indicatorColor: 'primary',
-      textColor: 'primary',
-    },
-  },
+  palette: palette.palette,
   shape: {
     borderRadius,
   },
