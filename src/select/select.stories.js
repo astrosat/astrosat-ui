@@ -2,7 +2,7 @@ import React from 'react';
 
 import Select from '../select/select.component';
 
-import { makeStyles } from '@material-ui/core';
+import makeStyles from '@mui/styles/makeStyles';
 
 import MenuItem from '../menu/menu-item.component';
 
