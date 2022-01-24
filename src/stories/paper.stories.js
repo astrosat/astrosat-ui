@@ -1,5 +1,6 @@
 import React from 'react';
-import { Paper, styled } from '../index';
+import { Paper } from '@mui/material';
+import { styled } from '@mui/styles';
 
 const Index = { title: 'Paper' };
 

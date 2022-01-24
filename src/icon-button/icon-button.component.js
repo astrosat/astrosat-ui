@@ -1,8 +1,8 @@
 import React from 'react';
-import { IconButton as MuiIconButton } from '@material-ui/core';
+import { IconButton as MuiIconButton } from '@mui/material';
 
 /**
- * @param {import('@material-ui/core').IconButtonProps} props
+ * @param {import('@mui/material').IconButtonProps} props
  * @param {React.Ref<HTMLButtonElement>} ref
  */
 const IconButton = (props, ref) => {

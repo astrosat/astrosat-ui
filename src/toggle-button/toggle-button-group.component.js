@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import { ToggleButtonGroup as MuiToggleButtonGroup } from '@material-ui/lab';
-import { makeStyles } from '@material-ui/core';
+import { ToggleButtonGroup as MuiToggleButtonGroup } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -23,7 +23,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 /**
- * @param {import('@material-ui/lab').ToggleButtonGroupProps&{fullWidth?: boolean}} props
+ * @param {import('@mui/lab').ToggleButtonGroupProps&{fullWidth?: boolean}} props
  */
 const ToggleButtonGroup = ({
   classes = {},

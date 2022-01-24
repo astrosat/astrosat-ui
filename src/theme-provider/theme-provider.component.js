@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core';
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import themes from 'themes';
 
 /**

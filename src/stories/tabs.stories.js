@@ -1,6 +1,6 @@
 import { LayersIcon, MapIcon, SearchIcon } from 'icons';
 import React from 'react';
-import { Tabs, Tab } from '../index';
+import { Tabs, Tab } from '@mui/material';
 
 const Index = { title: 'Tabs', args: { value: 0 } };
 

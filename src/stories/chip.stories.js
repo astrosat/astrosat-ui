@@ -1,6 +1,7 @@
 import { CorrectIcon, ProfileIcon } from 'icons';
 import * as React from 'react';
-import { makeStyles, Chip, Avatar } from '../index';
+import { Chip, Avatar } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 const Index = { title: 'Chip' };
 

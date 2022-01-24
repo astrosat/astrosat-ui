@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { Alert } from '@material-ui/lab';
+import { Alert } from '@mui/material';
 
-import { darken, makeStyles } from '@material-ui/core/styles';
+import { darken } from '@mui/material/styles';
 
-import { Box, alpha } from '@material-ui/core';
+import makeStyles from '@mui/styles/makeStyles';
+
+import { Box, alpha } from '@mui/material';
 
 import ErrorIcon from '../icons/error-icon.component';
 
@@ -29,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   },
   filledInfo: {
     backgroundColor:
-      theme.palette.type === 'dark'
+      theme.palette.mode === 'dark'
         ? darken(theme.palette.background.default, 0.3)
         : theme.palette.background.paper,
     color: theme.palette.info.main,
@@ -48,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   standardInfo: {
     border: `0.0625rem solid ${theme.palette.text.primary}`,
     backgroundColor:
-      theme.palette.type === 'dark'
+      theme.palette.mode === 'dark'
         ? darken(theme.palette.background.default, 0.3)
         : theme.palette.background.paper,
   },
@@ -61,7 +63,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 /**
- * @param {import('@material-ui/lab').AlertProps} props
+ * @param {import('@mui/lab').AlertProps} props
  * @param {React.Ref<HTMLDivElement>} ref
  */
 

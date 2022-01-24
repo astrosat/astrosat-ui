@@ -2,9 +2,9 @@ import React from 'react';
 
 import Input from '../input/input.component';
 
-import { Select as MuiSelect } from '@material-ui/core';
+import { Select as MuiSelect } from '@mui/material';
 
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const menuStyles = makeStyles(theme => ({
   paper: {
@@ -12,7 +12,7 @@ const menuStyles = makeStyles(theme => ({
   },
 }));
 /**
- * @param {import('@material-ui/core').SelectProps} props
+ * @param {import('@mui/material').SelectProps} props
  * @param {React.Ref<any>} ref
  */
 

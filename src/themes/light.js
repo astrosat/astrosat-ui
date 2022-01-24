@@ -1,40 +1,46 @@
-import { createTheme, alpha } from '@material-ui/core';
+import { createTheme, alpha } from '@mui/material/styles';
 import deepmerge from 'deepmerge';
 import { core } from './core';
 import { palette } from './palette';
 
-/** @type {import('@material-ui/core').ThemeOptions} */
+// console.log('LIGHT CORE PALETTE: ', palette);
+/** @type {import('@mui/material').ThemeOptions} */
 const light = {
   palette: {
-    type: 'light',
+    mode: 'light',
     text: {
-      primary: palette.secondary.main,
-      secondary: palette.secondary.main,
-      disabled: alpha(palette.secondary.main, 0.5),
+      primary: palette.palette.secondary.main,
+      secondary: palette.palette.secondary.main,
+      disabled: alpha(palette.palette.secondary.main, 0.5),
     },
-    background: { default: palette.grey[100] },
+    background: { default: palette.palette.grey[100] },
   },
-  overrides: {
+  components: {
     MuiInputLabel: {
-      root: {
-        color: palette.secondary.main,
-      },
-      shrink: {
-        color: palette.secondary.main,
+      styleOverrides: {
+        root: {
+          color: palette.palette.secondary.main,
+        },
+        shrink: {
+          color: palette.palette.secondary.main,
+        },
       },
     },
     MuiIconButton: {
-      root: {
-        color: palette.secondary.main,
-        '&:hover': {
-          backgroundColor: alpha(
-            palette.secondary.main,
-            palette.action.hoverOpacity
-          ),
+      styleOverrides: {
+        root: {
+          color: palette.palette.secondary.main,
+          '&:hover': {
+            backgroundColor: alpha(
+              palette.palette.secondary.main,
+              palette.palette.action.hoverOpacity
+            ),
+          },
         },
       },
     },
   },
 };
+console.log('LIGHT PALETTE: ', light);
 
 export default createTheme(deepmerge(core, light));

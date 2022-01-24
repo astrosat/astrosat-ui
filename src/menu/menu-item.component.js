@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { MenuItem as MuiMenuItem } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { MenuItem as MuiMenuItem } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 
 const menuItemStyles = makeStyles(theme => ({
   root: {
@@ -21,7 +21,7 @@ const menuItemStyles = makeStyles(theme => ({
 }));
 
 /**
- * @param {Omit <import('@material-ui/core').MenuItemProps, "button">} props
+ * @param {Omit <import('@mui/material').MenuItemProps, "button">} props
  * @param {React.Ref<any>} ref
  */
 

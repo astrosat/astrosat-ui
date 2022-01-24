@@ -15,12 +15,13 @@ import {
   Slide,
   Toolbar,
   Typography,
-  makeStyles,
   DialogContent,
   DialogContentText,
   DialogActions,
   DialogTitle,
-} from '../index';
+} from '@mui/material';
+// } from '../index';
+import { makeStyles } from '@mui/styles';
 
 const Index = {
   title: 'Dialog',
@@ -97,7 +98,12 @@ export const FullScreen = () => {
     <Dialog fullScreen open TransitionComponent={Transition}>
       <AppBar className={styles.appBar}>
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="close">
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="close"
+            size="large"
+          >
             <CloseIcon />
           </IconButton>
           <Typography variant="h6" className={styles.title}>

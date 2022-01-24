@@ -1,6 +1,6 @@
 import React from 'react';
 import ThemeProvider from '../src/theme-provider/theme-provider.component';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline } from '@mui/material';
 
 export const decorators = [
   (Story, context) => (
@@ -8,7 +8,7 @@ export const decorators = [
       <CssBaseline />
       <Story {...context} />
     </ThemeProvider>
-  )
+  ),
 ];
 
 export const globalTypes = {
@@ -20,14 +20,14 @@ export const globalTypes = {
       icon: 'paintbrush',
       items: [
         { value: 'light', title: 'Light', left: '☀️' },
-        { value: 'dark', title: 'Dark', left: '🌒' }
-      ]
-    }
-  }
+        { value: 'dark', title: 'Dark', left: '🌒' },
+      ],
+    },
+  },
 };
 
 export const parameters = {
   backgrounds: {
-    disable: true
-  }
+    disable: true,
+  },
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Menu as MuiMenu } from '@material-ui/core';
+import { Menu as MuiMenu } from '@mui/material';
 
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles(theme => ({
   list: {
@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 /**
- * @param {import('@material-ui/core').MenuProps} props
+ * @param {import('@mui/material').MenuProps} props
  * @param {React.Ref<any>} ref
  */
 

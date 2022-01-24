@@ -1,5 +1,5 @@
-import { Button as MuiButton } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Button as MuiButton } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 
 const styles = makeStyles(theme => ({
@@ -49,7 +49,7 @@ const styles = makeStyles(theme => ({
 }));
 
 /**
- * @param { import('@material-ui/core/Button/Button').ButtonProps} props
+ * @param { import('@mui/material/Button/Button').ButtonProps} props
  * @param { React.Ref<HTMLButtonElement> } ref
  */
 const Button = ({ variant = 'contained', color = 'primary', ...rest }, ref) => {

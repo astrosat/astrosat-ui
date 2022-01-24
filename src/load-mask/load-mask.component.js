@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Backdrop, makeStyles } from '@material-ui/core';
+import { Backdrop } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import clsx from 'clsx';
 
 const useClasses = makeStyles(theme => ({
@@ -37,7 +38,7 @@ const useClasses = makeStyles(theme => ({
 }));
 
 /**
- * @param {import('@material-ui/core').BackdropProps} props
+ * @param {import('@mui/material').BackdropProps} props
  */
 const LoadMask = props => {
   const { orbit, spinner, spinner1, spinner2, spinner3, sun } = useClasses();
