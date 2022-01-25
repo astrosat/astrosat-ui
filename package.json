@@ -42,7 +42,8 @@
     "build-storybook": "build-storybook"
   },
   "resolutions": {
-    "eslint": "^7.28.2"
+    "eslint": "^7.28.2",
+    "**/@emotion/styled": "^11.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",

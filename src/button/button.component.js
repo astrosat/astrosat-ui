@@ -1,5 +1,5 @@
 import { Button as MuiButton } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 import React from 'react';
 
 const styles = makeStyles(theme => ({
@@ -54,6 +54,7 @@ const styles = makeStyles(theme => ({
  */
 const Button = ({ variant = 'contained', color = 'primary', ...rest }, ref) => {
   const classes = styles({ variant, color, ...rest });
+
   const component = (
     <MuiButton
       ref={ref}
