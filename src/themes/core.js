@@ -1,11 +1,10 @@
 import { createTheme, alpha } from '@mui/material/styles';
-import { palette } from './palette';
+import { baseTheme } from './palette';
 
 const borderRadius = 5;
 const spacing = factor => `${0.5 * factor}rem`;
 
-/** @type {import('@mui/material').ThemeOptions} */
-export const core = createTheme({
+const core = {
   components: {
     MuiButtonBase: {
       defaultProps: {
@@ -21,12 +20,15 @@ export const core = createTheme({
     },
     MuiButton: {
       styleOverrides: {
+        textPrimary: {
+          color: baseTheme.palette.primary.main,
+        },
         textSecondary: {
-          color: palette.palette.info.main,
+          color: baseTheme.palette.info.main,
           '&:hover': {
             backgroundColor: alpha(
-              palette.palette.info.main,
-              palette.palette.action.hoverOpacity
+              baseTheme.palette.info.main,
+              baseTheme.palette.action.hoverOpacity
             ),
             '@media (hover: none)': {
               backgroundColor: 'transparent',
@@ -34,29 +36,29 @@ export const core = createTheme({
           },
         },
         containedSecondary: {
-          backgroundColor: palette.palette.info.main,
+          backgroundColor: baseTheme.palette.info.main,
           '&:hover': {
-            backgroundColor: palette.palette.info.main,
+            backgroundColor: baseTheme.palette.info.main,
             '@media (hover: none)': {
-              backgroundColor: palette.palette.info.main,
+              backgroundColor: baseTheme.palette.info.main,
             },
           },
         },
         outlinedSecondary: {
-          color: palette.palette.info.main,
-          borderColor: alpha(palette.palette.info.main, 0.5),
+          color: baseTheme.palette.info.main,
+          borderColor: alpha(baseTheme.palette.info.main, 0.5),
           '&:hover': {
-            borderColor: palette.palette.info.main,
+            borderColor: baseTheme.palette.info.main,
             backgroundColor: alpha(
-              palette.palette.info.main,
-              palette.palette.action.hoverOpacity
+              baseTheme.palette.info.main,
+              baseTheme.palette.action.hoverOpacity
             ),
             '@media (hover: none)': {
               backgroundColor: 'transparent',
             },
           },
           '&$disabled': {
-            borderColor: palette.palette.action.disabled,
+            borderColor: baseTheme.palette.action.disabled,
           },
         },
       },
@@ -67,26 +69,26 @@ export const core = createTheme({
           borderRadius: 9,
         },
         colorSecondary: {
-          backgroundColor: palette.palette.info.main,
+          backgroundColor: baseTheme.palette.info.main,
         },
         clickableColorSecondary: {
           '&:hover, &:focus': {
-            backgroundColor: palette.palette.info.dark,
+            backgroundColor: baseTheme.palette.info.dark,
           },
         },
         outlinedSecondary: {
-          borderColor: palette.palette.info.main,
-          color: palette.palette.info.main,
+          borderColor: baseTheme.palette.info.main,
+          color: baseTheme.palette.info.main,
         },
         deleteIconColorSecondary: {
           '&:hover': {
-            color: palette.palette.info.dark,
+            color: baseTheme.palette.info.dark,
           },
         },
         deleteIconOutlinedColorSecondary: {
-          color: palette.palette.info.main,
+          color: baseTheme.palette.info.main,
           '&:hover': {
-            color: palette.palette.info.dark,
+            color: baseTheme.palette.info.dark,
           },
         },
       },
@@ -94,7 +96,7 @@ export const core = createTheme({
     MuiDialog: {
       styleOverrides: {
         paper: {
-          backgroundColor: palette.palette.background.default,
+          backgroundColor: baseTheme.palette.background.default,
           borderRadius: 10,
         },
       },
@@ -120,25 +122,25 @@ export const core = createTheme({
         root: {
           '&:focus': {
             backgroundColor: alpha(
-              palette.palette.action.active,
-              palette.palette.action.hoverOpacity
+              baseTheme.palette.action.active,
+              baseTheme.palette.action.hoverOpacity
             ),
           },
         },
         colorPrimary: {
           '&:focus': {
             backgroundColor: alpha(
-              palette.palette.primary.main,
-              palette.palette.action.hoverOpacity
+              baseTheme.palette.primary.main,
+              baseTheme.palette.action.hoverOpacity
             ),
           },
         },
         colorSecondary: {
-          color: palette.palette.info.main,
+          color: baseTheme.palette.info.main,
           '&:hover': {
             backgroundColor: alpha(
-              palette.palette.info.main,
-              palette.palette.action.hoverOpacity
+              baseTheme.palette.info.main,
+              baseTheme.palette.action.hoverOpacity
             ),
             '@media (hover: none)': {
               backgroundColor: 'transparent',
@@ -146,8 +148,8 @@ export const core = createTheme({
           },
           '&:focus': {
             backgroundColor: alpha(
-              palette.palette.info.main,
-              palette.palette.action.hoverOpacity
+              baseTheme.palette.info.main,
+              baseTheme.palette.action.hoverOpacity
             ),
           },
         },
@@ -174,7 +176,7 @@ export const core = createTheme({
           margin: 0,
           marginLeft: 0,
           '& .Mui-disabled': {
-            opacity: palette.palette.action.disabledOpacity,
+            opacity: baseTheme.palette.action.disabledOpacity,
           },
           '&$disabled': {
             cursor: 'not-allowed',
@@ -216,9 +218,9 @@ export const core = createTheme({
         root: {
           zIndex: 1,
           '&.Mui-error': {
-            color: palette.palette.text.secondary,
+            color: baseTheme.palette.text.secondary,
             '&.Mui-focused': {
-              color: palette.palette.primary.main,
+              color: baseTheme.palette.primary.main,
             },
           },
         },
@@ -246,7 +248,7 @@ export const core = createTheme({
       },
       styleOverrides: {
         flexContainer: {
-          borderBottom: `1px solid ${palette.palette.divider}`,
+          borderBottom: `1px solid ${baseTheme.palette.divider}`,
         },
       },
     },
@@ -269,11 +271,11 @@ export const core = createTheme({
     MuiTooltip: {
       styleOverrides: {
         arrow: {
-          color: palette.palette.primary.main,
+          color: baseTheme.palette.primary.main,
         },
         tooltip: {
-          color: palette.palette.secondary.main,
-          backgroundColor: palette.palette.primary.main,
+          color: baseTheme.palette.secondary.main,
+          backgroundColor: baseTheme.palette.primary.main,
         },
       },
     },
@@ -288,7 +290,6 @@ export const core = createTheme({
       },
     },
   },
-  palette: palette.palette,
   shape: {
     borderRadius,
   },
@@ -328,4 +329,6 @@ export const core = createTheme({
       textTransform: 'none',
     },
   },
-});
+};
+
+export const coreTheme = createTheme(baseTheme, core);
