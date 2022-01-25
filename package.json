@@ -41,6 +41,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "resolutions": {
+    "**/@emotion/styled": "^11.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.16.8",
     "@babel/core": "^7.16.10",
