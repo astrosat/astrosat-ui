@@ -176,9 +176,6 @@ const core = {
         root: {
           margin: 0,
           marginLeft: 0,
-          // 'input[type="checkbox"]': {
-          //   cursor: 'not-allowed',
-          // },
           '& .Mui-disabled': {
             opacity: baseTheme.palette.action.disabledOpacity,
             cursor: 'not-allowed',
@@ -192,7 +189,6 @@ const core = {
             cursor: 'not-allowed',
             pointerEvents: 'auto',
           },
-          //'disabled': {},
         },
         label: {
           marginLeft: spacing(2),
