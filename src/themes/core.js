@@ -9,7 +9,6 @@ const core = {
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,
-        pointerevents: 'auto',
       },
     },
     MuiButtonGroup: {
