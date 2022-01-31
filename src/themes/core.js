@@ -9,6 +9,7 @@ const core = {
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,
+        pointerevents: 'auto',
       },
     },
     MuiButtonGroup: {
@@ -175,12 +176,23 @@ const core = {
         root: {
           margin: 0,
           marginLeft: 0,
+          // 'input[type="checkbox"]': {
+          //   cursor: 'not-allowed',
+          // },
           '& .Mui-disabled': {
             opacity: baseTheme.palette.action.disabledOpacity,
+            cursor: 'not-allowed',
+            pointerEvents: 'auto',
+          },
+          '& input:disabled': {
+            cursor: 'not-allowed',
+            pointerEvents: 'auto',
           },
           '&$disabled': {
             cursor: 'not-allowed',
+            pointerEvents: 'auto',
           },
+          //'disabled': {},
         },
         label: {
           marginLeft: spacing(2),
