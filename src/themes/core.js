@@ -177,9 +177,16 @@ const core = {
           marginLeft: 0,
           '& .Mui-disabled': {
             opacity: baseTheme.palette.action.disabledOpacity,
+            cursor: 'not-allowed',
+            pointerEvents: 'auto',
+          },
+          '& input:disabled': {
+            cursor: 'not-allowed',
+            pointerEvents: 'auto',
           },
           '&$disabled': {
             cursor: 'not-allowed',
+            pointerEvents: 'auto',
           },
         },
         label: {
