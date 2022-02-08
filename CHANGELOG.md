@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/astrosat/astrosat-ui/compare/v2.8.1...v2.9.0) (2022-02-08)
+
+
+### Features
+
+* **icons:** Add hatch pattern icons ([25690d1](https://github.com/astrosat/astrosat-ui/commit/25690d1b1196242dca83edbdbdd4357825982d20))
+
 ## [2.8.1](https://github.com/astrosat/astrosat-ui/compare/v2.8.0...v2.8.1) (2021-12-22)
 
 
