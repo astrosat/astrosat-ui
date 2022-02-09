@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { Switch as MuiSwitch } from '@mui/material';
-
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 
 const useStyle = makeStyles(theme => ({
   checked: {},

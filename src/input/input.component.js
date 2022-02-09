@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Input as MuiInput, InputAdornment } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 
 import { ErrorIcon, CorrectIcon } from '../icons';
 

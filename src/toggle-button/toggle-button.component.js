@@ -1,9 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
+
 import { ToggleButton as MuiToggleButton } from '@mui/material';
 import { darken } from '@mui/material';
-
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(theme => ({
   root: {

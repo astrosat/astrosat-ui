@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Fade, Grid, LinearProgress, Typography } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 import clsx from 'clsx';
 import zxcvbn from 'zxcvbn';
 

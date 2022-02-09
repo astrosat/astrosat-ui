@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormHelperText, FormControl, InputLabel } from '@mui/material';
-import withStyles from '@mui/styles/withStyles';
+import { withStyles } from '@mui/styles';
 import Input from '../input/input.component';
 import clsx from 'clsx';
 import PasswordInput from 'password-input/password-input.component';

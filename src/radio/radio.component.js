@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Radio as MuiRadio } from '@mui/material';
 
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 
 const radioStyles = makeStyles(theme => ({
   root: {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { MenuItem as MuiMenuItem } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 
 const menuItemStyles = makeStyles(theme => ({
   root: {

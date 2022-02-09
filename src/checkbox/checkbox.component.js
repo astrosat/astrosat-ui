@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Checkbox as MuiCheckbox } from '@mui/material';
 
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 
 const checkboxStyles = makeStyles(theme => ({
   root: {

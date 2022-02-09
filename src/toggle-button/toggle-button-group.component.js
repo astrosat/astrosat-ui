@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { ToggleButtonGroup as MuiToggleButtonGroup } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(() => ({
   root: {

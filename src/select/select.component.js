@@ -4,7 +4,7 @@ import Input from '../input/input.component';
 
 import { Select as MuiSelect } from '@mui/material';
 
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 
 const menuStyles = makeStyles(theme => ({
   paper: {

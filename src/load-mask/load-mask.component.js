@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Backdrop } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 import clsx from 'clsx';
 
 const useClasses = makeStyles(theme => ({
