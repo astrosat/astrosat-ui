@@ -21,8 +21,6 @@ export {
   ClickAwayListener,
   Collapse,
   Container,
-  createMuiTheme,
-  createStyles,
   CssBaseline,
   darken,
   decomposeColor,
@@ -62,7 +60,6 @@ export {
   ListItemSecondaryAction,
   ListItemText,
   ListSubheader,
-  makeStyles,
   NoSsr,
   Paper,
   Popover,
@@ -95,10 +92,17 @@ export {
   useMediaQuery,
   useScrollTrigger,
   useTheme,
-  withStyles,
-  withTheme,
   Zoom,
 } from '@mui/material';
 
-export { createGenerateClassName, jssPreset } from '@mui/styles';
+export { createTheme } from '@mui/material/styles';
+
+export {
+  createGenerateClassName,
+  createStyles,
+  jssPreset,
+  makeStyles,
+  withTheme,
+  withStyles,
+} from '@mui/styles';
 export { Pagination, Skeleton } from '@mui/lab';

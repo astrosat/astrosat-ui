@@ -1,13 +1,20 @@
 import React from 'react';
 
+import { styled } from '@mui/material/styles';
+
 import { Menu as MuiMenu } from '@mui/material';
 
-import { makeStyles } from '@mui/styles';
+const PREFIX = 'MarkMenu';
 
-const useStyles = makeStyles(theme => ({
-  list: {
+const classes = {
+  list: `${PREFIX}-list`,
+};
+
+const StyledMuiMenu = styled(MuiMenu)(({ theme }) => ({
+  [`&.${classes.list}`]: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
+    padding: '5rem',
   },
 }));
 
@@ -17,8 +24,8 @@ const useStyles = makeStyles(theme => ({
  */
 
 const Menu = (props, ref) => {
-  const classes = useStyles(props);
-  return <MuiMenu classes={classes} {...props} ref={ref} />;
+  return <StyledMuiMenu className={classes.list} {...props} ref={ref} />;
+  // return <StyledMuiMenu classes={classes} {...props} ref={ref} />;
 };
 
 export default React.forwardRef(Menu);

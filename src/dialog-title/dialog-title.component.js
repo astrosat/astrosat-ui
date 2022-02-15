@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { DialogTitle as MuiDialogTitle, Typography } from '@mui/material';
-import withStyles from '@mui/styles/withStyles';
+import { withStyles } from '@mui/styles';
 import IconButton from '../icon-button/icon-button.component';
 import { CloseIcon } from 'icons';
 

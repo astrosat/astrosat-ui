@@ -10,7 +10,25 @@ const core = {
       defaultProps: {
         disableRipple: true,
       },
+      // styleOverrides: {
+      //   root: {
+      //     '& .Mui-disabled': {
+      //       cursor: 'not-allowed',
+      //       pointerEvents: 'auto',
+      //     },
+      //   },
+      // },
     },
+    // MuiToggleButton: {
+    //   styleOverrides: {
+    //     root: {
+    //       '& .Mui-disabled': {
+    //         cursor: 'not-allowed',
+    //         pointerEvents: 'auto',
+    //       },
+    //     },
+    //   },
+    // },
     MuiButtonGroup: {
       defaultProps: {
         disableRipple: true,
@@ -57,9 +75,16 @@ const core = {
               backgroundColor: 'transparent',
             },
           },
-          '&$disabled': {
+          '&.Mui-disabled': {
             borderColor: baseTheme.palette.action.disabled,
           },
+        },
+      },
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          padding: 'unset',
         },
       },
     },
@@ -67,9 +92,14 @@ const core = {
       styleOverrides: {
         root: {
           borderRadius: 9,
+          // backgroundColor: '#e0e0e0',
+        },
+        colorPrimary: {
+          backgroundColor: baseTheme.palette.primary.main,
         },
         colorSecondary: {
           backgroundColor: baseTheme.palette.info.main,
+          color: '#fff',
         },
         clickableColorSecondary: {
           '&:hover, &:focus': {
@@ -82,7 +112,11 @@ const core = {
         },
         deleteIconColorSecondary: {
           '&:hover': {
+            // color: '#fff',
             color: baseTheme.palette.info.dark,
+          },
+          '&.MuiChip-deleteIcon': {
+            color: '#fff',
           },
         },
         deleteIconOutlinedColorSecondary: {
@@ -168,6 +202,7 @@ const core = {
     MuiFormControl: {
       defaultProps: {
         fullWidth: true,
+        variant: 'standard',
       },
     },
     MuiFormControlLabel: {
@@ -175,12 +210,8 @@ const core = {
         root: {
           margin: 0,
           marginLeft: 0,
-          '& .Mui-disabled': {
+          '&.Mui-disabled': {
             opacity: baseTheme.palette.action.disabledOpacity,
-            cursor: 'not-allowed',
-            pointerEvents: 'auto',
-          },
-          '& input:disabled': {
             cursor: 'not-allowed',
             pointerEvents: 'auto',
           },
@@ -190,7 +221,7 @@ const core = {
           },
         },
         label: {
-          marginLeft: spacing(2),
+          marginLeft: spacing(1),
         },
         labelPlacementBottom: {
           '& $label': {
@@ -248,6 +279,11 @@ const core = {
         },
       },
     },
+    MuiSelect: {
+      defaultProps: {
+        variant: 'standard',
+      },
+    },
     MuiTabs: {
       defaultProps: {
         indicatorColor: 'primary',
@@ -264,15 +300,25 @@ const core = {
         root: {
           // FIXME: I've change the likes of &$selected to &.Mui-selected, but
           // I don't know what to change these to.
-          [`&$textColorInherit,
-            &$textColorPrimary,
-            &$textColorSecondary`]: {
+          [`&.MuiTab-textColorInherit,
+            &.MuiTab-textColorPrimary,
+            &.MuiTab-textColorSecondary`]: {
             opacity: 1,
           },
+          // [`&$textColorInherit,
+          //   &$textColorPrimary,
+          //   &$textColorSecondary`]: {
+          //   opacity: 1,
+          // },
         },
         textColorInherit: {},
         textColorPrimary: {},
         textColorSecondary: {},
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: 'standard',
       },
     },
     MuiTooltip: {
@@ -339,3 +385,5 @@ const core = {
 };
 
 export const coreTheme = createTheme(baseTheme, core);
+
+console.log('CORE THEME: ', baseTheme);

@@ -1,11 +1,21 @@
 import React from 'react';
 
+import { styled } from '@mui/material/styles';
+
 import { Checkbox as MuiCheckbox } from '@mui/material';
 
-import { makeStyles } from '@mui/styles';
+const PREFIX = 'Checkbox';
 
-const checkboxStyles = makeStyles(theme => ({
-  root: {
+const classes = {
+  root: `${PREFIX}-root`,
+  icon: `${PREFIX}-icon`,
+  checkedIcon: `${PREFIX}-checkedIcon`,
+  checked: `${PREFIX}-checked`,
+  disabled: `${PREFIX}-disabled`,
+};
+
+const Root = styled('span')(({ theme }) => ({
+  [`&.${classes.root}`]: {
     padding: 0,
     '&:hover': {
       backgroundColor: 'transparent',
@@ -14,7 +24,8 @@ const checkboxStyles = makeStyles(theme => ({
       backgroundColor: 'transparent',
     },
   },
-  icon: {
+
+  [`&.${classes.icon}`]: {
     width: '1rem',
     height: '1rem',
     borderRadius: '0.1875rem',
@@ -33,7 +44,8 @@ const checkboxStyles = makeStyles(theme => ({
       border: `1px solid ${theme.palette.primary.main}`,
     },
   },
-  checkedIcon: {
+
+  [`&.${classes.checkedIcon}`]: {
     position: 'relative',
     width: '1rem',
     height: '1rem',
@@ -64,25 +76,23 @@ const checkboxStyles = makeStyles(theme => ({
       border: `1px solid ${theme.palette.primary.main}`,
     },
   },
-  checked: {},
-  disabled: {},
+
+  [`& .${classes.checked}`]: {},
+  [`& .${classes.disabled}`]: {},
 }));
 
 /**
  * @param {import('@mui/material').CheckboxProps} props
  * @param {React.Ref<any>} ref
  */
-const Checkbox = (props, ref) => {
-  const { icon, checkedIcon, ...checkboxClasses } = checkboxStyles({});
-  return (
-    <MuiCheckbox
-      classes={checkboxClasses}
-      checkedIcon={<span className={checkedIcon} />}
-      icon={<span className={icon} />}
-      inputRef={ref}
-      {...props}
-    />
-  );
-};
+const Checkbox = (props, ref) => (
+  <MuiCheckbox
+    className={`${classes.root} ${classes.checked} ${classes.disabled}`}
+    checkedIcon={<Root className={classes.checkedIcon} />}
+    icon={<Root className={classes.icon} />}
+    inputRef={ref}
+    {...props}
+  />
+);
 
 export default React.forwardRef(Checkbox);

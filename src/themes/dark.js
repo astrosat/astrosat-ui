@@ -28,7 +28,7 @@ const dark = {
     MuiButton: {
       styleOverrides: {
         outlined: {
-          '&$disabled': {
+          '&.Mui-disabled': {
             borderColor: coreTheme.palette.action.disabled,
           },
         },
@@ -38,7 +38,7 @@ const dark = {
     MuiChip: {
       styleOverrides: {
         root: {
-          backgroundColor: coreTheme.palette.action.active,
+          backgroundColor: '#e0e0e0',
           color: coreTheme.palette.secondary.main,
         },
         outlined: { color: 'unset' },
@@ -46,9 +46,6 @@ const dark = {
           '&:hover': {
             backgroundColor: coreTheme.palette.grey[400],
           },
-        },
-        avatar: {
-          backgroundColor: coreTheme.palette.secondary.main,
         },
         icon: {
           color: 'inherit',
@@ -74,7 +71,7 @@ const dark = {
           '&:focus': {
             backgroundColor: coreTheme.palette.action.hover,
           },
-          '&$disabled': {
+          '& .Mui-disabled': {
             color: coreTheme.palette.action.disabled,
           },
         },
@@ -84,7 +81,7 @@ const dark = {
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          '&$error': {
+          '&.Mui-error': {
             color: coreTheme.palette.text.primary,
           },
         },
@@ -93,10 +90,19 @@ const dark = {
     MuiFormLabel: {
       styleOverrides: {
         root: {
-          color: coreTheme.palette.text.primary,
+          // color: coreTheme.palette.text.primary,
         },
       },
     },
+    // MuiLButtonBase: {
+    //   styleOverrides: {
+    //     root: {
+    //       '&.Mui-selected': {
+    //         backgroundColor: alpha(coreTheme.palette.secondary.main, 0.08),
+    //       },
+    //     },
+    //   },
+    // },
     MuiMenuItem: {
       styleOverrides: {
         root: {
@@ -116,7 +122,8 @@ const dark = {
     MuiTab: {
       styleOverrides: {
         root: {
-          '&$textColorPrimary': {
+          '&.MuiTab-textColorPrimary': {
+            // '&$textColorPrimary': {
             color: coreTheme.palette.text.primary,
           },
         },
@@ -128,3 +135,5 @@ const dark = {
 
 const darkTheme = createTheme(coreTheme, dark);
 export default darkTheme;
+
+console.log('DARK THEME: ', darkTheme);

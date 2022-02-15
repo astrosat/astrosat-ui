@@ -1,5 +1,8 @@
 import React from 'react';
-import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
+import {
+  ThemeProvider as MuiThemeProvider,
+  StyledEngineProvider,
+} from '@mui/material/styles';
 import themes from 'themes';
 
 /**
@@ -9,7 +12,9 @@ import themes from 'themes';
  * }} props
  */
 const ThemeProvider = ({ children, theme = 'dark' }) => (
+  // <StyledEngineProvider injectFirst>
   <MuiThemeProvider theme={themes[theme]}>{children}</MuiThemeProvider>
+  // </StyledEngineProvider>
 );
 
 export default ThemeProvider;

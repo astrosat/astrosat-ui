@@ -1,11 +1,17 @@
 import React from 'react';
 
+import { styled } from '@mui/material/styles';
+
 import { Link as MuiLink } from '@mui/material';
 
-import { makeStyles } from '@mui/styles';
+const PREFIX = 'Link';
 
-const useStyles = makeStyles(theme => ({
-  root: {
+const classes = {
+  root: `${PREFIX}-root`,
+};
+
+const StyledMuiLink = styled(MuiLink)(({ theme }) => ({
+  [`&.${classes.root}`]: {
     borderBottom: `0.0625em solid ${theme.palette.primary.main}`,
     textDecoration: 'none',
     '&:hover': {
@@ -22,9 +28,8 @@ const useStyles = makeStyles(theme => ({
  * @param {import('@mui/material').LinkProps} props
  * @param {React.Ref<any>} ref
  */
-const Link = (props, ref) => {
-  const classes = useStyles(props);
+const Link = (props, ref) => (
+  <StyledMuiLink ref={ref} className={classes.root} {...props} />
+);
 
-  return <MuiLink ref={ref} classes={classes} {...props} />;
-};
 export default React.forwardRef(Link);

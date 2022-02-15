@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 
+import { styled } from '@mui/material/styles';
+
 import { InputAdornment } from '@mui/material';
-import { makeStyles } from '@mui/styles';
 
 import { default as IconButton } from '../icon-button/icon-button.component';
 import { default as Input } from '../input/input.component';
 
 import { EyeIcon, EyeSlashIcon } from '../icons';
 
-const INPUT_TYPE = {
-  text: 'text',
-  password: 'password',
+const PREFIX = 'PasswordInput';
+
+const classes = {
+  root: `${PREFIX}-root`,
 };
 
-const iconStyles = makeStyles(theme => ({
-  root: {
-    /**
-     * @param {import('../input/input.component.js').InputProps} props
-     */
+const StyledInput = styled(Input)(({ theme }) => ({
+  [`& .${classes.root}`]: {
     color: props => {
+      console.log('PROPS: ', props);
       if (props.error) return theme.palette.error.main;
       if (props.valid) return theme.palette.success.main;
       return 'inherit';
@@ -26,9 +26,11 @@ const iconStyles = makeStyles(theme => ({
   },
 }));
 
-/**
- * @param {import('../input/input.component.js').InputProps & {visibilityToggleButtonLabel?: string}} props
- */
+const INPUT_TYPE = {
+  text: 'text',
+  password: 'password',
+};
+
 const PasswordInput = ({
   type = INPUT_TYPE.password,
   visibilityToggleButtonLabel = 'Password Visibility Toggle',
@@ -36,7 +38,7 @@ const PasswordInput = ({
 }) => {
   const [_type, setType] = useState(type);
 
-  const iconClasses = iconStyles({ type: _type, ...rest });
+  console.log('ICON CLASSES: ', rest);
 
   const handleClick = () =>
     _type === INPUT_TYPE.password
@@ -51,15 +53,15 @@ const PasswordInput = ({
         aria-label={visibilityToggleButtonLabel}
       >
         {_type === INPUT_TYPE.text ? (
-          <EyeIcon classes={iconClasses} />
+          <EyeIcon className={classes.root} />
         ) : (
-          <EyeSlashIcon classes={iconClasses} />
+          <EyeSlashIcon className={classes.root} />
         )}
       </IconButton>
     </InputAdornment>
   );
 
-  return <Input type={_type} endAdornment={adornment} {...rest} />;
+  return <StyledInput type={_type} endAdornment={adornment} {...rest} />;
 };
 
 export default PasswordInput;

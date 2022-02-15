@@ -1,14 +1,12 @@
 import React from 'react';
 
-import { Alert } from '@mui/material';
-
-import { darken } from '@mui/material/styles';
-
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 
 import { Box, alpha } from '@mui/material';
+import Alert from '@mui/material/Alert';
 
 import ErrorIcon from '../icons/error-icon.component';
+import { darken } from '@mui/material/styles';
 
 import SuccessIcon from '../icons/correct-icon.component';
 
