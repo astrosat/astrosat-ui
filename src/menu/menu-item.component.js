@@ -1,11 +1,22 @@
 import React from 'react';
 
-import { MenuItem as MuiMenuItem } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 
-const menuItemStyles = makeStyles(theme => ({
-  root: {
-    padding: theme.spacing(0.5),
+import { MenuItem as MuiMenuItem } from '@mui/material';
+const PREFIX = 'MuiMenuItem';
+
+const classes = {
+  root: `${PREFIX}-root`
+};
+
+const StyledMuiMenuItem = styled(MuiMenuItem)((
+  {
+    theme
+  }
+) => ({
+  [`&.${classes.root}`]: {
+    padding: '0.25rem 0.5rem',
+    margin: '0 0.5rem',
     '& + &': {
       borderTop: `1px solid ${theme.palette.divider}`,
     },
@@ -17,7 +28,7 @@ const menuItemStyles = makeStyles(theme => ({
       borderBottomLeftRadius: theme.shape.borderRadius,
       borderBottomRightRadius: theme.shape.borderRadius,
     },
-  },
+  }
 }));
 
 /**
@@ -26,8 +37,7 @@ const menuItemStyles = makeStyles(theme => ({
  */
 
 const MenuItem = (props, ref) => {
-  const menuItemClasses = menuItemStyles(props);
-  return <MuiMenuItem classes={menuItemClasses} {...props} ref={ref} />;
+  return <StyledMuiMenuItem {...props} ref={ref} />;
 };
 
 export default React.forwardRef(MenuItem);
