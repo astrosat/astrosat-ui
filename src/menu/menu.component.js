@@ -4,14 +4,15 @@ import { styled } from '@mui/material/styles';
 
 import { Menu as MuiMenu } from '@mui/material';
 
-const PREFIX = 'MuiMenu';
+const PREFIX = 'Menu';
 
 const classes = {
   list: `${PREFIX}-list`,
 };
 
 const StyledMuiMenu = styled(MuiMenu)(({ theme }) => ({
-  [`&.${classes.list}`]: {
+  [`& .${classes.list}`]: {
+    backgroundColor: '#5d666e',
     marginLeft: theme.spacing(-0.25),
     marginRight: theme.spacing(-0.5),
     marginTop: '-10px',
