@@ -14,7 +14,7 @@ const StyledMuiMenuItem = styled(MuiMenuItem)(({ theme }) => ({
     padding: '0.2rem 0.5rem',
     margin: '0.1rem 0.15rem',
     backgroundColor: '#5d666e',
-    ':hover' : {
+    ':hover': {
       backgroundColor: 'rgb(71, 82, 90)',
     },
     '& + &': {

@@ -64,7 +64,6 @@ export {
   Paper,
   Popover,
   Popper,
-  Portal,
   RadioGroup,
   recomposeColor,
   responsiveFontSizes,
@@ -96,6 +95,8 @@ export {
 } from '@mui/material';
 
 export { createTheme } from '@mui/material/styles';
+
+export { default as Portal } from '@mui/material/Portal';
 
 export {
   createGenerateClassName,
