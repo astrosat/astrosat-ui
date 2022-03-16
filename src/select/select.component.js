@@ -17,14 +17,10 @@ const menuStyles = makeStyles(theme => ({
  */
 
 const Select = (
-  { MenuProps, input = <Input />, fullWidth = true, ...rest },
+  { MenuProps, input = <Input />, fullWidth = true, classes, ...rest },
   ref
 ) => {
-  const menuClasses = menuStyles({
-    fullWidth,
-    MenuProps,
-    ...rest,
-  });
+  const menuClasses = menuStyles({});
   return (
     <MuiSelect
       input={input}
@@ -34,6 +30,7 @@ const Select = (
         MenuListProps: { ...MenuProps?.MenuListProps, disablePadding: true },
         ...MenuProps,
       }}
+      classes={classes}
       {...rest}
       ref={ref}
     />
