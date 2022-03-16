@@ -23,7 +23,6 @@ const Select = (
   const menuClasses = menuStyles({});
   return (
     <MuiSelect
-      ref={ref}
       input={input}
       fullWidth={fullWidth}
       MenuProps={{
@@ -33,6 +32,7 @@ const Select = (
       }}
       classes={classes}
       {...rest}
+      ref={ref}
     />
   );
 };
