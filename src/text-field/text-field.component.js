@@ -9,6 +9,7 @@ import Input from '../input/input.component';
 import clsx from 'clsx';
 import PasswordInput from 'password-input/password-input.component';
 import Select from '../select/select.component';
+import { MaxLength } from './text-field.stories';
 
 export const styles = {
   /* Styles applied to the root element. */
@@ -140,7 +141,7 @@ const TextField = React.forwardRef(
         }}
         onFocus={onFocus}
         placeholder={placeholder}
-        inputProps={{ inputProps: inputProps, maxLength: maxLength }}
+        inputProps={{ ...inputProps, maxLength }}
         valid={valid}
         {...InputMore}
         {...InputProps}
