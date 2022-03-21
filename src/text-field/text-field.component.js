@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   FormHelperText,
   FormControl,
@@ -21,6 +21,7 @@ const TextField = React.forwardRef(
    *   {
    *    valid?: import('../input/input.component').InputProps['valid']
    *    visibilityToggleButtonLabel?: string
+   *    maxLength: number
    *   }
    * } props
    * @param {*} ref
@@ -46,6 +47,7 @@ const TextField = React.forwardRef(
       InputProps,
       inputRef,
       label,
+      maxLength,
       multiline = false,
       name,
       onBlur,
@@ -64,6 +66,15 @@ const TextField = React.forwardRef(
       visibilityToggleButtonLabel,
       ...other
     } = props;
+
+    const [charCount, setCharCount] = useState(0);
+
+    const getHelperText = () => {
+      if (maxLength) {
+        return `${maxLength - charCount}/${maxLength} characters max length`;
+      }
+      return helperText;
+    };
 
     if (process.env.NODE_ENV !== 'production') {
       if (select && !children) {
@@ -126,16 +137,21 @@ const TextField = React.forwardRef(
         id={id}
         inputRef={inputRef}
         onBlur={onBlur}
-        onChange={onChange}
+        onChange={e => {
+          if (maxLength) {
+            const count = e.target.value.length;
+            setCharCount(count);
+          }
+          if (onChange) onChange(e);
+        }}
         onFocus={onFocus}
         placeholder={placeholder}
-        inputProps={inputProps}
+        inputProps={{ maxLength: maxLength }}
         valid={valid}
         {...InputMore}
         {...InputProps}
       />
     );
-
     return (
       <FormControl
         className={clsx(classes.root, className)}
@@ -171,8 +187,12 @@ const TextField = React.forwardRef(
         )}
 
         {helperText && (
-          <FormHelperText id={helperTextId} {...FormHelperTextProps}>
-            {helperText}
+          <FormHelperText
+            id={helperTextId}
+            {...FormHelperTextProps}
+            error={charCount === maxLength ? error === false : error === true}
+          >
+            {getHelperText()}
           </FormHelperText>
         )}
       </FormControl>

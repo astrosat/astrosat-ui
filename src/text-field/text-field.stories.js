@@ -1,6 +1,7 @@
 import { MenuItem } from 'index';
 import React from 'react';
 import TextField from './text-field.component';
+import { FormHelperText } from '@material-ui/core';
 
 export default { title: 'TextField' };
 
@@ -60,4 +61,10 @@ Select.args = {
     <MenuItem>Option 2</MenuItem>,
     <MenuItem>Option 3</MenuItem>,
   ],
+};
+export const MaxLength = Template.bind({});
+MaxLength.args = {
+  maxLength: 50,
+  label: 'Helper Text',
+  helperText: 'Test Text',
 };
