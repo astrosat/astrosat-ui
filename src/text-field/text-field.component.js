@@ -140,7 +140,7 @@ const TextField = React.forwardRef(
         }}
         onFocus={onFocus}
         placeholder={placeholder}
-        inputProps={{ maxLength: maxLength }}
+        inputProps={inputProps}
         valid={valid}
         {...InputMore}
         {...InputProps}

@@ -58,6 +58,7 @@ Select.args = {
 
 export const MaxLength = Template.bind({});
 MaxLength.args = {
+  inputProps: { maxLength: 50 },
   maxLength: 50,
   label: 'Max Length',
 };
@@ -70,6 +71,7 @@ HelperText.args = {
 
 export const MaxLengthAndHelperText = Template.bind({});
 MaxLengthAndHelperText.args = {
+  inputProps: { maxLength: 50 },
   maxLength: 50,
   label: 'Max Length And HelperText',
   helperText: 'This is helper text',
