@@ -69,13 +69,6 @@ const TextField = React.forwardRef(
 
     const [charCount, setCharCount] = useState(0);
 
-    const getHelperText = () => {
-      if (maxLength) {
-        return `${maxLength - charCount}/${maxLength} characters max length`;
-      }
-      return helperText;
-    };
-
     if (process.env.NODE_ENV !== 'production') {
       if (select && !children) {
         console.error(
@@ -117,6 +110,7 @@ const TextField = React.forwardRef(
       InputMore.visibilityToggleButtonLabel = visibilityToggleButtonLabel;
     }
 
+    const maxLengthId = maxLength && id ? `${id}-max-length` : undefined;
     const helperTextId = helperText && id ? `${id}-helper-text` : undefined;
     const inputLabelId = label && id ? `${id}-label` : undefined;
     const InputComponent = type === 'password' ? PasswordInput : Input;
@@ -170,7 +164,6 @@ const TextField = React.forwardRef(
             {label}
           </InputLabel>
         )}
-
         {select ? (
           <Select
             aria-describedby={helperTextId}
@@ -185,14 +178,18 @@ const TextField = React.forwardRef(
         ) : (
           InputElement
         )}
-
-        {helperText && (
+        {maxLength && (
           <FormHelperText
-            id={helperTextId}
+            id={maxLengthId}
             {...FormHelperTextProps}
-            error={charCount === maxLength ? error === false : error === true}
+            error={charCount === maxLength}
           >
-            {getHelperText()}
+            {`${charCount}/${maxLength} characters max length`}
+          </FormHelperText>
+        )}
+        {helperText && (
+          <FormHelperText id={helperTextId} {...FormHelperTextProps}>
+            {helperText}
           </FormHelperText>
         )}
       </FormControl>
