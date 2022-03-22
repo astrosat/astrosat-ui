@@ -1,7 +1,9 @@
 import { Pagination } from '@material-ui/lab';
 import * as React from 'react';
 
-export default { title: 'Pagination' };
+const Index = { title: 'Pagination' };
+
+export default Index;
 
 export const Basic = () => (
   <>

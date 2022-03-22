@@ -2,7 +2,9 @@ import { MenuItem } from 'index';
 import React from 'react';
 import TextField from './text-field.component';
 
-export default { title: 'TextField' };
+const Index = { title: 'TextField' };
+
+export default Index;
 
 const Template = args => <TextField {...args} />;
 

@@ -4,7 +4,9 @@ import { default as MenuItem } from './menu-item.component';
 
 import { default as Menu } from './menu.component';
 
-export default { title: 'Menu' };
+const Index = { title: 'Menu' };
+
+export default Index;
 
 export const Options = () => {
   return (

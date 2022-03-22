@@ -2,7 +2,9 @@ import React from 'react';
 
 import Well from './well.component';
 
-export default { title: 'Well' };
+const Index = { title: 'Well' };
+
+export default Index;
 
 export const Standard = () => {
   return (

@@ -6,7 +6,9 @@ import { FormControlLabel } from '@material-ui/core';
 
 import FormGroup from '@material-ui/core/FormGroup';
 
-export default { title: 'Switch' };
+const Index = { title: 'Switch' };
+
+export default Index;
 
 export const Color = () => (
   <FormGroup>

@@ -20,7 +20,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default { title: 'Select' };
+const Index = { title: 'Select' };
+
+export default Index;
 
 export const Options = () => (
   <Select value="">

@@ -6,7 +6,9 @@ import { RadioGroup, FormControlLabel } from '@material-ui/core';
 
 import { default as Radio } from './radio.component';
 
-export default { title: 'Radio' };
+const Index = { title: 'Radio' };
+
+export default Index;
 
 export const Default = () => (
   <FormControlLabel

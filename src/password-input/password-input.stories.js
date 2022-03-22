@@ -4,7 +4,9 @@ import { action } from '@storybook/addon-actions';
 
 import { default as PasswordInput } from './password-input.component';
 
-export default { title: 'PasswordInput' };
+const Index = { title: 'PasswordInput' };
+
+export default Index;
 
 export const Default = () => (
   <PasswordInput onChange={action('PasswordInput changed')} />

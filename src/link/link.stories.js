@@ -4,7 +4,9 @@ import { default as Link } from './link.component';
 
 import Typography from '@material-ui/core/Typography';
 
-export default { title: 'Link' };
+const Index = { title: 'Link' };
+
+export default Index;
 
 export const ActualLink = () => {
   const preventDefault = event => event.preventDefault();

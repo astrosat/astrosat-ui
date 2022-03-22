@@ -2,7 +2,9 @@ import * as React from 'react';
 
 import { Button, ButtonGroup, Box } from '../index';
 
-export default { title: 'ButtonGroup' };
+const Index = { title: 'ButtonGroup' };
+
+export default Index;
 
 export const Basic = () => (
   <Box display="flex" flexDirection="column">
