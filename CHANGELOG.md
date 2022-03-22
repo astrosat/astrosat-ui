@@ -1,3 +1,13 @@
+## [2.9.1](https://github.com/astrosat/astrosat-ui/compare/v2.9.0...v2.9.1) (2022-03-22)
+
+
+### Bug Fixes
+
+* **frontend:** Change default exports to named variables ([73685ba](https://github.com/astrosat/astrosat-ui/commit/73685ba624f12e0e0660c621df59a15ba1d1092b))
+* **frontend:** Move ref back to after spread ([8c641fc](https://github.com/astrosat/astrosat-ui/commit/8c641fcaa91ea038478698deb8bbb2454751f05d))
+* **frontend:** Refactor Select component classes prop ([704cd01](https://github.com/astrosat/astrosat-ui/commit/704cd0170b81926faf702249ff148f8faf28dcdb))
+* **frontend:** Remove unused import ([291a164](https://github.com/astrosat/astrosat-ui/commit/291a164b3f282cba7cf27f60d38c49fcff5b49da))
+
 # [2.9.0](https://github.com/astrosat/astrosat-ui/compare/v2.8.1...v2.9.0) (2022-02-08)
 
 
