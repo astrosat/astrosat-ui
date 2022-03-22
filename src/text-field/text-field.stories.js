@@ -17,12 +17,6 @@ Disabled.args = {
   disabled: true,
 };
 
-export const HelperText = Template.bind({});
-HelperText.args = {
-  label: 'Helper Text',
-  helperText: 'This is helper text',
-};
-
 export const Error = Template.bind({});
 Error.args = {
   label: 'Error',
@@ -60,4 +54,23 @@ Select.args = {
     <MenuItem>Option 2</MenuItem>,
     <MenuItem>Option 3</MenuItem>,
   ],
+};
+
+export const MaxLength = Template.bind({});
+MaxLength.args = {
+  maxLength: 50,
+  label: 'Max Length',
+};
+
+export const HelperText = Template.bind({});
+HelperText.args = {
+  label: 'Helper Text',
+  helperText: 'This is helper text',
+};
+
+export const MaxLengthAndHelperText = Template.bind({});
+MaxLengthAndHelperText.args = {
+  maxLength: 50,
+  label: 'Max Length And HelperText',
+  helperText: 'This is helper text',
 };

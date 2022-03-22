@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   FormHelperText,
   FormControl,
@@ -9,6 +9,7 @@ import Input from '../input/input.component';
 import clsx from 'clsx';
 import PasswordInput from 'password-input/password-input.component';
 import Select from '../select/select.component';
+import { MaxLength } from './text-field.stories';
 
 export const styles = {
   /* Styles applied to the root element. */
@@ -21,6 +22,7 @@ const TextField = React.forwardRef(
    *   {
    *    valid?: import('../input/input.component').InputProps['valid']
    *    visibilityToggleButtonLabel?: string
+   *    maxLength: number
    *   }
    * } props
    * @param {*} ref
@@ -42,10 +44,11 @@ const TextField = React.forwardRef(
       hiddenLabel,
       id,
       InputLabelProps = {},
-      inputProps,
+      inputProps = {},
       InputProps,
       inputRef,
       label,
+      maxLength,
       multiline = false,
       name,
       onBlur,
@@ -64,6 +67,8 @@ const TextField = React.forwardRef(
       visibilityToggleButtonLabel,
       ...other
     } = props;
+
+    const [charCount, setCharCount] = useState(0);
 
     if (process.env.NODE_ENV !== 'production') {
       if (select && !children) {
@@ -106,6 +111,7 @@ const TextField = React.forwardRef(
       InputMore.visibilityToggleButtonLabel = visibilityToggleButtonLabel;
     }
 
+    const maxLengthId = maxLength && id ? `${id}-max-length` : undefined;
     const helperTextId = helperText && id ? `${id}-helper-text` : undefined;
     const inputLabelId = label && id ? `${id}-label` : undefined;
     const InputComponent = type === 'password' ? PasswordInput : Input;
@@ -126,16 +132,21 @@ const TextField = React.forwardRef(
         id={id}
         inputRef={inputRef}
         onBlur={onBlur}
-        onChange={onChange}
+        onChange={e => {
+          if (maxLength) {
+            const count = e.target.value.length;
+            setCharCount(count);
+          }
+          if (onChange) onChange(e);
+        }}
         onFocus={onFocus}
         placeholder={placeholder}
-        inputProps={inputProps}
+        inputProps={{ ...inputProps, maxLength }}
         valid={valid}
         {...InputMore}
         {...InputProps}
       />
     );
-
     return (
       <FormControl
         className={clsx(classes.root, className)}
@@ -154,7 +165,6 @@ const TextField = React.forwardRef(
             {label}
           </InputLabel>
         )}
-
         {select ? (
           <Select
             aria-describedby={helperTextId}
@@ -169,7 +179,15 @@ const TextField = React.forwardRef(
         ) : (
           InputElement
         )}
-
+        {maxLength && (
+          <FormHelperText
+            id={maxLengthId}
+            {...FormHelperTextProps}
+            error={charCount === maxLength}
+          >
+            {`${charCount}/${maxLength} characters max length`}
+          </FormHelperText>
+        )}
         {helperText && (
           <FormHelperText id={helperTextId} {...FormHelperTextProps}>
             {helperText}
