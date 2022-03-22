@@ -2,7 +2,9 @@ import { Box } from '@material-ui/core';
 import { Typography } from '..';
 import * as React from 'react';
 
-export default { title: 'Typography' };
+const Index = { title: 'Typography' };
+
+export default Index;
 
 export const Types = () => (
   <Box display="flex" flexDirection="column">

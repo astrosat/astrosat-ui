@@ -2,7 +2,9 @@ import { Input } from '..';
 import React, { useState } from 'react';
 import PasswordStrengthMeter from './password-strength-meter.component';
 
-export default { title: 'Password Strength Meter' };
+const Index = { title: 'Password Strength Meter' };
+
+export default Index;
 
 export const Strengths = () => (
   <>

@@ -5,7 +5,9 @@ import { action } from '@storybook/addon-actions';
 import { default as Input } from './input.component';
 import { SearchIcon } from 'icons';
 
-export default { title: 'Input' };
+const Index = { title: 'Input' };
+
+export default Index;
 
 export const Default = () => <Input onChange={action('Input changed')} />;
 

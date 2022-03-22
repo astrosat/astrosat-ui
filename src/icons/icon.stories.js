@@ -3,7 +3,9 @@ import { Box } from '@material-ui/core';
 
 import * as Icons from '.';
 
-export default { title: 'Icons' };
+const Index = { title: 'Icons' };
+
+export default Index;
 
 export const All = () => (
   <Box display="flex" width="100%" flexWrap="wrap">

@@ -47,10 +47,12 @@ const renderButtons = ({
   );
 };
 
-export default {
+const Index = {
   title: 'ToggleButtons',
   component: ToggleButton,
 };
+
+export default Index;
 
 export const Default = () =>
   // @ts-ignore

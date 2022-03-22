@@ -6,7 +6,9 @@ import { FormGroup, FormControlLabel } from '@material-ui/core';
 
 import { default as Checkbox } from './checkbox.component';
 
-export default { title: 'Checkbox' };
+const Index = { title: 'Checkbox' };
+
+export default Index;
 
 export const Default = () => (
   <FormControlLabel

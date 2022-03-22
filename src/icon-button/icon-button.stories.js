@@ -3,7 +3,9 @@ import { SearchIcon } from 'icons';
 import React from 'react';
 import IconButton from './icon-button.component';
 
-export default { title: 'IconButton' };
+const Index = { title: 'IconButton' };
+
+export default Index;
 
 /**
  * @param {import('@material-ui/core').IconButtonProps} props

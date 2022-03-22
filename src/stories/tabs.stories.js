@@ -2,7 +2,9 @@ import { LayersIcon, MapIcon, SearchIcon } from 'icons';
 import React from 'react';
 import { Tabs, Tab } from '../index';
 
-export default { title: 'Tabs', args: { value: 0 } };
+const Index = { title: 'Tabs', args: { value: 0 } };
+
+export default Index;
 
 export const Basic = args => (
   <Tabs aria-label="simple tabs example" value={args.value}>

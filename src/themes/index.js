@@ -1,4 +1,6 @@
 import dark from './dark';
 import light from './light';
 
-export default { dark, light };
+const Index = { dark, light };
+
+export default Index;
