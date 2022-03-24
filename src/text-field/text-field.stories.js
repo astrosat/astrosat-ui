@@ -70,9 +70,17 @@ HelperText.args = {
   helperText: 'This is helper text',
 };
 
-export const MaxLengthAndHelperText = Template.bind({});
-MaxLengthAndHelperText.args = {
+export const MaxLengthText = Template.bind({});
+MaxLengthText.args = {
   maxLength: 50,
-  label: 'Max Length And HelperText',
-  helperText: 'This is helper text',
+  label: 'Max Length Text',
+  maxLengthHelperText: 'User typed $charCount/$maxLength of max characters',
+};
+
+export const MaxLengthTextAndHelperText = Template.bind({});
+MaxLengthTextAndHelperText.args = {
+  maxLength: 40,
+  label: 'Max Length Text And HelperText',
+  maxLengthHelperText: 'User typed $charCount/$maxLength of max characters',
+  helperText: 'Test is a helper text.',
 };

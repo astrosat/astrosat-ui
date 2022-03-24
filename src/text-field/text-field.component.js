@@ -22,6 +22,7 @@ const TextField = React.forwardRef(
    *    valid?: import('../input/input.component').InputProps['valid']
    *    visibilityToggleButtonLabel?: string
    *    maxLength: number
+   *    maxLengthHelperText: string
    *   }
    * } props
    * @param {*} ref
@@ -48,6 +49,7 @@ const TextField = React.forwardRef(
       inputRef,
       label,
       maxLength,
+      maxLengthHelperText,
       multiline = false,
       name,
       onBlur,
@@ -68,6 +70,24 @@ const TextField = React.forwardRef(
     } = props;
 
     const [charCount, setCharCount] = useState(0);
+
+    const getHelperText = maxLengthHelperText => {
+      if (!maxLength) {
+        return maxLengthHelperText;
+      }
+
+      const injectionMaps = [
+        { param: '$charCount', value: charCount },
+        { param: '$maxLength', value: maxLength },
+      ];
+
+      injectionMaps.forEach(
+        ({ param, value }) =>
+          (maxLengthHelperText = maxLengthHelperText.replace(param, `${value}`))
+      );
+
+      return maxLengthHelperText;
+    };
 
     if (process.env.NODE_ENV !== 'production') {
       if (select && !children) {
@@ -131,12 +151,8 @@ const TextField = React.forwardRef(
         id={id}
         inputRef={inputRef}
         onBlur={onBlur}
-        onChange={e => {
-          if (maxLength) {
-            const count = e.target.value.length;
-            setCharCount(count);
-          }
-          if (onChange) onChange(e);
+        onChange={({ target: { value } }) => {
+          setCharCount(value.length);
         }}
         onFocus={onFocus}
         placeholder={placeholder}
@@ -146,6 +162,7 @@ const TextField = React.forwardRef(
         {...InputProps}
       />
     );
+
     return (
       <FormControl
         className={clsx(classes.root, className)}
@@ -184,7 +201,7 @@ const TextField = React.forwardRef(
             {...FormHelperTextProps}
             error={charCount === maxLength}
           >
-            {`${charCount}/${maxLength} characters max length`}
+            {!!maxLengthHelperText ? getHelperText(maxLengthHelperText) : null}
           </FormHelperText>
         )}
         {helperText && (
