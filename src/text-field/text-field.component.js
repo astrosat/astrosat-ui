@@ -22,7 +22,7 @@ const TextField = React.forwardRef(
    *    valid?: import('../input/input.component').InputProps['valid']
    *    visibilityToggleButtonLabel?: string
    *    maxLength: number
-   *    maxLengthHelperText: string
+   *    maxLengthTemplate: string
    *   }
    * } props
    * @param {*} ref
@@ -49,7 +49,7 @@ const TextField = React.forwardRef(
       inputRef,
       label,
       maxLength,
-      maxLengthHelperText,
+      maxLengthTemplate,
       multiline = false,
       name,
       onBlur,
@@ -71,23 +71,38 @@ const TextField = React.forwardRef(
 
     const [charCount, setCharCount] = useState(0);
 
-    const getHelperText = maxLengthHelperText => {
-      if (!maxLength) {
-        return maxLengthHelperText;
+    const getMaxLengthText = () => {
+      if (maxLengthTemplate) {
+        const injectionMaps = [
+          { param: '$charCount', value: charCount },
+          { param: '$maxLength', value: maxLength },
+        ];
+        let str = maxLengthTemplate;
+        injectionMaps.forEach(
+          ({ param, value }) => (str = str.replace(param, `${value}`))
+        );
+        return str;
+        // if (
+        //   maxLength &&
+        //   maxLengthTemplate.includes('$charCount' && '$maxLength')
+        // ) {
+        //   return str;
+        // } else {
+        //   `${charCount}/${maxLength} characters max length` &&
+        //     console.log(
+        //       'Warning!: maxLengthTemplate string should contains $charCount and $maxLength params'
+        //     );
+        // }
+      } else {
+        return `${charCount}/${maxLength} characters max length`;
       }
-
-      const injectionMaps = [
-        { param: '$charCount', value: charCount },
-        { param: '$maxLength', value: maxLength },
-      ];
-
-      injectionMaps.forEach(
-        ({ param, value }) =>
-          (maxLengthHelperText = maxLengthHelperText.replace(param, `${value}`))
-      );
-
-      return maxLengthHelperText;
     };
+
+    if (!maxLength && maxLengthTemplate) {
+      console.log(
+        'WARNING!: maxLengthTemplate must also have a maxLength prop.'
+      );
+    }
 
     if (process.env.NODE_ENV !== 'production') {
       if (select && !children) {
@@ -201,7 +216,7 @@ const TextField = React.forwardRef(
             {...FormHelperTextProps}
             error={charCount === maxLength}
           >
-            {!!maxLengthHelperText ? getHelperText(maxLengthHelperText) : null}
+            {getMaxLengthText()}
           </FormHelperText>
         )}
         {helperText && (
