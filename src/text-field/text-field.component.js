@@ -15,6 +15,8 @@ export const styles = {
   root: {},
 };
 
+const DEFAULT_LAX_LENGTH_TEMPLATE = '($charCount/$maxLength) max characters';
+
 const TextField = React.forwardRef(
   /**
    * @param {import('@material-ui/core').TextFieldProps &
@@ -22,6 +24,7 @@ const TextField = React.forwardRef(
    *    valid?: import('../input/input.component').InputProps['valid']
    *    visibilityToggleButtonLabel?: string
    *    maxLength: number
+   *    maxLengthTemplate: string
    *   }
    * } props
    * @param {*} ref
@@ -48,6 +51,7 @@ const TextField = React.forwardRef(
       inputRef,
       label,
       maxLength,
+      maxLengthTemplate,
       multiline = false,
       name,
       onBlur,
@@ -68,6 +72,29 @@ const TextField = React.forwardRef(
     } = props;
 
     const [charCount, setCharCount] = useState(0);
+
+    const getMaxLengthText = () => {
+      let template = maxLengthTemplate
+        ? maxLengthTemplate
+        : DEFAULT_LAX_LENGTH_TEMPLATE;
+
+      const injectionMaps = [
+        { param: '$charCount', value: charCount },
+        { param: '$maxLength', value: maxLength },
+      ];
+
+      injectionMaps.forEach(
+        ({ param, value }) => (template = template.replace(param, `${value}`))
+      );
+
+      return template;
+    };
+
+    if (!maxLength && maxLengthTemplate) {
+      console.error(
+        'WARNING!: maxLengthTemplate must also have a maxLength prop.'
+      );
+    }
 
     if (process.env.NODE_ENV !== 'production') {
       if (select && !children) {
@@ -131,12 +158,8 @@ const TextField = React.forwardRef(
         id={id}
         inputRef={inputRef}
         onBlur={onBlur}
-        onChange={e => {
-          if (maxLength) {
-            const count = e.target.value.length;
-            setCharCount(count);
-          }
-          if (onChange) onChange(e);
+        onChange={({ target: { value } }) => {
+          setCharCount(value.length);
         }}
         onFocus={onFocus}
         placeholder={placeholder}
@@ -146,6 +169,7 @@ const TextField = React.forwardRef(
         {...InputProps}
       />
     );
+
     return (
       <FormControl
         className={clsx(classes.root, className)}
@@ -184,7 +208,7 @@ const TextField = React.forwardRef(
             {...FormHelperTextProps}
             error={charCount === maxLength}
           >
-            {`${charCount}/${maxLength} characters max length`}
+            {getMaxLengthText()}
           </FormHelperText>
         )}
         {helperText && (
