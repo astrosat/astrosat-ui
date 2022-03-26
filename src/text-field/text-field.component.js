@@ -15,6 +15,8 @@ export const styles = {
   root: {},
 };
 
+const DEFAULT_LAX_LENGTH_TEMPLATE = '($charCount/$maxLength) max characters';
+
 const TextField = React.forwardRef(
   /**
    * @param {import('@material-ui/core').TextFieldProps &
@@ -72,34 +74,24 @@ const TextField = React.forwardRef(
     const [charCount, setCharCount] = useState(0);
 
     const getMaxLengthText = () => {
-      if (maxLengthTemplate) {
-        const injectionMaps = [
-          { param: '$charCount', value: charCount },
-          { param: '$maxLength', value: maxLength },
-        ];
-        let str = maxLengthTemplate;
-        injectionMaps.forEach(
-          ({ param, value }) => (str = str.replace(param, `${value}`))
-        );
-        return str;
-        // if (
-        //   maxLength &&
-        //   maxLengthTemplate.includes('$charCount' && '$maxLength')
-        // ) {
-        //   return str;
-        // } else {
-        //   `${charCount}/${maxLength} characters max length` &&
-        //     console.log(
-        //       'Warning!: maxLengthTemplate string should contains $charCount and $maxLength params'
-        //     );
-        // }
-      } else {
-        return `${charCount}/${maxLength} characters max length`;
-      }
+      let template = maxLengthTemplate
+        ? maxLengthTemplate
+        : DEFAULT_LAX_LENGTH_TEMPLATE;
+
+      const injectionMaps = [
+        { param: '$charCount', value: charCount },
+        { param: '$maxLength', value: maxLength },
+      ];
+
+      injectionMaps.forEach(
+        ({ param, value }) => (template = template.replace(param, `${value}`))
+      );
+
+      return template;
     };
 
     if (!maxLength && maxLengthTemplate) {
-      console.log(
+      console.error(
         'WARNING!: maxLengthTemplate must also have a maxLength prop.'
       );
     }
