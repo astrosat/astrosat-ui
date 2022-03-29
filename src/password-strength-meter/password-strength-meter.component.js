@@ -106,7 +106,7 @@ const PasswordStrengthMeter = ({ password = '', className }) => {
       secondary: {
         main: '#0f0',
       },
-      error: {
+      error: { // this doesn't work
         main: '#f00',
       },
     },
