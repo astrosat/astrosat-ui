@@ -1,14 +1,54 @@
 import React from 'react';
 
 import {
+  styled,
   Fade,
   Grid,
   LinearProgress,
-  makeStyles,
+  createTheme,
+  ThemeProvider,
   Typography,
 } from '@material-ui/core';
-import clsx from 'clsx';
+
 import zxcvbn from 'zxcvbn';
+
+const PREFIX = 'PasswordStrengthMeter';
+
+const classes = {
+  root: `${PREFIX}-root`,
+  bar: `${PREFIX}-bar`,
+  grid: `${PREFIX}-grid`,
+  text: `${PREFIX}-text`,
+};
+
+const StyledGrid = styled(Grid)(({ theme }) => {
+  console.log('theme', theme);
+  return {
+    [`& .${classes.root}`]: {
+      minHeight: '0.5rem',
+      borderRadius: '100vh',
+      backgroundColor: theme.palette.grey[500],
+    },
+    [`& .${classes.bar}`]: {
+      borderRadius: '100vh',
+      //backgroundColor: getColor(theme),
+      transition: theme.transitions.create(['transform', 'background-color'], {
+        easing: 'linear',
+      }),
+    },
+    [`& .${classes.grid}`]: {
+      minHeight: '1.375rem',
+      alignItems: 'center',
+      // [theme.breakpoints.only('xs')]: {
+      //   minHeight: '1.6875rem',
+      //   alignItems: 'flex-start',
+      // },
+    },
+    [`& .${classes.text}`]: {
+      //color: getColor(theme),
+    },
+  };
+});
 
 /**
  * @param {number} score
@@ -31,44 +71,22 @@ const getPasswordStrength = score => {
 
 /**
  * @param {import('@material-ui/core').Theme} theme
- * @returns {(props: {strengthValue: number}) => string}
+ * @returns {props => string}
  */
-const getColor = theme => props => {
-  switch (props.strengthValue) {
+const getColor = (theme, strength) => {
+  console.log(`getColor(${theme},${strength})`);
+  switch (strength) {
     case 66:
-      return theme.palette.primary.main;
+      console.log('==>', theme.palette.primary.main);
+      return 'secondary';
     case 100:
-      return theme.palette.success.main;
+      console.log('==>', theme.palette.success.main);
+      return 'primary';
     default:
-      return theme.palette.error.main;
+      console.log('==>', theme.palette.error.main);
+      return 'error';
   }
 };
-
-const meterStyles = makeStyles(theme => ({
-  root: {
-    minHeight: '0.5rem',
-    borderRadius: '100vh',
-    backgroundColor: theme.palette.grey[500],
-  },
-  bar: {
-    borderRadius: '100vh',
-    backgroundColor: getColor(theme),
-    transition: theme.transitions.create(['transform', 'background-color'], {
-      easing: 'linear',
-    }),
-  },
-  grid: {
-    minHeight: '1.375rem',
-    alignItems: 'center',
-    [theme.breakpoints.only('xs')]: {
-      minHeight: '1.6875rem',
-      alignItems: 'flex-start',
-    },
-  },
-  text: {
-    color: getColor(theme),
-  },
-}));
 
 /**
  * @param {{
@@ -80,31 +98,43 @@ const PasswordStrengthMeter = ({ password = '', className }) => {
   const passwordResult = zxcvbn(password);
   const [text, value] = getPasswordStrength(password && passwordResult.score);
 
-  const {
-    text: textClasses,
-    grid: gridClasses,
-    ...meterClasses
-  } = meterStyles({
-    strengthValue: value,
+  const customTheme = createTheme({
+    palette: {
+      primary: {
+        main: '#00f',
+      },
+      secondary: {
+        main: '#0f0',
+      },
+      error: {
+        main: '#f00',
+      },
+    },
   });
+  console.log('Strength text', text);
+  console.log('Strength value', value);
+  console.log('customTheme', customTheme);
 
   return (
-    <Grid className={clsx(gridClasses, className)} container>
-      <Grid item xs={12} sm={10}>
-        <LinearProgress
-          classes={meterClasses}
-          variant="determinate"
-          value={value}
-        />
-      </Grid>
-      <Grid item xs={12} sm={2} container justifyContent="flex-end">
-        <Fade in={!!text}>
-          <Typography className={textClasses} variant="caption">
-            {text}
-          </Typography>
-        </Fade>
-      </Grid>
-    </Grid>
+    <ThemeProvider theme={customTheme}>
+      <StyledGrid container>
+        <Grid item xs={12} sm={10}>
+          <LinearProgress
+            //color={getColor(customTheme, value)}
+            //barColorPrimary={getColor(customTheme, value)}
+            color={getColor(customTheme, value)}
+            style={{ backgroundColor: '#fff' }}
+            variant="determinate"
+            value={value}
+          />
+        </Grid>
+        <Grid item xs={12} sm={2} container justifyContent="flex-end">
+          <Fade in={!!text}>
+            <Typography variant="caption">{text}</Typography>
+          </Fade>
+        </Grid>
+      </StyledGrid>
+    </ThemeProvider>
   );
 };
 
