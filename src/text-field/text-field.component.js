@@ -134,6 +134,7 @@ const TextField = React.forwardRef(
       InputMore.visibilityToggleButtonLabel = visibilityToggleButtonLabel;
     }
 
+    const maxLengthId = maxLength && id ? `${id}-max-length` : undefined;
     const helperTextId = helperText && id ? `${id}-helper-text` : undefined;
     const inputLabelId = label && id ? `${id}-label` : undefined;
     const InputComponent = type === 'password' ? PasswordInput : Input;
