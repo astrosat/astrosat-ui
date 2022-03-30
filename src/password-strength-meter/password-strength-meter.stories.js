@@ -8,7 +8,7 @@ export default Index;
 
 export const Strengths = () => (
   <>
-    <PasswordStrengthMeter password=" " />
+    <PasswordStrengthMeter password="" />
     <PasswordStrengthMeter password="panda" />
     <PasswordStrengthMeter password="pandaconcrete" />
     <PasswordStrengthMeter password="pandaconcretespoon" />

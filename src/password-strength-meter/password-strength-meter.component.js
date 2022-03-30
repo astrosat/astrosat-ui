@@ -22,7 +22,6 @@ const classes = {
 };
 
 const StyledGrid = styled(Grid)(({ theme }) => {
-  console.log('theme', theme);
   return {
     [`& .${classes.root}`]: {
       minHeight: '0.5rem',
@@ -31,7 +30,6 @@ const StyledGrid = styled(Grid)(({ theme }) => {
     },
     [`& .${classes.bar}`]: {
       borderRadius: '100vh',
-      //backgroundColor: getColor(theme),
       transition: theme.transitions.create(['transform', 'background-color'], {
         easing: 'linear',
       }),
@@ -39,13 +37,10 @@ const StyledGrid = styled(Grid)(({ theme }) => {
     [`& .${classes.grid}`]: {
       minHeight: '1.375rem',
       alignItems: 'center',
-      // [theme.breakpoints.only('xs')]: {
-      //   minHeight: '1.6875rem',
-      //   alignItems: 'flex-start',
-      // },
-    },
-    [`& .${classes.text}`]: {
-      //color: getColor(theme),
+      [theme.breakpoints.only('xs')]: {
+        minHeight: '1.6875rem',
+        alignItems: 'flex-start',
+      },
     },
   };
 });
@@ -65,26 +60,24 @@ const getPasswordStrength = score => {
     case 4:
       return ['Strong', 100];
     default:
-      return [null, null];
+      return ['Empty', -1];
   }
 };
 
 /**
- * @param {import('@material-ui/core').Theme} theme
- * @returns {props => string}
+ * @param strength: number
+ * @returns cssHexString : string
  */
-const getColor = (theme, strength) => {
-  console.log(`getColor(${theme},${strength})`);
+const getColor = strength => {
   switch (strength) {
+    case -1:
+      return '#9e9e9e'; // grey (none)
     case 66:
-      console.log('==>', theme.palette.primary.main);
-      return 'secondary';
+      return '#f6be00'; // amber
     case 100:
-      console.log('==>', theme.palette.success.main);
-      return 'primary';
+      return '#6cc24a'; // green
     default:
-      console.log('==>', theme.palette.success.main);
-      return 'success';
+      return '#cf6679'; // red
   }
 };
 
@@ -101,7 +94,7 @@ const PasswordStrengthMeter = ({ password = '', className }) => {
   const customTheme = createTheme({
     palette: {
       primary: {
-        main: '#6cc24a', // green
+        main: '#fff', // green
       },
       secondary: {
         main: '#f6be00', // amber
@@ -109,32 +102,28 @@ const PasswordStrengthMeter = ({ password = '', className }) => {
       success: {
         main: '#f00', // red
       },
-      // error: {
-      //   // this doesn't work
-      //   main: '#f00',
-      // },
     },
   });
-  console.log('Strength text', text);
-  console.log('Strength value', value);
-  console.log('customTheme', customTheme);
 
+  customTheme.palette.primary.main = getColor(value);
   return (
     <ThemeProvider theme={customTheme}>
       <StyledGrid container>
         <Grid item xs={12} sm={10}>
           <LinearProgress
-            //color={getColor(customTheme, value)}
-            //barColorPrimary={getColor(customTheme, value)}
-            color={getColor(customTheme, value)}
-            style={{ backgroundColor: '#9e9e9e', height: '0.5rem',borderRadius:'0.3rem' }}
+            style={{
+              backgroundColor: '#9e9e9e',
+              height: '0.5rem',
+              borderRadius: '0.3rem',
+            }}
+            color="primary"
             variant="determinate"
             value={value}
           />
         </Grid>
         <Grid item xs={12} sm={2} container justifyContent="flex-end">
           <Fade in={!!text}>
-            <Typography variant="caption">{text}</Typography>
+            <Typography color="primary" variant="caption">{text}</Typography>
           </Fade>
         </Grid>
       </StyledGrid>
