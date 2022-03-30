@@ -83,8 +83,8 @@ const getColor = (theme, strength) => {
       console.log('==>', theme.palette.success.main);
       return 'primary';
     default:
-      console.log('==>', theme.palette.error.main);
-      return 'error';
+      console.log('==>', theme.palette.success.main);
+      return 'success';
   }
 };
 
@@ -101,14 +101,18 @@ const PasswordStrengthMeter = ({ password = '', className }) => {
   const customTheme = createTheme({
     palette: {
       primary: {
-        main: '#00f',
+        main: '#6cc24a', // green
       },
       secondary: {
-        main: '#0f0',
+        main: '#f6be00', // amber
       },
-      error: { // this doesn't work
-        main: '#f00',
+      success: {
+        main: '#f00', // red
       },
+      // error: {
+      //   // this doesn't work
+      //   main: '#f00',
+      // },
     },
   });
   console.log('Strength text', text);
@@ -123,7 +127,7 @@ const PasswordStrengthMeter = ({ password = '', className }) => {
             //color={getColor(customTheme, value)}
             //barColorPrimary={getColor(customTheme, value)}
             color={getColor(customTheme, value)}
-            style={{ backgroundColor: '#fff' }}
+            style={{ backgroundColor: '#9e9e9e', height: '0.5rem',borderRadius:'0.3rem' }}
             variant="determinate"
             value={value}
           />
