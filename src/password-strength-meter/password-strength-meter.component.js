@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styled from '@emotion/styled';
+import { styled } from '@mui/material/styles';
 import {
   Fade,
   Grid,
@@ -23,15 +23,16 @@ const classes = {
   text: `${PREFIX}-text`,
 };
 
-const StyledGrid = styled(Grid)(({ theme }) => {
+const StyledGrid = styled(Grid)(({ theme, ...props }) => {
   return {
     [`& .${classes.root}`]: {
       minHeight: '0.5rem',
       borderRadius: '100vh',
       backgroundColor: theme.palette.grey[500],
     },
-    [`& .${classes.bar}`]: {
+    [`& .MuiLinearProgress-bar`]: {
       borderRadius: '100vh',
+      backgroundColor: getColor(props.strength),
       transition: theme.transitions.create(['transform', 'background-color'], {
         easing: 'linear',
       }),
@@ -43,6 +44,9 @@ const StyledGrid = styled(Grid)(({ theme }) => {
         minHeight: '1.6875rem',
         alignItems: 'flex-start',
       },
+    },
+    [`& .MuiTypography-caption`]: {
+      color: getColor(props.strength),
     },
   };
 });
@@ -93,33 +97,28 @@ const PasswordStrengthMeter = ({ password = '', className }) => {
   const passwordResult = zxcvbn(password);
   const [text, value] = getPasswordStrength(password && passwordResult.score);
 
-  const customTheme = createTheme({});
-
-  customTheme.palette.primary.main = getColor(value);
   return (
-    <ThemeProvider theme={customTheme}>
-      <StyledGrid container>
-        <Grid item xs={12} sm={10}>
-          <LinearProgress
-            style={{
-              backgroundColor: '#9e9e9e',
-              height: '0.5rem',
-              borderRadius: '0.3rem',
-            }}
-            color="primary"
-            variant="determinate"
-            value={value}
-          />
-        </Grid>
-        <Grid item xs={12} sm={2} container justifyContent="flex-end">
-          <Fade in={!!text}>
-            <Typography color="primary" variant="caption">
-              {text}
-            </Typography>
-          </Fade>
-        </Grid>
-      </StyledGrid>
-    </ThemeProvider>
+    <StyledGrid strength={value} container>
+      <Grid item xs={12} sm={10}>
+        <LinearProgress
+          style={{
+            backgroundColor: '#9e9e9e',
+            height: '0.5rem',
+            borderRadius: '0.3rem',
+          }}
+          color="primary"
+          variant="determinate"
+          value={value}
+        />
+      </Grid>
+      <Grid item xs={12} sm={2} container justifyContent="flex-end">
+        <Fade in={!!text}>
+          <Typography color="primary" variant="caption">
+            {text}
+          </Typography>
+        </Fade>
+      </Grid>
+    </StyledGrid>
   );
 };
 
