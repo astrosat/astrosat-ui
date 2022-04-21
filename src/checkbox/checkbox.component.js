@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Checkbox as MuiCheckbox, Box } from '@mui/material';
+import { Box, Checkbox as MuiCheckbox } from '@mui/material';
 
 const CheckedIcon = () => (
   <Box
@@ -39,6 +39,7 @@ const CheckedIcon = () => (
     }}
   />
 );
+
 const Icon = () => (
   <Box
     component="span"
@@ -64,30 +65,29 @@ const Icon = () => (
     }}
   />
 );
+
 /**
  * @param {import('@mui/material').CheckboxProps} props
  * @param {React.Ref<any>} ref
  */
-const Checkbox = (props, ref) => {
-  return (
-    <MuiCheckbox
-      sx={{
-        '&': {
-          padding: '0rem',
-        },
-        '&:hover': {
-          backgroundColor: 'transparent',
-        },
-        '&$checked:hover': {
-          backgroundColor: 'transparent',
-        },
-      }}
-      checkedIcon={<CheckedIcon />}
-      icon={<Icon />}
-      inputRef={ref}
-      {...props}
-    />
-  );
-};
+const Checkbox = (props, ref) => (
+  <MuiCheckbox
+    sx={{
+      '&': {
+        padding: '0rem',
+      },
+      '&:hover': {
+        backgroundColor: 'transparent',
+      },
+      '&$checked:hover': {
+        backgroundColor: 'transparent',
+      },
+    }}
+    checkedIcon={<CheckedIcon />}
+    icon={<Icon />}
+    inputRef={ref}
+    {...props}
+  />
+);
 
 export default React.forwardRef(Checkbox);

@@ -308,7 +308,6 @@ const core = {
   },
   spacing,
   typography: {
-    fontFamily: '"Open Sans", sans-serif',
     h1: {
       fontSize: '26px',
       fontWeight: 600,

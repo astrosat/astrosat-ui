@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Radio as MuiRadio, Box } from '@mui/material';
+import { Box, Radio as MuiRadio } from '@mui/material';
 
 const CheckedIcon = () => (
   <Box
@@ -38,6 +38,7 @@ const CheckedIcon = () => (
     })}
   />
 );
+
 const Icon = () => (
   <Box
     component="span"
@@ -62,31 +63,30 @@ const Icon = () => (
     })}
   />
 );
+
 /**
  * @param {import('@mui/material').RadioProps} props
  * @param {React.Ref<any>} ref
  */
-const Radio = (props, ref) => {
-  return (
-    <MuiRadio
-      sx={{
-        '&': {
-          padding: '0rem',
-        },
-        '&:hover': {
-          bgColor: 'transparent',
-        },
+const Radio = (props, ref) => (
+  <MuiRadio
+    sx={{
+      '&': {
+        padding: '0rem',
+      },
+      '&:hover': {
+        bgColor: 'transparent',
+      },
 
-        '&$checked:hover': {
-          bgColor: 'transparent',
-        },
-      }}
-      checkedIcon={<CheckedIcon />}
-      icon={<Icon />}
-      inputRef={ref}
-      {...props}
-    />
-  );
-};
+      '&$checked:hover': {
+        bgColor: 'transparent',
+      },
+    }}
+    checkedIcon={<CheckedIcon />}
+    icon={<Icon />}
+    inputRef={ref}
+    {...props}
+  />
+);
 
 export default React.forwardRef(Radio);

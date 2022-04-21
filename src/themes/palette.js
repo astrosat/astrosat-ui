@@ -8,4 +8,5 @@ export const baseTheme = createTheme({
     error: { main: '#cf6679' },
     info: { main: '#48a9c5' },
   },
+  typography: { fontFamily: '"Open Sans", sans-serif' },
 });
