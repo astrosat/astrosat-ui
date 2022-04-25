@@ -1,16 +1,29 @@
 import React from 'react';
 
+import { styled } from '@mui/material/styles';
+
 import Input from '../input/input.component';
 
 import { Select as MuiSelect } from '@mui/material';
 
-import { makeStyles } from '@mui/styles';
+const PREFIX = 'select';
 
-const menuStyles = makeStyles(theme => ({
-  paper: {
+const classes = {
+  paper: `${PREFIX}-paper`
+};
+
+const StyledMuiSelect
+ = styled(MuiSelect
+)((
+  {
+    theme
+  }
+) => ({
+  [`& .${classes.paper}`]: {
     marginTop: theme.spacing(5),
-  },
+  }
 }));
+
 /**
  * @param {import('@mui/material').SelectProps} props
  * @param {React.Ref<any>} ref
@@ -20,20 +33,10 @@ const Select = (
   { MenuProps, input = <Input />, fullWidth = true, ...rest },
   ref
 ) => {
-  const menuClasses = menuStyles({
-    fullWidth,
-    MenuProps,
-    ...rest,
-  });
   return (
     <MuiSelect
       input={input}
       fullWidth={fullWidth}
-      MenuProps={{
-        classes: menuClasses,
-        MenuListProps: { ...MenuProps?.MenuListProps, disablePadding: true },
-        ...MenuProps,
-      }}
       {...rest}
       ref={ref}
     />
