@@ -28,11 +28,18 @@ const dark = {
     MuiButton: {
       styleOverrides: {
         outlined: {
-          '&$disabled': {
-            borderColor: coreTheme.palette.action.disabled,
+          '&.Mui-disabled': {
+            borderColor: coreTheme.palette.grey[500],
           },
         },
         disabled: {},
+        contained: {
+          '&.Mui-disabled': {
+            backgroundColor: coreTheme.palette.grey[300],
+            // color: coreTheme.palette.grey[700],
+            color: coreTheme.palette.grey[700],
+          },
+        },
       },
     },
     MuiChip: {

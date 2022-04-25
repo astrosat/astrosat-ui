@@ -20,6 +20,15 @@ const core = {
     },
     MuiButton: {
       styleOverrides: {
+        containedSizeLarge: {
+          fontSize: baseTheme.typography.pxToRem(22),
+        },
+        textSizeLarge: {
+          fontSize: baseTheme.typography.pxToRem(22),
+        },
+        outlinedSizeLarge: {
+          fontSize: baseTheme.typography.pxToRem(22),
+        },
         textPrimary: {
           color: baseTheme.palette.primary.main,
         },
@@ -36,8 +45,10 @@ const core = {
           },
         },
         containedSecondary: {
+          color: baseTheme.palette.secondary.main,
           backgroundColor: baseTheme.palette.info.main,
           '&:hover': {
+            opacity: 0.5,
             backgroundColor: baseTheme.palette.info.main,
             '@media (hover: none)': {
               backgroundColor: baseTheme.palette.info.main,
@@ -57,7 +68,7 @@ const core = {
               backgroundColor: 'transparent',
             },
           },
-          '&$disabled': {
+          '&.Mui-disabled': {
             borderColor: baseTheme.palette.action.disabled,
           },
         },
