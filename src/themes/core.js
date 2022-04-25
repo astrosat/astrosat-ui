@@ -184,30 +184,36 @@ const core = {
             cursor: 'not-allowed',
             pointerEvents: 'auto',
           },
-          '&$disabled': {
+          '&.MuiFormControlLabel-disabled': {
             cursor: 'not-allowed',
             pointerEvents: 'auto',
           },
         },
+
         label: {
           marginLeft: spacing(2),
         },
+
         labelPlacementBottom: {
-          '& $label': {
-            margin: 0,
+          '& .MuiFormControlLabel-label': {
+            marginBottom: 0,
             marginTop: spacing(1),
+            marginLeft: spacing(4),
+            marginRight: spacing(4),
           },
         },
         labelPlacementStart: {
-          '& $label': {
+          '& .MuiFormControlLabel-label': {
             margin: 0,
             marginRight: spacing(2),
           },
         },
         labelPlacementTop: {
-          '& $label': {
-            margin: 0,
+          '& .MuiFormControlLabel-label': {
+            marginTop: 0,
             marginBottom: spacing(1),
+            marginLeft: spacing(1),
+            marginRight: spacing(1),
           },
         },
         disabled: {},
@@ -302,7 +308,6 @@ const core = {
   },
   spacing,
   typography: {
-    fontFamily: '"Open Sans", sans-serif',
     h1: {
       fontSize: '26px',
       fontWeight: 600,
