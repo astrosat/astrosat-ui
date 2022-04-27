@@ -35,9 +35,8 @@ const dark = {
         disabled: {},
         contained: {
           '&.Mui-disabled': {
-            backgroundColor: coreTheme.palette.grey[300],
-            // color: coreTheme.palette.grey[700],
-            color: coreTheme.palette.grey[700],
+            backgroundColor: coreTheme.palette.action.disabledBackground,
+            color: coreTheme.palette.text.disabled,
           },
         },
       },

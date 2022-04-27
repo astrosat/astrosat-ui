@@ -5,8 +5,8 @@ import React from 'react';
  * @param { import('@mui/material/Button/Button').ButtonProps} props
  * @param { React.Ref<HTMLButtonElement> } ref
  */
-const Button = ({ variant = 'contained', color = 'primary', ...rest }, ref) => {
-  const component = (
+const AstrosatButton = React.forwardRef(
+  ({ variant = 'contained', color = 'primary', ...rest }, ref) => (
     <MuiButton
       sx={{
         '&': {
@@ -36,17 +36,21 @@ const Button = ({ variant = 'contained', color = 'primary', ...rest }, ref) => {
           },
         },
       }}
-      ref={ref}
       variant={variant}
       color={color}
       {...rest}
+      ref={ref}
     />
-  );
-  return rest.disabled ? (
-    <span style={{ cursor: 'not-allowed' }}>{component}</span>
+  )
+);
+
+const Button = ({ ...rest }, ref) =>
+  rest.disabled ? (
+    <span style={{ cursor: 'not-allowed' }}>
+      <AstrosatButton {...rest} ref={ref} />
+    </span>
   ) : (
-    component
+    <AstrosatButton {...rest} ref={ref} />
   );
-};
 
 export default React.forwardRef(Button);

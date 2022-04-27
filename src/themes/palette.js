@@ -7,6 +7,12 @@ export const baseTheme = createTheme({
     success: { main: '#6cc24a' },
     error: { main: '#cf6679' },
     info: { main: '#48a9c5' },
+    text: {
+      disabled: '#616161',
+    },
+    action: {
+      disabledBackground: '#e0e0e0',
+    },
   },
   typography: { fontFamily: '"Open Sans", sans-serif' },
 });
