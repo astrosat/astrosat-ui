@@ -20,31 +20,17 @@ const core = {
     },
     MuiButton: {
       styleOverrides: {
-        containedSizeSmall: {
-          fontSize: baseTheme.typography.pxToRem(14),
+        contained: {
           color: baseTheme.palette.secondary.main,
         },
-        textSizeSmall: {
+        sizeSmall: {
           fontSize: baseTheme.typography.pxToRem(14),
         },
-        outlinedSizeSmall: {
-          fontSize: baseTheme.typography.pxToRem(14),
-        },
-        containedSizeLarge: {
-          fontSize: baseTheme.typography.pxToRem(22),
-          color: baseTheme.palette.secondary.main,
-        },
-        textSizeLarge: {
-          fontSize: baseTheme.typography.pxToRem(22),
-        },
-        outlinedSizeLarge: {
+        sizeLarge: {
           fontSize: baseTheme.typography.pxToRem(22),
         },
         textPrimary: {
           color: baseTheme.palette.primary.main,
-        },
-        containedSizeMedium: {
-          color: baseTheme.palette.secondary.main,
         },
         textSecondary: {
           color: baseTheme.palette.info.main,
@@ -59,7 +45,6 @@ const core = {
           },
         },
         containedSecondary: {
-          color: baseTheme.palette.secondary.main,
           backgroundColor: baseTheme.palette.info.main,
           '&:hover': {
             opacity: 0.5,
@@ -179,7 +164,7 @@ const core = {
           },
         },
         edgeStart: {
-          padding: '3px',
+          padding: '0.188rem',
           marginLeft: 0,
         },
       },
