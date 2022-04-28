@@ -108,7 +108,7 @@ Playground.argTypes = {
   color: {
     control: {
       type: 'inline-radio',
-      options: ['primary', 'secondary', 'default', 'inherit'],
+      options: ['primary', 'secondary', 'inherit'],
     },
   },
   size: {
