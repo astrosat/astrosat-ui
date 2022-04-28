@@ -29,7 +29,7 @@ export const Color = () => (
 
 export const Size = () => (
   <>
-    <Template size="small" />
+    <Template size="small" edge="start" />
     <Template size="medium" />
   </>
 );
