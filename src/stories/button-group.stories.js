@@ -8,7 +8,11 @@ export default Index;
 
 export const Basic = () => (
   <Box display="flex" flexDirection="column">
-    <ButtonGroup variant="outlined" aria-label="outlined primary button group">
+    <ButtonGroup
+      variant="outlined"
+      color="primary"
+      aria-label="outlined primary button group"
+    >
       <Button>One</Button>
       <Button>Two</Button>
       <Button>Three</Button>
@@ -37,23 +41,29 @@ export const Basic = () => (
 export const SizesAndColors = () => (
   <Box display="flex" flexDirection="column">
     <ButtonGroup
-      color="default"
+      variant="contained"
       size="small"
-      aria-label="small outlined button group"
+      color="inherit"
+      aria-label="small contained button group"
     >
       <Button>One</Button>
       <Button>Two</Button>
       <Button>Three</Button>
     </ButtonGroup>
-    <ButtonGroup color="secondary" aria-label="outlined secondary button group">
+    <ButtonGroup
+      variant="contained"
+      color="secondary"
+      aria-label="outlined secondary button group"
+    >
       <Button>One</Button>
       <Button>Two</Button>
       <Button>Three</Button>
     </ButtonGroup>
     <ButtonGroup
+      variant="contained"
       size="large"
       color="primary"
-      aria-label="large outlined primary button group"
+      aria-label="large contained primary button group"
     >
       <Button>One</Button>
       <Button>Two</Button>
@@ -67,6 +77,7 @@ export const Vertical = () => (
     <ButtonGroup
       orientation="vertical"
       color="primary"
+      variant="contained"
       aria-label="vertical outlined primary button group"
     >
       <Button>One</Button>
@@ -76,8 +87,8 @@ export const Vertical = () => (
     <ButtonGroup
       orientation="vertical"
       color="primary"
-      aria-label="vertical contained primary button group"
       variant="outlined"
+      aria-label="vertical contained primary button group"
     >
       <Button>One</Button>
       <Button>Two</Button>
@@ -86,8 +97,8 @@ export const Vertical = () => (
     <ButtonGroup
       orientation="vertical"
       color="primary"
-      aria-label="vertical contained primary button group"
       variant="text"
+      aria-label="vertical contained primary button group"
     >
       <Button>One</Button>
       <Button>Two</Button>
