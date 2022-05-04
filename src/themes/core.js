@@ -12,6 +12,11 @@ const core = {
       },
     },
     MuiButtonGroup: {
+      defaultProps: {
+        disableRipple: true,
+        variant: 'contained',
+        color: 'primary',
+      },
       styleOverrides: {
         groupedContainedInherit: {
           backgroundColor: baseTheme.palette.action.disabledBackground,
