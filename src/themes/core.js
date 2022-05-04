@@ -17,6 +17,46 @@ const core = {
         variant: 'contained',
         color: 'primary',
       },
+      styleOverrides: {
+        groupedContainedInherit: {
+          backgroundColor: baseTheme.palette.action.disabledBackground,
+          '&:hover': {
+            backgroundColor: baseTheme.palette.action.disabledBackground,
+            opacity: 0.5,
+          },
+        },
+        groupedOutlined: {
+          backgroundColor: 'transparent',
+          border: '0.0625rem solid rgba(246, 190, 0, .5)',
+          color: baseTheme.palette.primary.main,
+          '&:hover': {
+            borderColor: baseTheme.palette.primary.main,
+            backgroundColor: alpha(
+              baseTheme.palette.primary.main,
+              baseTheme.palette.action.hoverOpacity
+            ),
+          },
+        },
+        groupedText: {
+          backgroundColor: 'transparent',
+          color: baseTheme.palette.primary.main,
+          border: 'none',
+          boxShadow: 'none',
+          '&:hover': {
+            backgroundColor: alpha(
+              baseTheme.palette.primary.main,
+              baseTheme.palette.action.hoverOpacity
+            ),
+          },
+        },
+        groupedContainedSecondary: {
+          backgroundColor: baseTheme.palette.info.main,
+          '&:hover': {
+            backgroundColor: baseTheme.palette.info.main,
+            opacity: 0.5,
+          },
+        },
+      },
     },
     MuiButton: {
       styleOverrides: {
