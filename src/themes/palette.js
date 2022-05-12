@@ -13,6 +13,9 @@ export const baseTheme = createTheme({
     action: {
       disabledBackground: '#e0e0e0',
     },
+    background: {
+      paper: '#5d666e',
+    },
   },
   typography: { fontFamily: '"Open Sans", sans-serif' },
 });

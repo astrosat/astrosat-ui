@@ -107,7 +107,7 @@ const dark = {
       styleOverrides: {
         root: {
           '&:hover': {
-            backgroundColor: lighten(coreTheme.palette.background.default, 0.1),
+            backgroundColor: coreTheme.palette.action.disabled,
           },
         },
       },
@@ -127,6 +127,13 @@ const dark = {
           },
         },
         textColorPrimary: {},
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        elevation: {
+          background: coreTheme.palette.background.paper,
+        },
       },
     },
   },
