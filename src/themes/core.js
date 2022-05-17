@@ -118,13 +118,25 @@ const core = {
         root: {
           borderRadius: 9,
         },
+        label: { paddingTop: '0.125rem' },
+        colorPrimary: {
+          backgroundColor: baseTheme.palette.primary.main,
+        },
         colorSecondary: {
+          color: 'white',
           backgroundColor: baseTheme.palette.info.main,
+          '&.MuiChip-filled': {
+            '.MuiChip-deleteIcon': { color: '#ffffff', opacity: 0.7 },
+          },
         },
         clickableColorSecondary: {
           '&:hover, &:focus': {
             backgroundColor: baseTheme.palette.info.dark,
           },
+        },
+        outlinedPrimary: {
+          color: baseTheme.palette.primary.main,
+          borderColor: '#f6be00',
         },
         outlinedSecondary: {
           borderColor: baseTheme.palette.info.main,

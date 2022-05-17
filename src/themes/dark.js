@@ -44,18 +44,61 @@ const dark = {
     MuiChip: {
       styleOverrides: {
         root: {
-          backgroundColor: coreTheme.palette.action.active,
+          backgroundColor: coreTheme.palette.action.disabledBackground,
           color: coreTheme.palette.secondary.main,
+          borderColor: '#757575',
         },
-        outlined: { color: 'unset' },
+        filled: {
+          '&.Mui-disabled': {
+            backgroundColor: coreTheme.palette.action.disabledBackground,
+            opacity: 0.5,
+          },
+          '&:focus': {
+            backgroundColor: coreTheme.palette.grey[600],
+          },
+          '&.MuiChip-colorPrimary': {
+            '&:hover': {
+              backgroundColor: coreTheme.palette.primary.main,
+              opacity: 0.9,
+            },
+            '&:focus': {
+              backgroundColor: coreTheme.palette.primary.main,
+              opacity: 0.7,
+            },
+          },
+          '&.MuiChip-clickableColorSecondary': {
+            '&:hover': {
+              backgroundColor: '#2a6e82',
+            },
+          },
+        },
+        outlined: {
+          color: 'unset',
+          backgroundColor: 'transparent',
+          '.MuiChip-deleteIconOutlinedColorPrimary': {
+            color: '#f6be00',
+            opacity: 0.7,
+            '&.MuiChip-deleteIcon': {
+              '&:hover': {
+                color: coreTheme.palette.primary.main,
+                opacity: 1,
+              },
+            },
+          },
+          '&.Mui-disabled': {
+            color: coreTheme.palette.action.disabledBackground,
+            opacity: 0.6,
+          },
+        },
         clickable: {
           '&:hover': {
             backgroundColor: coreTheme.palette.grey[400],
           },
         },
         avatar: {
-          backgroundColor: coreTheme.palette.secondary.main,
+          backgroundColor: '#757575',
         },
+        avatarColorPrimary: { backgroundColor: '#ac8500' },
         icon: {
           color: 'inherit',
         },
