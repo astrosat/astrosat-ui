@@ -15,6 +15,7 @@ export const baseTheme = createTheme({
     },
     background: {
       paper: '#5d666e',
+      default: '#ffffff',
     },
   },
   typography: { fontFamily: '"Open Sans", sans-serif' },

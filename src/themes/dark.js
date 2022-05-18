@@ -46,7 +46,7 @@ const dark = {
         root: {
           backgroundColor: coreTheme.palette.action.disabledBackground,
           color: coreTheme.palette.secondary.main,
-          borderColor: '#757575',
+          borderColor: coreTheme.palette.grey[600],
         },
         filled: {
           '&.Mui-disabled': {
@@ -68,7 +68,7 @@ const dark = {
           },
           '&.MuiChip-clickableColorSecondary': {
             '&:hover': {
-              backgroundColor: '#2a6e82',
+              backgroundColor: coreTheme.palette.info.dark,
             },
           },
         },
@@ -76,7 +76,7 @@ const dark = {
           color: 'unset',
           backgroundColor: 'transparent',
           '.MuiChip-deleteIconOutlinedColorPrimary': {
-            color: '#f6be00',
+            color: coreTheme.palette.primary.main,
             opacity: 0.7,
             '&.MuiChip-deleteIcon': {
               '&:hover': {
@@ -96,9 +96,9 @@ const dark = {
           },
         },
         avatar: {
-          backgroundColor: '#757575',
+          backgroundColor: coreTheme.palette.grey[600],
         },
-        avatarColorPrimary: { backgroundColor: '#ac8500' },
+        avatarColorPrimary: { backgroundColor: coreTheme.palette.primary.dark },
         icon: {
           color: 'inherit',
         },

@@ -123,10 +123,13 @@ const core = {
           backgroundColor: baseTheme.palette.primary.main,
         },
         colorSecondary: {
-          color: 'white',
+          color: baseTheme.palette.background.default,
           backgroundColor: baseTheme.palette.info.main,
           '&.MuiChip-filled': {
-            '.MuiChip-deleteIcon': { color: '#ffffff', opacity: 0.7 },
+            '.MuiChip-deleteIcon': {
+              color: baseTheme.palette.background.default,
+              opacity: 0.7,
+            },
           },
         },
         clickableColorSecondary: {
@@ -136,7 +139,7 @@ const core = {
         },
         outlinedPrimary: {
           color: baseTheme.palette.primary.main,
-          borderColor: '#f6be00',
+          borderColor: baseTheme.palette.primary.main,
         },
         outlinedSecondary: {
           borderColor: baseTheme.palette.info.main,
