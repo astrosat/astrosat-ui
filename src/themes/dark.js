@@ -158,7 +158,7 @@ const dark = {
     MuiTabs: {
       styleOverrides: {
         flexContainer: {
-          borderBottomColor: coreTheme.palette.divider,
+          borderBottomColor: alpha(coreTheme.palette.grey[700], 0.6),
         },
       },
     },
@@ -168,6 +168,7 @@ const dark = {
           '&$textColorPrimary': {
             color: coreTheme.palette.text.primary,
           },
+          opacity: 1,
         },
         textColorPrimary: {},
       },
