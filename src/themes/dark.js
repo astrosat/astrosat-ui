@@ -179,6 +179,28 @@ const dark = {
         },
       },
     },
+    MuiListSubheader: {
+      styleOverrides: {
+        sticky: { backgroundColor: 'transparent', opacity: 0.8 },
+      },
+    },
+    MuiListItem: {
+      styleOverrides: {
+        root: {
+          '&.Mui-selected': {
+            backgroundColor: alpha(coreTheme.palette.grey[900], 0.2),
+            '&:hover': {
+              backgroundColor: alpha(coreTheme.palette.grey[900], 0.2),
+            },
+          },
+        },
+      },
+    },
+    MuiListItemText: {
+      styleOverrides: {
+        secondary: { opacity: 0.8 },
+      },
+    },
   },
 };
 

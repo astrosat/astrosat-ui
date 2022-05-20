@@ -371,6 +371,17 @@ const core = {
         },
       },
     },
+    MuiPaginationItem: {
+      styleOverrides: {
+        outlined: {
+          '&.Mui-disabled': {
+            '&.Mui-selected': {
+              borderColor: alpha(baseTheme.palette.secondary.dark, 0.4),
+            },
+          },
+        },
+      },
+    },
   },
   shape: {
     borderRadius,
