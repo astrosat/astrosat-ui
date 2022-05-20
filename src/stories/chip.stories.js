@@ -14,7 +14,7 @@ const handleClick = () => {
   console.info('You clicked the Chip.');
 };
 
-const Template = args => {
+const Template = ({ children }) => {
   return (
     <Box
       sx={{
@@ -27,10 +27,11 @@ const Template = args => {
         marginRight: '0.3125rem',
       }}
     >
-      {args.children}
+      {children}
     </Box>
   );
 };
+
 export const Chips = Template.bind({});
 Chips.args = {
   children: (

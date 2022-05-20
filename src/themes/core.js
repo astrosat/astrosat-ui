@@ -123,11 +123,11 @@ const core = {
           backgroundColor: baseTheme.palette.primary.main,
         },
         colorSecondary: {
-          color: baseTheme.palette.background.default,
+          color: baseTheme.palette.common.white,
           backgroundColor: baseTheme.palette.info.main,
           '&.MuiChip-filled': {
             '.MuiChip-deleteIcon': {
-              color: baseTheme.palette.background.default,
+              color: baseTheme.palette.common.white,
               opacity: 0.7,
             },
           },
