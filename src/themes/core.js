@@ -330,7 +330,7 @@ const core = {
       },
       styleOverrides: {
         flexContainer: {
-          borderBottom: `1px solid ${baseTheme.palette.divider}`,
+          borderBottom: `1px solid`,
         },
       },
     },
@@ -344,6 +344,7 @@ const core = {
             &$textColorSecondary`]: {
             opacity: 1,
           },
+          width: '10rem',
         },
         textColorInherit: {},
         textColorPrimary: {},
