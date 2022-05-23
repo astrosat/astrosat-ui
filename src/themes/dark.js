@@ -25,6 +25,44 @@ const dark = {
     divider: alpha(coreTheme.palette.grey[100], 0.12),
   },
   components: {
+    MuiAlert: {
+      styleOverrides: {
+        message: {
+          color: coreTheme.palette.common.white,
+        },
+        filledError: {
+          backgroundColor: alpha(coreTheme.palette.error.main, 0.3),
+          color: coreTheme.palette.error.main,
+        },
+        filledSuccess: {
+          backgroundColor: alpha(coreTheme.palette.success.main, 0.3),
+          color: coreTheme.palette.success.main,
+        },
+        filledInfo: {
+          backgroundColor: alpha(coreTheme.palette.common.black, 0.3),
+          color: coreTheme.palette.info.main,
+        },
+        outlinedInfo: {
+          borderColor: coreTheme.palette.common.white,
+        },
+        outlinedSuccess: { borderColor: coreTheme.palette.success.main },
+        outlinedError: {
+          borderColor: coreTheme.palette.error.main,
+        },
+        standardError: {
+          backgroundColor: alpha(coreTheme.palette.error.main, 0.3),
+          borderColor: coreTheme.palette.error.main,
+        },
+        standardSuccess: {
+          backgroundColor: alpha(coreTheme.palette.success.main, 0.3),
+          borderColor: coreTheme.palette.success.main,
+        },
+        standardInfo: {
+          borderColor: coreTheme.palette.common.white,
+          backgroundColor: alpha(coreTheme.palette.common.black, 0.3),
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         outlined: {

@@ -11,6 +11,22 @@ const core = {
         disableRipple: true,
       },
     },
+    MuiAlert: {
+      styleOverrides: {
+        root: {
+          padding: baseTheme.spacing(2),
+        },
+        standard: {
+          border: `0.0625rem solid`,
+        },
+        icon: {
+          marginRight: baseTheme.spacing(4),
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
+      },
+    },
     MuiButtonGroup: {
       defaultProps: {
         disableRipple: true,
