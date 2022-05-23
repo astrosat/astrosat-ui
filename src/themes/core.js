@@ -134,13 +134,28 @@ const core = {
         root: {
           borderRadius: 9,
         },
+        label: { paddingTop: '0.125rem' },
+        colorPrimary: {
+          backgroundColor: baseTheme.palette.primary.main,
+        },
         colorSecondary: {
+          color: baseTheme.palette.common.white,
           backgroundColor: baseTheme.palette.info.main,
+          '&.MuiChip-filled': {
+            '.MuiChip-deleteIcon': {
+              color: baseTheme.palette.common.white,
+              opacity: 0.7,
+            },
+          },
         },
         clickableColorSecondary: {
           '&:hover, &:focus': {
             backgroundColor: baseTheme.palette.info.dark,
           },
+        },
+        outlinedPrimary: {
+          color: baseTheme.palette.primary.main,
+          borderColor: baseTheme.palette.primary.main,
         },
         outlinedSecondary: {
           borderColor: baseTheme.palette.info.main,
@@ -331,7 +346,7 @@ const core = {
       },
       styleOverrides: {
         flexContainer: {
-          borderBottom: `1px solid ${baseTheme.palette.divider}`,
+          borderBottom: `1px solid`,
         },
       },
     },
@@ -345,6 +360,7 @@ const core = {
             &$textColorSecondary`]: {
             opacity: 1,
           },
+          width: '10rem',
         },
         textColorInherit: {},
         textColorPrimary: {},
@@ -368,6 +384,17 @@ const core = {
           html: { fontSize: '1rem' },
           body: {
             fontSize: '1rem',
+          },
+        },
+      },
+    },
+    MuiPaginationItem: {
+      styleOverrides: {
+        outlined: {
+          '&.Mui-disabled': {
+            '&.Mui-selected': {
+              borderColor: alpha(baseTheme.palette.secondary.dark, 0.4),
+            },
           },
         },
       },
