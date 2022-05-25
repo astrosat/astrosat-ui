@@ -25,6 +25,14 @@ const dark = {
     divider: alpha(coreTheme.palette.grey[100], 0.12),
   },
   components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: { color: coreTheme.palette.common.black },
+        colorPrimary: {
+          backgroundColor: coreTheme.palette.primary.main,
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         outlined: {
@@ -107,13 +115,6 @@ const dark = {
           '&:hover': {
             color: coreTheme.palette.secondary.light,
           },
-        },
-      },
-    },
-    MuiDialog: {
-      styleOverrides: {
-        paper: {
-          backgroundColor: coreTheme.palette.background.default,
         },
       },
     },

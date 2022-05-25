@@ -4,7 +4,7 @@ import React from 'react';
 import {
   AppBar,
   Avatar,
-  Button,
+  // Button,
   Dialog,
   Divider,
   IconButton,
@@ -18,10 +18,11 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
-  DialogTitle,
+  // DialogTitle,
 } from '@mui/material';
 // } from '../index';
-import { makeStyles } from '@mui/styles';
+import Button from '../button/button.component';
+import DialogTitle from '../dialog-title/dialog-title.component';
 
 const Index = {
   title: 'Dialog',
@@ -51,7 +52,7 @@ const emails = Array.from({ length: 2 }, () => faker.internet.email());
 export const Simple = args => (
   <Dialog aria-labelledby="simple-dialog-title" {...args}>
     <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
-    <DialogContent>
+    <DialogContent style={{ paddingTop: '2.5rem' }}>
       <List>
         {emails.map(email => (
           <ListItem button key={email}>
@@ -81,22 +82,10 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const useStyles = makeStyles(theme => ({
-  appBar: {
-    position: 'relative',
-  },
-  title: {
-    marginLeft: theme.spacing(2),
-    flex: 1,
-  },
-}));
-
 export const FullScreen = () => {
-  const styles = useStyles();
-
   return (
     <Dialog fullScreen open TransitionComponent={Transition}>
-      <AppBar className={styles.appBar}>
+      <AppBar sx={{ '&': { position: 'relative' } }}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -106,7 +95,10 @@ export const FullScreen = () => {
           >
             <CloseIcon />
           </IconButton>
-          <Typography variant="h6" className={styles.title}>
+          <Typography
+            variant="h6"
+            sx={{ '&': { marginLeft: theme => theme.spacing(3), flex: 1 } }}
+          >
             Sound
           </Typography>
           <Button autoFocus color="secondary">
@@ -140,7 +132,7 @@ export const LongContent = args => (
     <DialogTitle id="scroll-dialog-title" onClose={args.onClose}>
       Subscribe
     </DialogTitle>
-    <DialogContent>
+    <DialogContent style={{ paddingTop: '2.5rem' }}>
       <DialogContentText id="scroll-dialog-description" tabIndex={-1}>
         {faker.lorem.paragraphs(30)}
       </DialogContentText>
@@ -158,7 +150,7 @@ LongContent.args = {
 export const Sizes = args => (
   <Dialog {...args}>
     <DialogTitle onClose={args.onClose}>Sizes</DialogTitle>
-    <DialogContent>
+    <DialogContent style={{ paddingTop: '2.5rem' }}>
       <DialogContentText>
         <code>fullWidth</code> is {args.fullWidth.toString()}
       </DialogContentText>
