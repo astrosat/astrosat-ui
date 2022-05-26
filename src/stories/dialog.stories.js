@@ -4,7 +4,7 @@ import React from 'react';
 import {
   AppBar,
   Avatar,
-  // Button,
+  Button,
   Dialog,
   Divider,
   IconButton,
@@ -18,11 +18,8 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
-  // DialogTitle,
-} from '@mui/material';
-// } from '../index';
-import Button from '../button/button.component';
-import DialogTitle from '../dialog-title/dialog-title.component';
+  DialogTitle,
+} from '../index';
 
 const Index = {
   title: 'Dialog',
@@ -52,7 +49,7 @@ const emails = Array.from({ length: 2 }, () => faker.internet.email());
 export const Simple = args => (
   <Dialog aria-labelledby="simple-dialog-title" {...args}>
     <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
-    <DialogContent style={{ paddingTop: '2.5rem' }}>
+    <DialogContent>
       <List>
         {emails.map(email => (
           <ListItem button key={email}>
@@ -132,7 +129,7 @@ export const LongContent = args => (
     <DialogTitle id="scroll-dialog-title" onClose={args.onClose}>
       Subscribe
     </DialogTitle>
-    <DialogContent style={{ paddingTop: '2.5rem' }}>
+    <DialogContent>
       <DialogContentText id="scroll-dialog-description" tabIndex={-1}>
         {faker.lorem.paragraphs(30)}
       </DialogContentText>
@@ -150,7 +147,7 @@ LongContent.args = {
 export const Sizes = args => (
   <Dialog {...args}>
     <DialogTitle onClose={args.onClose}>Sizes</DialogTitle>
-    <DialogContent style={{ paddingTop: '2.5rem' }}>
+    <DialogContent>
       <DialogContentText>
         <code>fullWidth</code> is {args.fullWidth.toString()}
       </DialogContentText>

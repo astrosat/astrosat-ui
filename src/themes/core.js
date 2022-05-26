@@ -188,6 +188,7 @@ const core = {
     MuiDialogContent: {
       styleOverrides: {
         root: {
+          paddingTop: '2.5rem !important',
           padding: `${spacing(5)} ${spacing(3)} ${spacing(2)}`,
         },
       },
