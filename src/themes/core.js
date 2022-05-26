@@ -177,14 +177,18 @@ const core = {
     MuiDialog: {
       styleOverrides: {
         paper: {
-          backgroundColor: baseTheme.palette.background.default,
+          backgroundColor: baseTheme.palette.secondary.main,
           borderRadius: 10,
+        },
+        paperFullScreen: {
+          borderRadius: 0,
         },
       },
     },
     MuiDialogContent: {
       styleOverrides: {
         root: {
+          paddingTop: '2.5rem !important',
           padding: `${spacing(5)} ${spacing(3)} ${spacing(2)}`,
         },
       },
@@ -196,6 +200,11 @@ const core = {
           justifyContent: 'center',
           padding: `${spacing(2)} ${spacing(3)} ${spacing(4)}`,
         },
+      },
+    },
+    MuiDialogContentText: {
+      styleOverrides: {
+        root: { paddingBottom: `${spacing(2)}` },
       },
     },
     MuiIconButton: {
