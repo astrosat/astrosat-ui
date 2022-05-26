@@ -256,6 +256,15 @@ const core = {
       styleOverrides: {
         root: {
           fontWeight: 600,
+          borderBottom: `0.0625em solid ${baseTheme.palette.primary.main}`,
+          textDecoration: 'none',
+          '&:hover': {
+            textDecoration: 'none',
+            borderBottomColor: 'transparent',
+          },
+          '&:visited': {
+            color: baseTheme.palette.primary.main,
+          },
         },
       },
     },
