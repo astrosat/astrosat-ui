@@ -87,6 +87,19 @@ const dark = {
         disabled: {},
       },
     },
+    MuiInput: {
+      styleOverrides: {
+        multiline: {
+          border: `2px solid ${coreTheme.palette.primary.main}`,
+          padding: coreTheme.spacing(2),
+          '&.MuiInput-underline': {
+            '&:after': {
+              display: 'none',
+            },
+          },
+        },
+      },
+    },
     MuiInputLabel: {
       styleOverrides: {
         root: {
