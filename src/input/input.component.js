@@ -12,7 +12,6 @@ import { ErrorIcon, CorrectIcon } from '../icons';
  * @param {import('@mui/material').Theme} theme
  * @param {InputProps} props
  */
-
 const getColors = (theme, props) => {
   if (props.valid) {
     return theme.palette.success.main;
@@ -96,6 +95,15 @@ const Input = ({ fullWidth = true, ...props }) => {
           padding: theme => (props.multiline ? 0 : theme.spacing(2)),
           '&.Mui-disabled': {
             cursor: 'not-allowed',
+          },
+        },
+        '&.MuiInputBase-multiline': {
+          border: theme => `2px solid ${theme.palette.primary.main}`,
+          padding: theme => theme.spacing(2),
+          '&.MuiInput-underline': {
+            '&:after': {
+              display: 'none',
+            },
           },
         },
       }}
