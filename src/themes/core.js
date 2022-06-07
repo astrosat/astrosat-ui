@@ -396,6 +396,12 @@ const core = {
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        outlined: { paddingTop: '1.5rem' },
+      },
+    },
+
     MuiCssBaseline: {
       styleOverrides: {
         '@global': {

@@ -8,7 +8,7 @@ import makeStyles from '@mui/styles/makeStyles';
 
 const menuStyles = makeStyles(theme => ({
   paper: {
-    marginTop: theme.spacing(5),
+    marginTop: '0.625rem',
   },
 }));
 /**
@@ -17,7 +17,7 @@ const menuStyles = makeStyles(theme => ({
  */
 
 const Select = (
-  { MenuProps, input = <Input />, fullWidth = true, classes, ...rest },
+  { MenuProps, input = <Input />, fullWidth = true, ...rest },
   ref
 ) => {
   const menuClasses = menuStyles({});
@@ -30,7 +30,6 @@ const Select = (
         MenuListProps: { ...MenuProps?.MenuListProps, disablePadding: true },
         ...MenuProps,
       }}
-      classes={classes}
       {...rest}
       ref={ref}
     />

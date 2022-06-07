@@ -17,5 +17,8 @@ export const baseTheme = createTheme({
       paper: '#5d666e',
     },
   },
+  shape: {
+    borderRadius: 1,
+  },
   typography: { fontFamily: '"Open Sans", sans-serif' },
 });
