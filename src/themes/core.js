@@ -1,7 +1,6 @@
 import { createTheme, alpha } from '@mui/material/styles';
 import { baseTheme } from './palette';
 
-const borderRadius = 5;
 const spacing = factor => `${0.5 * factor}rem`;
 
 const core = {
@@ -425,7 +424,7 @@ const core = {
     },
   },
   shape: {
-    borderRadius,
+    borderRadius: 2,
   },
   spacing,
   typography: {
