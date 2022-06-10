@@ -401,6 +401,14 @@ const core = {
     },
     MuiSwitch: {
       styleOverrides: {
+        checked: {},
+        disabled: {},
+        root: {
+          height: '1rem',
+          width: '1.875rem',
+          padding: 0,
+          display: 'flex',
+        },
         track: {
           backgroundColor: baseTheme.palette.grey[300],
           opacity: 1,
@@ -411,48 +419,48 @@ const core = {
           width: '0.875rem',
           boxShadow: 'none',
         },
-        root: {
-          height: '1rem',
-          width: '1.875rem',
-          padding: 0,
-          display: 'flex',
-        },
         switchBase: {
           padding: '0.0675rem',
-          '&$checked': {
+          '&.Mui-checked': {
             transform: 'translateX(0.875rem)',
-            '& + $track': {
+            '& + .MuiSwitch-track': {
               backgroundColor: baseTheme.palette.success.main,
               opacity: 1,
             },
-            '&$disabled + $track': {
-              backgroundColor: baseTheme.palette.success.main,
-              opacity: 0.3,
+            '&.Mui-disabled': {
+              '& + .MuiSwitch-track': {
+                backgroundColor: baseTheme.palette.success.main,
+                opacity: 0.3,
+              },
+            },
+          },
+        },
+        colorPrimary: {
+          '&.Mui-checked': {
+            '& + .MuiSwitch-track': {
+              backgroundColor: baseTheme.palette.primary.main,
             },
           },
         },
         colorSecondary: {
-          '&$checked + $track': {
-            backgroundColor: baseTheme.palette.secondary.main,
-          },
-        },
-        colorPrimary: {
-          '&$checked + $track': {
-            backgroundColor: baseTheme.palette.primary.main,
+          '&.Mui-checked': {
+            '& + .MuiSwitch-track': {
+              backgroundColor: baseTheme.palette.secondary.main,
+            },
           },
         },
         sizeSmall: {
           width: '1.4375rem',
           height: '0.75rem',
           padding: 0,
-          '& $thumb': {
+          '& .MuiSwitch-thumb': {
             width: '0.625rem',
             height: '0.625rem',
             boxShadow: 'none',
           },
-          '& $switchBase': {
+          '& .MuiSwitch-switchBase': {
             padding: '0.0675rem',
-            '&$checked': {
+            '&.Mui-checked': {
               transform: 'translateX(0.6875rem)',
             },
           },
