@@ -1,7 +1,6 @@
 import { createTheme, alpha } from '@mui/material/styles';
 import { baseTheme } from './palette';
 
-const borderRadius = 5;
 const spacing = factor => `${0.5 * factor}rem`;
 
 const core = {
@@ -396,6 +395,17 @@ const core = {
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        outlined: {
+          paddingTop: '1.5rem',
+          '&.Mui-disabled': {
+            cursor: 'not-allowed',
+          },
+        },
+      },
+    },
+
     MuiCssBaseline: {
       styleOverrides: {
         '@global': {
@@ -419,7 +429,7 @@ const core = {
     },
   },
   shape: {
-    borderRadius,
+    borderRadius: '0.3125rem',
   },
   spacing,
   typography: {
