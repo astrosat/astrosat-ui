@@ -9,9 +9,6 @@ const core = {
       defaultProps: {
         disableRipple: true,
       },
-      styleOverrides: {
-        cursor: 'not-allowed',
-      },
     },
     MuiAlert: {
       styleOverrides: {
@@ -400,7 +397,12 @@ const core = {
     },
     MuiSelect: {
       styleOverrides: {
-        outlined: { paddingTop: '1.5rem' },
+        outlined: {
+          paddingTop: '1.5rem',
+          '&.Mui-disabled': {
+            cursor: 'not-allowed',
+          },
+        },
       },
     },
 
