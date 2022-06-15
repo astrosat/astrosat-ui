@@ -9,6 +9,9 @@ const core = {
       defaultProps: {
         disableRipple: true,
       },
+      styleOverrides: {
+        cursor: 'not-allowed',
+      },
     },
     MuiAlert: {
       styleOverrides: {
@@ -424,7 +427,7 @@ const core = {
     },
   },
   shape: {
-    borderRadius: 2,
+    borderRadius: '0.3125rem',
   },
   spacing,
   typography: {

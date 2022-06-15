@@ -38,7 +38,6 @@ export const WithStyles = () => {
           border: `1.5px solid ${theme.palette.primary.main}`,
           borderRadius: theme.shape.borderRadius,
           width: '12.1875rem',
-          backgroundColor: 'transparent',
           height: '2.25rem',
         },
         '.MuiSelect-select': {
