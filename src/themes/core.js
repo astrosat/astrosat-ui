@@ -260,7 +260,7 @@ const core = {
         root: {
           margin: 0,
           marginLeft: 0,
-          '& .Mui-disabled': {
+          '&.Mui-disabled': {
             opacity: baseTheme.palette.action.disabledOpacity,
             cursor: 'not-allowed',
             pointerEvents: 'auto',
