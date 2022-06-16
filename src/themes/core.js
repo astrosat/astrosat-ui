@@ -1,7 +1,6 @@
 import { createTheme, alpha } from '@mui/material/styles';
 import { baseTheme } from './palette';
 
-const borderRadius = 5;
 const spacing = factor => `${0.5 * factor}rem`;
 
 const core = {
@@ -177,14 +176,18 @@ const core = {
     MuiDialog: {
       styleOverrides: {
         paper: {
-          backgroundColor: baseTheme.palette.background.default,
+          backgroundColor: baseTheme.palette.secondary.main,
           borderRadius: 10,
+        },
+        paperFullScreen: {
+          borderRadius: 0,
         },
       },
     },
     MuiDialogContent: {
       styleOverrides: {
         root: {
+          paddingTop: '2.5rem !important',
           padding: `${spacing(5)} ${spacing(3)} ${spacing(2)}`,
         },
       },
@@ -196,6 +199,11 @@ const core = {
           justifyContent: 'center',
           padding: `${spacing(2)} ${spacing(3)} ${spacing(4)}`,
         },
+      },
+    },
+    MuiDialogContentText: {
+      styleOverrides: {
+        root: { paddingBottom: `${spacing(2)}` },
       },
     },
     MuiIconButton: {
@@ -247,6 +255,15 @@ const core = {
       styleOverrides: {
         root: {
           fontWeight: 600,
+          borderBottom: `0.0625em solid ${baseTheme.palette.primary.main}`,
+          textDecoration: 'none',
+          '&:hover': {
+            textDecoration: 'none',
+            borderBottomColor: 'transparent',
+          },
+          '&:visited': {
+            color: baseTheme.palette.primary.main,
+          },
         },
       },
     },
@@ -378,6 +395,17 @@ const core = {
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        outlined: {
+          paddingTop: '1.5rem',
+          '&.Mui-disabled': {
+            cursor: 'not-allowed',
+          },
+        },
+      },
+    },
+
     MuiCssBaseline: {
       styleOverrides: {
         '@global': {
@@ -469,7 +497,7 @@ const core = {
     },
   },
   shape: {
-    borderRadius,
+    borderRadius: '0.3125rem',
   },
   spacing,
   typography: {
