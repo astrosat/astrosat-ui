@@ -1,9 +1,10 @@
 import React from 'react';
+
 import { useTheme } from '@mui/material/styles';
 import { Backdrop } from '@mui/material';
 import { styled } from '@mui/styles';
 
-const CircleSun = () => {
+const Sun = () => {
   const theme = useTheme();
   return (
     <circle
@@ -17,7 +18,7 @@ const CircleSun = () => {
   );
 };
 
-const CircleOrbit = ({ cx, cy, r }) => {
+const Orbit = ({ cx, cy, r }) => {
   const theme = useTheme();
   return (
     <circle
@@ -33,11 +34,11 @@ const CircleOrbit = ({ cx, cy, r }) => {
   );
 };
 
-const CircleSpinner = ({ cx, cy, r }) => {
+const Spinner = ({ cx, cy, r }) => {
   return <circle cx={cx} cy={cy} r={r} />;
 };
 
-const GTag = styled('g')({
+const Group = styled('g')({
   '&': {
     fill: '#fff',
     animation: '$spin 4s linear infinite',
@@ -62,19 +63,19 @@ const LoadMask = props => {
   return (
     <Backdrop {...props}>
       <svg width="100px" height="100px" viewBox="0 0 1000 1000">
-        <CircleSun />
-        <CircleOrbit cx={500} cy={570} r={200} />
-        <CircleOrbit cx={500} cy={666} r={300} />
-        <CircleOrbit cx={500} cy={500} r={470} />
-        <GTag style={{ transformOrigin: '50% 57%' }}>
-          <CircleSpinner cx={300} cy={570} r={40} />
-        </GTag>
-        <GTag style={{ transformOrigin: '50% 66.6%' }}>
-          <CircleSpinner cx={500} cy={366} r={40} />
-        </GTag>
-        <GTag style={{ animationDuration: '5s', transformOrigin: '50% 50%' }}>
-          <CircleSpinner cx={500} cy={30} r={40} />
-        </GTag>
+        <Sun />
+        <Orbit cx={500} cy={570} r={200} />
+        <Orbit cx={500} cy={666} r={300} />
+        <Orbit cx={500} cy={500} r={470} />
+        <Group style={{ transformOrigin: '50% 57%' }}>
+          <Spinner cx={300} cy={570} r={40} />
+        </Group>
+        <Group style={{ transformOrigin: '50% 66.6%' }}>
+          <Spinner cx={500} cy={366} r={40} />
+        </Group>
+        <Group style={{ animationDuration: '5s', transformOrigin: '50% 50%' }}>
+          <Spinner cx={500} cy={30} r={40} />
+        </Group>
       </svg>
     </Backdrop>
   );
