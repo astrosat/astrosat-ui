@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Input as MuiInput, InputAdornment } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import { Input as MuiInput, InputAdornment, alpha } from '@mui/material';
 
 import { ErrorIcon, CorrectIcon } from '../icons';
 
@@ -18,85 +17,40 @@ const getColors = (theme, props) => {
     return theme.palette.success.main;
   } else if (props.error) {
     return theme.palette.error.main;
+  } else if (props.disabled) {
+    return theme.palette.action.disabled;
   } else {
     return theme.palette.primary.main;
   }
 };
 
-const inputStyles = makeStyles(theme => ({
-  root: {
-    fontSize: theme.typography.pxToRem(14),
-    /** @param {InputProps} props */
-    paddingLeft: props => (props.startAdornment ? theme.spacing(2) : 0),
-    /** @param {InputProps} props */
-    paddingRight: props =>
-      props.endAdornment || props.error || props.valid ? theme.spacing(2) : 0,
-    borderRadius: `0.3rem 0.3rem 0.125rem 0.125rem`,
-    '&$disabled': {
-      backgroundColor: theme.palette.action.disabledBackground,
-      cursor: 'not-allowed',
-    },
-    '&$multiline': {
-      padding: theme.spacing(2),
-    },
-  },
-  disabled: {},
-  underline: {
-    '&:after': {
-      borderBottom: props => `2px solid ${getColors(theme, props)}`,
-      borderRadius: '100vh',
-      left: 0,
-      bottom: 0,
-      content: '""',
-      position: 'absolute',
-      right: 0,
-      transform: 'scaleX(1)',
-      pointerEvents: 'none',
-    },
-    '&:before': { display: 'none' },
-    '&$multiline': { '&:after': { display: 'none' } },
-    '&$disabled': { '&:after': { borderColor: theme.palette.action.disabled } },
-  },
-  input: {
-    /** @param {InputProps} props */
-    padding: props => (props.multiline ? 0 : theme.spacing(2)),
-    '&$disabled': {
-      cursor: 'not-allowed',
-    },
-  },
-  multiline: {
-    borderRadius: theme.shape.borderRadius,
-    border: props => `2px solid ${getColors(theme, props)}`,
-    '&$disabled': {
-      borderColor: theme.palette.action.disabled,
-      cursor: 'not-allowed',
-    },
-  },
-}));
-
-const inputAdornmentClasses = makeStyles(theme => ({
-  root: {
-    color: props => getColors(theme, props),
-  },
-}));
-
 /**
  * @param { InputProps } props
  */
 const getAdornment = props => {
-  const adornmentClasses = inputAdornmentClasses(props);
-
   if (props.endAdornment) return props.endAdornment;
   if (props.error)
     return (
       <InputAdornment position="end">
-        <ErrorIcon classes={adornmentClasses} />
+        <ErrorIcon
+          sx={{
+            '&': {
+              color: theme => theme.palette.error.main,
+            },
+          }}
+        />
       </InputAdornment>
     );
   if (props.valid)
     return (
       <InputAdornment position="end">
-        <CorrectIcon classes={adornmentClasses} />
+        <CorrectIcon
+          sx={{
+            '&': {
+              color: theme => theme.palette.success.main,
+            },
+          }}
+        />
       </InputAdornment>
     );
   return null;
@@ -106,11 +60,53 @@ const getAdornment = props => {
  * @param { InputProps } props
  */
 const Input = ({ fullWidth = true, ...props }) => {
-  const inputClasses = inputStyles({ fullWidth, ...props });
   return (
     <MuiInput
-      classes={inputClasses}
       endAdornment={getAdornment(props)}
+      sx={{
+        '&': {
+          fontSize: theme => theme.typography.pxToRem(14),
+          borderRadius: `0.3rem 0.3rem 0.125rem 0.125rem`,
+          paddingLeft: theme => (props.startAdornment ? theme.spacing(2) : 0),
+          paddingRight: theme =>
+            props.endAdornment || props.error || props.valid
+              ? theme.spacing(2)
+              : 0,
+          '&.Mui-disabled': {
+            backgroundColor: theme => alpha(theme.palette.common.black, 0.12),
+            cursor: 'not-allowed',
+          },
+        },
+        '&.MuiInput-underline': {
+          '&:after': {
+            borderBottom: theme => `2px solid ${getColors(theme, props)}`,
+            borderRadius: '100vh',
+            left: 0,
+            bottom: 0,
+            content: '""',
+            position: 'absolute',
+            right: 0,
+            transform: 'scaleX(1)',
+            pointerEvents: 'none',
+          },
+          '&:before': { display: 'none' },
+        },
+        input: {
+          padding: theme => (props.multiline ? 0 : theme.spacing(2)),
+          '&.Mui-disabled': {
+            cursor: 'not-allowed',
+          },
+        },
+        '&.MuiInputBase-multiline': {
+          border: theme => `2px solid ${theme.palette.primary.main}`,
+          padding: theme => theme.spacing(2),
+          '&.MuiInput-underline': {
+            '&:after': {
+              display: 'none',
+            },
+          },
+        },
+      }}
       fullWidth={fullWidth}
       {...props}
     />

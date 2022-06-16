@@ -16,6 +16,10 @@ const Menu = (props, ref) => {
         '&': {
           marginTop: theme => theme.spacing(-2),
         },
+        '& .MuiMenu-list': {
+          marginLeft: theme => theme.spacing(1),
+          marginRight: theme => theme.spacing(1),
+        },
       }}
     />
   );

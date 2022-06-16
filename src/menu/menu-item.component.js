@@ -15,8 +15,6 @@ const MenuItem = (props, ref) => {
       sx={{
         '&': {
           padding: theme => theme.spacing(0.5),
-          marginRight: theme => theme.spacing(1),
-          marginLeft: theme => theme.spacing(1),
           '& + &': {
             borderTop: theme => `1px solid ${theme.palette.divider}`,
           },
