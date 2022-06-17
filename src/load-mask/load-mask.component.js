@@ -1,5 +1,4 @@
 import React from 'react';
-import { baseTheme } from '../themes/palette';
 import { useTheme } from '@mui/material/styles';
 import { Backdrop } from '@mui/material';
 import { styled } from '@mui/styles';
@@ -40,7 +39,7 @@ const Spinner = ({ cx, cy, r }) => {
 
 const Group = styled('g')({
   '&': {
-    fill: baseTheme.palette.common.white,
+    fill: '#fff',
     animation: '$spin 4s linear infinite',
   },
   '@global': {
