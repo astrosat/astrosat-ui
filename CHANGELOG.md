@@ -1,3 +1,16 @@
+# [2.10.0](https://github.com/astrosat/astrosat-ui/compare/v2.9.1...v2.10.0) (2022-06-20)
+
+
+### Bug Fixes
+
+* **frontend:** tidy up code ([ecf9689](https://github.com/astrosat/astrosat-ui/commit/ecf9689cb4db24b2918836d6b090c15d3dd75126))
+
+
+### Features
+
+* **frontend:** implement a default characters counter helper in the textField ([ebd7bea](https://github.com/astrosat/astrosat-ui/commit/ebd7beaa1d9ca80e57d701795970cd100794898b))
+* **frontend:** implement a maxLengthHelperText property in the textField ([15e5125](https://github.com/astrosat/astrosat-ui/commit/15e51252f01065ee5938704c747403bde323f6d5))
+
 ## [2.9.1](https://github.com/astrosat/astrosat-ui/compare/v2.9.0...v2.9.1) (2022-03-22)
 
 
