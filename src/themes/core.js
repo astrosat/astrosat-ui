@@ -332,12 +332,6 @@ const core = {
       styleOverrides: {
         root: {
           zIndex: 1,
-          '&.Mui-error': {
-            color: baseTheme.palette.text.secondary,
-            '&.Mui-focused': {
-              color: baseTheme.palette.primary.main,
-            },
-          },
         },
         formControl: {
           transform: 'translate(16px, 32px) scale(1)',

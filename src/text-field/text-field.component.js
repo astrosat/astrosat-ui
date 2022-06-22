@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { FormHelperText, FormControl, InputLabel } from '@mui/material';
 import withStyles from '@mui/styles/withStyles';
+import { useTheme } from '@mui/material/styles';
 import Input from '../input/input.component';
 import clsx from 'clsx';
 import PasswordInput from 'password-input/password-input.component';
@@ -67,7 +68,7 @@ const TextField = React.forwardRef(
       visibilityToggleButtonLabel,
       ...other
     } = props;
-
+    const theme = useTheme();
     const [charCount, setCharCount] = useState(0);
 
     const getMaxLengthText = () => {
@@ -200,6 +201,7 @@ const TextField = React.forwardRef(
             value={value}
             input={InputElement}
             {...SelectProps}
+            style={{ paddingTop: theme.spacing(2.8) }}
           >
             {children}
           </Select>

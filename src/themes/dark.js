@@ -172,6 +172,13 @@ const dark = {
     MuiInputLabel: {
       styleOverrides: {
         root: {
+          color: coreTheme.palette.common.white,
+          '&.Mui-error': {
+            color: coreTheme.palette.common.white,
+            '&.Mui-focused': {
+              color: coreTheme.palette.primary.main,
+            },
+          },
           '&$error': {
             color: coreTheme.palette.text.primary,
           },

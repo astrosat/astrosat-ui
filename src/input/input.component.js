@@ -66,7 +66,7 @@ const Input = ({ fullWidth = true, ...props }) => {
       sx={{
         '&': {
           fontSize: theme => theme.typography.pxToRem(14),
-          borderRadius: `0.3rem 0.3rem 0.125rem 0.125rem`,
+          borderRadius: `0.3rem`,
           paddingLeft: theme => (props.startAdornment ? theme.spacing(2) : 0),
           paddingRight: theme =>
             props.endAdornment || props.error || props.valid
@@ -90,6 +90,9 @@ const Input = ({ fullWidth = true, ...props }) => {
             pointerEvents: 'none',
           },
           '&:before': { display: 'none' },
+          '&.Mui-disabled': {
+            '&:after': { borderColor: theme => theme.palette.action.disabled },
+          },
         },
         input: {
           padding: theme => (props.multiline ? 0 : theme.spacing(2)),
