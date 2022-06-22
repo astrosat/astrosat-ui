@@ -65,7 +65,6 @@ const Input = ({ fullWidth = true, ...props }) => {
       endAdornment={getAdornment(props)}
       sx={{
         '&': {
-          height: '3.375rem',
           fontSize: theme => theme.typography.pxToRem(14),
           borderRadius: `0.3rem`,
           paddingLeft: theme => (props.startAdornment ? theme.spacing(2) : 0),

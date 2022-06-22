@@ -331,14 +331,7 @@ const core = {
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          color: baseTheme.palette.common.white,
           zIndex: 1,
-          '&.Mui-error': {
-            color: baseTheme.palette.common.white,
-            '&.Mui-focused': {
-              color: baseTheme.palette.primary.main,
-            },
-          },
         },
         formControl: {
           transform: 'translate(16px, 32px) scale(1)',
