@@ -2,31 +2,25 @@ import React, { useState } from 'react';
 
 import { InputAdornment } from '@mui/material';
 
-import { makeStyles, styled } from '@mui/styles';
-
 import { default as IconButton } from '../icon-button/icon-button.component';
 import { default as Input } from '../input/input.component';
 
 import { EyeIcon, EyeSlashIcon } from '../icons';
-import { baseTheme } from '../themes/palette';
 
 const INPUT_TYPE = {
   text: 'text',
   password: 'password',
 };
 
-// const iconStyles = makeStyles({
-//   root: {
-//     /**
-//      * @param {import('../input/input.component.js').InputProps} props
-//      */
-//     color: props => {
-//       if (props.error) return baseTheme.palette.error.main;
-//       if (props.valid) return baseTheme.palette.success.main;
-//       return 'inherit';
-//     },
-//   },
-// });
+const getColors = props => theme => {
+  if (props.valid) {
+    return theme.palette.success.main;
+  } else if (props.error) {
+    return theme.palette.error.main;
+  } else {
+    return 'inherit';
+  }
+};
 
 /**
  * @param {import('../input/input.component.js').InputProps & {visibilityToggleButtonLabel?: string}} props
@@ -37,9 +31,6 @@ const PasswordInput = ({
   ...rest
 }) => {
   const [_type, setType] = useState(type);
-
-  // const iconClasses = iconStyles({ type: _type, ...rest });
-  // console.log('iconClasses', iconClasses);
 
   const handleClick = () =>
     _type === INPUT_TYPE.password
@@ -56,24 +47,18 @@ const PasswordInput = ({
         {_type === INPUT_TYPE.text ? (
           <EyeIcon
             sx={{
-              color: (props, theme) => {
-                if (props.error) return theme.palette.error.main;
-                if (props.valid) return theme.palette.success.main;
-                return 'inherit';
+              '&': {
+                color: getColors({ type: _type, ...rest }),
               },
             }}
-            // classes={iconClasses}
           />
         ) : (
           <EyeSlashIcon
             sx={{
-              color: (props, theme) => {
-                if (props.error) return theme.palette.error.main;
-                if (props.valid) return theme.palette.success.main;
-                return 'inherit';
+              '&': {
+                color: getColors({ type: _type, ...rest }),
               },
             }}
-            // classes={iconClasses}
           />
         )}
       </IconButton>
