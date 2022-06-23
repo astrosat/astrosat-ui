@@ -1,7 +1,6 @@
 import { createTheme, alpha } from '@mui/material/styles';
 import { baseTheme } from './palette';
 
-const borderRadius = 5;
 const spacing = factor => `${0.5 * factor}rem`;
 
 const core = {
@@ -278,7 +277,7 @@ const core = {
         root: {
           margin: 0,
           marginLeft: 0,
-          '& .Mui-disabled': {
+          '&.Mui-disabled': {
             opacity: baseTheme.palette.action.disabledOpacity,
             cursor: 'not-allowed',
             pointerEvents: 'auto',
@@ -333,12 +332,6 @@ const core = {
       styleOverrides: {
         root: {
           zIndex: 1,
-          '&.Mui-error': {
-            color: baseTheme.palette.text.secondary,
-            '&.Mui-focused': {
-              color: baseTheme.palette.primary.main,
-            },
-          },
         },
         formControl: {
           transform: 'translate(16px, 32px) scale(1)',
@@ -396,6 +389,17 @@ const core = {
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        outlined: {
+          paddingTop: '1.5rem',
+          '&.Mui-disabled': {
+            cursor: 'not-allowed',
+          },
+        },
+      },
+    },
+
     MuiCssBaseline: {
       styleOverrides: {
         '@global': {
@@ -417,9 +421,77 @@ const core = {
         },
       },
     },
+    MuiSwitch: {
+      styleOverrides: {
+        checked: {},
+        disabled: {},
+        root: {
+          height: '1rem',
+          width: '1.875rem',
+          padding: 0,
+          display: 'flex',
+        },
+        track: {
+          backgroundColor: baseTheme.palette.grey[300],
+          opacity: 1,
+        },
+        thumb: {
+          backgroundColor: baseTheme.palette.common.white,
+          height: '0.875rem',
+          width: '0.875rem',
+          boxShadow: 'none',
+        },
+        switchBase: {
+          padding: '0.0675rem',
+          '&.Mui-checked': {
+            transform: 'translateX(0.875rem)',
+            '& + .MuiSwitch-track': {
+              backgroundColor: baseTheme.palette.success.main,
+              opacity: 1,
+            },
+            '&.Mui-disabled': {
+              '& + .MuiSwitch-track': {
+                backgroundColor: baseTheme.palette.success.main,
+                opacity: 0.3,
+              },
+            },
+          },
+        },
+        colorPrimary: {
+          '&.Mui-checked': {
+            '& + .MuiSwitch-track': {
+              backgroundColor: baseTheme.palette.primary.main,
+            },
+          },
+        },
+        colorSecondary: {
+          '&.Mui-checked': {
+            '& + .MuiSwitch-track': {
+              backgroundColor: baseTheme.palette.secondary.main,
+            },
+          },
+        },
+        sizeSmall: {
+          width: '1.4375rem',
+          height: '0.75rem',
+          padding: 0,
+          '& .MuiSwitch-thumb': {
+            width: '0.625rem',
+            height: '0.625rem',
+            boxShadow: 'none',
+          },
+          '& .MuiSwitch-switchBase': {
+            padding: '0.0675rem',
+            '&.Mui-checked': {
+              transform: 'translateX(0.6875rem)',
+            },
+          },
+        },
+      },
+    },
   },
   shape: {
-    borderRadius,
+    borderRadius: '0.3125rem',
   },
   spacing,
   typography: {
