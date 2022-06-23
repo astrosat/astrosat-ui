@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 import { InputAdornment } from '@mui/material';
 
-import makeStyles from '@mui/styles/makeStyles';
-
 import { default as IconButton } from '../icon-button/icon-button.component';
 import { default as Input } from '../input/input.component';
 
@@ -14,18 +12,15 @@ const INPUT_TYPE = {
   password: 'password',
 };
 
-const iconStyles = makeStyles(theme => ({
-  root: {
-    /**
-     * @param {import('../input/input.component.js').InputProps} props
-     */
-    color: props => {
-      if (props.error) return theme.palette.error.main;
-      if (props.valid) return theme.palette.success.main;
-      return 'inherit';
-    },
-  },
-}));
+const getColors = props => theme => {
+  if (props.valid) {
+    return theme.palette.success.main;
+  } else if (props.error) {
+    return theme.palette.error.main;
+  } else {
+    return 'inherit';
+  }
+};
 
 /**
  * @param {import('../input/input.component.js').InputProps & {visibilityToggleButtonLabel?: string}} props
@@ -36,8 +31,6 @@ const PasswordInput = ({
   ...rest
 }) => {
   const [_type, setType] = useState(type);
-
-  const iconClasses = iconStyles({ type: _type, ...rest });
 
   const handleClick = () =>
     _type === INPUT_TYPE.password
@@ -52,9 +45,21 @@ const PasswordInput = ({
         aria-label={visibilityToggleButtonLabel}
       >
         {_type === INPUT_TYPE.text ? (
-          <EyeIcon classes={iconClasses} />
+          <EyeIcon
+            sx={{
+              '&': {
+                color: getColors({ type: _type, ...rest }),
+              },
+            }}
+          />
         ) : (
-          <EyeSlashIcon classes={iconClasses} />
+          <EyeSlashIcon
+            sx={{
+              '&': {
+                color: getColors({ type: _type, ...rest }),
+              },
+            }}
+          />
         )}
       </IconButton>
     </InputAdornment>
