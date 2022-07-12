@@ -1,9 +1,55 @@
 import React from 'react';
 
-import { Fade, Grid, LinearProgress, Typography } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
-import clsx from 'clsx';
+import { styled } from '@mui/material/styles';
+import {
+  Fade,
+  Grid,
+  LinearProgress,
+  createTheme,
+  ThemeProvider,
+  Typography,
+} from '@mui/material';
+
 import zxcvbn from 'zxcvbn';
+
+import { baseTheme } from 'themes/palette';
+
+const PREFIX = 'PasswordStrengthMeter';
+
+const classes = {
+  root: `${PREFIX}-root`,
+  bar: `${PREFIX}-bar`,
+  grid: `${PREFIX}-grid`,
+  text: `${PREFIX}-text`,
+};
+
+const StyledGrid = styled(Grid)(({ theme, ...props }) => {
+  return {
+    [`& .${classes.root}`]: {
+      minHeight: '0.5rem',
+      borderRadius: '100vh',
+      backgroundColor: theme.palette.grey[500],
+    },
+    [`& .MuiLinearProgress-bar`]: {
+      borderRadius: '100vh',
+      backgroundColor: getColor(props.strength),
+      transition: theme.transitions.create(['transform', 'background-color'], {
+        easing: 'linear',
+      }),
+    },
+    [`& .${classes.grid}`]: {
+      minHeight: '1.375rem',
+      alignItems: 'center',
+      [theme.breakpoints.only('xs')]: {
+        minHeight: '1.6875rem',
+        alignItems: 'flex-start',
+      },
+    },
+    [`& .MuiTypography-caption`]: {
+      color: getColor(props.strength),
+    },
+  };
+});
 
 /**
  * @param {number} score
@@ -20,50 +66,26 @@ const getPasswordStrength = score => {
     case 4:
       return ['Strong', 100];
     default:
-      return [null, null];
+      return ['Empty', -1];
   }
 };
 
 /**
- * @param {import('@mui/material').Theme} theme
- * @returns {(props: {strengthValue: number}) => string}
+ * @param strength: number
+ * @returns cssHexString : string
  */
-const getColor = theme => props => {
-  switch (props.strengthValue) {
+const getColor = strength => {
+  switch (strength) {
+    case -1:
+      return baseTheme.palette.error.main;
     case 66:
-      return theme.palette.primary.main;
+      return baseTheme.palette.primary.main; // amber
     case 100:
-      return theme.palette.success.main;
+      return baseTheme.palette.success.main; // green
     default:
-      return theme.palette.error.main;
+      return baseTheme.palette.error.main; // red
   }
 };
-
-const meterStyles = makeStyles(theme => ({
-  root: {
-    minHeight: '0.5rem',
-    borderRadius: '100vh',
-    backgroundColor: theme.palette.grey[500],
-  },
-  bar: {
-    borderRadius: '100vh',
-    backgroundColor: getColor(theme),
-    transition: theme.transitions.create(['transform', 'background-color'], {
-      easing: 'linear',
-    }),
-  },
-  grid: {
-    minHeight: '1.375rem',
-    alignItems: 'center',
-    [theme.breakpoints.only('xs')]: {
-      minHeight: '1.6875rem',
-      alignItems: 'flex-start',
-    },
-  },
-  text: {
-    color: getColor(theme),
-  },
-}));
 
 /**
  * @param {{
@@ -75,31 +97,28 @@ const PasswordStrengthMeter = ({ password = '', className }) => {
   const passwordResult = zxcvbn(password);
   const [text, value] = getPasswordStrength(password && passwordResult.score);
 
-  const {
-    text: textClasses,
-    grid: gridClasses,
-    ...meterClasses
-  } = meterStyles({
-    strengthValue: value,
-  });
-
   return (
-    <Grid className={clsx(gridClasses, className)} container>
+    <StyledGrid strength={value} container>
       <Grid item xs={12} sm={10}>
         <LinearProgress
-          classes={meterClasses}
+          style={{
+            backgroundColor: '#9e9e9e',
+            height: '0.5rem',
+            borderRadius: '0.3rem',
+          }}
+          color="primary"
           variant="determinate"
           value={value}
         />
       </Grid>
       <Grid item xs={12} sm={2} container justifyContent="flex-end">
         <Fade in={!!text}>
-          <Typography className={textClasses} variant="caption">
+          <Typography color="primary" variant="caption">
             {text}
           </Typography>
         </Fade>
       </Grid>
-    </Grid>
+    </StyledGrid>
   );
 };
 
