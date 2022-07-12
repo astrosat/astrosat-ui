@@ -2,15 +2,26 @@ import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import ToggleButtonGroup from './toggle-button-group.component';
 import ToggleButton from './toggle-button.component';
+import { styles } from '../text-field/text-field.component';
+import { styled } from '@mui/system';
 
-const useStyles = makeStyles({
-  group: {
-    border: '2px solid hotpink',
-  },
-  button: {
-    backgroundColor: 'hotpink',
-  },
-});
+// const useStyles = makeStyles({
+//   group: {
+//     border: '2px solid hotpink',
+//   },
+//   button: {
+//     backgroundColor: 'hotpink',
+//   },
+// });
+
+// const styles = () => ({
+//   group: {
+//     border: '2px solid hotpink',
+//   },
+//   button: {
+//     backgroundColor: 'hotpink',
+//   },
+// });
 
 const twoButtons = ['Percentage', 'Number'];
 
@@ -80,23 +91,22 @@ export const Disabled = () =>
   // @ts-ignore
   renderButtons({ array: twoButtons, disabled: true });
 
-export const GroupWithClasses = () => {
-  const { group } = useStyles({});
+export const GroupWithClasses = () => (
+  // const { group } = useStyles({});
   // @ts-ignore
-  return renderButtons({
-    array: twoButtons,
-    groupClasses: { root: group },
-  });
-};
 
-export const ButtonWithClasses = () => {
-  const { button } = useStyles({});
+  <div style={{ border: '2px solid hotpink' }}>
+    {renderButtons({ array: twoButtons })}
+  </div>
+);
+
+export const ButtonWithClasses = () => (
+  // const { button } = useStyles({});
   // @ts-ignore
-  return renderButtons({
-    array: twoButtons,
-    buttonClasses: { root: button },
-  });
-};
+  <div sx={{ backgroundColor: 'hotpink' }}>
+    {renderButtons({ array: twoButtons })}
+  </div>
+);
 
 export const NotFullWidth = () =>
   // @ts-ignore
