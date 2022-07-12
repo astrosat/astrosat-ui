@@ -103,11 +103,20 @@ const dark = {
     //     },
     //   },
     // },
+    MuiMenu: {
+      styleOverrides: {
+        list: {
+          backgroundColor: '#5d666e',
+        },
+      },
+    },
     MuiMenuItem: {
       styleOverrides: {
         root: {
+          backgroundColor: '#5d666e',
           '&:hover': {
-            backgroundColor: lighten(coreTheme.palette.background.default, 0.1),
+            // backgroundColor: lighten(coreTheme.palette.background.default, 0.1),
+            backgroundColor: 'rgb(71, 82, 90)',
           },
         },
       },
