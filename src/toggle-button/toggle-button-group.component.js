@@ -28,15 +28,13 @@ const ToggleButtonGroup = ({
   exclusive = true,
   fullWidth = true,
   ...props
-}) => {
-  return (
-    <StyledToggleButtonGroup
-      sx={sx}
-      fullWidth={fullWidth}
-      exclusive={exclusive}
-      {...props}
-    />
-  );
-};
+}) => (
+  <StyledToggleButtonGroup
+    sx={sx}
+    fullWidth={fullWidth}
+    exclusive={exclusive}
+    {...props}
+  />
+);
 
 export default ToggleButtonGroup;
