@@ -1,11 +1,9 @@
 import React from 'react';
-import clsx from 'clsx';
 import { darken, ToggleButton as MuiToggleButton } from '@mui/material';
+import { styled } from '@mui/system';
 
-import makeStyles from '@mui/styles/makeStyles';
-
-const useStyles = makeStyles(theme => ({
-  root: {
+const StyledToggleButton = styled(MuiToggleButton)(({ theme }) => ({
+  '&': {
     flexBasis: '100%',
     border: 'none',
     padding: '0.65em',
@@ -21,11 +19,11 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: darken(theme.palette.secondary.main, 0.3),
       opacity: 0.5,
     },
-    '&$disabled': {
+    '&.Mui-disabled': {
       backgroundColor: theme.palette.grey['300'],
       color: theme.palette.grey.A700,
     },
-    '&$selected': {
+    '&.Mui-selected': {
       color: theme.palette.secondary.main,
       backgroundColor: theme.palette.primary.main,
       '&:hover': {
@@ -33,44 +31,23 @@ const useStyles = makeStyles(theme => ({
         opacity: 0.5,
       },
     },
-    '&$sizeSmall': {
+    '&.MuiToggleButton-sizeSmall': {
       padding: '0.57em',
       fontSize: theme.typography.pxToRem(14),
     },
-    '&$sizeLarge': {
+    '&.MuiToggleButton-sizeLarge': {
       padding: '0.73em',
       fontSize: theme.typography.pxToRem(22),
     },
   },
-  selected: {},
-  disabled: {},
-  sizeSmall: {},
-  sizeLarge: {},
 }));
 
 /**
  * @param {import('@mui/lab').ToggleButtonProps} props
  */
-const ToggleButton = ({ classes = {}, ...props }) => {
-  const styles = useStyles({});
-  const { root, selected, disabled, sizeSmall, sizeLarge, ...rest } = classes;
-
-  const combinedStyles = {
-    root: clsx(styles.root, root),
-    selected: clsx(styles.selected, selected),
-    disabled: clsx(styles.disabled, disabled),
-    sizeSmall: clsx(styles.sizeSmall, sizeSmall),
-    sizeLarge: clsx(styles.sizeLarge, sizeLarge),
-    ...rest,
-  };
-
+const ToggleButton = ({ sx = {}, ...props }) => {
   return (
-    <MuiToggleButton
-      disableRipple
-      disableFocusRipple
-      classes={combinedStyles}
-      {...props}
-    />
+    <StyledToggleButton disableRipple disableFocusRipple {...props} sx={sx} />
   );
 };
 
