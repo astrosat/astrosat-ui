@@ -1,19 +1,8 @@
 import React from 'react';
-import makeStyles from '@mui/styles/makeStyles';
 import ToggleButtonGroup from './toggle-button-group.component';
 import ToggleButton from './toggle-button.component';
 
-const useStyles = makeStyles({
-  group: {
-    border: '2px solid hotpink',
-  },
-  button: {
-    backgroundColor: 'hotpink',
-  },
-});
-
 const twoButtons = ['Percentage', 'Number'];
-
 const unevenButtons = ['I am short', 'Iamverylongandunbrokentext'];
 
 const renderButtons = ({
@@ -22,15 +11,12 @@ const renderButtons = ({
   disabled,
   size = 'medium',
   fullWidth = true,
-  groupClasses,
-  buttonClasses,
 }) => {
   return (
     <ToggleButtonGroup
       orientation={orientation}
       size={size}
       fullWidth={fullWidth}
-      classes={groupClasses}
     >
       {array.map((text, i) => (
         <ToggleButton
@@ -38,7 +24,6 @@ const renderButtons = ({
           value={text}
           selected={i === 0}
           disabled={disabled && i !== 0 ? true : false}
-          classes={buttonClasses}
         >
           {text}
         </ToggleButton>
@@ -53,7 +38,6 @@ const Index = {
 };
 
 export default Index;
-
 export const Default = () =>
   // @ts-ignore
   renderButtons({ array: twoButtons });
@@ -80,23 +64,33 @@ export const Disabled = () =>
   // @ts-ignore
   renderButtons({ array: twoButtons, disabled: true });
 
-export const GroupWithClasses = () => {
-  const { group } = useStyles({});
+export const GroupWithCustomCss = () => (
   // @ts-ignore
-  return renderButtons({
-    array: twoButtons,
-    groupClasses: { root: group },
-  });
-};
+  <ToggleButtonGroup
+    orientation="horizontal"
+    size="medium"
+    fullWidth
+    exclusive
+    sx={{ border: '2px solid hotpink' }}
+  >
+    <ToggleButton value selected>
+      {twoButtons[0]}
+    </ToggleButton>
+    <ToggleButton value>{twoButtons[1]}</ToggleButton>
+  </ToggleButtonGroup>
+);
 
-export const ButtonWithClasses = () => {
-  const { button } = useStyles({});
+export const ButtonWithCustomCss = () => (
   // @ts-ignore
-  return renderButtons({
-    array: twoButtons,
-    buttonClasses: { root: button },
-  });
-};
+  <ToggleButtonGroup orientation="horizontal" size="medium" fullWidth>
+    <ToggleButton value selected>
+      {twoButtons[0]}
+    </ToggleButton>
+    <ToggleButton value style={{ backgroundColor: 'hotpink' }}>
+      {twoButtons[1]}
+    </ToggleButton>
+  </ToggleButtonGroup>
+);
 
 export const NotFullWidth = () =>
   // @ts-ignore
