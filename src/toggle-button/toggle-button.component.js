@@ -31,11 +31,11 @@ const StyledToggleButton = styled(MuiToggleButton)(({ theme }) => ({
         opacity: 0.5,
       },
     },
-    '&$sizeSmall': {
+    '&.MuiToggleButton-sizeSmall': {
       padding: '0.57em',
       fontSize: theme.typography.pxToRem(14),
     },
-    '&$sizeLarge': {
+    '&.MuiToggleButton-sizeLarge': {
       padding: '0.73em',
       fontSize: theme.typography.pxToRem(22),
     },
@@ -45,9 +45,10 @@ const StyledToggleButton = styled(MuiToggleButton)(({ theme }) => ({
 /**
  * @param {import('@mui/lab').ToggleButtonProps} props
  */
-
-const ToggleButton = ({ ...props }) => {
-  return <StyledToggleButton disableRipple disableFocusRipple {...props} />;
+const ToggleButton = ({ sx = {}, ...props }) => {
+  return (
+    <StyledToggleButton disableRipple disableFocusRipple {...props} sx={sx} />
+  );
 };
 
 export default ToggleButton;

@@ -23,14 +23,15 @@ const StyledToggleButtonGroup = styled(MuiToggleButtonGroup)(({ theme }) => ({
 /**
  * @param {import('@mui/lab').ToggleButtonGroupProps&{fullWidth?: boolean}} props
  */
-
 const ToggleButtonGroup = ({
+  sx = {},
   exclusive = true,
   fullWidth = true,
   ...props
 }) => {
   return (
     <StyledToggleButtonGroup
+      sx={sx}
       fullWidth={fullWidth}
       exclusive={exclusive}
       {...props}
