@@ -19,7 +19,7 @@ const getPasswordStrength = score => {
     case 4:
       return ['Strong', 100];
     default:
-      return ['Empty', -1];
+      return [null, null];
   }
 };
 
@@ -27,11 +27,8 @@ const getPasswordStrength = score => {
  * @param strength: number
  * @returns cssHexString : string
  */
-
 const getColor = (strength, theme) => {
   switch (strength) {
-    case -1:
-      return theme.palette.error.main;
     case 66:
       return theme.palette.primary.main;
     case 100:
@@ -41,41 +38,35 @@ const getColor = (strength, theme) => {
   }
 };
 
-const PREFIX = 'PasswordStrengthMeter';
+const StyledGrid = styled(Grid)(({ theme, ...props }) => ({
+  '&': {
+    minHeight: '1.375rem',
+    alignItems: 'center',
+    [theme.breakpoints.only('xs')]: {
+      minHeight: '1.6875rem',
+      alignItems: 'flex-start',
+    },
+  },
+  '& .MuiLinearProgress-bar': {
+    borderRadius: '100vh',
+    backgroundColor: getColor(props.strength, theme),
+    transition: theme.transitions.create(['transform', 'background-color'], {
+      easing: 'linear',
+    }),
+  },
+  '& .MuiTypography-caption': {
+    color: getColor(props.strength, theme),
+  },
+}));
 
-const classes = {
-  root: `${PREFIX}-root`,
-  bar: `${PREFIX}-bar`,
-  grid: `${PREFIX}-grid`,
-  text: `${PREFIX}-text`,
-};
-const StyledGrid = styled(Grid)(({ theme, ...props }) => {
-  return {
-    [`& .${classes.root}`]: {
-      minHeight: '0.5rem',
-      borderRadius: '100vh',
-      backgroundColor: theme.palette.grey[500],
-    },
-    [`& .MuiLinearProgress-bar`]: {
-      borderRadius: '100vh',
-      backgroundColor: getColor(props.strength, theme),
-      transition: theme.transitions.create(['transform', 'background-color'], {
-        easing: 'linear',
-      }),
-    },
-    [`& .${classes.grid}`]: {
-      minHeight: '1.375rem',
-      alignItems: 'center',
-      [theme.breakpoints.only('xs')]: {
-        minHeight: '1.6875rem',
-        alignItems: 'flex-start',
-      },
-    },
-    [`& .MuiTypography-caption`]: {
-      color: getColor(props.strength, theme),
-    },
-  };
-});
+const StyledLinearProgress = styled(LinearProgress)(({ theme }) => ({
+  '&': {
+    backgroundColor: theme.palette.grey[500],
+    height: '0.5rem',
+    borderRadius: '0.3rem',
+  },
+}));
+
 /**
  * @param {{
  *   className?: string
@@ -90,12 +81,7 @@ const PasswordStrengthMeter = ({ password = '' }) => {
   return (
     <StyledGrid strength={value} container>
       <Grid item xs={12} sm={10}>
-        <LinearProgress
-          style={{
-            backgroundColor: '#9e9e9e',
-            height: '0.5rem',
-            borderRadius: '0.3rem',
-          }}
+        <StyledLinearProgress
           color="primary"
           variant="determinate"
           value={value}
