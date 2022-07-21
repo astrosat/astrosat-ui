@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Fade, Grid, LinearProgress, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { baseTheme } from 'themes/palette';
 import zxcvbn from 'zxcvbn';
 
 /**
@@ -29,16 +28,16 @@ const getPasswordStrength = score => {
  * @returns cssHexString : string
  */
 
-const getColor = strength => {
+const getColor = (strength, theme) => {
   switch (strength) {
     case -1:
-      return baseTheme.palette.error.main;
+      return theme.palette.error.main;
     case 66:
-      return baseTheme.palette.primary.main;
+      return theme.palette.primary.main;
     case 100:
-      return baseTheme.palette.success.main;
+      return theme.palette.success.main;
     default:
-      return baseTheme.palette.error.main;
+      return theme.palette.error.main;
   }
 };
 
@@ -59,7 +58,7 @@ const StyledGrid = styled(Grid)(({ theme, ...props }) => {
     },
     [`& .MuiLinearProgress-bar`]: {
       borderRadius: '100vh',
-      backgroundColor: getColor(props.strength),
+      backgroundColor: getColor(props.strength, theme),
       transition: theme.transitions.create(['transform', 'background-color'], {
         easing: 'linear',
       }),
@@ -73,7 +72,7 @@ const StyledGrid = styled(Grid)(({ theme, ...props }) => {
       },
     },
     [`& .MuiTypography-caption`]: {
-      color: getColor(props.strength),
+      color: getColor(props.strength, theme),
     },
   };
 });
