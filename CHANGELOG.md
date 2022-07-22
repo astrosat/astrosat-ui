@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/astrosat/astrosat-ui/compare/v3.0.0...v3.0.1) (2022-07-22)
+
+
+### Bug Fixes
+
+* **mui:** Update export of makeStyles ([3382184](https://github.com/astrosat/astrosat-ui/commit/338218444119136530fbb5dcfedc0c8b8863db26))
+
 # [3.0.0](https://github.com/astrosat/astrosat-ui/compare/v2.10.0...v3.0.0) (2022-07-22)
 
 
