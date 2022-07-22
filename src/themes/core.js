@@ -392,7 +392,6 @@ const core = {
     MuiSelect: {
       styleOverrides: {
         outlined: {
-          paddingTop: '1.5rem',
           '&.Mui-disabled': {
             cursor: 'not-allowed',
           },
@@ -491,7 +490,7 @@ const core = {
     },
   },
   shape: {
-    borderRadius: '0.3125rem',
+    borderRadius: baseTheme.typography.pxToRem(5),
   },
   spacing,
   typography: {

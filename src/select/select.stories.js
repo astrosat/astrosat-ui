@@ -41,8 +41,7 @@ export const WithStyles = () => {
           height: '2.25rem',
         },
         '.MuiSelect-select': {
-          paddingBottom: theme.spacing(2.5),
-          paddingLeft: theme.spacing(0.5),
+          padding: '1rem 1rem 1rem 0.5rem',
         },
       }}
     >

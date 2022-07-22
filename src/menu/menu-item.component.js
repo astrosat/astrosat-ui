@@ -18,14 +18,6 @@ const MenuItem = (props, ref) => {
           '& + &': {
             borderTop: theme => `1px solid ${theme.palette.divider}`,
           },
-          '&:first-of-type': {
-            borderTopLeftRadius: theme => theme.shape.borderRadius,
-            borderTopRightRadius: theme => theme.shape.borderRadius,
-          },
-          '&:last-of-type': {
-            borderBottomLeftRadius: theme => theme.shape.borderRadius,
-            borderBottomRightRadius: theme => theme.shape.borderRadius,
-          },
         },
       }}
     />
