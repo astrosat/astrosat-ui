@@ -62,7 +62,6 @@ export {
   ListItemSecondaryAction,
   ListItemText,
   ListSubheader,
-  makeStyles,
   NoSsr,
   Paper,
   Popover,
@@ -100,5 +99,5 @@ export {
   Zoom,
 } from '@mui/material';
 
-export { createGenerateClassName, jssPreset } from '@mui/styles';
+export { createGenerateClassName, jssPreset, makeStyles } from '@mui/styles';
 export { Pagination, Skeleton } from '@mui/lab';
