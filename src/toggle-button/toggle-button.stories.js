@@ -1,16 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
 import ToggleButtonGroup from './toggle-button-group.component';
 import ToggleButton from './toggle-button.component';
-
-const useStyles = makeStyles({
-  group: {
-    border: '2px solid hotpink',
-  },
-  button: {
-    backgroundColor: 'hotpink',
-  },
-});
 
 const twoButtons = ['Percentage', 'Number'];
 
@@ -24,28 +14,27 @@ const renderButtons = ({
   fullWidth = true,
   groupClasses,
   buttonClasses,
-}) => {
-  return (
-    <ToggleButtonGroup
-      orientation={orientation}
-      size={size}
-      fullWidth={fullWidth}
-      classes={groupClasses}
-    >
-      {array.map((text, i) => (
-        <ToggleButton
-          key={text}
-          value={text}
-          selected={i === 0}
-          disabled={disabled && i !== 0 ? true : false}
-          classes={buttonClasses}
-        >
-          {text}
-        </ToggleButton>
-      ))}
-    </ToggleButtonGroup>
-  );
-};
+  ...rest
+}) => (
+  <ToggleButtonGroup
+    orientation={orientation}
+    size={size}
+    fullWidth={fullWidth}
+    sx={groupClasses}
+  >
+    {array.map((text, i) => (
+      <ToggleButton
+        key={text}
+        value={text}
+        selected={i === 0}
+        disabled={disabled && i !== 0 ? true : false}
+        sx={buttonClasses}
+      >
+        {text}
+      </ToggleButton>
+    ))}
+  </ToggleButtonGroup>
+);
 
 const Index = {
   title: 'ToggleButtons',
@@ -80,23 +69,19 @@ export const Disabled = () =>
   // @ts-ignore
   renderButtons({ array: twoButtons, disabled: true });
 
-export const GroupWithClasses = () => {
-  const { group } = useStyles({});
+export const GroupWithClasses = () =>
   // @ts-ignore
-  return renderButtons({
+  renderButtons({
     array: twoButtons,
-    groupClasses: { root: group },
+    groupClasses: { '&': { border: '2px solid hotpink' } },
   });
-};
 
-export const ButtonWithClasses = () => {
-  const { button } = useStyles({});
+export const ButtonWithClasses = () =>
   // @ts-ignore
-  return renderButtons({
+  renderButtons({
     array: twoButtons,
-    buttonClasses: { root: button },
+    buttonClasses: { '&': { backgroundColor: 'hotpink' } },
   });
-};
 
 export const NotFullWidth = () =>
   // @ts-ignore

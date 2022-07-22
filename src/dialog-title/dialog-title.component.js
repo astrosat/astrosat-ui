@@ -1,14 +1,11 @@
 import React from 'react';
 
-import {
-  DialogTitle as MuiDialogTitle,
-  Typography,
-  withStyles,
-} from '@material-ui/core';
+import { DialogTitle as MuiDialogTitle, Typography } from '@mui/material';
+import withStyles from '@mui/styles/withStyles';
 import IconButton from '../icon-button/icon-button.component';
 import { CloseIcon } from 'icons';
 
-const styles = (/** @type {import('@material-ui/core').Theme} */ theme) => ({
+const styles = (/** @type {import('@mui/material').Theme} */ theme) => ({
   root: {
     position: 'relative',
     display: 'grid',
@@ -29,7 +26,7 @@ const styles = (/** @type {import('@material-ui/core').Theme} */ theme) => ({
 });
 
 /**
- * @param {import('@material-ui/core/DialogTitle/DialogTitle').DialogTitleProps
+ * @param {import('@mui/material/DialogTitle/DialogTitle').DialogTitleProps
  *  & {onClose?: React.MouseEventHandler<HTMLButtonElement>}
  * } props
  * @param {React.Ref<any>} ref
@@ -58,6 +55,7 @@ const DialogTitle = (
           // @ts-ignore
           className={classes.closeButton}
           onClick={onClose}
+          size="large"
         >
           <CloseIcon />
         </IconButton>

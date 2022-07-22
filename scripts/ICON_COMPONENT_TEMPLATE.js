@@ -1,8 +1,8 @@
 const ICON_COMPONENT_TEMPLATE = `import React from 'react';
-import {SvgIcon} from '@material-ui/core';
+import {SvgIcon} from '@mui/material';
 
 /**
- * @param {import('@material-ui/core').SvgIconProps} props
+ * @param {import('@mui/material').SvgIconProps} props
  */
 const {{ICON_COMPONENT_NAME}} = props => (
   <SvgIcon {...props}>

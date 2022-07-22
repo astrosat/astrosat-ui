@@ -1,21 +1,10 @@
 import { CorrectIcon, ProfileIcon } from 'icons';
 import * as React from 'react';
-import { makeStyles, Chip, Avatar } from '../index';
+import { Chip, Avatar, Box } from '@mui/material';
 
 const Index = { title: 'Chip' };
 
 export default Index;
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(0.5),
-    },
-  },
-}));
 
 const handleDelete = () => {
   console.info('You clicked the delete icon.');
@@ -25,10 +14,22 @@ const handleClick = () => {
   console.info('You clicked the Chip.');
 };
 
-const Template = args => {
-  const classes = useStyles();
-
-  return <div className={classes.root}>{args.children}</div>;
+const Template = ({ children }) => {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        gap: '0.5rem',
+        marginTop: '0.25rem',
+        marginLeft: '0.3125rem',
+        marginRight: '0.3125rem',
+      }}
+    >
+      {children}
+    </Box>
+  );
 };
 
 export const Chips = Template.bind({});
@@ -50,6 +51,7 @@ Chips.args = {
       <Chip
         icon={<ProfileIcon />}
         label="Clickable deletable"
+        clickable
         onClick={handleClick}
         onDelete={handleDelete}
       />
@@ -81,6 +83,7 @@ Chips.args = {
         label="Secondary clickable"
         clickable
         color="secondary"
+        onClick={handleClick}
         onDelete={handleDelete}
         deleteIcon={<CorrectIcon />}
       />

@@ -1,5 +1,5 @@
 import { CloseIcon, PlusIcon, ProfileIcon } from 'icons';
-import faker from 'faker';
+import faker from '@faker-js/faker';
 import React from 'react';
 import {
   AppBar,
@@ -15,7 +15,6 @@ import {
   Slide,
   Toolbar,
   Typography,
-  makeStyles,
   DialogContent,
   DialogContentText,
   DialogActions,
@@ -80,27 +79,23 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const useStyles = makeStyles(theme => ({
-  appBar: {
-    position: 'relative',
-  },
-  title: {
-    marginLeft: theme.spacing(2),
-    flex: 1,
-  },
-}));
-
 export const FullScreen = () => {
-  const styles = useStyles();
-
   return (
     <Dialog fullScreen open TransitionComponent={Transition}>
-      <AppBar className={styles.appBar}>
+      <AppBar sx={{ '&': { position: 'relative' } }}>
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="close">
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="close"
+            size="large"
+          >
             <CloseIcon />
           </IconButton>
-          <Typography variant="h6" className={styles.title}>
+          <Typography
+            variant="h6"
+            sx={{ '&': { marginLeft: theme => theme.spacing(3), flex: 1 } }}
+          >
             Sound
           </Typography>
           <Button autoFocus color="secondary">

@@ -1,4 +1,4 @@
-import { Box } from '@material-ui/core';
+import { Box } from '@mui/material';
 import { SearchIcon } from 'icons';
 import React from 'react';
 import IconButton from './icon-button.component';
@@ -8,10 +8,10 @@ const Index = { title: 'IconButton' };
 export default Index;
 
 /**
- * @param {import('@material-ui/core').IconButtonProps} props
+ * @param {import('@mui/material').IconButtonProps} props
  */
 const Template = props => (
-  <IconButton {...props}>
+  <IconButton {...props} size="large">
     <SearchIcon />
   </IconButton>
 );
@@ -29,7 +29,7 @@ export const Color = () => (
 
 export const Size = () => (
   <>
-    <Template size="small" />
+    <Template size="small" edge="start" />
     <Template size="medium" />
   </>
 );

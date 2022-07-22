@@ -1,6 +1,5 @@
-import { Box } from '@material-ui/core';
-import { Typography } from '..';
 import * as React from 'react';
+import { Box, Typography } from '@mui/material';
 
 const Index = { title: 'Typography' };
 

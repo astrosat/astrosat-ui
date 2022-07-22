@@ -1,13 +1,7 @@
 import React from 'react';
 
-import {
-  Fade,
-  Grid,
-  LinearProgress,
-  makeStyles,
-  Typography,
-} from '@material-ui/core';
-import clsx from 'clsx';
+import { Fade, Grid, LinearProgress, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import zxcvbn from 'zxcvbn';
 
 /**
@@ -30,11 +24,11 @@ const getPasswordStrength = score => {
 };
 
 /**
- * @param {import('@material-ui/core').Theme} theme
- * @returns {(props: {strengthValue: number}) => string}
+ * @param strength: number
+ * @returns cssHexString : string
  */
-const getColor = theme => props => {
-  switch (props.strengthValue) {
+const getColor = (strength, theme) => {
+  switch (strength) {
     case 66:
       return theme.palette.primary.main;
     case 100:
@@ -44,20 +38,8 @@ const getColor = theme => props => {
   }
 };
 
-const meterStyles = makeStyles(theme => ({
-  root: {
-    minHeight: '0.5rem',
-    borderRadius: '100vh',
-    backgroundColor: theme.palette.grey[500],
-  },
-  bar: {
-    borderRadius: '100vh',
-    backgroundColor: getColor(theme),
-    transition: theme.transitions.create(['transform', 'background-color'], {
-      easing: 'linear',
-    }),
-  },
-  grid: {
+const StyledGrid = styled(Grid)(({ theme, ...props }) => ({
+  '&': {
     minHeight: '1.375rem',
     alignItems: 'center',
     [theme.breakpoints.only('xs')]: {
@@ -65,8 +47,23 @@ const meterStyles = makeStyles(theme => ({
       alignItems: 'flex-start',
     },
   },
-  text: {
-    color: getColor(theme),
+  '& .MuiLinearProgress-bar': {
+    borderRadius: '100vh',
+    backgroundColor: getColor(props.strength, theme),
+    transition: theme.transitions.create(['transform', 'background-color'], {
+      easing: 'linear',
+    }),
+  },
+  '& .MuiTypography-caption': {
+    color: getColor(props.strength, theme),
+  },
+}));
+
+const StyledLinearProgress = styled(LinearProgress)(({ theme }) => ({
+  '&': {
+    backgroundColor: theme.palette.grey[500],
+    height: '0.5rem',
+    borderRadius: '0.3rem',
   },
 }));
 
@@ -76,35 +73,28 @@ const meterStyles = makeStyles(theme => ({
  *   password?: string
  * }} props
  */
-const PasswordStrengthMeter = ({ password = '', className }) => {
+
+const PasswordStrengthMeter = ({ password = '' }) => {
   const passwordResult = zxcvbn(password);
   const [text, value] = getPasswordStrength(password && passwordResult.score);
 
-  const {
-    text: textClasses,
-    grid: gridClasses,
-    ...meterClasses
-  } = meterStyles({
-    strengthValue: value,
-  });
-
   return (
-    <Grid className={clsx(gridClasses, className)} container>
+    <StyledGrid strength={value} container>
       <Grid item xs={12} sm={10}>
-        <LinearProgress
-          classes={meterClasses}
+        <StyledLinearProgress
+          color="primary"
           variant="determinate"
           value={value}
         />
       </Grid>
       <Grid item xs={12} sm={2} container justifyContent="flex-end">
         <Fade in={!!text}>
-          <Typography className={textClasses} variant="caption">
+          <Typography color="primary" variant="caption">
             {text}
           </Typography>
         </Fade>
       </Grid>
-    </Grid>
+    </StyledGrid>
   );
 };
 

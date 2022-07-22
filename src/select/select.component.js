@@ -2,35 +2,25 @@ import React from 'react';
 
 import Input from '../input/input.component';
 
-import { Select as MuiSelect } from '@material-ui/core';
+import { Select as MuiSelect } from '@mui/material';
 
-import { makeStyles } from '@material-ui/core/styles';
-
-const menuStyles = makeStyles(theme => ({
-  paper: {
-    marginTop: theme.spacing(5),
-  },
-}));
 /**
- * @param {import('@material-ui/core').SelectProps} props
+ * @param {import('@mui/material').SelectProps} props
  * @param {React.Ref<any>} ref
  */
 
 const Select = (
-  { MenuProps, input = <Input />, fullWidth = true, classes, ...rest },
+  { MenuProps, input = <Input />, fullWidth = true, ...rest },
   ref
 ) => {
-  const menuClasses = menuStyles({});
   return (
     <MuiSelect
       input={input}
       fullWidth={fullWidth}
       MenuProps={{
-        classes: menuClasses,
         MenuListProps: { ...MenuProps?.MenuListProps, disablePadding: true },
         ...MenuProps,
       }}
-      classes={classes}
       {...rest}
       ref={ref}
     />

@@ -1,50 +1,43 @@
 import React from 'react';
-import { cleanup, render } from '@testing-library/react';
+
+import { render, screen } from 'test/test-utils';
 
 import PasswordStrengthMeter from './password-strength-meter.component';
 
 describe('Password Strength Meter Component', () => {
-  afterEach(cleanup);
-
   it('does not render text when password is empty', () => {
-    const { queryByText } = render(<PasswordStrengthMeter />);
-    expect(queryByText('Weak')).not.toBeInTheDocument();
-    expect(queryByText('Fair')).not.toBeInTheDocument();
-    expect(queryByText('Strong')).not.toBeInTheDocument();
+    render(<PasswordStrengthMeter />);
+    expect(screen.queryByText('Weak')).not.toBeInTheDocument();
+    expect(screen.queryByText('Fair')).not.toBeInTheDocument();
+    expect(screen.queryByText('Strong')).not.toBeInTheDocument();
   });
 
   it('shows the text "Weak" with a password score of 0', () => {
-    const { getByText } = render(<PasswordStrengthMeter password="pa" />);
-    expect(getByText('Weak')).toBeInTheDocument();
+    render(<PasswordStrengthMeter password="pa" />);
+    expect(screen.getByText('Weak')).toBeInTheDocument();
   });
 
   it('shows the text "Weak" with a password score of 1', () => {
-    const { getByText } = render(<PasswordStrengthMeter password="pand" />);
+    render(<PasswordStrengthMeter password="pand" />);
 
-    expect(getByText('Weak')).toBeInTheDocument();
+    expect(screen.getByText('Weak')).toBeInTheDocument();
   });
 
   it('shows the text "Fair" with a password score of 2', () => {
-    const { getByText } = render(
-      <PasswordStrengthMeter password="pandaconcrete" />
-    );
+    render(<PasswordStrengthMeter password="pandaconcrete" />);
 
-    expect(getByText('Fair')).toBeInTheDocument();
+    expect(screen.getByText('Fair')).toBeInTheDocument();
   });
 
   it('shows the text "Fair" with a password score of 3', () => {
-    const { getByText } = render(
-      <PasswordStrengthMeter password="pandaconcretesp" />
-    );
+    render(<PasswordStrengthMeter password="pandaconcretesp" />);
 
-    expect(getByText('Fair')).toBeInTheDocument();
+    expect(screen.getByText('Fair')).toBeInTheDocument();
   });
 
   it('shows the text "Strong" with a password score of 4', () => {
-    const { getByText } = render(
-      <PasswordStrengthMeter password="pandaconcretespoon" />
-    );
+    render(<PasswordStrengthMeter password="pandaconcretespoon" />);
 
-    expect(getByText('Strong')).toBeInTheDocument();
+    expect(screen.getByText('Strong')).toBeInTheDocument();
   });
 });

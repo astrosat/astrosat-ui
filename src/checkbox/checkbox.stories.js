@@ -2,7 +2,7 @@ import React from 'react';
 
 import { action } from '@storybook/addon-actions';
 
-import { FormGroup, FormControlLabel } from '@material-ui/core';
+import { FormGroup, FormControlLabel } from '@mui/material';
 
 import { default as Checkbox } from './checkbox.component';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { default as Button } from './button.component';
 
 const Index = {
@@ -107,7 +108,7 @@ Playground.argTypes = {
   color: {
     control: {
       type: 'inline-radio',
-      options: ['primary', 'secondary', 'default', 'inherit'],
+      options: ['primary', 'secondary', 'inherit'],
     },
   },
   size: {

@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import {
-  FormHelperText,
-  FormControl,
-  InputLabel,
-  withStyles,
-} from '@material-ui/core';
+
+import { FormHelperText, FormControl, InputLabel } from '@mui/material';
+import withStyles from '@mui/styles/withStyles';
+import { useTheme } from '@mui/material/styles';
 import Input from '../input/input.component';
 import clsx from 'clsx';
 import PasswordInput from 'password-input/password-input.component';
@@ -19,7 +17,7 @@ const DEFAULT_LAX_LENGTH_TEMPLATE = '($charCount/$maxLength) max characters';
 
 const TextField = React.forwardRef(
   /**
-   * @param {import('@material-ui/core').TextFieldProps &
+   * @param {import('@mui/material').TextFieldProps &
    *   {
    *    valid?: import('../input/input.component').InputProps['valid']
    *    visibilityToggleButtonLabel?: string
@@ -70,7 +68,7 @@ const TextField = React.forwardRef(
       visibilityToggleButtonLabel,
       ...other
     } = props;
-
+    const theme = useTheme();
     const [charCount, setCharCount] = useState(0);
 
     const getMaxLengthText = () => {
@@ -160,6 +158,12 @@ const TextField = React.forwardRef(
         onBlur={onBlur}
         onChange={({ target: { value } }) => {
           setCharCount(value.length);
+
+          // Execute any passed in onChange function with
+          // the value supplied.
+          if (onChange) {
+            onChange(value);
+          }
         }}
         onFocus={onFocus}
         placeholder={placeholder}
@@ -188,6 +192,7 @@ const TextField = React.forwardRef(
             {label}
           </InputLabel>
         )}
+
         {select ? (
           <Select
             aria-describedby={helperTextId}
@@ -196,12 +201,14 @@ const TextField = React.forwardRef(
             value={value}
             input={InputElement}
             {...SelectProps}
+            style={{ paddingTop: theme.spacing(2.8) }}
           >
             {children}
           </Select>
         ) : (
           InputElement
         )}
+
         {maxLength && (
           <FormHelperText
             id={maxLengthId}
@@ -211,6 +218,7 @@ const TextField = React.forwardRef(
             {getMaxLengthText()}
           </FormHelperText>
         )}
+
         {helperText && (
           <FormHelperText id={helperTextId} {...FormHelperTextProps}>
             {helperText}
