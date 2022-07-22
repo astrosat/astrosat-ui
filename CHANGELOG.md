@@ -1,3 +1,69 @@
+# [3.0.0](https://github.com/astrosat/astrosat-ui/compare/v2.10.0...v3.0.0) (2022-07-22)
+
+
+### Bug Fixes
+
+* **frontend:**  fix minor issues in the input component  for the new version of Astrosat-ui ([c1c4746](https://github.com/astrosat/astrosat-ui/commit/c1c47463dcf79c6519802a2ddc93a6c3221a15d1))
+* **frontend:**  the input component code refactor for the new version of Astrosat-ui ([91004a1](https://github.com/astrosat/astrosat-ui/commit/91004a1e118bcbbe22712baa9c5dd33a96c81703))
+* **frontend:** add code requested changes to the Select component ([e8cd67a](https://github.com/astrosat/astrosat-ui/commit/e8cd67a289dcce539ec73ed2912361456c7c4761))
+* **frontend:** add requested code changes to the text field component ([15edd22](https://github.com/astrosat/astrosat-ui/commit/15edd22cb275798ac4e291980a1951bc42c756f6))
+* **frontend:** add small code changes for the Chip component ([b157e70](https://github.com/astrosat/astrosat-ui/commit/b157e70c75115893fc2a02c7256cb8200acd7fd4))
+* **frontend:** add small code changes for the final version of the toggle button group component ([4db8f48](https://github.com/astrosat/astrosat-ui/commit/4db8f4804084ea3cf029aac37c73900cec4f1497))
+* **frontend:** code refactoring for the new version of the Chip component ([d309e65](https://github.com/astrosat/astrosat-ui/commit/d309e65fb2f64c53d6244f075404e4bb12c326eb))
+* **frontend:** fix a cursor not allowed issue ([d0de6b5](https://github.com/astrosat/astrosat-ui/commit/d0de6b5581aa8f89db147de906b2047ce0aa7ed2))
+* **frontend:** Fix broken tests ([55b76a0](https://github.com/astrosat/astrosat-ui/commit/55b76a010e1e6d60740ce579c7d8ccd66f0d6ab5))
+* **frontend:** Fix building of library ([e42803e](https://github.com/astrosat/astrosat-ui/commit/e42803eea69d27c78960b946b235e1e8d8c64d88))
+* **frontend:** fix small issues in the switch component ([b2aea28](https://github.com/astrosat/astrosat-ui/commit/b2aea2892d4f8bf6d4925d1f5f29641f55546b82))
+* **frontend:** fix some issues from the last commit for the password strength meter ([67a314e](https://github.com/astrosat/astrosat-ui/commit/67a314e83dc92e938b55a84a8ee183de72d01842))
+* **frontend:** fix the chip component for a new Astrosat-ui ([a5b30fc](https://github.com/astrosat/astrosat-ui/commit/a5b30fc737878929dfbb71c28dc222eca19d1b3d))
+* **frontend:** fix the Dialog component for the new version of Astrosat-ui ([bcb6f7d](https://github.com/astrosat/astrosat-ui/commit/bcb6f7de7e2f4ee61150240cb9f1a04633776d54))
+* **frontend:** fix the load mask component for the new version of Astrosat-ui ([68305cc](https://github.com/astrosat/astrosat-ui/commit/68305cc476b09a21436c9eb1a52eadd0c403154b))
+* **frontend:** fix the menu, menu-item and paper components in the new Astrosat-ui ([0e4229a](https://github.com/astrosat/astrosat-ui/commit/0e4229ab7e5ac30871c1874740c60d99e6e7ddf8))
+* **frontend:** fix the pagination and the link component in Astrosat-Ui ([8ce8c9b](https://github.com/astrosat/astrosat-ui/commit/8ce8c9b004e7649c4244a2caf53255b458ae7db7))
+* **frontend:** fix the password input component for the new version of Astrosat-ui ([016e4de](https://github.com/astrosat/astrosat-ui/commit/016e4de04c5810e8b6c714f400c0194a55447bc0))
+* **frontend:** fix the Select component ([25931d7](https://github.com/astrosat/astrosat-ui/commit/25931d78fdc68a0fd5594032485d915cb496665c))
+* **frontend:** fix the Switch component ([f87c9ad](https://github.com/astrosat/astrosat-ui/commit/f87c9ad7aada42ed73074c342b945674d464ceeb))
+* **frontend:** fix the tabs component ([af0c599](https://github.com/astrosat/astrosat-ui/commit/af0c599c4d0fd1036829d4174e13120920d400bf))
+* **frontend:** fix the text field component ([805be56](https://github.com/astrosat/astrosat-ui/commit/805be56a7c659e3cc81bd83a6615fa34a0a1c810))
+* **frontend:** fix the Well component for the new version of Astrosat-ui ([b952619](https://github.com/astrosat/astrosat-ui/commit/b9526191de40d4e3eae4b4582c9207055a04f3de))
+* **frontend:** merge my current branch with the mui-4-to-5-upgrade branch ([9d21b4b](https://github.com/astrosat/astrosat-ui/commit/9d21b4bb6b533ae9249947a5db43eaa063c99d62))
+* **frontend:** merge my current branch with the mui-4-to-5-upgrade branch ([81987cb](https://github.com/astrosat/astrosat-ui/commit/81987cb75e110b65633ff4bc766ea0987b73ffc0))
+* **frontend:** merge my current branch with the mui-4-to-5-upgrade branch ([11bc624](https://github.com/astrosat/astrosat-ui/commit/11bc624101a1fc6f82b1f2b8e6aed6a04eb60907))
+* **frontend:** merge the mui-4-to-5-upgrade branch to my current branch ([f0ad623](https://github.com/astrosat/astrosat-ui/commit/f0ad62384b4779466511a5bc48141ff30c171a66))
+* **frontend:** rebuild the password strength meter component for the new version of Astrosat-ui ([569bcd4](https://github.com/astrosat/astrosat-ui/commit/569bcd44b52643e5eca048f14e18e7a8846c8a6f))
+* **frontend:** rebuild the password strength meter for the new version of Astrosat ([81f8e14](https://github.com/astrosat/astrosat-ui/commit/81f8e1460d8e0733737c680ee834818f8f778f26))
+* **frontend:** rebuild the toggle button component ([ce0d98c](https://github.com/astrosat/astrosat-ui/commit/ce0d98ccfb5e8e6e9ac4a782f0d10c865fa0eb54))
+* **frontend:** refactor the Dialog component code ([25599a9](https://github.com/astrosat/astrosat-ui/commit/25599a9de0e0e3aad3ed6be622743bdd2f15be4d))
+* **frontend:** refactor the link CSS code for the new version of Astrosat-ui ([ab249d0](https://github.com/astrosat/astrosat-ui/commit/ab249d0cb6876fed2d5ef0d0ee4ddf22c3c45297))
+* **frontend:** refactor the Select component code ([e368a25](https://github.com/astrosat/astrosat-ui/commit/e368a25201411911f173398e3048571d9d4e2fed))
+* **frontend:** remove hard-coded color value ([246e66e](https://github.com/astrosat/astrosat-ui/commit/246e66e4db2eded92d6ad95563fd847da39b44b8))
+* **frontend:** remove unwanted return statement ([29e8300](https://github.com/astrosat/astrosat-ui/commit/29e83004c7fb82c59e1b1ca37245bfd2c146c658))
+* **frontend:** rename components in the load mask ([46501f1](https://github.com/astrosat/astrosat-ui/commit/46501f1ff637c0fbafc5091c8e2a9c92ba9b511c))
+* **frontend:** set the hard-coded colour value back ([30e837b](https://github.com/astrosat/astrosat-ui/commit/30e837bbdfb01d3fb94cd7efccdc9a743c8cd089))
+* **frontend:** start code refactoring for the Switch component ([6dd5d05](https://github.com/astrosat/astrosat-ui/commit/6dd5d05162c177cf401d443169a015c5336d60ae))
+* **frontend:** start rebuilding the password input component ([05ff6dc](https://github.com/astrosat/astrosat-ui/commit/05ff6dc9ad03dd393d82710d011a82cd334cef33))
+* **frontend:** start to rebuild the well component ([3ea899b](https://github.com/astrosat/astrosat-ui/commit/3ea899bf4fd3882f2ec18b36804afc0dc7cdf943))
+* **frontend:** tidy up the button group component code ([2414b0c](https://github.com/astrosat/astrosat-ui/commit/2414b0c490ac4390469c1c03f6528971bdd13283))
+* **frontend:** Update component to use new themes ([0548830](https://github.com/astrosat/astrosat-ui/commit/05488304d7d1c7d32f840b511d378c224c571af3))
+* **frontend:** Update themes ([2109282](https://github.com/astrosat/astrosat-ui/commit/210928231e813fa1c89f27398c61b268ac6f5625))
+* **frontend:** Upgrade dev dependencies ([e2ec8d1](https://github.com/astrosat/astrosat-ui/commit/e2ec8d163cdc7360b64b0c6644a55ac9f09089f4))
+
+
+### Features
+
+* **frontend:** Fix radio buttons and check buttons hover icon ([94707cc](https://github.com/astrosat/astrosat-ui/commit/94707cc846bc0c480cb9c07193ed568a6a8389de))
+* **frontend:** Upgrade material-ui to v5 ([786053c](https://github.com/astrosat/astrosat-ui/commit/786053c1c883edecf6b47db0d6774fc977800236))
+
+
+### Performance Improvements
+
+* **frontend:** Upgrade to mui5 ([c5772cd](https://github.com/astrosat/astrosat-ui/commit/c5772cd78ddff37bdd46b30c32af9fd9e2bc44e9))
+
+
+### BREAKING CHANGES
+
+* **frontend:** This upgrades the library to use mui5.
+
 # [2.10.0](https://github.com/astrosat/astrosat-ui/compare/v2.9.1...v2.10.0) (2022-06-20)
 
 
