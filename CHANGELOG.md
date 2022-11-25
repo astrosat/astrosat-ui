@@ -1,3 +1,10 @@
+## [2.9.2](https://github.com/astrosat/astrosat-ui/compare/v2.9.1...v2.9.2) (2022-11-25)
+
+
+### Bug Fixes
+
+* **devops:** Add manual trigger to publishing workflow ([7e19217](https://github.com/astrosat/astrosat-ui/commit/7e19217711736a7bf86416f8b0e5a3a8cbd68459))
+
 ## [2.9.1](https://github.com/astrosat/astrosat-ui/compare/v2.9.0...v2.9.1) (2022-03-22)
 
 
